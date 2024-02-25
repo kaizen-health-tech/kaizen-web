@@ -1,21 +1,24 @@
 import React from 'react';
-import '../styles/home.css'
+import styles from '../styles/home.css'; 
 
 const Home = () => {
   return (
-    <div className="">
-      <div class="container col-xxl-8 px-4 py-5"> 
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div class="col-10 col-sm-8 col-lg-6">
-            <img src="/default.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />
+    <div className="home">
+      <div className="section_one container col-xxl-8 px-4 py-5"> 
+        <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div className="col-10 col-sm-8 col-lg-6">
+            <img src="images/family_group.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />
           </div>
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Kaizen Health</h1>
-            <p class="lead">
-              At Kaizen Health, our mission is to empower individuals and families
-              to take control of their health and their health data in a secure and active manner.
+          <div className="col-lg-6">
+            <h1 className="title">Kaizen Health:</h1>
+            <h1 className="title mb-3">Easy. Secure. Yours.</h1>
+            <p className="lead subtitle mb-5">
+              Kaizen Health empowers users for better health control and secure health data management.
+              Tailored for individuals, families, and healthcare enthusiasts, it offers 
+              a user-friendly platform compliant with HIPAA. Join our closed beta for early access to the app, 
+              available on Android and iOS.
             </p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
               <img src="/app_store_badge_wht.svg" className=""/>
               <img src="/google_play_badge.png" style={{ width : '150px'}}/>
             </div>
@@ -23,14 +26,43 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="my-5 p-5 text-center bg-body-tertiary">
+      <div className="section_one container col-xxl-8 px-4 py-5"> 
+        <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div className="col-lg-7">
+            <h1 className="subtitle_two mb-3">People Who Benefit.</h1>
+            <div className="lead subtitle mb-5">
+              <div className="d-flex align-items-center">
+                <img src="/images/bullet_point.svg" className="me-3"/>
+                <p className="list_text mb-0">Individuals who want better control of their health</p>
+              </div>
+              <div className="d-flex align-items-center">
+                <img src="/images/bullet_point.svg" className="me-3"/>
+                <p className="list_text mb-0">Busy families who want to be informed of each others’ health</p>
+              </div>
+              <div className="d-flex align-items-center">
+                <img src="/images/bullet_point.svg" className="me-3"/>
+                <p className="list_text mb-0">Healthcare enthusiasts who want to store medical record securely</p>
+              </div>
+              <div className="d-flex align-items-center">
+                <img src="/images/bullet_point.svg" className="me-3"/>
+                <p className="list_text mb-0">People who want to revolutionize healthcare and access to medical records</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-10 col-sm-8 col-lg-5">
+            <img src="images/woman_with_phone.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div className="section_two my-5 p-5 text-center bg-body-tertiary">
         <div className="container py-5">
           <h1 className="text-body-emphasis">Empowering Your Wellness Journey</h1>
           <p className="col-lg-8 mx-auto lead">
-            Kaizen health aims to provide a user friendly platform by letting users 
-            get access to their fitness and health data in a more human friendly 
-            format and store and access medical records securely while being fully 
-            compliant with HIPAA. 
+            Kaizen Health empowers users for better health control and secure health data management.
+            Tailored for individuals, families, and healthcare enthusiasts, it offers 
+            a user-friendly platform compliant with HIPAA. Join our closed beta for early access to the app, 
+            available on Android and iOS.
           </p>
         </div>
       </div>
