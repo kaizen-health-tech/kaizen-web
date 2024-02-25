@@ -1,3 +1,8 @@
 .section_one {
   background-color: '#E3E8EB';
 }
+
+.nav-link {
+  border: '1px solid red';
+  color: '#FF6171';
+} 
