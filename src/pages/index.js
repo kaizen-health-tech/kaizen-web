@@ -28,10 +28,10 @@ const Home = () => {
 
       <div className="home__body-one container col-xxl-8 px-4 py-5"> 
         <div className="row align-items-center g-5 py-5">
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-5 col-md-5">
             <img src="images/woman_with_phone.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" />
           </div>
-          <div className="col-12 col-sm-7 col-lg-5 offset-sm-1">
+          <div className="col-12 col-sm-7 col-md-7">
             <h1 className="subtitle_two mb-3">People Who Benefit.</h1>
             <div className="lead mb-5 home__body-one-content">
               <div className="d-flex align-items-center">
@@ -76,8 +76,8 @@ const Home = () => {
         <h2 className="my-5 pb-3 border-bottom h2">Kaizen is built for</h2>
         <div className="row g-3 py-5 row-cols-1 row-cols-lg-3">
           <div className="feature col-12 col-md-4">
-            <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <svg className="bi" width="1em" height="1em"><use href="#people-circle"></use></svg>
+            <div className="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+              <img src="images/bookmark_point.svg" className="img-fluid icon" alt="Bootstrap Themes" width="30" height="30" loading="lazy" />
             </div>
             <h3 className="fs-3 text-body-emphasis">Empower Your Health</h3>
             <p className="home__body-three-content pe-2">
@@ -89,8 +89,8 @@ const Home = () => {
             </a> */}
           </div>
           <div className="feature col-12 col-md-4">
-            <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <svg className="bi" width="1em" height="1em"><use href="#people-circle"></use></svg>
+            <div className="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+              <img src="images/bookmark_point.svg" className="img-fluid icon" alt="Bootstrap Themes" width="30" height="30" loading="lazy" />
             </div>
             <h3 className="fs-3 text-body-emphasis">Secure Medical Storage</h3>
             <p className="home__body-three-content pe-2">
@@ -101,8 +101,8 @@ const Home = () => {
             </a> */}
           </div>
           <div className="feature col-12 col-md-4">
-            <div className="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <svg className="bi" width="1em" height="1em"><use href="#people-circle"></use></svg>
+            <div className="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+            <img src="images/bookmark_point.svg" className="img-fluid icon" alt="Bootstrap Themes" width="30" height="30" loading="lazy" />
             </div>
             <h3 className="fs-3 text-body-emphasis">Family Health Sync</h3>
             <p className="home__body-three-content pe-2">
@@ -124,9 +124,13 @@ const Home = () => {
             Join us in transforming healthcare by making access to medical records
             straightforward and secure. Be part of the movement towards a more accessible and transparent health system.
           </p>
-          <button className="btn btn-primary px-5 mb-5" type="button">
+          <a
+            href="mailto:info@kaizemhealth.io"
+            className="btn btn-custom px-5 mb-5"
+            role="button"
+          >
             Contact
-          </button>
+          </a>
         </div>
       </div>
     </div>

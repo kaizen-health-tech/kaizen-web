@@ -1,4 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap/scss/bootstrap";
 
 $primary-color: #FF6171;
 $primary-backgroupd-color: #FFF2F4;
@@ -15,10 +16,30 @@ $font-weight-extra-bold: 700;
 $font-size-m: 18px;
 
 .h1 {
-  font-size: 50px;
+  font-size: 2rem; // Default font size for xs screens
   font-weight: 700;
-  line-height: 66px;
+  line-height: 46px;
   letter-spacing: 0px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 3.5rem;
+    line-height: 46px;
+  }
+  
+  @include media-breakpoint-up(md) {
+    font-size: 3.125rem;
+    line-height: 66px;
+  }
+  
+  @include media-breakpoint-up(lg) {
+    font-size: 3.125rem;
+    line-height: 66px;
+  }
+  
+  @include media-breakpoint-up(xl) {
+    font-size: 4.5rem;
+    line-height: 66px;
+  }
 }
 
 .h2 {
