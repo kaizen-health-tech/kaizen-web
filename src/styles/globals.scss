@@ -1,0 +1,60 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+$primary-color: #FF6171;
+$primary-backgroupd-color: #FFF2F4;
+$black-color: #2B1B1D;
+$grey-color: #CDD1D4;
+
+$font-family-primary: 'Open Sans', sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 600;
+$font-weight-extra-bold: 700;
+
+$font-size-m: 18px;
+
+.h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 66px;
+  letter-spacing: 0px;
+}
+
+.h2 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0px;
+}
+
+.h3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+}
+
+.base-text-1 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0px;
+}
+
+.base-text-2 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+}
+
+.footer {
+  background-color: $primary-backgroupd-color;
+  height: 216px;
+
+  &__bottom {
+    border: 1px solid #CDD1D4;
+  }
+}
+

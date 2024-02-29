@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <>
       <nav className="navbar">
         <ul className="navbar-nav col-4 d-flex flex-row">
-          <li className="nav-item mx-5">
+          {/* <li className="nav-item mx-5">
             <Link href="/" passHref legacyBehavior>
               <a className="nav-link active" href="#" style={{ color: '#FF6171', fontSize: '14px', fontWeight: 400}}>
                 Home
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
                 Contact
               </a>
             </Link>
-          </li>
+          </li> */}
         </ul>
 
         <div className="navbar-nav col-4 d-flex flex-row justify-content-center">
@@ -35,17 +35,27 @@ const Layout = ({ children }) => {
 
       <main>{children}</main>
 
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div className="col-md-4 d-flex align-items-center">
-          <a href="/" className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-            <svg className="bi" width="30" height="24"></svg>
-          </a>
-          <span className="mb-3 mb-md-0 text-body-secondary">© 2024 Kaizen Health</span>
+      <footer className="footer">
+        <div className="row pt-5 px-5">
+          <div className="col-12 col-sm-4 ps-5">
+            <span className="d-none d-md-flex mb-3 mb-md-0 text-body-secondary">© 2024 Kaizen Health</span>
+          </div>
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <Link href="/" passHref legacyBehavior>
+              <a className="navbar-brand">
+                <img src="/logo.svg" alt="Kaizen Health Logo" style={{ maxHeight: '30px' }} />
+              </a>
+            </Link>
+          </div>
+          <div className="col-12 col-sm-4 my-5 text-center">
+            <span className="d-md-none mb-3 mb-md-0 text-body-secondary">© 2024 Kaizen Health</span>
+          </div>
         </div>
-
-        <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li className="ms-3"><a className="text-body-secondary" href="#"><svg className="bi" width="24" height="24"></svg></a></li>
-        </ul>
+        <div className="row">
+          <div className="col-12 col-md-10 offset-md-1">
+            <div className="footer__bottom"></div>
+          </div>
+        </div>
       </footer>
     </>
   );
