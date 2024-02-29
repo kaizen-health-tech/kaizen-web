@@ -105,15 +105,15 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div class="container my-5">
-        <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
-          <svg class="bi mt-5 mb-3" width="48" height="48"><use href="#check2-circle"></use></svg>
-          <h1 class="text-body-emphasis mb-5">Revolutionize Healthcare</h1>
-          <p class="col-lg-6 mx-auto mb-4">
+      <div className="container my-5">
+        <div className="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+          <svg className="bi mt-5 mb-3" width="48" height="48"><use href="#check2-circle"></use></svg>
+          <h1 className="text-body-emphasis mb-5">Revolutionize Healthcare</h1>
+          <p className="col-lg-6 mx-auto mb-4">
             Join us in transforming healthcare by making access to medical records
             straightforward and secure. Be part of the movement towards a more accessible and transparent health system.
           </p>
-          <button class="btn btn-primary px-5 mb-5" type="button">
+          <button className="btn btn-primary px-5 mb-5" type="button">
             Contact
           </button>
         </div>
