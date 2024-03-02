@@ -81,3 +81,13 @@ $font-size-m: 18px;
   }
 }
 
+.contact {
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    .form-group {
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/home.scss'; 
+import '../styles/home.scss';
+import ContactForm from '@/components/ContactForm';
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
               <img src="/app_store_badge_wht.svg" className=""/>
               <img src="/google_play_badge.png" style={{ width : '150px'}}/>
             </div>
+            <ContactForm className="col-12 mt-4" />
           </div>
         </div>
       </div>
@@ -118,19 +120,20 @@ const Home = () => {
 
       <div className="home__body-four container my-5">
         <div className="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
-          <svg className="bi mt-5 mb-3" width="48" height="48"><use href="#check2-circle"></use></svg>
+          {/* <svg className="bi mt-5 mb-3" width="48" height="48"><use href="#check2-circle"></use></svg> */}
           <h1 className="text-body-emphasis mb-2">Revolutionize Healthcare</h1>
           <p className="home__body-four-content col-lg-6 mx-auto mb-4">
             Join us in transforming healthcare by making access to medical records
             straightforward and secure. Be part of the movement towards a more accessible and transparent health system.
           </p>
-          <a
+          {/* <a
             href="mailto:info@kaizemhealth.io"
             className="btn btn-custom px-5 mb-5"
             role="button"
           >
             Contact
-          </a>
+          </a> */}
+          <ContactForm className="col-12 col-xs-6 offset-xs-3 col-lg-6 offset-lg-3 mt-3" />
         </div>
       </div>
     </div>
