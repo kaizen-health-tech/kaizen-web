@@ -23,7 +23,6 @@ const Home = () => {
               <img src="/app_store_badge_wht.svg" className=""/>
               <img src="/google_play_badge.png" style={{ width : '150px'}}/>
             </div>
-            <ContactForm className="col-12 mt-4" />
           </div>
         </div>
       </div>
