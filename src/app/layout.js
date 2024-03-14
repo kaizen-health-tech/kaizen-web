@@ -53,7 +53,21 @@ const Layout = ({ children }) => {
         </div>
         <div className="row">
           <div className="col-12 col-md-10 offset-md-1">
-            <div className="footer__bottom"></div>
+            <div className="footer__bottom row">
+              <div className="col col-4 text-center">
+                <span className="mb-3 mb-md-0 text-body-secondary">All rights reserved</span>
+              </div>
+              <div className="col col-4 text-center">
+                <Link href="/terms" passHref legacyBehavior className="mb-3 mb-md-0 text-body-secondary">
+                  Terms & service
+                </Link>
+              </div>
+              <div className="col col-4 text-center">
+                <Link href="/privacy" passHref legacyBehavior className="mb-3 mb-md-0 text-body-secondary">
+                  Privacy Policy
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
