@@ -12,7 +12,7 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      inter: ["Nunito", "sans-serif"],
+      inter: ["Hanken_Grotesk", "sans-serif"],
     },
     extend: {
       colors: {

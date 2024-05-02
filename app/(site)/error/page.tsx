@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Error Page - Solid SaaS Boilerplate",
-  description: "This is Error page for Solid Pro",
+  description: "This is Error page for Kaizen Health",
   // other metadata
 };
 

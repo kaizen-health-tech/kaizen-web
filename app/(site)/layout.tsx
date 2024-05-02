@@ -7,7 +7,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
 import { Hanken_Grotesk } from "next/font/google";
 import "../globals.css";
-const hanken = Hanken_Grotesk({ subsets: ["latin"] });
+const inter = Hanken_Grotesk({ subsets: ["latin"] });
 
 import ToasterContext from "../context/ToastContext";
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-black ${hanken.className}`}>
+      <body className={`dark:bg-black ${inter.className}`}>
         <ThemeProvider
           enableSystem={false}
           attribute="class"
