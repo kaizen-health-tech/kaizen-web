@@ -7,7 +7,7 @@ const SidebarLink = () => {
       <li className="block">
         <Link
           href={`/docs/privacy`}
-          className={`flex w-full rounded-sm bg-stroke px-3 py-2 text-base text-black dark:bg-blackho dark:text-white`}
+          className={`flex w-full rounded-sm px-3 py-2 text-base text-black dark:text-white`}
         >
           Privacy
         </Link>
