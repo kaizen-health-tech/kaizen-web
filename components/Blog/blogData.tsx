@@ -4,9 +4,9 @@ const BlogData: Blog[] = [
   {
     _id: 1,
     mainImage: "/images/blog/blog-01.png",
-    title: "Free advertising for your online business",
+    title: "Understanding Family Health History: Why It's Vital for Your Well-being",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      "Discover the importance of knowing your family health history and how it can significantly impact your preventive health strategies. Learn why family health knowledge is crucial.",
   },
   {
     _id: 2,

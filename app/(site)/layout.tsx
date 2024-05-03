@@ -6,6 +6,8 @@ import Lines from "@/components/Lines";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
 import { Hanken_Grotesk } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 import "../globals.css";
 const inter = Hanken_Grotesk({ subsets: ["latin"] });
 
@@ -19,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`dark:bg-black ${inter.className}`}>
+      <GoogleAnalytics gaId="G-PN88Z9QS4E" />
         <ThemeProvider
           enableSystem={false}
           attribute="class"
