@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Hero = () => {
   const [email, setEmail] = useState("");
@@ -24,22 +24,41 @@ const Hero = () => {
                 a user-friendly platform compliant with HIPAA. Join our closed beta for early access to the app,
                 available on Android and iOS.
               </p>
+
+              <button
+                  className="inline-flex items-center gap-2.5 bg-primary rounded-full px-6 py-3 font-medium text-white hover:bg-blackho dark:bg-btndark"
+              >
+                Sign up now
+                <svg
+                    className="fill-white"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                      d="M10.4767 6.16664L6.00668 1.69664L7.18501 0.518311L13.6667 6.99998L7.18501 13.4816L6.00668 12.3033L10.4767 7.83331H0.333344V6.16664H10.4767Z"
+                      fill=""
+                  />
+                </svg>
+              </button>
             </div>
 
             <div className="hidden md:w-1/2 lg:block">
               <div className="relative 2xl:-mr-7.5">
                 <div className="relative aspect-[700/444] w-full">
                   <Image
-                    className="dark:hidden"
-                    src="/images/hero/hero.png"
-                    alt="Hero"
-                    fill
+                      className="dark:hidden"
+                      src="/images/hero/hero.png"
+                      alt="Hero"
+                      fill
                   />
                   <Image
-                    className="hidden dark:block"
-                    src="/images/hero/hero.png"
-                    alt="Hero"
-                    fill
+                      className="hidden dark:block"
+                      src="/images/hero/hero.png"
+                      alt="Hero"
+                      fill
                   />
                 </div>
               </div>
