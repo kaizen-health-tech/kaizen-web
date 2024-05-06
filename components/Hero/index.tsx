@@ -25,8 +25,9 @@ const Hero = () => {
                 available on Android and iOS.
               </p>
 
-              <button
-                  className="inline-flex items-center gap-2.5 bg-primary rounded-full px-6 py-3 font-medium text-white hover:bg-blackho dark:bg-btndark"
+              <a
+                  className="inline-flex items-center m-3 gap-2.5 bg-primary rounded-full px-6 py-3 font-medium text-white hover:bg-blackho dark:bg-btndark"
+                  href="/#support"
               >
                 Sign up now
                 <svg
@@ -42,7 +43,7 @@ const Hero = () => {
                       fill=""
                   />
                 </svg>
-              </button>
+              </a>
             </div>
 
             <div className="hidden md:w-1/2 lg:block">
