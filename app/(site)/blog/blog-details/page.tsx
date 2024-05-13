@@ -75,91 +75,138 @@ const SingleBlogPage = async () => {
             </div>
 
             <div className="lg:w-full">
-              <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+              <div
+                  className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
                 <div className="mb-10 w-full overflow-hidden ">
                   <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                     <Image
-                      src={"/images/blog/blog-01.png"}
-                      alt="Kobe Steel plant that supplied"
-                      fill
-                      className="rounded-md object-cover object-center"
+                        src={"/images/blog/blog-01.png"}
+                        alt="Kobe Steel plant that supplied"
+                        fill
+                        className="rounded-md object-cover object-center"
                     />
                   </div>
                 </div>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Kobe Steel plant that supplied
+                  The Power of Knowing: Why Family Health History Matters
                 </h2>
 
                 <ul className="mb-9 flex flex-wrap gap-5 2xl:gap-7.5">
                   <li>
                     <span className="text-black dark:text-white">Author: </span>{" "}
-                    Jhon Doe
+                    Kaizen
                   </li>
                   <li>
                     <span className="text-black dark:text-white">
-                      Published On: July 30, 2023
+                      Published On: Apr 30, 2024
                     </span>{" "}
                   </li>
                   <li>
                     <span className="text-black dark:text-white">
                       Category:
                     </span>
-                    Events
+                    health
                   </li>
                 </ul>
 
                 <div className="blog-details">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur
-                    leo. Ut venenatis rhoncus quam sed condimentum. Curabitur
-                    vel turpis in dolor volutpat imperdiet in ut mi. Integer non
-                    volutpat nulla. Nunc elementum elit viverra, tempus quam
-                    non, interdum ipsum.
+                    Understanding your family health history is more than just a precaution—it’s a proactive approach to
+                    personalized health care.
+                    Every family passes along genes to the next generation, not just eye color and hair texture, but
+                    also a
+                    predisposition for diseases and health conditions. By knowing what's come before you, you can arm
+                    yourself with
+                    knowledge and possibly prevent or mitigate health issues.
                   </p>
 
-                  <p>
-                    Aenean augue ex, condimentum vel metus vitae, aliquam porta
-                    elit. Quisque non metus ac orci mollis posuere. Mauris vel
-                    ipsum a diam interdum ultricies sed vitae neque. Nulla
-                    porttitor quam vitae pulvinar placerat. Nulla fringilla elit
-                    sit amet justo feugiat sodales. Morbi eleifend, enim non
-                    eleifend laoreet, odio libero lobortis lectus, non porttitor
-                    sem urna sit amet metus. In sollicitudin quam est,
-                    pellentesque consectetur felis fermentum vitae.
-                  </p>
-
-                  <div className="flex flex-wrap gap-5">
-                    <Image
-                      src={"/images/blog/blog-01.png"}
-                      width={350}
-                      height={200}
-                      alt="image"
-                    />
-                    <Image
-                      src={"/images/blog/blog-02.png"}
-                      width={350}
-                      height={200}
-                      alt="image"
-                    />
-                  </div>
+                  {/*<div className="flex flex-wrap gap-5">*/}
+                  {/*  <Image*/}
+                  {/*      src={"/images/blog/blog-01.png"}*/}
+                  {/*      width={350}*/}
+                  {/*      height={200}*/}
+                  {/*      alt="image"*/}
+                  {/*  />*/}
+                  {/*  <Image*/}
+                  {/*      src={"/images/blog/blog-02.png"}*/}
+                  {/*      width={350}*/}
+                  {/*      height={200}*/}
+                  {/*      alt="image"*/}
+                  {/*  />*/}
+                  {/*</div>*/}
 
                   <h3 className="pt-8">
-                    Nunc elementum elit viverra, tempus quam non
+                    Prediction of Potential Health Risks
                   </h3>
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur
-                    leo. Ut venenatis rhoncus quam sed condimentum. Curabitur
-                    vel turpis in dolor volutpat imperdiet in ut mi. Integer non
-                    volutpat nulla. Nunc elementum elit viverra, tempus quam
-                    non, interdum ipsum.
+                    Genetics play a huge role in health. Diseases like heart disease, diabetes, and cancer can run in
+                    families, showing up generation after generation. If you’re aware that these conditions are common
+                    in your family, you and your healthcare provider can create a screening and monitoring plan tailored
+                    to your specific risks. Early detection can often lead to better outcomes and less invasive
+                    treatments.
+                  </p>
+
+                  <h3 className="pt-8">
+                    Tailored Preventative Measures
+                  </h3>
+
+                  <p>
+                    With knowledge comes power—the power to act. If you know you have a high risk of heart disease based
+                    on your family history, lifestyle changes like a healthier diet, regular exercise, and quitting
+                    smoking can be lifesaving. Genetic knowledge helps tailor these preventative measures so they’re
+                    more effective, rather than taking a one-size-fits-all approach.
+                  </p>
+
+                  <h3 className="pt-8">
+                    Informing Family Members
+                  </h3>
+
+                  <p>
+                    Your health history isn’t just about you. It’s about your siblings, your children, and even extended
+                    family members. Sharing what you learn about your family health history can help others in your
+                    family take precautionary steps. It’s a domino effect of health awareness that can benefit everyone
+                    connected to you.
+                  </p>
+
+                  <h3 className="pt-8">
+                    Guiding Family Planning
+                  </h3>
+
+                  <p>
+                    For prospective parents, family health history can guide decisions about family planning. Genetic
+                    counseling can help you understand the risks of transmitting certain conditions to your children.
+                    This knowledge can be crucial in making informed decisions about pregnancy and childbearing.
                   </p>
                 </div>
 
-                <SharePost />
+                <div className="blog-details">
+                  <h2 className="pt-8">
+                    How to Collect and Use Your Family Health History
+                  </h2>
+                  <p>
+                    Now that you’re convinced about the importance of knowing your family health history, how do you actually gather this information? Here’s a quick guide:
+</p>
+                  <h4 className="pt-4">Gather Information </h4>
+                    <p>Start conversations with your relatives at family gatherings, or make phone calls to ask about the health issues that have affected your family. Aim to get information about three generations if possible—your grandparents, your parents, and your siblings.</p>
+
+                  <h4 className="pt-2">Record and Update the Information</h4>
+                    <p>Keep a record of the health information you gather. Tools like family health history charts or online genetic tracking tools can help organize this information efficiently. Remember, this should be a living document—updated with new information as it comes in, including diagnoses and health changes.</p>
+
+                  <h4 className="pt-4">Share With Your Healthcare Provider</h4>
+                    <p>Make sure to share any significant findings with your healthcare provider. They can help interpret the information and suggest appropriate screenings and preventive measures.</p>
+
+                  <h4 className="pt-4">Privacy and Sensitivity</h4>
+                  <p>When collecting family health data, remember to be sensitive and respectful of privacy. Share your purposes and how the information will benefit family health overall.</p>
+
+                  <h4 className="pt-4">Conclusion: Embrace Your Family's Health Legacy</h4>
+                  <p>Knowing your family health history is a gateway to personalized healthcare. It empowers you to preemptively tackle potential health issues and to live a healthier life. It’s about taking what’s in your genes and making informed decisions to influence what’s in your control.</p>
+
+                    <p>So, why not start today? Ask questions, gather information, and use it to guide your health journey. Your future self—and your family—will thank you for it.</p>
+                </div>
+
+                <SharePost/>
               </div>
             </div>
           </div>
