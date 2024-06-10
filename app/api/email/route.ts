@@ -13,7 +13,10 @@ export async function POST (req: Request, res: Response) {
 
   const msg = {
     to: 'info@kaizenhealth.io', // Change to your recipient
-    from: 'info@kaizenhealth.io', // Change to your verified sender
+    from: {
+      email: 'info@kaizenhealth.io',
+      name: 'Kaizen Health'
+    }, // Change to your verified sender
     subject: `${name}: Website Signup`,
     text: `${message} and email: ${email}`,
   }
