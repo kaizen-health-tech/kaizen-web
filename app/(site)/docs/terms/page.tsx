@@ -18,11 +18,14 @@ export default function DocsPage() {
                   className="blog-details blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
                 <h1>Welcome to Terms & Conditions of using Kaizen Health</h1>
 
-                <p className="text-body-color dark:text-body-color-dark text-base"><strong>This Terms of Service Agreement ("Agreement") is entered into
-                  by and between Kaizen Health ("Company"), and the user ("User") of
-                  Company's Services. By accessing or using the Services, User agrees to
-                  be bound by the terms and conditions set forth in this
-                  Agreement.</strong></p>
+                <p className="text-body-color dark:text-body-color-dark text-base">
+                  <strong>
+                    This Terms of Service Agreement ("Agreement") is entered into
+                    by and between Kaizen Health ("Company"), and the user ("User") of
+                    Company's Services. By accessing or using the Services, User agrees to
+                    be bound by the terms and conditions set forth in this Agreement.
+                  </strong>
+                </p>
 
                 <h2>1. Services Description</h2>
                 <p className="text-body-color dark:text-body-color-dark text-base">Kaizen Health provides users with access to a collection of

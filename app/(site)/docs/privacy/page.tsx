@@ -19,11 +19,16 @@ export default function DocsPage() {
                 <h1>Welcome to Privacy Documentation</h1>
 
                 <p className="text-body-color dark:text-body-color-dark text-base">
-                  This document serves as a simple template to showcase a sample
-                  layout and format. It is solely created for demonstration
-                  purposes and is not intended for any official use.
+                  This Privacy Policy Agreement ("Agreement") is entered into
+                  by and between Kaizen Health ("Company"), and the user ("User") of
+                  Company's Services. By accessing or using the Services, User agrees to
+                  be bound by the privacy policy set forth in this Agreement.
                 </p>
-                <p className="text-body-color dark:text-body-color-dark text-base"><strong>Effective Date: March 1st 2024</strong></p>
+                <p className="text-body-color dark:text-body-color-dark text-base">
+                  <strong>
+                    Effective Date: March 1st 2024
+                  </strong>
+                </p>
 
                 <p className="text-body-color dark:text-body-color-dark text-base">Kaizen Health ("we", "us", or "our") is committed to protecting the
                   privacy of our users ("user" or "you"). This Privacy Policy explains how

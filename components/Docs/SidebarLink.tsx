@@ -17,6 +17,12 @@ const SidebarLink = () => {
         >
           Terms and Conditions
         </Link>
+        <Link
+            href={`/docs/disclaimer`}
+            className={`flex w-full rounded-sm px-3 py-2 text-base text-black dark:text-white `}
+        >
+          Medical Disclaimer
+        </Link>
       </li>
     </>
   );
