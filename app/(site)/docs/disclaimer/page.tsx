@@ -73,17 +73,56 @@ export default function MedicalDisclaimer() {
                                 </p>
                                 <p className="text-body-color dark:text-body-color-dark text-base">
                                     Thank you for choosing Kaizen Health as a partner in your health journey. We
-                                        encourage you to use the health score as a starting point for conversations with
-                                        your healthcare provider and to make informed decisions about your health and
-                                        well-being.
-                                    </p>
+                                    encourage you to use the health score as a starting point for conversations with
+                                    your healthcare provider and to make informed decisions about your health and
+                                    well-being.
+                                </p>
 
-                                    <h2>Contact Us</h2>
-                                    <p className="text-body-color dark:text-body-color-dark text-base">If you have
-                                        questions
-                                        or comments about this, please
-                                        contact us at <a href="mailto:info@kaizenhealth.io">this email address</a>.
+                                <h2>Sources</h2>
+                                <ul className="">
+                                    <li>
+                                        National Health and Nutrition Examination Survey (NHANES) 2017-2018, U.S.
+                                        Department of Health and Human Services: <br/>
+                                        - [<a className="hover:text-primaryho text-primary" target={"_blank"}
+                                              href={"https://www.cdc.gov/nchs/nhanes/index.htm"}>NHANES
+                                        Website</a>]<br/>
+                                        - [<a className="hover:text-primaryho text-primary" target={"_blank"}
+                                              href={"https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017"}>NHANES
+                                        2017-2018 Data</a>]
+                                    </li>
+                                    <li>
+                                        "Resting Heart Rate and Health," Harvard Health Publishing, Harvard Medical
+                                        School, 2021:
+                                        - [<a className={"hover:text-primaryho text-primary"}
+                                              href={"https://www.health.harvard.edu/blog/resting-heart-rate-can-reflect-current-future-health-201606179806"}
+                                              target={"_blank"}>Article Link</a>]
+                                    </li>
+                                    <li>
+                                        "Step counting: a review of measurement considerations and health-related
+                                        applications," European Journal of Sport Science, 2021: <br/>
+                                        - [<a className="hover:text-primaryho text-primary" target={"_blank"}
+                                              href="https://www.tandfonline.com/doi/abs/10.1080/17461391.2020.1855073">Abstract
+                                        Link</a>] <br/>
+                                        - [<a className="hover:text-primaryho text-primary"
+                                              href={"https://www.tandfonline.com/doi/full/10.1080/17461391.2020.1855073"}>
+                                        Full-Text Link (may require subscription or institutional access)
+                                    </a>]
+                                    </li>
+
+                                    <p>
+                                        Please note that these links were accurate at the time of retrieval and
+                                        sourcing, but the availability and content of the sources may change over time.
+                                        If you encounter any issues accessing the links or require further information,
+                                        please reach out to us as info@kaizenhealth.io.
                                     </p>
+                                </ul>
+
+                                <h2>Contact Us</h2>
+                                <p className="text-body-color dark:text-body-color-dark text-base">If you have
+                                    questions
+                                    or comments about this, please
+                                    contact us at <a className={"hover:text-primaryho text-primary"} href="mailto:info@kaizenhealth.io">this email address</a>.
+                                </p>
                             </div>
                         </div>
                     </div>
