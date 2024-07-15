@@ -27,95 +27,26 @@ export default function MedicalDisclaimer() {
                                 </p>
                                 <p className="text-body-color dark:text-body-color-dark text-base"><strong>Effective
                                     Date: March 1st 2024</strong></p>
-
-                                <h2>Health Score Information</h2>
                                 <p className="text-body-color dark:text-body-color-dark text-base">
-                                    Welcome to Kaizen Health's app! We are committed to providing you with valuable
-                                    insights into your overall health and well-being. As part of our app's features,
-                                    we offer a health score that aims to give you a general idea of how your
-                                    current health metrics compare to average values within your age group and gender.
+                                    The information provided by Kaizen Health is for informational purposes only and
+                                    is not intended to substitute professional medical advice, diagnosis, or treatment.
+                                    Always seek the advice of your physician or other qualified healthcare provider
+                                    with any questions you may have regarding a medical condition. Never disregard
+                                    professional medical advice or delay in seeking it because of something you
+                                    have read on this app.
                                 </p>
 
                                 <p className="text-body-color dark:text-body-color-dark text-base">
-                                    Please note that the health score is calculated using a proprietary algorithm
-                                    that takes into account various factors such as your age, gender, weight, height,
-                                    daily step count, and resting heart rate. These metrics are compared to average
-                                    values derived from reliable health and nutrition surveys, as well as scientific
-                                    research on health-related topics.
-                                </p>
-                                <p className="text-body-color dark:text-body-color-dark text-base">
-                                    It is important to understand that the health score is intended to be a general
-                                    indicator of your health status and should not be considered a definitive medical
-                                    assessment. A score closer to 100 suggests that your health metrics are relatively
-                                    close to the ideal values for your age group and gender, while a lower score
-                                    indicates potential areas for improvement.
-                                </p>
-                                <p className="text-body-color dark:text-body-color-dark text-base">
-                                    However, please keep in mind that the health score is based on a limited set of
-                                    parameters and does not take into account your complete medical history, lifestyle
-                                    factors, or other unique circumstances that may impact your health. It is not a
-                                    substitute for professional medical advice, diagnosis, or treatment.
-                                </p>
-                                <p className="text-body-color dark:text-body-color-dark text-base">
-                                    Always consult with a qualified healthcare provider before making any
-                                    decisions or taking any actions regarding your health, particularly if you
-                                    have concerns about your health score or any other aspect of your well-being.
-                                    Your healthcare provider can provide personalized guidance based on your
-                                    specific
-                                    needs and medical history.
-                                </p>
-                                <p className="text-body-color dark:text-body-color-dark text-base">
-                                    By using the Kaizen Health app and its features, including the health score, you
-                                    acknowledge that the information provided is for informational purposes only and
-                                    does not constitute medical advice. Kaizen Health does not guarantee the accuracy,
-                                    completeness, or reliability of the health score or any other information provided
-                                    within the app.
-                                </p>
-                                <p className="text-body-color dark:text-body-color-dark text-base">
-                                    Thank you for choosing Kaizen Health as a partner in your health journey. We
-                                    encourage you to use the health score as a starting point for conversations with
-                                    your healthcare provider and to make informed decisions about your health and
-                                    well-being.
+                                    Kaizen Health does not recommend or endorse any specific tests, physicians,
+                                    products, procedures, opinions, or other information that may be
+                                    mentioned in the app. Reliance on any information provided by Kaizen Health is
+                                    solely at your own risk.
                                 </p>
 
-                                <h2>Sources</h2>
-                                <ul className="">
-                                    <li>
-                                        National Health and Nutrition Examination Survey (NHANES) 2017-2018, U.S.
-                                        Department of Health and Human Services: <br/>
-                                        - [<a className="hover:text-primaryho text-primary" target={"_blank"}
-                                              href={"https://www.cdc.gov/nchs/nhanes/index.htm"}>NHANES
-                                        Website</a>]<br/>
-                                        - [<a className="hover:text-primaryho text-primary" target={"_blank"}
-                                              href={"https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017"}>NHANES
-                                        2017-2018 Data</a>]
-                                    </li>
-                                    <li>
-                                        "Resting Heart Rate and Health," Harvard Health Publishing, Harvard Medical
-                                        School, 2021:
-                                        - [<a className={"hover:text-primaryho text-primary"}
-                                              href={"https://www.health.harvard.edu/blog/resting-heart-rate-can-reflect-current-future-health-201606179806"}
-                                              target={"_blank"}>Article Link</a>]
-                                    </li>
-                                    <li>
-                                        "Step counting: a review of measurement considerations and health-related
-                                        applications," European Journal of Sport Science, 2021: <br/>
-                                        - [<a className="hover:text-primaryho text-primary" target={"_blank"}
-                                              href="https://www.tandfonline.com/doi/abs/10.1080/17461391.2020.1855073">Abstract
-                                        Link</a>] <br/>
-                                        - [<a className="hover:text-primaryho text-primary"
-                                              href={"https://www.tandfonline.com/doi/full/10.1080/17461391.2020.1855073"}>
-                                        Full-Text Link (may require subscription or institutional access)
-                                    </a>]
-                                    </li>
-
-                                    <p>
-                                        Please note that these links were accurate at the time of retrieval and
-                                        sourcing, but the availability and content of the sources may change over time.
-                                        If you encounter any issues accessing the links or require further information,
-                                        please reach out to us as info@kaizenhealth.io.
-                                    </p>
-                                </ul>
+                                <p className="text-body-color dark:text-body-color-dark text-base">
+                                    If you think you may have a medical emergency, call your doctor, go to the
+                                    nearest emergency department, or call emergency services immediately.
+                                </p>
 
                                 <h2>Contact Us</h2>
                                 <p className="text-body-color dark:text-body-color-dark text-base">If you have
