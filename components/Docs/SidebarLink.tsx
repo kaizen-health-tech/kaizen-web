@@ -23,6 +23,12 @@ const SidebarLink = () => {
         >
           Medical Disclaimer
         </Link>
+        <Link
+            href={`/docs/healthscore`}
+            className={`flex w-full rounded-sm px-3 py-2 text-base text-black dark:text-white `}
+        >
+          How health score is calculated
+        </Link>
       </li>
     </>
   );

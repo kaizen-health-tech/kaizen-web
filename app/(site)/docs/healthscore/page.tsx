@@ -21,52 +21,34 @@ export default function HealthScore() {
 
                                 <h2>Health Score Information</h2>
                                 <p className="text-body-color dark:text-body-color-dark text-base">
-                                    Welcome to Kaizen Health's app! We are committed to providing you with valuable
-                                    insights into your overall health and well-being. As part of our app's features,
-                                    we offer a health score that aims to give you a general idea of how your
-                                    current health metrics compare to average values within your age group and gender.
+                                    At Kaizen Health, we understand that you may be curious about how your health score is determined within our app. While the exact algorithm is proprietary, we want to provide you with a general overview of the process.
                                 </p>
 
                                 <p className="text-body-color dark:text-body-color-dark text-base">
-                                    Please note that the health score is calculated using a proprietary algorithm
-                                    that takes into account various factors such as your age, gender, weight, height,
-                                    daily step count, and resting heart rate. These metrics are compared to average
-                                    values derived from reliable health and nutrition surveys, as well as scientific
-                                    research on health-related topics.
+                                    Your health score is calculated based on a combination of key health metrics, including your age, gender, weight, height, daily step count, and resting heart rate. These metrics are compared to average values derived from reputable health and nutrition surveys, such as the National Health and Nutrition Examination Survey (NHANES) conducted by the U.S. Department of Health and Human Services [<a className="hover:text-primaryho text-primary" href="#1">1</a>]
                                 </p>
                                 <p className="text-body-color dark:text-body-color-dark text-base">
-                                    It is important to understand that the health score is intended to be a general
-                                    indicator of your health status and should not be considered a definitive medical
-                                    assessment. A score closer to 100 suggests that your health metrics are relatively
-                                    close to the ideal values for your age group and gender, while a lower score
-                                    indicates potential areas for improvement [<a href="#1">1</a>].
+                                    For example, let's say you are a 35-year-old female with a weight of 68 kg, a height of 165 cm, a daily step count of 7,500, and a resting heart rate of 72 beats per minute (BPM). Our algorithm compares these values to the average metrics for your age group and gender.
                                 </p>
                                 <p className="text-body-color dark:text-body-color-dark text-base">
-                                    However, please keep in mind that the health score is based on a limited set of
-                                    parameters and does not take into account your complete medical history, lifestyle
-                                    factors, or other unique circumstances that may impact your health. It is not a
-                                    substitute for professional medical advice, diagnosis, or treatment.
+                                    According to NHANES data, the average weight for females aged 30-39 is 73.4 kg, and the average height is 161.3 cm [<a className="hover:text-primaryho text-primary" href="#1">1</a>]. Your weight and height are relatively close to these averages. For resting heart rate, a study published in the Harvard Health Publishing suggests that the average resting heart rate for adult women is around 76 BPM [<a className="hover:text-primaryho text-primary" href="#2">2</a>], which is also close to your value.
                                 </p>
                                 <p className="text-body-color dark:text-body-color-dark text-base">
+                                    Regarding daily step count, a review published in the European Journal of Sport Science indicates that the average daily step count for adults is approximately 6,500 to 7,000 steps [<a className="hover:text-primaryho text-primary" href="#3">3</a>]. Your daily step count of 7,500 is slightly above this average.
+                                </p>
+                                <p className="text-body-color dark:text-body-color-dark text-base">
+                                    Our algorithm then assigns scores to each metric based on how close they are to the ideal values for your age group and gender. These individual scores are combined to calculate your overall health score, which ranges from 0 to 100. A score closer to 100 suggests that your health metrics are relatively close to the ideal values, while a lower score indicates potential areas for improvement.
+                                </p>
+                                <p className="text-body-color dark:text-body-color-dark text-base">
+                                    It's important to note that this health score is intended to be a general indicator of your health status and should not be considered a definitive medical assessment. It is based on a limited set of parameters and does not take into account your complete medical history or other unique circumstances that may impact your health.
+                                </p>
+                                <p className="text-body-color dark:text-body-color-dark text-base">
+                                    We encourage you to use your health score as a starting point for conversations with your healthcare provider, who can offer personalized guidance based on your specific needs and medical history.
                                     Always consult with a qualified healthcare provider before making any
                                     decisions or taking any actions regarding your health, particularly if you
                                     have concerns about your health score or any other aspect of your well-being.
                                     Your healthcare provider can provide personalized guidance based on your
-                                    specific
-                                    needs and medical history.
-                                </p>
-                                <p className="text-body-color dark:text-body-color-dark text-base">
-                                    By using the Kaizen Health app and its features, including the health score, you
-                                    acknowledge that the information provided is for informational purposes only and
-                                    does not constitute medical advice. Kaizen Health does not guarantee the accuracy,
-                                    completeness, or reliability of the health score or any other information provided
-                                    within the app.
-                                </p>
-                                <p className="text-body-color dark:text-body-color-dark text-base">
-                                    Thank you for choosing Kaizen Health as a partner in your health journey. We
-                                    encourage you to use the health score as a starting point for conversations with
-                                    your healthcare provider and to make informed decisions about your health and
-                                    well-being.
+                                    specific needs and medical history.
                                 </p>
 
                                 <h2>Sources</h2>
