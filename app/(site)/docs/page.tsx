@@ -26,7 +26,7 @@ export default function DocsPage() {
                 <h1>Privacy Policy, Terms and Conditions</h1>
 
                 <p className="text-body-color dark:text-body-color-dark text-base">
-                  Please find the appropriate links in the side bar
+                  Visit the links on this page to find all the essential information about Kaizen Health, including our Terms of Service, Privacy Policy, Medical Disclaimer and how we calculate your health score. This page provides comprehensive details to help you understand our policies and how we ensure your data is protected. Stay informed and make the most out of Kaizen Health with complete transparency.
                 </p>
               </div>
             </div>
