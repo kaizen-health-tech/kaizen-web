@@ -21,7 +21,7 @@ const menuData: Menu[] = [
   },
   {
     id: 2.3,
-    title: "Terms & Privacy",
+    title: "More Info",
     newTab: false,
     path: "/docs",
   },
