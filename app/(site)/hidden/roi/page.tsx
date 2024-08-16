@@ -1,6 +1,9 @@
+import 'core-js/proposals/promise-with-resolvers';
+
 import { Metadata } from "next";
 import InvestorSidebarLink from "@/components/Docs/InvestorSidebarLink";
 import PdfViewer from "@/components/PdfViewer";
+
 
 export const metadata: Metadata = {
     title: "Return on Investment Example - Kaizen Health",
