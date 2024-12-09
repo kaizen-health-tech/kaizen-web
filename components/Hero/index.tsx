@@ -27,7 +27,7 @@ const Hero = () => {
                                 Android.
                             </p>
 
-                            <div className="hidden md:w-1/5 lg:block">
+                            <div className="w-1/3 md:w-1/3 sm:block">
                                 <div className="relative 2xl:-mr-7.5">
                                     <div className="relative aspect-[700/333] w-full">
                                         <a href="https://bit.ly/3Skmqgj" target="_blank" rel="noopener noreferrer">
