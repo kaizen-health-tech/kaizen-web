@@ -1,4 +1,3 @@
-import SidebarLink from "@/components/Docs/SidebarLink";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,7 +7,7 @@ export const metadata: Metadata = {
   // other metadata
 };
 
-export default function MedicalDisclaimer() {
+export default function Eula() {
   return (
     <>
       <section className="pb-16 pt-24 md:pb-20 md:pt-28 lg:pb-24 lg:pt-32">
@@ -137,9 +136,15 @@ export default function MedicalDisclaimer() {
                     information according to their own privacy policies
                   </li>
                   <li>
-                    Our detailed Privacy Policy, available at [Privacy Policy
-                    URL], describes how we collect, use, and protect your
-                    information
+                    Our detailed Privacy Policy, available{" "}
+                    <a
+                      href={"https://kaizenhealth.io/docs/privacy"}
+                      target="_blank"
+                    >
+                      here
+                    </a>
+                    , describes how we collect, use, and protect your
+                    information.
                   </li>
                 </ul>
 
