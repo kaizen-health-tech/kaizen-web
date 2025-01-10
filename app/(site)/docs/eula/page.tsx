@@ -3,7 +3,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "End User License Agreement - Kaizen Health",
-  description: "End User License Agreement for Kaizen Health",
+  description:
+    "End User License Agreement (EULA) for Kaizen Health - Family app. Terms and conditions for using our health tracking, medical records management, and AI health chat services. Important information about subscriptions, privacy, HIPAA compliance, and user rights.",
   // other metadata
 };
 
