@@ -29,9 +29,9 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-white fixed left-0 top-0 z-99999 w-full py-7 ${
+      className={`bg-white fixed left-0 top-0 z-99999 w-full py-1 ${
         stickyMenu
-          ? "bg-white !py-4 shadow transition duration-100 dark:bg-black"
+          ? "bg-white shadow transition duration-100 dark:bg-black"
           : ""
       }`}
     >
@@ -41,15 +41,15 @@ const Header = () => {
             <Image
               src="/images/logo/kaizen-logo.png"
               alt="logo"
-              width={119.03}
-              height={30}
+              width={240}
+              height={60}
               className="hidden w-full dark:block"
             />
             <Image
               src="/images/logo/kaizen-logo.png"
               alt="logo"
-              width={119.03}
-              height={30}
+              width={240}
+              height={40}
               className="w-full dark:hidden"
             />
           </a>
