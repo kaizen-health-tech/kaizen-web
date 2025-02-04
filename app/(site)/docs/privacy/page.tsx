@@ -14,8 +14,7 @@ export default function DocsPage() {
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 lg:w-3/4">
-              <div
-                  className="blog-details blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
+              <div className="blog-details blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
                 <h1>Welcome to Privacy Documentation</h1>
 
                 <p className="text-body-color dark:text-body-color-dark text-base">
@@ -26,9 +25,7 @@ export default function DocsPage() {
                   this Agreement.
                 </p>
                 <p className="text-body-color dark:text-body-color-dark text-base">
-                  <strong>Effective Date: March 1st 2024</strong>
-                </p>
-                <p className="text-body-color dark:text-body-color-dark text-base">
+                  <strong>Effective Date: March 1st 2024</strong> <br />
                   <strong>Last updated: Dec 12th, 2024</strong>
                 </p>
 
@@ -108,8 +105,8 @@ export default function DocsPage() {
                   <li>
                     Reach out to us using this{" "}
                     <a
-                        href="https://kaizenhealth.io/support"
-                        className="underline"
+                      href="https://kaizenhealth.io/support"
+                      className="underline"
                     >
                       support link
                     </a>{" "}
@@ -117,7 +114,10 @@ export default function DocsPage() {
                   </li>
                   <li>
                     You can also email us at{" "}
-                    <a href="mailto:info@kaizenhealth.io?subject=Account Deletion" className="underline">
+                    <a
+                      href="mailto:info@kaizenhealth.io?subject=Account Deletion"
+                      className="underline"
+                    >
                       info@kaizenhealth.io
                     </a>{" "}
                     with "Account Deletion" in the subject line from the email

@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 const Contact = () => {
   /**
@@ -10,11 +10,11 @@ const Contact = () => {
    * Reason: To fix rehydration error
    */
   const [hasMounted, setHasMounted] = React.useState(false);
-  const [fullName, setFullName] = React.useState('');
-  const [message, setMessage] = React.useState('');
-  const [selectedOption, setSelectedOption] = React.useState('General');
-  const [email, setEmail] = React.useState('');
-  const [checked, setChecked] = React.useState(false)
+  const [fullName, setFullName] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [selectedOption, setSelectedOption] = React.useState("General");
+  const [email, setEmail] = React.useState("");
+  const [checked, setChecked] = React.useState(false);
 
   React.useEffect(() => {
     setHasMounted(true);
@@ -24,37 +24,37 @@ const Contact = () => {
   }
 
   const initForm = () => {
-    setEmail('')
-    setFullName('')
-    setMessage('')
-    setSelectedOption('')
-  }
+    setEmail("");
+    setFullName("");
+    setMessage("");
+    setSelectedOption("");
+  };
 
   const submitEmail = async () => {
     if (!fullName && !email) {
-      return
+      return;
     }
     const body = {
       name: fullName,
       email: email,
       message: message,
-      type: selectedOption
-    }
-    const res = await fetch('/api/email', {
-      method: 'POST',
+      type: selectedOption,
+    };
+    const res = await fetch("/api/email", {
+      method: "POST",
       body: JSON.stringify(body),
     });
 
-    const isSuccess = await res.json()
+    const isSuccess = await res.json();
 
     if (isSuccess.success) {
-      toast("Successfully submitted the form. Thank you!")
+      toast("Successfully submitted the form. Thank you!");
     } else {
-      toast("Error while submitting form. Please try again later.")
+      toast("Error while submitting form. Please try again later.");
     }
 
-    initForm()
-  }
+    initForm();
+  };
 
   return (
     <>
@@ -78,24 +78,7 @@ const Contact = () => {
           </div>
 
           <div className="flex flex-col-reverse flex-wrap gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-20">
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-full rounded-lg bg-white p-7.5 shadow-solid-8 dark:border dark:border-strokedark dark:bg-black md:w-3/5 lg:w-3/4 xl:p-15"
-            >
+            <div className="animate_top w-full rounded-lg bg-white p-7.5 shadow-solid-8 dark:border dark:border-strokedark dark:bg-black md:w-3/5 lg:w-3/4 xl:p-15">
               <h2 className="mb-15 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
                 Contact Us
               </h2>
@@ -202,26 +185,9 @@ const Contact = () => {
                   </svg>
                 </button>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 2, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-full md:w-2/5 md:p-7.5 lg:w-[26%] xl:pt-15"
-            >
+            <div className="animate_top w-full md:w-2/5 md:p-7.5 lg:w-[26%] xl:pt-15">
               <h2 className="mb-12.5 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
                 Find us
               </h2>
@@ -240,7 +206,7 @@ const Contact = () => {
                   <a href="#">info@kaizenhealth.io</a>
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
