@@ -41,7 +41,7 @@ const Header = () => {
             <Image
               src="/images/logo/kaizen-logo.png"
               alt="logo"
-              width={240}
+              width={120}
               height={60}
               className="hidden w-full dark:block"
             />
