@@ -16,7 +16,8 @@ import HowItWorks from "@/components/HowItWorks";
 
 export const metadata: Metadata = {
   title: "Kaizen Health - Home",
-  description: "Connecting Families, Simplifying Health",
+  description:
+    "Connecting Families, Simplifying Health. Kaizen Health is a family-focused, AI-powered healthcare platform designed to simplify health management. Track vitals, securely store medical records, and monitor your well-being with our proprietary health scoring system. Stay connected to your loved ones’ health while ensuring HIPAA-compliant data security. ",
   // other metadata
 };
 
