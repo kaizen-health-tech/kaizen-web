@@ -19,7 +19,7 @@ const HowItWorks = () => {
         <ol className="mt-12 space-y-8 md:space-y-10">
           {/* Step 1 */}
           <li className="flex items-start space-x-4">
-            <div className="flex h-10 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white max-sm:h-8 max-sm:w-20">
+            <div className="flex h-10 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white max-sm:h-7 max-sm:w-25">
               1
             </div>
             <p className="text-lg text-gray-800">
@@ -31,7 +31,7 @@ const HowItWorks = () => {
 
           {/* Step 2 */}
           <li className="flex items-start space-x-4">
-            <div className="flex h-10 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white max-sm:h-8 max-sm:w-20">
+            <div className="flex h-10 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white max-sm:h-7 max-sm:w-25">
               2
             </div>
             <p className="text-lg text-gray-800">
@@ -43,7 +43,7 @@ const HowItWorks = () => {
 
           {/* Step 3 */}
           <li className="flex items-start space-x-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-lg font-bold text-white max-sm:h-8 max-sm:w-20">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-lg font-bold text-white max-sm:h-7 max-sm:w-21">
               3
             </div>
             <p className="text-lg text-gray-800">
@@ -54,7 +54,7 @@ const HowItWorks = () => {
 
           {/* Step 4 */}
           <li className="flex items-start space-x-4">
-            <div className="flex h-10 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white max-sm:h-8 max-sm:w-20">
+            <div className="flex h-10 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white max-sm:h-7 max-sm:w-22">
               4
             </div>
             <p className="text-lg text-gray-800">
@@ -65,7 +65,7 @@ const HowItWorks = () => {
 
           {/* Step 5 */}
           <li className="flex items-start space-x-4">
-            <div className="flex h-10 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white max-sm:h-8 max-sm:w-20">
+            <div className="flex h-10 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white max-sm:h-7 max-sm:w-25">
               5
             </div>
             <p className="text-lg text-gray-800">

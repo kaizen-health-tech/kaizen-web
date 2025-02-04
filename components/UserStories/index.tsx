@@ -4,7 +4,7 @@ import Image from "next/image";
 const UserStories = () => {
   const stories = [
     {
-      title: "“Caring for Aging Parents with Ease” (The Family Caregiver)",
+      title: "Caring for Aging Parents with Ease (The Family Caregiver)",
       description:
         "Priya has a demanding job, two kids, and aging parents who require frequent medical checkups. Managing their prescriptions, doctor appointments, and health records across multiple platforms is overwhelming. She finds Kaizen Health, which allows her to securely store all their health records, receive real-time health score updates, and set reminders for checkups and medications—all in one place.",
       image: "/images/user/Health-Records.gif",
@@ -13,7 +13,7 @@ const UserStories = () => {
     },
     {
       title:
-        "“The Health-Conscious Professional” (Tracking & Optimizing Well-Being)",
+        "The Health-Conscious Professional (Tracking & Optimizing Well-Being)",
       description:
         "Alex works long hours and needs to maintain peak performance. He wears a smartwatch and tracks his steps, heart rate, and sleep, but the data feels scattered. With Kaizen Health, he can sync his wearable device, analyze his health trends, and get AI-driven recommendations to improve his fitness. The personalized health score helps him see how his diet and workouts impact his well-being over time.",
       image: "/images/user/AI.gif",
@@ -21,7 +21,7 @@ const UserStories = () => {
       reverse: true,
     },
     {
-      title: "“New Parent Managing Baby’s Health” (Organizing Pediatric Care)",
+      title: "New Parent Managing Baby’s Health (Organizing Pediatric Care)",
       description:
         "As a first-time parent, Sarah feels anxious about keeping up with her baby’s vaccinations, checkups, and medical history. She often misplaces paper records and forgets appointment dates. Kaizen Health provides a centralized, digital health profile for her baby, with reminders for vaccinations and doctor visits. The secure document storage ensures she never loses medical records, and the AI assistant offers parenting health tips based on her baby’s data.",
       image: "/images/user/Health-Records.gif",
@@ -57,7 +57,7 @@ const UserStories = () => {
               </div>
               {/*Text Container*/}
               <div className="lg:w-2/3">
-                <h3 className="text-2xl font-semibold text-secondary mb-4">
+                <h3 className="text-2xl font-semibold text-secondary mb-4 text-primaryho">
                   {story.title}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
