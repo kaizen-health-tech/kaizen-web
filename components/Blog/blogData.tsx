@@ -3,8 +3,9 @@ import { Blog } from "@/types/blog";
 const BlogData: Blog[] = [
   {
     _id: 1,
-    mainImage: "/images/blog/blog-01.png",
-    title: "Understanding Family Health History: Why It's Vital for Your Well-being",
+    mainImage: "/images/blog/family-history.jpeg",
+    title:
+      "Understanding Family Health History: Why It's Vital for Your Well-being",
     metadata:
       "Discover the importance of knowing your family health history and how it can significantly impact your preventive health strategies. Learn why family health knowledge is crucial.",
   },
