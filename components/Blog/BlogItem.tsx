@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const BlogItem = ({ blog }: { blog: Blog }) => {
-  const { mainImage, title, metadata } = blog;
+  const { mainImage, title, metadata, url } = blog;
 
   return (
     <>
@@ -38,9 +38,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
 
         <div className="px-4">
           <h3 className="mb-3.5 mt-7.5 line-clamp-2 inline-block text-lg font-medium text-black duration-300 hover:text-primary dark:text-white dark:hover:text-primary xl:text-itemtitle2">
-            <Link href={`/blog/family-history`}>
-              {`${title.slice(0, 40)}...`}
-            </Link>
+            <Link href={url}>{`${title.slice(0, 40)}...`}</Link>
           </h3>
           <p className="line-clamp-3">{metadata}</p>
         </div>

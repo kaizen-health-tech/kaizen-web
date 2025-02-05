@@ -38,11 +38,11 @@ const FamilyHistory = async () => {
                 <ul className="mb-9 flex flex-wrap gap-5 2xl:gap-7.5">
                   <li>
                     <span className="text-black dark:text-white">Author: </span>{" "}
-                    Kaizen
+                    Kaizen Health
                   </li>
                   <li>
                     <span className="text-black dark:text-white">
-                      Published On: Feb 5, 2025
+                      Published On: Jan 5, 2025
                     </span>{" "}
                   </li>
                   <li>
