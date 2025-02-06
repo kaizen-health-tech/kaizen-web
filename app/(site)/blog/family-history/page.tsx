@@ -226,7 +226,11 @@ const FamilyHistory = async () => {
                   </p>
                 </div>
 
-                <SharePost />
+                <SharePost
+                  url="https://kaizenhealth.io/blog/family-history"
+                  text="Checkout this blog post on Kaizen Health!"
+                  hashtags={["health", "wellness", "AI"]}
+                />
               </div>
             </div>
           </div>

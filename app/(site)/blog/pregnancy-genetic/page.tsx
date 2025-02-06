@@ -261,7 +261,11 @@ const SingleBlogPage = async () => {
                   </p>
                 </div>
 
-                <SharePost />
+                <SharePost
+                  url="https://kaizenhealth.io/blog/pregnancy-genetic"
+                  text="Checkout this blog post on Kaizen Health!"
+                  hashtags={["health", "wellness", "AI"]}
+                />
               </div>
             </div>
           </div>
