@@ -18,13 +18,14 @@ const BlogData: Blog[] = [
       "And how AI can help with early detection of genetic conditions during pregnancy.",
     url: "/blog/pregnancy-genetic",
   },
-  // {
-  //   _id: 2,
-  //   mainImage: "/images/blog/blog-03.png",
-  //   title: "Tips to quickly improve your coding speed.",
-  //   metadata:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
-  // },
+  {
+    _id: 3,
+    mainImage: "/images/blog/diabetes-magnesium-vitamin-d.jpeg",
+    title: "The Connection Between Diabetes, Vitamin D, and Magnesium",
+    metadata:
+      "Discover how Vitamin D and Magnesium influence insulin sensitivity and glycemic control.",
+    url: "/blog/diabetes-magnesium-vitamin-d",
+  },
   // {
   //   _id: 1,
   //   mainImage: "/images/blog/blog-03.png",
