@@ -28,11 +28,12 @@ const Hero = () => {
             </p>
 
             {/* App Store Button */}
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-start w-full sm:flex-column">
               <a
-                href="https://bit.ly/3Skmqgj"
+                href="https://bit.ly/kz-app-store"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="self-center"
               >
                 <Image
                   src="/images/hero/app-store-light.svg"
@@ -41,12 +42,19 @@ const Hero = () => {
                   width={160}
                   height={50}
                 />
+              </a>
+              <a
+                href="https://bit.ly/kz-android-store"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="self-center ml-3"
+              >
                 <Image
-                  src="/images/about/app-store-dark.svg"
+                  src="/images/hero/android-store-dark.svg"
                   alt="App Store"
-                  className="hidden dark:block w-40"
-                  width={160}
-                  height={50}
+                  className="dark:hidden w-40"
+                  width={120}
+                  height={60}
                 />
               </a>
             </div>
