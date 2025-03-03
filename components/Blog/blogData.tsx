@@ -26,6 +26,15 @@ const BlogData: Blog[] = [
       "Discover how Vitamin D and Magnesium influence insulin sensitivity and glycemic control.",
     url: "/blog/diabetes-magnesium-vitamin-d",
   },
+  {
+    _id: 4,
+    mainImage: "/images/blog/yogurt.jpeg",
+    title:
+      "Yogurt Consumption and Colorectal Cancer Risk: A Comprehensive Analysis of Emerging Evidence",
+    metadata:
+      "Discover how Vitamin D and Magnesium influence insulin sensitivity and glycemic control.",
+    url: "/blog/cancer/colorectal-cancer-risk",
+  },
   // {
   //   _id: 1,
   //   mainImage: "/images/blog/blog-03.png",
