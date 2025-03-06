@@ -23,8 +23,7 @@ const Hero = () => {
               Kaizen Health empowers users for better health control and secure
               health data management. Tailored for individuals, families, and
               healthcare enthusiasts, it offers a user-friendly platform
-              compliant with HIPAA. Available on the app store now and launching
-              soon for Android.
+              compliant with HIPAA. Available on both the app and play store.
             </p>
 
             {/* App Store Button */}
