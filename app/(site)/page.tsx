@@ -13,6 +13,7 @@ import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 import HowItWorks from "@/components/HowItWorks";
+import WhyKaizen from "@/components/WhyKaizen";
 
 export const metadata: Metadata = {
   title: "Kaizen Health - Home",
@@ -27,6 +28,7 @@ export default function Home() {
       <Hero />
       {/*<Brands />*/}
       <HowItWorks />
+      <WhyKaizen />
       {/*<Feature />*/}
       <UserStories />
       {/*<FeaturesTab />*/}
