@@ -35,27 +35,15 @@ const BlogData: Blog[] = [
       "Discover how Vitamin D and Magnesium influence insulin sensitivity and glycemic control.",
     url: "/blog/cancer/colorectal-cancer-risk",
   },
-  // {
-  //   _id: 1,
-  //   mainImage: "/images/blog/blog-03.png",
-  //   title: "Free advertising for your online business",
-  //   metadata:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
-  // },
-  // {
-  //   _id: 2,
-  //   mainImage: "/images/blog/blog-04.png",
-  //   title: "9 simple ways to improve your design skills",
-  //   metadata:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
-  // },
-  // {
-  //   _id: 2,
-  //   mainImage: "/images/blog/blog-01.png",
-  //   title: "Tips to quickly improve your coding speed.",
-  //   metadata:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
-  // },
+  {
+    _id: 5,
+    mainImage: "/images/blog/family-health.png",
+    title:
+      "Why Family Health History Matters for Longevity and Disease Prevention",
+    metadata:
+      "Understanding your family health history is crucial for assessing inherited risk factors and planning preventive healthcare strategies.",
+    url: "/blog/family-history/documenting-family-health",
+  },
 ];
 
 export default BlogData;
