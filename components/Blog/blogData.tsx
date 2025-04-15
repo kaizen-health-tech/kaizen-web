@@ -44,6 +44,14 @@ const BlogData: Blog[] = [
       "Understanding your family health history is crucial for assessing inherited risk factors and planning preventive healthcare strategies.",
     url: "/blog/family-history/documenting-family-health",
   },
+  {
+    _id: 6,
+    mainImage: "/images/blog/caregiver-guide.jpeg",
+    title: "Supporting Aging Parents: A Caregiver’s Guide",
+    metadata:
+      "Comprehensive caregiving guide with tips on home safety, stress management, legal planning, and senior care services.",
+    url: "/blog/family-history/caregiver-guide-aging-parents",
+  },
 ];
 
 export default BlogData;

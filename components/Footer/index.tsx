@@ -60,7 +60,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="/careers"
                         className="mb-3 inline-block hover:text-primary"
                       >
                         Careers
