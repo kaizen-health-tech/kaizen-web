@@ -5,15 +5,19 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const roles = [
   {
-    title: "Frontend Engineer (React)",
+    title: "Frontend Engineer (React Native)",
     location: "Remote · Full-time",
     description: `Responsibilities:
-- Build and maintain scalable React components.
+- Build and maintain scalable React Native components.
 - Work closely with design and product to iterate on features.
+- Manage releases
 
 Requirements:
-- 3+ years React experience.
-- Familiarity with TailwindCSS and Next.js.`,
+- 5+ years React experience.
+- Vibe coder who can understand code and pass the heavy lifting to our AI counterparts
+- Native development experience with iOS (Swift) and/or Android (Kotlin) is a plus
+- Excellent communication and collaboration abilities
+- Continuous learning and adapting to new tech`,
   },
   {
     title: "Product Designer",
