@@ -120,62 +120,79 @@ const SupportingAgingParents = () => {
           <HeadingWithAnchor id="home-safety-modifications-checklist">
             Home Safety Modifications Checklist
           </HeadingWithAnchor>
-          <p>
-            Making the home environment safer is a top priority when caring for
-            aging parents. Falls are the leading cause of serious injuries in
-            older adults, so simple home modifications can greatly reduce risk
-            and help your parent remain independent. The diagram above
-            highlights key safety tips: removing tripping hazards (like loose
-            rugs), improving lighting, installing grab bars in the bathroom,
-            adding ramps or handrails for accessibility, and using nonslip
-            strips on slippery surfaces. Regularly walk through your parent’s
-            home to spot potential dangers and address them. Use the following
-            checklist of home safety updates to create a secure, elder-friendly
-            home
-          </p>
-          <ul className="list-disc pl-5">
-            <li className="mt-3">
-              <span className="font-semibold">Remove tripping hazards:</span>{" "}
-              Clear clutter from walkways and remove or secure loose rugs and
-              electrical cords that could cause trips. Ensure floors are even;
-              consider fixing raised thresholds or using gentle indoor ramps if
-              there are step-ups between rooms. Keep frequently used items
-              within easy reach to avoid your parent climbing on stools or
-              bending in precarious ways.
-            </li>
-            <li className="mt-3">
-              <span className="font-semibold"> Improve lighting:</span> Ensure
-              good lighting throughout the home, especially at the top and
-              bottom of stairs and along hallways. Use bright, non-glare bulbs
-              and install nightlights in the bedroom, hallway, and bathroom for
-              safe navigation at night. Motion-activated lights can be helpful
-              for outdoor walkways or dark areas.
-            </li>
-            <li className="mt-3">
-              <span className="font-semibold">
-                Install grab bars and railings:
-              </span>{" "}
-              Install sturdy grab bars near toilets and inside the tub or shower
-              to provide support in bathrooms. Ensure stairways have secure
-              handrails on at least one side (preferably both). If your parent
-              struggles with stairs, consider adding a second railing or even a
-              stairlift for multi-level homes. A ramp with handrails at the
-              front entrance can make entering/exiting the home safer for those
-              using walkers or wheelchairs.
-            </li>
-            <li className="mt-3">
-              <span className="font-semibold">
-                Home security and emergency systems:
-              </span>{" "}
-              Check that doors and windows have reliable locks. For added peace
-              of mind, you might install a basic security system or medical
-              alert system. Personal emergency response systems are wearable
-              devices (pendants or wristbands) that let your parent call for
-              help at the push of a button, and many can automatically detect
-              falls. These systems are especially important if your parent lives
-              alone or spends time alone.
-            </li>
-          </ul>
+          <div className="flex flex-col md:flex-row gap-8 mb-8">
+            <div className="md:w-1/2">
+              <Image
+                src="/images/blog/caregiver-home-safety.png"
+                alt="Home safety for aging parents"
+                width={600}
+                height={400}
+                className="rounded-md w-full object-contain"
+              />
+            </div>
+            <div className="md:w-1/2">
+              <p>
+                Making the home environment safer is a top priority when caring
+                for aging parents. Falls are the leading cause of serious
+                injuries in older adults, so simple home modifications can
+                greatly reduce risk and help your parent remain independent. The
+                diagram above highlights key safety tips: removing tripping
+                hazards (like loose rugs), improving lighting, installing grab
+                bars in the bathroom, adding ramps or handrails for
+                accessibility, and using nonslip strips on slippery surfaces.
+                Regularly walk through your parent’s home to spot potential
+                dangers and address them. Use the following checklist of home
+                safety updates to create a secure, elder-friendly home
+              </p>
+              <ul className="list-disc pl-5">
+                <li className="mt-3">
+                  <span className="font-semibold">
+                    Remove tripping hazards:
+                  </span>{" "}
+                  Clear clutter from walkways and remove or secure loose rugs
+                  and electrical cords that could cause trips. Ensure floors are
+                  even; consider fixing raised thresholds or using gentle indoor
+                  ramps if there are step-ups between rooms. Keep frequently
+                  used items within easy reach to avoid your parent climbing on
+                  stools or bending in precarious ways.
+                </li>
+                <li className="mt-3">
+                  <span className="font-semibold"> Improve lighting:</span>{" "}
+                  Ensure good lighting throughout the home, especially at the
+                  top and bottom of stairs and along hallways. Use bright,
+                  non-glare bulbs and install nightlights in the bedroom,
+                  hallway, and bathroom for safe navigation at night.
+                  Motion-activated lights can be helpful for outdoor walkways or
+                  dark areas.
+                </li>
+                <li className="mt-3">
+                  <span className="font-semibold">
+                    Install grab bars and railings:
+                  </span>{" "}
+                  Install sturdy grab bars near toilets and inside the tub or
+                  shower to provide support in bathrooms. Ensure stairways have
+                  secure handrails on at least one side (preferably both). If
+                  your parent struggles with stairs, consider adding a second
+                  railing or even a stairlift for multi-level homes. A ramp with
+                  handrails at the front entrance can make entering/exiting the
+                  home safer for those using walkers or wheelchairs.
+                </li>
+                <li className="mt-3">
+                  <span className="font-semibold">
+                    Home security and emergency systems:
+                  </span>{" "}
+                  Check that doors and windows have reliable locks. For added
+                  peace of mind, you might install a basic security system or
+                  medical alert system. Personal emergency response systems are
+                  wearable devices (pendants or wristbands) that let your parent
+                  call for help at the push of a button, and many can
+                  automatically detect falls. These systems are especially
+                  important if your parent lives alone or spends time alone.
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <p className="mt-3">
             Explore{" "}
             <Link
@@ -191,81 +208,102 @@ const SupportingAgingParents = () => {
           <HeadingWithAnchor id="managing-caregiver-stress-and-emotions">
             Managing Caregiver Stress and Emotions
           </HeadingWithAnchor>
-          <p>
-            Supporting an aging parent can be emotionally and physically taxing.
-            It’s normal to feel overwhelmed, guilty, or stressed – caregiving is
-            a big responsibility, and your own life is impacted. Remember that
-            to care for your loved one well, you must also take care of
-            yourself. Below is a checklist of strategies to manage caregiver
-            stress and protect your well-being:
-          </p>
-          <ul className="list-disc pl-5">
-            <li className="mt-3">
-              <span className="font-semibold">Ask for and accept help:</span>{" "}
-              You don’t have to do this alone. Identify specific tasks others
-              could help with (e.g. a sibling can handle paying bills or a
-              friend can cook a meal) and let them choose how to assist. When
-              someone offers support, say “yes” and be clear about what would
-              help you most. Consider using a family calendar or caregiving app
-              to delegate and coordinate responsibilities among family members.
-            </li>
-            <li className="mt-3">
-              <span className="font-semibold">Set realistic limits:</span>{" "}
-              Recognize that no one is a perfect caregiver ￼ – and that’s okay.
-              Prioritize tasks and set small, achievable goals each day rather
-              than trying to do everything. It’s fine to say no to additional
-              commitments that you don’t have energy for. By setting boundaries
-              (for example, deciding you cannot provide care during overnight
-              hours or you need Sundays off), you protect yourself from burnout.
-            </li>
-            <li className="mt-3">
-              <span className="font-semibold">
-                Take regular breaks (respite care):
-              </span>{" "}
-              Taking time off is crucial for recharging. Seek out respite care
-              options so you can have a break from caregiving duties. This might
-              mean asking a relative to stay with your parent for an afternoon,
-              hiring a qualified caregiver occasionally, or using adult day care
-              programs where your parent can socialize safely while you get time
-              for yourself. Taking a break can be one of the best things you do
-              for both yourself and your loved one, preventing exhaustion and
-              resentment. Even a few hours a week to run errands, enjoy a hobby,
-              or just rest can make a big difference.
-            </li>
-            <li className="mt-3">
-              <span className="font-semibold">
-                Stay connected and seek support:
-              </span>{" "}
-              Caregiving can feel isolating, but remember that you are not
-              alone. Keep in touch with friends and family – a phone call or
-              coffee with someone who cares can relieve stress. Join a caregiver
-              support group (online or in-person) to share experiences with
-              people who truly understand. Fellow caregivers can offer practical
-              advice and emotional support, and even some much-needed
-              camaraderie. These groups “allow caregivers to share experiences,
-              exchange information, and point each other toward organizations
-              that can help”. Support group peers can cheer you on and help
-              solve problems, making you feel understood and less alone. If
-              you’re struggling with intense emotions, consider speaking with a
-              counselor or therapist – it is strong, not weak, to seek help for
-              your own mental health.
-            </li>
-            <li className="mt-3">
-              <span className="font-semibold">Prioritize your health:</span>{" "}
-              Ironically, caregivers often neglect their own health
-              appointments, exercise, or sleep because they’re busy. Try not to
-              let this happen – your health matters. Make time to see your
-              doctor for regular checkups (inform them you’re a caregiver and
-              discuss any stress-related symptoms you have). Aim for adequate
-              sleep each night; if sleep is disrupted due to nighttime
-              caregiving, see if family or hired help can occasionally cover so
-              you can rest. Keep up with some form of exercise, even short walks
-              or stretching, to boost your mood and energy. Eat regular, healthy
-              meals and stay hydrated – nutrition fuels you to cope with long
-              days. In short, don’t hesitate to put your needs on the list; a
-              healthier, happier caregiver can provide better care.
-            </li>
-          </ul>
+          <div className="flex flex-col md:flex-row gap-8 mb-8">
+            <div className="md:w-1/2">
+              <p>
+                Supporting an aging parent can be emotionally and physically
+                taxing. It’s normal to feel overwhelmed, guilty, or stressed –
+                caregiving is a big responsibility, and your own life is
+                impacted. Remember that to care for your loved one well, you
+                must also take care of yourself. Below is a checklist of
+                strategies to manage caregiver stress and protect your
+                well-being:
+              </p>
+              <ul className="list-disc pl-5">
+                <li className="mt-3">
+                  <span className="font-semibold">
+                    Ask for and accept help:
+                  </span>{" "}
+                  You don’t have to do this alone. Identify specific tasks
+                  others could help with (e.g. a sibling can handle paying bills
+                  or a friend can cook a meal) and let them choose how to
+                  assist. When someone offers support, say “yes” and be clear
+                  about what would help you most. Consider using a family
+                  calendar or caregiving app to delegate and coordinate
+                  responsibilities among family members.
+                </li>
+                <li className="mt-3">
+                  <span className="font-semibold">Set realistic limits:</span>{" "}
+                  Recognize that no one is a perfect caregiver ￼ – and that’s
+                  okay. Prioritize tasks and set small, achievable goals each
+                  day rather than trying to do everything. It’s fine to say no
+                  to additional commitments that you don’t have energy for. By
+                  setting boundaries (for example, deciding you cannot provide
+                  care during overnight hours or you need Sundays off), you
+                  protect yourself from burnout.
+                </li>
+                <li className="mt-3">
+                  <span className="font-semibold">
+                    Take regular breaks (respite care):
+                  </span>{" "}
+                  Taking time off is crucial for recharging. Seek out respite
+                  care options so you can have a break from caregiving duties.
+                  This might mean asking a relative to stay with your parent for
+                  an afternoon, hiring a qualified caregiver occasionally, or
+                  using adult day care programs where your parent can socialize
+                  safely while you get time for yourself. Taking a break can be
+                  one of the best things you do for both yourself and your loved
+                  one, preventing exhaustion and resentment. Even a few hours a
+                  week to run errands, enjoy a hobby, or just rest can make a
+                  big difference.
+                </li>
+                <li className="mt-3">
+                  <span className="font-semibold">
+                    Stay connected and seek support:
+                  </span>{" "}
+                  Caregiving can feel isolating, but remember that you are not
+                  alone. Keep in touch with friends and family – a phone call or
+                  coffee with someone who cares can relieve stress. Join a
+                  caregiver support group (online or in-person) to share
+                  experiences with people who truly understand. Fellow
+                  caregivers can offer practical advice and emotional support,
+                  and even some much-needed camaraderie. These groups “allow
+                  caregivers to share experiences, exchange information, and
+                  point each other toward organizations that can help”. Support
+                  group peers can cheer you on and help solve problems, making
+                  you feel understood and less alone. If you’re struggling with
+                  intense emotions, consider speaking with a counselor or
+                  therapist – it is strong, not weak, to seek help for your own
+                  mental health.
+                </li>
+                <li className="mt-3">
+                  <span className="font-semibold">Prioritize your health:</span>{" "}
+                  Ironically, caregivers often neglect their own health
+                  appointments, exercise, or sleep because they’re busy. Try not
+                  to let this happen – your health matters. Make time to see
+                  your doctor for regular checkups (inform them you’re a
+                  caregiver and discuss any stress-related symptoms you have).
+                  Aim for adequate sleep each night; if sleep is disrupted due
+                  to nighttime caregiving, see if family or hired help can
+                  occasionally cover so you can rest. Keep up with some form of
+                  exercise, even short walks or stretching, to boost your mood
+                  and energy. Eat regular, healthy meals and stay hydrated –
+                  nutrition fuels you to cope with long days. In short, don’t
+                  hesitate to put your needs on the list; a healthier, happier
+                  caregiver can provide better care.
+                </li>
+              </ul>
+            </div>
+            <div className="md:w-1/2">
+              <Image
+                src="/images/blog/caregiver-self-care.png"
+                alt="Self Care for caregivers"
+                width={600}
+                height={400}
+                className="rounded-md w-full object-contain"
+              />
+            </div>
+          </div>
           <p className="mt-4">
             Finally, be kind to yourself. Recognize the incredible job you are
             doing by being there for your parent. Feelings like guilt or
