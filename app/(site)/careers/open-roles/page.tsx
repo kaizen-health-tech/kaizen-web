@@ -7,6 +7,7 @@ const roles = [
   {
     title: "Frontend Engineer (React Native)",
     location: "Remote · Full-time",
+    contact: "mailto:careers@kaizenhealth.io",
     description: `Responsibilities:
 - Build and maintain scalable React Native components.
 - Work closely with design and product to iterate on features.
@@ -22,6 +23,7 @@ Requirements:
   {
     title: "Product Designer",
     location: "San Francisco · Full-time",
+    contact: "mailto:careers@kaizenhealth.io",
     description: `Responsibilities:
 - Design clean, user-centered healthcare interfaces.
 - Collaborate with engineering to ship seamless experiences.
@@ -70,7 +72,13 @@ export default function OpenRolesPage() {
                     transition={{ duration: 0.3 }}
                     className="mt-4 overflow-hidden whitespace-pre-line text-gray-700 dark:text-gray-300"
                   >
-                    {role.description}
+                    <div>{role.description}</div>
+                    <a
+                      href={role.contact}
+                      className="inline-block mt-4 px-4 py-2 bg-primary text-white font-semibold rounded hover:bg-primary/90 transition"
+                    >
+                      Apply now
+                    </a>
                   </motion.div>
                 )}
               </AnimatePresence>
