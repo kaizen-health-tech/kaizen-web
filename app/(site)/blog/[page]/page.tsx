@@ -37,7 +37,13 @@ export const metadata: Metadata = {
   },
 };
 
-const BlogPage = async ({ params }: { params: { page?: string } }) => {
+interface BlogPageProps {
+  params: {
+    page: string;
+  };
+}
+
+const BlogPage = async ({ params }) => {
   const pageNumber = parseInt(params?.page || "1", 10);
   const start = (pageNumber - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
