@@ -141,7 +141,7 @@ const Header = () => {
                         (
                           menuItem.path === "/"
                             ? pathUrl === "/"
-                            : pathUrl.startsWith(menuItem.path)
+                            : menuItem.path && pathUrl.startsWith(menuItem.path)
                         )
                           ? "text-primary hover:text-primary"
                           : "hover:text-primary"
