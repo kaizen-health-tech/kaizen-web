@@ -41,7 +41,7 @@ export default function OpenRolesPage() {
     <section className="py-20 px-4 md:px-10 lg:px-20 bg-white dark:bg-blacksection">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold text-black dark:text-white mb-10">
-          Explore Open Roles at Kaizen Health
+          Current open roles
         </h1>
 
         <ul className="text-left space-y-4">

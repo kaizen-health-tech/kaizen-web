@@ -138,7 +138,11 @@ const Header = () => {
                     <Link
                       href={`${menuItem.path}`}
                       className={
-                        pathUrl === menuItem.path
+                        (
+                          menuItem.path === "/"
+                            ? pathUrl === "/"
+                            : pathUrl.startsWith(menuItem.path)
+                        )
                           ? "text-primary hover:text-primary"
                           : "hover:text-primary"
                       }
