@@ -3,7 +3,7 @@ import React from "react";
 const WhyKaizen = () => {
   const categories = [
     {
-      title: "Understand Genetic predisposition",
+      title: "Understand Genetic Predisposition",
       description:
         "Understand your family’s health blueprint. Genetic insights mined securely from your family data, help you stay ahead of potential risks and make informed care decisions for your loved ones.",
     },
@@ -29,7 +29,7 @@ const WhyKaizen = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-12 md:mb-16">
-          <h2 className="text-5xl font-bold mb-6">How It Works</h2>
+          <h2 className="text-5xl font-bold mb-6">Why Kaizen</h2>
           <p className="text-xl md:text-2xl max-w-3xl leading-relaxed">
             At Kaizen Health, we believe that family health is the foundation of
             a strong, connected life. When families are informed and empowered,
