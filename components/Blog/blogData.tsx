@@ -2,6 +2,13 @@ import { Blog } from "@/types/blog";
 
 const BlogData: Blog[] = [
   {
+    _id: 0,
+    mainImage: "/images/blog/creatine.jpeg",
+    title: "Importance and benefits of creatine",
+    metadata: "Creatine in Aging Adults: Importance, Benefits & Guidelines",
+    url: "/blog/health/creatine",
+  },
+  {
     _id: 1,
     mainImage: "/images/blog/family-history.jpeg",
     title:
