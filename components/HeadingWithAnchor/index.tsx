@@ -6,7 +6,7 @@ import { LinkIcon } from "@heroicons/react/24/outline";
 interface HeadingWithAnchorProps {
   id: string;
   children: ReactNode;
-  size: string;
+  size?: string;
 }
 
 const HeadingWithAnchor = ({ id, children, size }: HeadingWithAnchorProps) => {
