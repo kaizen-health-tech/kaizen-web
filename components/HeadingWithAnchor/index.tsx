@@ -6,9 +6,10 @@ import { LinkIcon } from "@heroicons/react/24/outline";
 interface HeadingWithAnchorProps {
   id: string;
   children: ReactNode;
+  size: string;
 }
 
-const HeadingWithAnchor = ({ id, children }: HeadingWithAnchorProps) => {
+const HeadingWithAnchor = ({ id, children, size }: HeadingWithAnchorProps) => {
   const handleClick = () => {
     const fullUrl = `${window.location.origin}${window.location.pathname}#${id}`;
     navigator.clipboard.writeText(fullUrl);
@@ -17,10 +18,10 @@ const HeadingWithAnchor = ({ id, children }: HeadingWithAnchorProps) => {
   return (
     <h2
       id={id}
-      className="group scroll-mt-32 mt-14 mb-6 flex items-center gap-2 text-2xl font-bold tracking-tight dark:text-white"
+      className={`group scroll-mt-32 mt-14 mb-6 flex items-center gap-2 tracking-tight dark:text-white`}
       aria-label={typeof children === "string" ? children : undefined}
     >
-      <span>{children}</span>
+      <span className={`${size || "text-2xl"}`}>{children}</span>
       <button
         onClick={handleClick}
         className="invisible group-hover:visible"

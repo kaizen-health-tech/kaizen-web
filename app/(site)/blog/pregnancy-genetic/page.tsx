@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   // other metadata
 };
 
-const SingleBlogPage = async () => {
+const PregnancyGenetic = async () => {
   return (
     <>
       <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
@@ -275,4 +275,4 @@ const SingleBlogPage = async () => {
   );
 };
 
-export default SingleBlogPage;
+export default PregnancyGenetic;

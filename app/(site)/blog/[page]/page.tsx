@@ -47,7 +47,9 @@ const BlogPage = async ({ params }) => {
   const pageNumber = parseInt(params?.page || "1", 10);
   const start = (pageNumber - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
-  const paginatedPosts = BlogData.slice(start, end);
+  const paginatedPosts = [...BlogData]
+    .sort((a, b) => b.id - a.id)
+    .slice(start, end);
 
   if (pageNumber < 1 || paginatedPosts.length === 0) {
     notFound();
