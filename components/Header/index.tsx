@@ -35,7 +35,7 @@ const Header = () => {
           : ""
       }`}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
+      <div className="relative mx-auto max-w-c-1390 items-center justify-between p-4 rounded-lg px-4 md:px-8 xl:flex 2xl:px-0 shadow-lg">
         <div className="flex w-full items-center justify-between xl:w-1/4">
           <a href="/">
             <Image
@@ -97,12 +97,12 @@ const Header = () => {
 
         {/* Nav Menu Start   */}
         <div
-          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
+          className={`invisible h-0 w-full items-center justify-end xl:visible xl:flex xl:h-auto xl:w-full ${
             navigationOpen &&
             "navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
           }`}
         >
-          <nav>
+          <nav className="mr-5">
             <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
               {menuData.map((menuItem, key) => (
                 <li key={key} className={menuItem.submenu && "group relative"}>
@@ -154,6 +154,15 @@ const Header = () => {
               ))}
             </ul>
           </nav>
+
+          <div className="flex items-center justify-end">
+            <Link
+              href="https://bit.ly/kz-android-store"
+              className="w-full xl:w-auto mt-4 xl:mt-0 flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+            >
+              Try it for free
+            </Link>
+          </div>
 
           {/*<div className="mt-7 flex items-center gap-6 xl:mt-0">*/}
           {/*  <ThemeToggler />*/}

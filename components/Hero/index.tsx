@@ -1,68 +1,105 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 
+/**
+ * Hero section – full-width layout.
+ * Features:
+ *  • Brand headline with accent colour (#6C42E3).
+ *  • App-store badges.
+ *  • Responsive family hero image.
+ *  • Glass-blur overlay card with USP + stats.
+ */
 const Hero = () => {
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   return (
-    <section className="overflow-hidden pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46 bg-primary">
-      <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-        {/* Responsive Flex Container */}
-        <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:gap-8 xl:gap-32.5">
-          {/* Content Section */}
-          <div className="md:w-full lg:w-1/2 text-center lg:text-left">
-            <h1 className="mb-5 text-3xl font-bold text-white xl:text-hero">
-              Connecting Families, Simplifying Health.
-            </h1>
-            <p className="text-white mb-6">
-              Kaizen Health empowers users for better health control and secure
-              health data management. Tailored for individuals, families, and
-              healthcare enthusiasts, it offers a user-friendly platform
-              compliant with HIPAA. Available on both the app and play store.
-            </p>
+    <section className="w-full bg-white pt-24 pb-8 mt-4">
+      {/* Copy block */}
+      <div className="px-4 md:px-8 max-w-screen-xl mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl text-black font-semibold leading-tight mt-6">
+          Connecting Families,
+        </h1>
+        <h1 className="text-[#6C42E3] mt-6 text-4xl md:text-5xl font-semibold leading-tight">
+          Simplifying Health
+        </h1>
+        <p className="mt-4 text-lg text-gray-700 mx-auto">
+          Kaizen Health helps families stay connected and take control of their
+          health together.
+        </p>
 
-            {/* App Store Button */}
-            <div className="flex justify-start w-full sm:flex-column">
-              <a
-                href="https://bit.ly/kz-app-store"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="self-center"
-              >
-                <Image
-                  src="/images/hero/app-store-light.svg"
-                  alt="App Store"
-                  className="dark:hidden w-40"
-                  width={160}
-                  height={50}
-                />
-              </a>
-              <a
-                href="https://bit.ly/kz-android-store"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="self-center ml-3"
-              >
-                <Image
-                  src="/images/hero/android-store-dark.svg"
-                  alt="App Store"
-                  className="dark:hidden w-40"
-                  width={120}
-                  height={60}
-                />
-              </a>
+        {/* Store badges */}
+        <div className="mt-0 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.example"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/hero/android-store-dark.svg"
+              alt="Get it on Google Play"
+              width={180}
+              height={24}
+            />
+          </a>
+          <a
+            href="https://www.apple.com/app-store/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/hero/app-store-dark.svg"
+              alt="Download on the App Store"
+              width={180}
+              height={24}
+            />
+          </a>
+        </div>
+      </div>
+
+      {/* Hero image */}
+      <div className="relative mt-2 mx-4 rounded-lg">
+        <Image
+          src="/images/hero/hero_new.png"
+          alt="Happy multi-generation family"
+          width={1600}
+          height={800}
+          className="w-full h-96 md:h-[480px] object-cover rounded-3xl object-top"
+          priority
+        />
+
+        {/* Overlay card */}
+        <div className="absolute inset-0 flex items-end justify-center pb-6 pointer-events-none">
+          <div className="backdrop-blur-md bg-black/50 rounded-2xl w-[90%] md:w-4/5 px-6 py-8 text-white flex flex-col md:flex-row md:items-center gap-6">
+            {/* Left copy */}
+            <div className="md:w-1/3">
+              <h3 className="text-2xl font-semibold leading-snug">
+                Built With Families <br /> In Mind
+              </h3>
+              <p className="mt-2 text-sm text-gray-200">
+                Stay informed, stay in control, and support the people who
+                matter most.
+              </p>
             </div>
-          </div>
 
-          {/* Image Section */}
-          <div className="md:w-full lg:w-1/2 mb-6 lg:mb-0 flex justify-center">
-            <div className="relative aspect-[4/3] w-full max-w-md md:max-w-lg lg:max-w-full">
-              <Image src="/images/hero/hero.png" alt="Hero" fill />
+            {/* Stats */}
+            <div className="flex-1 grid grid-cols-3 gap-4 text-center">
+              <div>
+                <p className="text-3xl font-bold">250K+</p>
+                <p className="text-xs uppercase tracking-wide mt-1">
+                  Health Records Uploaded
+                </p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold">92%</p>
+                <p className="text-xs uppercase tracking-wide mt-1">
+                  Feel More Prepared
+                </p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold">HIPAA</p>
+                <p className="text-xs uppercase tracking-wide mt-1">
+                  Compliant &amp; Secure
+                </p>
+              </div>
             </div>
           </div>
         </div>
