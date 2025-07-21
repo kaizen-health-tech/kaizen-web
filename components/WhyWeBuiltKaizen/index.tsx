@@ -41,7 +41,7 @@ export const WhyWeBuiltKaizen = () => (
         {/* top photo */}
         <div className="overflow-hidden rounded-2xl">
           <Image
-            src="/images/whykaizen/adult_daughter_hands.png" /* replace it with the caregiving image */
+            src="/images/whykaizen/why_we_built_kaizen.jpeg" /* replace it with the caregiving image */
             alt="Adult daughter holding hands with her mother"
             width={800}
             height={520}

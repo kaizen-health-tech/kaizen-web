@@ -16,9 +16,9 @@ export default function Footer() {
               <Image
                 src="/images/logo/kaizen-logo-light.svg"
                 alt="Kaizen Health"
-                width={160}
-                height={80}
-                className="h-16 w-auto"
+                width={120}
+                height={60}
+                className="h-12 w-auto"
               />
             </a>
             <p className="mt-6 max-w-xs text-lg leading-relaxed text-gray-200">
