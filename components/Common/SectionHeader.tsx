@@ -14,7 +14,7 @@ const SectionHeader = ({ headerInfo }: { headerInfo: HeaderInfo }) => {
       {/* <!-- Section Title Start --> */}
       <div className="animate_top mx-auto text-center">
         <div className="inline-block px-4.5 py-1.5 dark:border dark:border-strokedark dark:bg-blacksection">
-          <h2 className="text-center text-5xl font-bold leading-tight text-gray-900 sm:text-5xl">
+          <h2 className="text-center text-5xl font-semibold leading-tight text-[#17161D] sm:text-5xl">
             {title}
           </h2>
         </div>

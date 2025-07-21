@@ -32,7 +32,7 @@ export default function Home() {
       {/*<FeaturesTab />*/}
       {/*<FunFact />*/}
       {/*<Integration />*/}
-      {/*<FAQ />*/}
+      <FAQ />
       <CTA />
       {/*<Testimonial />*/}
       {/*<Contact />*/}

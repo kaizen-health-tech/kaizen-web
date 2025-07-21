@@ -22,7 +22,7 @@ const STORIES: Story[] = [
     featureTitle: "One Place",
     featureDesc:
       "Kaizen gives you one place to upload, organize, and access everything securely.",
-    bgImage: "/images/stories/stories_1.svg",
+    bgImage: "/images/stories/stories_1.png",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const STORIES: Story[] = [
     featureTitle: "AI-Powered Insight",
     featureDesc:
       "Kaizen AI summarizes your documents, so you can share clear insights faster.",
-    bgImage: "/images/stories/stories_2.svg",
+    bgImage: "/images/stories/stories_2.png",
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const STORIES: Story[] = [
     featureTitle: "Under Your Control",
     featureDesc:
       "Kaizen lets you choose what to share and with whom. No oversharing, no surprises.",
-    bgImage: "/images/stories/stories_3.svg",
+    bgImage: "/images/stories/stories_3.png",
   },
 ];
 

@@ -56,20 +56,9 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
         {linkText && linkUrl && (
           <Link
             href={linkUrl}
-            className="mt-2 inline-flex items-center gap-2 text-primary font-semibold"
+            className="mt-2 inline-flex items-center gap-2 text-primary font-semibold text-xl"
           >
             {linkText}
-            <svg
-              width={16}
-              height={16}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12l5-5-5-5" />
-            </svg>
           </Link>
         )}
       </div>

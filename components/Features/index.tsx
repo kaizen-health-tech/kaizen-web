@@ -7,7 +7,7 @@ import SectionHeader from "../Common/SectionHeader";
 const Feature = () => {
   return (
     <section id="features">
-      <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0 bg-gradient-to-b from-[#F5F6FC] to-[#FFFFFF]">
+      <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
         {/* <!-- Section Title End --> */}
 
         <div className="mt-12 lg:mt-16 xl:mt-20 flex flex-col gap-20">

@@ -50,7 +50,7 @@ export default function SecurityHighlights() {
             {HIGHLIGHTS.map(({ id, icon, title, desc }) => (
               <div
                 key={id}
-                className="flex flex-col items-center rounded-2xl bg-white/70 p-8 text-center shadow-md backdrop-blur-md"
+                className="flex flex-col items-center rounded-3xl bg-white/70 py-12 px-6  text-center shadow-md backdrop-blur-md"
               >
                 {/* Icon */}
                 <Image
