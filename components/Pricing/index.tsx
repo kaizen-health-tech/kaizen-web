@@ -7,14 +7,24 @@ const Pricing = () => {
     <>
       {/* <!-- ===== Pricing Table Start ===== --> */}
       <section className="overflow-hidden pb-20 pt-15 lg:pb-25 xl:pb-30">
-        <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
+        <div className="relative mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
+          {/* Background squiggle SVG */}
+          <Image
+            src="/images/whykaizen/why_we_built_bg.svg" /* <- place the supplied SVG here */
+            alt=""
+            width={1600}
+            height={1200}
+            priority
+            className="pointer-events-none absolute w-[60%] max-w-none select-none
+                 lg:left-10 lg:top-10"
+          />
           {/* <!-- Section Title Start --> */}
           <div className="animate_top mx-auto text-center">
             <SectionHeader
               headerInfo={{
-                title: `PRICING PLANS`,
+                title: `Flexible plans for every stage of care`,
                 subtitle: ``,
-                description: ``,
+                description: `Start for free, grow as your needs do. Kaizen supports you every step of the way.`,
               }}
             />
           </div>
@@ -34,96 +44,101 @@ const Pricing = () => {
             {/*FREE PLAN*/}
             <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/3 xl:p-12.5">
               <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                Free
+                Starter
               </h3>
-              <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                Perfect if you want to try out the app
-              </h4>
-              <p>Free to use with features capped at daily limits.</p>
-
-              <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
-                <ul>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    1gb of document storage
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Up to 5 AI analysed documents each month
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Exclusive AI driven insights (Max 10)
-                  </li>
-                </ul>
+              <div className="mb-6 flex items-baseline">
+                <span className="text-5xl font-extrabold text-black">$0</span>
+                <span className="ml-1 text-xl font-medium text-gray-700">
+                  / month
+                </span>
               </div>
 
-              {/*<button*/}
-              {/*  aria-label="Get the Plan button"*/}
-              {/*  className="group/btn inline-flex items-center gap-2.5 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary"*/}
-              {/*>*/}
-              {/*  <span className="duration-300 group-hover/btn:pr-2">*/}
-              {/*    Get the Plan*/}
-              {/*  </span>*/}
-              {/*  <svg*/}
-              {/*    width="14"*/}
-              {/*    height="14"*/}
-              {/*    viewBox="0 0 14 14"*/}
-              {/*    xmlns="http://www.w3.org/2000/svg"*/}
-              {/*  >*/}
-              {/*    <path*/}
-              {/*      d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z"*/}
-              {/*      fill="currentColor"*/}
-              {/*    />*/}
-              {/*  </svg>*/}
-              {/*</button>*/}
+              <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
+                <ul className="space-y-4 text-left">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span> 1 GB health record
+                    storage
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span> 5 document summaries
+                    / month
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span> 10 AI insights /
+                    month
+                  </li>
+                  <li className="flex items-start gap-2 text-gray-400">
+                    ✕ EHR integration
+                  </li>
+                </ul>
+                <a href="#cta">
+                  <button className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-white hover:bg-primary/90">
+                    Start Free Trial
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M5 12l5-5-5-5" />
+                    </svg>
+                  </button>
+                </a>
+              </div>
             </div>
             {/* <!-- Pricing Item --> */}
-            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/3 xl:p-12.5">
-              <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
+            <div className="animate_top group relative rounded-lg border-2 border-primary bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/3 xl:p-12.5">
+              <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-b-md bg-primary px-4 py-1.5 text-xs font-semibold uppercase text-white">
+                Duo Event
+              </div>
+              <h3 className="mb-4 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
                 Duo
               </h3>
-              <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                Perfect for a family of 2
-              </h4>
-              <p>
-                Free to use. Add and manage a single family with up to 2
-                members.
-              </p>
-
-              <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
-                <ul>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    5gb of document storage
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Unlimited AI supported document analysis and summary
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Exclusive AI driven insights
-                  </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    EHR Integration (Coming soon)
-                  </li>
-                </ul>
+              <div className="mb-6 flex items-baseline">
+                <span className="mr-2 text-base font-medium line-through text-gray-500">
+                  $5
+                </span>
+                <span className="text-5xl font-extrabold">$0</span>
+                <span className="ml-1 text-xl font-medium text-gray-700">
+                  / month
+                </span>
               </div>
 
-              {/*<button*/}
-              {/*  aria-label="Get the Plan button"*/}
-              {/*  className="group/btn inline-flex items-center gap-2.5 font-medium text-primary transition-all duration-300 dark:text-white dark:hover:text-primary"*/}
-              {/*>*/}
-              {/*  <span className="duration-300 group-hover/btn:pr-2">*/}
-              {/*    Get the Plan*/}
-              {/*  </span>*/}
-              {/*  <svg*/}
-              {/*    width="14"*/}
-              {/*    height="14"*/}
-              {/*    viewBox="0 0 14 14"*/}
-              {/*    xmlns="http://www.w3.org/2000/svg"*/}
-              {/*  >*/}
-              {/*    <path*/}
-              {/*      d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z"*/}
-              {/*      fill="currentColor"*/}
-              {/*    />*/}
-              {/*  </svg>*/}
-              {/*</button>*/}
+              <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
+                <ul className="space-y-4 text-left">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span> 5 GB health record
+                    storage
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span> Unlimited AI
+                    document analysis
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span> Unlimited AI
+                    insights
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span> EHR integration
+                    (coming soon)
+                  </li>
+                </ul>
+                <a href="#cta">
+                  <button className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-white hover:bg-primary/90">
+                    Start Free Trial
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M5 12l5-5-5-5" />
+                    </svg>
+                  </button>
+                </a>
+              </div>
             </div>
 
             {/* <!-- Pricing Item --> */}
@@ -135,29 +150,46 @@ const Pricing = () => {
               <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
                 Family
               </h3>
-              <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
-                Perfect for large families
-              </h4>
-              <p>
-                Everything in duo but for larger families with up to 6 members.
-              </p>
+              <div className="mb-6 flex items-baseline">
+                <span className="text-5xl font-extrabold text-black">$10</span>
+                <span className="ml-1 text-xl font-medium text-gray-700">
+                  / month
+                </span>
+              </div>
 
               <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
-                <ul>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Up to 100gb of document storage
+                <ul className="space-y-4 text-left">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span> 100 GB health record
+                    storage
                   </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Unlimited AI supported document analysis
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span> Everything in Duo,
+                    plus
                   </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    Exclusive AI driven insights for you and the entire family
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span>Access to advanced AI
+                    models
                   </li>
-                  <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    EHR Integrations to automatically pull data from health
-                    portals (Coming soon)
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">✓</span>Integration to EHR's
+                    and providers
                   </li>
                 </ul>
+                <a href="#cta">
+                  <button className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-white hover:bg-primary/90">
+                    Start Free Trial
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M5 12l5-5-5-5" />
+                    </svg>
+                  </button>
+                </a>
               </div>
             </div>
           </div>

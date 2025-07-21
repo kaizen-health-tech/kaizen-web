@@ -11,6 +11,8 @@ const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
+  // Dynamic download link based on user‑agent
+  const [downloadHref, setDownloadHref] = useState<string>("#cta");
 
   const pathUrl = usePathname();
 
@@ -27,30 +29,34 @@ const Header = () => {
     window.addEventListener("scroll", handleStickyMenu);
   });
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const ua = navigator.userAgent || navigator.vendor;
+
+    if (/android/i.test(ua)) {
+      setDownloadHref("https://bit.ly/kz-android-store");
+    } else if (/iPad|iPhone|iPod/i.test(ua)) {
+      setDownloadHref("https://bit.ly/kz-app-store");
+    } else {
+      setDownloadHref("#cta"); // fallback – scroll to CTA section
+    }
+  }, []);
+
   return (
     <header
-      className={`bg-white fixed left-0 top-0 z-99999 w-full py-5 ${
-        stickyMenu
-          ? "bg-white shadow transition duration-100 dark:bg-black"
-          : ""
+      className={`fixed left-0 top-0 z-99999 w-full py-2 ${
+        stickyMenu ? "transition duration-100 dark:bg-black" : ""
       }`}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between p-4 rounded-lg px-4 md:px-8 xl:flex 2xl:px-0 shadow-lg">
+      <div className="bg-white relative mx-auto max-w-c-1390 items-center justify-between p-2 rounded-lg px-4 md:px-8 xl:flex shadow-lg">
         <div className="flex w-full items-center justify-between xl:w-1/4">
           <a href="/">
             <Image
-              src="/images/logo/kaizen-logo.png"
+              src="/images/logo/kaizen-logo.svg"
               alt="logo"
-              width={120}
-              height={60}
-              className="hidden w-full dark:block"
-            />
-            <Image
-              src="/images/logo/kaizen-logo.png"
-              alt="logo"
-              width={120}
-              height={60}
-              className="w-full dark:hidden"
+              width={240}
+              height={120}
+              className="w-full dark:block"
             />
           </a>
 
@@ -157,7 +163,7 @@ const Header = () => {
 
           <div className="flex items-center justify-end">
             <Link
-              href="https://bit.ly/kz-android-store"
+              href={downloadHref}
               className="w-full xl:w-auto mt-4 xl:mt-0 flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
             >
               Try it for free

@@ -1,19 +1,13 @@
 import { Metadata } from "next";
 import Hero from "@/components/Hero";
-import Brands from "@/components/Brands";
-import Feature from "@/components/Features";
-import UserStories from "components/UserStories";
-import FeaturesTab from "@/components/FeaturesTab";
-import FunFact from "@/components/FunFact";
-import Integration from "@/components/Integration";
-import CTA from "@/components/CTA";
 import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
-import Blog from "@/components/Blog";
-import Testimonial from "@/components/Testimonial";
-import HowItWorks from "@/components/HowItWorks";
-import WhyKaizen from "@/components/WhyKaizen";
+import { WhyWeBuiltKaizen } from "@/components/WhyWeBuiltKaizen";
+import BuiltWithStories from "@/components/BuiltWithStories";
+import SecurityHighlights from "@/components/SecurityHighlights";
+import Feature from "@/components/Features";
+import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
   title: "Kaizen Health - Home",
@@ -27,18 +21,21 @@ export default function Home() {
     <main>
       <Hero />
       {/*<Brands />*/}
-      <HowItWorks />
-      <WhyKaizen />
-      {/*<Feature />*/}
-      <UserStories />
+      {/*<HowItWorks />*/}
+      <WhyWeBuiltKaizen />
+      <BuiltWithStories />
+      {/*<WhyKaizen />*/}
+      <Feature />
+      <SecurityHighlights />
+      <Pricing />
+      {/*<UserStories />*/}
       {/*<FeaturesTab />*/}
       {/*<FunFact />*/}
       {/*<Integration />*/}
-      {/*<CTA />*/}
-      <FAQ />
-      <Testimonial />
-      <Pricing />
-      <Contact />
+      {/*<FAQ />*/}
+      <CTA />
+      {/*<Testimonial />*/}
+      {/*<Contact />*/}
       {/*<Blog />*/}
     </main>
   );

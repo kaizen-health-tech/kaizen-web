@@ -3,46 +3,48 @@ import { Feature } from "@/types/feature";
 const featuresData: Feature[] = [
   {
     id: 1,
-    icon: "/images/icon/icon-01.svg",
-    title: "Personalized Care",
+    title: "Upload Once, Access Anytime",
     description:
-      "Utilize an AI health bot that learns from your family’s health history to provide tailored health recommendations and treatment plans for each family member promoting early detection and preventive care to maintain optimal health.",
+      "Organize documents from clinics, labs, or hospitals all in one secure place.",
+    linkText: "See How Kaizen Health works →",
+    linkUrl: "/how-it-works",
+    image: "/images/features/feature_1.svg",
+    orientation: "right",
+    disclaimer: "*Not real patient data. For demonstration purposes only",
   },
   {
     id: 2,
-    icon: "/images/icon/icon-02.svg",
-    title: "Secure Document Storage",
+    title: "Get Instant Clarity",
     description:
-      "Benefit from HIPAA-compliant document storage, ensuring your medical records are safely stored and accessible. This system supports direct uploads or pulls from existing Electronic Health Records (EHRs)",
+      "Kaizen AI turns your files into helpful, digestible summaries.",
+    linkText: "Meet Your Personal AI Health Assistant Kai →",
+    linkUrl: "/kai",
+    image: "/images/features/feature_2.svg",
+    orientation: "left",
+    disclaimer: "*Not real patient data. For demonstration purposes only",
   },
   {
     id: 3,
-    icon: "/images/icon/icon-03.svg",
-    title: "Enhanced Family Involvement",
+    title: "Support Your Whole Family",
     description:
-      "Facilitate better health outcomes by securely sharing consented health information within the family, with sharing controls strictly based on user consent to ensure privacy and compliance with legal standards.",
+      "Track up to 6 people’s health info from your home screen, because care doesn’t stop with one person.",
+    linkText: "Why family support matters →",
+    linkUrl: "/family-support",
+    image: "/images/features/feature_3.svg",
+    orientation: "right",
+    disclaimer: "*Not real patient data. For demonstration purposes only",
   },
-  // {
-  //   id: 4,
-  //   icon: "/images/icon/icon-04.svg",
-  //   title: "Proactive Health Management",
-  //   description:
-  //     "Stay ahead of potential health issues with AI-driven insights and alerts, promoting early detection and preventive care to maintain optimal health.",
-  // },
-  // {
-  //   id: 5,
-  //   icon: "/images/icon/icon-05.svg",
-  //   title: "DB, Auth and Stripe",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
-  // },
-  // {
-  //   id: 6,
-  //   icon: "/images/icon/icon-06.svg",
-  //   title: "Regular Free Updates",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
-  // },
+  {
+    id: 4,
+    title: "Stay Private, Stay Connected",
+    description:
+      "You control what’s shared. Family caregiving with clear boundaries.",
+    linkText: "See Our Privacy & Security Disclaimer →",
+    linkUrl: "/docs/privacy",
+    image: "/images/features/feature_4.svg",
+    orientation: "left",
+    disclaimer: "*Not real patient data. For demonstration purposes only",
+  },
 ];
 
 export default featuresData;
