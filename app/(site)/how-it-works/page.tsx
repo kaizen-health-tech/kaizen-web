@@ -9,7 +9,7 @@ const HowItWorks = () => {
     {
       title: "Create Your Account",
       body: "Start by signing up and setting up your personal profile. This is your home base for organizing and managing family health‑care.\n\nKaizen Health is available on both App Store and Google Play Store.",
-      image: "/images/how-it-works/how-it-works_1.svg",
+      image: "/images/how-it-works/how_it_works_1.png",
       icon: "/images/icon/pencil.svg",
       cta: (
         <>
@@ -33,7 +33,7 @@ const HowItWorks = () => {
       body:
         "- Tap the “+” button, choose Invite Family Member, and send a secure email invite.\n" +
         "- They’ll download the app and join your care circle..",
-      image: "/images/how-it-works/how-it-works_2.svg",
+      image: "/images/how-it-works/how_it_works_2.png",
       icon: "/images/icon/invite.svg",
     },
     {
@@ -41,7 +41,7 @@ const HowItWorks = () => {
       body:
         "- Once they join, both of you can add them to your family bubble on the home screen.\n" +
         "- See shared updates in real-time.",
-      image: "/images/how-it-works/how-it-works_3.svg",
+      image: "/images/how-it-works/how_it_works_3.png",
       icon: "/images/icon/home.svg",
     },
     {
@@ -49,13 +49,13 @@ const HowItWorks = () => {
       body:
         "Securely upload health record in any format like scanning documents, upload photos and file, even recordings.\n" +
         "Choose whether to share and adjust anytime.",
-      image: "/images/how-it-works/how-it-works_4.svg",
+      image: "/images/how-it-works/how_it_works_4.png",
       icon: "/images/icon/share.svg",
     },
     {
       title: "Get AI‑powered insights",
       body: "Kaizen’s AI summarizes documents and answers questions, so you can be self aware and make clearer, informed decisions.",
-      image: "/images/how-it-works/how-it-works_5.svg",
+      image: "/images/how-it-works/how_it_works_5.png",
       icon: "/images/icon/ai.svg",
     },
   ];
@@ -101,7 +101,7 @@ const HowItWorks = () => {
           priority
         />
         <div className="relative mx-auto max-w-4xl px-4 text-center mt-25">
-          <h1 className="text-4xl font-extrabold leading-tight text-black md:text-6xl">
+          <h1 className="text-3xl font-extrabold leading-tight text-black md:text-5xl">
             How <span className="text-primary">Kaizen</span> Works
           </h1>
           <h2 className="mt-6 text-xl font-semibold text-primary md:text-2xl">

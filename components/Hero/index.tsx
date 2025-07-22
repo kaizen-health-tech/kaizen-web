@@ -15,10 +15,10 @@ const Hero = () => {
     <section className="w-full pt-24 pb-8 lg:mt-4 mt-2 bg-gradient-to-b from-[#FFFFFF] to-[#F5F6FC]">
       {/* Copy block */}
       <div className="px-4 md:px-8 max-w-screen-xl mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl text-black font-semibold leading-tight lg:mt-6 mt-4">
+        <h1 className="text-3xl md:text-5xl text-black font-semibold leading-tight lg:mt-6 mt-4">
           Connecting Families,
         </h1>
-        <h1 className="text-[#6C42E3] lg:mt-6 mt-2 text-4xl md:text-5xl font-semibold leading-tight">
+        <h1 className="text-[#6C42E3] lg:mt-6 mt-2 text-3xl md:text-5xl font-semibold leading-tight">
           Simplifying Health
         </h1>
         <p className="mt-4 text-lg text-gray-700 mx-auto">

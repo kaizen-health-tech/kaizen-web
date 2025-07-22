@@ -50,7 +50,9 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
           </div>
         )}
 
-        <h3 className="text-3xl font-semibold text-[#17161D]">{title}</h3>
+        <h3 className="text-3xl md:text-5xl leading-[1.25] md:leading-[1.25] font-semibold text-[#17161D]">
+          {title}
+        </h3>
         <p className="text-lg text-gray-700">{description}</p>
 
         {linkText && linkUrl && (

@@ -34,10 +34,10 @@ const HIGHLIGHTS: Highlight[] = [
 
 export default function SecurityHighlights() {
   return (
-    <section id="security-highlights" className="my-12">
+    <section id="security-highlights" className="my-12 md:py-12 py-3">
       {/* Heading */}
-      <h2 className="mb-12 text-center text-3xl font-semibold leading-tight text-[#17161D] sm:text-4xl">
-        Built To Empower Family, Designed Securely
+      <h2 className="m-12 text-center text-3xl md:text-5xl font-semibold leading-tight text-[#17161D]">
+        Built to empower your family, designed securely
       </h2>
       {/* Gradient container */}
       <div className="mx-auto max-w-7xl px-4 md:px-8 rounded-2xl relative">
