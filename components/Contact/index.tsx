@@ -58,8 +58,29 @@ const Contact = () => {
 
   return (
     <>
+      {/* Hero Section */}
+      <section className="relative py-24">
+        {/* Background image */}
+        <Image
+          src="/images/hero/contact-us-hero-bg.png"
+          alt=""
+          fill
+          priority
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+
+        <div className="relative mt-20 mx-auto max-w-4xl px-4 text-center">
+          <h1 className="text-4xl font-extrabold leading-tight text-black md:text-6xl">
+            We're Here to Help
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-800">
+            Have a question about Kaizen Health? Reach out and our support team
+            will get back to you as soon as possible.
+          </p>
+        </div>
+      </section>
       {/* <!-- ===== Contact Start ===== --> */}
-      <section id="support" className="px-4 md:px-8 2xl:px-0">
+      <section id="support" className="px-4 md:px-8 2xl:px-0 mb-20">
         <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
           <div className="absolute left-0 top-0 -z-1 h-2/3 w-full rounded-lg"></div>
           <div className="absolute bottom-[-255px] left-0 -z-1 h-full w-full">
@@ -128,7 +149,7 @@ const Contact = () => {
                 </select>
               </div>
 
-              <div className="flex flex-wrap gap-4 xl:justify-between ">
+              <div className="flex flex-wrap gap-4 xl:justify-between">
                 <div className="mb-4 flex md:mb-0">
                   <input
                     id="default-checkbox"
