@@ -36,11 +36,20 @@ export default function SecurityHighlights() {
   return (
     <section id="security-highlights" className="my-12">
       {/* Heading */}
-      <h2 className="mb-12 text-center text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl">
+      <h2 className="mb-12 text-center text-3xl font-semibold leading-tight text-[#17161D] sm:text-4xl">
         Built To Empower Family, Designed Securely
       </h2>
       {/* Gradient container */}
-      <div className="mx-auto max-w-7xl px-4 md:px-8 bg-gradient-to-b from-[rgba(245,246,252,1)] via-white/60 to-[rgba(117,117,255,1)]/40 rounded-2xl">
+      <div className="mx-auto max-w-7xl px-4 md:px-8 rounded-2xl relative">
+        {/* Background squiggle SVG */}
+        <Image
+          src="/images/security-highlights/security-highlight-bg.svg" /* <- place the supplied SVG here */
+          alt=""
+          width={1200}
+          height={600}
+          priority
+          className="pointer-events-none absolute left-0 top-4 w-full max-w-none select-none h-full object-cover"
+        />
         <div className="relative overflow-hidden rounded-3xl p-8 sm:p-10 md:p-12">
           {/* gradient layer */}
           <div className="pointer-events-none absolute inset-0 -z-10" />

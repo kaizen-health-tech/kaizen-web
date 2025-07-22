@@ -42,7 +42,7 @@ const Pricing = () => {
           </div>
           <div className="flex flex-wrap justify-center gap-7.5 lg:flex-nowrap xl:gap-12.5">
             {/*FREE PLAN*/}
-            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/3 xl:p-12.5">
+            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full md:w-[95%] lg:w-1/3 xl:p-12.5">
               <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
                 Starter
               </h3>
@@ -72,7 +72,7 @@ const Pricing = () => {
                   </li>
                 </ul>
                 <a href="#cta">
-                  <button className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-white hover:bg-primary/90">
+                  <button className="mt-8 inline-flex items-center justify-center gap-2 rounded-md border border-primary bg-primary/10 px-6 py-3 font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
                     Start Free Trial
                     <svg
                       width="16"
@@ -88,7 +88,7 @@ const Pricing = () => {
               </div>
             </div>
             {/* <!-- Pricing Item --> */}
-            <div className="animate_top group relative rounded-lg border-2 border-primary bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/3 xl:p-12.5">
+            <div className="animate_top group relative rounded-lg border-2 border-primary bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full md:w-[95%] lg:w-1/3 xl:p-12.5">
               <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-b-md bg-primary px-4 py-1.5 text-xs font-semibold uppercase text-white">
                 Duo Event
               </div>
@@ -142,11 +142,7 @@ const Pricing = () => {
             </div>
 
             {/* <!-- Pricing Item --> */}
-            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none md:w-[45%] lg:w-1/3 xl:p-12.5">
-              <div className="absolute -right-3.5 top-7.5 -rotate-90 rounded-bl-full rounded-tl-full bg-primary px-4.5 py-1.5 text-metatitle font-medium uppercase text-white">
-                popular
-              </div>
-
+            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full md:w-[95%] lg:w-1/3 xl:p-12.5">
               <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
                 Family
               </h3>
@@ -177,7 +173,7 @@ const Pricing = () => {
                   </li>
                 </ul>
                 <a href="#cta">
-                  <button className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-white hover:bg-primary/90">
+                  <button className="mt-8 inline-flex items-center justify-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-6 py-3 font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
                     Start Free Trial
                     <svg
                       width="16"

@@ -18,7 +18,7 @@ const featuresData: Feature[] = [
     description:
       "Kaizen AI turns your files into helpful, digestible summaries.",
     linkText: "Meet Your Personal AI Health Assistant Kai →",
-    linkUrl: "/kai",
+    linkUrl: "",
     image: "/images/features/feature_2.png",
     orientation: "left",
     disclaimer: "*Not real patient data. For demonstration purposes only",
@@ -29,7 +29,7 @@ const featuresData: Feature[] = [
     description:
       "Track up to 6 people’s health info from your home screen, because care doesn’t stop with one person.",
     linkText: "Why family support matters →",
-    linkUrl: "/family-support",
+    linkUrl: "/blog/family-history",
     image: "/images/features/feature_3.png",
     orientation: "right",
     disclaimer: "*Not real patient data. For demonstration purposes only",

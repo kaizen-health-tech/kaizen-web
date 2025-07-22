@@ -21,7 +21,7 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
     "flex w-full lg:w-1/2 flex-col justify-center gap-4 px-4 lg:px-12";
 
   return (
-    <article className="flex flex-col lg:flex-row items-center gap-8 pb-4">
+    <article className="flex flex-col-reverse lg:flex-row items-center gap-8 pb-4">
       {/* ----- IMAGE ------ */}
       {orientation === "left" && (
         <div className={imgCol}>

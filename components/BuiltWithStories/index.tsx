@@ -51,7 +51,7 @@ export default function BuiltWithStories() {
     <section className="relative bg-white py-16">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         {/* Heading */}
-        <h2 className="mb-4 text-center text-4xl font-semibold leading-tight text-[#17161D] sm:text-3xl md:text-5xl">
+        <h2 className="mb-4 text-center text-4xl font-semibold leading-tight text-[#17161D] sm:text-3xl">
           Built with Real Stories, <br className="hidden sm:block" />
           Backed by Real Needs.
         </h2>
