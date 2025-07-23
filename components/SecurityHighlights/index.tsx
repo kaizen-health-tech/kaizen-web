@@ -47,7 +47,7 @@ export default function SecurityHighlights() {
           alt=""
           width={1200}
           height={600}
-          priority
+          loading="lazy"
           className="pointer-events-none absolute left-0 top-4 w-full max-w-none select-none h-full object-cover"
         />
         <div className="relative overflow-hidden rounded-3xl p-8 sm:p-10 md:p-12">

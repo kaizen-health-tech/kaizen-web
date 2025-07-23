@@ -32,7 +32,7 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
             height={640}
             quality={100}
             className="w-full max-w-lg rounded-2xl lg:rounded-3xl"
-            priority
+            loading="lazy"
           />
           {disclaimer && (
             <small className="pt-2 text-xs text-center text-gray-400">
@@ -74,8 +74,8 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
             width={1200}
             height={640}
             quality={100}
+            loading={"lazy"}
             className="w-full max-w-lg rounded-2xl lg:rounded-3xl"
-            priority
           />
           {disclaimer && (
             <small className="pt-2 text-xs text-center text-gray-400">

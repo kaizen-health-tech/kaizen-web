@@ -14,7 +14,7 @@ const Pricing = () => {
             alt=""
             width={1600}
             height={1200}
-            priority
+            loading={"lazy"}
             className="pointer-events-none absolute md:w-[60%] w-full max-w-none select-none
                  lg:left-10 lg:top-10"
           />
