@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.kaizenhealth.io/images/opengraph/home-og.png",
+        url: "https://www.kaizenhealth.io/images/blog/blog.png",
         width: 1200,
         height: 630,
         alt: "Kaizen Health app screens and family dashboard",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Kaizen Health – Connecting Families, Simplifying Health",
     description:
       "Secure, AI-powered health records and insights for the whole family.",
-    images: ["https://www.kaizenhealth.io/images/opengraph/home-og.png"],
+    images: ["https://www.kaizenhealth.io/images/blog/blog.png"],
   },
 };
 
