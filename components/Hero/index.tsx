@@ -82,7 +82,7 @@ const Hero = () => {
             {/* Stats */}
             <div className="flex-1 grid grid-cols-3 gap-4 text-center">
               <div>
-                <p className="text-3xl font-bold">250K+</p>
+                <p className="text-3xl font-bold">25K+</p>
                 <p className="text-xs uppercase tracking-wide mt-1">
                   Health Records Uploaded
                 </p>
