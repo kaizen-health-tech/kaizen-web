@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Hero from "@/components/Hero";
 import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
-import Contact from "@/components/Contact";
 import { WhyWeBuiltKaizen } from "@/components/WhyWeBuiltKaizen";
 import BuiltWithStories from "@/components/BuiltWithStories";
 import SecurityHighlights from "@/components/SecurityHighlights";
@@ -53,23 +52,13 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      {/*<Brands />*/}
-      {/*<HowItWorks />*/}
       <WhyWeBuiltKaizen />
       <BuiltWithStories />
-      {/*<WhyKaizen />*/}
       <Feature />
       <SecurityHighlights />
       <Pricing />
-      {/*<UserStories />*/}
-      {/*<FeaturesTab />*/}
-      {/*<FunFact />*/}
-      {/*<Integration />*/}
       <FAQ />
       <CTA />
-      {/*<Testimonial />*/}
-      {/*<Contact />*/}
-      {/*<Blog />*/}
     </main>
   );
 }
