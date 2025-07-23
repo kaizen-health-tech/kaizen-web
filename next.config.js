@@ -2,9 +2,8 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: false,
   images: {
-    domains: ["localhost"],
+    qualities: [75, 100],
     remotePatterns: [
       {
         protocol: "https",
@@ -16,7 +15,7 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.alias.canvas = false;
     return config;
-    },
+  },
 };
 
 module.exports = nextConfig;

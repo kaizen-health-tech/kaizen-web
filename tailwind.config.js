@@ -12,7 +12,7 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      inter: ["Hanken_Grotesk", "sans-serif"],
+      inter: ["Source_Sans_3", "sans-serif"],
     },
     extend: {
       colors: {
@@ -29,7 +29,7 @@ module.exports = {
         black: "#181C31",
         blackho: "#2C3149",
         blacksection: "#1C2136",
-        primary: "#6C42E3",
+        primary: "#442982",
         primaryho: "#321F65",
         meta: "#76F9C4",
         waterloo: "#757693",

@@ -4,13 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
+  // Dynamic download link based on user‑agent
+  const [downloadHref, setDownloadHref] = useState<string>("#cta");
 
   const pathUrl = usePathname();
 
@@ -27,30 +28,34 @@ const Header = () => {
     window.addEventListener("scroll", handleStickyMenu);
   });
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const ua = navigator.userAgent || navigator.vendor;
+
+    if (/android/i.test(ua)) {
+      setDownloadHref("https://bit.ly/kz-android-store");
+    } else if (/iPad|iPhone|iPod/i.test(ua)) {
+      setDownloadHref("https://bit.ly/kz-app-store");
+    } else {
+      setDownloadHref("#cta"); // fallback – scroll to CTA section
+    }
+  }, []);
+
   return (
     <header
-      className={`bg-white fixed left-0 top-0 z-99999 w-full py-5 ${
-        stickyMenu
-          ? "bg-white shadow transition duration-100 dark:bg-black"
-          : ""
+      className={`fixed left-0 top-0 z-99999 w-full py-2 ${
+        stickyMenu ? "transition duration-100 dark:bg-black" : ""
       }`}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
+      <div className="bg-white relative mx-auto max-w-c-1390 items-center justify-between p-2 rounded-lg px-4 md:px-8 xl:flex shadow-lg">
         <div className="flex w-full items-center justify-between xl:w-1/4">
           <a href="/">
             <Image
-              src="/images/logo/kaizen-logo.png"
+              src="/images/logo/kaizen-logo.svg"
               alt="logo"
-              width={120}
-              height={60}
-              className="hidden w-full dark:block"
-            />
-            <Image
-              src="/images/logo/kaizen-logo.png"
-              alt="logo"
-              width={120}
-              height={60}
-              className="w-full dark:hidden"
+              width={240}
+              height={120}
+              className="w-full dark:block"
             />
           </a>
 
@@ -97,12 +102,12 @@ const Header = () => {
 
         {/* Nav Menu Start   */}
         <div
-          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
+          className={`invisible h-0 w-full items-center justify-end xl:visible xl:flex xl:h-auto xl:w-full ${
             navigationOpen &&
             "navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
           }`}
         >
-          <nav>
+          <nav className="mr-5">
             <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
               {menuData.map((menuItem, key) => (
                 <li key={key} className={menuItem.submenu && "group relative"}>
@@ -154,6 +159,15 @@ const Header = () => {
               ))}
             </ul>
           </nav>
+
+          <div className="flex items-center justify-end">
+            <Link
+              href={downloadHref}
+              className="w-full xl:w-auto mt-4 xl:mt-0 flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+            >
+              Try it for free
+            </Link>
+          </div>
 
           {/*<div className="mt-7 flex items-center gap-6 xl:mt-0">*/}
           {/*  <ThemeToggler />*/}

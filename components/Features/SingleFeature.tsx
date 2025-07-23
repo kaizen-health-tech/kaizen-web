@@ -1,40 +1,90 @@
-import React from "react";
-import { Feature } from "@/types/feature";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import Link from "next/link";
+import { Feature } from "@/types/feature";
 
 const SingleFeature = ({ feature }: { feature: Feature }) => {
-  const { icon, title, description } = feature;
+  const {
+    title,
+    description,
+    icon,
+    image,
+    linkText,
+    linkUrl,
+    orientation = "right",
+    disclaimer,
+  } = feature;
+
+  /** image first on desktop of orientation === "left" */
+  const imgCol =
+    "relative w-full lg:w-1/2 flex-column justify-center lg:justify-end text-center";
+  const textCol =
+    "flex w-full lg:w-1/2 flex-col justify-center gap-4 px-4 lg:px-12";
 
   return (
-    <>
-      <motion.div
-        variants={{
-          hidden: {
-            opacity: 0,
-            y: -10,
-          },
-
-          visible: {
-            opacity: 1,
-            y: 0,
-          },
-        }}
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="z-40 rounded-lg border border-white bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-12.5"
-      >
-        <div className="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-primary">
-          <Image src={icon} width={36} height={36} alt="title" />
+    <article className="flex flex-col-reverse lg:flex-row items-center gap-8 pb-4">
+      {/* ----- IMAGE ------ */}
+      {orientation === "left" && (
+        <div className={imgCol}>
+          <Image
+            src={image}
+            alt={title}
+            width={1200}
+            height={640}
+            quality={100}
+            className="w-full max-w-lg rounded-2xl lg:rounded-3xl"
+            loading="lazy"
+          />
+          {disclaimer && (
+            <small className="pt-2 text-xs text-center text-gray-400">
+              {disclaimer}
+            </small>
+          )}
         </div>
-        <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">
+      )}
+
+      {/* ----- TEXT BLOCK ------ */}
+      <div className={textCol}>
+        {icon && (
+          <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center">
+            <Image src={icon} alt="" width={28} height={28} />
+          </div>
+        )}
+
+        <h3 className="text-3xl md:text-5xl leading-[1.25] md:leading-[1.25] font-semibold text-[#17161D]">
           {title}
         </h3>
-        <p>{description}</p>
-      </motion.div>
-    </>
+        <p className="text-lg text-gray-700">{description}</p>
+
+        {linkText && linkUrl && (
+          <Link
+            href={linkUrl}
+            className="mt-2 inline-flex items-center gap-2 text-primary font-semibold text-xl"
+          >
+            {linkText}
+          </Link>
+        )}
+      </div>
+
+      {/* ----- IMAGE (if orientation === "right") ------ */}
+      {orientation === "right" && (
+        <div className={imgCol}>
+          <Image
+            src={image}
+            alt={title}
+            width={1200}
+            height={640}
+            quality={100}
+            loading={"lazy"}
+            className="w-full max-w-lg rounded-2xl lg:rounded-3xl"
+          />
+          {disclaimer && (
+            <small className="pt-2 text-xs text-center text-gray-400">
+              {disclaimer}
+            </small>
+          )}
+        </div>
+      )}
+    </article>
   );
 };
 
