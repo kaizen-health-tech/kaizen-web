@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Kaizen Health",
     images: [
       {
-        url: "https://kaizenhealth.io/images/blog/blog.png",
+        url: "https://kaizenhealth.io/images/open-graph/blog.png",
         width: 1200,
         height: 630,
         alt: "Kaizen Health Blog - AI-Powered Family Health Insights",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Kaizen Health Blog | AI-Powered Wellness & Family Health Insights",
     description:
       "Stay informed with the latest AI-driven healthcare trends, personalized health tracking, and family wellness tips. Read expert-backed articles on Kaizen Health Blog.",
-    images: ["https://kaizenhealth.io/images/blog/blog.png"],
+    images: ["https://kaizenhealth.io/images/open-graph/blog.png"],
   },
 };
 

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.kaizenhealth.io/images/blog/blog.png",
+        url: "https://www.kaizenhealth.io/images/open-graph/support.png",
         width: 1200,
         height: 630,
         alt: "Kaizen Health Support",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Kaizen Health Support | Contact & Help Center",
     description:
       "Need assistance with Kaizen Health? Our team is ready to support you every step of the way.",
-    images: ["https://www.kaizenhealth.io/images/blog/blog.png"],
+    images: ["https://www.kaizenhealth.io/images/open-graph/support.png"],
   },
 };
 
