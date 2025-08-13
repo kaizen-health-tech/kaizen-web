@@ -144,6 +144,7 @@ const Contact = () => {
                   <option value="Account Maintenance">
                     Account Maintenance
                   </option>
+                  <option value="Data Deletion">Account & Data Deletion</option>
                   <option value="Data Request">Data Request</option>
                 </select>
               </div>

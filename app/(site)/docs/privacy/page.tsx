@@ -25,7 +25,7 @@ export default function DocsPage() {
               <div className="-mx-4 flex flex-wrap">
                 <div className="w-full px-4 lg:w-3/4">
                   <div className="blog-details blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
-                    <h1>Welcome to Privacy Documentation</h1>
+                    <h1>Privacy Policy Documentation</h1>
 
                     <div className="inline-flex items-center bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
                       We never sell or share your health data.
@@ -52,6 +52,11 @@ export default function DocsPage() {
                       Privacy Policy carefully. IF YOU DO NOT AGREE WITH THE
                       TERMS OF THIS PRIVACY POLICY, PLEASE DO NOT ACCESS THE
                       APP.
+                    </p>
+                    <p className="text-body-color dark:text-body-color-dark text-base font-bold">
+                      Kaizen Health does not monetize user health data. Our
+                      business model is fully supported by user subscriptions,
+                      and this is currently the only way we generate revenue.
                     </p>
 
                     <p className="text-body-color dark:text-body-color-dark text-base">
@@ -130,7 +135,7 @@ export default function DocsPage() {
                         >
                           support link
                         </a>{" "}
-                        and select "Account Maintenance".
+                        and select "Account & Data Deletion".
                       </li>
                       <li>
                         You can also email us at{" "}
@@ -140,8 +145,8 @@ export default function DocsPage() {
                         >
                           info@kaizenhealth.io
                         </a>{" "}
-                        with "Account Deletion" in the subject line from the
-                        email address linked to your account.
+                        with "Account & Data Deletion" in the subject line from
+                        the email address linked to your account.
                       </li>
                     </ul>
 
