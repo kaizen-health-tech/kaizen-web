@@ -28,11 +28,11 @@ export default function Footer() {
 
           {/* Find Us */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">Find Us</h4>
+            <h4 className="mb-4 text-lg font-semibold text-white">Find Us</h4>
             <address className="not-italic leading-relaxed">
-              1875 Mission St Ste 103
+              1875 Mission St, Ste 103
               <br />
-              San Francisco, CA 94103
+              San Francisco, CA, 94103
               <br />
               <a
                 href="mailto:info@kaizenhealth.io"
@@ -46,7 +46,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="mb-4 text-lg font-semibold text-white">
-              Quick Links
+              Quick Links
             </h4>
             <ul className="space-y-2">
               <li>
@@ -65,15 +65,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/trust-safety" className="hover:text-primary">
-                  Trust & Safety
+                <a href="/docs/privacy" className="hover:text-primary">
+                  Trust & Safety
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:info@kaizenhealth.io"
-                  className="hover:text-primary"
-                >
+                <a href="/support" className="hover:text-primary">
                   Support
                 </a>
               </li>

@@ -27,6 +27,10 @@ export default function DocsPage() {
                   <div className="blog-details blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
                     <h1>Welcome to Privacy Documentation</h1>
 
+                    <div className="inline-flex items-center bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                      We never sell or share your health data.
+                    </div>
+
                     <p className="text-body-color dark:text-body-color-dark text-base">
                       This Privacy Policy Agreement ("Agreement") is entered
                       into by and between Kaizen Health ("Company"), and the
@@ -162,7 +166,13 @@ export default function DocsPage() {
                         share your information with third parties that perform
                         services for us or on our behalf, including payment
                         processing, data analysis, email delivery, hosting
-                        services, customer service, and marketing assistance.
+                        services, customer service, and marketing assistance. We
+                        currently do not have a Business Associate Agreement
+                        (BAA) with OpenAI or Anthropic. To ensure HIPAA
+                        compliance, we do not send any personally identifiable
+                        or protected health information (PHI) to these providers
+                        unless the user has provided explicit consent, and most
+                        sensitive data is redacted prior to processing.
                       </li>
                     </ul>
 
@@ -190,7 +200,11 @@ export default function DocsPage() {
                     <p className="text-body-color dark:text-body-color-dark text-base">
                       Your personal information and health data are stored on
                       Firebase (Google Inc), ensuring HIPAA compliance and
-                      secure storage of health information.
+                      secure storage of health information. We also use AI
+                      models (such as OpenAI and Anthropic) in specific app
+                      features. These systems are not under BAA, and we take
+                      precautions to ensure PHI is not shared unless authorized
+                      by the user.
                     </p>
 
                     <h2>Contact Us</h2>
