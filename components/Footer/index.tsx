@@ -55,6 +55,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/updates" className="hover:text-primary">
+                  Updates
+                </a>
+              </li>
+              <li>
                 <a href="/blog" className="hover:text-primary">
                   Blog
                 </a>
