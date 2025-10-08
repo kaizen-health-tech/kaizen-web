@@ -13,7 +13,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type ReleasePageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export const dynamicParams = false;
@@ -60,19 +60,17 @@ const buildMetadata = (release: Release): Metadata => ({
 export const generateMetadata = async ({
   params,
 }: ReleasePageProps): Promise<Metadata> => {
-  const release = getReleaseBySlug(params.slug);
+  const { slug } = await params;
+  const release = getReleaseBySlug(slug);
   if (!release) {
     return {};
   }
   return buildMetadata(release);
 };
 
-const ReleasePage = ({ params }: ReleasePageProps) => {
-  const release = getReleaseBySlug(params.slug);
-
-  if (!release) {
-    notFound();
-  }
+const ReleasePage = async ({ params }: ReleasePageProps) => {
+  const { slug } = await params;
+  const release = getReleaseBySlug(slug) ?? notFound();
 
   const sortedReleases = getSortedReleases();
   const currentIndex = sortedReleases.findIndex(
