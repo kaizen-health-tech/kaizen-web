@@ -29,6 +29,63 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
+    slug: "1-10-0-enduring-medication-reminders",
+    version: "1.10.0",
+    title: "Medication Reminders That Go the Distance",
+    summary:
+      "Daily medication alerts now automatically replenish themselves, keeping long-term treatment plans on schedule without any extra taps.",
+    publishedAt: "2025-10-15",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["Mobile", "Medication management"],
+    highlights: [
+      {
+        title: "Auto top-up scheduling",
+        description:
+          "Reminders now refresh future notifications as soon as the initial queue is exhausted, so multi-year schedules never fall silent.",
+        impact: "improved",
+      },
+      {
+        title: "Resilient reminder state",
+        description:
+          "Scheduling metadata is stored securely on-device, preserving future doses after app updates, reinstalls, or device restarts.",
+        impact: "improved",
+      },
+      {
+        title: "On-open health check",
+        description:
+          "Every time you open Kaizen Health, we verify and replenish the upcoming reminder window to catch anything that might have been missed.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body:
+          "This release focuses on keeping critical medication plans reliable for the entire family. The reminder engine now tracks what has been scheduled and quietly re-queues future doses, even for therapies that span years.",
+        bullets: [
+          "Automatic top-ups extend reminder coverage beyond the previous 60-notification window.",
+          "Reminder metadata persists offline, so future alerts survive app updates or limited connectivity.",
+          "Foreground health checks run whenever the app becomes active to guarantee the next dose is queued.",
+        ],
+      },
+      {
+        heading: "Why medication adherence matters",
+        body:
+          "Consistent adherence keeps chronic conditions stable and reduces the stress families feel when coordinating shared care.",
+        bullets: [
+          "The [World Health Organization](https://www.who.int/publications/i/item/9789241593263) reports that adherence to long-term therapies averages only 50%, driving avoidable hospitalizations and poorer outcomes.",
+          "An analysis in the [Journal of the American Medical Association](https://jamanetwork.com/journals/jama/fullarticle/2678016) found that better medication adherence reduces cardiovascular events and lowers total care costs for families.",
+          "The [Annals of Internal Medicine](https://www.acpjournals.org/doi/10.7326/0003-4819-157-3-201208070-00429) estimate that nonadherence adds $100–$289 billion in preventable health-care spending each year in the United States.",
+        ],
+      },
+      stayConnectedSection(
+        "Follow Kaizen Health for best practices that help families stay on top of care plans together.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
     slug: "1-9-14-events-overview",
     version: "1.9.14",
     title: "Events Overview Lands on Home",
