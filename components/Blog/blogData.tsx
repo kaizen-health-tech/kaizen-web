@@ -67,6 +67,15 @@ const BlogData: Blog[] = [
       "Discover how daily sunlight exposure can improve bone health, mood, immunity, and sleep in older adults",
     url: "/blog/health/sunshine",
   },
+  {
+    id: 9,
+    mainImage: "/images/blog/organizing-medical-records.jpg",
+    title:
+      "The Complete Guide to Organizing Medical Records When Caring for Aging Parents",
+    metadata:
+      "A practical resource for family caregivers navigating healthcare management. Learn systems for organizing medical records, choosing paper vs digital approaches, and maintaining critical healthcare information.",
+    url: "/blog/family-history/organizing-medical-records",
+  },
 ];
 
 export default BlogData;
