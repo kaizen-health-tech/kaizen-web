@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appID": "CJP744JG8W.io.kaizenhealth.app",
+        "paths": ["*"]
+      }
+    ]
+  }
+}
