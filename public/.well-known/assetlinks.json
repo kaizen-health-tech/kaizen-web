@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "io.kaizenhealth.app",
       "sha256_cert_fingerprints": [
-        "12:F6:3E:D5:20:8C:23:7F:64:2F:8D:95:F7:24:A4:B7:7C:9F:2C:91:1B:CC:B3:84:E5:5D:5A:F6:13:1F:26"
+        "12:F6:3E:D5:20:8C:23:7F:64:2F:8D:95:F7:24:A4:B7:7C:9F:2C:91:1B:CC:B3:84:E5:5D:5A:F6:13:1F:26",
+        "A2:57:6B:7F:28:5E:DA:C2:5E:81:47:A1:0F:6C:85:5E:12:C4:44:C1:42:15:DD:94:86:9A:56:0B:9C:E7:4B:90"
       ]
     }
   }
