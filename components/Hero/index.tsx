@@ -34,7 +34,7 @@ const Hero = () => {
             <Image
               src="/images/hero/android-store-dark.svg"
               alt="Get it on Google Play"
-              width={124}
+              width={172}
               height={48}
             />
           </a>
@@ -46,7 +46,7 @@ const Hero = () => {
             <Image
               src="/images/hero/app-store-dark.svg"
               alt="Download on the App Store"
-              width={124}
+              width={172}
               height={48}
             />
           </a>
