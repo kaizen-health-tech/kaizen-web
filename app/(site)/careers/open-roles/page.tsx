@@ -7,6 +7,7 @@ const roles = [
   {
     title: "Frontend Engineer (React Native)",
     location: "Remote · Full-time",
+    isFilled: true,
     contact: "mailto:careers@kaizenhealth.io",
     description: `About the Role:
 Join our dynamic team at Kaizen Health as a Frontend Engineer specializing in React Native development. You'll be instrumental in building cutting-edge mobile applications that improve healthcare experiences for users worldwide. This role offers the opportunity to work with modern technologies while collaborating with AI tools to accelerate development.
