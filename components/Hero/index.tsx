@@ -14,14 +14,14 @@ const Hero = () => {
       {/* Copy block */}
       <div className="px-4 md:px-8 max-w-screen-xl mx-auto text-center">
         <h1 className="text-3xl md:text-5xl text-black font-semibold leading-tight lg:mt-6 mt-4">
-          Connecting Families,
+          Your Family's Medical Records,
         </h1>
         <h1 className="text-[#6C42E3] lg:mt-6 mt-2 text-3xl md:text-5xl font-semibold leading-tight">
-          Simplifying Health
+          Organized & Explained by AI
         </h1>
-        <p className="mt-4 text-lg text-gray-700 mx-auto">
-          Kaizen Health helps families stay connected and take control of their
-          health together.
+        <p className="mt-4 text-xl text-gray-700 mx-auto max-w-md">
+          Upload lab results and doctor's notes. Ask questions in plain English.
+          Share securely with family. All in one HIPAA-compliant app.
         </p>
 
         {/* Store badges */}
@@ -80,7 +80,7 @@ const Hero = () => {
           </div>
           <div className="hidden lg:flex lg:flex-row lg:items-center bg-gradient-to-r from-[rgba(227,227,251,0.7)] to-[rgba(0,0,0,0.4)] rounded-2xl w-full lg:w-2/3 px-6 py-8 text-white gap-6 ring-1 ring-white/25">
             {/* Stats */}
-            <div className="flex-1 grid grid-cols-3 gap-4 text-center">
+            <div className="flex-1 grid grid-cols-4 gap-4 text-center">
               <div>
                 <p className="text-3xl font-bold">25K+</p>
                 <p className="text-xs uppercase tracking-wide mt-1">
@@ -97,6 +97,12 @@ const Hero = () => {
                 <p className="text-3xl font-bold">HIPAA</p>
                 <p className="text-xs uppercase tracking-wide mt-1">
                   Compliant &amp; Secure
+                </p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold">Medical AI</p>
+                <p className="text-xs uppercase tracking-wide mt-1">
+                  Free & available in 50+ languages
                 </p>
               </div>
             </div>
