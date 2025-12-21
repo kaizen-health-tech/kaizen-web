@@ -4,6 +4,7 @@ import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
 import { WhyWeBuiltKaizen } from "@/components/WhyWeBuiltKaizen";
 import BuiltWithStories from "@/components/BuiltWithStories";
+import WhyKai from "@/components/WhyKai";
 import SecurityHighlights from "@/components/SecurityHighlights";
 import Feature from "@/components/Features";
 import CTA from "@/components/CTA";
@@ -54,6 +55,7 @@ export default function Home() {
       <Hero />
       <WhyWeBuiltKaizen />
       <BuiltWithStories />
+      <WhyKai />
       <Feature />
       <SecurityHighlights />
       <Pricing />
