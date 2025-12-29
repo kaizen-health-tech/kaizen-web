@@ -59,9 +59,7 @@ export default function HowItWorksClient() {
     },
   ];
 
-  const stepRefs = useRef<Array<React.RefObject<HTMLElement>>>(
-    stepsData.map(() => ({ current: null })),
-  );
+  const stepRefs = useRef<(HTMLElement | null)[]>([]);
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
@@ -70,7 +68,7 @@ export default function HowItWorksClient() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const idx = stepRefs.current.findIndex(
-              (r) => r.current === entry.target,
+              (el) => el === entry.target,
             );
             if (idx !== -1) setActiveStep(idx);
           }
@@ -79,7 +77,7 @@ export default function HowItWorksClient() {
       { rootMargin: "-40% 0px -50% 0px", threshold: 0 },
     );
     stepRefs.current.forEach(
-      (ref) => ref.current && observer.observe(ref.current),
+      (el) => el && observer.observe(el),
     );
     return () => observer.disconnect();
   }, []);
@@ -152,7 +150,7 @@ export default function HowItWorksClient() {
               <section
                 key={idx}
                 id={`step-${idx}`}
-                ref={stepRefs.current[idx]}
+                ref={(el) => { stepRefs.current[idx] = el; }}
                 className="mb-24 flex flex-col gap-8 lg:flex-row lg:items-start"
               >
                 {/* Text block */}
