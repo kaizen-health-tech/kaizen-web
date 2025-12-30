@@ -15,18 +15,29 @@ const Header = () => {
 
   const pathUrl = usePathname();
 
-  // Sticky menu
-  const handleStickyMenu = () => {
-    if (window.scrollY >= 80) {
-      setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
-    }
-  };
-
+  // Sticky menu with throttled scroll handler
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyMenu);
-  });
+    let ticking = false;
+
+    const handleStickyMenu = () => {
+      if (window.scrollY >= 80) {
+        setStickyMenu(true);
+      } else {
+        setStickyMenu(false);
+      }
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(handleStickyMenu);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;

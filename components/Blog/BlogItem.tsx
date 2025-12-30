@@ -32,7 +32,8 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
             src={mainImage}
             alt={title}
             fill
-            className={"object-cover object-center"}
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover object-center"
           />
         </Link>
 

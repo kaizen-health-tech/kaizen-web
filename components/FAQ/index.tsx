@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import FAQItem from "./FAQItem";
 import faqData from "./faqData";
+import { FAQPageSchema } from "@/components/Schema";
 
 const FAQ = () => {
   const [activeFaq, setActiveFaq] = useState(1);
@@ -11,8 +12,15 @@ const FAQ = () => {
     activeFaq === id ? setActiveFaq(0) : setActiveFaq(id);
   };
 
+  // Transform FAQ data for schema
+  const schemaFaqs = faqData.map((faq) => ({
+    question: faq.quest,
+    answer: faq.ans,
+  }));
+
   return (
     <>
+      <FAQPageSchema faqs={schemaFaqs} />
       {/* <!-- ===== FAQ Start ===== --> */}
       <section className="overflow-hidden pb-20 lg:pb-25 xl:pb-30">
         <div className="relative mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">

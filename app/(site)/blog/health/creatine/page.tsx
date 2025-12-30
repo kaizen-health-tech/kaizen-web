@@ -1,26 +1,53 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import Image from "next/image";
 import SharePost from "@/components/Blog/SharePost";
+import BlogPostWrapper from "@/components/Blog/BlogPostWrapper";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Creatine in Aging Adults: Importance, Benefits & Guidelines",
+  description:
+    "Evidence-based guide on creatine supplementation for aging adults. Learn about safety, benefits for muscle and brain health, dosing guidelines, and when to consult your doctor.",
+  keywords: [
+    "creatine for seniors",
+    "creatine aging adults",
+    "creatine muscle health",
+    "creatine brain health",
+    "creatine supplementation guide",
+  ],
+};
 
 const CreatineAgingGuide = () => {
   return (
-    <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
-      <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-        <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
-          <div className="mb-10 w-full overflow-hidden ">
-            <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
-              <Image
-                src={"/images/blog/creatine.jpeg"}
-                alt="Genetic conditions during pregnancy"
-                fill
-                className="rounded-md object-cover object-center"
-              />
+    <BlogPostWrapper
+      title="Creatine in Aging Adults: Importance, Benefits & Guidelines"
+      description="Evidence-based guide on creatine supplementation for aging adults. Learn about safety, benefits for muscle and brain health, dosing guidelines, and when to consult your doctor."
+      image="/images/blog/creatine.jpeg"
+      datePublished="2025-01-15"
+      url="/blog/health/creatine"
+      category="Health"
+      authorName="Kaizen Health Editorial Team"
+      authorCredentials="Reviewed by healthcare professionals"
+      keywords={["creatine", "aging", "muscle health", "supplements", "brain health"]}
+    >
+      <section className="pb-20 lg:pb-25 xl:pb-30">
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+          <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+            <div className="mb-10 w-full overflow-hidden ">
+              <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
+                <Image
+                  src={"/images/blog/creatine.jpeg"}
+                  alt="Creatine supplementation guide for aging adults"
+                  fill
+                  sizes="(min-width: 1280px) 1200px, 90vw"
+                  className="rounded-md object-cover object-center"
+                />
+              </div>
             </div>
-          </div>
-          <h1 className="mb-2 text-3xl font-semibold dark:text-white">
-            Creatine in Aging Adults: Importance, Benefits & Guidelines
-          </h1>
-          <p className="italic mb-6">A structured evidence-based overview</p>
+            <h1 className="mb-2 text-3xl font-semibold dark:text-white">
+              Creatine in Aging Adults: Importance, Benefits & Guidelines
+            </h1>
+            <p className="italic mb-6">A structured evidence-based overview</p>
 
           <HeadingWithAnchor id="what-is-creatine">
             1. What Is Creatine & Why Is It Important?
@@ -478,13 +505,14 @@ const CreatineAgingGuide = () => {
             </li>
           </ul>
           <SharePost
-            url="https://kaizenhealth.io/blog/pregnancy-genetic"
+            url="https://kaizenhealth.io/blog/health/creatine"
             text="Checkout this blog post on Kaizen Health!"
-            hashtags={["health", "wellness", "AI"]}
+            hashtags={["health", "wellness", "AI", "creatine"]}
           />
         </div>
       </div>
     </section>
+    </BlogPostWrapper>
   );
 };
 

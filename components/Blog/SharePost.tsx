@@ -10,8 +10,8 @@ const SharePost = ({ url, text, hashtags }) => {
   const linkedinShareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}`;
 
   return (
-    <div className="mt-11 flex flex-wrap gap-4 md:items-center md:justify-between md:gap-0">
-      <ul className="flex items-center gap-6">
+    <div className="mt-11 flex flex-wrap gap-4 md:items-center md:justify-between md:gap-0 share-post">
+      <ul className="flex list-none items-center gap-6">
         <li>
           <p className="text-black dark:text-white">Share On:</p>
         </li>

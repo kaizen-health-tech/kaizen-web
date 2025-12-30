@@ -76,6 +76,15 @@ const BlogData: Blog[] = [
       "A practical resource for family caregivers navigating healthcare management. Learn systems for organizing medical records, choosing paper vs digital approaches, and maintaining critical healthcare information.",
     url: "/blog/family-history/organizing-medical-records",
   },
+  {
+    id: 10,
+    mainImage: "/images/blog/family-generations.png",
+    title:
+      "The Critical Role of Family Health Monitoring in Preventing Hereditary Diseases",
+    metadata:
+      "96% of Americans recognize family health history importance, yet only 37% have collected it. Learn how monitoring hereditary patterns can prevent up to 60% of colorectal cancer deaths and reduce breast cancer risk by 90%.",
+    url: "/blog/family-health-monitoring",
+  },
 ];
 
 export default BlogData;

@@ -39,14 +39,14 @@ export const metadata: Metadata = {
 };
 
 interface BlogPageProps {
-  params: {
+  params: Promise<{
     page: string;
-  };
+  }>;
 }
 
-const BlogPage = async ({ params }) => {
-  const blogPage = await params?.page;
-  const pageNumber = parseInt(blogPage || "1", 10);
+const BlogPage = async ({ params }: BlogPageProps) => {
+  const { page } = await params;
+  const pageNumber = parseInt(page || "1", 10);
   const start = (pageNumber - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
   const paginatedPosts = [...BlogData]

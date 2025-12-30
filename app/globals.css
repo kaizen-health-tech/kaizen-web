@@ -235,6 +235,7 @@
 .blog-details ul,
 .blog-details ol {
   @apply mb-10 list-inside list-disc text-titlebgdark;
+  align-items: normal;
 }
 
 .blog-details li,
@@ -254,6 +255,10 @@
 .blog-details blockquote::before {
   content: "";
   @apply absolute left-0 top-0 h-[106px] w-[140px] bg-[url(/images/blog/quote-shape-1.svg)] bg-contain bg-left-top bg-no-repeat dark:bg-[url(/images/blog/quote-shape-1.svg)];
+}
+
+.share-post li{
+  @apply list-none;
 }
 
 pre {
