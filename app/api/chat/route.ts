@@ -169,8 +169,8 @@ export async function POST(request: Request) {
 
     // Use responses API for native PDF support
     const response = await openai.responses.create({
-      model: "gpt-5-mini",
-      input: inputMessages,
+      model: "gpt-4o-mini",
+      input: inputMessages as OpenAI.Responses.ResponseCreateParams["input"],
     });
 
     const responseMessage = response.output_text;
