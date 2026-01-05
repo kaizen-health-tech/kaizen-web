@@ -150,7 +150,7 @@ export async function POST(request: Request) {
 
     const systemPrompt = `${AI_SYSTEM_PROMPT}\n\n${AI_SECURITY_DIRECTIVE}`;
 
-    // Build messages with attachment support using responses API format
+    // Build messages with attachment support using the responses API format
     const inputMessages: ResponseInputMessage[] = [
       { role: "system", content: systemPrompt },
     ];

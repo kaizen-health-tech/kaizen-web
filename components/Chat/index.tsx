@@ -57,13 +57,7 @@ export default function Chat() {
       }
 
       setSession(storedSession);
-
-      if (storedSession.chatCount >= CHAT_LIMIT) {
-        setChatState("chat_active");
-        setShowLimitModal(true);
-      } else {
-        setChatState("chat_active");
-      }
+      setChatState("chat_active");
     }
   }, []);
 
@@ -129,10 +123,6 @@ export default function Chat() {
         };
         saveChatSession(updatedSession);
         setSession(updatedSession);
-
-        if (updatedSession.chatCount >= CHAT_LIMIT) {
-          setTimeout(() => setShowLimitModal(true), 1000);
-        }
       } else {
         toast.error(data.message || "Failed to get response");
       }
