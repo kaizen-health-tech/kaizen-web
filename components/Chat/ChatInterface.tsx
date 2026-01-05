@@ -26,7 +26,8 @@ export default function ChatInterface({
 
   const scrollToBottom = () => {
     if (messagesContainerRef.current) {
-      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+      messagesContainerRef.current.scrollTop =
+        messagesContainerRef.current.scrollHeight;
     }
   };
 
@@ -46,10 +47,10 @@ export default function ChatInterface({
           </div>
           <div>
             <h1 className="font-semibold text-gray-900 dark:text-white">
-              Chat with <span className="text-[#7B4DFF]">Kai</span>
+              AI Response <span className="text-[#7B4DFF]">Comparison</span>
             </h1>
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              Your AI health assistant
+              Kai (Medical AI) vs Generic AI
             </p>
           </div>
         </div>
@@ -59,7 +60,10 @@ export default function ChatInterface({
       </div>
 
       {/* Messages */}
-      <div ref={messagesContainerRef} className="min-h-0 flex-1 overflow-y-auto p-4">
+      <div
+        ref={messagesContainerRef}
+        className="min-h-0 flex-1 overflow-y-auto p-4"
+      >
         {messages.length === 0 ? (
           <div className="flex h-full flex-col items-center justify-center text-center">
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#F1ECFF]">
@@ -71,11 +75,11 @@ export default function ChatInterface({
               />
             </div>
             <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
-              Hi! I&apos;m Kai
+              AI Response Comparison
             </h2>
-            <p className="max-w-sm text-sm text-gray-500 dark:text-gray-400">
-              Ask me anything about health, wellness, or understanding your
-              medical records. I&apos;m here to help!
+            <p className="max-w-md text-sm text-gray-500 dark:text-gray-400">
+              Ask a health question to see how Kai (medical AI) responds
+              compared to a generic model.
             </p>
           </div>
         ) : (
@@ -84,26 +88,70 @@ export default function ChatInterface({
               <MessageBubble key={message.id} message={message} />
             ))}
             {isLoading && (
-              <div className="flex items-start gap-3">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F1ECFF]">
-                  <Image
-                    src="/images/icon/ai.svg"
-                    alt="Kai"
-                    width={18}
-                    height={18}
-                  />
+              <div className="flex gap-4">
+                {/* Kai loading panel */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#F1ECFF]">
+                      <Image
+                        src="/images/icon/ai.svg"
+                        alt="Kai"
+                        width={14}
+                        height={14}
+                      />
+                    </div>
+                    <span className="text-xs font-semibold text-[#7B4DFF]">
+                      Kai (Medical AI)
+                    </span>
+                  </div>
+                  <div className="rounded-xl border border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-800">
+                    <div className="flex gap-1">
+                      <span className="h-2 w-2 animate-bounce rounded-full bg-[#7B4DFF]" />
+                      <span
+                        className="h-2 w-2 animate-bounce rounded-full bg-[#7B4DFF]"
+                        style={{ animationDelay: "0.1s" }}
+                      />
+                      <span
+                        className="h-2 w-2 animate-bounce rounded-full bg-[#7B4DFF]"
+                        style={{ animationDelay: "0.2s" }}
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="rounded-2xl border border-gray-200 bg-white px-4 py-3 dark:border-gray-700 dark:bg-gray-800">
-                  <div className="flex gap-1">
-                    <span className="h-2 w-2 animate-bounce rounded-full bg-[#7B4DFF]" />
-                    <span
-                      className="h-2 w-2 animate-bounce rounded-full bg-[#7B4DFF]"
-                      style={{ animationDelay: "0.1s" }}
-                    />
-                    <span
-                      className="h-2 w-2 animate-bounce rounded-full bg-[#7B4DFF]"
-                      style={{ animationDelay: "0.2s" }}
-                    />
+                {/* Generic loading panel */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700">
+                      <svg
+                        className="h-3.5 w-3.5 text-gray-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-xs font-semibold text-gray-500">
+                      Generic
+                    </span>
+                  </div>
+                  <div className="rounded-xl border border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-800">
+                    <div className="flex gap-1">
+                      <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400" />
+                      <span
+                        className="h-2 w-2 animate-bounce rounded-full bg-gray-400"
+                        style={{ animationDelay: "0.1s" }}
+                      />
+                      <span
+                        className="h-2 w-2 animate-bounce rounded-full bg-gray-400"
+                        style={{ animationDelay: "0.2s" }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

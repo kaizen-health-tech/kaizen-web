@@ -11,6 +11,7 @@ export type Message = {
   id: string;
   role: "user" | "assistant";
   content: string;
+  genericContent?: string; // Generic response (assistant only, for comparison)
   timestamp: Date;
   attachments?: Attachment[];
 };

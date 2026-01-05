@@ -106,11 +106,12 @@ export default function Chat() {
 
       const data = await res.json();
 
-      if (data.success && data.message) {
+      if (data.success && data.kaiMessage) {
         const assistantMessage: Message = {
           id: generateMessageId(),
           role: "assistant",
-          content: data.message,
+          content: data.kaiMessage,
+          genericContent: data.genericMessage,
           timestamp: new Date(),
         };
 
@@ -139,7 +140,7 @@ export default function Chat() {
 
   return (
     <div className="flex min-h-screen flex-col bg-gray-50 pt-24 dark:bg-gray-900 md:pt-28">
-      <div className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pb-6">
+      <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col px-4 pb-6">
         {chatState === "email_input" || chatState === "otp_verification" ? (
           <EmailVerification onVerified={handleVerified} />
         ) : (

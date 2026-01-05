@@ -150,32 +150,47 @@ export async function POST(request: Request) {
 
     const systemPrompt = `${AI_SYSTEM_PROMPT}\n\n${AI_SECURITY_DIRECTIVE}`;
 
-    // Build messages with attachment support using the responses API format
-    const inputMessages: ResponseInputMessage[] = [
-      { role: "system", content: systemPrompt },
-    ];
+    // Build user/assistant messages (without system prompt)
+    const userMessages: ResponseInputMessage[] = [];
 
     for (const msg of messages) {
       if (msg.role === "user") {
         const userMessage = buildUserMessageForResponses(msg);
-        inputMessages.push(userMessage);
+        userMessages.push(userMessage);
       } else {
-        inputMessages.push({
+        userMessages.push({
           role: "assistant",
           content: msg.content,
         });
       }
     }
 
-    // Use responses API for native PDF support
-    const response = await openai.responses.create({
-      model: "gpt-4o-mini",
-      input: inputMessages as OpenAI.Responses.ResponseCreateParams["input"],
-    });
+    // Build messages for Kai (with system prompt)
+    const kaiMessages: ResponseInputMessage[] = [
+      { role: "system", content: systemPrompt },
+      ...userMessages,
+    ];
 
-    const responseMessage = response.output_text;
+    // Build messages for Generic (no system prompt)
+    const genericMessages: ResponseInputMessage[] = [...userMessages];
 
-    if (!responseMessage) {
+    // Make parallel calls for both Kai and Generic responses
+    const [kaiResponse, genericResponse] = await Promise.all([
+      openai.responses.create({
+        model: "gpt-5.1-mini",
+        input: kaiMessages as OpenAI.Responses.ResponseCreateParams["input"],
+      }),
+      openai.responses.create({
+        model: "gpt-5.1-mini",
+        input:
+          genericMessages as OpenAI.Responses.ResponseCreateParams["input"],
+      }),
+    ]);
+
+    const kaiMessage = kaiResponse.output_text;
+    const genericMessage = genericResponse.output_text;
+
+    if (!kaiMessage || !genericMessage) {
       return NextResponse.json(
         { success: false, message: "Failed to get response from AI" },
         { status: 500 },
@@ -183,7 +198,7 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json(
-      { success: true, message: responseMessage },
+      { success: true, kaiMessage, genericMessage },
       { status: 200 },
     );
   } catch (error) {
