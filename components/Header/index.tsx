@@ -173,7 +173,7 @@ const Header = () => {
 
           <div className="flex items-center justify-end">
             <Link
-              href={downloadHref}
+              href={"/chat"}
               className="w-full xl:w-auto mt-4 xl:mt-0 flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
             >
               Try it for free
