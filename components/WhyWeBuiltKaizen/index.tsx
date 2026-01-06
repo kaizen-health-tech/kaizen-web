@@ -45,6 +45,8 @@ export const WhyWeBuiltKaizen = () => (
             alt="Adult daughter holding hands with her mother"
             width={800}
             height={520}
+            quality={100}
+            sizes="(min-width: 1024px) 448px, 100vw"
             className="h-auto w-full object-cover"
           />
         </div>

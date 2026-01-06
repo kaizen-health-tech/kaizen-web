@@ -181,6 +181,8 @@ export default function HowItWorksClient() {
                     alt={step.title}
                     width={500}
                     height={420}
+                    quality={100}
+                    sizes="(min-width: 1024px) 400px, 100vw"
                     className="w-full rounded-xl object-contain"
                   />
                 </div>

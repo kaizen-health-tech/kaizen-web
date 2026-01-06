@@ -60,7 +60,7 @@ const Hero = () => {
           alt="Happy multi-generation family"
           width={1600}
           height={800}
-          quality={75}
+          quality={100}
           className="w-full h-96 object-cover object-center rounded-3xl"
           sizes="(min-width: 1280px) 1200px, (min-width: 768px) 90vw, 100vw"
           priority
