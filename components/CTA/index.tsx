@@ -30,7 +30,7 @@ const CTA = () => {
                 alt="Get it on Google Play"
                 width={180}
                 height={54}
-                className="h-14 w-auto"
+                className="h-16 w-auto"
               />
             </a>
             <a
@@ -43,7 +43,7 @@ const CTA = () => {
                 alt="Download on the App Store"
                 width={180}
                 height={54}
-                className="h-14 w-auto"
+                className="h-16 w-auto"
               />
             </a>
           </div>
