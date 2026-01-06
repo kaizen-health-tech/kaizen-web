@@ -50,23 +50,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="hover:text-primary">
-                  Home
-                </a>
-              </li>
-              <li>
                 <a href="/about" className="hover:text-primary">
                   About
-                </a>
-              </li>
-              <li>
-                <a href="/team" className="hover:text-primary">
-                  Our Team
-                </a>
-              </li>
-              <li>
-                <a href="/updates" className="hover:text-primary">
-                  Updates
                 </a>
               </li>
               <li>
