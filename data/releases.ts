@@ -14,7 +14,10 @@ const defaultResources = [
 const linkBullet = (label: string, url: string) => ({ label, url });
 
 const stayConnectedBullets = [
-  linkBullet("Instagram: @kaizenhealthio", "https://www.instagram.com/kaizenhealthio"),
+  linkBullet(
+    "Instagram: @kaizenhealthio",
+    "https://www.instagram.com/kaizenhealthio",
+  ),
   linkBullet("X: @kaizenhealthio", "https://x.com/kaizenhealthio"),
   linkBullet("Email: info@kaizenhealth.io", "mailto:info@kaizenhealth.io"),
 ];
@@ -28,6 +31,55 @@ const stayConnectedSection = (body?: string) => ({
 });
 
 export const releases: Release[] = [
+  {
+    slug: "1-12-0-kai-memory",
+    version: "1.12.0",
+    title: "Kai Memory Remembers What Matters",
+    summary:
+      "Memory keeps Kai aware of the details you share, so follow-ups feel instant and personal across every profile.",
+    publishedAt: "2026-01-12",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["AI insights", "Productivity"],
+    highlights: [
+      {
+        title: "Kai Memory",
+        description:
+          "Teach Kai important facts once - medications, providers, preferences and it will recall them automatically in future chats.",
+        impact: "new",
+      },
+      {
+        title: "Memory controls",
+        description:
+          "View, add or clear remembered details per profile to keep information fresh and accurate.",
+        impact: "new",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "Memory turns Kai into a more consistent helper by saving the health context you approve. It works across chats and devices, respecting the same access controls you already use.",
+        bullets: [
+          "Ask Kai to remember key facts like allergies, baseline vitals, specialists, and upcoming procedures.",
+          "Memories stay scoped to each family member and follow existing sharing permissions.",
+          "Manage memories from profile settings or directly in chat when you need to update or clear them.",
+        ],
+      },
+      {
+        heading: "How to use memory",
+        body: "Start by telling Kai what to remember, then rely on it to fill in details during future questions and tasks.",
+        bullets: [
+          'Say "Remember that Alex takes 5mg of lisinopril each morning" to store medication context.',
+          "When asking for guidance, Kai will reference saved memories and provide links to review or edit them.",
+          'Use "forget this" when something changes and Kai will stop using that memory until you update it.',
+        ],
+      },
+      stayConnectedSection(
+        "Tell us what else you want Kai to remember and how memory could better fit your care routines.",
+      ),
+    ],
+    resources: defaultResources,
+  },
   {
     slug: "1-10-0-enduring-medication-reminders",
     version: "1.10.0",
@@ -61,8 +113,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "This release focuses on keeping critical medication plans reliable for the entire family. The reminder engine now tracks what has been scheduled and quietly re-queues future doses, even for therapies that span years.",
+        body: "This release focuses on keeping critical medication plans reliable for the entire family. The reminder engine now tracks what has been scheduled and quietly re-queues future doses, even for therapies that span years.",
         bullets: [
           "Automatic top-ups extend reminder coverage beyond the previous 60-notification window.",
           "Reminder metadata persists offline, so future alerts survive app updates or limited connectivity.",
@@ -71,8 +122,7 @@ export const releases: Release[] = [
       },
       {
         heading: "Why medication adherence matters",
-        body:
-          "Consistent adherence keeps chronic conditions stable and reduces the stress families feel when coordinating shared care.",
+        body: "Consistent adherence keeps chronic conditions stable and reduces the stress families feel when coordinating shared care.",
         bullets: [
           "The [World Health Organization](https://www.who.int/publications/i/item/9789241593263) reports that adherence to long-term therapies averages only 50%, driving avoidable hospitalizations and poorer outcomes.",
           "An analysis in the [Journal of the American Medical Association](https://jamanetwork.com/journals/jama/fullarticle/2678016) found that better medication adherence reduces cardiovascular events and lowers total care costs for families.",
@@ -110,15 +160,15 @@ export const releases: Release[] = [
       },
       {
         title: "Performance improvements",
-        description: "General reliability and bug fixes keep the app feeling fast.",
+        description:
+          "General reliability and bug fixes keep the app feeling fast.",
         impact: "fixed",
       },
     ],
     sections: [
       {
         heading: "Release details",
-        body:
-          "Events Overview gives you a single place to manage what is next for your loved ones. Color-coded categories help you separate appointments, procedures, and personal reminders so nothing slips.",
+        body: "Events Overview gives you a single place to manage what is next for your loved ones. Color-coded categories help you separate appointments, procedures, and personal reminders so nothing slips.",
         bullets: [
           "Tap any event to edit details or adjust reminders.",
           "Events added by family members appear instantly on the shared dashboard.",
@@ -163,8 +213,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "This update focuses on reliability. Timeline rendering now handles quick updates and edits without pagination hiccups, and general housekeeping keeps your device responsive.",
+        body: "This update focuses on reliability. Timeline rendering now handles quick updates and edits without pagination hiccups, and general housekeeping keeps your device responsive.",
         bullets: [
           "Timeline updates sync more consistently across devices.",
           "Memory usage has been reduced for stations with many attachments.",
@@ -210,8 +259,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "We rebuilt core experiences so you can trust the signal in your health scores and reach the right information faster. The new home screen highlights milestones, recent updates, and Kai guidance in a single glance.",
+        body: "We rebuilt core experiences so you can trust the signal in your health scores and reach the right information faster. The new home screen highlights milestones, recent updates, and Kai guidance in a single glance.",
         bullets: [
           "Health scores pull in updated data sources for better consistency.",
           "Navigation cards surface the next best action for each family member.",
@@ -250,8 +298,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "No headline features this round—just the sort of cleanup work that keeps Kaizen Health dependable day after day.",
+        body: "No headline features this round—just the sort of cleanup work that keeps Kaizen Health dependable day after day.",
         bullets: [
           "Fewer stalls when switching between family members.",
           "Reduced app size on disk for devices with limited storage.",
@@ -296,8 +343,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "The UI refresh introduces clearer typography, consistent iconography, and accessibility wins. Favorites now sync without the unexpected resets some caregivers were seeing.",
+        body: "The UI refresh introduces clearer typography, consistent iconography, and accessibility wins. Favorites now sync without the unexpected resets some caregivers were seeing.",
         bullets: [
           "Favorites update instantly across shared devices.",
           "Security improvements target encrypted storage and authentication flows.",
@@ -342,8 +388,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "We rethought the entire document workflow, from selecting files to confirming the attachment. Families can now add multiple documents in a session without losing context.",
+        body: "We rethought the entire document workflow, from selecting files to confirming the attachment. Families can now add multiple documents in a session without losing context.",
         bullets: [
           "Drag-and-drop and camera uploads share the same streamlined flow.",
           "Suggested tags appear based on previous uploads.",
@@ -368,7 +413,8 @@ export const releases: Release[] = [
     highlights: [
       {
         title: "Bug fixes",
-        description: "Addressed issues surfaced by the community over the last sprint.",
+        description:
+          "Addressed issues surfaced by the community over the last sprint.",
         impact: "fixed",
       },
       {
@@ -381,8 +427,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "Sometimes the best update is the one that quietly speeds things up. This release zeroed in on crash reports and animation smoothness.",
+        body: "Sometimes the best update is the one that quietly speeds things up. This release zeroed in on crash reports and animation smoothness.",
         bullets: [
           "Reduced lag when opening large health record collections.",
           "Lowered network retries for medication reminders.",
@@ -420,8 +465,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "We turned around quick fixes for the community, cleaning up the most common chat and attachment errors reported last week.",
+        body: "We turned around quick fixes for the community, cleaning up the most common chat and attachment errors reported last week.",
         bullets: [
           "Improved validation prevents duplicate reminder notifications.",
           "Attachment previews render more consistently on older devices.",
@@ -465,8 +509,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "Keeping your family data safe is always the priority. This release includes updated encryption libraries, stricter session management, and the usual round of performance tuning.",
+        body: "Keeping your family data safe is always the priority. This release includes updated encryption libraries, stricter session management, and the usual round of performance tuning.",
         bullets: [
           "Enhanced monitoring ensures faster detection of unusual activity.",
           "Optimized sync jobs reduce wait times on slow networks.",
@@ -511,8 +554,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "Bring Kai the context it needs. Drop in up to five documents and discuss results, plans, or next steps in a single thread.",
+        body: "Bring Kai the context it needs. Drop in up to five documents and discuss results, plans, or next steps in a single thread.",
         bullets: [
           "Documents are stored securely and follow existing access controls.",
           "Kai highlights key findings so you can copy them into care plans.",
@@ -555,8 +597,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "We took the feedback from 1.9.3 and ensured every fix met our reliability standards before reissuing the release as 1.9.4.",
+        body: "We took the feedback from 1.9.3 and ensured every fix met our reliability standards before reissuing the release as 1.9.4.",
         bullets: [
           "Security scans and audits now cover more internal services.",
           "UI transitions feel smoother thanks to caching fixes.",
@@ -587,7 +628,8 @@ export const releases: Release[] = [
       },
       {
         title: "Kai speedups",
-        description: "Conversations feel quicker with reduced response latency.",
+        description:
+          "Conversations feel quicker with reduced response latency.",
         impact: "improved",
       },
       {
@@ -599,8 +641,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "Attachments are one of the most critical parts of your health record. We prioritized a fix for the small set of families that lost access and tightened monitoring so it does not recur.",
+        body: "Attachments are one of the most critical parts of your health record. We prioritized a fix for the small set of families that lost access and tightened monitoring so it does not recur.",
         bullets: [
           "Kai processes follow-up questions faster after each response.",
           "Attachment previews load with clearer error messaging if a file needs re-uploading.",
@@ -644,8 +685,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "Your feedback guided this release: Kai now references more historical context before answering and handles follow-up questions more gracefully.",
+        body: "Your feedback guided this release: Kai now references more historical context before answering and handles follow-up questions more gracefully.",
         bullets: [
           "Kai cites sources more consistently.",
           "Load times improve when switching between chats.",
@@ -690,8 +730,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "Messaging is core to keeping families aligned. This release refines message grouping and delivery states while introducing subtle haptic cues to acknowledge actions.",
+        body: "Messaging is core to keeping families aligned. This release refines message grouping and delivery states while introducing subtle haptic cues to acknowledge actions.",
         bullets: [
           "New haptics highlight message sends, saves, and important alerts.",
           "Chat history loads faster when returning to long-running conversations.",
@@ -728,16 +767,14 @@ export const releases: Release[] = [
       },
       {
         title: "Performance boosts",
-        description:
-          "General bug fixes keep Kaizen Health running smoothly.",
+        description: "General bug fixes keep Kaizen Health running smoothly.",
         impact: "fixed",
       },
     ],
     sections: [
       {
         heading: "Release details",
-        body:
-          "Managing complex health journeys often takes more than one file. Now you can keep related documents bundled together and discuss them directly with Kai.",
+        body: "Managing complex health journeys often takes more than one file. Now you can keep related documents bundled together and discuss them directly with Kai.",
         bullets: [
           "Drag-and-drop up to five files onto a single record.",
           "Kai cites the documents it referenced when responding.",
@@ -782,8 +819,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "Add insurance cards to your profile, ready to share when clinics request them. We are also preparing Add to Wallet support for quick access during visits.",
+        body: "Add insurance cards to your profile, ready to share when clinics request them. We are also preparing Add to Wallet support for quick access during visits.",
         bullets: [
           "Upload front and back images of each card.",
           "Manage family coverage details from a single settings hub.",
@@ -813,16 +849,14 @@ export const releases: Release[] = [
       },
       {
         title: "Performance improvements",
-        description:
-          "App interactions feel smoother across devices.",
+        description: "App interactions feel smoother across devices.",
         impact: "improved",
       },
     ],
     sections: [
       {
         heading: "Release details",
-        body:
-          "Staying responsive is part of building trust. This release tightens up query performance and removes glitches across timeline and document views.",
+        body: "Staying responsive is part of building trust. This release tightens up query performance and removes glitches across timeline and document views.",
         bullets: [
           "Faster transitions when opening record details.",
           "Improved error messaging when uploads fail.",
@@ -860,8 +894,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "Short and sweet: more fixes, smoother scrolling, and fewer interruptions while managing family health.",
+        body: "Short and sweet: more fixes, smoother scrolling, and fewer interruptions while managing family health.",
         bullets: [
           "Fixed a race condition affecting notifications.",
           "Improved rendering on smaller devices.",
@@ -891,16 +924,14 @@ export const releases: Release[] = [
       },
       {
         title: "Performance tuning",
-        description:
-          "Optimized background services for a smoother experience.",
+        description: "Optimized background services for a smoother experience.",
         impact: "improved",
       },
     ],
     sections: [
       {
         heading: "Release details",
-        body:
-          "We continue to iterate quickly, addressing the nagging issues that popped up after the recent feature launches.",
+        body: "We continue to iterate quickly, addressing the nagging issues that popped up after the recent feature launches.",
         bullets: [
           "Better memory management improves long sessions.",
           "Reduced sync retry counts on poor networks.",
@@ -938,8 +969,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body:
-          "Based on your feedback, we tuned the health score algorithm to better account for new data points while maintaining clarity in the dashboard.",
+        body: "Based on your feedback, we tuned the health score algorithm to better account for new data points while maintaining clarity in the dashboard.",
         bullets: [
           "Scores refresh more consistently after new data imports.",
           "Improved explainer text clarifies what changed and why.",
@@ -976,16 +1006,14 @@ export const releases: Release[] = [
       },
       {
         title: "Security updates",
-        description:
-          "Upgraded dependencies and tightened access controls.",
+        description: "Upgraded dependencies and tightened access controls.",
         impact: "improved",
       },
     ],
     sections: [
       {
         heading: "Release details",
-        body:
-          "Every few weeks we roll up the fixes and quality of life improvements needed to keep Kaizen Health dependable. This release focused on strengthening secure storage and reducing crash rates.",
+        body: "Every few weeks we roll up the fixes and quality of life improvements needed to keep Kaizen Health dependable. This release focused on strengthening secure storage and reducing crash rates.",
         bullets: [
           "Crash rate reduced across older devices running the latest OS.",
           "Security scans run more frequently to catch issues earlier.",
