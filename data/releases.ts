@@ -32,6 +32,44 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
+    slug: "1-12-1-bug-fixes-security",
+    version: "1.12.1",
+    title: "Minor Bug Fixes and Security Updates",
+    summary:
+      "Polish release addressing stability issues and tightening security across the app.",
+    publishedAt: "2026-01-17",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["Security", "Reliability"],
+    highlights: [
+      {
+        title: "Security updates",
+        description:
+          "Patched vulnerabilities and refreshed dependencies to keep accounts protected.",
+        impact: "improved",
+      },
+      {
+        title: "Bug fixes",
+        description:
+          "Resolved crashes and minor bug fixes that user's reported especially around the 'Talk to Kai' feature.",
+        impact: "fixed",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "This maintenance release keeps Kaizen running smoothly and securely after the recent memory launch.",
+        bullets: [
+          "Applied security patches and updated libraries to latest safe versions.",
+          "Fixed minor crashes in chat and documents navigation flows.",
+          "Polished UI spacing and copy in recent settings screens.",
+        ],
+      },
+      stayConnectedSection(),
+    ],
+    resources: defaultResources,
+  },
+  {
     slug: "1-12-0-kai-memory",
     version: "1.12.0",
     title: "Kai Memory Remembers What Matters",
