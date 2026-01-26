@@ -32,6 +32,68 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
+    slug: "1-12-2-memory-management",
+    version: "1.12.2",
+    title: "Personal Memory Management",
+    summary:
+      "Take full control of your memories with new management tools, smarter confidence filtering, and one-tap deletion.",
+    publishedAt: "2026-01-26",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["AI insights", "Productivity"],
+    highlights: [
+      {
+        title: "Add and manage memories",
+        description:
+          "Create, view, and organize personal memories directly from the app to keep Kai informed about what matters most.",
+        impact: "new",
+      },
+      {
+        title: "High-confidence filtering",
+        description:
+          "Improved checks ensure only reliable, high-confidence memories are stored, reducing noise and keeping context accurate.",
+        impact: "improved",
+      },
+      {
+        title: "One-tap memory deletion",
+        description:
+          "Clear all your memories instantly with a single button—complete control over your data, always.",
+        impact: "new",
+      },
+      {
+        title: "Performance and stability",
+        description:
+          "Fixed crashes affecting multiple users and improved overall app performance.",
+        impact: "fixed",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "Building on Kai Memory, this release puts you in the driver's seat. Add memories manually, trust that only high-quality context gets saved, and wipe everything clean whenever you choose.",
+        bullets: [
+          "Add personal memories directly through profile settings or during conversations with Kai.",
+          "Smarter confidence thresholds prevent low-quality or ambiguous information from cluttering your memory bank.",
+          "`Delete all memories with one tap from settings - no confirmation loops, just immediate control.`",
+          "Resolved crashes reported by certain users when using large, dynamic text in the app.",
+        ],
+      },
+      {
+        heading: "Why memory control matters",
+        body: "Your health context should be accurate and up to date. These tools ensure Kai only remembers what you want it to remember.",
+        bullets: [
+          "Outdated information can lead to irrelevant suggestions—now you can keep things current effortlessly.",
+          "Privacy-first design means you decide what stays and what goes.",
+          "Cleaner memory leads to sharper, more personalized responses from Kai.",
+        ],
+      },
+      stayConnectedSection(
+        "Tell us how you're using memory management and what controls you'd like to see next.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
     slug: "1-12-1-bug-fixes-security",
     version: "1.12.1",
     title: "Minor Bug Fixes and Security Updates",
