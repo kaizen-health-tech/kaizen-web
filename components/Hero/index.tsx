@@ -1,23 +1,166 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { animate, stagger, createTimeline } from "animejs";
+
+const headlines = [
+  {
+    line1: "Your Family's Health History,",
+    line2: "Clear, Organized, Always Accessible",
+  },
+  {
+    line1: "Lab Results Made Simple,",
+    line2: "Understood in Seconds",
+  },
+  {
+    line1: "Stop Juggling Patient Portals.",
+    line2: "One App for Your Family's Health.",
+  },
+  {
+    line1: "Managing Your Parents' Health",
+    line2: "Shouldn't Feel This Hard",
+  },
+  {
+    line1: "Medical Records That Actually",
+    line2: "Make Sense to You",
+  },
+];
 
 /**
  * Hero section – full-width layout.
  * Features:
  *  • Brand headline with accent colour (#6C42E3).
+ *  • Animated rotating headlines using anime.js.
  *  • App-store badges.
  *  • Responsive family hero image.
  *  • Glass-blur overlay card with USP + stats.
  */
 const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const line1Ref = useRef<HTMLHeadingElement>(null);
+  const line2Ref = useRef<HTMLHeadingElement>(null);
+  const isAnimatingRef = useRef(false);
+
+  const animateIn = useCallback(() => {
+    if (!line1Ref.current || !line2Ref.current) return;
+
+    const line1Words = line1Ref.current.querySelectorAll(".word");
+    const line2Words = line2Ref.current.querySelectorAll(".word");
+
+    const timeline = createTimeline();
+
+    timeline
+      .add(line1Words, {
+        opacity: [0, 1],
+        translateY: ["20px", "0px"],
+        duration: 1000,
+        delay: stagger(80),
+        ease: "outExpo",
+      })
+      .add(
+        line2Words,
+        {
+          opacity: [0, 1],
+          translateY: ["20px", "0px"],
+          duration: 1000,
+          delay: stagger(80),
+          ease: "outExpo",
+        },
+        "-=400",
+      );
+  }, []);
+
+  const animateOut = useCallback(() => {
+    return new Promise<void>((resolve) => {
+      if (!line1Ref.current || !line2Ref.current) {
+        resolve();
+        return;
+      }
+
+      const line1Words = line1Ref.current.querySelectorAll(".word");
+      const line2Words = line2Ref.current.querySelectorAll(".word");
+
+      const timeline = createTimeline({
+        onComplete: () => resolve(),
+      });
+
+      timeline
+        .add(line2Words, {
+          opacity: [1, 0],
+          translateY: ["0px", "-20px"],
+          duration: 800,
+          delay: stagger(50),
+          ease: "inExpo",
+        })
+        .add(
+          line1Words,
+          {
+            opacity: [1, 0],
+            translateY: ["0px", "-20px"],
+            duration: 800,
+            delay: stagger(50),
+            ease: "inExpo",
+          },
+          "-=300",
+        );
+    });
+  }, []);
+
+  useEffect(() => {
+    // Initial animation
+    const timeout = setTimeout(() => {
+      animateIn();
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, [animateIn]);
+
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      if (isAnimatingRef.current) return;
+      isAnimatingRef.current = true;
+
+      await animateOut();
+      setCurrentIndex((prev) => (prev + 1) % headlines.length);
+
+      // Small delay for DOM to update
+      setTimeout(() => {
+        animateIn();
+        isAnimatingRef.current = false;
+      }, 50);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [animateIn, animateOut]);
+
+  const renderWords = (text: string) => {
+    return text.split(" ").map((word, index) => (
+      <span
+        key={index}
+        className="word inline-block opacity-0"
+        style={{ marginRight: "0.3em" }}
+      >
+        {word}
+      </span>
+    ));
+  };
+
   return (
     <section className="w-full pt-24 pb-8 lg:mt-4 mt-2 bg-gradient-to-b from-[#FFFFFF] to-[#F5F6FC]">
       {/* Copy block */}
       <div className="px-4 md:px-8 max-w-screen-xl mx-auto text-center">
-        <h1 className="text-3xl md:text-5xl text-black font-semibold leading-tight lg:mt-6 mt-4">
-          Your Family's Medical Records,
+        <h1
+          ref={line1Ref}
+          className="text-3xl md:text-5xl text-black font-semibold leading-tight lg:mt-6 mt-2 min-h-[2.5rem] md:min-h-[3.5rem]"
+        >
+          {renderWords(headlines[currentIndex].line1)}
         </h1>
-        <h1 className="text-[#6C42E3] lg:mt-6 mt-2 text-3xl md:text-5xl font-semibold leading-tight">
-          Organized & Explained by AI
+        <h1
+          ref={line2Ref}
+          className="text-[#6C42E3] text-3xl md:text-5xl font-semibold leading-tight min-h-[2.5rem] md:min-h-[3.5rem]"
+        >
+          {renderWords(headlines[currentIndex].line2)}
         </h1>
         <p className="mt-4 text-xl text-gray-700 mx-auto max-w-md">
           Upload lab results and doctor's notes. Ask questions in plain English.
