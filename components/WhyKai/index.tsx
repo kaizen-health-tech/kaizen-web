@@ -37,7 +37,6 @@ export default function WhyKai() {
           "linear-gradient(111.88deg, #B5B3FF 0%, rgba(247, 247, 251, 0) 40.48%, rgba(247, 247, 251, 0) 60.72%, #8FD3D1 101.2%)",
       }}
     >
-
       <div className="relative mx-auto w-full max-w-5xl px-4 md:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-semibold leading-tight text-[#1C1824] md:text-5xl">
@@ -109,7 +108,7 @@ export default function WhyKai() {
               key={feature.title}
               className="flex gap-4 rounded-2xl border border-white/70 bg-white/90 p-5 shadow-[0_16px_30px_rgba(46,32,90,0.12)]"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F1ECFF]">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl">
                 <Image
                   src={feature.image}
                   alt=""
