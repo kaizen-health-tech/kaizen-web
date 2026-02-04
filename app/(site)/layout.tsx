@@ -31,7 +31,12 @@ const structuredData = {
       "@id": `${SITE_URL}#organization`,
       name: "Kaizen Health",
       url: SITE_URL,
-      logo: `${SITE_URL}/images/logo/kaizen-logo.png`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/logo/kaizen-logo.png`,
+        width: 512,
+        height: 512,
+      },
       sameAs: [
         "https://twitter.com/kaizenhealthio",
         "https://www.facebook.com/profile.php?id=61562247803536",
@@ -53,12 +58,20 @@ const structuredData = {
       url: SITE_URL,
       inLanguage: "en-US",
       publisher: { "@id": `${SITE_URL}#organization` },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE_URL}/blog?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
     },
-    {
+    ...NAV_LINKS.map((link) => ({
       "@type": "SiteNavigationElement",
-      name: NAV_LINKS.map((link) => link.name),
-      url: NAV_LINKS.map((link) => link.url),
-    },
+      name: link.name,
+      url: link.url,
+    })),
   ],
 };
 

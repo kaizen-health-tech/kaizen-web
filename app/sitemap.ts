@@ -12,6 +12,7 @@ const staticRoutes = [
   "/careers",
   "/careers/open-roles",
   "/support",
+  "/chat",
   "/docs",
   "/docs/privacy",
   "/docs/terms",
