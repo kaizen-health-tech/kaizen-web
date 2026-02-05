@@ -273,6 +273,7 @@ pre {
   @apply bg-stroke text-black dark:bg-blackho dark:text-white;
 }
 
+/*Need to add something here*/
 button:disabled{
 
 }
