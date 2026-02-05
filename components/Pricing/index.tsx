@@ -40,152 +40,199 @@ const Pricing = () => {
               className="dark:hidden"
             />
           </div>
-          <div className="flex flex-wrap justify-center gap-7.5 lg:flex-nowrap xl:gap-12.5">
+          <div className="flex flex-wrap justify-center gap-7.5 lg:flex-nowrap xl:gap-10">
             {/*FREE PLAN*/}
-            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full md:w-[95%] lg:w-1/3 xl:p-12.5">
-              <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                Starter
+            <div className="animate_top group relative w-full rounded-3xl border-2 border-[#E6E6EE] bg-white px-8 py-10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] md:w-[95%] lg:w-1/3 xl:px-10 xl:py-12">
+              <h3 className="mb-3 text-2xl font-semibold uppercase tracking-wide text-[#6B6F7A]">
+                Free - Starter
               </h3>
+              <p className="mb-6 text-sm text-[#5D6270]">
+                Who it's for: First-time users, small families, skeptics
+              </p>
               <div className="mb-6 flex items-baseline">
-                <span className="text-5xl font-extrabold text-black">$0</span>
-                <span className="ml-1 text-xl font-medium text-gray-700">
-                  / month
-                </span>
+                <span className="text-3xl font-semibold text-[#6B6F7A]">$0</span>
               </div>
 
-              <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
-                <ul className="space-y-4 text-left">
+              <a href="#cta">
+                <button className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#F2EEFF] px-6 py-3 text-sm font-semibold text-[#4C2A90] transition-colors hover:bg-[#E8E0FF]">
+                  Start Free Trial
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M5 12l5-5-5-5" />
+                  </svg>
+                </button>
+              </a>
+
+              <div className="mt-7">
+                <p className="mb-4 text-sm font-semibold text-[#2B2F3A]">
+                  Limits that make sense:
+                </p>
+                <ul className="space-y-4 text-left text-sm text-[#2B2F3A]">
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span> 1 GB health record
-                    storage
+                    <span className="text-emerald-400">✓</span> 1 care group
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span> 5 document summaries
-                    / month
+                    <span className="text-emerald-400">✓</span> Up to 6 members
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span> 10 AI insights /
-                    month
+                    <span className="text-emerald-400">✓</span> Basic health
+                    score visibility
                   </li>
-                  <li className="flex items-start gap-2 text-gray-400">
-                    ✕ EHR integration
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400">✓</span> Limited summaries
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400">✓</span> No long-term
+                    memory
+                  </li>
+                  <li className="flex items-start gap-2 text-[#A0A4B1]">
+                    <span className="text-[#C7CBD6]">✕</span> No EHR sync
                   </li>
                 </ul>
-                <a href="#cta">
-                  <button className="mt-8 inline-flex items-center justify-center gap-2 rounded-md border border-primary bg-primary/10 px-6 py-3 font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
-                    Start Free Trial
-                    <svg
-                      width="16"
-                      height="16"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M5 12l5-5-5-5" />
-                    </svg>
-                  </button>
-                </a>
               </div>
             </div>
             {/* <!-- Pricing Item --> */}
-            <div className="animate_top group relative rounded-lg border-2 border-primary bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full md:w-[95%] lg:w-1/3 xl:p-12.5">
-              <div className="absolute left-1/2 -top-4 -translate-x-1/2 rounded-b-md bg-primary px-4 py-1.5 text-xs font-semibold uppercase text-white">
-                Duo Event
-              </div>
-              <h3 className="mb-4 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                Duo
-              </h3>
-              <div className="mb-6 flex items-baseline">
-                <span className="mr-2 text-base font-medium line-through text-gray-500">
-                  $5
+            <div className="animate_top group relative w-full rounded-3xl border-2 border-[#4C2A90] bg-white px-8 py-10 shadow-[0_18px_45px_rgba(76,42,144,0.22)] md:w-[95%] lg:w-1/3 xl:px-10 xl:py-12">
+              <div className="mb-3 flex items-center gap-3">
+                <h3 className="text-2xl font-semibold uppercase tracking-wide text-[#4C2A90]">
+                  Family - Plus
+                </h3>
+                <span className="rounded-full bg-[#EFE8FF] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#4C2A90]">
+                  Recommended
                 </span>
-                <span className="text-5xl font-extrabold">$0</span>
-                <span className="ml-1 text-xl font-medium text-gray-700">
+              </div>
+              <p className="mb-4 text-sm text-[#5D6270]">
+                Who it's for: Couples, parents + aging parents, caretakers
+              </p>
+              <div className="mb-1 flex items-baseline text-[#5D6270]">
+                <span className="text-3xl font-semibold text-[#6B6F7A]">
+                  $9.99
+                </span>
+                <span className="ml-2 text-sm">
                   / month
                 </span>
               </div>
+              <p className="text-sm text-[#5D6270]">or $100 / year</p>
 
-              <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
-                <ul className="space-y-4 text-left">
+              <a href="#cta">
+                <button className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#4C2A90] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#3E2378]">
+                  Start Free Trial
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M5 12l5-5-5-5" />
+                  </svg>
+                </button>
+              </a>
+
+              <div className="mt-7">
+                <p className="mb-4 text-sm font-semibold text-[#2B2F3A]">
+                  Limits:
+                </p>
+                <ul className="space-y-4 text-left text-sm text-[#2B2F3A]">
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span> 5 GB health record
-                    storage
+                    <span className="text-emerald-400">✓</span> Up to 5 care
+                    groups
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span> Unlimited AI
-                    document analysis
+                    <span className="text-emerald-400">✓</span> Up to 6 members
+                    per group
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span> Unlimited AI
-                    insights
+                    <span className="text-emerald-400">✓</span> Everyone gets
+                    full features
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span> EHR integration
-                    (coming soon)
+                    <span className="text-emerald-400">✓</span> Flexible
+                    document summaries
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400">✓</span> 30-day memory
+                    window
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400">✓</span> Multiple EHR
+                    connections
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400">✓</span> Expanded storage
+                    (10GB each)
                   </li>
                 </ul>
-                <a href="#cta">
-                  <button className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-white hover:bg-primary/90">
-                    Start Free Trial
-                    <svg
-                      width="16"
-                      height="16"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M5 12l5-5-5-5" />
-                    </svg>
-                  </button>
-                </a>
               </div>
             </div>
 
             {/* <!-- Pricing Item --> */}
-            <div className="animate_top group relative rounded-lg border border-stroke bg-white p-7.5 shadow-solid-10 dark:border-strokedark dark:bg-blacksection dark:shadow-none w-full md:w-[95%] lg:w-1/3 xl:p-12.5">
-              <h3 className="mb-7.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                Family
+            <div className="animate_top group relative w-full rounded-3xl border-2 border-[#E6E6EE] bg-white px-8 py-10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] md:w-[95%] lg:w-1/3 xl:px-10 xl:py-12">
+              <h3 className="mb-3 text-2xl font-semibold uppercase tracking-wide text-[#6B6F7A]">
+                Family - Pro
               </h3>
-              <div className="mb-6 flex items-baseline">
-                <span className="text-5xl font-extrabold text-black">$10</span>
-                <span className="ml-1 text-xl font-medium text-gray-700">
-                  / month
+              <p className="mb-4 text-sm text-[#5D6270]">
+                Who it's for: Large families, caregivers, chronic care
+                households
+              </p>
+              <div className="mb-1 flex items-baseline text-[#5D6270]">
+                <span className="text-3xl font-semibold text-[#6B6F7A]">
+                  $14.99
                 </span>
+                <span className="ml-2 text-sm">/ month</span>
               </div>
+              <p className="text-sm text-[#5D6270]">or $150 / year</p>
 
-              <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
-                <ul className="space-y-4 text-left">
+              <a href="#cta">
+                <button className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#F2EEFF] px-6 py-3 text-sm font-semibold text-[#4C2A90] transition-colors hover:bg-[#E8E0FF]">
+                  Start Free Trial
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M5 12l5-5-5-5" />
+                  </svg>
+                </button>
+              </a>
+
+              <div className="mt-7">
+                <p className="mb-4 text-sm font-semibold text-[#2B2F3A]">
+                  Limits:
+                </p>
+                <ul className="space-y-4 text-left text-sm text-[#2B2F3A]">
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span> 100 GB health record
-                    storage
+                    <span className="text-emerald-400">✓</span> Up to 10 care
+                    groups
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span> Everything in Duo,
-                    plus
+                    <span className="text-emerald-400">✓</span> Up to 10 members
+                    per group
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span>Access to advanced AI
-                    models
+                    <span className="text-emerald-400">✓</span> Extended memory
+                    (90-180 days)
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary">✓</span>Integration to EHR's
-                    and providers
+                    <span className="text-emerald-400">✓</span> Trend analysis
+                    and alerts
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400">✓</span> Priority
+                    processing
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400">✓</span> Higher storage
+                    (120 GB total)
                   </li>
                 </ul>
-                <a href="#cta">
-                  <button className="mt-8 inline-flex items-center justify-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-6 py-3 font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
-                    Start Free Trial
-                    <svg
-                      width="16"
-                      height="16"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M5 12l5-5-5-5" />
-                    </svg>
-                  </button>
-                </a>
               </div>
             </div>
           </div>
