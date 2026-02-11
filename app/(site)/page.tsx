@@ -8,59 +8,51 @@ import WhyKai from "@/components/WhyKai";
 import SecurityHighlights from "@/components/SecurityHighlights";
 import Feature from "@/components/Features";
 import CTA from "@/components/CTA";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Kaizen Health – Connecting Families, Simplifying Health",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Family Health Management App",
   description:
-    "Kaizen Health is a secure, AI-powered platform that helps families organize, track, and share medical records. Stay connected to your loved ones’ health with HIPAA‑compliant tools, personalized insights, and easy access to vital health information.",
+    "Kaizen Health helps families organize records, share secure updates, and use AI guidance to stay prepared for appointments and care decisions together.",
+  path: "/",
+  image: "/images/open-graph/home.png",
   keywords: [
-    "Kaizen Health",
     "family health app",
     "HIPAA compliant health records",
     "AI health insights",
     "share medical records securely",
     "caregiver tools",
   ],
-  alternates: {
-    canonical: "https://www.kaizenhealth.io/",
-  },
-  openGraph: {
-    title: "Kaizen Health – Connecting Families, Simplifying Health",
-    description:
-      "Organize, understand, and securely share your family’s health information in one place.",
-    url: "https://www.kaizenhealth.io/",
-    siteName: "Kaizen Health",
-    type: "website",
-    images: [
-      {
-        url: "https://www.kaizenhealth.io/images/open-graph/home.png",
-        width: 1200,
-        height: 630,
-        alt: "Kaizen Health app screens and family dashboard",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Kaizen Health – Connecting Families, Simplifying Health",
-    description:
-      "Secure, AI-powered health records and insights for the whole family.",
-    images: ["https://www.kaizenhealth.io/images/open-graph/home.png"],
-  },
-};
+});
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <WhyWeBuiltKaizen />
-      <BuiltWithStories />
-      <WhyKai />
-      <Feature />
-      <SecurityHighlights />
-      <Pricing />
-      <FAQ />
-      <CTA />
+      <div className="content-visibility-auto">
+        <WhyWeBuiltKaizen />
+      </div>
+      <div className="content-visibility-auto">
+        <BuiltWithStories />
+      </div>
+      <div className="content-visibility-auto">
+        <WhyKai />
+      </div>
+      <div className="content-visibility-auto">
+        <Feature />
+      </div>
+      <div className="content-visibility-auto">
+        <SecurityHighlights />
+      </div>
+      <div className="content-visibility-auto">
+        <Pricing />
+      </div>
+      <div className="content-visibility-auto">
+        <FAQ />
+      </div>
+      <div className="content-visibility-auto">
+        <CTA />
+      </div>
     </main>
   );
 }

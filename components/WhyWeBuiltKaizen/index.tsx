@@ -12,7 +12,6 @@ export const WhyWeBuiltKaizen = () => (
       alt=""
       width={600}
       height={200}
-      priority
       className="pointer-events-none absolute left-0 top-4 w-[100%] max-w-none select-none"
     />
     {/* 2-col layout */}
@@ -45,7 +44,7 @@ export const WhyWeBuiltKaizen = () => (
             alt="Adult daughter holding hands with her mother"
             width={800}
             height={520}
-            quality={100}
+            quality={75}
             sizes="(min-width: 1024px) 448px, 100vw"
             className="h-auto w-full object-cover"
           />

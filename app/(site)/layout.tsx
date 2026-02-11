@@ -1,94 +1,74 @@
 import type { Metadata, Viewport } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import {
+  COMPANY_NAME,
+  SITE_URL,
+  absoluteUrl,
+  buildTitle,
+  normalizeDescription,
+} from "@/lib/seo";
 
 import "../globals.css";
 import SiteShell from "./site-shell";
 
-const inter = Source_Sans_3({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
-const SITE_URL = "https://www.kaizenhealth.io";
-
 const NAV_LINKS = [
-  { name: "About", url: `${SITE_URL}/about` },
-  { name: "Our Team", url: `${SITE_URL}/team` },
-  { name: "How It Works", url: `${SITE_URL}/how-it-works` },
-  { name: "Blog", url: `${SITE_URL}/blog` },
-  { name: "Updates", url: `${SITE_URL}/updates` },
-  { name: "Support", url: `${SITE_URL}/support` },
-  { name: "Careers", url: `${SITE_URL}/careers` },
-  { name: "Privacy Policy", url: `${SITE_URL}/docs/privacy` },
+  { name: "About Kaizen Health", url: absoluteUrl("/about") },
+  { name: "Our Team", url: absoluteUrl("/team") },
+  { name: "How Kaizen Works", url: absoluteUrl("/how-it-works") },
+  { name: "Family Health Blog", url: absoluteUrl("/blog") },
+  { name: "Product Updates", url: absoluteUrl("/updates") },
+  { name: "Support Center", url: absoluteUrl("/support") },
+  { name: "Careers", url: absoluteUrl("/careers") },
+  { name: "Privacy Policy", url: absoluteUrl("/docs/privacy") },
 ];
 
-const structuredData = {
+const organizationSchema = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${SITE_URL}#organization`,
-      name: "Kaizen Health",
-      url: SITE_URL,
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/images/logo/kaizen-logo.png`,
-        width: 512,
-        height: 512,
-      },
-      sameAs: [
-        "https://twitter.com/kaizenhealthio",
-        "https://www.facebook.com/profile.php?id=61562247803536",
-        "https://instagram.com/kaizenhealthio",
-        "https://www.linkedin.com/company/kaizen-health-io",
-      ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "customer support",
-        email: "info@kaizenhealth.io",
-        areaServed: "US",
-        availableLanguage: ["English"],
-      },
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}#website`,
-      name: "Kaizen Health",
-      url: SITE_URL,
-      inLanguage: "en-US",
-      publisher: { "@id": `${SITE_URL}#organization` },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${SITE_URL}/blog?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
-    },
-    ...NAV_LINKS.map((link) => ({
-      "@type": "SiteNavigationElement",
-      name: link.name,
-      url: link.url,
-    })),
-  ],
+  "@type": "Organization",
+  name: COMPANY_NAME,
+  url: SITE_URL,
+  logo: absoluteUrl("/images/logo/kaizen-logo.png"),
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: COMPANY_NAME,
+  url: SITE_URL,
+};
+
+const navigationSchema = {
+  "@context": "https://schema.org",
+  "@graph": NAV_LINKS.map((link) => ({
+    "@type": "SiteNavigationElement",
+    name: link.name,
+    url: link.url,
+  })),
+};
+
+const homePrimaryKeyword = "Family Health Management Platform";
+const homeMetaDescription = normalizeDescription(
+  "Kaizen Health gives families one secure place to organize medical records, share updates, and use AI support to stay prepared for every care decision.",
+  homePrimaryKeyword,
+);
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Kaizen Health | Connecting Families, Simplifying Health",
-    template: "%s | Kaizen Health",
-  },
-  description:
-    "Kaizen Health keeps families organized around medical information, care plans, and health updates—so everyone can feel confident and informed.",
+  title: buildTitle(homePrimaryKeyword),
+  description: homeMetaDescription,
   keywords: [
     "family health app",
     "medical record organizer",
     "care coordination",
     "health tracking",
-    "Kaizen Health",
+    COMPANY_NAME,
   ],
   alternates: {
     canonical: SITE_URL,
@@ -96,25 +76,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "Kaizen Health",
-    title: "Kaizen Health | Connecting Families, Simplifying Health",
-    description:
-      "A secure hub for families to organize medical information, coordinate care, and stay connected.",
+    siteName: COMPANY_NAME,
+    title: buildTitle(homePrimaryKeyword),
+    description: homeMetaDescription,
     images: [
       {
-        url: `${SITE_URL}/images/logo/kaizen-logo.png`,
+        url: absoluteUrl("/images/open-graph/home.png"),
         width: 1200,
         height: 630,
-        alt: "Kaizen Health logo",
+        alt: `${COMPANY_NAME} family health platform`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kaizen Health | Connecting Families, Simplifying Health",
-    description:
-      "Organize medical data, collaborate with relatives, and simplify every step of family health management.",
-    images: [`${SITE_URL}/images/logo/kaizen-logo.png`],
+    title: buildTitle(homePrimaryKeyword),
+    description: homeMetaDescription,
+    images: [absoluteUrl("/images/open-graph/home.png")],
     site: "@kaizenhealthio",
     creator: "@kaizenhealthio",
   },
@@ -141,11 +119,19 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(navigationSchema) }}
         />
       </head>
       <body
-        className={`dark:bg-black ${inter.className} bg-gradient-to-b from-[rgba(255,255,255,1)] to-[rgba(245,246,252,1)]`}
+        className={`dark:bg-black ${sourceSans.className} bg-gradient-to-b from-[rgba(255,255,255,1)] to-[rgba(245,246,252,1)]`}
       >
         <GoogleAnalytics gaId="G-PN88Z9QS4E" />
         <SiteShell>{children}</SiteShell>

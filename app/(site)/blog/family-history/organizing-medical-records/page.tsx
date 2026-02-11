@@ -3,42 +3,16 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title:
-    "The Complete Guide to Organizing Medical Records When Caring for Aging Parents",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Organizing Medical Records for Aging Parents",
   description:
-    "A practical resource for family caregivers navigating the complexities of healthcare management. Learn how to organize medical records, create effective systems, and ensure your loved ones receive the best possible care.",
-  openGraph: {
-    title:
-      "The Complete Guide to Organizing Medical Records When Caring for Aging Parents",
-    description:
-      "Discover practical strategies for organizing medical records, choosing the right system (paper, digital, or hybrid), and maintaining healthcare information for aging parents.",
-    url: "https://kaizenhealth.io/blog/family-history/organizing-medical-records",
-    siteName: "Kaizen Health",
-    images: [
-      {
-        url: "https://kaizenhealth.io/images/blog/organizing-medical-records.png",
-        width: 1200,
-        height: 630,
-        alt: "Guide to Organizing Medical Records for Caregivers",
-      },
-    ],
-    type: "article",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@kaizenhealthio",
-    title:
-      "The Complete Guide to Organizing Medical Records When Caring for Aging Parents",
-    description:
-      "Practical strategies for managing healthcare information and organizing medical records for family caregivers.",
-    images: [
-      "https://kaizenhealth.io/images/blog/organizing-medical-records.png",
-    ],
-  },
-};
+    "Follow this practical guide to organize medical records for aging parents with clear systems, emergency readiness, and easier collaboration across family caregivers.",
+  path: "/blog/family-history/organizing-medical-records",
+  type: "article",
+  image: "/images/blog/organizing-medical-records.jpg",
+});
 
 const OrganizingMedicalRecords = () => {
   return (
@@ -986,12 +960,12 @@ const OrganizingMedicalRecords = () => {
             </strong>{" "}
             Visit{" "}
             <Link
-              href="https://www.kaizenhealth.io"
+              href="https://kaizenhealth.io"
               className="text-blue-600 underline"
               target="_blank"
               rel="noopener noreferrer"
             >
-              www.kaizenhealth.io
+              kaizenhealth.io
             </Link>{" "}
             to learn about our solutions for home care providers.
           </p>
@@ -1413,12 +1387,12 @@ const OrganizingMedicalRecords = () => {
             <p className="mb-5 text-lg font-semibold text-black">
               👉 Visit{" "}
               <Link
-                href="https://www.kaizenhealth.io"
+                href="https://kaizenhealth.io"
                 className="text-blue-600 underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                www.kaizenhealth.io
+                kaizenhealth.io
               </Link>{" "}
               to learn more and schedule a demo.
             </p>
@@ -1430,12 +1404,12 @@ const OrganizingMedicalRecords = () => {
               <li>
                 <strong>Website:</strong>{" "}
                 <Link
-                  href="https://www.kaizenhealth.io"
+                  href="https://kaizenhealth.io"
                   className="text-blue-600 underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  www.kaizenhealth.io
+                  kaizenhealth.io
                 </Link>
               </li>
             </ul>

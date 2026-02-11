@@ -4,45 +4,30 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 
 const POSTS_PER_PAGE = 6;
-
-export const metadata: Metadata = {
-  title: "Kaizen Health Blog | AI-Powered Wellness & Family Health Insights",
-  description:
-    "Explore expert-backed articles on family health, AI-driven wellness, preventative care, and smart health tracking. Stay ahead with the latest healthcare insights.",
-  openGraph: {
-    title: "Kaizen Health Blog | AI-Powered Wellness & Family Health Insights",
-    description:
-      "Explore expert-backed articles on family health, AI-driven wellness, preventative care, and smart health tracking. Stay ahead with the latest healthcare insights.",
-    url: "https://kaizenhealth.io/blog/1",
-    siteName: "Kaizen Health",
-    images: [
-      {
-        url: "https://kaizenhealth.io/images/open-graph/blog.png",
-        width: 1200,
-        height: 630,
-        alt: "Kaizen Health Blog - AI-Powered Family Health Insights",
-      },
-    ],
-    type: "website",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@kaizenhealth",
-    title: "Kaizen Health Blog | AI-Powered Wellness & Family Health Insights",
-    description:
-      "Stay informed with the latest AI-driven healthcare trends, personalized health tracking, and family wellness tips. Read expert-backed articles on Kaizen Health Blog.",
-    images: ["https://kaizenhealth.io/images/open-graph/blog.png"],
-  },
-};
 
 interface BlogPageProps {
   params: Promise<{
     page: string;
   }>;
 }
+
+export const generateMetadata = async ({
+  params,
+}: BlogPageProps): Promise<Metadata> => {
+  const { page } = await params;
+  const pageNumber = Math.max(Number.parseInt(page || "1", 10) || 1, 1);
+
+  return createPageMetadata({
+    primaryKeyword: `Family Health Blog Page ${pageNumber}`,
+    description:
+      "Explore practical family health guidance, research-backed articles, and caregiving insights to stay informed and confident in everyday care decisions.",
+    path: `/blog/${pageNumber}`,
+    image: "/images/open-graph/blog.png",
+  });
+};
 
 const BlogPage = async ({ params }: BlogPageProps) => {
   const { page } = await params;

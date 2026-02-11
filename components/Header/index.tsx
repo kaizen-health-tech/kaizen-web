@@ -60,15 +60,15 @@ const Header = () => {
     >
       <div className="bg-white relative mx-auto max-w-c-1390 items-center justify-between p-2 rounded-lg px-4 md:px-8 xl:flex shadow-lg">
         <div className="flex w-full items-center justify-between xl:w-1/4">
-          <a href="/">
+          <Link href="/" aria-label="Kaizen Health home">
             <Image
               src="/images/logo/kaizen-logo.svg"
-              alt="logo"
+              alt="Kaizen Health logo"
               width={240}
               height={120}
               className="w-full dark:block"
             />
-          </a>
+          </Link>
 
           {/* <!-- Hamburger Toggle BTN --> */}
           <button

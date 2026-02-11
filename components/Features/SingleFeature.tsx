@@ -30,7 +30,7 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
             alt={title}
             width={1200}
             height={640}
-            quality={100}
+            quality={75}
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="w-full max-w-lg rounded-2xl lg:rounded-3xl"
             loading="lazy"
@@ -74,7 +74,7 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
             alt={title}
             width={1200}
             height={640}
-            quality={100}
+            quality={75}
             sizes="(min-width: 1024px) 50vw, 100vw"
             loading="lazy"
             className="w-full max-w-lg rounded-2xl lg:rounded-3xl"

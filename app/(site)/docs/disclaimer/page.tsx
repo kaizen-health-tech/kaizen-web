@@ -1,11 +1,13 @@
 import SidebarLink from "@/components/Docs/SidebarLink";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Medical Disclaimer Policy - Kaizen Health",
-  description: "Medical disclaimer for Kaizen Health",
-  // other metadata
-};
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Medical Disclaimer",
+  description:
+    "Read the Kaizen Health medical disclaimer to understand informational limits, emergency guidance, and when to contact licensed healthcare professionals directly.",
+  path: "/docs/disclaimer",
+});
 
 export default function MedicalDisclaimer() {
   return (

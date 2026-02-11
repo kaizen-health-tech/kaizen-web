@@ -2,14 +2,16 @@ import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
 import { Metadata } from "next";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title:
-    "The Importance of Family Health Documentation: A Doctor’s Perspective",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Family Health Documentation Guide",
   description:
-    "An in-depth look at why documenting family health records matters for better medical care, highlighting Kaizen Health features.",
-  // other metadata
-};
+    "Understand why documenting family health records improves prevention, diagnosis, and coordination, and learn practical ways to keep critical information accessible.",
+  path: "/blog/family-history",
+  type: "article",
+  image: "/images/blog/family-history.jpeg",
+});
 
 const FamilyHistory = async () => {
   return (

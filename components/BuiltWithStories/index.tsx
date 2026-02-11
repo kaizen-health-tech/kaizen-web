@@ -93,9 +93,8 @@ export default function BuiltWithStories() {
                   alt={featureTitle}
                   width={600}
                   height={640}
-                  quality={100}
+                  quality={75}
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  priority={id === 1}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 

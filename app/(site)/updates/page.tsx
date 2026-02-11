@@ -3,44 +3,21 @@ import { ReleaseCard, ReleaseExplorer } from "@/components/Updates";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Kaizen Health Product Updates | What’s New & Coming Soon",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Product Updates",
   description:
-    "Stay on top of every Kaizen Health release. Explore new features, improvements, and rollout timelines so your care teams know what’s shipping next.",
+    "Track Kaizen Health release notes, roadmap improvements, and feature rollouts so your family or care team stays ready for every new capability.",
+  path: "/updates",
+  image: "/images/open-graph/home.png",
   keywords: [
     "Kaizen Health release notes",
     "Kaizen Health updates",
     "healthcare product roadmap",
     "HIPAA platform releases",
   ],
-  alternates: {
-    canonical: "https://www.kaizenhealth.io/updates",
-  },
-  openGraph: {
-    title: "Kaizen Health Product Updates | What’s New & Coming Soon",
-    description:
-      "See the latest Kaizen Health features, enhancement highlights, and rollout guidance for your organization.",
-    url: "https://www.kaizenhealth.io/updates",
-    siteName: "Kaizen Health",
-    type: "website",
-    images: [
-      {
-        url: "https://www.kaizenhealth.io/images/open-graph/updates.png",
-        width: 1200,
-        height: 630,
-        alt: "Kaizen Health Product Updates",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Kaizen Health Product Updates | What’s New & Coming Soon",
-    description:
-      "Discover the latest improvements across care coordination, AI insights, and mobile experiences.",
-    images: ["https://www.kaizenhealth.io/images/open-graph/updates.png"],
-  },
-};
+});
 
 const dateFormatter = new Intl.DateTimeFormat("en", {
   month: "long",

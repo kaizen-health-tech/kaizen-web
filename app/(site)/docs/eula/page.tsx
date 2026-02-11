@@ -1,12 +1,13 @@
 import { Metadata } from "next";
 import SidebarLink from "@/components/Docs/SidebarLink";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "End User License Agreement - Kaizen Health",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "End User License Agreement",
   description:
-    "End User License Agreement (EULA) for Kaizen Health - Family app. Terms and conditions for using our health tracking, medical records management, and AI health chat services. Important information about subscriptions, privacy, HIPAA compliance, and user rights.",
-  // other metadata
-};
+    "Read the Kaizen Health EULA for subscription terms, app usage rights, HIPAA commitments, and responsibilities related to family health record management.",
+  path: "/docs/eula",
+});
 
 export default function Eula() {
   return (

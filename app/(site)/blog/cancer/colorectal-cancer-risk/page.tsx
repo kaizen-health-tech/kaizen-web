@@ -2,13 +2,16 @@ import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
 import { Metadata } from "next";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title:
-    "Yogurt Consumption and Colorectal Cancer Risk: A Comprehensive Analysis of Emerging Evidence",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Yogurt and Colorectal Cancer Risk",
   description:
-    "Discover the latest research on yogurt consumption and its impact on colorectal cancer risk, particularly in relation to Bifidobacterium-positive tumors.",
-};
+    "Explore emerging evidence on yogurt intake, gut microbiome factors, and potential colorectal cancer risk reduction, including practical dietary takeaways.",
+  path: "/blog/cancer/colorectal-cancer-risk",
+  type: "article",
+  image: "/images/blog/yogurt.jpeg",
+});
 
 const ColorectalCancerRisk = async () => {
   return (

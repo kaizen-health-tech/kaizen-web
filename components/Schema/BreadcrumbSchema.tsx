@@ -1,3 +1,5 @@
+import { absoluteUrl } from "@/lib/seo";
+
 export interface BreadcrumbItem {
   name: string;
   url: string;
@@ -7,8 +9,6 @@ export interface BreadcrumbSchemaProps {
   items: BreadcrumbItem[];
 }
 
-const SITE_URL = "https://www.kaizenhealth.io";
-
 export default function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
@@ -17,7 +17,7 @@ export default function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: item.url.startsWith("http") ? item.url : `${SITE_URL}${item.url}`,
+      item: item.url.startsWith("http") ? item.url : absoluteUrl(item.url),
     })),
   };
 

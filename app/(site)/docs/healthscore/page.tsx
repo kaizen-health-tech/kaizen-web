@@ -1,12 +1,13 @@
 import SidebarLink from "@/components/Docs/SidebarLink";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Proprietary Health Score - Kaizen Health",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Health Score Methodology",
   description:
-    "Proprietary Health Score, sources and citations for Kaizen Health",
-  // other metadata
-};
+    "Learn how Kaizen Health calculates its proprietary health score using age, biometrics, and referenced health benchmarks from trusted clinical sources.",
+  path: "/docs/healthscore",
+});
 
 export default function HealthScore() {
   return (

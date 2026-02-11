@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Logo + tagline */}
           <div>
-            <a
+            <Link
               href="/"
               aria-label="Kaizen Health home"
               className="inline-block"
@@ -20,7 +21,7 @@ export default function Footer() {
                 height={60}
                 className="h-12 w-auto"
               />
-            </a>
+            </Link>
             <p className="mt-6 max-w-xs text-lg leading-relaxed text-gray-200">
               Connecting Families, <br /> Simplifying Health.
             </p>
@@ -46,33 +47,48 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="mb-4 text-lg font-semibold text-white">
-              Quick Links
+              Core Navigation
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="/about" className="hover:text-primary">
-                  About
-                </a>
+                <Link href="/about" className="hover:text-primary">
+                  About Kaizen Health
+                </Link>
               </li>
               <li>
-                <a href="/blog" className="hover:text-primary">
-                  Blog
-                </a>
+                <Link href="/how-it-works" className="hover:text-primary">
+                  How Kaizen works
+                </Link>
               </li>
               <li>
-                <a href="/careers" className="hover:text-primary">
+                <Link href="/blog" className="hover:text-primary">
+                  Family health blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/updates" className="hover:text-primary">
+                  Product updates
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers" className="hover:text-primary">
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/docs/privacy" className="hover:text-primary">
-                  Trust & Safety
-                </a>
+                <Link href="/docs/privacy" className="hover:text-primary">
+                  Privacy policy
+                </Link>
               </li>
               <li>
-                <a href="/support" className="hover:text-primary">
-                  Support
-                </a>
+                <Link href="/support" className="hover:text-primary">
+                  Support center
+                </Link>
+              </li>
+              <li>
+                <Link href="/html-sitemap" className="hover:text-primary">
+                  HTML sitemap
+                </Link>
               </li>
             </ul>
           </div>
@@ -88,6 +104,8 @@ export default function Footer() {
                   href="https://twitter.com/kaizenhealthio"
                   aria-label="Twitter"
                   className="hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     width="24"
@@ -122,6 +140,7 @@ export default function Footer() {
                   target="_blank"
                   aria-label="Instagram"
                   className="hover:text-primary"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     width="24"
@@ -138,6 +157,8 @@ export default function Footer() {
                   href="https://linkedin.com/company/kaizen-health-io"
                   aria-label="LinkedIn"
                   className="hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     width="24"

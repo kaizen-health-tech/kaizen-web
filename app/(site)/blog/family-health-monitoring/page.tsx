@@ -3,12 +3,15 @@ import Image from "next/image";
 import SharePost from "@/components/Blog/SharePost";
 import BlogPostWrapper from "@/components/Blog/BlogPostWrapper";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title:
-    "The Critical Role of Family Health Monitoring in Preventing Hereditary Diseases",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Family Health Monitoring for Hereditary Risk",
   description:
-    "Discover how family health history is the most underutilized tool in preventive medicine. Learn how monitoring hereditary patterns can prevent up to 60% of colorectal cancer deaths, reduce breast cancer risk by 90%, and enable lifestyle interventions that prevent 58% of type 2 diabetes cases.",
+    "Learn how tracking family health history helps prevent hereditary disease, support early screening, and improve long-term outcomes with proactive care planning.",
+  path: "/blog/family-health-monitoring",
+  type: "article",
+  image: "/images/blog/family-generations.png",
   keywords: [
     "family health history",
     "hereditary diseases",
@@ -21,14 +24,7 @@ export const metadata: Metadata = {
     "diabetes prevention",
     "cardiovascular disease risk",
   ],
-  openGraph: {
-    title:
-      "The Critical Role of Family Health Monitoring in Preventing Hereditary Diseases",
-    description:
-      "96% of Americans recognize family health history importance, yet only 37% have collected it. Learn how this gap creates preventable disease.",
-    type: "article",
-  },
-};
+});
 
 const FamilyHealthMonitoringArticle = () => {
   return (

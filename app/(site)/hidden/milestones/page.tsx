@@ -1,11 +1,14 @@
 import { Metadata } from "next";
 import InvestorSidebarLink from "@/components/Docs/InvestorSidebarLink";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Return on Investment Example - Kaizen Health",
-  description: "This is ROI page for Kaizen Health",
-  // other metadata
-};
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Investor Growth Milestones",
+  description:
+    "Review Kaizen Health investor milestones, product roadmap checkpoints, and operational goals that guide execution across growth and platform development phases.",
+  path: "/hidden/milestones",
+  noIndex: true,
+});
 
 export default function MilestonesPage() {
   return (

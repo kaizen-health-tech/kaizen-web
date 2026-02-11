@@ -2,13 +2,16 @@ import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
 import { Metadata } from "next";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Genetic conditions during pregnancy - The What and How?",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Genetic Conditions During Pregnancy",
   description:
-    "A comprehensive overview of common genetic conditions during pregnancy, including how AI aids in early detection and pre-pregnancy testing options.",
-  // other metadata
-};
+    "Learn common genetic conditions in pregnancy, screening considerations, and how AI-supported analysis can help families prepare for informed prenatal decisions.",
+  path: "/blog/pregnancy-genetic",
+  type: "article",
+  image: "/images/blog/pregnancy-genetic.jpeg",
+});
 
 const PregnancyGenetic = async () => {
   return (

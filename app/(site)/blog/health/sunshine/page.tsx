@@ -3,27 +3,16 @@ import SharePost from "@/components/Blog/SharePost";
 import { Metadata } from "next";
 import Image from "next/image";
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title:
-    "The Health Benefits of Sunshine for Older Adults: Why Seniors Need Sunlight Daily",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Sunlight Benefits for Older Adults",
   description:
-    "Discover how daily sunlight exposure can improve bone health, mood, immunity, and sleep in older adults. Learn why seniors need sunshine for a healthier life.",
-  openGraph: {
-    title: "The Health Benefits of Sunshine for Older Adults",
-    description:
-      "Learn why daily sunshine is essential for seniors' health—supporting bone strength, sleep, and immunity.",
-    url: "https://kaizenhealth.io/blog/health/sunshine",
-    images: [
-      {
-        url: "/images/blog/sunshine.png",
-        width: 1200,
-        height: 630,
-        alt: "Older adult enjoying sunshine in a park",
-      },
-    ],
-  },
-};
+    "Learn how daily sunshine supports bone strength, mood, sleep, and immunity in older adults, with practical guidance for safe and consistent exposure.",
+  path: "/blog/health/sunshine",
+  type: "article",
+  image: "/images/blog/sunshine.png",
+});
 
 const SunshineBlogPage = async () => {
   return (

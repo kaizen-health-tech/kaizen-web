@@ -67,18 +67,14 @@ export default function HowItWorksClient() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const idx = stepRefs.current.findIndex(
-              (el) => el === entry.target,
-            );
+            const idx = stepRefs.current.findIndex((el) => el === entry.target);
             if (idx !== -1) setActiveStep(idx);
           }
         });
       },
       { rootMargin: "-40% 0px -50% 0px", threshold: 0 },
     );
-    stepRefs.current.forEach(
-      (el) => el && observer.observe(el),
-    );
+    stepRefs.current.forEach((el) => el && observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -150,7 +146,9 @@ export default function HowItWorksClient() {
               <section
                 key={idx}
                 id={`step-${idx}`}
-                ref={(el) => { stepRefs.current[idx] = el; }}
+                ref={(el) => {
+                  stepRefs.current[idx] = el;
+                }}
                 className="mb-24 flex flex-col gap-8 lg:flex-row lg:items-start"
               >
                 {/* Text block */}
@@ -181,7 +179,7 @@ export default function HowItWorksClient() {
                     alt={step.title}
                     width={500}
                     height={420}
-                    quality={100}
+                    quality={75}
                     sizes="(min-width: 1024px) 400px, 100vw"
                     className="w-full rounded-xl object-contain"
                   />

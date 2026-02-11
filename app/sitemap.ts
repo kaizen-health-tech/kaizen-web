@@ -1,18 +1,20 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://www.kaizenhealth.io";
+import { absoluteUrl } from "@/lib/seo";
+import { releases } from "@/data/releases";
 
 const staticRoutes = [
-  "",
+  "/",
   "/about",
   "/team",
   "/how-it-works",
   "/blog",
+  "/blog/1",
   "/updates",
   "/careers",
   "/careers/open-roles",
   "/support",
   "/chat",
+  "/html-sitemap",
   "/docs",
   "/docs/privacy",
   "/docs/terms",
@@ -36,22 +38,31 @@ const blogRoutes = [
   "/blog/pregnancy-genetic",
 ];
 
+const updateRoutes = releases.map((release) => `/updates/${release.slug}`);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   const staticPages = staticRoutes.map((route) => ({
-    url: `${SITE_URL}${route}`,
+    url: absoluteUrl(route),
     lastModified,
-    changeFrequency: (route === "" ? "daily" : "weekly") as "daily" | "weekly",
-    priority: route === "" ? 1 : 0.8,
+    changeFrequency: (route === "/" ? "daily" : "weekly") as "daily" | "weekly",
+    priority: route === "/" ? 1 : 0.8,
   }));
 
   const blogPages = blogRoutes.map((route) => ({
-    url: `${SITE_URL}${route}`,
+    url: absoluteUrl(route),
     lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPages];
+  const updatePages = updateRoutes.map((route) => ({
+    url: absoluteUrl(route),
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+  }));
+
+  return [...staticPages, ...blogPages, ...updatePages];
 }

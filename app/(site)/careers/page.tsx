@@ -1,16 +1,12 @@
 import Careers from "./Careers";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Careers at Kaizen Health",
+export const metadata = createPageMetadata({
+  primaryKeyword: "Healthcare Startup Careers",
   description:
-    "Join Kaizen Health and be part of our mission to simplify family healthcare through technology and compassion.",
-  openGraph: {
-    title: "Careers at Kaizen Health",
-    description:
-      "Explore open roles and opportunities to grow with a company focused on revolutionizing preventive family healthcare.",
-    url: "https://kaizenhealth.io/careers",
-  },
-};
+    "Explore careers at Kaizen Health and help build secure, family-first healthcare tools that improve care coordination and patient understanding.",
+  path: "/careers",
+});
 
 export default function CareersPage() {
   return <Careers />;

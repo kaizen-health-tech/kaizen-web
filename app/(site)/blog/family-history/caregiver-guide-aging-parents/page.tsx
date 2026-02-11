@@ -3,38 +3,16 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title:
-    "Supporting Aging Parents: A Caregiver’s Comprehensive Guide and Checklist",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Caregiver Guide for Aging Parents",
   description:
-    "Navigate caregiving with clarity and compassion using our practical resources, safety checklists, and emotional support strategies.",
-  openGraph: {
-    title: "Supporting Aging Parents: A Caregiver’s Comprehensive Guide",
-    description:
-      "Discover essential caregiving resources, home safety tips, stress management strategies, and legal documentation guides.",
-    url: "https://kaizenhealth.io/blog/family-history/caregiver-guide-aging-parents",
-    siteName: "Kaizen Health",
-    images: [
-      {
-        url: "https://kaizenhealth.io/images/blog/caregiver-guide.png",
-        width: 1200,
-        height: 630,
-        alt: "Caregiver’s Comprehensive Guide",
-      },
-    ],
-    type: "article",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@kaizenhealthio",
-    title: "Supporting Aging Parents: A Caregiver’s Comprehensive Guide",
-    description:
-      "Empowering caregivers with tools, checklists, and community resources to care for aging parents effectively.",
-    images: ["https://kaizenhealth.io/images/blog/caregiver-guide.png"],
-  },
-};
+    "Use this caregiver guide to support aging parents with safer home routines, medication organization, legal planning, and compassionate day-to-day coordination.",
+  path: "/blog/family-history/caregiver-guide-aging-parents",
+  type: "article",
+  image: "/images/blog/caregiver-guide.jpeg",
+});
 
 const SupportingAgingParents = () => {
   return (

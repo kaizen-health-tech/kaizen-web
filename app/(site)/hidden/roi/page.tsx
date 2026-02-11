@@ -2,12 +2,15 @@ import "core-js/proposals/promise-with-resolvers";
 
 import { Metadata } from "next";
 import InvestorSidebarLink from "@/components/Docs/InvestorSidebarLink";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Return on Investment Example - Kaizen Health",
-  description: "This is ROI page for Kaizen Health",
-  // other metadata
-};
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Investor ROI Example",
+  description:
+    "Review a sample Kaizen Health convertible-note ROI scenario showing valuation cap outcomes, conversion mechanics, and potential return assumptions for investors.",
+  path: "/hidden/roi",
+  noIndex: true,
+});
 
 export default function RoiPage() {
   return (

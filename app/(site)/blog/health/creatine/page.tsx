@@ -3,11 +3,15 @@ import Image from "next/image";
 import SharePost from "@/components/Blog/SharePost";
 import BlogPostWrapper from "@/components/Blog/BlogPostWrapper";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Creatine in Aging Adults: Importance, Benefits & Guidelines",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Creatine for Aging Adults",
   description:
-    "Evidence-based guide on creatine supplementation for aging adults. Learn about safety, benefits for muscle and brain health, dosing guidelines, and when to consult your doctor.",
+    "Review evidence-based creatine guidance for older adults, including safety, dosing, muscle support, brain health benefits, and clinical considerations.",
+  path: "/blog/health/creatine",
+  type: "article",
+  image: "/images/blog/creatine.jpeg",
   keywords: [
     "creatine for seniors",
     "creatine aging adults",
@@ -15,7 +19,7 @@ export const metadata: Metadata = {
     "creatine brain health",
     "creatine supplementation guide",
   ],
-};
+});
 
 const CreatineAgingGuide = () => {
   return (

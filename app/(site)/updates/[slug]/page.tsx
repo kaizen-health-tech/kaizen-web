@@ -11,6 +11,7 @@ import { Release } from "@/types/release";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { createPageMetadata } from "@/lib/seo";
 
 type ReleasePageProps = {
   params: Promise<{ slug: string }>;
@@ -21,41 +22,15 @@ export const dynamicParams = false;
 export const generateStaticParams = () =>
   releases.map((release) => ({ slug: release.slug }));
 
-const buildMetadata = (release: Release): Metadata => ({
-  title: `${release.title} | Kaizen Health Product Updates`,
-  description: release.summary,
-  alternates: {
-    canonical: `https://www.kaizenhealth.io/updates/${release.slug}`,
-  },
-  openGraph: {
-    title: `${release.title} | Kaizen Health Product Updates`,
+const buildMetadata = (release: Release): Metadata =>
+  createPageMetadata({
+    primaryKeyword: `${release.title} Release Notes`,
     description: release.summary,
-    url: `https://www.kaizenhealth.io/updates/${release.slug}`,
-    siteName: "Kaizen Health",
+    path: `/updates/${release.slug}`,
     type: "article",
-    tags: release.tags,
-    publishedTime: new Date(release.publishedAt).toISOString(),
-    images: [
-      {
-        url:
-          release.heroImage ??
-          "https://www.kaizenhealth.io/images/open-graph/updates.png",
-        width: 1200,
-        height: 630,
-        alt: release.title,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${release.title} | Kaizen Health Product Updates`,
-    description: release.summary,
-    images: [
-      release.heroImage ??
-        "https://www.kaizenhealth.io/images/open-graph/updates.png",
-    ],
-  },
-});
+    image: release.heroImage ?? "/images/open-graph/home.png",
+    keywords: release.tags,
+  });
 
 export const generateMetadata = async ({
   params,

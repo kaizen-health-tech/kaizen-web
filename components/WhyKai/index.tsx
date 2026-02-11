@@ -81,10 +81,9 @@ export default function WhyKai() {
                 alt="Kai assistant"
                 width={420}
                 height={420}
-                quality={100}
+                quality={75}
                 sizes="210px"
                 className="h-auto w-full"
-                priority
               />
             </div>
             <div className="w-full max-w-3xl">
@@ -93,10 +92,9 @@ export default function WhyKai() {
                 alt="Kai features preview"
                 width={1200}
                 height={900}
-                quality={100}
+                quality={75}
                 sizes="(max-width: 768px) 100vw, 768px"
                 className="h-auto w-full"
-                priority
               />
             </div>
           </div>

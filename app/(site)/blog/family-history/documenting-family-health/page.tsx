@@ -2,37 +2,16 @@ import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
 import { Metadata } from "next";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "The Importance of Family Health History",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Documenting Family Health History",
   description:
-    "Learn why family health history is crucial for medical risk assessment, preventive care, and managing inherited conditions.",
-  openGraph: {
-    title: "The Importance of Family Health History",
-    description:
-      "Learn why family health history is crucial for medical risk assessment, preventive care, and managing inherited conditions.",
-    url: "https://kaizenhealth.io//blog/family-history/documenting-family-health",
-    siteName: "Kaizen Health",
-    images: [
-      {
-        url: "https://kaizenhealth.io/images/blog/family-health.png",
-        width: 1200,
-        height: 630,
-        alt: "Family Health History Blog",
-      },
-    ],
-    type: "article",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@kaizenhealthio",
-    title: "The Importance of Family Health History",
-    description:
-      "Discover why family health history is essential for longevity, disease prevention, and proactive healthcare management.",
-    images: ["https://kaizenhealth.io/images/blog/family-health.png"],
-  },
-};
+    "Learn how documenting family health history improves risk assessment, early intervention, and personalized prevention plans for inherited health conditions.",
+  path: "/blog/family-history/documenting-family-health",
+  type: "article",
+  image: "/images/blog/family-health.png",
+});
 
 const DocumentingFamilyHealth = async () => {
   return (

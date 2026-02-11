@@ -1,11 +1,14 @@
 import { Metadata } from "next";
 import InvestorSidebarLink from "@/components/Docs/InvestorSidebarLink";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms and Privacy Policy - Kaizen Health",
-  description: "This is Docs page for Kaizen Health",
-  // other metadata
-};
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Investor Hub",
+  description:
+    "Access the Kaizen Health investor hub for confidential updates, strategic context, and company information shared with authorized stakeholders.",
+  path: "/hidden",
+  noIndex: true,
+});
 
 export default function HiddenPage() {
   return (

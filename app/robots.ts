@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://www.kaizenhealth.io";
+import { absoluteUrl } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -10,7 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
+    sitemap: absoluteUrl("/sitemap.xml"),
   };
 }

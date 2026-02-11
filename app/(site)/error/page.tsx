@@ -1,11 +1,14 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Error Page - Solid SaaS Boilerplate",
-  description: "This is Error page for Kaizen Health",
-  // other metadata
-};
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Page Not Found",
+  description:
+    "The page you requested is unavailable. Return to Kaizen Health to continue exploring secure family health tools, records, and support resources.",
+  path: "/error",
+  noIndex: true,
+});
 
 const ErroPage = () => {
   return (

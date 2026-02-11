@@ -1,11 +1,13 @@
 import Signin from "@/components/Auth/Signin";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Login Page - Solid SaaS Boilerplate",
-  description: "This is Login page for Startup Pro",
-  // other metadata
-};
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Sign In",
+  description:
+    "Access your Kaizen Health account to review records, share updates, and manage your family care circle with secure HIPAA-aligned controls.",
+  path: "/auth/signin",
+});
 
 const SigninPage = () => {
   return (

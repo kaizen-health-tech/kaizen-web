@@ -1,3 +1,5 @@
+import { COMPANY_NAME, SITE_URL, absoluteUrl } from "@/lib/seo";
+
 export interface ArticleSchemaProps {
   title: string;
   description: string;
@@ -11,8 +13,6 @@ export interface ArticleSchemaProps {
   section?: string;
   keywords?: string[];
 }
-
-const SITE_URL = "https://www.kaizenhealth.io";
 
 export default function ArticleSchema({
   title,
@@ -32,7 +32,7 @@ export default function ArticleSchema({
     "@type": "Article",
     headline: title,
     description: description,
-    image: image ? `${SITE_URL}${image}` : `${SITE_URL}/images/logo/kaizen-logo.png`,
+    image: image ? absoluteUrl(image) : absoluteUrl("/images/logo/kaizen-logo.png"),
     datePublished: datePublished,
     dateModified: dateModified || datePublished,
     author: {
@@ -44,10 +44,10 @@ export default function ArticleSchema({
     },
     publisher: {
       "@type": "Organization",
-      name: "Kaizen Health",
+      name: COMPANY_NAME,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/images/logo/kaizen-logo.png`,
+        url: absoluteUrl("/images/logo/kaizen-logo.png"),
       },
     },
     mainEntityOfPage: {

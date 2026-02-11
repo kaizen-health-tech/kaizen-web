@@ -1,11 +1,13 @@
 import SidebarLink from "@/components/Docs/SidebarLink";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms and Privacy Policy - Kaizen Health",
-  description: "This is Docs page for Kaizen Health",
-  // other metadata
-};
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Health App Legal Policies",
+  description:
+    "Read Kaizen Health legal policies in one place, including privacy, terms, medical disclaimers, EULA details, and documentation about health score methods.",
+  path: "/docs",
+});
 
 export default function DocsPage() {
   return (

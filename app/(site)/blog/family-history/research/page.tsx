@@ -2,12 +2,16 @@ import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
 import { Metadata } from "next";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Why Family Health Documentation & At-Home Testing Matter",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "At-Home Testing and Family Health Records",
   description:
-    "Learn the importance of family health documentation, sharing medical records, and how at-home testing contributes to preventative healthcare.",
-};
+    "See why family health documentation and at-home testing can improve prevention, reduce medical errors, and support faster, more coordinated clinical decisions.",
+  path: "/blog/family-history/research",
+  type: "article",
+  image: "/images/blog/family-health.jpeg",
+});
 
 const SingleBlogPage = async () => {
   return (

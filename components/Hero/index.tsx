@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { animate, stagger, createTimeline } from "animejs";
+
+type AnimationFns = {
+  createTimeline: typeof import("animejs").createTimeline;
+  stagger: typeof import("animejs").stagger;
+};
 
 const headlines = [
   {
@@ -41,9 +45,25 @@ const Hero = () => {
   const line1Ref = useRef<HTMLHeadingElement>(null);
   const line2Ref = useRef<HTMLHeadingElement>(null);
   const isAnimatingRef = useRef(false);
+  const animationFnsRef = useRef<AnimationFns | null>(null);
 
-  const animateIn = useCallback(() => {
+  const loadAnimationFns = useCallback(async (): Promise<AnimationFns> => {
+    if (animationFnsRef.current) {
+      return animationFnsRef.current;
+    }
+
+    const anime = await import("animejs");
+    animationFnsRef.current = {
+      createTimeline: anime.createTimeline,
+      stagger: anime.stagger,
+    };
+
+    return animationFnsRef.current;
+  }, []);
+
+  const animateIn = useCallback(async () => {
     if (!line1Ref.current || !line2Ref.current) return;
+    const { createTimeline, stagger } = await loadAnimationFns();
 
     const line1Words = line1Ref.current.querySelectorAll(".word");
     const line2Words = line2Ref.current.querySelectorAll(".word");
@@ -69,14 +89,15 @@ const Hero = () => {
         },
         "-=400",
       );
-  }, []);
+  }, [loadAnimationFns]);
 
   const animateOut = useCallback(() => {
-    return new Promise<void>((resolve) => {
+    return new Promise<void>(async (resolve) => {
       if (!line1Ref.current || !line2Ref.current) {
         resolve();
         return;
       }
+      const { createTimeline, stagger } = await loadAnimationFns();
 
       const line1Words = line1Ref.current.querySelectorAll(".word");
       const line2Words = line2Ref.current.querySelectorAll(".word");
@@ -105,12 +126,12 @@ const Hero = () => {
           "-=300",
         );
     });
-  }, []);
+  }, [loadAnimationFns]);
 
   useEffect(() => {
     // Initial animation
     const timeout = setTimeout(() => {
-      animateIn();
+      void animateIn();
     }, 100);
 
     return () => clearTimeout(timeout);
@@ -126,7 +147,7 @@ const Hero = () => {
 
       // Small delay for DOM to update
       setTimeout(() => {
-        animateIn();
+        void animateIn();
         isAnimatingRef.current = false;
       }, 50);
     }, 4000);
@@ -203,7 +224,7 @@ const Hero = () => {
           alt="Happy multi-generation family"
           width={1600}
           height={800}
-          quality={100}
+          quality={85}
           className="w-full h-96 object-cover object-center rounded-3xl"
           sizes="(min-width: 1280px) 1200px, (min-width: 768px) 90vw, 100vw"
           priority

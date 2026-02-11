@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "About Kaizen Health",
   description:
-    "Learn how Kaizen Health keeps multi-generational families coordinated and confident about every medical decision.",
-};
+    "Learn how Kaizen Health was built for caregivers and families to simplify health collaboration with secure records, shared timelines, and practical AI support.",
+  path: "/about",
+});
 
 const milestones = [
   {

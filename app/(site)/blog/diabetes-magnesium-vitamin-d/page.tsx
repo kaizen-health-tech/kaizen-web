@@ -2,39 +2,16 @@ import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
 import { Metadata } from "next";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "How Vitamin D and Magnesium Affect Diabetes: A Science-Backed Guide",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Vitamin D and Magnesium for Diabetes",
   description:
-    "Learn how Vitamin D and Magnesium influence insulin sensitivity and diabetes management. Backed by scientific research.",
-  openGraph: {
-    title: "How Vitamin D and Magnesium Affect Diabetes",
-    description:
-      "Learn how Vitamin D and Magnesium influence insulin sensitivity and diabetes management. Backed by scientific research.",
-    url: "https://kaizenhealth.io/blog/diabetes-magnesium-vitamin-d",
-    siteName: "Kaizen Health",
-    images: [
-      {
-        url: "https://kaizenhealth.io/images/blog/diabetes-magnesium-vitamin-d.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Vitamin D and Magnesium in Diabetes Management",
-      },
-    ],
-    type: "article",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@kaizenhealthio",
-    title: "How Vitamin D and Magnesium Affect Diabetes",
-    description:
-      "Vitamin D and Magnesium play a crucial role in diabetes management. Learn the science behind their effects on insulin sensitivity.",
-    images: [
-      "https://kaizenhealth.io/images/blog/diabetes-magnesium-vitamin-d.jpeg",
-    ],
-  },
-};
+    "Understand how vitamin D and magnesium influence insulin sensitivity and glycemic control, with science-backed insights for diabetes self-management planning.",
+  path: "/blog/diabetes-magnesium-vitamin-d",
+  type: "article",
+  image: "/images/blog/diabetes-magnesium-vitamin-d.jpeg",
+});
 
 const DiabetesMagnesiumVitaminD = async () => {
   return (

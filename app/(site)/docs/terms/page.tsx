@@ -1,11 +1,13 @@
 import SidebarLink from "@/components/Docs/SidebarLink";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions - Kaizen Health",
-  description: "This is Docs page for Kaizen Health",
-  // other metadata
-};
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Terms and Conditions",
+  description:
+    "Review Kaizen Health terms and conditions for service usage, user obligations, privacy alignment, and platform rules that protect all families on the app.",
+  path: "/docs/terms",
+});
 
 export default function DocsPage() {
   return (

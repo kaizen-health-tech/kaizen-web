@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Our Team",
+export const metadata: Metadata = createPageMetadata({
+  primaryKeyword: "Healthcare Leadership Team",
   description:
-    "Get to know the founders, clinicians, and engineers building Kaizen Health for modern families.",
-};
+    "Meet the Kaizen Health founders, clinicians, and builders creating secure tools that help families coordinate care, share records, and make confident decisions.",
+  path: "/team",
+});
 
 const teamMembers = [
   {

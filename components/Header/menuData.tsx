@@ -15,9 +15,9 @@ const menuData: Menu[] = [
   },
   {
     id: 2,
-    title: "Blog",
+    title: "Family Health Blog",
     newTab: false,
-    path: "/blog/1",
+    path: "/blog",
   },
   {
     id: 2.1,
@@ -33,7 +33,7 @@ const menuData: Menu[] = [
   },
   {
     id: 4,
-    title: "More Info",
+    title: "Policies & Docs",
     newTab: false,
     path: "/docs",
   },
