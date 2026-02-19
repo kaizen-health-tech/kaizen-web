@@ -7,6 +7,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Access your Kaizen Health account to review records, share updates, and manage your family care circle with secure HIPAA-aligned controls.",
   path: "/auth/signin",
+  noIndex: true,
 });
 
 const SigninPage = () => {

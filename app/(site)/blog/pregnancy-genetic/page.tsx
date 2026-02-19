@@ -3,6 +3,7 @@ import SharePost from "@/components/Blog/SharePost";
 import { Metadata } from "next";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo";
+import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Genetic Conditions During Pregnancy",
@@ -16,6 +17,21 @@ export const metadata: Metadata = createPageMetadata({
 const PregnancyGenetic = async () => {
   return (
     <>
+      <ArticleSchema
+        title="Genetic Conditions During Pregnancy"
+        description="Learn common genetic conditions in pregnancy, screening considerations, and how AI-supported analysis can help families prepare for informed prenatal decisions."
+        image="/images/blog/pregnancy-genetic.jpeg"
+        datePublished="2025-01-06"
+        url="/blog/pregnancy-genetic"
+        section="Health"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Genetic Conditions During Pregnancy", url: "/blog/pregnancy-genetic" },
+        ]}
+      />
       <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">

@@ -2,17 +2,25 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo";
 import { releases } from "@/data/releases";
 
-const staticRoutes = [
+// Core pages with highest priority
+const coreRoutes = [
   "/",
   "/about",
-  "/team",
   "/how-it-works",
   "/blog",
-  "/blog/1",
+];
+
+// Secondary pages
+const secondaryRoutes = [
+  "/team",
   "/updates",
   "/careers",
   "/careers/open-roles",
   "/support",
+];
+
+// Utility / legal pages (lower priority)
+const utilityRoutes = [
   "/chat",
   "/html-sitemap",
   "/docs",
@@ -41,28 +49,42 @@ const blogRoutes = [
 const updateRoutes = releases.map((release) => `/updates/${release.slug}`);
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const now = new Date();
 
-  const staticPages = staticRoutes.map((route) => ({
+  const corePages: MetadataRoute.Sitemap = coreRoutes.map((route) => ({
     url: absoluteUrl(route),
-    lastModified,
-    changeFrequency: (route === "/" ? "daily" : "weekly") as "daily" | "weekly",
+    lastModified: now,
+    changeFrequency: route === "/" ? "daily" : "weekly",
     priority: route === "/" ? 1 : 0.8,
   }));
 
-  const blogPages = blogRoutes.map((route) => ({
+  const secondaryPages: MetadataRoute.Sitemap = secondaryRoutes.map((route) => ({
     url: absoluteUrl(route),
-    lastModified,
-    changeFrequency: "monthly" as const,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.6,
+  }));
+
+  const utilityPages: MetadataRoute.Sitemap = utilityRoutes.map((route) => ({
+    url: absoluteUrl(route),
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.3,
+  }));
+
+  const blogPages: MetadataRoute.Sitemap = blogRoutes.map((route) => ({
+    url: absoluteUrl(route),
+    lastModified: now,
+    changeFrequency: "monthly",
     priority: 0.7,
   }));
 
-  const updatePages = updateRoutes.map((route) => ({
+  const updatePages: MetadataRoute.Sitemap = updateRoutes.map((route) => ({
     url: absoluteUrl(route),
-    lastModified,
-    changeFrequency: "weekly" as const,
-    priority: 0.75,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.5,
   }));
 
-  return [...staticPages, ...blogPages, ...updatePages];
+  return [...corePages, ...secondaryPages, ...utilityPages, ...blogPages, ...updatePages];
 }

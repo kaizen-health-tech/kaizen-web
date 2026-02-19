@@ -2,7 +2,7 @@ import BlogData from "@/components/Blog/blogData";
 import BlogItem from "@/components/Blog/BlogItem";
 import { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -20,8 +20,12 @@ export const generateMetadata = async ({
   const { page } = await params;
   const pageNumber = Math.max(Number.parseInt(page || "1", 10) || 1, 1);
 
+  if (pageNumber === 1) {
+    return {};
+  }
+
   return createPageMetadata({
-    primaryKeyword: `Family Health Blog Page ${pageNumber}`,
+    primaryKeyword: `Family Health Blog - Page ${pageNumber}`,
     description:
       "Explore practical family health guidance, research-backed articles, and caregiving insights to stay informed and confident in everyday care decisions.",
     path: `/blog/${pageNumber}`,
@@ -32,6 +36,11 @@ export const generateMetadata = async ({
 const BlogPage = async ({ params }: BlogPageProps) => {
   const { page } = await params;
   const pageNumber = parseInt(page || "1", 10);
+
+  if (pageNumber === 1) {
+    redirect("/blog");
+  }
+
   const start = (pageNumber - 1) * POSTS_PER_PAGE;
   const end = start + POSTS_PER_PAGE;
   const paginatedPosts = [...BlogData]

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import { createPageMetadata } from "@/lib/seo";
+import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Caregiver Guide for Aging Parents",
@@ -16,7 +17,24 @@ export const metadata: Metadata = createPageMetadata({
 
 const SupportingAgingParents = () => {
   return (
-    <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
+    <>
+      <ArticleSchema
+        title="Caregiver Guide for Aging Parents"
+        description="Use this caregiver guide to support aging parents with safer home routines, medication organization, legal planning, and compassionate day-to-day coordination."
+        image="/images/blog/caregiver-guide.jpeg"
+        datePublished="2025-01-15"
+        url="/blog/family-history/caregiver-guide-aging-parents"
+        section="Family History"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Family History", url: "/blog/family-history" },
+          { name: "Caregiver Guide for Aging Parents", url: "/blog/family-history/caregiver-guide-aging-parents" },
+        ]}
+      />
+      <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
       <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
         <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
           <div className="relative aspect-[97/60] w-full sm:aspect-[97/44] mb-10">
@@ -563,6 +581,7 @@ const SupportingAgingParents = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

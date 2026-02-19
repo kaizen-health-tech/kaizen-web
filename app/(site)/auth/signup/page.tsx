@@ -7,6 +7,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Create your Kaizen Health account to organize family medical records, invite caregivers, and start sharing secure updates in one private workspace.",
   path: "/auth/signup",
+  noIndex: true,
 });
 
 export default function Register() {

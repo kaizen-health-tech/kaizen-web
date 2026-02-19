@@ -3,6 +3,7 @@ import SharePost from "@/components/Blog/SharePost";
 import { Metadata } from "next";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo";
+import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "At-Home Testing and Family Health Records",
@@ -16,6 +17,22 @@ export const metadata: Metadata = createPageMetadata({
 const SingleBlogPage = async () => {
   return (
     <>
+      <ArticleSchema
+        title="Why Family Health Documentation & At-Home Testing Matter"
+        description="See why family health documentation and at-home testing can improve prevention, reduce medical errors, and support faster, more coordinated clinical decisions."
+        image="/images/blog/family-health.jpeg"
+        datePublished="2025-01-08"
+        url="/blog/family-history/research"
+        section="Family History"
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: "Family History", url: "/blog/family-history" },
+          { name: "At-Home Testing and Family Health Records", url: "/blog/family-history/research" },
+        ]}
+      />
       <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
