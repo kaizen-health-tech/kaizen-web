@@ -85,11 +85,6 @@ export default function Footer() {
                   Support center
                 </Link>
               </li>
-              <li>
-                <Link href="/html-sitemap" className="hover:text-primary">
-                  HTML sitemap
-                </Link>
-              </li>
             </ul>
           </div>
 

@@ -53,8 +53,16 @@ export default function CareersClient() {
                 Why We Exist
               </h3>
               <p>
-                41 million Americans struggle to coordinate their loved ones'
-                healthcare while managing their own lives. We're changing that
+                <a
+                  href="https://www.aarp.org/caregiving/basics/caregiving-in-us-survey-2025/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline decoration-primary/60 underline-offset-4 hover:text-primary"
+                >
+                  65 Million
+                </a>{" "}
+                Americans struggle to coordinate their loved ones' healthcare
+                while managing their own lives. We're changing that
                 narrative, one family at a time. Our AI-powered platform
                 transforms scattered health information into actionable
                 insights, turning overwhelming into empowering.
