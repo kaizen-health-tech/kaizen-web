@@ -23,8 +23,36 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-6 max-w-xs text-lg leading-relaxed text-gray-200">
-              Connecting Families, <br /> Simplifying Health.
+              Building AI Agents <br /> for Family Health.
             </p>
+            <div className="mt-6 flex flex-col items-start gap-3">
+              <a
+                href="https://bit.ly/kz-android-store"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform hover:-translate-y-0.5"
+              >
+                <Image
+                  src="/images/hero/android-store-dark.svg"
+                  alt="Get it on Google Play"
+                  width={148}
+                  height={42}
+                />
+              </a>
+              <a
+                href="https://bit.ly/kz-app-store"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform hover:-translate-y-0.5"
+              >
+                <Image
+                  src="/images/hero/app-store-dark.svg"
+                  alt="Download on the App Store"
+                  width={148}
+                  height={42}
+                />
+              </a>
+            </div>
           </div>
 
           {/* Find Us */}

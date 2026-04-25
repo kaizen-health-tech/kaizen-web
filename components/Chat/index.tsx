@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { Message, ChatSession, ChatState, Attachment } from "@/types/chat";
@@ -9,6 +10,44 @@ import AppStoreModal from "./AppStoreModal";
 
 const STORAGE_KEY = "kaizen_chat_session";
 const CHAT_LIMIT = 5;
+
+function AppDownloadLinks() {
+  return (
+    <div className="mt-5 flex flex-col items-center gap-3 rounded-2xl border border-gray-200 bg-white px-4 py-4 shadow-[0_12px_24px_rgba(46,32,90,0.08)] dark:border-gray-700 dark:bg-gray-800 sm:flex-row sm:justify-center">
+      <p className="text-center text-sm font-medium text-gray-600 dark:text-gray-300 sm:mr-2">
+        Download Kaizen Health
+      </p>
+      <div className="flex flex-col items-center gap-3 sm:flex-row">
+        <a
+          href="https://bit.ly/kz-android-store"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform hover:-translate-y-0.5"
+        >
+          <Image
+            src="/images/hero/android-store-dark.svg"
+            alt="Get it on Google Play"
+            width={148}
+            height={42}
+          />
+        </a>
+        <a
+          href="https://bit.ly/kz-app-store"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform hover:-translate-y-0.5"
+        >
+          <Image
+            src="/images/hero/app-store-dark.svg"
+            alt="Download on the App Store"
+            width={148}
+            height={42}
+          />
+        </a>
+      </div>
+    </div>
+  );
+}
 
 function getChatSession(): ChatSession | null {
   if (typeof window === "undefined") return null;
@@ -154,6 +193,8 @@ export default function Chat() {
             />
           </div>
         )}
+
+        <AppDownloadLinks />
       </div>
 
       {showLimitModal && <AppStoreModal />}
