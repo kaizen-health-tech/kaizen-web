@@ -73,8 +73,7 @@ const Hero = () => {
           </h1>
 
           <p className="mx-auto mt-8 max-w-2xl text-xl leading-8 text-white md:text-2xl md:leading-9 lg:mx-0 lg:max-w-[560px] lg:text-xl lg:leading-8">
-            Kaizen organizes records, surfaces insights, and helps families stay
-            coordinated with HIPAA-compliant AI agents.
+            Building AI agents that monitor and maintain your family health
           </p>
 
           <div className="mt-10 flex justify-center lg:justify-start">
