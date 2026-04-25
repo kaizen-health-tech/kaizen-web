@@ -8,9 +8,9 @@ const androidStoreUrl = "https://bit.ly/kz-android-store";
 const appleStoreUrl = "https://bit.ly/kz-app-store";
 
 const heroVideos = [
-  "/videos/hero-background-1.mp4",
+  "/videos/hero-background-5.mp4",
   "/videos/hero-background-2.mp4",
-  "/videos/hero-background-3.mp4",
+  "/videos/hero-background-6.mp4",
   "/videos/hero-background-4.mp4",
 ];
 
