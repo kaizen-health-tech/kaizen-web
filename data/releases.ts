@@ -32,16 +32,15 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
-    slug: "1-14-4-claude-sonnet-5",
-    version: "1.14.4",
-    title: "Kai Is Upgrading to Claude Sonnet 5",
+    slug: "1-14-10-claude-sonnet-5",
+    version: "1.14.10",
+    title: "Kai Now Runs on Claude Sonnet 5",
     summary:
       "A more capable AI model brings stronger reasoning, better follow-through, and safer, more dependable help to conversations with Kai.",
     publishedAt: "2026-07-02",
-    status: "preview",
+    status: "general-availability",
     audience: "everyone",
     tags: ["AI insights", "Performance", "Safety"],
-    estimatedRollout: "July 2026",
     highlights: [
       {
         title: "Stronger reasoning",
@@ -65,7 +64,7 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body: "We are upgrading the AI model behind Kai to Claude Sonnet 5, Anthropic's latest Sonnet model. Sonnet 5 improves reasoning, planning, tool use, and knowledge work—the capabilities Kai relies on to help you understand and organize health information.",
+        body: "We upgraded the AI model behind Kai to Claude Sonnet 5, Anthropic's latest Sonnet model. Sonnet 5 improves reasoning, planning, tool use, and knowledge work—the capabilities Kai relies on to help you understand and organize health information. This server-side update is available automatically and does not require an app update.",
         bullets: [
           "More consistent instruction-following for questions with several details or steps.",
           "Stronger synthesis when explaining information across conversations, memories, and health records you choose to share.",

@@ -1,10 +1,30 @@
 import SharePost from "@/components/Blog/SharePost";
+import BlogFAQ from "@/components/Blog/BlogFAQ";
+import BackToBlog from "@/components/Blog/BackToBlog";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import { createPageMetadata } from "@/lib/seo";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
+
+const faqs = [
+  {
+    question: "What medical records should you keep for an aging parent?",
+    answer:
+      "Priority documents include a current medication list, diagnosed health conditions, a healthcare provider directory, insurance and Medicare cards, and emergency contacts. Secondary documents include advance directives, recent test results, hospital discharge summaries, and an allergy list. Supporting documents like surgical history and immunization records round out a complete file.",
+  },
+  {
+    question: "What's the best way to organize a parent's medical records — paper, digital, or hybrid?",
+    answer:
+      "There's no one-size-fits-all system: a three-ring binder works well for tangible, easy-to-share records, a digital platform is best for families spread across locations or managing multiple people's care, and a hybrid approach — a home binder plus a digital backup — combines the reliability of paper with the accessibility of the cloud.",
+  },
+  {
+    question: "What legal access do you need to see a parent's medical records?",
+    answer:
+      "To legally access a parent's medical information you generally need at least one of: a signed HIPAA Authorization Form naming you as an approved recipient, a Medical Power of Attorney if your parent is incapacitated, or proxy access set up directly within a patient portal.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Organizing Medical Records for Aging Parents",
@@ -37,6 +57,7 @@ const OrganizingMedicalRecords = () => {
       <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
       <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
         <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+          <BackToBlog />
           <div className="relative aspect-[97/60] w-full sm:aspect-[97/44] mb-10">
             <Image
               src="/images/blog/organizing-medical-records.jpg"
@@ -1465,6 +1486,8 @@ const OrganizingMedicalRecords = () => {
             with healthcare professionals and legal advisors for guidance
             specific to your situation.
           </p>
+
+          <BlogFAQ faqs={faqs} />
 
           <div className="mt-10">
               <SharePost

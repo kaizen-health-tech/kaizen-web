@@ -1,9 +1,29 @@
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
+import BlogFAQ from "@/components/Blog/BlogFAQ";
+import BackToBlog from "@/components/Blog/BackToBlog";
 import { Metadata } from "next";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
+
+const faqs = [
+  {
+    question: "What is a pedigree in family health history?",
+    answer:
+      "A pedigree is a visual representation of at least three generations of a family, using standardized symbols to mark affected individuals. Commonly used by genetics professionals, it helps identify inheritance patterns, detect people at increased risk of a specific condition, and document age, cause of death, and relevant genetic testing results.",
+  },
+  {
+    question: "When is the best time to review family health history for reproductive planning?",
+    answer:
+      "The preconception period is the ideal time to evaluate family health history, since it allows for risk assessment and genetic counseling before pregnancy. Women planning a pregnancy should discuss family medical history with their healthcare provider so that lifestyle changes or interventions like carrier screening can be considered early.",
+  },
+  {
+    question: "How often should family health history records be updated?",
+    answer:
+      "Family health history should be reviewed and updated regularly, especially whenever a new diagnosis occurs within the family. Regular updates improve the accuracy of risk assessments over time and help healthcare providers stratify risk levels and tailor preventive strategies as new information becomes available.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Documenting Family Health History",
@@ -38,6 +58,7 @@ const DocumentingFamilyHealth = async () => {
           <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
             <div className="lg:w-full">
               <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+                <BackToBlog />
                 <div className="mb-10 w-full overflow-hidden ">
                   <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                     <Image
@@ -208,6 +229,8 @@ const DocumentingFamilyHealth = async () => {
                     defects. Pediatrics 2007; 120(suppl 2):S66–70.
                   </li>
                 </ul>
+
+                <BlogFAQ faqs={faqs} />
 
                 <SharePost
                   url="https://kaizenhealth.io/blog/family-history/documenting-family-health"

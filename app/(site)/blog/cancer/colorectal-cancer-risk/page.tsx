@@ -1,9 +1,29 @@
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
+import BlogFAQ from "@/components/Blog/BlogFAQ";
+import BackToBlog from "@/components/Blog/BackToBlog";
 import { Metadata } from "next";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
+
+const faqs = [
+  {
+    question: "Can eating yogurt reduce colorectal cancer risk?",
+    answer:
+      "Emerging research published in Gut Microbes found that people eating at least two servings of yogurt per week had a 20% lower risk of developing Bifidobacterium-positive proximal (right-sided) colon cancer, based on a study that tracked over 130,000 people for more than 30 years. Yogurt is not a cure, but it appears to be part of a gut-friendly prevention strategy.",
+  },
+  {
+    question: "How much yogurt should you eat for potential colon cancer protection?",
+    answer:
+      "The study associated benefits with at least two 6-ounce servings of yogurt per week. Plain Greek yogurt is recommended over sugar-loaded varieties, and those who are lactose intolerant can consider fermented options like Greek yogurt or skyr, or plant-based yogurts with live active cultures.",
+  },
+  {
+    question: "Why does yogurt specifically protect against right-sided colon cancer?",
+    answer:
+      "Yogurt's benefits were strongest against tumors containing Bifidobacterium, a beneficial probiotic strain found in yogurt that strengthens the gut lining, produces butyrate to help repair DNA and suppress cancer growth, and outcompetes harmful bacteria linked to tumor development — effects most pronounced in right-sided colon cancers, which are harder to detect early.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Yogurt and Colorectal Cancer Risk",
@@ -38,6 +58,7 @@ const ColorectalCancerRisk = async () => {
           <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
             <div className="lg:w-full">
               <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+                <BackToBlog />
                 <div className="mb-10 w-full overflow-hidden">
                   <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                     <Image
@@ -152,6 +173,8 @@ const ColorectalCancerRisk = async () => {
                   Combining it with regular screenings, exercise, and a balanced
                   diet is key.
                 </p>
+
+                <BlogFAQ faqs={faqs} />
 
                 <SharePost
                   url="https://kaizenhealth.io/blog/yogurt-colon-cancer"

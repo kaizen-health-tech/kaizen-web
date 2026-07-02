@@ -1,10 +1,30 @@
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
+import BlogFAQ from "@/components/Blog/BlogFAQ";
+import BackToBlog from "@/components/Blog/BackToBlog";
 import { Metadata } from "next";
 import Image from "next/image";
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import { createPageMetadata } from "@/lib/seo";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
+
+const faqs = [
+  {
+    question: "Why is sunlight important for older adults?",
+    answer:
+      "Sunlight helps older adults produce vitamin D3, which improves calcium absorption and supports stronger bones, reducing the risk of osteoporosis and hip fractures. It also boosts mood by activating serotonin and dopamine, regulates sleep by helping set the body's internal clock, and supports immune function, which naturally declines with age.",
+  },
+  {
+    question: "How much sun exposure do seniors need each day?",
+    answer:
+      "Just 15 to 30 minutes of sunlight, 3 to 5 times a week, ideally in the early morning or late afternoon when the sun is gentle, can make a meaningful difference for older adults. Even short walks, gardening, or sitting near a sunny window on days with limited mobility can help.",
+  },
+  {
+    question: "What are safe sun exposure practices for older adults?",
+    answer:
+      "Older adults should avoid the strongest midday sun between 10 a.m. and 3 p.m., use SPF 30+ sunscreen on exposed skin for outings longer than 30 minutes, stay hydrated, and check with a doctor or pharmacist about medications that can increase sun sensitivity.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Sunlight Benefits for Older Adults",
@@ -39,6 +59,7 @@ const SunshineBlogPage = async () => {
         <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
           <div className="lg:w-full">
             <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+              <BackToBlog />
               <div className="mb-10 w-full overflow-hidden">
                 <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                   <Image
@@ -250,6 +271,8 @@ const SunshineBlogPage = async () => {
                   improvements in quality of life.
                 </p>
               </div>
+
+              <BlogFAQ faqs={faqs} />
 
               <SharePost
                 url="https://kaizenhealth.io/blog/sunshine-seniors"

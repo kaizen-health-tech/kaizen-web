@@ -1,10 +1,30 @@
 import SharePost from "@/components/Blog/SharePost";
+import BlogFAQ from "@/components/Blog/BlogFAQ";
+import BackToBlog from "@/components/Blog/BackToBlog";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import { createPageMetadata } from "@/lib/seo";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
+
+const faqs = [
+  {
+    question: "What legal documents does a caregiver need for an aging parent?",
+    answer:
+      "Key documents include an Advance Health Care Directive (living will and health care proxy), a Durable Power of Attorney for finances, a HIPAA release authorizing you to receive medical information, an up-to-date medication and medical history list, and identification and insurance cards. Arrange these early, while your parent can still participate in the planning.",
+  },
+  {
+    question: "How can caregivers reduce fall risk in an aging parent's home?",
+    answer:
+      "Reduce fall risk by removing tripping hazards like loose rugs and clutter, improving lighting throughout the home (especially stairways and hallways), installing grab bars and secure handrails, and adding a personal emergency response system. Falls are a leading cause of serious injury in older adults, so a regular home safety walkthrough is worthwhile.",
+  },
+  {
+    question: "How can caregivers manage caregiver stress and avoid burnout?",
+    answer:
+      "Manage caregiver stress by asking for and accepting help from family or friends, setting realistic limits and boundaries, taking regular respite breaks, staying connected to a support network or caregiver support group, and prioritizing your own health checkups, sleep, and exercise. Caregiving is a shared responsibility, not something to manage alone.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Caregiver Guide for Aging Parents",
@@ -37,6 +57,7 @@ const SupportingAgingParents = () => {
       <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
       <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
         <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+          <BackToBlog />
           <div className="relative aspect-[97/60] w-full sm:aspect-[97/44] mb-10">
             <Image
               src="/images/blog/caregiver-guide.jpeg"
@@ -572,6 +593,8 @@ const SupportingAgingParents = () => {
             </Link>
             .
           </p>
+
+          <BlogFAQ faqs={faqs} />
 
           <SharePost
             url="https://kaizenhealth.io/blog/family-history/caregiver-guide-aging-parents"

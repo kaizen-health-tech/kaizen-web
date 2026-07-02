@@ -2,8 +2,27 @@ import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import Image from "next/image";
 import SharePost from "@/components/Blog/SharePost";
 import BlogPostWrapper from "@/components/Blog/BlogPostWrapper";
+import BlogFAQ from "@/components/Blog/BlogFAQ";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
+
+const faqs = [
+  {
+    question: "Why is family health history important for preventive medicine?",
+    answer:
+      "Family health history is one of the most underutilized tools in preventive medicine: 96% of Americans recognize its importance, yet only 37% have actively collected it. With genetic factors contributing to 30-80% of risk for major diseases like cancer, heart disease, and diabetes, systematically tracking family health history lets doctors recommend earlier, more targeted screening.",
+  },
+  {
+    question: "How much can family health monitoring reduce disease risk?",
+    answer:
+      "Systematic family health monitoring could prevent up to 60% of colorectal cancer deaths through earlier screening, reduce breast cancer risk by roughly 90% in high-risk individuals through risk-reducing surgery, and enable lifestyle interventions that prevent 58% of type 2 diabetes cases in people with elevated genetic risk.",
+  },
+  {
+    question: "What diseases are most affected by family health history?",
+    answer:
+      "Family history has the strongest documented impact on type 2 diabetes (5x higher prevalence with a family history), cardiovascular disease (family history roughly doubles or triples risk), breast cancer (BRCA1/BRCA2 carriers face 45-72% lifetime risk versus 13% in the general population), colorectal cancer, and Alzheimer's disease and dementia.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Family Health Monitoring for Hereditary Risk",
@@ -3198,6 +3217,8 @@ const FamilyHealthMonitoringArticle = () => {
                 </a>
               </li>
             </ol>
+
+            <BlogFAQ faqs={faqs} />
 
             <SharePost
               url="https://kaizenhealth.io/blog/family-health-monitoring"

@@ -1,4 +1,5 @@
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
+import BackToBlog from "./BackToBlog";
 import { ReactNode } from "react";
 
 export interface BlogPostWrapperProps {
@@ -55,6 +56,7 @@ export default function BlogPostWrapper({
 
       {/* Author attribution bar */}
       <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 pt-35 lg:pt-45 xl:pt-50">
+        <BackToBlog />
         <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
           <span className="flex items-center gap-2">
             <svg

@@ -2,8 +2,27 @@ import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import Image from "next/image";
 import SharePost from "@/components/Blog/SharePost";
 import BlogPostWrapper from "@/components/Blog/BlogPostWrapper";
+import BlogFAQ from "@/components/Blog/BlogFAQ";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
+
+const faqs = [
+  {
+    question: "Is creatine safe for older adults?",
+    answer:
+      "Yes, for most people. Hundreds of clinical trials show that 3-5 grams per day of creatine monohydrate is well-tolerated in adults aged 18-90 with no clinically significant organ damage, and both ISSN and EFSA classify it as generally safe at recommended doses. Those with chronic kidney disease, severe liver disease, or bipolar disorder should seek medical clearance first.",
+  },
+  {
+    question: "What are the benefits of creatine for aging adults?",
+    answer:
+      "Creatine helps preserve lean muscle mass and slow sarcopenia, with clinical trials showing 10-20% increases in strength when combined with resistance training. It also shows emerging evidence for improved working memory, recall, and processing speed after 2-6 weeks, with vegetarians and low-meat eaters typically seeing the largest gains.",
+  },
+  {
+    question: "How much creatine should older adults take daily?",
+    answer:
+      "The standard maintenance dose is 3-5 grams of micronized creatine monohydrate per day, reaching full muscle saturation in about 28 days. Some people use a faster loading protocol of 20 grams per day (split into four 5-gram doses) for 5-7 days before dropping to the 3-5 gram maintenance dose. Extra water should be taken with each dose.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Creatine for Aging Adults",
@@ -508,6 +527,9 @@ const CreatineAgingGuide = () => {
               </a>
             </li>
           </ul>
+
+          <BlogFAQ faqs={faqs} />
+
           <SharePost
             url="https://kaizenhealth.io/blog/health/creatine"
             text="Checkout this blog post on Kaizen Health!"

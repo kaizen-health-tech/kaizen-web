@@ -1,9 +1,29 @@
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
+import BlogFAQ from "@/components/Blog/BlogFAQ";
+import BackToBlog from "@/components/Blog/BackToBlog";
 import { Metadata } from "next";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
+
+const faqs = [
+  {
+    question: "How does vitamin D affect diabetes and insulin sensitivity?",
+    answer:
+      "Vitamin D receptors exist in pancreatic β-cells and influence insulin secretion. A vitamin D deficiency is associated with increased insulin resistance and higher blood sugar levels, while supplementation may improve insulin sensitivity in some individuals as part of a broader diabetes management plan.",
+  },
+  {
+    question: "How does magnesium affect blood sugar control?",
+    answer:
+      "Magnesium is involved in over 300 enzymatic processes, many of which directly affect insulin function and glucose metabolism. It supports insulin secretion and glucose uptake by cells, and low magnesium levels are correlated with poor glycemic control and an increased risk of type 2 diabetes.",
+  },
+  {
+    question: "What foods are good sources of vitamin D and magnesium for diabetes management?",
+    answer:
+      "Top vitamin D sources include fatty fish like salmon and mackerel, fortified dairy or plant-based milk, egg yolks, and sunlight exposure. Top magnesium sources include dark leafy greens, nuts and seeds, whole grains, legumes, and dark chocolate. Combining both nutrients has been shown to improve outcomes more than vitamin D alone.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Vitamin D and Magnesium for Diabetes",
@@ -37,6 +57,7 @@ const DiabetesMagnesiumVitaminD = async () => {
           <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
             <div className="lg:w-full">
               <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+                <BackToBlog />
                 <div className="mb-10 w-full overflow-hidden">
                   <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                     <Image
@@ -182,6 +203,9 @@ const DiabetesMagnesiumVitaminD = async () => {
                     stay on top of their health and make informed decisions.
                   </p>
                 </div>
+
+                <BlogFAQ faqs={faqs} />
+
                 <SharePost
                   url="https://kaizenhealth.io/blog/diabetes-magnesium-vitamin-d"
                   text="Checkout this blog post on Kaizen Health!"

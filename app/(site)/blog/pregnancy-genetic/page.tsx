@@ -1,9 +1,29 @@
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
+import BlogFAQ from "@/components/Blog/BlogFAQ";
+import BackToBlog from "@/components/Blog/BackToBlog";
 import { Metadata } from "next";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
+
+const faqs = [
+  {
+    question: "What genetic conditions are commonly screened for during pregnancy?",
+    answer:
+      "The most commonly screened genetic conditions during pregnancy include Down syndrome (Trisomy 21), cystic fibrosis, sickle cell disease, Tay-Sachs disease, and hemophilia. Screening approach depends on family history, ethnicity, and personal risk factors, so an OB/GYN or genetic counselor should guide which tests are appropriate.",
+  },
+  {
+    question: "Can at-home genetic carrier tests replace a doctor's genetic counseling?",
+    answer:
+      "No. At-home carrier tests, which typically screen for conditions like cystic fibrosis, spinal muscular atrophy, and Fragile X syndrome via a saliva or cheek swab, offer convenience but should not replace professional medical advice. Results should always be confirmed and interpreted with a genetic counselor or OB/GYN.",
+  },
+  {
+    question: "How can AI help identify genetic risks during pregnancy?",
+    answer:
+      "AI can support genetic risk identification during pregnancy by analyzing large volumes of genetic data to flag risk factors more precisely, offering data-driven insights into emerging research areas, and translating complex genetic terminology into plain language so parents can have more informed discussions with their healthcare providers.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Genetic Conditions During Pregnancy",
@@ -37,6 +57,7 @@ const PregnancyGenetic = async () => {
           <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
             <div className="lg:w-full">
               <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+                <BackToBlog />
                 <div className="mb-10 w-full overflow-hidden ">
                   <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                     <Image
@@ -279,6 +300,8 @@ const PregnancyGenetic = async () => {
                     . Accessed February 2025.
                   </p>
                 </div>
+
+                <BlogFAQ faqs={faqs} />
 
                 <SharePost
                   url="https://kaizenhealth.io/blog/pregnancy-genetic"

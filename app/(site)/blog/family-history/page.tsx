@@ -1,9 +1,29 @@
 import RelatedPost from "@/components/Blog/RelatedPost";
 import SharePost from "@/components/Blog/SharePost";
+import BlogFAQ from "@/components/Blog/BlogFAQ";
+import BackToBlog from "@/components/Blog/BackToBlog";
 import { Metadata } from "next";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
+
+const faqs = [
+  {
+    question: "Why is family health history important to doctors?",
+    answer:
+      "Family health history gives doctors crucial clues about inherited conditions and lifestyle patterns. Knowing which relatives had specific ailments helps clinicians anticipate risks, recommend targeted screenings, and craft more personalized, proactive treatment plans instead of relying on symptoms alone.",
+  },
+  {
+    question: "What health conditions can family history reveal?",
+    answer:
+      "Family health history can reveal genetic predispositions to conditions such as diabetes, certain cancers, heart disease, autoimmune disorders, high blood pressure, and allergies. Recognizing these recurring patterns across generations helps doctors recommend earlier screenings and preventative interventions.",
+  },
+  {
+    question: "How can families securely document and share their family health history?",
+    answer:
+      "Families can document health history using a secure digital platform that stores medical documents, lab results, and health profiles in one place, and shares them selectively with family members or providers. Centralizing this information removes the guesswork of relying on memory or scattered paper files during medical visits.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Family Health Documentation Guide",
@@ -37,6 +57,7 @@ const FamilyHistory = async () => {
           <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
             <div className="lg:w-full">
               <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
+                <BackToBlog />
                 <div className="mb-10 w-full overflow-hidden ">
                   <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                     <Image
@@ -243,6 +264,8 @@ const FamilyHistory = async () => {
                     February 2025.
                   </p>
                 </div>
+
+                <BlogFAQ faqs={faqs} />
 
                 <SharePost
                   url="https://kaizenhealth.io/blog/family-history"
