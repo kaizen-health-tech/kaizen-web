@@ -32,6 +32,461 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
+    slug: "1-14-4-claude-sonnet-5",
+    version: "1.14.4",
+    title: "Kai Is Upgrading to Claude Sonnet 5",
+    summary:
+      "A more capable AI model brings stronger reasoning, better follow-through, and safer, more dependable help to conversations with Kai.",
+    publishedAt: "2026-07-02",
+    status: "preview",
+    audience: "everyone",
+    tags: ["AI insights", "Performance", "Safety"],
+    estimatedRollout: "July 2026",
+    highlights: [
+      {
+        title: "Stronger reasoning",
+        description:
+          "Kai can work through multi-part questions more carefully while keeping your instructions and the relevant health context in view.",
+        impact: "improved",
+      },
+      {
+        title: "Better follow-through",
+        description:
+          "Improved planning and tool use help Kai carry complex requests through more consistently instead of stopping partway.",
+        impact: "improved",
+      },
+      {
+        title: "Safer model behavior",
+        description:
+          "Anthropic reports a lower overall rate of undesirable behaviors than the previous Sonnet model, adding another layer beneath Kaizen Health's existing safeguards.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "We are upgrading the AI model behind Kai to Claude Sonnet 5, Anthropic's latest Sonnet model. Sonnet 5 improves reasoning, planning, tool use, and knowledge work—the capabilities Kai relies on to help you understand and organize health information.",
+        bullets: [
+          "More consistent instruction-following for questions with several details or steps.",
+          "Stronger synthesis when explaining information across conversations, memories, and health records you choose to share.",
+          "Better follow-through when a request requires Kai to gather context before answering.",
+        ],
+      },
+      {
+        heading: "Why this matters for Kaizen Health users",
+        body: "Health questions rarely arrive one at a time. They often involve medications, appointments, records, and several family members. A stronger underlying model helps Kai keep those moving pieces organized and respond with greater clarity.",
+        bullets: [
+          "Ask more detailed, multi-part questions without having to break every thought into a separate message.",
+          "Get clearer explanations of complex health information in language that is easier to act on and discuss with your care team.",
+          "Spend less time repeating context during longer conversations and follow-up questions.",
+        ],
+      },
+      {
+        heading: "Our approach to responsible AI",
+        body: "A more capable model does not change Kai's role. Kai helps you organize information, prepare questions, and better understand your health context; it does not diagnose conditions or replace a licensed healthcare professional.",
+        bullets: [
+          "Important medical decisions should always be confirmed with a qualified healthcare professional.",
+          "AI-generated answers can still be incomplete or incorrect, even when they sound confident.",
+          "Kaizen Health's privacy, permission, and safety controls continue to apply to every conversation.",
+        ],
+      },
+      {
+        heading: "About Claude Sonnet 5",
+        body: "Anthropic describes Sonnet 5 as its most agentic Sonnet model yet, with substantial improvements over Sonnet 4.6 in reasoning, tool use, and knowledge work.",
+        bullets: [
+          linkBullet(
+            "Read Anthropic's Claude Sonnet 5 announcement",
+            "https://www.anthropic.com/news/claude-sonnet-5",
+          ),
+        ],
+      },
+      stayConnectedSection(
+        "Tell us how Kai can make complex health information easier for you and your family to understand.",
+      ),
+    ],
+    resources: [
+      {
+        label: "Claude Sonnet 5 announcement",
+        url: "https://www.anthropic.com/news/claude-sonnet-5",
+      },
+      ...defaultResources,
+    ],
+  },
+  {
+    slug: "1-14-3-signup-interface-reliability",
+    version: "1.14.3",
+    title: "Smoother Signup and Group Experience",
+    summary:
+      "Account creation is more reliable, interface states are clearer, and group descriptions are easier to read.",
+    publishedAt: "2026-06-23",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["Accounts", "Mobile", "Reliability"],
+    highlights: [
+      {
+        title: "Reliable profile creation",
+        description:
+          "New signups now finish only after the matching Kaizen profile is ready, preventing incomplete account states.",
+        impact: "fixed",
+      },
+      {
+        title: "Clearer interface states",
+        description:
+          "Corrected icon state handling so unavailable actions are represented consistently.",
+        impact: "fixed",
+      },
+      {
+        title: "Cleaner group descriptions",
+        description:
+          "Adjusted group description spacing to make shared-care information easier to scan.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "This reliability release closes a handful of small but important gaps in signup and shared-group screens.",
+        bullets: [
+          "Prevents authentication from completing without a corresponding user profile.",
+          "Corrects unavailable icon states across affected screens.",
+          "Refines group description layout and spacing.",
+        ],
+      },
+      stayConnectedSection(
+        "If anything feels unclear while creating an account or joining a family group, let us know.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
+    slug: "1-14-2-audio-loading-improvements",
+    version: "1.14.2",
+    title: "Better Audio Uploads and Faster-Feeling Screens",
+    summary:
+      "Improved audio transcription, helpful loading placeholders, and steadier document and chat views make everyday tasks feel smoother.",
+    publishedAt: "2026-06-15",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["AI insights", "Documents", "Performance"],
+    highlights: [
+      {
+        title: "Improved audio transcription",
+        description:
+          "Audio uploads provide clearer progress and success feedback while transcription is processed.",
+        impact: "improved",
+      },
+      {
+        title: "Skeleton loading states",
+        description:
+          "Primary screens now show structured placeholders while content loads instead of appearing empty.",
+        impact: "new",
+      },
+      {
+        title: "Stable document views",
+        description:
+          "Returning to a document no longer triggers an unnecessary reload, helping you pick up where you left off.",
+        impact: "improved",
+      },
+      {
+        title: "Readable code blocks",
+        description:
+          "Resolved a display issue that could hide formatted code blocks in Kai conversations.",
+        impact: "fixed",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "This update focuses on feedback and continuity: clearer progress during audio work, useful placeholders during loading, and fewer interruptions when moving between documents and Kai.",
+        bullets: [
+          "Improved the audio transcription flow and completion notification.",
+          "Added loading placeholders to the main entry screens.",
+          "Preserved loaded document state when navigating back from a detail view.",
+          "Restored code-block visibility in Kai chat.",
+        ],
+      },
+      stayConnectedSection(
+        "Tell us where the app still feels slow or where clearer progress feedback would help.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
+    slug: "1-14-1-forms-navigation-polish",
+    version: "1.14.1",
+    title: "Medication Forms and Navigation Polish",
+    summary:
+      "Small layout and navigation refinements make medication entry and Health Profile tabs more predictable.",
+    publishedAt: "2026-06-04",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["Medication management", "Mobile", "Usability"],
+    highlights: [
+      {
+        title: "Cleaner medication forms",
+        description:
+          "Updated text sizing and spacing make medication details easier to enter and review.",
+        impact: "improved",
+      },
+      {
+        title: "Predictable tab navigation",
+        description:
+          "Health Profile tabs now change through their visible controls, reducing accidental switches while scrolling.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "A focused polish release addressing form readability and unintended swipe navigation in Health Profiles.",
+        bullets: [
+          "Refined medication form typography and padding.",
+          "Disabled swipe-to-change behavior in the affected top-tab layout.",
+        ],
+      },
+      stayConnectedSection(),
+    ],
+    resources: defaultResources,
+  },
+  {
+    slug: "1-14-0-document-tags",
+    version: "1.14.0",
+    title: "Organize Health Records with Document Tags",
+    summary:
+      "New tags make records easier to categorize, filter, and connect to the right family member while keeping Kai's memory context cleaner.",
+    publishedAt: "2026-05-22",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["Documents", "AI insights", "Privacy"],
+    highlights: [
+      {
+        title: "Document tagging",
+        description:
+          "Add and review tags across files, notes, medications, and events to keep growing health histories organized.",
+        impact: "new",
+      },
+      {
+        title: "Faster record filtering",
+        description:
+          "Filter the Documents screen by useful categories and family-member context.",
+        impact: "new",
+      },
+      {
+        title: "Safer memory extraction",
+        description:
+          "Documents assigned to a shared member are kept out of the current profile's memory extraction flow.",
+        impact: "improved",
+      },
+      {
+        title: "Chat and search polish",
+        description:
+          "Improved chat input alignment, search responsiveness, typography, and secure shared-file handling.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "Document tags add structure without adding busywork. Apply them as you create or review a record, then use the same labels to narrow a long document list quickly.",
+        bullets: [
+          "Tag files, notes, medications, and events during creation or from their detail screens.",
+          "Use document filters to find records by category and associated family member.",
+          "Keep memory extraction scoped to the appropriate profile when a document belongs to someone else.",
+        ],
+      },
+      {
+        heading: "Why accurate organization matters",
+        body: "A well-organized record library is easier for families to navigate and gives Kai cleaner context when you explicitly choose to use a document with AI features.",
+        bullets: [
+          "Find the right record without relying on file names alone.",
+          "Reduce the chance of mixing context between family-member profiles.",
+          "Review and adjust tags as health information changes.",
+        ],
+      },
+      stayConnectedSection(
+        "Tell us which additional document tags or filters would save your family the most time.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
+    slug: "1-13-2-health-score-timeline-export",
+    version: "1.13.2",
+    title: "A Rebuilt Health Score and Shareable Timeline",
+    summary:
+      "A redesigned Health Score offers clearer signals and explanations, while timeline PDF export makes it easier to prepare and share a health history.",
+    publishedAt: "2026-04-29",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["Health Score", "Documents", "Insights"],
+    highlights: [
+      {
+        title: "Rebuilt Health Score",
+        description:
+          "Updated scoring and signal views provide a clearer picture across available activity, sleep, and health data.",
+        impact: "improved",
+      },
+      {
+        title: "Timeline PDF export",
+        description:
+          "Export Health Profile activity into a portable PDF for a time range you choose.",
+        impact: "new",
+      },
+      {
+        title: "More reliable health data",
+        description:
+          "Improved sleep refreshes and Android metric aggregation reduce stale or misleading values.",
+        impact: "fixed",
+      },
+      {
+        title: "Interface and security updates",
+        description:
+          "Framework, dependency, typography, and document-form updates improve stability and readability.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "This release rebuilds the Health Score experience and adds a practical way to take your timeline outside the app when preparing for a visit or coordinating care.",
+        bullets: [
+          "Reworked Health Score calculations and contributor displays.",
+          "Added richer Health Signals analysis where supported by connected device data.",
+          "Added PDF timeline export from the Activity tab with selectable date ranges.",
+          "Improved sleep-data freshness and Android cumulative-metric handling.",
+        ],
+      },
+      {
+        heading: "A score is a signal, not a diagnosis",
+        body: "Health Score summarizes available information to help you notice patterns. It is not a clinical assessment and should not replace advice from a qualified healthcare professional.",
+        bullets: [
+          "Review the contributing signals instead of relying on one number alone.",
+          "Use exported timelines to support—not replace—conversations with your care team.",
+          "Availability and completeness depend on the data your device and connected services provide.",
+        ],
+      },
+      stayConnectedSection(
+        "Tell us which Health Score explanations and timeline formats would be most useful at your next appointment.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
+    slug: "1-12-8-smarter-kai-document-capture",
+    version: "1.12.8",
+    title: "Smarter Kai and Faster Document Capture",
+    summary:
+      "Deeper reasoning for premium users, optional document-to-memory context, and improved sharing flows make Kai and health records work better together.",
+    publishedAt: "2026-03-17",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["AI insights", "Documents", "Mobile"],
+    highlights: [
+      {
+        title: "Deeper reasoning for premium users",
+        description:
+          "Kai can use enhanced reasoning for complex questions while providing clearer progress during longer responses.",
+        impact: "new",
+      },
+      {
+        title: "Document context for memory",
+        description:
+          "Eligible documents can contribute relevant context to Kai Memory when you choose to use AI features.",
+        impact: "new",
+      },
+      {
+        title: "Share directly into Kaizen",
+        description:
+          "Files shared from another app now open the Create Document flow for quicker review and organization.",
+        impact: "improved",
+      },
+      {
+        title: "Shared-record reliability",
+        description:
+          "Improved shared-file review, document notification navigation, chat sources, and cold-start handling.",
+        impact: "fixed",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "This update connects document capture, Kai Memory, and premium reasoning more naturally while strengthening the flows used to receive and review shared records.",
+        bullets: [
+          "Added enhanced reasoning support for premium Kai conversations.",
+          "Added document memory extraction for eligible records and profiles.",
+          "Redirected incoming shared files into Create Document for review before saving.",
+          "Improved image and PDF review when receiving a shared record.",
+        ],
+      },
+      {
+        heading: "You stay in control of context",
+        body: "Documents and memories can contain sensitive health information. Review the selected profile, sharing choices, and AI options before saving or using a record as context.",
+        bullets: [
+          "Confirm the correct family member before saving an incoming file.",
+          "Review Kai's sources when they are available in a response.",
+          "Manage remembered information from your profile settings.",
+        ],
+      },
+      stayConnectedSection(
+        "Tell us where document capture or Kai's reasoning could be clearer in your workflow.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
+    slug: "1-12-4-subscription-reliability",
+    version: "1.12.4",
+    title: "More Reliable Subscription and Health Sync Flows",
+    summary:
+      "Subscription fixes, clearer plan choices, and updated health-data foundations make upgrades and everyday use more dependable.",
+    publishedAt: "2026-02-10",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["Subscriptions", "Health data", "Reliability"],
+    highlights: [
+      {
+        title: "Subscription purchase fixes",
+        description:
+          "Resolved errors that could interrupt payment and premium activation flows.",
+        impact: "fixed",
+      },
+      {
+        title: "Updated plan presentation",
+        description:
+          "Refreshed premium pricing and plan choices in the upgrade experience.",
+        impact: "improved",
+      },
+      {
+        title: "Health data compatibility",
+        description:
+          "Updated the Apple Health integration foundation for ongoing compatibility and reliability.",
+        impact: "improved",
+      },
+      {
+        title: "Kai reconnection stability",
+        description:
+          "Fixed an invalid streaming session issue after returning to the app from an inactive state.",
+        impact: "fixed",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "A reliability-focused release for the systems behind premium access, Apple Health connectivity, and live Kai responses.",
+        bullets: [
+          "Improved error handling during subscription purchases and premium activation.",
+          "Updated pricing shown in the premium modal.",
+          "Upgraded the Apple Health integration package.",
+          "Restored Kai streaming correctly after the app resumes from inactivity.",
+        ],
+      },
+      stayConnectedSection(
+        "Contact support if a purchase, restore, or connected-health flow does not behave as expected.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
     slug: "1-12-2-memory-management",
     version: "1.12.2",
     title: "Personal Memory Management",
