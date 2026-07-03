@@ -40,7 +40,7 @@ const GeneticRiskScoreHeartDisease = async () => {
       <ArticleSchema
         title="A New DNA Test Can Predict Your Risk for 8 Heart Conditions — Before You Ever Feel a Symptom"
         description="A new polygenic risk score can estimate inherited risk for 8 cardiovascular and metabolic conditions from a single test. Here's what the science shows and what it means for families tracking heart disease history."
-        image="/images/blog/blog-big.png"
+        image="/images/blog/heart-disease.png"
         datePublished="2026-07-02"
         url="/blog/heart/genetic-risk-score-heart-disease"
         section="Heart Health"
@@ -65,7 +65,7 @@ const GeneticRiskScoreHeartDisease = async () => {
                 <div className="mb-10 w-full overflow-hidden">
                   <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                     <Image
-                      src="/images/blog/blog-big.png"
+                      src="/images/blog/heart-disease.png"
                       alt="DNA strand illustration representing a genetic risk score for heart disease"
                       fill
                       className="rounded-md object-cover object-center"
