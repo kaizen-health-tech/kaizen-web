@@ -44,6 +44,7 @@ const blogRoutes = [
   "/blog/cancer/colorectal-cancer-risk",
   "/blog/diabetes-magnesium-vitamin-d",
   "/blog/pregnancy-genetic",
+  "/blog/heart/genetic-risk-score-heart-disease",
 ];
 
 const updateRoutes = releases.map((release) => `/updates/${release.slug}`);

@@ -85,6 +85,15 @@ const BlogData: Blog[] = [
       "96% of Americans recognize family health history importance, yet only 37% have collected it. Learn how monitoring hereditary patterns can prevent up to 60% of colorectal cancer deaths and reduce breast cancer risk by 90%.",
     url: "/blog/family-health-monitoring",
   },
+  {
+    id: 11,
+    mainImage: "/images/blog/blog-big.png",
+    title:
+      "A New DNA Test Can Predict Your Risk for 8 Heart Conditions — Before You Ever Feel a Symptom",
+    metadata:
+      "A new polygenic risk score can estimate inherited risk for 8 cardiovascular and metabolic conditions from a single test. Here's what the science shows and what it means for families tracking heart disease history.",
+    url: "/blog/heart/genetic-risk-score-heart-disease",
+  },
 ];
 
 export default BlogData;

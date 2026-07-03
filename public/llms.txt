@@ -1,0 +1,35 @@
+# Kaizen Health
+> Kaizen Health is a family health management platform that gives families one secure place to organize medical records, share updates, and use AI support to stay prepared for every care decision.
+
+## Product
+- [Home](https://kaizenhealth.io/): Overview of the Kaizen Health family health management platform.
+- [How Kaizen Works](https://kaizenhealth.io/how-it-works): How families use Kaizen Health to organize records, coordinate care, and get AI-powered insights.
+- [About Kaizen Health](https://kaizenhealth.io/about): Company mission, privacy-first architecture, and clinician-informed design.
+- [Our Team](https://kaizenhealth.io/team): The people building Kaizen Health.
+- [Support Center](https://kaizenhealth.io/support): Help and support resources for Kaizen Health users.
+- [Product Updates](https://kaizenhealth.io/updates): Changelog of new Kaizen Health features and releases.
+
+## Family Health & Caregiving Guides
+- [Family Health Monitoring for Hereditary Risk](https://kaizenhealth.io/blog/family-health-monitoring): How tracking family health history helps prevent hereditary disease and supports early screening.
+- [The Importance of Family Health Documentation](https://kaizenhealth.io/blog/family-history): A doctor's perspective on why documenting family health history improves diagnosis and care coordination.
+- [Documenting Family Health History](https://kaizenhealth.io/blog/family-history/documenting-family-health): How to collect and use family health history for risk assessment and prevention.
+- [Why Family Health Documentation & At-Home Testing Matter](https://kaizenhealth.io/blog/family-history/research): The benefits of documenting health records and using at-home testing for preventative care.
+- [Organizing Medical Records for Aging Parents](https://kaizenhealth.io/blog/family-history/organizing-medical-records): A practical system for organizing a parent's medical records, insurance, and legal documents.
+- [Caregiver Guide for Aging Parents](https://kaizenhealth.io/blog/family-history/caregiver-guide-aging-parents): Home safety, medication management, legal planning, and caregiver stress guidance.
+
+## Health Topics
+- [Genetic Conditions During Pregnancy](https://kaizenhealth.io/blog/pregnancy-genetic): Common genetic conditions in pregnancy and how AI can support informed prenatal decisions.
+- [Vitamin D and Magnesium for Diabetes](https://kaizenhealth.io/blog/diabetes-magnesium-vitamin-d): How vitamin D and magnesium influence insulin sensitivity and glycemic control.
+- [Yogurt and Colorectal Cancer Risk](https://kaizenhealth.io/blog/cancer/colorectal-cancer-risk): Emerging evidence on yogurt intake and colorectal cancer risk reduction.
+- [Sunlight Benefits for Older Adults](https://kaizenhealth.io/blog/health/sunshine): How daily sunshine supports bone strength, mood, sleep, and immunity in seniors.
+- [Creatine for Aging Adults](https://kaizenhealth.io/blog/health/creatine): Evidence-based guidance on creatine supplementation for older adults.
+
+## Company
+- [Careers](https://kaizenhealth.io/careers): Open roles at Kaizen Health.
+- [Privacy Policy](https://kaizenhealth.io/docs/privacy): How Kaizen Health handles user data.
+- [Terms of Service](https://kaizenhealth.io/docs/terms): Terms governing use of Kaizen Health.
+
+## Key Facts
+- Kaizen Health helps families organize medical records, share secure updates, and coordinate care across generations from one HIPAA-compliant platform.
+- Kai, Kaizen Health's AI assistant, is purpose-built for family health rather than general-purpose chat, and personal health data is never used to train the underlying AI model.
+- Contact: info@kaizenhealth.io
