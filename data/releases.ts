@@ -34,14 +34,20 @@ export const releases: Release[] = [
   {
     slug: "1-14-4-memory-improvements",
     version: "1.14.4",
-    title: "A Clearer, More Useful Memory Experience",
+    title: "Smarter Kai and a Clearer Memory Experience",
     summary:
-      "Improved memory extraction, clearer saved information, timestamps, and support for larger memory histories make Kai's memory easier to understand and manage.",
+      "Claude Sonnet 5 brings stronger reasoning to Kai, while improved extraction, timestamps, and longer histories make saved memories easier to understand and manage.",
     publishedAt: "2026-07-07",
     status: "general-availability",
     audience: "everyone",
-    tags: ["AI insights", "Memory", "Performance"],
+    tags: ["AI insights", "Memory", "Performance", "Safety"],
     highlights: [
+      {
+        title: "Claude Sonnet 5",
+        description:
+          "Kai now uses a more capable model with stronger reasoning, planning, and follow-through for detailed health questions.",
+        impact: "improved",
+      },
       {
         title: "Improved memory extraction",
         description:
@@ -70,12 +76,23 @@ export const releases: Release[] = [
     sections: [
       {
         heading: "Release details",
-        body: "Kaizen Health v1.14.4 improves how Kai saves and presents memory, helping you review the health information used to provide more personalized support.",
+        body: "Kaizen Health v1.14.4 upgrades the model behind Kai and improves how saved memories are extracted and presented, providing clearer and more capable support.",
         bullets: [
+          "Claude Sonnet 5 brings stronger reasoning and more consistent follow-through to conversations with Kai.",
           "More accurate extraction of relevant health information from conversations and supported uploaded records.",
           "Clearer grouping and display of saved memories for easier review.",
           "Visible timestamps show when information was saved.",
           'A new "View More" option makes longer memory histories accessible beyond the latest results.',
+        ],
+      },
+      {
+        heading: "A more capable model behind Kai",
+        body: "We've upgraded Kai to Claude Sonnet 5, Anthropic's latest Sonnet model. This server-side update is available automatically and does not require an app update.",
+        bullets: [
+          "More consistent instruction-following for questions with several details or steps.",
+          "Stronger synthesis across conversations, memories, and health records you choose to share.",
+          "Improved planning and tool use for requests that require Kai to gather context before answering.",
+          "Kaizen Health's existing privacy, permission, and safety controls continue to apply to every conversation.",
         ],
       },
       {
@@ -98,80 +115,6 @@ export const releases: Release[] = [
       },
       stayConnectedSection(
         "Tell us how memory can make Kai more helpful while staying clear, accurate, and easy to control.",
-      ),
-    ],
-    resources: defaultResources,
-  },
-  {
-    slug: "1-14-10-claude-sonnet-5",
-    version: "1.14.10",
-    title: "Kai Now Runs on Claude Sonnet 5",
-    summary:
-      "A more capable AI model brings stronger reasoning, better follow-through, and safer, more dependable help to conversations with Kai.",
-    publishedAt: "2026-07-02",
-    status: "general-availability",
-    audience: "everyone",
-    tags: ["AI insights", "Performance", "Safety"],
-    highlights: [
-      {
-        title: "Stronger reasoning",
-        description:
-          "Kai can work through multi-part questions more carefully while keeping your instructions and the relevant health context in view.",
-        impact: "improved",
-      },
-      {
-        title: "Better follow-through",
-        description:
-          "Improved planning and tool use help Kai carry complex requests through more consistently instead of stopping partway.",
-        impact: "improved",
-      },
-      {
-        title: "Safer model behavior",
-        description:
-          "Anthropic reports a lower overall rate of undesirable behaviors than the previous Sonnet model, adding another layer beneath Kaizen Health's existing safeguards.",
-        impact: "improved",
-      },
-    ],
-    sections: [
-      {
-        heading: "Release details",
-        body: "We upgraded the AI model behind Kai to Claude Sonnet 5, Anthropic's latest Sonnet model. Sonnet 5 improves reasoning, planning, tool use, and knowledge work—the capabilities Kai relies on to help you understand and organize health information. This server-side update is available automatically and does not require an app update.",
-        bullets: [
-          "More consistent instruction-following for questions with several details or steps.",
-          "Stronger synthesis when explaining information across conversations, memories, and health records you choose to share.",
-          "Better follow-through when a request requires Kai to gather context before answering.",
-        ],
-      },
-      {
-        heading: "Why this matters for Kaizen Health users",
-        body: "Health questions rarely arrive one at a time. They often involve medications, appointments, records, and several family members. A stronger underlying model helps Kai keep those moving pieces organized and respond with greater clarity.",
-        bullets: [
-          "Ask more detailed, multi-part questions without having to break every thought into a separate message.",
-          "Get clearer explanations of complex health information in language that is easier to act on and discuss with your care team.",
-          "Spend less time repeating context during longer conversations and follow-up questions.",
-        ],
-      },
-      {
-        heading: "Our approach to responsible AI",
-        body: "A more capable model does not change Kai's role. Kai helps you organize information, prepare questions, and better understand your health context; it does not diagnose conditions or replace a licensed healthcare professional.",
-        bullets: [
-          "Important medical decisions should always be confirmed with a qualified healthcare professional.",
-          "AI-generated answers can still be incomplete or incorrect, even when they sound confident.",
-          "Kaizen Health's privacy, permission, and safety controls continue to apply to every conversation.",
-        ],
-      },
-      {
-        heading: "About Claude Sonnet 5",
-        body: "Anthropic describes Sonnet 5 as its most agentic Sonnet model yet, with substantial improvements over Sonnet 4.6 in reasoning, tool use, and knowledge work.",
-        bullets: [
-          linkBullet(
-            "Read Anthropic's Claude Sonnet 5 announcement",
-            "https://www.anthropic.com/news/claude-sonnet-5",
-          ),
-        ],
-      },
-      stayConnectedSection(
-        "Tell us how Kai can make complex health information easier for you and your family to understand.",
       ),
     ],
     resources: [
