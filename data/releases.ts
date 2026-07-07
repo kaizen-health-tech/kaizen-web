@@ -32,6 +32,77 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
+    slug: "1-14-4-memory-improvements",
+    version: "1.14.4",
+    title: "A Clearer, More Useful Memory Experience",
+    summary:
+      "Improved memory extraction, clearer saved information, timestamps, and support for larger memory histories make Kai's memory easier to understand and manage.",
+    publishedAt: "2026-07-07",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["AI insights", "Memory", "Performance"],
+    highlights: [
+      {
+        title: "Improved memory extraction",
+        description:
+          "Kai can identify and save relevant health information more accurately from conversations and supported health records.",
+        impact: "improved",
+      },
+      {
+        title: "Better memory readability",
+        description:
+          "Saved memories are grouped and displayed more clearly, making important details easier to review.",
+        impact: "improved",
+      },
+      {
+        title: "Memory timestamps",
+        description:
+          "Saved memories now include dates so you can see when information was added.",
+        impact: "new",
+      },
+      {
+        title: "View More",
+        description:
+          "Users with larger memory histories can load and review more of their saved information.",
+        impact: "new",
+      },
+    ],
+    sections: [
+      {
+        heading: "Release details",
+        body: "Kaizen Health v1.14.4 improves how Kai saves and presents memory, helping you review the health information used to provide more personalized support.",
+        bullets: [
+          "More accurate extraction of relevant health information from conversations and supported uploaded records.",
+          "Clearer grouping and display of saved memories for easier review.",
+          "Visible timestamps show when information was saved.",
+          'A new "View More" option makes longer memory histories accessible beyond the latest results.',
+        ],
+      },
+      {
+        heading: "Polish and reliability",
+        body: "This release also includes under-the-hood work that makes everyday use of Kaizen Health smoother and more dependable.",
+        bullets: [
+          "Bug fixes across affected app experiences.",
+          "Performance improvements for better responsiveness and efficiency.",
+          "Stability enhancements that reduce interruptions and unexpected behavior.",
+        ],
+      },
+      {
+        heading: "Your memory controls",
+        body: "You remain in control of what Kai remembers. Review or remove saved memories from your profile settings whenever information changes or no longer applies.",
+        bullets: [
+          "Review saved information and when it was added.",
+          "Remove individual memories that are outdated or incorrect.",
+          "Disable memory referencing from chat settings when you do not want saved information used in a conversation.",
+        ],
+      },
+      stayConnectedSection(
+        "Tell us how memory can make Kai more helpful while staying clear, accurate, and easy to control.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
     slug: "1-14-10-claude-sonnet-5",
     version: "1.14.10",
     title: "Kai Now Runs on Claude Sonnet 5",
