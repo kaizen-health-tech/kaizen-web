@@ -38,16 +38,18 @@ Create a `.env.local` file with the following variables:
 
 ```env
 OPENAI_API_KEY=your_openai_api_key
+CHAT_KAI_MODEL=gpt-5.5
+CHAT_GENERIC_MODEL=gpt-5.4
 ```
 
 ## Scripts
 
-| Command | Description |
-|---------|-------------|
-| `yarn dev` | Start development server with Turbopack |
-| `yarn build` | Build for production |
-| `yarn start` | Start production server |
-| `yarn lint` | Run ESLint |
+| Command      | Description                             |
+| ------------ | --------------------------------------- |
+| `yarn dev`   | Start development server with Turbopack |
+| `yarn build` | Build for production                    |
+| `yarn start` | Start production server                 |
+| `yarn lint`  | Run ESLint                              |
 
 ## Project Structure
 

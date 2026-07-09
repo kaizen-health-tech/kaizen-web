@@ -112,7 +112,10 @@ export default function Chat() {
     setChatState("chat_active");
   };
 
-  const handleSendMessage = async (content: string, attachments: Attachment[]) => {
+  const handleSendMessage = async (
+    content: string,
+    attachments: Attachment[],
+  ) => {
     if (!session || isLoading) return;
 
     if (session.chatCount >= CHAT_LIMIT) {
@@ -144,6 +147,18 @@ export default function Chat() {
       });
 
       const data = await res.json();
+
+      if (res.status === 429 && data.message?.includes("today")) {
+        const updatedSession: ChatSession = {
+          ...session,
+          chatCount: CHAT_LIMIT,
+          lastChatDate: getTodayDate(),
+        };
+        saveChatSession(updatedSession);
+        setSession(updatedSession);
+        setShowLimitModal(true);
+        return;
+      }
 
       if (data.success && data.kaiMessage) {
         const assistantMessage: Message = {
