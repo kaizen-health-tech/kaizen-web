@@ -177,11 +177,11 @@ export async function POST(request: Request) {
     // Make parallel calls for both Kai and Generic responses
     const [kaiResponse, genericResponse] = await Promise.all([
       openai.responses.create({
-        model: "gpt-5.2",
+        model: "gpt-5.6",
         input: kaiMessages as OpenAI.Responses.ResponseCreateParams["input"],
       }),
       openai.responses.create({
-        model: "gpt-5.2",
+        model: "gpt-5.6-luna",
         input:
           genericMessages as OpenAI.Responses.ResponseCreateParams["input"],
       }),
