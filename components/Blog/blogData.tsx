@@ -96,7 +96,7 @@ const BlogData: Blog[] = [
   },
   {
     id: 12,
-    mainImage: "/images/blog/blog-big.png",
+    mainImage: "/images/blog/glp-1.png",
     title:
       "Medicare Will Pay for Weight-Loss Drugs for the First Time — Here's Who Actually Qualifies for the $50 Copay",
     metadata:
