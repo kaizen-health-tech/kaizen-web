@@ -13,6 +13,10 @@ Tracks trending/viral health news candidates for the Kaizen Health blog. Updated
 | 7 | Fish oil supplements deliver omega-3s to the brain but show no real benefit for memory or cognition over 2 years | 2026-06-30 | [CNN Health / ScienceDaily](https://www.sciencedaily.com/news/health_medicine/) | No |
 | 8 | Nearly half of Americans with kidney failure who are referred for a transplant never even begin the evaluation process | 2026-06-29 | [CNN Health](https://www.cnn.com/health) | No |
 | 9 | Low vitamin C levels linked to less brain gray matter in older adults (2,000+ participant study, Japan) | 2026-06-28 | [Health news wire / ScienceDaily](https://www.sciencedaily.com/news/health_medicine/) | No |
-| 10 | Medicare begins covering GLP-1 weight-loss drugs for the first time, effective July 1, 2026 | 2026-07-01 | [CNN Health](https://www.cnn.com/health) | No |
+| 10 | Medicare begins covering GLP-1 weight-loss drugs for the first time via the GLP-1 Bridge program ($50/month copay for Wegovy, Zepbound, Foundayo), effective July 1, 2026 | 2026-07-01 | [CMS.gov](https://www.cms.gov/newsroom/press-releases/coming-soon-cms-provide-50-monthly-access-glp-1-medications-medicare-beneficiaries) / [CBS News](https://www.cbsnews.com/news/medicare-glp1-weight-loss-drug-coverage-july-1/) | Yes — [/blog/health/medicare-glp1-weight-loss-coverage](https://kaizenhealth.io/blog/health/medicare-glp1-weight-loss-coverage) |
+| 11 | Melatonin eased chronic musculoskeletal pain (low back pain, osteoarthritis, fibromyalgia) about as well as common OTC/prescription painkillers, per a review of 23 trials and 2,028 adults | 2026-07-10 | [University of Sydney](https://www.sydney.edu.au/news-opinion/news/2026/07/01/study-finds-melatonin-may-ease-chronic-pain.html) / [Healthline](https://www.healthline.com/health-news/melatonin-may-help-relieve-chronic-pain) | No |
+| 12 | Poison control calls involving semaglutide (Ozempic/Wegovy) have surged, largely tied to accidental at-home dosing mistakes as GLP-1 use has grown | 2026-07-08 | ScienceDaily / CNN Health | No |
 
 **Legend:** Complete = Yes means a full blog post has been written, humanized, and shipped as a page in `kaizen-web`.
+
+*Last refreshed: 2026-07-10 by the `daily-health-blog` scheduled task.*

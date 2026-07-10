@@ -94,6 +94,15 @@ const BlogData: Blog[] = [
       "A new polygenic risk score can estimate inherited risk for 8 cardiovascular and metabolic conditions from a single test. Here's what the science shows and what it means for families tracking heart disease history.",
     url: "/blog/heart/genetic-risk-score-heart-disease",
   },
+  {
+    id: 12,
+    mainImage: "/images/blog/blog-big.png",
+    title:
+      "Medicare Will Pay for Weight-Loss Drugs for the First Time — Here's Who Actually Qualifies for the $50 Copay",
+    metadata:
+      "Medicare's new GLP-1 Bridge program covers Wegovy, Zepbound, and Foundayo for weight loss at a $50 monthly copay. Here's who actually qualifies and what to watch for.",
+    url: "/blog/health/medicare-glp1-weight-loss-coverage",
+  },
 ];
 
 export default BlogData;
