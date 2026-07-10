@@ -87,7 +87,7 @@ const BlogData: Blog[] = [
   },
   {
     id: 11,
-    mainImage: "/images/blog/blog-big.png",
+    mainImage: "/images/blog/heart-disease.png",
     title:
       "A New DNA Test Can Predict Your Risk for 8 Heart Conditions — Before You Ever Feel a Symptom",
     metadata:
