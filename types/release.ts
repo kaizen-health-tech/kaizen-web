@@ -33,6 +33,7 @@ export type Release = {
   sections: ReleaseSection[];
   resources?: ReleaseResource[];
   heroImage?: string;
+  heroImageAlt?: string;
   estimatedRollout?: string;
 };
 

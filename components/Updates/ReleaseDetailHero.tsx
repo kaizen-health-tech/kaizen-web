@@ -1,4 +1,5 @@
 import { Release } from "@/types/release";
+import Image from "next/image";
 import Link from "next/link";
 
 const dateFormatter = new Intl.DateTimeFormat("en", {
@@ -55,6 +56,20 @@ const ReleaseDetailHero = ({ release }: ReleaseDetailHeroProps) => {
           </span>
         ))}
       </div>
+
+      {release.heroImage && (
+        <div className="mt-8 overflow-hidden rounded-2xl border border-black/5 bg-slate-950 shadow-xl shadow-primary/10 dark:border-white/10">
+          <Image
+            src={release.heroImage}
+            alt={release.heroImageAlt ?? release.title}
+            width={1920}
+            height={1080}
+            sizes="(min-width: 1280px) 1152px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 48px)"
+            className="h-auto w-full"
+            priority
+          />
+        </div>
+      )}
 
       <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-primary">
         <Link

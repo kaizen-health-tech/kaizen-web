@@ -32,6 +32,155 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
+    slug: "1-15-0-home-screen-widgets",
+    version: "1.15.0",
+    title: "Your Family's Health, Right on Your Home Screen",
+    summary:
+      "Three new iPhone widget sizes bring your Health Score, Kai insights, Care Circle, medications, events, and favorite Kaizen shortcuts into view without opening the app.",
+    publishedAt: "2026-07-16",
+    status: "general-availability",
+    audience: "everyone",
+    tags: [
+      "AI insights",
+      "Care Circle",
+      "Health Score",
+      "iOS",
+      "Performance",
+      "Widgets",
+    ],
+    heroImage: "/images/updates/1-15-0-home-screen-widgets.png",
+    heroImageAlt:
+      "Kaizen Health's small, medium, and large iPhone Home Screen widgets displayed over a family photo.",
+    highlights: [
+      {
+        title: "Three Home Screen layouts",
+        description:
+          "Choose a small, medium, or large Kaizen Health widget based on how much information you want at a glance.",
+        impact: "new",
+      },
+      {
+        title: "Your latest Health Score",
+        description:
+          "Keep your most recent Health Score visible on your iPhone Home Screen and tap through when you want more detail.",
+        impact: "new",
+      },
+      {
+        title: "Kai insights at a glance",
+        description:
+          "See a concise view of personalized health signals, including the areas that may deserve your attention.",
+        impact: "new",
+      },
+      {
+        title: "Care Circle visibility",
+        description:
+          "The large widget shows up to six favorite family members and their latest available Health Scores.",
+        impact: "new",
+      },
+      {
+        title: "Faster paths into Kaizen",
+        description:
+          "Tap widget content and shortcuts to open Home, Documents, Kai chat, Health Profiles, and relevant event details.",
+        impact: "new",
+      },
+      {
+        title: "Latest GPT models",
+        description:
+          "Kai's GPT-powered experience now runs on the latest model lineup, alongside reliability and bug fixes behind the scenes.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "Home Screen Widgets are here",
+        body: "Kaizen Health v1.15.0 makes it easier to stay connected to your own health and your family's care throughout the day. Add Kaizen to your iPhone Home Screen to see the information that matters most without first finding and opening the app.",
+        bullets: [
+          "Check your latest available Health Score in a glanceable format.",
+          "See personalized signals and insights from Kai.",
+          "Keep an eye on favorite members of your Care Circle.",
+          "Review your next upcoming event and active medication count.",
+          "Jump directly to the Kaizen features you use most.",
+        ],
+      },
+      {
+        heading: "Choose the view that fits your day",
+        body: "The Kaizen Health widget is available in three sizes. Each layout is designed for a different balance of space, detail, and quick access, and you can add more than one to your Home Screen.",
+        bullets: [
+          "Small — keeps your latest Health Score front and center. Tap the widget to open Kai chat.",
+          "Medium — combines your Health Score with Kai's insight and quick shortcuts to Home, Documents, and AI chat.",
+          "Large — brings together your Health Score, Kai's insight, up to six favorite Care Circle members, your next upcoming event, and your active medication count.",
+        ],
+      },
+      {
+        heading: "How to add a Kaizen Health widget",
+        body: "After updating Kaizen Health to v1.15.0, open the app and sign in at least once so your latest information can be prepared for the widget. Then add it using the standard iPhone Home Screen controls.",
+        bullets: [
+          "1. Touch and hold an empty area of your Home Screen until the apps begin to jiggle.",
+          '2. Tap the Add (+) button, or choose "Edit" and then "Add Widget," depending on your iOS version.',
+          "3. Search for and select Kaizen Health in the widget gallery.",
+          "4. Swipe to preview the small, medium, and large layouts.",
+          '5. Tap "Add Widget," place it where you want it, and tap "Done."',
+        ],
+      },
+      {
+        heading: "Designed to take you to the right place",
+        body: "The widgets are more than a read-only snapshot. Tappable areas open the corresponding part of Kaizen Health so you can move from a quick glance to the full context with less navigation.",
+        bullets: [
+          "Open your Health Profile from your score or Kai insight.",
+          "Open a favorite Care Circle member's Health Profile by tapping their score.",
+          "Open an upcoming event directly when event details are available.",
+          "Use the medium widget shortcuts to open Home, Documents, or Kai chat.",
+          "Tap an empty Care Circle position to return to Home and manage the people you follow most closely.",
+        ],
+      },
+      {
+        heading: "Keeping widget information current",
+        body: "Your widget displays a recent snapshot from Kaizen Health. The app asks iOS to refresh that snapshot when updated health information is available, when you return to the app, and during supported background activity. Because iOS ultimately schedules widget updates, a change may not appear instantly.",
+        bullets: [
+          "Open Kaizen Health if a widget has not populated after you first add it.",
+          "Make sure you are signed in and connected to the internet when you want to retrieve newer information.",
+          "Your Care Circle display follows your favorite members in Kaizen Health and shows up to the first six.",
+          "Upcoming events automatically roll forward as their scheduled times pass.",
+          "If one source cannot refresh, the widget keeps the last available snapshot instead of clearing otherwise useful information.",
+        ],
+      },
+      {
+        heading: "A note about privacy",
+        body: "Home Screen widgets are intentionally glanceable, which means their content can be seen by anyone who can view your unlocked Home Screen. Choose the widget size and placement that feel right for you, especially if you share your device or regularly show your Home Screen to others.",
+        bullets: [
+          "Only add a health widget when you are comfortable displaying its information on your Home Screen.",
+          "Signing out of Kaizen Health clears the health snapshot shared with the widget.",
+          "The same Kaizen account permissions and Care Circle access rules continue to determine what information is available.",
+        ],
+      },
+      {
+        heading: "Smarter AI infrastructure",
+        body: "This release also updates the GPT models behind Kai to the latest available versions. The upgrade is delivered on the backend, so there is nothing extra to configure after updating or signing in.",
+        bullets: [
+          "Updated GPT model support for Kai's AI-powered experiences.",
+          "Reliability fixes for AI responses and supporting services.",
+          "Additional bug fixes across the backend.",
+        ],
+      },
+      {
+        heading: "Additional improvements",
+        body: "Alongside widgets and the AI updates, v1.15.0 includes a broader round of polish to make Kaizen Health faster, steadier, and more dependable in everyday use.",
+        bullets: [
+          "Performance enhancements across affected app experiences.",
+          "Stability improvements that reduce interruptions and unexpected behavior.",
+          "Minor bug fixes and interface polish.",
+        ],
+      },
+      {
+        heading: "Availability",
+        body: "Home Screen widgets are available on iPhone with Kaizen Health v1.15.0. Update the app from the App Store, open it once, and follow the steps above to add your preferred layout. Users on other supported platforms still receive the performance, stability, AI, and bug-fix improvements included in this release.",
+      },
+      stayConnectedSection(
+        "Tell us which widget size you use most and what health information you would like to see at a glance next.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
     slug: "1-14-4-memory-improvements",
     version: "1.14.4",
     title: "Smarter Kai and a Clearer Memory Experience",
