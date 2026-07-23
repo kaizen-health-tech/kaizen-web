@@ -32,6 +32,105 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
+    slug: "1-15-1-guided-experience-and-premium-updates",
+    version: "1.15.1",
+    title: "Clearer Guidance and an Easier Path to Premium",
+    summary:
+      "Refreshed in-app tours, a simpler premium subscription experience, more accurate active-medication views, and a modernized Android launch experience make Kaizen easier to use from the first tap.",
+    publishedAt: "2026-07-23",
+    status: "general-availability",
+    audience: "everyone",
+    tags: [
+      "Android",
+      "Medications",
+      "Performance",
+      "Premium",
+      "User experience",
+    ],
+    highlights: [
+      {
+        title: "Clearer guided tours",
+        description:
+          "Redesigned tour tooltips improve readability and make it easier to move back, continue, skip, or finish while learning your way around Kaizen.",
+        impact: "improved",
+      },
+      {
+        title: "Simpler premium plans",
+        description:
+          "A new bottom-sheet plan experience makes pricing, included benefits, and the recommended option easier to compare before subscribing.",
+        impact: "improved",
+      },
+      {
+        title: "More reliable subscriptions",
+        description:
+          "Updated purchase and restore handling gives premium subscribers a steadier checkout and account-management experience.",
+        impact: "improved",
+      },
+      {
+        title: "Accurate active-medication views",
+        description:
+          "Home and widget summaries now exclude inactive or ended medications so the information at a glance better reflects current care.",
+        impact: "fixed",
+      },
+      {
+        title: "Modernized Android launch",
+        description:
+          "Updated splash artwork and edge-to-edge display support create a more polished experience when opening and using Kaizen on Android.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "A friendlier introduction to Kaizen",
+        body: "Kaizen Health v1.15.1 refreshes the guided tours that introduce key parts of the app. The new tooltip design is easier to read and gives each action more room, helping new and returning users move through guidance at their own pace.",
+        bullets: [
+          "Clear Previous and Next controls make it easier to review each step.",
+          "Skip and Finish actions are easier to find when you are ready to continue on your own.",
+          "Improved spacing, contrast, and sizing keep guidance readable across supported screen sizes.",
+        ],
+      },
+      {
+        heading: "Premium choices, explained more clearly",
+        body: "The premium experience now opens in a focused bottom sheet that puts plan differences, monthly pricing, and included benefits in one scannable view. A recommended-plan label and clearer call to action help you make a confident choice without leaving the flow.",
+        bullets: [
+          "Switch between Duo and Family plans with a simpler plan selector.",
+          "Review included benefits in a clean checklist.",
+          "See pricing and billing details alongside the subscription action.",
+          "Purchase progress and secure-checkout messaging provide clearer feedback.",
+        ],
+      },
+      {
+        heading: "Stronger subscription management",
+        body: "Behind the redesigned premium screen, Kaizen now uses an updated in-app purchase service. The purchase and restore flows have been strengthened so premium access is recognized more consistently across supported devices.",
+        bullets: [
+          "Updated purchase handling reduces duplicate actions while checkout is in progress.",
+          "Improved restore behavior refreshes premium status after a successful restoration.",
+          "Refreshed subscription infrastructure keeps Kaizen aligned with current store requirements.",
+        ],
+      },
+      {
+        heading: "Medication summaries that reflect what is active",
+        body: "Medication information on Home and in supported widgets now filters out records that are inactive or have already ended. This keeps current medications in focus and prevents older records from inflating active-medication counts.",
+      },
+      {
+        heading: "A more polished Android experience",
+        body: "Android users will see updated splash-screen artwork when Kaizen starts. Edge-to-edge display is now enabled as well, allowing the app to make better use of the full screen on modern Android devices.",
+      },
+      {
+        heading: "Additional polish",
+        body: "This release also includes small layout and interface refinements, including improved spacing in Health Score contributor views, plus general stability work supporting the updated experiences.",
+      },
+      {
+        heading: "Availability",
+        body: "Kaizen Health v1.15.1 is available for supported iPhone and Android devices. Update from the App Store or Google Play to receive the latest improvements.",
+      },
+      stayConnectedSection(
+        "Tell us how the refreshed tours and premium experience feel, and what you would like us to make easier next.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
     slug: "1-15-0-home-screen-widgets",
     version: "1.15.0",
     title: "Your Family's Health, Right on Your Home Screen",
