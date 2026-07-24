@@ -1,14 +1,8 @@
-import {
-  getReleaseBySlug,
-  getSortedReleases,
-  releases,
-} from "@/data/releases";
-import {
-  ReleaseDetailHero,
-  ReleaseHighlights,
-} from "@/components/Updates";
+import { getReleaseBySlug, getSortedReleases, releases } from "@/data/releases";
+import { ReleaseDetailHero, ReleaseHighlights } from "@/components/Updates";
 import { Release } from "@/types/release";
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createPageMetadata } from "@/lib/seo";
@@ -76,6 +70,26 @@ const ReleasePage = async ({ params }: ReleasePageProps) => {
                   <p className="mt-3 text-base leading-relaxed text-slate-700 dark:text-slate-200">
                     {section.body}
                   </p>
+                  {section.media && (
+                    <figure className="mt-6 rounded-2xl border border-black/5 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#12151f] sm:p-6">
+                      <Image
+                        src={section.media.src}
+                        alt={section.media.alt}
+                        width={section.media.width}
+                        height={section.media.height}
+                        sizes="(min-width: 640px) 384px, calc(100vw - 96px)"
+                        className="mx-auto h-auto w-full max-w-sm rounded-xl"
+                        unoptimized={section.media.src
+                          .toLowerCase()
+                          .endsWith(".gif")}
+                      />
+                      {section.media.caption && (
+                        <figcaption className="mx-auto mt-3 max-w-xl text-center text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+                          {section.media.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  )}
                   {section.bullets && section.bullets.length > 0 && (
                     <ul className="mt-5 list-disc space-y-2 pl-6 text-base text-slate-700 marker:text-primary dark:text-slate-200">
                       {section.bullets.map((bullet) => {

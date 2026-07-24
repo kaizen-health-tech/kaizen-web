@@ -9,10 +9,19 @@ export type ReleaseLinkBullet = {
   url?: string;
 };
 
+export type ReleaseSectionMedia = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+};
+
 export type ReleaseSection = {
   heading: string;
   body: string;
   bullets?: Array<string | ReleaseLinkBullet>;
+  media?: ReleaseSectionMedia;
 };
 
 export type ReleaseResource = {

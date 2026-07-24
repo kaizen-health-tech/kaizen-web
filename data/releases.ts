@@ -212,6 +212,14 @@ export const releases: Release[] = [
       {
         heading: "How to add a Kaizen Health widget",
         body: "After updating Kaizen Health to v1.15.0, open the app and sign in at least once so your latest information can be prepared for the widget. Then add it using the standard iPhone Home Screen controls.",
+        media: {
+          src: "/images/updates/1-15-1-home-screen-widget-demo.gif",
+          alt: "Animated demonstration of adding a Kaizen Health widget to an iPhone Home Screen.",
+          width: 1080,
+          height: 1920,
+          caption:
+            "Follow along to add Kaizen Health from the iPhone widget gallery.",
+        },
         bullets: [
           "1. Touch and hold an empty area of your Home Screen until the apps begin to jiggle.",
           '2. Tap the Add (+) button, or choose "Edit" and then "Add Widget," depending on your iOS version.',
