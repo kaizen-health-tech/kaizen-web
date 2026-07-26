@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kaizen Health brand kit and product design system."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Kaizen Health — Brand &amp; Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand-lockup" href="#overview" aria-label="Kaizen Health home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img">
+            <path
+              d="M27.2 5.2a5.5 5.5 0 0 0-6.4 0L7.3 15.1A5.5 5.5 0 0 0 5 19.6v17.1a5.5 5.5 0 0 0 7.8 5l11.2-5.2 11.7 5.3a5.5 5.5 0 0 0 7.8-5V19.5a5.5 5.5 0 0 0-2.3-4.5L27.2 5.2Z"
+            />
+            <path
+              class="brand-heart"
+              d="M24 34.1c-2.6-1.3-7.4-5.6-9.8-8.3-3.5-4 .7-8.7 4.8-7l5 2 5.1-2c4.1-1.6 8.3 3.2 4.6 7.1-2.6 2.8-7.2 6.9-9.7 8.2Z"
+            />
+          </svg>
+        </span>
+        <span>
+          <strong>Kaizen Health</strong>
+          <small>Brand system · v1.0</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#foundations">Foundations</a>
+        <a href="#components">Components</a>
+        <a href="#patterns">Patterns</a>
+        <a href="#voice">Voice</a>
+      </nav>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to dark theme"
+      >
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.5" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+          />
+        </svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 15.3A8.5 8.5 0 0 1 8.7 3.5a8.5 8.5 0 1 0 11.8 11.8Z" />
+        </svg>
+        <span>Theme</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <div class="hero-copy">
+          <p class="eyebrow">Kaizen Health brand system · 2026</p>
+          <h1>Health feels more<br /><em>human</em> with Kaizen.</h1>
+          <p class="hero-lede">
+            A calm, intelligent system for life’s most personal information.
+            Built to help families understand, organize, and act on their health
+            with confidence.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#foundations">Explore the system</a>
+            <button class="button secondary copy-tokens" type="button">
+              Copy CSS tokens
+            </button>
+          </div>
+          <ul class="brand-traits" aria-label="Brand traits">
+            <li>Reassuring</li>
+            <li>Clear</li>
+            <li>Capable</li>
+            <li>Human</li>
+          </ul>
+        </div>
+        <div class="hero-visual" aria-label="Kaizen Health visual identity">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="hero-logo-panel">
+            <img src="/images/logo/kaizen-logo-light.svg" alt="Kaizen Health" />
+            <span>Care, connected.</span>
+          </div>
+          <div class="signal-card">
+            <div class="signal-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 12h4l2.1-5.2L13 18l2.4-6H21" />
+              </svg>
+            </div>
+            <div>
+              <small>Health signal</small>
+              <strong>Everything looks steady</strong>
+            </div>
+          </div>
+          <div class="privacy-pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3 5 6v5c0 4.7 2.8 8.1 7 10 4.2-1.9 7-5.3 7-10V6l-7-3Z"
+              />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            Private by design
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="foundations">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 · Foundations</p>
+            <h2>Recognizable at a glance.</h2>
+          </div>
+          <p>
+            Violet carries intelligence and trust. Aquamarine introduces
+            optimism and momentum. Soft lavender keeps clinical information
+            approachable.
+          </p>
+        </div>
+
+        <article class="logo-card">
+          <div class="logo-stage dark-stage">
+            <img
+              src="/images/logo/kaizen-logo-light.svg"
+              alt="Kaizen Health white logo"
+            />
+            <span class="clearspace-label">1× clearspace</span>
+          </div>
+          <div class="logo-guidance">
+            <p class="overline">Primary lockup</p>
+            <h3>A home for every health story.</h3>
+            <p>
+              The open home shape represents a trusted place for health
+              information. The heart formed inside signals family, care, and
+              continuity.
+            </p>
+            <div class="do-dont">
+              <div><span class="status good"></span>Use on plum or violet</div>
+              <div><span class="status good"></span>Preserve clearspace</div>
+              <div><span class="status bad"></span>Do not stretch</div>
+              <div><span class="status bad"></span>Do not add effects</div>
+            </div>
+          </div>
+        </article>
+
+        <div class="subsection-heading">
+          <div>
+            <p class="overline">Core palette</p>
+            <h3>Purposeful color, not decoration.</h3>
+          </div>
+          <p>Tap any swatch to copy its hex value.</p>
+        </div>
+
+        <div class="palette-grid">
+          <button class="swatch swatch-hero violet" data-copy="#6E40F3">
+            <span class="swatch-name">Kaizen Violet</span>
+            <span class="swatch-meta">#6E40F3 · Primary action</span>
+          </button>
+          <button class="swatch swatch-hero midnight" data-copy="#281B55">
+            <span class="swatch-name">Midnight</span>
+            <span class="swatch-meta">#281B55 · Brand anchor</span>
+          </button>
+          <button class="swatch swatch-hero aqua" data-copy="#66E6B5">
+            <span class="swatch-name">Aquamarine</span>
+            <span class="swatch-meta">#66E6B5 · Care accent</span>
+          </button>
+          <button class="swatch swatch-hero lavender" data-copy="#F5F7FC">
+            <span class="swatch-name">Lavender Mist</span>
+            <span class="swatch-meta">#F5F7FC · Canvas</span>
+          </button>
+        </div>
+
+        <div class="palette-strips">
+          <div class="palette-family">
+            <div class="family-title">
+              <strong>Plum scale</strong><span>Depth &amp; hierarchy</span>
+            </div>
+            <div class="strip">
+              <button style="--swatch: #e3e3fb" data-copy="#E3E3FB">
+                <span>100</span>
+              </button>
+              <button style="--swatch: #a990ef" data-copy="#A990EF">
+                <span>300</span>
+              </button>
+              <button style="--swatch: #5338a0" data-copy="#5338A0">
+                <span>500</span>
+              </button>
+              <button style="--swatch: #362265" data-copy="#362265">
+                <span>700</span>
+              </button>
+              <button style="--swatch: #201839" data-copy="#201839">
+                <span>900</span>
+              </button>
+            </div>
+          </div>
+          <div class="palette-family">
+            <div class="family-title">
+              <strong>Neutral scale</strong
+              ><span>Structure &amp; readability</span>
+            </div>
+            <div class="strip">
+              <button style="--swatch: #ffffff" data-copy="#FFFFFF">
+                <span>0</span>
+              </button>
+              <button style="--swatch: #e8ebf4" data-copy="#E8EBF4">
+                <span>100</span>
+              </button>
+              <button style="--swatch: #9da2b3" data-copy="#9DA2B3">
+                <span>400</span>
+              </button>
+              <button style="--swatch: #40424d" data-copy="#40424D">
+                <span>700</span>
+              </button>
+              <button style="--swatch: #17161d" data-copy="#17161D">
+                <span>950</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="semantic-grid">
+          <div class="semantic-card success">
+            <span class="semantic-dot"></span>
+            <div><small>Success</small><strong>#2FBF8F</strong></div>
+          </div>
+          <div class="semantic-card notice">
+            <span class="semantic-dot"></span>
+            <div><small>Notice</small><strong>#E3772A</strong></div>
+          </div>
+          <div class="semantic-card error">
+            <span class="semantic-dot"></span>
+            <div><small>Error</small><strong>#E53950</strong></div>
+          </div>
+          <div class="semantic-card info">
+            <span class="semantic-dot"></span>
+            <div><small>Information</small><strong>#3390B7</strong></div>
+          </div>
+        </div>
+
+        <div class="type-layout">
+          <div class="type-intro">
+            <p class="overline">Typography</p>
+            <h3>Source Sans 3</h3>
+            <p>
+              Open, highly legible, and warm without being casual. Use bold
+              sparingly for confidence; let generous spacing create calm.
+            </p>
+            <div class="alphabet">
+              Aa Bb Cc Dd Ee Ff<br />
+              <span>0123456789 · &amp;?!</span>
+            </div>
+          </div>
+          <div class="type-scale">
+            <div class="type-row display">
+              <span>Display / 57</span><strong>Know your health.</strong>
+            </div>
+            <div class="type-row headline">
+              <span>Headline / 32</span><strong>Care, connected.</strong>
+            </div>
+            <div class="type-row title">
+              <span>Title / 20</span><strong>Your health overview</strong>
+            </div>
+            <div class="type-row body">
+              <span>Body / 16</span
+              ><strong>Everything important, in one secure place.</strong>
+            </div>
+            <div class="type-row label">
+              <span>Label / 14</span><strong>LAST UPDATED TODAY</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="foundations-row">
+          <article class="foundation-card">
+            <p class="overline">Spacing</p>
+            <h3>4-point rhythm</h3>
+            <div class="spacing-demo">
+              <div><span style="width: 4px"></span><small>4</small></div>
+              <div><span style="width: 8px"></span><small>8</small></div>
+              <div><span style="width: 12px"></span><small>12</small></div>
+              <div><span style="width: 16px"></span><small>16</small></div>
+              <div><span style="width: 24px"></span><small>24</small></div>
+              <div><span style="width: 32px"></span><small>32</small></div>
+              <div><span style="width: 48px"></span><small>48</small></div>
+            </div>
+          </article>
+          <article class="foundation-card">
+            <p class="overline">Shape</p>
+            <h3>Soft, never childish</h3>
+            <div class="radius-demo">
+              <div class="radius r8"><span>8</span></div>
+              <div class="radius r12"><span>12</span></div>
+              <div class="radius r16"><span>16</span></div>
+              <div class="radius r24"><span>24</span></div>
+              <div class="radius pill"><span>Pill</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section tinted" id="components">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 · Components</p>
+            <h2>Built for clarity under pressure.</h2>
+          </div>
+          <p>
+            Every control has an obvious purpose, a generous touch target, and a
+            calm response. The system supports both quick checks and careful
+            health decisions.
+          </p>
+        </div>
+
+        <div class="component-board">
+          <article class="component-panel">
+            <div class="panel-label">
+              <span>Buttons</span><code>Radius 16</code>
+            </div>
+            <div class="button-showcase">
+              <button class="button primary">Add health record</button>
+              <button class="button secondary">View details</button>
+              <button class="button ghost">Maybe later</button>
+              <button class="button primary" disabled>Unavailable</button>
+            </div>
+            <div class="button-showcase compact">
+              <button class="icon-button" aria-label="Add">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+              </button>
+              <button class="button primary small">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                Add record
+              </button>
+              <button class="button secondary small">
+                Share
+                <svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="component-panel">
+            <div class="panel-label">
+              <span>Inputs</span><code>Height 56</code>
+            </div>
+            <label class="field">
+              <span>Medication name</span>
+              <input type="text" placeholder="Search medications" />
+            </label>
+            <label class="field focused">
+              <span>Daily dosage</span>
+              <div class="input-affix">
+                <input value="10" aria-label="Daily dosage" /><em>mg</em>
+              </div>
+            </label>
+            <label class="field error-field">
+              <span>Date of birth</span>
+              <input value="13 / 42 / 2025" aria-invalid="true" />
+              <small>Enter a valid date</small>
+            </label>
+          </article>
+
+          <article class="component-panel">
+            <div class="panel-label">
+              <span>Chips &amp; tags</span><code>3 sizes</code>
+            </div>
+            <div class="chip-row">
+              <button class="chip selected">All records</button>
+              <button class="chip">Medications</button>
+              <button class="chip">Labs</button>
+            </div>
+            <div class="chip-row">
+              <span class="tag cyan">Cardiology</span>
+              <span class="tag pink">Family history</span>
+              <span class="tag yellow">Needs review</span>
+              <span class="tag heather">Shared</span>
+            </div>
+            <div class="segmented">
+              <button class="active">Week</button><button>Month</button
+              ><button>Year</button>
+            </div>
+          </article>
+
+          <article class="component-panel">
+            <div class="panel-label">
+              <span>Feedback</span><code>Actionable</code>
+            </div>
+            <div class="alert success-alert">
+              <span class="alert-icon">✓</span>
+              <div>
+                <strong>Record added</strong
+                ><small>Your health timeline is up to date.</small>
+              </div>
+            </div>
+            <div class="alert notice-alert">
+              <span class="alert-icon">!</span>
+              <div>
+                <strong>Review needed</strong
+                ><small>One medication may be outdated.</small>
+              </div>
+              <button>Review</button>
+            </div>
+            <div class="alert info-alert">
+              <span class="alert-icon">i</span>
+              <div>
+                <strong>Your privacy matters</strong
+                ><small>Only people you invite can see this.</small>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="patterns">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">03 · Product patterns</p>
+            <h2>Care that connects the dots.</h2>
+          </div>
+          <p>
+            Product surfaces prioritize what changed, why it matters, and what
+            the person can do next. Context always comes before complexity.
+          </p>
+        </div>
+
+        <div class="pattern-grid">
+          <article class="phone-card">
+            <div class="phone-header">
+              <span>9:41</span><span class="phone-island"></span
+              ><span>•••</span>
+            </div>
+            <div class="app-header">
+              <div>
+                <small>Good morning,</small>
+                <strong>Jordan</strong>
+              </div>
+              <span class="avatar">JD</span>
+            </div>
+            <div class="health-score">
+              <p>Health overview</p>
+              <div class="score-ring">
+                <strong>84</strong><span>steady</span>
+              </div>
+              <h3>You’re on track</h3>
+              <p>Sleep and activity have stayed consistent this week.</p>
+              <div class="metric-row">
+                <span
+                  ><i class="dot aqua-dot"></i>Sleep
+                  <strong>7h 42m</strong></span
+                >
+                <span
+                  ><i class="dot violet-dot"></i>Steps
+                  <strong>8,241</strong></span
+                >
+              </div>
+            </div>
+            <div class="next-step">
+              <span class="calendar-icon">18</span>
+              <div>
+                <small>UP NEXT · TOMORROW</small><strong>Annual physical</strong
+                ><span>Dr. Maya Patel · 10:30 AM</span>
+              </div>
+              <b>›</b>
+            </div>
+          </article>
+
+          <article class="pattern-notes">
+            <p class="overline">Dashboard anatomy</p>
+            <h3>Progressive disclosure</h3>
+            <ol>
+              <li>
+                <span>01</span>
+                <div>
+                  <strong>Orient</strong>
+                  <p>Start with a reassuring, plain-language summary.</p>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <strong>Explain</strong>
+                  <p>Show the few signals that shaped the summary.</p>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <strong>Act</strong>
+                  <p>
+                    Offer one clear next step without manufacturing urgency.
+                  </p>
+                </div>
+              </li>
+            </ol>
+            <div class="principle-callout">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 3 5 6v5c0 4.7 2.8 8.1 7 10 4.2-1.9 7-5.3 7-10V6l-7-3Z"
+                />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              <div>
+                <strong>Privacy is a product feature.</strong>
+                <p>
+                  Make sharing scope, ownership, and reversibility visible at
+                  the moment of choice.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dark-section" id="voice">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">04 · Voice &amp; imagery</p>
+            <h2>Warm, direct, never clinical.</h2>
+          </div>
+          <p>
+            We reduce uncertainty without minimizing it. We sound like a
+            knowledgeable guide who respects the person’s agency.
+          </p>
+        </div>
+        <div class="voice-grid">
+          <article>
+            <span class="voice-number">01</span>
+            <h3>Lead with the meaning</h3>
+            <p class="example good-copy">
+              “Your results are in the expected range.”
+            </p>
+            <p class="example bad-copy">Not “All biomarkers nominal.”</p>
+          </article>
+          <article>
+            <span class="voice-number">02</span>
+            <h3>Offer a next step</h3>
+            <p class="example good-copy">
+              “Bring this summary to your next visit.”
+            </p>
+            <p class="example bad-copy">Not “Action may be required.”</p>
+          </article>
+          <article>
+            <span class="voice-number">03</span>
+            <h3>Respect uncertainty</h3>
+            <p class="example good-copy">
+              “This pattern may be worth discussing.”
+            </p>
+            <p class="example bad-copy">Not “We found the cause.”</p>
+          </article>
+        </div>
+        <div class="imagery-rule">
+          <div class="imagery-copy">
+            <p class="overline">Image direction</p>
+            <h3>Real life, with room to breathe.</h3>
+            <p>
+              Show intergenerational care, quiet confidence, and everyday health
+              moments. Favor natural light and lived-in environments. Avoid
+              staged clinician clichés, fear-based imagery, and glowing
+              futuristic anatomy.
+            </p>
+          </div>
+          <div class="imagery-samples">
+            <div class="image-sample family"><span>Connection</span></div>
+            <div class="image-sample calm"><span>Calm</span></div>
+            <div class="image-sample detail"><span>Everyday detail</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section checklist-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">05 · Release checklist</p>
+            <h2>Before it ships.</h2>
+          </div>
+          <p>
+            A compact quality bar for any new Kaizen Health interface or brand
+            expression.
+          </p>
+        </div>
+        <div class="checklist">
+          <label
+            ><input type="checkbox" /><span
+              ><strong>Clear hierarchy</strong>One primary action per
+              view.</span
+            ></label
+          >
+          <label
+            ><input type="checkbox" /><span
+              ><strong>Accessible contrast</strong>Body text meets WCAG
+              AA.</span
+            ></label
+          >
+          <label
+            ><input type="checkbox" /><span
+              ><strong>Touch target</strong>Controls are at least 44 × 44.</span
+            ></label
+          >
+          <label
+            ><input type="checkbox" /><span
+              ><strong>Plain language</strong>Meaning appears before
+              detail.</span
+            ></label
+          >
+          <label
+            ><input type="checkbox" /><span
+              ><strong>Privacy context</strong>Sharing scope is explicit.</span
+            ></label
+          >
+          <label
+            ><input type="checkbox" /><span
+              ><strong>Dark mode</strong>No meaning is carried by color
+              alone.</span
+            ></label
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <path
+              d="M27.2 5.2a5.5 5.5 0 0 0-6.4 0L7.3 15.1A5.5 5.5 0 0 0 5 19.6v17.1a5.5 5.5 0 0 0 7.8 5l11.2-5.2 11.7 5.3a5.5 5.5 0 0 0 7.8-5V19.5a5.5 5.5 0 0 0-2.3-4.5L27.2 5.2Z"
+            />
+            <path
+              class="brand-heart"
+              d="M24 34.1c-2.6-1.3-7.4-5.6-9.8-8.3-3.5-4 .7-8.7 4.8-7l5 2 5.1-2c4.1-1.6 8.3 3.2 4.6 7.1-2.6 2.8-7.2 6.9-9.7 8.2Z"
+            />
+          </svg>
+        </span>
+        <span
+          ><strong>Kaizen Health</strong><small>Care, connected.</small></span
+        >
+      </div>
+      <p>
+        Brand &amp; design system · Source of truth:
+        <code>src/core/theme.js</code>
+      </p>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite">Copied</div>
+    <script src="./script.js"></script>
+  </body>
+</html>
