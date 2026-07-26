@@ -1,0 +1,38 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Form controls" subtitle="Input · search · checkbox · radio · switch · segmented · chips" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>body{margin:0;padding:26px;background:var(--color-background);font-family:var(--font-sans);color:var(--color-on-surface)}#r{display:flex;flex-direction:column;gap:16px}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.col{display:flex;flex-direction:column;gap:12px}.lbl{font:600 11px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-muted);width:100%}</style></head>
+<body><div id="r"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../assets/kaizen-icons.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const NS = window.KaizenHealthDesignSystem_869e5e;
+
+const { Input, SearchBar, Textarea, Checkbox, Radio, Switch, SegmentedControl, Chip } = NS;
+function Demo(){
+ const [seg,setSeg]=React.useState('Week');
+ const [on,setOn]=React.useState(true);
+ return (<>
+  <div className="row" style={{alignItems:'flex-start'}}>
+   <div style={{flex:1,minWidth:230}}><Input label="Full name" placeholder="Jordan Vega" required/></div>
+   <div style={{flex:1,minWidth:230}}><Input label="Weight" prefix="lb" leftIcon="Chart" placeholder="165"/></div>
+  </div>
+  <SearchBar placeholder="Search records"/>
+  <div className="row"><span className="lbl">Selection</span>
+   <Checkbox checked label="Share with care group"/>
+   <Radio checked label="Monthly"/>
+   <Switch value={on} onChange={setOn} label="Reminders"/>
+  </div>
+  <SegmentedControl options={["Day","Week","Month"]} value={seg} onChange={setSeg}/>
+  <div className="row"><span className="lbl">Chips</span>
+   <Chip label="Cardiology" leftIcon="Heart"/>
+   <Chip label="Lab result" shape="rec" tone={{bg:'var(--cyan-100)',fg:'var(--cyan-400)'}}/>
+   <Chip label="Medication" tone={{bg:'var(--candy-pink-100)',fg:'var(--candy-pink-400)'}} leftIcon="Pill"/>
+   <Chip label="Dad" onClose={()=>{}}/>
+  </div>
+ </>);}
+
+ReactDOM.createRoot(document.getElementById("r")).render(<Demo/>);
+</script></body></html>

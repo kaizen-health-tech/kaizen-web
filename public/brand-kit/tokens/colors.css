@@ -1,0 +1,128 @@
+/* Kaizen Health — color tokens.
+   Base palette lifted verbatim from src/core/colors.js.
+   Semantic aliases lifted from src/core/theme.js (lightTheme + custom).
+   Dark-mode aliases live under [data-theme="dark"] and mirror darkTheme. */
+:root{
+  /* ---- Primary / brand ---- */
+  --violet:#6E40F3;         /* primary action + identity */
+  --violet-hover:#5F32E5;   /* pressed/hover of violet (product web kit) */
+  --midnight:#281B55;
+  --aquamarine:#66E6B5;     /* on-primary + care/progress accent */
+  --lavender:#F5F7FC;       /* app canvas (light) */
+  --light-plum:#5338A0;
+  --plum:#362265;
+  --dark-plum:#201839;
+  --light-lilac:#E3E3FB;
+  --lilac:#A990EF;
+  --light-heather:#D6D5F9;
+
+  /* ---- Grayscale (cloud → ink) ---- */
+  --white:#FFFFFF;
+  --cloud:#E8EBF4;
+  --ash:#DDDFE7;
+  --smoke:#D3D6E0;
+  --steel:#BCBFCC;
+  --space:#9DA2B3;
+  --graphite:#6E7180;
+  --arsenic:#40424D;
+  --slate:#2C2C34;
+  --phantom:#1E1E24;
+  --ink:#17161D;
+  --black:#000000;
+
+  /* ---- Secondary accents (chips / data-viz / categories) ---- */
+  --cyan-500:#004144; --cyan-400:#007D79; --cyan-300:#08BDBA; --cyan-200:#8FD3D1; --cyan-100:#D9FBFB;
+  --yellow-500:#684E00; --yellow-400:#B28600; --yellow-300:#F1C21B; --yellow-200:#EBD98F; --yellow-100:#FCF4D6;
+  --candy-pink-500:#853A6A; --candy-pink-400:#9D4782; --candy-pink-300:#E071C7; --candy-pink-200:#DE93C3; --candy-pink-100:#EFD1E6;
+  --heather-500:#3C4499; --heather-400:#5258C1; --heather-300:#7575FF; --heather-200:#B5B3FF; --heather-100:#C7D0FF;
+  --red-300:#E43838; --red-100:#FCD9E6;
+  --orange-300:#E3772A; --orange-100:#FBE9DD;
+  --sea-green:#3390B7; --light-sea-green:#DEEDF3;
+  --grass-300:#1FA54C; --grass-100:#D2EDDB;
+
+  /* ---- Semantic status ---- */
+  --success:#2FBF8F;
+  --notice:#E3772A;
+  --error:#E53950;
+  --info:#3390B7;
+
+  /* ---- Semantic aliases → LIGHT (theme.js lightTheme) ---- */
+  --color-primary:var(--violet);
+  --color-on-primary:var(--aquamarine);
+  --color-primary-container:var(--lavender);
+  --color-on-primary-container:var(--slate);
+  --color-secondary:var(--dark-plum);
+  --color-tertiary:var(--aquamarine);
+  --color-on-tertiary:var(--dark-plum);
+
+  --color-background:var(--lavender);      /* app canvas */
+  --color-on-background:var(--midnight);   /* headings on canvas */
+  --color-surface:var(--white);            /* cards / modals */
+  --color-on-surface:var(--slate);         /* default body text */
+  --color-surface-variant:var(--cloud);
+  --color-surface-input:var(--cloud);      /* input fills (custom.surfaceInput) */
+  --color-surface-light:var(--white);
+  --color-surface-strong:var(--light-lilac);
+  --color-surface-pressed:var(--light-lilac);
+  --color-surface-disabled:var(--ash);
+  --color-on-surface-disabled:var(--space);
+
+  --color-outline:var(--space);
+  --color-outline-variant:var(--steel);
+  --color-outline-subtle:var(--cloud);
+  --color-border:var(--cloud);             /* default hairline (custom.borderContainer) */
+
+  --color-text:var(--midnight);            /* strong heading text on canvas */
+  --color-text-body:#4E4961;               /* long-form body (web kit) */
+  --color-text-muted:var(--graphite);
+  --color-on-accent:var(--violet);
+
+  /* ---- Elevation / shadow (light) ---- */
+  --shadow-soft:0 10px 28px rgba(40,27,85,.07);
+  --shadow:0 22px 60px rgba(40,27,85,.09);
+  --shadow-lg:0 40px 80px rgba(40,27,85,.28);
+  --backdrop:rgba(14,12,21,.5);
+
+  color-scheme:light;
+}
+
+[data-theme="dark"]{
+  /* theme.js darkTheme */
+  --color-primary:var(--violet);
+  --color-on-primary:var(--aquamarine);
+  --color-primary-container:var(--slate);
+  --color-on-primary-container:var(--cloud);
+  --color-secondary:var(--smoke);
+  --color-tertiary:var(--aquamarine);
+  --color-on-tertiary:var(--cloud);
+
+  --color-background:var(--ink);
+  --color-on-background:var(--lavender);
+  --color-surface:var(--phantom);
+  --color-on-surface:var(--cloud);
+  --color-surface-variant:var(--slate);
+  --color-surface-input:var(--slate);
+  --color-surface-light:var(--slate);
+  --color-surface-strong:var(--plum);
+  --color-surface-pressed:var(--light-plum);
+  --color-surface-disabled:var(--slate);
+  --color-on-surface-disabled:var(--graphite);
+
+  --color-outline:var(--graphite);
+  --color-outline-variant:var(--light-plum);
+  --color-outline-subtle:var(--graphite);
+  --color-border:var(--plum);
+
+  --color-text:var(--lavender);
+  --color-text-body:#D6D5E0;
+  --color-text-muted:var(--space);
+  --error:#FF5C72;
+  --success:#4DE0A8;
+
+  --shadow-soft:0 10px 28px rgba(0,0,0,.2);
+  --shadow:0 24px 64px rgba(0,0,0,.28);
+  --shadow-lg:0 40px 80px rgba(0,0,0,.4);
+  --backdrop:rgba(14,12,21,.8);
+
+  color-scheme:dark;
+}

@@ -1,0 +1,68 @@
+/* Kaizen Health — type, spacing, radius, motion tokens.
+   Type scale mirrors src/core/typography.js (fontConfigDefault, EN base = 16px). */
+:root{
+  --font-sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-brand:var(--font-sans);
+
+  /* weights (each is a real .ttf face) */
+  --weight-light:300;
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+  --weight-extrabold:800;
+  --weight-black:900;
+
+  /* ---- Type scale (size / weight / tracking) ---- */
+  --display-lg-size:57px;  --display-lg-weight:400; --display-lg-tracking:0;
+  --display-md-size:45px;  --display-md-weight:400; --display-md-tracking:0;
+  --display-sm-size:36px;  --display-sm-weight:400; --display-sm-tracking:0;
+
+  --headline-lg-size:32px; --headline-lg-weight:700; --headline-lg-tracking:.2px;
+  --headline-md-size:24px; --headline-md-weight:700; --headline-md-tracking:0;
+  --headline-sm-size:14px; --headline-sm-weight:700; --headline-sm-tracking:0;
+
+  --title-lg-size:20px;    --title-lg-weight:700;   --title-lg-tracking:0;
+  --title-md-size:18px;    --title-md-weight:700;   --title-md-tracking:.15px;
+  --title-sm-size:16px;    --title-sm-weight:700;   --title-sm-tracking:.1px;
+
+  --body-lg-size:16px;     --body-lg-weight:400;    --body-lg-tracking:.2px;
+  --body-md-size:14px;     --body-md-weight:400;    --body-md-tracking:.25px;
+  --body-sm-size:12px;     --body-sm-weight:400;    --body-sm-tracking:.4px;
+
+  --label-xl-size:20px;    --label-xl-weight:500;
+  --label-lg-size:16px;    --label-lg-weight:500;   --label-lg-tracking:.1px;
+  --label-md-size:14px;    --label-md-weight:600;   --label-md-tracking:.2px;
+  --label-sm-size:13px;    --label-sm-weight:600;   --label-sm-tracking:.5px;
+  --label-xs-size:12px;    --label-xs-weight:400;   --label-xs-tracking:.5px;
+  --label-xxs-size:11px;   --label-xxs-weight:600;  --label-xxs-tracking:.5px;
+
+  --line-tight:1.05;   /* @kind other */
+  --line-heading:1.15; /* @kind other */
+  --line-body:1.5;     /* @kind other */
+
+  /* ---- Spacing (src/core brand-kit token export) ---- */
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-12:48px;
+  --space-16:64px;
+
+  /* ---- Radius ---- */
+  --radius-sm:8px;     /* tags, checkbox */
+  --radius-md:12px;
+  --radius-lg:16px;    /* buttons, inputs, cards, toasts */
+  --radius-xl:24px;
+  --radius-2xl:32px;
+  --radius-chip:25px;  /* round chips + segmented control */
+  --radius-pill:999px;
+
+  /* ---- Motion ---- */
+  --ease-standard:cubic-bezier(.4,0,.2,1); /* @kind other */
+  --dur-fast:160ms; /* @kind other */
+  --dur-med:300ms;  /* @kind other */
+}

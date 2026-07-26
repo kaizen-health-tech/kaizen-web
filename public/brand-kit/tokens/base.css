@@ -1,0 +1,26 @@
+/* Kaizen Health — base element defaults + typography utility classes.
+   Class names mirror the app's type variants (displayLarge, headlineMedium, …). */
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font-sans);font-size:var(--body-lg-size);line-height:var(--line-body);color:var(--color-on-surface);background:var(--color-background);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--color-primary);text-decoration:none}
+a:hover{color:var(--violet-hover)}
+
+/* Type variants — apply as classes on any element */
+.kz-display-lg{font-family:var(--font-sans);font-weight:var(--display-lg-weight);font-size:var(--display-lg-size);letter-spacing:var(--display-lg-tracking);line-height:var(--line-tight)}
+.kz-display-md{font-weight:var(--display-md-weight);font-size:var(--display-md-size);letter-spacing:var(--display-md-tracking);line-height:var(--line-tight)}
+.kz-display-sm{font-weight:var(--display-sm-weight);font-size:var(--display-sm-size);letter-spacing:var(--display-sm-tracking);line-height:1.1}
+.kz-headline-lg{font-weight:var(--headline-lg-weight);font-size:var(--headline-lg-size);letter-spacing:var(--headline-lg-tracking);line-height:var(--line-heading)}
+.kz-headline-md{font-weight:var(--headline-md-weight);font-size:var(--headline-md-size);letter-spacing:var(--headline-md-tracking);line-height:var(--line-heading)}
+.kz-headline-sm{font-weight:var(--headline-sm-weight);font-size:var(--headline-sm-size);line-height:var(--line-heading)}
+.kz-title-lg{font-weight:var(--title-lg-weight);font-size:var(--title-lg-size);line-height:1.25}
+.kz-title-md{font-weight:var(--title-md-weight);font-size:var(--title-md-size);letter-spacing:var(--title-md-tracking);line-height:1.3}
+.kz-title-sm{font-weight:var(--title-sm-weight);font-size:var(--title-sm-size);letter-spacing:var(--title-sm-tracking);line-height:1.3}
+.kz-body-lg{font-weight:var(--body-lg-weight);font-size:var(--body-lg-size);letter-spacing:var(--body-lg-tracking);line-height:var(--line-body)}
+.kz-body-md{font-weight:var(--body-md-weight);font-size:var(--body-md-size);letter-spacing:var(--body-md-tracking);line-height:var(--line-body)}
+.kz-body-sm{font-weight:var(--body-sm-weight);font-size:var(--body-sm-size);letter-spacing:var(--body-sm-tracking);line-height:1.45}
+.kz-label-xl{font-weight:var(--label-xl-weight);font-size:var(--label-xl-size);line-height:1.3}
+.kz-label-lg{font-weight:var(--label-lg-weight);font-size:var(--label-lg-size);letter-spacing:var(--label-lg-tracking);line-height:1.3}
+.kz-label-md{font-weight:var(--label-md-weight);font-size:var(--label-md-size);letter-spacing:var(--label-md-tracking);line-height:1.3}
+.kz-label-sm{font-weight:var(--label-sm-weight);font-size:var(--label-sm-size);letter-spacing:var(--label-sm-tracking);line-height:1.25}
+.kz-label-xs{font-weight:var(--label-xs-weight);font-size:var(--label-xs-size);letter-spacing:var(--label-xs-tracking);line-height:1.25}
+.kz-label-xxs{font-weight:var(--label-xxs-weight);font-size:var(--label-xxs-size);letter-spacing:var(--label-xxs-tracking);line-height:1.2}
