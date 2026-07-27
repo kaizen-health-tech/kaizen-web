@@ -25,7 +25,13 @@ const ensureEndingPunctuation = (value: string) =>
 export const buildTitle = (primaryKeyword: string) =>
   `${sanitizeText(primaryKeyword)} | ${COMPANY_NAME}`;
 
-export const absoluteUrl = (path: string) => new URL(path, SITE_URL).toString();
+// Next.js renders canonicals without a trailing slash (trailingSlash: false), so
+// normalize here too. Otherwise the homepage is "https://kaizenhealth.io" in the
+// canonical tag but "https://kaizenhealth.io/" in the sitemap and breadcrumbs.
+export const absoluteUrl = (path: string) => {
+  const url = new URL(path, SITE_URL).toString();
+  return url.endsWith("/") ? url.slice(0, -1) : url;
+};
 
 const fallbackDescription = (primaryKeyword: string) =>
   `${primaryKeyword} with ${COMPANY_NAME} helps families organize medical records, share secure updates, and coordinate care with AI guidance before every appointment.`;

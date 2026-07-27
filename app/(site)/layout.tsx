@@ -70,9 +70,10 @@ export const metadata: Metadata = {
     "health tracking",
     COMPANY_NAME,
   ],
-  alternates: {
-    canonical: SITE_URL,
-  },
+  // No `alternates.canonical` here on purpose: a layout-level canonical is
+  // inherited by every route that doesn't set its own, which would silently
+  // declare those pages duplicates of the homepage. Each page supplies its own
+  // self-referencing canonical via createPageMetadata().
   openGraph: {
     type: "website",
     url: SITE_URL,
