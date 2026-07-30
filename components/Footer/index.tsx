@@ -113,6 +113,11 @@ export default function Footer() {
                   Support center
                 </Link>
               </li>
+              <li>
+                <Link href="/contact" className="hover:text-primary">
+                  Contact us
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -15,6 +15,11 @@ const Header = () => {
 
   const pathUrl = usePathname();
 
+  const isActive = (path?: string) => {
+    if (!path) return false;
+    return path === "/" ? pathUrl === "/" : pathUrl.startsWith(path);
+  };
+
   // Sticky menu with throttled scroll handler
   useEffect(() => {
     let ticking = false;
@@ -126,7 +131,13 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => setDropdownToggler(!dropdownToggler)}
-                        className="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
+                        aria-expanded={dropdownToggler}
+                        aria-haspopup="true"
+                        className={`flex cursor-pointer items-center justify-between gap-3 hover:text-primary ${
+                          menuItem.submenu.some((item) => isActive(item.path))
+                            ? "text-primary"
+                            : ""
+                        }`}
                       >
                         {menuItem.title}
                         <span>
@@ -144,10 +155,18 @@ const Header = () => {
                         className={`dropdown ${dropdownToggler ? "flex" : ""}`}
                       >
                         {menuItem.submenu.map((item, key) => (
-                          <li key={key} className="hover:text-primary">
+                          <li key={key}>
                             <Link
                               href={item.path || "#"}
-                              onClick={() => setNavigationOpen(false)}
+                              onClick={() => {
+                                setNavigationOpen(false);
+                                setDropdownToggler(false);
+                              }}
+                              className={
+                                isActive(item.path)
+                                  ? "text-primary hover:text-primary"
+                                  : "hover:text-primary"
+                              }
                             >
                               {item.title}
                             </Link>
@@ -160,11 +179,7 @@ const Header = () => {
                       href={`${menuItem.path}`}
                       onClick={() => setNavigationOpen(false)}
                       className={
-                        (
-                          menuItem.path === "/"
-                            ? pathUrl === "/"
-                            : menuItem.path && pathUrl.startsWith(menuItem.path)
-                        )
+                        isActive(menuItem.path)
                           ? "text-primary hover:text-primary"
                           : "hover:text-primary"
                       }

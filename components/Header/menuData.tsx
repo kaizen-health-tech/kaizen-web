@@ -8,90 +8,60 @@ const menuData: Menu[] = [
     path: "/",
   },
   {
-    id: 1.1,
-    title: "Updates",
-    newTab: false,
-    path: "/updates",
-  },
-  {
     id: 2,
-    title: "Family Health Blog",
+    title: "How It Works",
     newTab: false,
-    path: "/blog",
-  },
-  {
-    id: 2.1,
-    title: "About",
-    newTab: false,
-    path: "/about",
+    path: "/how-it-works",
   },
   {
     id: 3,
-    title: "Careers",
+    title: "More",
     newTab: false,
-    path: "/careers",
+    submenu: [
+      {
+        id: 31,
+        title: "Updates",
+        newTab: false,
+        path: "/updates",
+      },
+      {
+        id: 32,
+        title: "Family Health Blog",
+        newTab: false,
+        path: "/blog",
+      },
+      {
+        id: 33,
+        title: "About",
+        newTab: false,
+        path: "/about",
+      },
+      {
+        id: 34,
+        title: "Careers",
+        newTab: false,
+        path: "/careers",
+      },
+      {
+        id: 35,
+        title: "Policies & Docs",
+        newTab: false,
+        path: "/docs",
+      },
+      {
+        id: 36,
+        title: "Support",
+        newTab: false,
+        path: "/support",
+      },
+    ],
   },
   {
     id: 4,
-    title: "Policies & Docs",
+    title: "Contact",
     newTab: false,
-    path: "/docs",
+    path: "/contact",
   },
-  {
-    id: 5,
-    title: "Support",
-    newTab: false,
-    path: "/support",
-  },
-  // {
-  //   id: 3,
-  //   title: "Pages",
-  //   newTab: false,
-  //   submenu: [
-  //     {
-  //       id: 31,
-  //       title: "Blog Grid",
-  //       newTab: false,
-  //       path: "/blog",
-  //     },
-  //     {
-  //       id: 34,
-  //       title: "Sign In",
-  //       newTab: false,
-  //       path: "/auth/signin",
-  //     },
-  //     {
-  //       id: 35,
-  //       title: "Sign Up",
-  //       newTab: false,
-  //       path: "/auth/signup",
-  //     },
-  //     {
-  //       id: 35,
-  //       title: "Docs",
-  //       newTab: false,
-  //       path: "/docs",
-  //     },
-  //     {
-  //       id: 35.1,
-  //       title: "Support",
-  //       newTab: false,
-  //       path: "/support",
-  //     },
-  //     {
-  //       id: 36,
-  //       title: "404",
-  //       newTab: false,
-  //       path: "/error",
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 4,
-  //   title: "Support",
-  //   newTab: false,
-  //   path: "/support",
-  // },
 ];
 
 export default menuData;

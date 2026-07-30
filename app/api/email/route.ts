@@ -5,14 +5,17 @@ type EmailFormData = {
   message: string;
   name: string;
   email: string;
+  type?: string;
 };
 
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    const { name, email, message }: EmailFormData = data;
+    const { name, email, message, type }: EmailFormData = data;
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
+
+    const topic = type?.trim() || "General";
 
     const msg = {
       to: "info@kaizenhealth.io", // Change to your recipient
@@ -20,7 +23,7 @@ export async function POST(request: Request) {
         email: "info@kaizenhealth.io",
         name: "Kaizen Health",
       }, // Change to your verified sender
-      subject: `${name}: Website Signup`,
+      subject: `[${topic}] ${name}: Website Signup`,
       text: `${message} and email: ${email}`,
     };
 

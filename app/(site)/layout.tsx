@@ -9,6 +9,11 @@ import {
   normalizeDescription,
 } from "@/lib/seo";
 
+import {
+  CONTACT_ADDRESS,
+  CONTACT_EMAIL,
+} from "@/components/Contact/ContactDetails";
+
 import "../globals.css";
 import SiteShell from "./site-shell";
 
@@ -25,6 +30,7 @@ const NAV_LINKS = [
   { name: "Family Health Blog", url: absoluteUrl("/blog") },
   { name: "Product Updates", url: absoluteUrl("/updates") },
   { name: "Support Center", url: absoluteUrl("/support") },
+  { name: "Contact Us", url: absoluteUrl("/contact") },
   { name: "Careers", url: absoluteUrl("/careers") },
   { name: "Privacy Policy", url: absoluteUrl("/docs/privacy") },
 ];
@@ -35,6 +41,24 @@ const organizationSchema = {
   name: COMPANY_NAME,
   url: SITE_URL,
   logo: absoluteUrl("/images/logo/kaizen-logo.png"),
+  email: CONTACT_EMAIL,
+  address: {
+    "@type": "PostalAddress",
+    ...CONTACT_ADDRESS,
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    email: CONTACT_EMAIL,
+    url: absoluteUrl("/contact"),
+    availableLanguage: "English",
+  },
+  sameAs: [
+    "https://twitter.com/kaizenhealthio",
+    "https://linkedin.com/company/kaizen-health-io",
+    "https://instagram.com/kaizenhealthio",
+    "https://www.facebook.com/profile.php?id=61562247803536",
+  ],
 };
 
 const websiteSchema = {

@@ -17,6 +17,7 @@ const secondaryRoutes = [
   "/careers",
   "/careers/open-roles",
   "/support",
+  "/contact",
 ];
 
 // Utility / legal pages (lower priority)
