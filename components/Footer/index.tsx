@@ -75,7 +75,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="mb-4 text-lg font-semibold text-white">
-              Core Navigation
+              Site Links
             </h4>
             <ul className="space-y-2">
               <li>
