@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "How much sun exposure do seniors need each day?",
     answer:
-      "Just 15 to 30 minutes of sunlight, 3 to 5 times a week, ideally in the early morning or late afternoon when the sun is gentle, can make a meaningful difference for older adults. Even short walks, gardening, or sitting near a sunny window on days with limited mobility can help.",
+      "A common starting point is 15 to 30 minutes outdoors, 3 to 5 times a week, preferably outside peak UV hours. Needs vary by skin tone, location, season, health, and medication use, so a clinician can give more specific advice.",
   },
   {
     question: "What are safe sun exposure practices for older adults?",
@@ -72,8 +72,7 @@ const SunshineBlogPage = async () => {
               </div>
 
               <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                The Health Benefits of Sunshine for Older Adults: Why Seniors
-                Need Sunlight Daily
+                How Sunlight Supports Health in Older Adults
               </h2>
 
               <ul className="mb-9 flex flex-wrap gap-5 2xl:gap-7.5">
@@ -98,15 +97,13 @@ const SunshineBlogPage = async () => {
                   id="sun-exposure-senior-health"
                   size={"text-3xl"}
                 >
-                  1. Overview: Sunlight and Senior Health
+                  1. Sunlight and health after 65
                 </HeadingWithAnchor>
                 <p className="mb-6">
-                  As we age, simple habits can have a big impact. Sunshine is
-                  one of the most underrated yet powerful health tools available
-                  to older adults. Beyond its mood-boosting effect, sunlight
-                  supports bone strength, immune defense, sleep quality, and
-                  even longevity. Unfortunately, many seniors don’t get enough
-                  of it.
+                  Sunlight helps the body make vitamin D and helps regulate the
+                  sleep-wake cycle. Time outdoors can also support mood, movement,
+                  and social contact. Many older adults get little direct sun,
+                  especially when mobility or health problems keep them indoors.
                 </p>
               </div>
 
@@ -118,13 +115,13 @@ const SunshineBlogPage = async () => {
                   2. Why Sunshine Is Important for Older Adults
                 </HeadingWithAnchor>
                 <p className="mb-6">
-                  Vitamin D is crucial for older adults, but production
+                  Older adults need vitamin D, but production
                   decreases with age. Since the skin’s ability to synthesize
                   vitamin D from sunlight weakens over time, and many seniors
                   spend more time indoors, deficiencies are common. This can
                   lead to fatigue, weak bones, poor immunity, and higher risk of
-                  depression. While supplements help, nothing beats natural
-                  exposure.
+                  depression. Supplements can help when sunlight and diet do not
+                  provide enough vitamin D.
                 </p>
 
                 <HeadingWithAnchor
@@ -139,15 +136,14 @@ const SunshineBlogPage = async () => {
                     <strong>Stronger Bones and Fracture Prevention:</strong>{" "}
                     Sunlight helps convert cholesterol in the skin into vitamin
                     D3, which improves calcium absorption. This strengthens
-                    bones and helps prevent osteoporosis and hip fractures—a
+                    bones and helps prevent osteoporosis and hip fractures, a
                     leading cause of disability in seniors.
                   </li>
                   <li>
                     <strong>Mood and Mental Health Support:</strong> Sunlight
                     activates serotonin and dopamine production, reducing
-                    feelings of sadness and isolation. For older adults living
-                    alone or in care homes, even brief periods outside can
-                    dramatically improve emotional well-being.
+                    mood. For older adults living alone or in care homes, time
+                    outside may also ease isolation.
                   </li>
                   <li>
                     <strong>Better Sleep Regulation:</strong> Bright light
@@ -164,7 +160,7 @@ const SunshineBlogPage = async () => {
                   <li>
                     <strong>More Movement and Social Interaction:</strong>{" "}
                     Spending time outside often encourages gentle exercise and
-                    connection—two key factors for healthy aging. Activities
+                    connection, two factors linked to healthy aging. Activities
                     like walking, gardening, or sitting at a park can offer
                     sunlight exposure while promoting social well-being.
                   </li>
@@ -182,7 +178,7 @@ const SunshineBlogPage = async () => {
                     <strong>Set a Daily Routine:</strong> Encourage going
                     outside in the early morning or late afternoon when the sun
                     is gentle. Just 15–30 minutes a day, 3 to 5 times a week,
-                    can make a big difference. Set a reminder or build it into
+                    can be a practical starting point. Set a reminder or build it into
                     daily activities like having coffee or reading outdoors.
                   </li>
                   <li>
@@ -194,7 +190,7 @@ const SunshineBlogPage = async () => {
                   </li>
                   <li>
                     <strong>Take Short Walks:</strong> Daily short
-                    walks—especially in sunny weather—are a great way to combine
+                    walks in sunny weather combine
                     sunshine with physical activity. Use flat, even sidewalks or
                     accessible trails and wear supportive shoes.
                   </li>
@@ -206,21 +202,21 @@ const SunshineBlogPage = async () => {
                   </li>
                   <li>
                     <strong>Join Outdoor Social Activities:</strong> Group
-                    walks, tai chi in the park, or outdoor classes offer a fun
-                    way to get sun while staying active and socially connected.
+                    walks, tai chi in the park, or outdoor classes combine sun,
+                    activity, and time with other people.
                   </li>
                   <li>
                     <strong>Dress Smart for the Sun:</strong> Wear light,
                     breathable clothing and a hat for comfort. Use sunscreen on
                     exposed areas if spending longer than 30 minutes in direct
-                    sun. The goal is balance—enough exposure to produce vitamin
+                    sun. Aim for enough exposure to produce vitamin
                     D without risking sunburn.
                   </li>
                   <li>
                     <strong>Combine Sunshine with Routine Tasks:</strong> Take
                     phone calls outside, eat lunch on the porch, or read the
                     paper in the garden. Layering sunlight exposure with daily
-                    routines makes it effortless.
+                    routines makes it easier to remember.
                   </li>
                 </ul>
 
@@ -259,16 +255,14 @@ const SunshineBlogPage = async () => {
                   id="sun-exposure-top-summary"
                   size={"text-3xl"}
                 >
-                  6. Summary: Sunlight Is Simple, Powerful, and Free
+                  6. Make outdoor time part of the routine
                 </HeadingWithAnchor>
 
                 <p className="mb-6">
-                  For older adults, sunshine is more than a nice-to-have—it’s a
-                  health essential. With benefits ranging from stronger bones to
-                  improved sleep and mental health, regular sun exposure should
-                  be part of every senior’s wellness plan. Start small: a few
-                  minutes outdoors, consistently, can lead to lasting
-                  improvements in quality of life.
+                  Regular outdoor time can support bone health, sleep, mood, and
+                  movement. Start with a short walk, coffee on the porch, or a
+                  few minutes in the garden, while following sun-safety advice
+                  from your doctor or pharmacist.
                 </p>
               </div>
 
@@ -276,7 +270,7 @@ const SunshineBlogPage = async () => {
 
               <SharePost
                 url="https://kaizenhealth.io/blog/sunshine-seniors"
-                text="Discover how sunshine benefits older adults on the Kaizen Health blog!"
+                text="Read how older adults can get the benefits of sunlight safely."
                 hashtags={["seniorhealth", "sunlight", "wellness"]}
               />
             </div>

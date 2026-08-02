@@ -5,9 +5,9 @@ const BlogData: Blog[] = [
     id: 1,
     mainImage: "/images/blog/family-history.jpeg",
     title:
-      "Understanding Family Health History: Why It's Vital for Your Well-being",
+      "Why Your Family Health History Matters",
     metadata:
-      "Discover the importance of knowing your family health history and how it can significantly impact your preventive health strategies. Learn why family health knowledge is crucial.",
+      "A clear family health history helps doctors spot inherited risks, recommend earlier screenings, and make better-informed care decisions.",
     url: "/blog/family-history",
   },
   {
@@ -15,7 +15,7 @@ const BlogData: Blog[] = [
     mainImage: "/images/blog/pregnancy-genetic.jpeg",
     title: "Genetic conditions during pregnancy",
     metadata:
-      "And how AI can help with early detection of genetic conditions during pregnancy.",
+      "Common prenatal genetic conditions, screening options, and the role AI can play in making complex results easier to understand.",
     url: "/blog/pregnancy-genetic",
   },
   {
@@ -23,16 +23,16 @@ const BlogData: Blog[] = [
     mainImage: "/images/blog/diabetes-magnesium-vitamin-d.jpeg",
     title: "The Connection Between Diabetes, Vitamin D, and Magnesium",
     metadata:
-      "Discover how Vitamin D and Magnesium influence insulin sensitivity and glycemic control.",
+      "What research says about vitamin D, magnesium, insulin sensitivity, and blood sugar control.",
     url: "/blog/diabetes-magnesium-vitamin-d",
   },
   {
     id: 4,
     mainImage: "/images/blog/yogurt.jpeg",
     title:
-      "Yogurt Consumption and Colorectal Cancer Risk: A Comprehensive Analysis of Emerging Evidence",
+      "What Research Says About Yogurt and Colorectal Cancer Risk",
     metadata:
-      "Discover how Vitamin D and Magnesium influence insulin sensitivity and glycemic control.",
+      "A long-running study found an association between regular yogurt intake and a lower risk of one type of colorectal cancer.",
     url: "/blog/cancer/colorectal-cancer-risk",
   },
   {
@@ -41,7 +41,7 @@ const BlogData: Blog[] = [
     title:
       "Why Family Health History Matters for Longevity and Disease Prevention",
     metadata:
-      "Understanding your family health history is crucial for assessing inherited risk factors and planning preventive healthcare strategies.",
+      "How to document family health history so clinicians can assess inherited risks and plan appropriate screening.",
     url: "/blog/family-history/documenting-family-health",
   },
   {
@@ -49,58 +49,58 @@ const BlogData: Blog[] = [
     mainImage: "/images/blog/caregiver-guide.jpeg",
     title: "Supporting Aging Parents: A Caregiver’s Guide",
     metadata:
-      "Comprehensive caregiving guide with tips on home safety, stress management, legal planning, and senior care services.",
+      "Practical guidance on home safety, caregiver stress, legal planning, and services that can help aging parents.",
     url: "/blog/family-history/caregiver-guide-aging-parents",
   },
   {
     id: 7,
     mainImage: "/images/blog/creatine.jpeg",
-    title: "Importance and benefits of creatine",
-    metadata: "Creatine in Aging Adults: Importance, Benefits & Guidelines",
+    title: "Creatine for Older Adults: Benefits, Safety, and Dosage",
+    metadata: "What older adults should know about creatine, from muscle and brain health to dosing and safety.",
     url: "/blog/health/creatine",
   },
   {
     id: 8,
     mainImage: "/images/blog/sunshine.png",
-    title: "Why Sunshine Is Essential for Older Adults",
+    title: "How Sunlight Supports Health in Older Adults",
     metadata:
-      "Discover how daily sunlight exposure can improve bone health, mood, immunity, and sleep in older adults",
+      "How regular sunlight exposure can support bone health, mood, immunity, and sleep in older adults.",
     url: "/blog/health/sunshine",
   },
   {
     id: 9,
     mainImage: "/images/blog/organizing-medical-records.jpg",
     title:
-      "The Complete Guide to Organizing Medical Records When Caring for Aging Parents",
+      "How to Organize Medical Records for an Aging Parent",
     metadata:
-      "A practical resource for family caregivers navigating healthcare management. Learn systems for organizing medical records, choosing paper vs digital approaches, and maintaining critical healthcare information.",
+      "A practical system for gathering, organizing, and sharing the records a caregiver needs, on paper, online, or both.",
     url: "/blog/family-history/organizing-medical-records",
   },
   {
     id: 10,
     mainImage: "/images/blog/family-generations.png",
     title:
-      "The Critical Role of Family Health Monitoring in Preventing Hereditary Diseases",
+      "How Family Health History Can Guide Disease Prevention",
     metadata:
-      "96% of Americans recognize family health history importance, yet only 37% have collected it. Learn how monitoring hereditary patterns can prevent up to 60% of colorectal cancer deaths and reduce breast cancer risk by 90%.",
+      "Most Americans know family health history matters, but few have collected it. Here is how those records can guide screening and prevention.",
     url: "/blog/family-health-monitoring",
   },
   {
     id: 11,
     mainImage: "/images/blog/heart-disease.png",
     title:
-      "A New DNA Test Can Predict Your Risk for 8 Heart Conditions — Before You Ever Feel a Symptom",
+      "A DNA Test Can Estimate Risk for 8 Heart Conditions",
     metadata:
-      "A new polygenic risk score can estimate inherited risk for 8 cardiovascular and metabolic conditions from a single test. Here's what the science shows and what it means for families tracking heart disease history.",
+      "A polygenic risk score estimates inherited risk for eight cardiovascular and metabolic conditions. Here is what the research means for families with a history of heart disease.",
     url: "/blog/heart/genetic-risk-score-heart-disease",
   },
   {
     id: 12,
     mainImage: "/images/blog/glp-1.png",
     title:
-      "Medicare Will Pay for Weight-Loss Drugs for the First Time — Here's Who Actually Qualifies for the $50 Copay",
+      "Who Qualifies for Medicare's $50 Weight-Loss Drug Copay?",
     metadata:
-      "Medicare's new GLP-1 Bridge program covers Wegovy, Zepbound, and Foundayo for weight loss at a $50 monthly copay. Here's who actually qualifies and what to watch for.",
+      "Medicare's GLP-1 Bridge program covers Wegovy, Zepbound, and Foundayo for some patients. Check the eligibility rules and common coverage gaps.",
     url: "/blog/health/medicare-glp1-weight-loss-coverage",
   },
 ];

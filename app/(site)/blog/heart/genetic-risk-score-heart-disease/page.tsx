@@ -21,14 +21,14 @@ const faqs = [
   {
     question: "Does a high genetic risk score mean I'll definitely get heart disease?",
     answer:
-      "No. A high polygenic risk score means your odds are meaningfully elevated compared to someone with average genetic risk, not that disease is guaranteed. Researchers describe it as one input for clinical decision-making, alongside traditional risk factors like blood pressure, cholesterol, and family history, that can help guide whether earlier or more intensive prevention makes sense for you.",
+      "No. A high polygenic risk score means your odds are higher than those of someone with average genetic risk; it does not guarantee disease. Clinicians can consider the score alongside blood pressure, cholesterol, family history, and other risk factors when discussing earlier or more intensive prevention.",
   },
 ];
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Genetic Risk Score for Heart Disease",
   description:
-    "A new polygenic risk score can estimate inherited risk for 8 cardiovascular and metabolic conditions from a single test. Here's what the science shows and what it means for families tracking heart disease history.",
+    "A polygenic risk score can estimate inherited risk for 8 cardiovascular and metabolic conditions. Learn what the research found and where the test falls short.",
   path: "/blog/heart/genetic-risk-score-heart-disease",
   type: "article",
   image: "/images/blog/blog-big.png",
@@ -38,8 +38,8 @@ const GeneticRiskScoreHeartDisease = async () => {
   return (
     <>
       <ArticleSchema
-        title="A New DNA Test Can Predict Your Risk for 8 Heart Conditions — Before You Ever Feel a Symptom"
-        description="A new polygenic risk score can estimate inherited risk for 8 cardiovascular and metabolic conditions from a single test. Here's what the science shows and what it means for families tracking heart disease history."
+        title="A DNA Test Can Estimate Risk for 8 Heart Conditions"
+        description="A polygenic risk score can estimate inherited risk for 8 cardiovascular and metabolic conditions. Learn what the research found and where the test falls short."
         image="/images/blog/heart-disease.png"
         datePublished="2026-07-02"
         url="/blog/heart/genetic-risk-score-heart-disease"
@@ -73,31 +73,25 @@ const GeneticRiskScoreHeartDisease = async () => {
                   </div>
                 </div>
                 <h1 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  A New DNA Test Can Predict Your Risk for 8 Heart Conditions
-                  — Before You Ever Feel a Symptom
+                  A DNA Test Can Estimate Risk for 8 Heart Conditions
                 </h1>
 
                 <p>
-                  Here&apos;s an uncomfortable fact: most people who are
-                  genetically loaded for heart disease look completely fine
-                  on paper. Normal cholesterol. Normal blood pressure. Maybe
-                  they even run 5Ks on weekends. And yet their DNA has been
-                  quietly stacking the odds against them since the day they
-                  were born.
+                  People with a high genetic risk for heart disease may still
+                  have normal cholesterol and blood pressure, especially when
+                  they are young and active. Routine measurements do not capture
+                  inherited risk.
                 </p>
                 <p>
-                  That&apos;s the gap a new tool out of Mass General Brigham
-                  is trying to close. Researchers there just published a
+                  Researchers at Mass General Brigham published a
                   validation study in the{" "}
                   <em>Journal of the American College of Cardiology</em>{" "}
-                  introducing an integrated polygenic risk score — a single
+                  introducing an integrated polygenic risk score, a single
                   genetic test that estimates inherited risk for eight
                   different cardiovascular and metabolic conditions at once.
                   It&apos;s already available to clinicians through the Mass
                   General Brigham Laboratory for Molecular Medicine and
-                  Broad Clinical Labs, and it&apos;s the kind of thing that
-                  could quietly change how &quot;high risk&quot; gets
-                  defined.
+                  Broad Clinical Labs.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
@@ -135,8 +129,8 @@ const GeneticRiskScoreHeartDisease = async () => {
                   and health data from more than <strong>245,000</strong>{" "}
                   participants in the NIH&apos;s All of Us Research Program,
                   then validated against over <strong>53,000</strong> people
-                  in the Mass General Brigham Biobank. That&apos;s not a
-                  small pilot study — that&apos;s a serious sample size.
+                  in the Mass General Brigham Biobank. This was a large
+                  validation cohort rather than a small pilot.
                 </p>
                 <p>The single test evaluates inherited risk across:</p>
                 <ul className="list-disc pl-5 pt-2">
@@ -151,12 +145,11 @@ const GeneticRiskScoreHeartDisease = async () => {
                 </ul>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  The Numbers That Make Cardiologists Sit Up
+                  What the numbers show
                 </h2>
                 <p>
-                  Here&apos;s where it gets interesting. People who landed
-                  in the top 10% of genetic risk for coronary artery disease
-                  were <strong>3.7 times</strong> more likely to actually
+                  People in the top 10% of genetic risk for coronary artery
+                  disease were <strong>3.7 times</strong> more likely to
                   develop it, compared to people with average genetic risk.
                   For type 2 diabetes, the top 10% genetic risk group was{" "}
                   <strong>3.1 times</strong> more likely to develop the
@@ -168,57 +161,50 @@ const GeneticRiskScoreHeartDisease = async () => {
                   you&apos;d typically see from established risk factors
                   like high blood pressure or high cholesterol, which
                   usually carry around a two-fold increased risk. Genetic
-                  risk, on the other hand, is baked in from birth, long
-                  before any lifestyle factor gets a chance to pile on.
+                  risk is present from birth, before lifestyle-related warning
+                  signs appear.
                 </p>
                 <p>
-                  There&apos;s also a more subtle benefit hiding in the
-                  data: when the researchers added the polygenic score to
+                  When the researchers added the polygenic score to
                   standard risk calculators, it improved risk
                   reclassification for borderline coronary artery disease
-                  cases by roughly <strong>17-18%</strong>. Translation: a
-                  chunk of patients who were sitting in a frustrating
-                  &quot;maybe you&apos;re at risk, maybe you&apos;re
-                  not&quot; gray zone got moved into a category doctors
-                  could actually act on.
+                  cases by roughly <strong>17-18%</strong>. Some patients with
+                  borderline results moved into a category that could change
+                  clinical decisions.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  This Is Exactly the Blind Spot Family Health History Is
-                  Supposed to Cover
+                  How this relates to family health history
                 </h2>
                 <p>
-                  If any of this sounds familiar, it should. It&apos;s the
-                  same logic behind knowing your family&apos;s medical
-                  history in the first place: the strongest predictor of
-                  your future health risk often isn&apos;t your last
-                  physical, it&apos;s what happened to your parents,
+                  Family health history offers another view of inherited risk.
+                  What happened to your parents,
                   grandparents, aunts, and uncles. A polygenic risk score is
                   basically a more precise, lab-verified version of the
                   question every doctor asks at your first appointment:
-                  &quot;Does heart disease run in your family?&quot;
+                  &quot;Does heart disease run in your family?&quot; A score can
+                  add genetic data to that account, but it does not replace it.
                 </p>
                 <p>
                   The difference is that most people can&apos;t answer that
                   question with any real confidence. Family health details
-                  get lost, misremembered, or never discussed at all —
-                  which is exactly why tools that help families track and
-                  share that history matter as much as the genetic tests
-                  themselves. A DNA report is only as useful as your ability
+                  get lost, misremembered, or never discussed. Tools that help
+                  families track and share that history remain useful alongside
+                  genetic tests. A DNA report is only as useful as your ability
                   to act on it, and that starts with knowing what to watch
                   for and who in your family already dealt with it.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Before You Get Too Excited: The Catch
+                  Limits of the test
                 </h2>
                 <p>
                   This tool isn&apos;t a crystal ball, and the researchers
                   are upfront about its limits. Most of the underlying
                   genetic models were developed primarily using data from
-                  people of European ancestry, which means accuracy can drop
-                  for people outside that group — a gap the team says needs
-                  urgent attention as the field grows.
+                  people of European ancestry, so accuracy may be lower for
+                  people outside that group. The researchers say broader
+                  validation is needed.
                 </p>
                 <p>
                   There&apos;s also no large randomized trial yet proving
@@ -232,13 +218,13 @@ const GeneticRiskScoreHeartDisease = async () => {
                 <p>
                   Dr. Patel put it plainly: clinicians should treat a
                   polygenic risk score the way they&apos;d treat any other
-                  risk factor — one input among several, not a standalone
+                  risk factor: one input among several, not a standalone
                   verdict. It&apos;s a nudge toward earlier screening or
                   more aggressive prevention, not a diagnosis.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Should You Ask Your Doctor About This?
+                  When to ask your doctor
                 </h2>
                 <p>
                   If heart disease, diabetes, or blood clotting disorders
@@ -253,19 +239,16 @@ const GeneticRiskScoreHeartDisease = async () => {
                   family for generations.
                 </p>
                 <p>
-                  The bigger takeaway might be this: genetic testing for
-                  common chronic disease is moving from research labs into
-                  regular clinical care, faster than most people realize.
-                  Combined with a well-documented family health history,
-                  it&apos;s becoming one of the clearest early-warning
-                  systems medicine has.
+                  Bring a written family health history to that conversation.
+                  It will help your doctor decide whether genetic testing would
+                  add useful information to your current risk profile.
                 </p>
 
                 <BlogFAQ faqs={faqs} />
 
                 <SharePost
                   url="https://kaizenhealth.io/blog/heart/genetic-risk-score-heart-disease"
-                  text="Checkout this blog post on Kaizen Health!"
+                  text="Read what a polygenic risk score can and cannot tell you about heart health."
                   hashtags={["health", "heartdisease", "genetics"]}
                 />
               </div>

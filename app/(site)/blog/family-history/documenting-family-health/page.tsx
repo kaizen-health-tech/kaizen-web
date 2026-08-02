@@ -74,24 +74,21 @@ const DocumentingFamilyHealth = async () => {
                 </h1>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Introduction
+                  Start with what runs in the family
                 </h2>
                 <p>
-                  Family health history is a critical aspect of medical care and
-                  preventive health practices. It involves collecting
-                  information about diseases, disorders, and medical conditions
-                  affecting family members, which can help assess the risk of
-                  inherited medical conditions and single-gene disorders.
-                  Understanding family health history is essential for risk
-                  assessment, early detection, and implementing preventive
-                  measures for both inherited and multifactorial diseases.
+                  A family health history records the diseases, disorders, and
+                  medical conditions that have affected your relatives. It can
+                  help a clinician assess inherited risk, decide whether earlier
+                  screening makes sense, and identify conditions caused by a
+                  mix of genetic and environmental factors.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  The Role of Family Health History in Medical Risk Assessment
+                  How clinicians use family history
                 </h2>
                 <p>
-                  Family history is instrumental in evaluating the risk of
+                  Clinicians use family history to assess the risk of
                   various medical conditions, including cancers (like breast and
                   colon cancer), coronary artery disease, type 2 diabetes
                   mellitus, depression, thrombophilias, and adverse birth
@@ -107,17 +104,15 @@ const DocumentingFamilyHealth = async () => {
                   Tools for Collecting Family Health History
                 </h2>
                 <p>
-                  Several tools have been established to gather family health
-                  history effectively:
+                  Two common tools can help you gather the information:
                 </p>
                 <h3 className="pt-4">
                   Family History Questionnaire or Checklist
                 </h3>
                 <p>
-                  This method allows patients to complete a comprehensive
-                  questionnaire, often at home, to gather accurate information
-                  by consulting family members. Positive responses are followed
-                  up with healthcare providers to detail the diagnosis,
+                  A questionnaire lets patients gather details from relatives at
+                  home. A clinician can follow up on relevant answers to confirm
+                  the diagnosis,
                   relationship of the affected family member, age of onset, and
                   severity of the disease.
                 </p>
@@ -136,13 +131,10 @@ const DocumentingFamilyHealth = async () => {
                   Family Health History as a Screening Tool
                 </h2>
                 <p>
-                  Using family history as a screening tool has become
-                  increasingly significant with advancements from initiatives
-                  like the U.S. Surgeon General’s Family History Initiative.
-                  Screening tools like pedigrees and questionnaires help
-                  identify high-risk patients more effectively compared to
-                  traditional medical records, improving preventive care
-                  outcomes.
+                  The U.S. Surgeon General’s Family History Initiative helped
+                  bring family history into routine preventive care. Pedigrees
+                  and questionnaires can reveal high-risk patients whose risk
+                  may not be obvious in a standard medical record.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
@@ -159,7 +151,7 @@ const DocumentingFamilyHealth = async () => {
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Challenges and Recommendations
+                  When information is missing
                 </h2>
                 <p>
                   Adopted individuals or those with limited family history may
@@ -171,17 +163,13 @@ const DocumentingFamilyHealth = async () => {
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Conclusion
+                  Keep the record current
                 </h2>
                 <p>
-                  Family health history is invaluable in predicting and managing
-                  inherited and multifactorial conditions. Incorporating
-                  systematic collection methods and updating records regularly
-                  enhances the accuracy of risk assessments and contributes to
-                  better patient care and preventive strategies. Encouraging
-                  patients to be proactive about gathering and sharing family
-                  medical information can significantly impact healthcare
-                  outcomes.
+                  Family health history can inform care for inherited and
+                  multifactorial conditions. Use a consistent collection method,
+                  update the record when a relative receives a new diagnosis,
+                  and share the relevant details with your clinician.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
@@ -234,7 +222,7 @@ const DocumentingFamilyHealth = async () => {
 
                 <SharePost
                   url="https://kaizenhealth.io/blog/family-history/documenting-family-health"
-                  text="Checkout this blog post on Kaizen Health!"
+                  text="Read how to document and update your family health history."
                   hashtags={["health", "familyhistory", "prevention"]}
                 />
               </div>

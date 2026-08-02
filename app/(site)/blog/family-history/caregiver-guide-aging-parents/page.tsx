@@ -68,18 +68,16 @@ const SupportingAgingParents = () => {
           </div>
 
           <h1 className="mb-5 text-3xl font-semibold dark:text-white">
-            Supporting Aging Parents: A Caregiver’s Comprehensive Guide and
-            Checklist
+            Supporting Aging Parents: A Practical Caregiver Checklist
           </h1>
 
           <HeadingWithAnchor id="practical-caregiving-resources-for-daily-support">
             Practical Caregiving Resources for Daily Support
           </HeadingWithAnchor>
           <p>
-            Equipping yourself with the right tools and resources can make daily
-            caregiving tasks safer and easier for both you and your parent.
-            Assistive devices provide extra support, making everyday tasks
-            easier and offering peace of mind.
+            The right tools can make daily care safer and less tiring for you
+            and your parent. Start with the tasks that cause the most difficulty
+            or create the greatest risk.
           </p>
           <h3 className="mt-10 mb-2 text-xl font-semibold tracking-tight dark:text-white">
             Daily Living Aids
@@ -106,11 +104,11 @@ const SupportingAgingParents = () => {
             Medication Management
           </h3>
           <p>
-            Simplify medication management with pill organizers and medication
+            Use pill organizers and medication
             reminders such as phone alarms or specialized clocks. Automatic pill
             dispensers can unlock doses at set times. Keep an updated medication
             list and regularly review it with healthcare providers to prevent
-            interactions and ensure proper adherence.
+            interactions and make sure the schedule is still appropriate.
           </p>
           <h3 className="mt-10 mb-2 text-xl font-semibold tracking-tight dark:text-white">
             Nutritional Support
@@ -223,18 +221,15 @@ const SupportingAgingParents = () => {
           </p>
 
           <HeadingWithAnchor id="managing-caregiver-stress-and-emotions">
-            Managing Caregiver Stress and Emotions
+                Managing caregiver stress
           </HeadingWithAnchor>
           <div className="flex flex-col md:flex-row gap-8 mb-8">
             <div className="md:w-1/2">
               <p>
-                Supporting an aging parent can be emotionally and physically
-                taxing. It’s normal to feel overwhelmed, guilty, or stressed –
-                caregiving is a big responsibility, and your own life is
-                impacted. Remember that to care for your loved one well, you
-                must also take care of yourself. Below is a checklist of
-                strategies to manage caregiver stress and protect your
-                well-being:
+                Supporting an aging parent can be physically and emotionally
+                draining. Feeling overwhelmed, guilty, or stressed does not
+                mean you are failing. These steps can protect your health while
+                you care for someone else:
               </p>
               <ul className="list-disc pl-5">
                 <li className="mt-3">
@@ -278,17 +273,14 @@ const SupportingAgingParents = () => {
                   <span className="font-semibold">
                     Stay connected and seek support:
                   </span>{" "}
-                  Caregiving can feel isolating, but remember that you are not
-                  alone. Keep in touch with friends and family – a phone call or
+                  Caregiving can feel isolating. Keep in touch with friends and
+                  family; a phone call or
                   coffee with someone who cares can relieve stress. Join a
                   caregiver support group (online or in-person) to share
                   experiences with people who truly understand. Fellow
-                  caregivers can offer practical advice and emotional support,
-                  and even some much-needed camaraderie. These groups “allow
-                  caregivers to share experiences, exchange information, and
-                  point each other toward organizations that can help”. Support
-                  group peers can cheer you on and help solve problems, making
-                  you feel understood and less alone. If you’re struggling with
+                  caregivers can offer practical advice and emotional support.
+                  They can also point you toward local organizations and help
+                  you feel less alone. If you’re struggling with
                   intense emotions, consider speaking with a counselor or
                   therapist – it is strong, not weak, to seek help for your own
                   mental health.
@@ -322,15 +314,12 @@ const SupportingAgingParents = () => {
             </div>
           </div>
           <p className="mt-4">
-            Finally, be kind to yourself. Recognize the incredible job you are
-            doing by being there for your parent. Feelings like guilt or
-            frustration will surface, but try to focus on the positive: you are
-            doing your best, and that is enough. Many caregivers find that
-            despite the challenges, this period also brings moments of deep
-            connection and meaning with their loved one. Consider keeping a
+            Be kind to yourself. Guilt and frustration will surface, even when
+            you are doing your best. Caregiving may also bring moments of
+            closeness with your parent. Consider keeping a
             journal or talking with a friend to process the complex emotions of
             caregiving. By managing stress and seeking support when needed, you
-            can sustain yourself through the caregiving journey.
+            can keep doing the work without neglecting your own health.
           </p>
           <p className="mt-3">
             Find caregiver support through{" "}
@@ -364,7 +353,7 @@ const SupportingAgingParents = () => {
               instructions about treatments they do or don’t want, such as
               resuscitation or life support) and designation of a health care
               proxy (also called a Medical Power of Attorney for health care) –
-              a person empowered to make medical decisions on their behalf. All
+              a person authorized to make medical decisions on their behalf. All
               adults, especially seniors, should have advance directives to make
               their care preferences clear before a crisis occurs. Make sure you
               have copies of these documents and that your parent’s doctors have
@@ -539,7 +528,7 @@ const SupportingAgingParents = () => {
               conditions. A geriatric care manager (usually a licensed nurse or
               social worker) can be privately hired to oversee and coordinate
               all aspects of an elderly person’s care – they can conduct home
-              safety assessments, recommend services, and facilitate
+              safety assessments, recommend services, and coordinate
               communication between doctors, family, and caregivers. If your
               parent has memory loss or dementia, memory care resources (like an
               Alzheimer’s Association support network) can provide specialized
@@ -598,7 +587,7 @@ const SupportingAgingParents = () => {
 
           <SharePost
             url="https://kaizenhealth.io/blog/family-history/caregiver-guide-aging-parents"
-            text="Explore this comprehensive guide on supporting aging parents with Kaizen Health!"
+            text="Read this practical checklist for supporting an aging parent."
             hashtags={["caregiving", "agingparents", "eldercare"]}
           />
         </div>

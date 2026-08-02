@@ -27,7 +27,7 @@ export const generateMetadata = async ({
   return createPageMetadata({
     primaryKeyword: `Family Health Blog - Page ${pageNumber}`,
     description:
-      "Explore practical family health guidance, research-backed articles, and caregiving insights to stay informed and confident in everyday care decisions.",
+      "Read practical family health guides on prevention, caregiving, medical records, and everyday care decisions.",
     path: `/blog/${pageNumber}`,
     image: "/images/open-graph/blog.png",
   });
@@ -68,12 +68,12 @@ const BlogPage = async ({ params }: BlogPageProps) => {
         />
         <div className="relative mx-auto max-w-4xl px-4 text-center mt-20">
           <h1 className="text-4xl font-extrabold leading-tight text-black md:text-6xl">
-            Insights for Better Family Health
+            Practical Help for Family Health
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-800">
-            Explore practical tips, research‑backed insights, and real stories
-            to help you care for yourself and your loved ones with confidence
-            and clarity.
+            Read plain-language guides to prevention, caregiving, family health
+            history, and the decisions that come with caring for someone you
+            love.
           </p>
         </div>
       </section>

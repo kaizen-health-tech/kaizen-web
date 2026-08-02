@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "Why is family health history important to doctors?",
     answer:
-      "Family health history gives doctors crucial clues about inherited conditions and lifestyle patterns. Knowing which relatives had specific ailments helps clinicians anticipate risks, recommend targeted screenings, and craft more personalized, proactive treatment plans instead of relying on symptoms alone.",
+      "Family health history gives doctors clues about inherited conditions and shared lifestyle patterns. Knowing which relatives had a condition can help clinicians assess risk, recommend targeted screening, and plan care before symptoms appear.",
   },
   {
     question: "What health conditions can family history reveal?",
@@ -94,16 +94,15 @@ const FamilyHistory = async () => {
 
                 <div className="blog-details">
                   <p>
-                    Family health documentation is more than just a collection
-                    of paperwork; it's a critical tool that can drastically
-                    improve preventative measures and care coordination.
+                    A family health record gives clinicians information they
+                    cannot get from a single exam.
                     According to the Centers for Disease Control and Prevention
                     (CDC), knowing your family health history can reveal genetic
                     predispositions for conditions like diabetes, certain forms
                     of cancer, and heart disease{" "}
                     <span className="font-italic text-sm">[1]</span>. When
-                    doctors have easy access to these records, they can diagnose
-                    more accurately and craft personalized treatment plans.
+                    clinicians can use those records to inform diagnosis,
+                    screening, and treatment decisions.
                   </p>
 
                   <h3 className="pt-8">
@@ -112,7 +111,7 @@ const FamilyHistory = async () => {
 
                   <p>
                     From a clinical perspective, family health documents provide
-                    crucial clues about inherited conditions and lifestyle
+                    clues about inherited conditions and lifestyle
                     patterns. Understanding who in your family had specific
                     ailments can help healthcare professionals anticipate risks
                     you might face.{" "}
@@ -122,7 +121,7 @@ const FamilyHistory = async () => {
                     </span>{" "}
                     By assessing these risks early, doctors can recommend
                     targeted screenings, preventative measures, and more
-                    proactive interventions.
+                    earlier interventions.
                   </p>
 
                   <h3 className="pt-8">
@@ -130,10 +129,9 @@ const FamilyHistory = async () => {
                   </h3>
 
                   <p>
-                    One of the biggest hurdles in maintaining detailed family
-                    health documentation is the complexity of securely storing,
-                    organizing, and sharing this information. Kaizen Health aims
-                    to simplify this task:
+                    Family health records are often scattered across paper
+                    files, patient portals, and relatives' memories. Kaizen
+                    Health brings them together in two ways:
                   </p>
 
                   <ul className="list-disc pl-5 pt-2">
@@ -142,14 +140,13 @@ const FamilyHistory = async () => {
                       secure repository where you can create and upload medical
                       documents. Whether it’s lab results, vaccination records,
                       or your complete health profile, everything lives in one
-                      safe and organized space.
+                      organized space.
                     </li>
                     <li>
                       <strong>Family Groups:</strong> With Kaizen’s family group
                       feature, you can share specific health documents
-                      exclusively with loved ones. This assists in ensuring
-                      everyone remains informed, especially in times of urgent
-                      or complex care decisions.
+                      with selected relatives. This keeps the right people
+                      informed during urgent or complicated care decisions.
                     </li>
                   </ul>
 
@@ -184,7 +181,7 @@ const FamilyHistory = async () => {
                   </p>
 
                   <p>
-                    <strong>Holistic Treatment Plans:</strong> When doctors
+                    <strong>Treatment Plans:</strong> When doctors
                     identify recurring patterns such as high blood pressure or
                     diabetes across generations, they can suggest lifestyle
                     modifications or early medical interventions to offset
@@ -196,9 +193,8 @@ const FamilyHistory = async () => {
                   </h3>
 
                   <p>
-                    Kaizen Health is built on the principle of making family
-                    care coordination simpler. Here’s how core features align
-                    with better clinical outcomes:
+                    Kaizen Health includes several tools for keeping records
+                    useful during appointments:
                   </p>
                   <ul className="list-disc pl-5 pt-2">
                     <li>
@@ -217,40 +213,32 @@ const FamilyHistory = async () => {
                     </li>
                     <li>
                       <strong>Document Timeline View:</strong> This feature
-                      offers a chronological overview of all your uploaded
-                      files, facilitating straightforward discussions during
-                      medical visits about how your health has evolved over
-                      time.
+                      puts uploaded files in date order, making it easier to
+                      discuss changes over time during medical visits.
                     </li>
                   </ul>
 
                   <p>
-                    These tools work in tandem to help you and your medical
-                    providers practice more precise, proactive care—aligning
-                    perfectly with Kaizen Health’s mission of making family care
-                    coordination simpler and more effective.
+                    Together, these tools give you and your care team a clearer
+                    record to work from.
                   </p>
 
                   <h3 className="pt-8">
-                    Conclusion: Enhancing Doctor-Patient Collaboration
+                    Bring the record to your next appointment
                   </h3>
 
                   <p>
-                    Family health documentation offers a roadmap of your past,
-                    shedding light on potential hurdles in your future. Doctors
-                    rely on this information to spot trends, order relevant
-                    tests, and devise customized treatment strategies. With the
-                    help of Kaizen Health’s secure document storage, family
-                    group features, AI-driven insights, and a comprehensive
-                    health score, you can confidently support your healthcare
-                    providers in offering you the best possible care.
+                    Doctors use family health information to spot patterns,
+                    order relevant tests, and plan treatment. Kaizen Health can
+                    keep those records, selected family documents, and health
+                    data together so you can bring a more complete history to
+                    the appointment.
                   </p>
 
                   <p className="pt-4">
-                    Ready to elevate your healthcare experience? Start by
-                    uploading your family’s records to Kaizen Health and share
-                    them securely with your doctor. You’ll help your doctor help
-                    you—faster, and with far greater clarity.
+                    Start by uploading the records you already have. Then share
+                    the relevant documents with your doctor before your next
+                    visit.
                   </p>
 
                   <p className="mt-8 text-sm italic">
@@ -269,7 +257,7 @@ const FamilyHistory = async () => {
 
                 <SharePost
                   url="https://kaizenhealth.io/blog/family-history"
-                  text="Checkout this blog post on Kaizen Health!"
+                  text="Read why a clear family health record matters during medical visits."
                   hashtags={["health", "wellness", "AI"]}
                 />
               </div>

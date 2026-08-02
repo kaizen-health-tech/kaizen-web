@@ -16,12 +16,12 @@ const faqs = [
   {
     question: "What are the benefits of at-home health testing?",
     answer:
-      "At-home testing increases health awareness and accessibility, enables earlier detection and screening of disease, supports more personalized healthcare through customizable tests, and integrates well with telemedicine consultations. The at-home testing market has grown rapidly as convenience and privacy have improved alongside the technology.",
+      "At-home testing can make some screenings easier to access and can give patients useful information before a telemedicine or office visit. Available tests cover different health measures, but results still need careful interpretation.",
   },
   {
     question: "Can at-home tests replace a formal medical diagnosis?",
     answer:
-      "No. While at-home tests provide valuable early insights, any formal diagnosis should always be confirmed by a healthcare professional. At-home testing works best as a proactive, preventative complement to regular care rather than a replacement for clinical evaluation.",
+      "No. At-home tests can provide useful screening information, but a healthcare professional should confirm any diagnosis. They work best alongside regular care, not as a replacement for a clinical evaluation.",
   },
 ];
 
@@ -64,24 +64,19 @@ const SingleBlogPage = async () => {
                 </h1>
 
                 <p>
-                  Family health is crucial for individual well-being because
-                  families often share genes, lifestyles, and environments that
-                  can increase the risk of certain health conditions.
-                  Documenting and sharing health records within families and
-                  with healthcare providers is more important than ever for
-                  several reasons, including improved care coordination, faster
-                  diagnoses, reduced medical errors, and enhanced preventative
-                  health measures.
+                  Families share genes, habits, and environments, so one
+                  relative's diagnosis can matter to another relative's care.
+                  A documented family health history can help clinicians
+                  coordinate care, investigate symptoms, avoid errors, and
+                  recommend appropriate screening.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Importance of Family Health
+                  What family health history can show
                 </h2>
                 <p>
-                  Understanding your family health history is essential for
-                  maintaining and protecting your health. Families share various
-                  factors that can elevate the risk of developing certain health
-                  conditions, such as:
+                  Family history can point to shared factors that raise the risk
+                  of certain conditions, including:
                 </p>
                 <ul className="list-disc pl-5 pt-2">
                   <li>
@@ -109,10 +104,10 @@ const SingleBlogPage = async () => {
                 </ul>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Importance of Documenting and Sharing Health Records
+                  Why documented records matter
                 </h2>
                 <p>
-                  Documenting and sharing health records is vital for
+                  Documenting and sharing health records supports
                   high-quality patient care and offers numerous benefits for
                   both patients and healthcare providers:
                 </p>
@@ -123,7 +118,7 @@ const SingleBlogPage = async () => {
                     decisions about diagnosis and treatment.
                   </li>
                   <li>
-                    <strong>Enhanced Communication:</strong> Electronic Health
+                    <strong>Communication:</strong> Electronic Health
                     Records (EHRs) improve communication between providers,
                     reducing medical errors.
                   </li>
@@ -133,7 +128,7 @@ const SingleBlogPage = async () => {
                     especially in emergencies.
                   </li>
                   <li>
-                    <strong>Reduced Medical Errors:</strong> Comprehensive
+                    <strong>Reduced Medical Errors:</strong> A complete
                     medical history minimizes the risk of incorrect
                     prescriptions or treatments.
                   </li>
@@ -149,52 +144,47 @@ const SingleBlogPage = async () => {
                 </ul>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Impact of At-Home Testing on Preventative Health
+                  Where at-home testing fits
                 </h2>
                 <p>
-                  At-home testing has gained popularity due to convenience,
-                  privacy, and technological advancements. It impacts
-                  preventative health by:
+                  At-home tests offer privacy and convenience. Depending on the
+                  test, they may help with:
                 </p>
                 <ul className="list-disc pl-5">
                   <li>
-                    <strong>Increased Awareness & Accessibility:</strong> Allows
-                    individuals to monitor their health proactively.
+                    <strong>Awareness and access:</strong> Some people can screen
+                    or monitor a health measure without traveling to a clinic.
                   </li>
                   <li>
-                    <strong>Early Detection & Screening:</strong> Enables early
-                    identification of diseases for timely interventions.
+                    <strong>Earlier screening:</strong> A result may prompt a
+                    timely follow-up with a clinician.
                   </li>
                   <li>
-                    <strong>Personalized Healthcare:</strong> Customizable tests
-                    help monitor specific health metrics.
+                    <strong>Specific health measures:</strong> People can choose
+                    tests for the measures they need to monitor.
                   </li>
                   <li>
-                    <strong>Telemedicine Integration:</strong> Enhances virtual
-                    consultations through remote diagnostics.
+                    <strong>Telemedicine:</strong> Results can give patients and
+                    clinicians more to discuss during a virtual visit.
                   </li>
                   <li>
-                    <strong>Market Growth:</strong> The at-home testing market
-                    is expanding due to growing awareness and technological
-                    innovation.
+                    <strong>Convenience:</strong> More tests are available as the
+                    technology improves.
                   </li>
                 </ul>
                 <p>
-                  <strong>Important Considerations:</strong> While at-home tests
-                  provide valuable insights, formal diagnoses should always be
-                  confirmed by healthcare professionals.
+                  At-home results are screening information. A healthcare
+                  professional should confirm any diagnosis.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Conclusion
+                  Use the results as a starting point
                 </h2>
                 <p>
-                  Family health history, documented medical records, and at-home
-                  testing are essential for modern preventative healthcare.
-                  Understanding genetic health risks, sharing medical records,
-                  and utilizing accessible at-home tests can significantly
-                  improve health outcomes through early detection and proactive
-                  management.
+                  Write down your family health history, keep your medical
+                  records current, and share the relevant details with your
+                  clinician. If you use an at-home test, bring the result to a
+                  medical appointment rather than treating it as a diagnosis.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
@@ -258,7 +248,7 @@ const SingleBlogPage = async () => {
 
                 <SharePost
                   url="https://kaizenhealth.io/blog/family-history/research"
-                  text="Checkout this blog post on Kaizen Health!"
+                  text="Read how family records and at-home tests can support medical care."
                   hashtags={["health", "wellness", "AI"]}
                 />
               </div>

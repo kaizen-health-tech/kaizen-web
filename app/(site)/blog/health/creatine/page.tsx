@@ -43,8 +43,8 @@ export const metadata: Metadata = createPageMetadata({
 const CreatineAgingGuide = () => {
   return (
     <BlogPostWrapper
-      title="Creatine in Aging Adults: Importance, Benefits & Guidelines"
-      description="Evidence-based guide on creatine supplementation for aging adults. Learn about safety, benefits for muscle and brain health, dosing guidelines, and when to consult your doctor."
+      title="Creatine for Older Adults: Benefits, Safety, and Dosage"
+      description="Review creatine research for older adults, including safety, muscle and brain health, dosage, and when to speak with a doctor."
       image="/images/blog/creatine.jpeg"
       datePublished="2025-01-15"
       url="/blog/health/creatine"
@@ -68,12 +68,12 @@ const CreatineAgingGuide = () => {
               </div>
             </div>
             <h1 className="mb-2 text-3xl font-semibold dark:text-white">
-              Creatine in Aging Adults: Importance, Benefits & Guidelines
+              Creatine for Older Adults: Benefits, Safety, and Dosage
             </h1>
-            <p className="italic mb-6">A structured evidence-based overview</p>
+            <p className="italic mb-6">A practical review of the research</p>
 
           <HeadingWithAnchor id="what-is-creatine">
-            1. What Is Creatine & Why Is It Important?
+            1. What creatine is and how it works
           </HeadingWithAnchor>
           <div className="overflow-x-auto">
             <table className="w-full text-left border border-gray-300">
@@ -97,8 +97,8 @@ const CreatineAgingGuide = () => {
                   <td className="p-2 font-medium">How it works</td>
                   <td className="p-2">
                     Inside muscle and brain cells, creatine + phosphate →
-                    phosphocreatine, a “rapid-reload” battery that turns spent
-                    ADP back into ATP during short, intense efforts [2].
+                    phosphocreatine, which helps turn spent ADP back into ATP
+                    during short, intense efforts [2].
                   </td>
                 </tr>
                 <tr className="border-t">
@@ -112,10 +112,9 @@ const CreatineAgingGuide = () => {
                 <tr className="border-t">
                   <td className="p-2 font-medium">Why aging adults care</td>
                   <td className="p-2">
-                    Muscle creatine stores & energy capacity decline with age,
-                    inactivity, or low-meat diets → less strength, slower
-                    recovery, cognitive fatigue [4]. Re-saturating stores can
-                    blunt or reverse parts of this decline.
+                    Muscle creatine stores and energy capacity decline with age,
+                    inactivity, or low-meat diets. This may contribute to less
+                    strength, slower recovery, and cognitive fatigue [4].
                   </td>
                 </tr>
               </tbody>
@@ -123,7 +122,7 @@ const CreatineAgingGuide = () => {
           </div>
 
           <HeadingWithAnchor id="creatine-safety">
-            2. Is Creatine Safe for Aging Adults?
+            2. Is creatine safe for older adults?
           </HeadingWithAnchor>
           <h3 className="mt-8 mb-2 text-xl font-semibold tracking-tight dark:text-white">
             Overall Safety
@@ -141,7 +140,7 @@ const CreatineAgingGuide = () => {
           </ul>
 
           <h3 className="mt-8 mb-2 text-xl font-semibold tracking-tight dark:text-white">
-            Common, Mild Side-Effects
+            Common mild side effects
           </h3>
           <div className="overflow-x-auto">
             <table className="w-full text-left border border-gray-300">
@@ -177,7 +176,7 @@ const CreatineAgingGuide = () => {
           </div>
 
           <h3 className="mt-8 mb-2 text-xl font-semibold tracking-tight dark:text-white">
-            Who Should Avoid or Seek Clearance
+            Who should avoid it or seek medical clearance
           </h3>
           <ul className="list-disc pl-5 mb-6">
             <li>Chronic kidney disease / eGFR &lt; 60 ml/min</li>
@@ -190,7 +189,7 @@ const CreatineAgingGuide = () => {
           <HeadingWithAnchor id="creatine-benefits">
             3. Benefits of Creatine
           </HeadingWithAnchor>
-          <p className="mb-4">Breakdown by GOAL ▶️ AGE ▶️ SOURCE</p>
+          <p className="mb-4">The evidence varies by goal, age, and source.</p>
           <div className="overflow-x-auto mb-8">
             <table className="w-full text-left border border-gray-300">
               <thead className="bg-gray-100">
@@ -268,7 +267,7 @@ const CreatineAgingGuide = () => {
           </p>
 
           <HeadingWithAnchor id="how-to-take">
-            4. When & How to Take Creatine
+            4. When and how to take creatine
           </HeadingWithAnchor>
           <ul className="list-disc pl-5 mb-4">
             <li>
@@ -280,14 +279,15 @@ const CreatineAgingGuide = () => {
               g maintenance.
             </li>
             <li>
-              <strong>Timing:</strong> consistency &gt; clock. Take with any
+              <strong>Timing:</strong> Consistency matters more than the time of
+              day. Take it with any
               meal or post-exercise; pair with carbs or protein for slightly
               better uptake.
             </li>
             <li>
-              <strong>Form:</strong> micronized creatine monohydrate is
-              gold-standard (cheap, 99% research-backed). No evidence “fancy”
-              esters/hydrochloride work better.
+              <strong>Form:</strong> Micronized creatine monohydrate is the most
+              studied form and is usually inexpensive. There is no evidence that
+              creatine esters or hydrochloride work better.
             </li>
             <li>
               <strong>Hydration:</strong> add ~8–12 oz extra water with each
@@ -296,7 +296,7 @@ const CreatineAgingGuide = () => {
           </ul>
 
           <HeadingWithAnchor id="expected-changes">
-            5. Expected Changes (What You May Notice)
+            5. What you may notice
           </HeadingWithAnchor>
           <div className="overflow-x-auto mb-8">
             <table className="w-full text-left border border-gray-300">
@@ -338,30 +338,30 @@ const CreatineAgingGuide = () => {
           </div>
 
           <HeadingWithAnchor id="red-flags">
-            6. Red Flags / When to Stop
+            6. When to stop and call a clinician
           </HeadingWithAnchor>
           <ul className="list-disc pl-5 mb-6">
             <li>
               Rapid ankle/hand swelling, foamy urine, or &gt;5 lb weight gain in
-              a week ➡️ check kidney function.
+              a week: ask a clinician to check kidney function.
             </li>
             <li>New manic-like mood swings (history of bipolar).</li>
             <li>Persistent GI distress despite dose-splitting.</li>
             <li>
               Lab tests: rising serum creatinine <strong>plus</strong> falling
-              eGFR — discuss creatine cessation with your doctor.
+              eGFR: discuss stopping creatine with your doctor.
             </li>
           </ul>
 
           <HeadingWithAnchor id="quick-review">
-            7. Quick-Review Cheat-Sheet
+            7. Quick reference
           </HeadingWithAnchor>
           <div className="overflow-x-auto">
             <table className="w-full text-left border border-gray-300">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="p-2 font-semibold">✅ Do</th>
-                  <th className="p-2 font-semibold">❌ Don’t</th>
+                  <th className="p-2 font-semibold">Do</th>
+                  <th className="p-2 font-semibold">Avoid</th>
                 </tr>
               </thead>
               <tbody>
@@ -513,7 +513,7 @@ const CreatineAgingGuide = () => {
                 rel="noopener"
                 className="text-blue-600 underline"
               >
-                PMC: Creatine Use in Older Adults — Conclusion and Review
+                PMC: Creatine Use in Older Adults, Conclusion and Review
               </a>
             </li>
             <li>
@@ -523,7 +523,7 @@ const CreatineAgingGuide = () => {
                 rel="noopener"
                 className="text-blue-600 underline"
               >
-                Mayo Clinic: Creatine — Uses, Side Effects, and Precautions
+                Mayo Clinic: Creatine Uses, Side Effects, and Precautions
               </a>
             </li>
           </ul>
@@ -532,7 +532,7 @@ const CreatineAgingGuide = () => {
 
           <SharePost
             url="https://kaizenhealth.io/blog/health/creatine"
-            text="Checkout this blog post on Kaizen Health!"
+            text="Read what older adults should know before taking creatine."
             hashtags={["health", "wellness", "AI", "creatine"]}
           />
         </div>

@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "Why does yogurt specifically protect against right-sided colon cancer?",
     answer:
-      "Yogurt's benefits were strongest against tumors containing Bifidobacterium, a beneficial probiotic strain found in yogurt that strengthens the gut lining, produces butyrate to help repair DNA and suppress cancer growth, and outcompetes harmful bacteria linked to tumor development — effects most pronounced in right-sided colon cancers, which are harder to detect early.",
+      "The association was strongest for tumors containing Bifidobacterium. This probiotic strain is linked to a stronger gut lining, butyrate production, and competition with harmful bacteria. Researchers observed the clearest association in right-sided colon cancers, which can be harder to detect early.",
   },
 ];
 
@@ -70,74 +70,73 @@ const ColorectalCancerRisk = async () => {
                   </div>
                 </div>
                 <h1 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Could Your Yogurt Habit Be Shielding You From Colon Cancer?
-                  New Study Says Yes!
+                  What a Long-Running Study Found About Yogurt and Colon Cancer
                 </h1>
 
                 <p>
-                  Emerging research suggests yogurt might play a surprising role
-                  in protecting against **colon cancer**. A groundbreaking study
-                  published in <em>Gut Microbes</em> reveals that eating just
-                  **two servings of yogurt per week** could lower the risk of
-                  certain aggressive colon cancers by **20%**.
+                  Research published in <em>Gut Microbes</em> found an
+                  association between eating at least two servings of yogurt per
+                  week and a 20% lower risk of one type of colon cancer. The
+                  study does not show that yogurt prevents or cures cancer.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  The Spoonful That Packs a Punch: Study Highlights
+                  What the researchers found
                 </h2>
 
                 <h3 className="pt-4">What Did Researchers Find?</h3>
                 <p>
-                  Scientists tracked over 130,000 people for 30+ years and
-                  discovered that yogurt lovers (≥2 servings weekly) had a **20%
-                  lower risk** of developing *Bifidobacterium*-positive proximal
-                  colon cancer.
+                  Scientists followed more than 130,000 people for over 30
+                  years. People who ate at least two servings of yogurt a week
+                  had a 20% lower risk of developing <em>Bifidobacterium</em>
+                  -positive proximal colon cancer.
                 </p>
 
-                <h3 className="pt-4">Why Focus on *Bifidobacterium*?</h3>
+                <h3 className="pt-4">Why focus on Bifidobacterium?</h3>
                 <p>
-                  *Bifidobacterium* is a beneficial probiotic strain found in
-                  yogurt. Tumors harboring this bacteria made up **31% of cases
-                  studied**, and yogurt’s benefits were strongest against these
-                  specific tumors.
+                  <em>Bifidobacterium</em> is a probiotic strain found in yogurt.
+                  Tumors containing this bacterium made up 31% of the cases
+                  studied, and the association with yogurt was strongest for
+                  these tumors.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  The Science Behind the Spoonful
+                  How yogurt may affect the gut
                 </h2>
 
                 <h3 className="pt-4">
-                  Yogurt’s Secret Weapons: Probiotics and Your Gut
+                  Probiotics and the gut
                 </h3>
                 <ul className="list-disc pl-5 pt-2">
                   <li>
-                    **Strengthens gut lining**, preventing harmful bacteria from
-                    causing inflammation.
+                    Probiotics may strengthen the gut lining, which can limit
+                    inflammation caused by harmful bacteria.
                   </li>
                   <li>
-                    **Produces butyrate**, a compound that helps repair DNA and
-                    suppress cancer growth.
+                    They produce butyrate, a compound involved in DNA repair and
+                    the suppression of cancer growth.
                   </li>
                   <li>
-                    **Outcompetes bad bacteria**, reducing toxin production
-                    linked to tumor growth.
+                    They compete with harmful bacteria, which may reduce the
+                    production of toxins linked to tumor growth.
                   </li>
                 </ul>
 
                 <h3 className="pt-4">Why Right-Sided Colon Cancer?</h3>
                 <p>
-                  The study found yogurt’s benefits were strongest for
-                  right-sided (proximal) colon cancers, which are harder to
-                  detect early and more lethal.
+                  The association was strongest for right-sided, or proximal,
+                  colon cancers. These cancers can be harder to detect early and
+                  have a higher mortality rate.
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
                   How Much Yogurt Should You Eat?
                 </h2>
                 <p>
-                  **At least two 6-ounce servings per week** is recommended.
-                  Avoid sugar-loaded varieties and opt for **plain Greek
-                  yogurt**.
+                  The study compared people who ate at least two 6-ounce
+                  servings per week with those who ate less. If you add yogurt
+                  to your diet, plain Greek yogurt has less added sugar than
+                  many flavored varieties.
                 </p>
 
                 <h3 className="pt-4">Lactose Intolerant?</h3>
@@ -148,37 +147,39 @@ const ColorectalCancerRisk = async () => {
                 </p>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Public Health Implications
+                  What this means in practice
                 </h2>
                 <ul className="list-disc pl-5">
                   <li>
-                    Colon cancer rates are rising among adults under 50—up **45%
-                    since 1995**.
+                    Colon cancer rates among adults under 50 have risen 45%
+                    since 1995.
                   </li>
                   <li>
-                    Yogurt offers an **accessible, affordable prevention tool**.
+                    Yogurt is widely available and relatively affordable, but
+                    this observational study does not establish it as a
+                    prevention tool.
                   </li>
                   <li>
-                    Advocating for yogurt subsidies in food deserts could bridge
-                    health gaps.
+                    Improving access to nutritious food in underserved areas
+                    could help more people include fermented foods in their
+                    diets.
                   </li>
                 </ul>
 
                 <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Conclusion
+                  Put the finding in context
                 </h2>
                 <p>
-                  Yogurt isn’t a cure, but this study highlights its potential
-                  as part of a **gut-friendly cancer prevention strategy**.
-                  Combining it with regular screenings, exercise, and a balanced
-                  diet is key.
+                  Yogurt is not a cure, and one observational result should not
+                  replace established prevention measures. Regular screening,
+                  exercise, and a balanced diet still matter most.
                 </p>
 
                 <BlogFAQ faqs={faqs} />
 
                 <SharePost
                   url="https://kaizenhealth.io/blog/yogurt-colon-cancer"
-                  text="Checkout this blog post on Kaizen Health!"
+                  text="Read what researchers found about yogurt and colorectal cancer risk."
                   hashtags={["health", "wellness", "nutrition"]}
                 />
               </div>

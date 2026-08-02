@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "How can AI help identify genetic risks during pregnancy?",
     answer:
-      "AI can support genetic risk identification during pregnancy by analyzing large volumes of genetic data to flag risk factors more precisely, offering data-driven insights into emerging research areas, and translating complex genetic terminology into plain language so parents can have more informed discussions with their healthcare providers.",
+      "AI can help review large genetic datasets, flag possible risk factors, and translate complex terminology into plain language. A qualified clinician should still interpret the results and explain what they mean for a pregnancy.",
   },
 ];
 
@@ -93,27 +93,26 @@ const PregnancyGenetic = async () => {
 
                 <div className="blog-details">
                   <p>
-                    Pregnancy is a transformative journey that often comes with
-                    many questions about the baby’s health and development. One
-                    of the most common concerns for expectant parents is the
-                    risk of passing along genetic conditions. According to the
+                    Expectant parents often have questions about their baby’s
+                    health, including the chance of passing along a genetic
+                    condition. According to the
                     Centers for Disease Control and Prevention (CDC), genetic
                     disorders are caused by changes or mutations in the DNA{" "}
                     <span className="font-italic text-sm">
                       [1] CDC - “What are Genetic Disorders?”
                     </span>
-                    . Understanding what these conditions are and how they might
-                    be inherited can help you make informed decisions and
-                    prepare for a healthier pregnancy.
+                    . Knowing how these conditions may be inherited can make
+                    conversations with an OB/GYN or genetic counselor more
+                    useful.
                   </p>
 
                   <h3 className="pt-8">
                     Common Genetic Conditions During Pregnancy
                   </h3>
                   <p>
-                    While there are numerous genetic conditions, some are more
-                    commonly discussed during pregnancy due to their prevalence
-                    or impact on fetal development:
+                    Clinicians commonly discuss the following conditions during
+                    pregnancy because of their prevalence or effects on fetal
+                    development:
                   </p>
                   <ul className="list-disc pl-5 pt-2">
                     <li>
@@ -153,37 +152,33 @@ const PregnancyGenetic = async () => {
                     How AI Can Help in Identifying Potential Genetic Risks
                   </h3>
                   <p>
-                    Modern healthcare is increasingly leveraging Artificial
-                    Intelligence (AI) to detect genetic markers and predict
-                    potential complications early in pregnancy:
+                    Artificial intelligence can help clinicians analyze genetic
+                    data and flag potential complications earlier in pregnancy:
                   </p>
                   <ul className="list-disc pl-5 pt-2">
                     <li>
                       <strong>Risk Analysis Models:</strong> AI algorithms can
-                      sift through massive amounts of genetic data to pinpoint
-                      risk factors more accurately than traditional methods.
+                      review large genetic datasets and flag risk factors for
+                      clinical review.
                     </li>
                     <li>
                       <strong>Gene Editing Insights:</strong> While still in
-                      early stages, AI can offer data-driven insights into
-                      cutting-edge research areas like CRISPR, potentially
-                      preventing certain heritable conditions.
+                      early stages, AI can help researchers analyze work on gene
+                      editing methods such as CRISPR.
                     </li>
                     <li>
                       <strong>Personalized Recommendations:</strong> Kaizen
                       Health’s own Kai - AI Chat can simplify medical terms and
                       offer you personalized information. This feature breaks
-                      down genetic jargon into accessible language, empowering
-                      you to have more informed discussions with healthcare
-                      providers.
+                      explain genetic terminology in plain language before you
+                      speak with a healthcare provider.
                     </li>
                   </ul>
 
                   <p>
-                    By utilizing AI tools, parents can gain a more refined
-                    understanding of potential issues, thereby collaborating
-                    more effectively with genetic counselors and healthcare
-                    professionals.
+                    These tools can help parents prepare questions, but a
+                    genetic counselor or other qualified clinician should
+                    interpret test results and explain what they mean.
                   </p>
 
                   <h3 className="pt-8">
@@ -214,11 +209,11 @@ const PregnancyGenetic = async () => {
 
                   <h3 className="pt-8">
                     How Kaizen Health Assists in Tracking and Sharing Your
-                    Journey
+                    Records
                   </h3>
                   <p>
-                    Kaizen Health offers features that help you manage the
-                    influx of genetic information and prepare for discussions
+                    Kaizen Health offers features for organizing genetic
+                    information and preparing for discussions
                     with healthcare providers:
                   </p>
                   <ul className="list-disc pl-5 pt-2">
@@ -244,22 +239,22 @@ const PregnancyGenetic = async () => {
                     </li>
                   </ul>
 
-                  <h3 className="pt-8">Final Thoughts</h3>
+                  <h3 className="pt-8">What to do with the information</h3>
                   <p>
                     Genetic conditions can be a source of anxiety for expectant
-                    parents, but modern medicine, AI tools, and reliable
-                    documentation can significantly demystify the process.
+                    parents. Medical guidance, clear records, and plain-language
+                    tools can make the testing process easier to follow.
                     At-home carrier tests offer an accessible starting point to
                     learn about potential risks even before pregnancy begins. As
-                    always, partner with healthcare professionals and consider
-                    using platforms like Kaizen Health to streamline and
-                    securely share your journey.
+                    always, review the results with a healthcare professional.
+                    Kaizen Health can store the records you choose to share with
+                    your care team.
                   </p>
 
                   <p className="pt-4">
-                    By proactively understanding and managing your genetic
-                    risks, you empower yourself and your growing family to
-                    navigate pregnancy with greater peace of mind.
+                    Bring your family history and any prior test results to your
+                    next appointment so your clinician can recommend the right
+                    screening for you.
                   </p>
 
                   {/* Updated references section */}
@@ -305,7 +300,7 @@ const PregnancyGenetic = async () => {
 
                 <SharePost
                   url="https://kaizenhealth.io/blog/pregnancy-genetic"
-                  text="Checkout this blog post on Kaizen Health!"
+                  text="Read about genetic conditions, screening, and AI during pregnancy."
                   hashtags={["health", "wellness", "AI"]}
                 />
               </div>
