@@ -203,8 +203,47 @@ export default function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} Kaizen Health. All rights reserved
+        <div className="mt-12 flex flex-col items-center gap-6 border-t border-white/10 pt-6 sm:flex-row sm:justify-between">
+          {/* Compliance badges */}
+          <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+            <li className="flex items-center">
+              <Image
+                src="/images/icon/hipaa.svg"
+                alt="HIPAA compliant"
+                width={176}
+                height={96}
+                className="h-10 w-auto opacity-80 brightness-0 invert transition-opacity hover:opacity-100"
+              />
+            </li>
+            <li className="flex h-10 items-center gap-2.5 opacity-80 transition-opacity hover:opacity-100">
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={1.6}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-7 w-7 shrink-0 text-white"
+              >
+                <path d="M12 2.5 4.5 5.6v5.9c0 4.6 3.2 8.5 7.5 9.9 4.3-1.4 7.5-5.3 7.5-9.9V5.6L12 2.5Z" />
+                <path d="m8.8 12.1 2.2 2.2 4.2-4.4" />
+              </svg>
+              <span className="flex flex-col leading-tight">
+                <span className="text-xs font-semibold uppercase tracking-wider text-white">
+                  SOC 2 Type II
+                </span>
+                <span className="text-[11px] text-gray-300">
+                  Audit in progress
+                </span>
+              </span>
+            </li>
+          </ul>
+
+          <p className="text-sm text-gray-400">
+            &copy; {new Date().getFullYear()} Kaizen Health. All rights
+            reserved
+          </p>
         </div>
       </div>
     </footer>
