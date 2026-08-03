@@ -36,6 +36,7 @@ export default function AboutPage() {
           src="/images/hero/contact-us-hero-bg.png"
           alt=""
           fill
+          priority
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
         <header className="mx-auto mt-20 max-w-5xl space-y-6 px-4 text-center sm:px-6 lg:px-8">

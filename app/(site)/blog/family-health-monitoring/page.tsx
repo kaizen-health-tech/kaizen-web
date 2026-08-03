@@ -74,6 +74,7 @@ const FamilyHealthMonitoringArticle = () => {
                   src="/images/blog/family-generations.png"
                   alt="Multi-generational family representing family health history"
                   fill
+                  priority
                   sizes="(min-width: 1280px) 1200px, 90vw"
                   className="rounded-md object-cover object-center"
                 />

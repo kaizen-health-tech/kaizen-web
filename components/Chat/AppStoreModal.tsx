@@ -70,7 +70,7 @@ export default function AppStoreModal({ onClose }: AppStoreModalProps) {
             />
           </a>
           <a
-            href="https://bit.ly/kz-play-store"
+            href="https://bit.ly/kz-android-store"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-transform hover:scale-105"

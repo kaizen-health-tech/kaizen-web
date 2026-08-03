@@ -8,6 +8,7 @@ import WhyKai from "@/components/WhyKai";
 import SecurityHighlights from "@/components/SecurityHighlights";
 import Feature from "@/components/Features";
 import CTA from "@/components/CTA";
+import { MobileApplicationSchema } from "@/components/Schema";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -28,6 +29,7 @@ export const metadata: Metadata = createPageMetadata({
 export default function Home() {
   return (
     <main>
+      <MobileApplicationSchema />
       <Hero />
       <div className="content-visibility-auto">
         <WhyWeBuiltKaizen />
