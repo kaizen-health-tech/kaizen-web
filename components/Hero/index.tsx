@@ -93,7 +93,6 @@ const Hero = () => {
             playsInline
             preload="auto"
             poster={video.poster}
-            fetchPriority={index === 0 ? "high" : "auto"}
             aria-hidden="true"
           >
             <source src={video.src} type="video/mp4" />
