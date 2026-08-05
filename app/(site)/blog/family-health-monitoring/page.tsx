@@ -1,7 +1,5 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
-import Image from "next/image";
-import SharePost from "@/components/Blog/SharePost";
-import BlogPostWrapper from "@/components/Blog/BlogPostWrapper";
+import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
@@ -22,6 +20,16 @@ const faqs = [
     answer:
       "Family history has the strongest documented impact on type 2 diabetes (5x higher prevalence with a family history), cardiovascular disease (family history roughly doubles or triples risk), breast cancer (BRCA1/BRCA2 carriers face 45-72% lifetime risk versus 13% in the general population), colorectal cancer, and Alzheimer's disease and dementia.",
   },
+];
+
+const sections = [
+  { id: "awareness-action-gap", label: "The awareness-to-action gap" },
+  { id: "research-validation", label: "Current research on family history as a risk tool" },
+  { id: "technology-inflection", label: "Why technology makes this possible now" },
+  { id: "diseases-prevented", label: "Diseases that can be prevented" },
+  { id: "kaizen-health", label: "Where Kaizen Health fits" },
+  { id: "conclusion", label: "What the evidence supports" },
+  { id: "references", label: "References" },
 ];
 
 export const metadata: Metadata = createPageMetadata({
@@ -47,15 +55,20 @@ export const metadata: Metadata = createPageMetadata({
 
 const FamilyHealthMonitoringArticle = () => {
   return (
-    <BlogPostWrapper
+    <ArticleLayout
       title="How Family Health History Can Guide Disease Prevention"
       description="Learn how family health history can guide earlier screening for hereditary risks, including colorectal cancer, breast cancer, heart disease, and type 2 diabetes."
       image="/images/blog/family-generations.png"
+      imageAlt="Multi-generational family representing family health history"
       datePublished="2025-12-20"
       url="/blog/family-health-monitoring"
       category="Family History"
+      categoryKey="health-records"
       authorName="Kaizen Health Research Team"
       authorCredentials="Reviewed by healthcare professionals"
+      readTime="14 min read"
+      tags={["Health records", "Prevention"]}
+      sections={sections}
       keywords={[
         "family health history",
         "hereditary diseases",
@@ -64,50 +77,6 @@ const FamilyHealthMonitoringArticle = () => {
         "disease prevention",
       ]}
     >
-      <section className="pb-20 lg:pb-25 xl:pb-30">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="blog-details animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
-            {/* Hero Image */}
-            <div className="mb-10 w-full overflow-hidden">
-              <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
-                <Image
-                  src="/images/blog/family-generations.png"
-                  alt="Multi-generational family representing family health history"
-                  fill
-                  priority
-                  sizes="(min-width: 1280px) 1200px, 90vw"
-                  className="rounded-md object-cover object-center"
-                />
-              </div>
-            </div>
-
-            {/* Title */}
-            <h1 className="mb-6 text-3xl font-bold leading-tight text-black dark:text-white md:text-4xl lg:text-[40px]">
-              How Family Health History Can Guide Disease Prevention
-            </h1>
-
-            {/* Article Meta */}
-            <ul className="mb-9 flex flex-wrap gap-5 text-sm text-body-color dark:text-manatee 2xl:gap-7.5">
-              <li>
-                <span className="font-medium text-black dark:text-white">
-                  Author:
-                </span>{" "}
-                Kaizen Health Research Team
-              </li>
-              <li>
-                <span className="font-medium text-black dark:text-white">
-                  Published:
-                </span>{" "}
-                December 20, 2025
-              </li>
-              <li>
-                <span className="font-medium text-black dark:text-white">
-                  Category:
-                </span>{" "}
-                Family Health Research
-              </li>
-            </ul>
-
             {/* Executive Summary */}
             <div className="mb-10 rounded-lg border-l-4 border-primary bg-gray-50 p-6 dark:bg-black/20">
               <h2 className="mb-3 text-xl font-semibold text-black dark:text-white">
@@ -3212,21 +3181,7 @@ const FamilyHealthMonitoringArticle = () => {
             </ol>
 
             <BlogFAQ faqs={faqs} />
-
-            <SharePost
-              url="https://kaizenhealth.io/blog/family-health-monitoring"
-              text="Read how family health history can guide screening and prevention."
-              hashtags={[
-                "familyhealth",
-                "preventivemedicine",
-                "genetichealth",
-                "healthtech",
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-    </BlogPostWrapper>
+    </ArticleLayout>
   );
 };
 

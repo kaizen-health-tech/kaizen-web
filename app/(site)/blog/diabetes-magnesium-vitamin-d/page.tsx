@@ -1,11 +1,8 @@
-import RelatedPost from "@/components/Blog/RelatedPost";
-import SharePost from "@/components/Blog/SharePost";
+import HeadingWithAnchor from "@/components/HeadingWithAnchor";
+import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
-import BackToBlog from "@/components/Blog/BackToBlog";
 import { Metadata } from "next";
-import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo";
-import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
 
 const faqs = [
   {
@@ -25,190 +22,146 @@ const faqs = [
   },
 ];
 
+const sections = [
+  { id: "vitamin-d-insulin", label: "Vitamin D and insulin sensitivity" },
+  { id: "magnesium-blood-sugar", label: "Magnesium and blood sugar control" },
+  { id: "tracking-with-kaizen", label: "Using Kaizen Health to track results" },
+  { id: "food-sources", label: "Best food sources for vitamin D and magnesium" },
+  { id: "talk-to-care-team", label: "Talk with your care team" },
+];
+
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Vitamin D and Magnesium for Diabetes",
   description:
     "Understand how vitamin D and magnesium affect insulin sensitivity and blood sugar control, with practical guidance for diabetes care.",
   path: "/blog/diabetes-magnesium-vitamin-d",
   type: "article",
-  image: "/images/blog/diabetes-magnesium-vitamin-d.jpeg",
+  image: "/images/blog/diabetes-magnesium-vitamin-d.png",
 });
 
-const DiabetesMagnesiumVitaminD = async () => {
+const DiabetesMagnesiumVitaminD = () => {
   return (
-    <>
-      <ArticleSchema
-        title="The Connection Between Diabetes, Vitamin D, and Magnesium"
-        description="Understand how vitamin D and magnesium affect insulin sensitivity and blood sugar control, with practical guidance for diabetes care."
-        image="/images/blog/diabetes-magnesium-vitamin-d.jpeg"
-        datePublished="2025-01-12"
-        url="/blog/diabetes-magnesium-vitamin-d"
-        section="Health"
-      />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Blog", url: "/blog" },
-          { name: "Diabetes, Vitamin D, and Magnesium", url: "/blog/diabetes-magnesium-vitamin-d" },
-        ]}
-      />
-      <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
-            <div className="lg:w-full">
-              <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
-                <BackToBlog />
-                <div className="mb-10 w-full overflow-hidden">
-                  <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
-                    <Image
-                      src="/images/blog/diabetes-magnesium-vitamin-d.jpeg"
-                      alt="Vitamin D and Magnesium in Diabetes Management"
-                      fill
-                      className="rounded-md object-cover object-center"
-                    />
-                  </div>
-                </div>
+    <ArticleLayout
+      title="How Vitamin D and Magnesium Affect Diabetes"
+      description="What research says about vitamin D, magnesium, insulin sensitivity, and blood sugar control."
+      image="/images/blog/diabetes-magnesium-vitamin-d.png"
+      imageAlt="Vitamin D and magnesium in diabetes management"
+      datePublished="2025-01-12"
+      url="/blog/diabetes-magnesium-vitamin-d"
+      category="Health"
+      categoryHref="/blog/health"
+      categoryKey="nutrition"
+      readTime="5 min read"
+      tags={["Nutrition"]}
+      sections={sections}
+    >
+      <p>
+        Research links low levels of{" "}
+        <strong>vitamin D and magnesium</strong>
+        to insulin resistance and poor blood sugar control. Here is
+        what each nutrient does and where to find it in food.
+      </p>
 
-                <h1 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  How Vitamin D and Magnesium Affect Diabetes
-                </h1>
+      <HeadingWithAnchor id="vitamin-d-insulin">
+        Vitamin D and insulin sensitivity
+      </HeadingWithAnchor>
+      <p>
+        Vitamin D supports bone health and is involved in{" "}
+        <strong>insulin production and glucose metabolism</strong>.
+        Studies have shown that:
+      </p>
+      <ul>
+        <li>
+          Vitamin D receptors (VDR) exist in pancreatic β-cells,
+          influencing insulin secretion.
+        </li>
+        <li>
+          A deficiency is associated with increased insulin
+          resistance and higher blood sugar levels.
+        </li>
+        <li>
+          Vitamin D supplementation may improve insulin sensitivity
+          in some individuals.
+        </li>
+      </ul>
 
-                <ul className="mb-9 flex flex-wrap gap-5 2xl:gap-7.5">
-                  <li>
-                    <span className="text-black dark:text-white">Author: </span>{" "}
-                    Kaizen
-                  </li>
-                  <li>
-                    <span className="text-black dark:text-white">
-                      Published On: Feb 5, 2025
-                    </span>
-                  </li>
-                  <li>
-                    <span className="text-black dark:text-white">
-                      Category:
-                    </span>{" "}
-                    health
-                  </li>
-                </ul>
+      <HeadingWithAnchor id="magnesium-blood-sugar">
+        Magnesium and blood sugar control
+      </HeadingWithAnchor>
+      <p>
+        Magnesium is an essential mineral involved in over 300
+        enzymatic processes, many of which directly impact{" "}
+        <strong>insulin function and glucose metabolism</strong>.
+        Key points:
+      </p>
+      <ul>
+        <li>
+          Magnesium supports insulin secretion and glucose uptake by
+          cells.
+        </li>
+        <li>
+          Low levels are correlated with poor glycemic control and
+          increased risk of type 2 diabetes.
+        </li>
+        <li>
+          Combining vitamin D with magnesium supplementation
+          improves outcomes more than vitamin D alone.
+        </li>
+      </ul>
 
-                <div className="blog-details">
-                  <p>
-                    Research links low levels of{" "}
-                    <strong>Vitamin D and Magnesium</strong>
-                    to insulin resistance and poor blood sugar control. Here is
-                    what each nutrient does and where to find it in food.
-                  </p>
+      <HeadingWithAnchor id="tracking-with-kaizen">
+        Using Kaizen Health to track results
+      </HeadingWithAnchor>
+      <p>
+        <strong>Kaizen Health</strong> can keep lab results and
+        nutrition plans in one place. Its tools include:
+      </p>
+      <ul>
+        <li>
+          Dietary and supplement suggestions based on the health
+          information you provide.
+        </li>
+        <li>
+          Health Score analysis to track trends in insulin
+          sensitivity.
+        </li>
+        <li>
+          Secure document storage to keep lab results and nutrition
+          plans accessible.
+        </li>
+      </ul>
 
-                  <h2 className="pt-8">
-                    Vitamin D and insulin sensitivity
-                  </h2>
-                  <p>
-                    Vitamin D supports bone health and is involved in{" "}
-                    <strong>insulin production and glucose metabolism</strong>.
-                    Studies have shown that:
-                  </p>
-                  <ul className="list-disc pl-5 pt-2">
-                    <li>
-                      Vitamin D receptors (VDR) exist in pancreatic β-cells,
-                      influencing insulin secretion.
-                    </li>
-                    <li>
-                      A deficiency is associated with increased insulin
-                      resistance and higher blood sugar levels.
-                    </li>
-                    <li>
-                      Vitamin D supplementation may improve insulin sensitivity
-                      in some individuals.
-                    </li>
-                  </ul>
+      <HeadingWithAnchor id="food-sources">
+        Best food sources for vitamin D and magnesium
+      </HeadingWithAnchor>
+      <h3>Top vitamin D sources</h3>
+      <ul>
+        <li>Fatty fish (salmon, mackerel, sardines)</li>
+        <li>Fortified dairy and plant-based milk</li>
+        <li>Egg yolks</li>
+        <li>Sunlight exposure (at least 15 mins/day)</li>
+      </ul>
 
-                  <h2 className="pt-8">
-                    Magnesium and blood sugar control
-                  </h2>
-                  <p>
-                    Magnesium is an essential mineral involved in over 300
-                    enzymatic processes, many of which directly impact{" "}
-                    <strong>insulin function and glucose metabolism</strong>.
-                    Key points:
-                  </p>
-                  <ul className="list-disc pl-5 pt-2">
-                    <li>
-                      Magnesium supports insulin secretion and glucose uptake by
-                      cells.
-                    </li>
-                    <li>
-                      Low levels are correlated with poor glycemic control and
-                      increased risk of Type 2 diabetes.
-                    </li>
-                    <li>
-                      Combining Vitamin D with Magnesium supplementation
-                      improves outcomes more than Vitamin D alone.
-                    </li>
-                  </ul>
+      <h3>Top magnesium sources</h3>
+      <ul>
+        <li>Dark leafy greens (spinach, kale)</li>
+        <li>Nuts and seeds (almonds, pumpkin seeds)</li>
+        <li>Whole grains and legumes</li>
+        <li>Dark chocolate</li>
+      </ul>
 
-                  <h2 className="pt-8">
-                    Using Kaizen Health to track results
-                  </h2>
-                  <p>
-                    <strong>Kaizen Health</strong> can keep lab results and
-                    nutrition plans in one place. Its tools include:
-                  </p>
-                  <ul className="list-disc pl-5 pt-2">
-                    <li>
-                      Dietary and supplement suggestions based on the health
-                      information you provide.
-                    </li>
-                    <li>
-                      Health Score analysis to track trends in insulin
-                      sensitivity.
-                    </li>
-                    <li>
-                      Secure document storage to keep lab results and nutrition
-                      plans accessible.
-                    </li>
-                  </ul>
+      <HeadingWithAnchor id="talk-to-care-team">
+        Talk with your care team
+      </HeadingWithAnchor>
+      <p>
+        Vitamin D and magnesium both contribute to insulin function
+        and blood sugar regulation, but supplements are only one
+        part of diabetes care. Review your levels, medications, and
+        any planned supplements with a qualified clinician.
+      </p>
 
-                  <h2 className="pt-8">
-                    Best Food Sources for Vitamin D and Magnesium
-                  </h2>
-                  <h3 className="pt-4">Top Vitamin D Sources</h3>
-                  <ul className="list-disc pl-5">
-                    <li>Fatty fish (salmon, mackerel, sardines)</li>
-                    <li>Fortified dairy and plant-based milk</li>
-                    <li>Egg yolks</li>
-                    <li>Sunlight exposure (at least 15 mins/day)</li>
-                  </ul>
-
-                  <h3 className="pt-4">Top Magnesium Sources</h3>
-                  <ul className="list-disc pl-5">
-                    <li>Dark leafy greens (spinach, kale)</li>
-                    <li>Nuts and seeds (almonds, pumpkin seeds)</li>
-                    <li>Whole grains and legumes</li>
-                    <li>Dark chocolate</li>
-                  </ul>
-
-                  <h2 className="pt-8">Talk with your care team</h2>
-                  <p>
-                    Vitamin D and magnesium both contribute to insulin function
-                    and blood sugar regulation, but supplements are only one
-                    part of diabetes care. Review your levels, medications, and
-                    any planned supplements with a qualified clinician.
-                  </p>
-                </div>
-
-                <BlogFAQ faqs={faqs} />
-
-                <SharePost
-                  url="https://kaizenhealth.io/blog/diabetes-magnesium-vitamin-d"
-                  text="Read how vitamin D and magnesium relate to diabetes care."
-                  hashtags={["health", "wellness", "AI"]}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+      <BlogFAQ faqs={faqs} />
+    </ArticleLayout>
   );
 };
 

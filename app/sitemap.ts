@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo";
 import { releases } from "@/data/releases";
+import { getTotalPages } from "@/lib/blog";
 
 // Core pages with highest priority
 const coreRoutes = [
@@ -46,7 +47,16 @@ const blogRoutes = [
   "/blog/diabetes-magnesium-vitamin-d",
   "/blog/pregnancy-genetic",
   "/blog/heart/genetic-risk-score-heart-disease",
+  "/blog/health/medicare-glp1-weight-loss-coverage",
+  "/blog/caregiving/grieving-the-years-lost-to-caregiving",
 ];
+
+// Paginated blog index pages, derived from the post count. Page 1 is /blog,
+// already listed in coreRoutes.
+const blogPaginationRoutes = Array.from(
+  { length: getTotalPages() - 1 },
+  (_, index) => `/blog/${index + 2}`,
+);
 
 const updateRoutes = releases.map((release) => `/updates/${release.slug}`);
 
@@ -81,6 +91,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const blogPaginationPages: MetadataRoute.Sitemap = blogPaginationRoutes.map(
+    (route) => ({
+      url: absoluteUrl(route),
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.4,
+    }),
+  );
+
   const updatePages: MetadataRoute.Sitemap = updateRoutes.map((route) => ({
     url: absoluteUrl(route),
     lastModified: now,
@@ -88,5 +107,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...corePages, ...secondaryPages, ...utilityPages, ...blogPages, ...updatePages];
+  return [
+    ...corePages,
+    ...secondaryPages,
+    ...utilityPages,
+    ...blogPages,
+    ...blogPaginationPages,
+    ...updatePages,
+  ];
 }

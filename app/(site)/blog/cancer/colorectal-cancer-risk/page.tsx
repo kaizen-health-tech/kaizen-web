@@ -1,11 +1,8 @@
-import RelatedPost from "@/components/Blog/RelatedPost";
-import SharePost from "@/components/Blog/SharePost";
+import HeadingWithAnchor from "@/components/HeadingWithAnchor";
+import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
-import BackToBlog from "@/components/Blog/BackToBlog";
 import { Metadata } from "next";
-import Image from "next/image";
 import { createPageMetadata } from "@/lib/seo";
-import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
 
 const faqs = [
   {
@@ -25,6 +22,14 @@ const faqs = [
   },
 ];
 
+const sections = [
+  { id: "researchers-found", label: "What the researchers found" },
+  { id: "how-yogurt-affects-gut", label: "How yogurt may affect the gut" },
+  { id: "how-much-yogurt", label: "How much yogurt should you eat?" },
+  { id: "what-this-means", label: "What this means in practice" },
+  { id: "context", label: "Put the finding in context" },
+];
+
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Yogurt and Colorectal Cancer Risk",
   description:
@@ -34,160 +39,123 @@ export const metadata: Metadata = createPageMetadata({
   image: "/images/blog/yogurt.jpeg",
 });
 
-const ColorectalCancerRisk = async () => {
+const ColorectalCancerRisk = () => {
   return (
-    <>
-      <ArticleSchema
-        title="Yogurt and Colorectal Cancer Risk"
-        description="Explore emerging evidence on yogurt intake, gut microbiome factors, and potential colorectal cancer risk reduction, including practical dietary takeaways."
-        image="/images/blog/yogurt.jpeg"
-        datePublished="2025-01-25"
-        url="/blog/cancer/colorectal-cancer-risk"
-        section="Cancer"
-      />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Blog", url: "/blog" },
-          { name: "Cancer", url: "/blog/cancer" },
-          { name: "Yogurt and Colorectal Cancer Risk", url: "/blog/cancer/colorectal-cancer-risk" },
-        ]}
-      />
-      <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex flex-col-reverse gap-7.5 lg:flex-row xl:gap-12.5">
-            <div className="lg:w-full">
-              <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
-                <BackToBlog />
-                <div className="mb-10 w-full overflow-hidden">
-                  <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
-                    <Image
-                      src="/images/blog/yogurt.jpeg"
-                      alt="Vitamin D and Magnesium in Diabetes Management"
-                      fill
-                      className="rounded-md object-cover object-center"
-                    />
-                  </div>
-                </div>
-                <h1 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  What a Long-Running Study Found About Yogurt and Colon Cancer
-                </h1>
+    <ArticleLayout
+      title="What a Long-Running Study Found About Yogurt and Colon Cancer"
+      description="Research published in Gut Microbes found an association between regular yogurt intake and a lower risk of one type of colon cancer."
+      image="/images/blog/yogurt.jpeg"
+      imageAlt="Bowl of yogurt with berries"
+      datePublished="2025-01-25"
+      url="/blog/cancer/colorectal-cancer-risk"
+      category="Cancer"
+      categoryKey="nutrition"
+      readTime="4 min read"
+      tags={["Nutrition"]}
+      sections={sections}
+    >
+      <p>
+        Research published in <em>Gut Microbes</em> found an
+        association between eating at least two servings of yogurt per
+        week and a 20% lower risk of one type of colon cancer. The
+        study does not show that yogurt prevents or cures cancer.
+      </p>
 
-                <p>
-                  Research published in <em>Gut Microbes</em> found an
-                  association between eating at least two servings of yogurt per
-                  week and a 20% lower risk of one type of colon cancer. The
-                  study does not show that yogurt prevents or cures cancer.
-                </p>
+      <HeadingWithAnchor id="researchers-found">
+        What the researchers found
+      </HeadingWithAnchor>
 
-                <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  What the researchers found
-                </h2>
+      <h3>What did researchers find?</h3>
+      <p>
+        Scientists followed more than 130,000 people for over 30
+        years. People who ate at least two servings of yogurt a week
+        had a 20% lower risk of developing <em>Bifidobacterium</em>
+        -positive proximal colon cancer.
+      </p>
 
-                <h3 className="pt-4">What Did Researchers Find?</h3>
-                <p>
-                  Scientists followed more than 130,000 people for over 30
-                  years. People who ate at least two servings of yogurt a week
-                  had a 20% lower risk of developing <em>Bifidobacterium</em>
-                  -positive proximal colon cancer.
-                </p>
+      <h3>Why focus on Bifidobacterium?</h3>
+      <p>
+        <em>Bifidobacterium</em> is a probiotic strain found in yogurt.
+        Tumors containing this bacterium made up 31% of the cases
+        studied, and the association with yogurt was strongest for
+        these tumors.
+      </p>
 
-                <h3 className="pt-4">Why focus on Bifidobacterium?</h3>
-                <p>
-                  <em>Bifidobacterium</em> is a probiotic strain found in yogurt.
-                  Tumors containing this bacterium made up 31% of the cases
-                  studied, and the association with yogurt was strongest for
-                  these tumors.
-                </p>
+      <HeadingWithAnchor id="how-yogurt-affects-gut">
+        How yogurt may affect the gut
+      </HeadingWithAnchor>
 
-                <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  How yogurt may affect the gut
-                </h2>
+      <h3>Probiotics and the gut</h3>
+      <ul>
+        <li>
+          Probiotics may strengthen the gut lining, which can limit
+          inflammation caused by harmful bacteria.
+        </li>
+        <li>
+          They produce butyrate, a compound involved in DNA repair and
+          the suppression of cancer growth.
+        </li>
+        <li>
+          They compete with harmful bacteria, which may reduce the
+          production of toxins linked to tumor growth.
+        </li>
+      </ul>
 
-                <h3 className="pt-4">
-                  Probiotics and the gut
-                </h3>
-                <ul className="list-disc pl-5 pt-2">
-                  <li>
-                    Probiotics may strengthen the gut lining, which can limit
-                    inflammation caused by harmful bacteria.
-                  </li>
-                  <li>
-                    They produce butyrate, a compound involved in DNA repair and
-                    the suppression of cancer growth.
-                  </li>
-                  <li>
-                    They compete with harmful bacteria, which may reduce the
-                    production of toxins linked to tumor growth.
-                  </li>
-                </ul>
+      <h3>Why right-sided colon cancer?</h3>
+      <p>
+        The association was strongest for right-sided, or proximal,
+        colon cancers. These cancers can be harder to detect early and
+        have a higher mortality rate.
+      </p>
 
-                <h3 className="pt-4">Why Right-Sided Colon Cancer?</h3>
-                <p>
-                  The association was strongest for right-sided, or proximal,
-                  colon cancers. These cancers can be harder to detect early and
-                  have a higher mortality rate.
-                </p>
+      <HeadingWithAnchor id="how-much-yogurt">
+        How much yogurt should you eat?
+      </HeadingWithAnchor>
+      <p>
+        The study compared people who ate at least two 6-ounce
+        servings per week with those who ate less. If you add yogurt
+        to your diet, plain Greek yogurt has less added sugar than
+        many flavored varieties.
+      </p>
 
-                <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  How Much Yogurt Should You Eat?
-                </h2>
-                <p>
-                  The study compared people who ate at least two 6-ounce
-                  servings per week with those who ate less. If you add yogurt
-                  to your diet, plain Greek yogurt has less added sugar than
-                  many flavored varieties.
-                </p>
+      <h3>Lactose intolerant?</h3>
+      <p>
+        Fermented yogurts like Greek or skyr are lower in lactose, and
+        plant-based yogurts with live cultures can be a good
+        alternative.
+      </p>
 
-                <h3 className="pt-4">Lactose Intolerant?</h3>
-                <p>
-                  Fermented yogurts like Greek or skyr are lower in lactose, and
-                  plant-based yogurts with live cultures can be a good
-                  alternative.
-                </p>
+      <HeadingWithAnchor id="what-this-means">
+        What this means in practice
+      </HeadingWithAnchor>
+      <ul>
+        <li>
+          Colon cancer rates among adults under 50 have risen 45%
+          since 1995.
+        </li>
+        <li>
+          Yogurt is widely available and relatively affordable, but
+          this observational study does not establish it as a
+          prevention tool.
+        </li>
+        <li>
+          Improving access to nutritious food in underserved areas
+          could help more people include fermented foods in their
+          diets.
+        </li>
+      </ul>
 
-                <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  What this means in practice
-                </h2>
-                <ul className="list-disc pl-5">
-                  <li>
-                    Colon cancer rates among adults under 50 have risen 45%
-                    since 1995.
-                  </li>
-                  <li>
-                    Yogurt is widely available and relatively affordable, but
-                    this observational study does not establish it as a
-                    prevention tool.
-                  </li>
-                  <li>
-                    Improving access to nutritious food in underserved areas
-                    could help more people include fermented foods in their
-                    diets.
-                  </li>
-                </ul>
+      <HeadingWithAnchor id="context">
+        Put the finding in context
+      </HeadingWithAnchor>
+      <p>
+        Yogurt is not a cure, and one observational result should not
+        replace established prevention measures. Regular screening,
+        exercise, and a balanced diet still matter most.
+      </p>
 
-                <h2 className="mb-5 mt-11 text-3xl font-semibold text-black dark:text-white 2xl:text-sectiontitle2">
-                  Put the finding in context
-                </h2>
-                <p>
-                  Yogurt is not a cure, and one observational result should not
-                  replace established prevention measures. Regular screening,
-                  exercise, and a balanced diet still matter most.
-                </p>
-
-                <BlogFAQ faqs={faqs} />
-
-                <SharePost
-                  url="https://kaizenhealth.io/blog/yogurt-colon-cancer"
-                  text="Read what researchers found about yogurt and colorectal cancer risk."
-                  hashtags={["health", "wellness", "nutrition"]}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+      <BlogFAQ faqs={faqs} />
+    </ArticleLayout>
   );
 };
 

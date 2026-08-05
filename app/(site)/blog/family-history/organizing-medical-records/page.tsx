@@ -1,12 +1,9 @@
-import SharePost from "@/components/Blog/SharePost";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
-import BackToBlog from "@/components/Blog/BackToBlog";
-import { Metadata } from "next";
-import Image from "next/image";
+import ArticleLayout from "@/components/Blog/ArticleLayout";
 import Link from "next/link";
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
+import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
-import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
 
 const faqs = [
   {
@@ -26,6 +23,22 @@ const faqs = [
   },
 ];
 
+const sections = [
+  { id: "why-organization-matters", label: "Why organized records matter" },
+  { id: "getting-started", label: "Start with the records you need most" },
+  { id: "choosing-system", label: "Choosing your organization system" },
+  { id: "building-from-scratch", label: "Building your system from scratch" },
+  { id: "pro-tips", label: "Pro tips for maintaining your system" },
+  { id: "common-challenges", label: "Navigating common challenges" },
+  { id: "special-situations", label: "Special care situations" },
+  { id: "for-agencies", label: "For home care agencies" },
+  { id: "technology-tools", label: "Technology that can help" },
+  { id: "legal-privacy", label: "Legal and privacy considerations" },
+  { id: "when-to-update", label: "When to review and update" },
+  { id: "bottom-line", label: "Build a system you can maintain" },
+  { id: "quick-checklist", label: "Quick action checklist" },
+];
+
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Organizing Medical Records for Aging Parents",
   description:
@@ -37,47 +50,20 @@ export const metadata: Metadata = createPageMetadata({
 
 const OrganizingMedicalRecords = () => {
   return (
-    <>
-      <ArticleSchema
-        title="Organizing Medical Records for Aging Parents"
-        description="Follow this practical guide to organize medical records for aging parents with clear systems, emergency readiness, and easier collaboration across family caregivers."
-        image="/images/blog/organizing-medical-records.jpg"
-        datePublished="2025-01-20"
-        url="/blog/family-history/organizing-medical-records"
-        section="Family History"
-      />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Blog", url: "/blog" },
-          { name: "Family History", url: "/blog/family-history" },
-          { name: "Organizing Medical Records", url: "/blog/family-history/organizing-medical-records" },
-        ]}
-      />
-      <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
-      <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-        <div className="animate_top rounded-md border border-stroke bg-white p-7.5 shadow-solid-13 dark:border-strokedark dark:bg-blacksection md:p-10">
-          <BackToBlog />
-          <div className="relative aspect-[97/60] w-full sm:aspect-[97/44] mb-10">
-            <Image
-              src="/images/blog/organizing-medical-records.jpg"
-              alt="Organizing Medical Records for Aging Parents"
-              fill
-              className="rounded-md object-cover"
-            />
-          </div>
-
-          <h1 className="mb-5 text-3xl font-semibold text-black">
-            How to Organize Medical Records for an Aging Parent
-          </h1>
-
-          <p className="mb-5 italic text-black">
-            A practical system for gathering, updating, and sharing the records
-            a caregiver needs
-          </p>
-
-          <hr className="mb-10" />
-
+    <ArticleLayout
+      title="How to Organize Medical Records for an Aging Parent"
+      description="A practical system for gathering, organizing, and sharing the records a caregiver needs, on paper, online, or both."
+      image="/images/blog/organizing-medical-records.jpg"
+      imageAlt="Organizing medical records for aging parents"
+      datePublished="2025-01-20"
+      url="/blog/family-history/organizing-medical-records"
+      category="Family History"
+      categoryHref="/blog/family-history"
+      categoryKey="health-records"
+      readTime="12 min read"
+      tags={["Health records", "Caregiving"]}
+      sections={sections}
+    >
           <p className="mb-10 text-black">
             When your mom breaks her hip and the ambulance arrives, can you
             immediately provide her medication list? Do you know where her
@@ -1453,18 +1439,7 @@ const OrganizingMedicalRecords = () => {
           </p>
 
           <BlogFAQ faqs={faqs} />
-
-          <div className="mt-10">
-              <SharePost
-                  url="https://kaizenhealth.io/blog/family-history/organizing-medical-records"
-                  text="Read how to organize an aging parent's medical records."
-                  hashtags={["health", "familyhistory", "prevention"]}
-              />
-          </div>
-        </div>
-      </div>
-    </section>
-    </>
+    </ArticleLayout>
   );
 };
 
