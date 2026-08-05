@@ -1,6 +1,7 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import NumberedPoints from "@/components/Blog/content/NumberedPoints";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -51,8 +52,6 @@ const DocumentingFamilyHealth = () => {
       imageAlt="Family reviewing health documents"
       datePublished="2025-01-10"
       url="/blog/family-history/documenting-family-health"
-      category="Family History"
-      categoryHref="/blog/family-history"
       categoryKey="health-records"
       readTime="5 min read"
       tags={["Health records"]}
@@ -89,24 +88,18 @@ const DocumentingFamilyHealth = () => {
         Tools for collecting family health history
       </HeadingWithAnchor>
       <p>Two common tools can help you gather the information:</p>
-      <h3>Family history questionnaire or checklist</h3>
-      <p>
-        A questionnaire lets patients gather details from relatives at
-        home. A clinician can follow up on relevant answers to confirm
-        the diagnosis,
-        relationship of the affected family member, age of onset, and
-        severity of the disease.
-      </p>
-      <h3>Pedigree analysis</h3>
-      <p>
-        Commonly used by genetics professionals, this method visually
-        represents at least three generations of a family using
-        standardized symbols to mark affected individuals. Pedigrees
-        help identify inheritance patterns and detect individuals at
-        increased risk of a specific condition. It also includes
-        information about age, cause of death, relevant medical
-        history, and any known genetic testing results.
-      </p>
+      <NumberedPoints
+        points={[
+          {
+            lead: "Family history questionnaire or checklist.",
+            text: "Lets patients gather details from relatives at home. A clinician can follow up on relevant answers to confirm the diagnosis, relationship of the affected family member, age of onset, and severity of the disease.",
+          },
+          {
+            lead: "Pedigree analysis.",
+            text: "Commonly used by genetics professionals, this method visually represents at least three generations of a family using standardized symbols to mark affected individuals. It helps identify inheritance patterns and detect individuals at increased risk, and includes age, cause of death, relevant medical history, and any known genetic testing results.",
+          },
+        ]}
+      />
 
       <HeadingWithAnchor id="screening-tool">
         Family health history as a screening tool

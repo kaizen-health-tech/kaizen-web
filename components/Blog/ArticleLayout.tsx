@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
-import { CategoryKey } from "./categories";
+import { categoryHref as getCategoryHref, CategoryKey, getCategory } from "./categories";
 import Avatar from "./Avatar";
 import ContentsRail, { ArticleSection } from "./ContentsRail";
 import ReadingProgressBar from "./ReadingProgressBar";
@@ -18,11 +18,8 @@ export interface ArticleLayoutProps {
   datePublished: string;
   dateModified?: string;
   url: string;
-  /** Breadcrumb label, e.g. "Health records". */
-  category: string;
-  categoryHref?: string;
-  /** One of the 7 canonical categories — drives "Keep reading" tag colour and matching. */
-  categoryKey?: CategoryKey;
+  /** One of the 7 canonical categories — drives the breadcrumb, its hub link, and "Keep reading" tag colour/matching. */
+  categoryKey: CategoryKey;
   authorName?: string;
   authorCredentials?: string;
   authorImage?: string;
@@ -42,8 +39,6 @@ const ArticleLayout = ({
   datePublished,
   dateModified,
   url,
-  category,
-  categoryHref,
   categoryKey,
   authorName = "Kaizen Health Editorial Team",
   authorCredentials = "Reviewed by healthcare professionals",
@@ -54,13 +49,13 @@ const ArticleLayout = ({
   keywords = [],
   authorBio = "The Kaizen Health editorial team researches and writes family health content, with review from licensed clinicians before publication.",
 }: ArticleLayoutProps) => {
-  const resolvedCategoryHref =
-    categoryHref ?? `/blog/${category.toLowerCase().replace(/\s+/g, "-")}`;
+  const category = getCategory(categoryKey);
+  const resolvedCategoryHref = getCategoryHref(categoryKey);
 
   const breadcrumbs = [
     { name: "Home", url: "/" },
     { name: "Blog", url: "/blog" },
-    { name: category, url: resolvedCategoryHref },
+    { name: category.label, url: resolvedCategoryHref },
     { name: title, url },
   ];
 
@@ -75,7 +70,7 @@ const ArticleLayout = ({
         authorName={authorName}
         authorCredentials={authorCredentials}
         url={url}
-        section={category}
+        section={category.label}
         keywords={keywords}
       />
       <BreadcrumbSchema items={breadcrumbs} />
@@ -90,7 +85,7 @@ const ArticleLayout = ({
             </Link>
             <span>/</span>
             <Link href={resolvedCategoryHref} className="font-semibold text-violet">
-              {category}
+              {category.label}
             </Link>
           </div>
           <h1 className="mb-5 text-pretty text-[36px] font-bold leading-[1.1] tracking-[-1px] text-midnight sm:text-[54px] sm:leading-[1.06] sm:tracking-[-1.8px]">

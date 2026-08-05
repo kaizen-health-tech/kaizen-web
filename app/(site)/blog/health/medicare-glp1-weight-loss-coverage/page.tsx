@@ -1,6 +1,8 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import Link from "next/link";
+import NumberedPoints from "@/components/Blog/content/NumberedPoints";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -51,8 +53,6 @@ const MedicareGlp1WeightLossCoverage = () => {
       imageAlt="Pills, family, weight loss, Medicare's new GLP-1 weight-loss drug coverage online"
       datePublished="2026-07-10"
       url="/blog/health/medicare-glp1-weight-loss-coverage"
-      category="Health"
-      categoryHref="/blog/health"
       categoryKey="aging-well"
       readTime="6 min read"
       tags={["Aging well"]}
@@ -67,7 +67,14 @@ const MedicareGlp1WeightLossCoverage = () => {
         for some patients.
       </p>
       <p>
-        As of July 1, 2026, a new program called the Medicare GLP-1
+        As of{" "}
+        <Link
+          href="https://www.npr.org/2026/05/06/nx-s1-5812662/medicare-bridge-glp1-drugs-copay"
+          target="_blank"
+        >
+          July 1, 2026
+        </Link>
+        , a new program called the Medicare GLP-1
         Bridge lets eligible beneficiaries get certain weight-loss
         medications for a flat $50 a month. It&apos;s the first time
         in the program&apos;s history that Medicare has helped pay for
@@ -132,7 +139,13 @@ const MedicareGlp1WeightLossCoverage = () => {
         </li>
       </ul>
       <p>
-        KFF estimates around <strong>3.8 million</strong> Medicare
+        <Link
+          href="https://kfforg.substack.com/p/what-medicares-temporary-program"
+          target="_blank"
+        >
+          KFF estimates
+        </Link>{" "}
+        around <strong>3.8 million</strong> Medicare
         beneficiaries meet these criteria. That&apos;s a large group,
         but it also means plenty of people who are overweight and want
         help won&apos;t clear the bar.
@@ -216,39 +229,26 @@ const MedicareGlp1WeightLossCoverage = () => {
         is the kind of policy change that&apos;s easy to miss until a
         pharmacy bill lands in the mail. A few practical steps:
       </p>
-      <ol>
-        <li>
-          <strong>Check BMI and health history together.</strong>{" "}
-          Since eligibility depends on BMI plus specific conditions at
-          the <em>start</em> of treatment, it&apos;s worth having that
-          documented clearly, not left to memory during a rushed
-          appointment.
-        </li>
-        <li>
-          <strong>
-            Ask the prescriber directly whether the prior
-            authorization has been submitted.
-          </strong>{" "}
-          The process runs through a separate centralized system, not
-          the usual pharmacy workflow, so it&apos;s easy for a request
-          to stall without anyone flagging it.
-        </li>
-        <li>
-          <strong>
-            Confirm which drug and formulation is actually covered.
-          </strong>{" "}
-          Not every GLP-1 on the market qualifies, only Wegovy,
-          Zepbound KwikPen, and Foundayo under this pilot, so a
-          substitution at the pharmacy could mean a very different
-          price.
-        </li>
-        <li>
-          <strong>Keep the paperwork.</strong> With coverage set to
-          expire at the end of 2027 unless CMS or Congress acts,
-          having a clear record of when treatment started and why will
-          matter if the rules shift again.
-        </li>
-      </ol>
+      <NumberedPoints
+        points={[
+          {
+            lead: "Check BMI and health history together.",
+            text: "Since eligibility depends on BMI plus specific conditions at the start of treatment, it's worth having that documented clearly, not left to memory during a rushed appointment.",
+          },
+          {
+            lead: "Ask the prescriber directly whether the prior authorization has been submitted.",
+            text: "The process runs through a separate centralized system, not the usual pharmacy workflow, so it's easy for a request to stall without anyone flagging it.",
+          },
+          {
+            lead: "Confirm which drug and formulation is actually covered.",
+            text: "Not every GLP-1 on the market qualifies, only Wegovy, Zepbound KwikPen, and Foundayo under this pilot, so a substitution at the pharmacy could mean a very different price.",
+          },
+          {
+            lead: "Keep the paperwork.",
+            text: "With coverage set to expire at the end of 2027 unless CMS or Congress acts, having a clear record of when treatment started and why will matter if the rules shift again.",
+          },
+        ]}
+      />
       <p>
         These details can get lost when a
         family is juggling multiple doctors, prescriptions, and

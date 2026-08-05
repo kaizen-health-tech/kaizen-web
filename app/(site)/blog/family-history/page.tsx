@@ -1,6 +1,8 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import NumberedPoints from "@/components/Blog/content/NumberedPoints";
+import PullQuote from "@/components/Blog/content/PullQuote";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -48,8 +50,6 @@ const FamilyHistory = () => {
       imageAlt="Family reviewing health documents"
       datePublished="2025-01-05"
       url="/blog/family-history"
-      category="Family History"
-      categoryHref="/blog/family-history"
       categoryKey="health-records"
       readTime="6 min read"
       tags={["Health records"]}
@@ -66,6 +66,8 @@ const FamilyHistory = () => {
         clinicians can use those records to inform diagnosis,
         screening, and treatment decisions.
       </p>
+
+      <PullQuote quote="A family health record gives clinicians information they cannot get from a single exam." />
 
       <HeadingWithAnchor id="doctors-view">
         A doctor&apos;s view on organized family health records
@@ -160,27 +162,22 @@ const FamilyHistory = () => {
         Kaizen Health includes several tools for keeping records
         useful during appointments:
       </p>
-      <ul>
-        <li>
-          <strong>Kai — AI chat:</strong> Our medical reference
-          model breaks down complex jargon so that you can better
-          understand diagnoses and treatment plans. This helps you
-          make more informed decisions when sharing records with
-          your doctor.
-        </li>
-        <li>
-          <strong>Health Score:</strong> Kaizen&apos;s proprietary
-          algorithm aggregates your heart rate, weight, and other
-          factors to offer an overall wellbeing score, giving both
-          you and your physician a quick snapshot of your current
-          health.
-        </li>
-        <li>
-          <strong>Document timeline view:</strong> This feature
-          puts uploaded files in date order, making it easier to
-          discuss changes over time during medical visits.
-        </li>
-      </ul>
+      <NumberedPoints
+        points={[
+          {
+            lead: "Kai — AI chat.",
+            text: "Our medical reference model breaks down complex jargon so that you can better understand diagnoses and treatment plans, and make more informed decisions when sharing records with your doctor.",
+          },
+          {
+            lead: "Health Score.",
+            text: "Kaizen's proprietary algorithm aggregates your heart rate, weight, and other factors to offer an overall wellbeing score, giving both you and your physician a quick snapshot of your current health.",
+          },
+          {
+            lead: "Document timeline view.",
+            text: "This feature puts uploaded files in date order, making it easier to discuss changes over time during medical visits.",
+          },
+        ]}
+      />
 
       <p>
         Together, these tools give you and your care team a clearer

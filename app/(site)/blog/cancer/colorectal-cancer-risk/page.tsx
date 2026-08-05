@@ -1,6 +1,8 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import NumberedPoints from "@/components/Blog/content/NumberedPoints";
+import Link from "next/link";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -48,14 +50,19 @@ const ColorectalCancerRisk = () => {
       imageAlt="Bowl of yogurt with berries"
       datePublished="2025-01-25"
       url="/blog/cancer/colorectal-cancer-risk"
-      category="Cancer"
       categoryKey="nutrition"
       readTime="4 min read"
       tags={["Nutrition"]}
       sections={sections}
     >
       <p>
-        Research published in <em>Gut Microbes</em> found an
+        <Link
+          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11834522/"
+          target="_blank"
+        >
+          Research published in <em>Gut Microbes</em>
+        </Link>{" "}
+        found an
         association between eating at least two servings of yogurt per
         week and a 20% lower risk of one type of colon cancer. The
         study does not show that yogurt prevents or cures cancer.
@@ -86,20 +93,22 @@ const ColorectalCancerRisk = () => {
       </HeadingWithAnchor>
 
       <h3>Probiotics and the gut</h3>
-      <ul>
-        <li>
-          Probiotics may strengthen the gut lining, which can limit
-          inflammation caused by harmful bacteria.
-        </li>
-        <li>
-          They produce butyrate, a compound involved in DNA repair and
-          the suppression of cancer growth.
-        </li>
-        <li>
-          They compete with harmful bacteria, which may reduce the
-          production of toxins linked to tumor growth.
-        </li>
-      </ul>
+      <NumberedPoints
+        points={[
+          {
+            lead: "Strengthen the gut lining,",
+            text: "which can limit inflammation caused by harmful bacteria.",
+          },
+          {
+            lead: "Produce butyrate,",
+            text: "a compound involved in DNA repair and the suppression of cancer growth.",
+          },
+          {
+            lead: "Compete with harmful bacteria,",
+            text: "which may reduce the production of toxins linked to tumor growth.",
+          },
+        ]}
+      />
 
       <h3>Why right-sided colon cancer?</h3>
       <p>
@@ -130,8 +139,14 @@ const ColorectalCancerRisk = () => {
       </HeadingWithAnchor>
       <ul>
         <li>
-          Colon cancer rates among adults under 50 have risen 45%
-          since 1995.
+          Colorectal cancer incidence has risen{" "}
+          <Link
+            href="https://pressroom.cancer.org/rectal-cancer-incidence-rising"
+            target="_blank"
+          >
+            51% in adults under 50
+          </Link>{" "}
+          since 1994, according to the American Cancer Society.
         </li>
         <li>
           Yogurt is widely available and relatively affordable, but

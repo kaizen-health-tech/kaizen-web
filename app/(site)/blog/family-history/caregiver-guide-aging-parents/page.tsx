@@ -1,6 +1,7 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import KeyTakeaways from "@/components/Blog/content/KeyTakeaways";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -50,13 +51,27 @@ const SupportingAgingParents = () => {
       imageAlt="Supporting aging parents"
       datePublished="2025-01-15"
       url="/blog/family-history/caregiver-guide-aging-parents"
-      category="Family History"
-      categoryHref="/blog/family-history"
       categoryKey="aging-well"
       readTime="9 min read"
       tags={["Aging well", "Caregiving"]}
       sections={sections}
     >
+      <p>
+        Supporting an aging parent touches five practical areas at once:
+        daily-living aids, home safety, your own stress, the paperwork that
+        makes decisions possible in a crisis, and the outside help you don't
+        have to provide alone. This checklist works through each.
+      </p>
+
+      <KeyTakeaways
+        items={[
+          "Falls are the leading cause of serious injury in older adults — a home safety walkthrough (lighting, grab bars, loose rugs) is one of the highest-leverage changes you can make.",
+          "Arrange legal documents (advance directive, financial POA, HIPAA release) while your parent can still participate in the planning, not after a crisis forces it.",
+          "Caregiver burnout is common and not a sign of failing — regular respite breaks and your own health checkups are part of sustainable caregiving, not optional extras.",
+          "You don't have to provide everything yourself: in-home care, adult day programs, transportation services, and caregiver support groups exist specifically to share the load.",
+        ]}
+      />
+
       <HeadingWithAnchor id="practical-caregiving-resources-for-daily-support">
         Practical caregiving resources for daily support
       </HeadingWithAnchor>

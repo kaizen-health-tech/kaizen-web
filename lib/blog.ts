@@ -1,5 +1,6 @@
 import BlogData from "@/components/Blog/blogData";
 import type { Blog } from "@/types/blog";
+import type { CategoryKey } from "@/components/Blog/categories";
 
 export const POSTS_PER_PAGE = 6;
 
@@ -24,6 +25,10 @@ export const getFeaturedPosts = (): Blog[] =>
 
 export const getRecentPosts = (): Blog[] =>
   getSortedPosts().filter((post) => !post.featured);
+
+// Posts for a category hub page (1d), newest first.
+export const getPostsByCategory = (categoryKey: CategoryKey): Blog[] =>
+  getSortedPosts().filter((post) => post.categoryKey === categoryKey);
 
 export const getTotalPages = (): number =>
   Math.max(1, Math.ceil(getRecentPosts().length / POSTS_PER_PAGE));

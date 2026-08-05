@@ -1,6 +1,7 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import NumberedPoints from "@/components/Blog/content/NumberedPoints";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -48,8 +49,6 @@ const PregnancyGenetic = () => {
       imageAlt="Genetic conditions during pregnancy"
       datePublished="2025-01-06"
       url="/blog/pregnancy-genetic"
-      category="Pregnancy"
-      categoryHref="/blog/pregnancy-genetic"
       categoryKey="pregnancy"
       readTime="6 min read"
       tags={["Pregnancy"]}
@@ -77,39 +76,30 @@ const PregnancyGenetic = () => {
         pregnancy because of their prevalence or effects on fetal
         development:
       </p>
-      <ul>
-        <li>
-          <strong>Down syndrome (Trisomy 21):</strong> Occurs when
-          there is an extra copy of chromosome 21, leading to
-          developmental and intellectual disabilities{" "}
-          <span className="text-sm italic">
-            [2] Mayo Clinic - &quot;Down Syndrome&quot;
-          </span>
-          .
-        </li>
-        <li>
-          <strong>Cystic fibrosis:</strong> A recessive genetic
-          disorder affecting the lungs and digestive system. Both
-          parents must carry the gene for the child to be at risk.
-        </li>
-        <li>
-          <strong>Sickle cell disease:</strong> An inherited blood
-          disorder more prevalent in certain ethnic groups. It
-          causes red blood cells to become misshapen, resulting in
-          various complications.
-        </li>
-        <li>
-          <strong>Tay-Sachs disease:</strong> A rare disorder
-          primarily affecting the central nervous system. It&apos;s most
-          common in certain ethnic groups, such as people of Eastern
-          European Jewish heritage.
-        </li>
-        <li>
-          <strong>Hemophilia:</strong> A recessive disorder
-          affecting the blood&apos;s ability to clot, commonly passed on
-          through the X chromosome.
-        </li>
-      </ul>
+      <NumberedPoints
+        points={[
+          {
+            lead: "Down syndrome (Trisomy 21).",
+            text: "Occurs when there is an extra copy of chromosome 21, leading to developmental and intellectual disabilities [2].",
+          },
+          {
+            lead: "Cystic fibrosis.",
+            text: "A recessive genetic disorder affecting the lungs and digestive system. Both parents must carry the gene for the child to be at risk.",
+          },
+          {
+            lead: "Sickle cell disease.",
+            text: "An inherited blood disorder more prevalent in certain ethnic groups. It causes red blood cells to become misshapen, resulting in various complications.",
+          },
+          {
+            lead: "Tay-Sachs disease.",
+            text: "A rare disorder primarily affecting the central nervous system. It's most common in certain ethnic groups, such as people of Eastern European Jewish heritage.",
+          },
+          {
+            lead: "Hemophilia.",
+            text: "A recessive disorder affecting the blood's ability to clot, commonly passed on through the X chromosome.",
+          },
+        ]}
+      />
 
       <HeadingWithAnchor id="ai-help">
         How AI can help identify potential genetic risks

@@ -1,6 +1,8 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import KeyTakeaways from "@/components/Blog/content/KeyTakeaways";
+import StatTrio from "@/components/Blog/content/StatTrio";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -62,7 +64,6 @@ const FamilyHealthMonitoringArticle = () => {
       imageAlt="Multi-generational family representing family health history"
       datePublished="2025-12-20"
       url="/blog/family-health-monitoring"
-      category="Family History"
       categoryKey="health-records"
       authorName="Kaizen Health Research Team"
       authorCredentials="Reviewed by healthcare professionals"
@@ -77,29 +78,22 @@ const FamilyHealthMonitoringArticle = () => {
         "disease prevention",
       ]}
     >
-            {/* Executive Summary */}
-            <div className="mb-10 rounded-lg border-l-4 border-primary bg-gray-50 p-6 dark:bg-black/20">
-              <h2 className="mb-3 text-xl font-semibold text-black dark:text-white">
-                Executive Summary
-              </h2>
-              <p className="text-lg leading-relaxed">
-                Family health history can guide screening and prevention, but
-                few families keep a detailed record. Although
-                <strong>
-                  96% of Americans recognize its importance, yet only 37% have
-                  actively collected it
-                </strong>
-                . With genetic factors
-                contributing to 30-80% of risk for major diseases including
-                cancer, heart disease, and diabetes, systematic family health
-                monitoring could prevent up to 60% of colorectal cancer deaths,
-                reduce breast cancer risk by 90% in high-risk individuals, and
-                enable lifestyle interventions that prevent 58% of type 2
-                diabetes cases. Recent advances in AI, FHIR interoperability,
-                and consumer health data rights make it easier to build tools
-                around family health records.
-              </p>
-            </div>
+            <KeyTakeaways
+              items={[
+                "96% of Americans recognize family health history's importance, yet only 37% have actively collected it.",
+                "Genetic factors contribute to 30-80% of the risk for major diseases including cancer, heart disease, and diabetes.",
+                "Systematic family health monitoring could prevent up to 60% of colorectal cancer deaths, cut breast cancer risk by roughly 90% in high-risk individuals, and prevent 58% of type 2 diabetes cases through earlier lifestyle intervention.",
+                "Recent advances in AI, FHIR interoperability, and consumer health data rights make it easier to build tools around family health records.",
+              ]}
+            />
+
+            <StatTrio
+              stats={[
+                { figure: "96% → 37%", caption: "Recognize family history matters, but have actually collected it" },
+                { figure: "30–80%", caption: "Of major disease risk attributable to genetic factors" },
+                { figure: "Up to 60%", caption: "Of colorectal cancer deaths preventable through earlier screening" },
+              ]}
+            />
 
             {/* Section 1: The Awareness-to-Action Gap */}
             <HeadingWithAnchor id="awareness-action-gap" size="text-3xl">
@@ -116,7 +110,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://www.cdc.gov/pcd/issues/2005/apr/04_0131.htm"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 CDC Preventing Chronic Disease, 2005
               </a>
@@ -139,7 +132,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6814221/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 PLOS ONE, 2019
               </a>
@@ -155,14 +147,13 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://pubmed.ncbi.nlm.nih.gov/31652289/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 PubMed, 2019
               </a>
               )
             </p>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               The Clinical Underutilization Problem
             </h3>
             <p className="mb-6">
@@ -177,7 +168,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3728505/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   PMC Qualitative Study
                 </a>
@@ -204,7 +194,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://www.sciencedirect.com/science/article/abs/pii/S0140673619312759"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 The Lancet, 2019
               </a>
@@ -219,7 +208,7 @@ const FamilyHealthMonitoringArticle = () => {
               Stratification Tool
             </HeadingWithAnchor>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               2.1 Foundational Research Findings (2020-2025)
             </h3>
             <p className="mb-6">
@@ -234,14 +223,13 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6822265/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 PMC Family Health History
               </a>
               )
             </p>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               2.2 Implementation Trial Results
             </h3>
             <p className="mb-6">
@@ -267,14 +255,13 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-022-08879-2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 BMC Health Services Research, 2022
               </a>
               )
             </p>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               2.3 Cardiovascular Research
             </h3>
             <p className="mb-6">
@@ -291,7 +278,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.ahajournals.org/doi/10.1161/JAHA.121.022264"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   Journal of the American Heart Association, 2022
                 </a>
@@ -306,7 +292,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.ahajournals.org/doi/10.1161/JAHA.122.027881"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   JAHA, 2023
                 </a>
@@ -314,7 +299,7 @@ const FamilyHealthMonitoringArticle = () => {
               </li>
             </ul>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               2.4 Clinical Guidelines Based on Research
             </h3>
             <p className="mb-6">
@@ -324,7 +309,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Organization
                     </th>
@@ -346,7 +331,6 @@ const FamilyHealthMonitoringArticle = () => {
                         href="https://www.cancer.org/cancer/types/breast-cancer/screening-tests-and-early-detection/american-cancer-society-recommendations-for-the-early-detection-of-breast-cancer.html"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:underline"
                       >
                         ACS Guidelines
                       </a>
@@ -374,7 +358,6 @@ const FamilyHealthMonitoringArticle = () => {
                         href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:underline"
                       >
                         USPSTF Colorectal Screening
                       </a>
@@ -392,7 +375,7 @@ const FamilyHealthMonitoringArticle = () => {
               3. Change in Technology, AI, and Why It's Important Now
             </HeadingWithAnchor>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               3.1 Evolution of Health Technology
             </h3>
             <p className="mb-4">
@@ -429,7 +412,7 @@ const FamilyHealthMonitoringArticle = () => {
               <li>Consumer-facing health AI becoming viable</li>
             </ul>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               3.2 Current AI Capabilities
             </h3>
             <p className="mb-4">Contemporary AI can now:</p>
@@ -445,7 +428,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.nature.com/articles/d41586-025-02971-3"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   Nature, 2025
                 </a>
@@ -466,7 +448,7 @@ const FamilyHealthMonitoringArticle = () => {
               </li>
             </ul>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               3.3 Regulatory Developments Enabling Interoperability
             </h3>
             <p className="mb-4">
@@ -476,7 +458,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Regulation
                     </th>
@@ -503,7 +485,6 @@ const FamilyHealthMonitoringArticle = () => {
                         href="https://eajournals.org/ijeats/wp-content/uploads/sites/55/2025/04/Interoperability.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:underline"
                       >
                         FHIR Interoperability Study
                       </a>
@@ -523,7 +504,6 @@ const FamilyHealthMonitoringArticle = () => {
                         href="https://dynamichealthit.com/post/2025-is-on-fhir/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:underline"
                       >
                         Dynamic Health IT
                       </a>
@@ -554,7 +534,6 @@ const FamilyHealthMonitoringArticle = () => {
                         href="https://www.sprypt.com/blog/fhir-guide"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:underline"
                       >
                         SPRY FHIR Guide
                       </a>
@@ -565,7 +544,7 @@ const FamilyHealthMonitoringArticle = () => {
               </table>
             </div>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               3.4 Consumer Health Data Ownership Revolution
             </h3>
             <p className="mb-4">
@@ -579,7 +558,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.faegredrinker.com/en/insights/publications/2024/2/so-whats-consumer-health-data-anyway"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   Faegre Drinker
                 </a>
@@ -595,7 +573,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://law.stanford.edu/2025/02/26/digital-diagnosis-health-data-privacy-in-the-u-s/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   Stanford Law School
                 </a>
@@ -609,7 +586,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.ey.com/en_us/insights/health/navigating-data-privacy-evolution-in-health-care"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   EY Health Data Privacy
                 </a>
@@ -617,11 +593,11 @@ const FamilyHealthMonitoringArticle = () => {
               </li>
             </ul>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               3.5 Competitive Landscape Analysis
             </h3>
 
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               Personal Health Records (Apple Health, MyChart, Patient Portals)
             </h4>
             <p className="mb-2">
@@ -646,7 +622,7 @@ const FamilyHealthMonitoringArticle = () => {
               prevention focus, reactive not proactive
             </p>
 
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               Medical Record Aggregation (Picnic Health, Citizen Health, Human
               API, Seqster)
             </h4>
@@ -672,7 +648,7 @@ const FamilyHealthMonitoringArticle = () => {
               analysis, no risk prediction, record collection only
             </p>
 
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               Family Health Trackers (Acensa Health)
             </h4>
             <p className="mb-2">
@@ -689,7 +665,7 @@ const FamilyHealthMonitoringArticle = () => {
               prediction, reactive approach
             </p>
 
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               Genetic & At-Home Testing (Ancestry, LetsGetChecked, Quest)
             </h4>
             <p className="mb-2">
@@ -704,7 +680,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.fiercebiotech.com/medtech/ancestry-relaunches-dna-health-offerings-employing-quest-s-next-gen-sequencing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   Fierce Biotech
                 </a>
@@ -717,7 +692,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.generationlab.com/blog/letsgetchecked-accuracy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   Generation Lab
                 </a>
@@ -730,7 +704,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.360dx.com/business-news/ancestry-begins-genetic-testing-services-health"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   360Dx
                 </a>
@@ -742,7 +715,7 @@ const FamilyHealthMonitoringArticle = () => {
               full medical history, one-time tests, patient-initiated
             </p>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               3.6 The Unaddressed Market Gap
             </h3>
             <p className="mb-4">
@@ -763,12 +736,12 @@ const FamilyHealthMonitoringArticle = () => {
               4. Types of Diseases That Can Be Prevented
             </HeadingWithAnchor>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               4.1 Common Conditions
             </h3>
 
             {/* 4.1.1 Type 2 Diabetes */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.1.1 Type 2 Diabetes
             </h4>
             <p className="mb-2">
@@ -783,7 +756,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://www.singlecare.com/blog/news/diabetes-statistics/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 SingleCare Diabetes Statistics
               </a>
@@ -795,7 +767,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Factor
                     </th>
@@ -849,7 +821,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3746083/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 PMC Genetics of Type 2 Diabetes
               </a>
@@ -867,7 +838,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.cdc.gov/pcd/issues/2005/apr/04_0131.htm"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   CDC Family History Study
                 </a>
@@ -884,7 +854,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://pubmed.ncbi.nlm.nih.gov/23052052/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   PubMed EPIC-InterAct
                 </a>
@@ -897,7 +866,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Intervention
                     </th>
@@ -936,7 +905,7 @@ const FamilyHealthMonitoringArticle = () => {
             </div>
 
             {/* 4.1.2 Cardiovascular Disease */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.1.2 Cardiovascular Disease
             </h4>
             <p className="mb-2">
@@ -952,7 +921,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://cvrti.utah.edu/2024-heart-disease-statistics-and-their-implications/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 CVRTI Heart Disease Statistics
               </a>
@@ -965,7 +933,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://newsroom.heart.org/news/more-than-half-of-u-s-adults-dont-know-heart-disease-is-leading-cause-of-death-despite-100-year-reign"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 American Heart Association
               </a>
@@ -977,7 +944,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Factor
                     </th>
@@ -1029,7 +996,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7006335/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 PMC Genetics in CVD
               </a>
@@ -1059,7 +1025,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.ahajournals.org/doi/10.1161/JAHA.119.012364"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   JAHA NHANES Analysis
                 </a>
@@ -1073,7 +1038,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4229162/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 PMC Family History of CVD
               </a>
@@ -1085,7 +1049,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Guideline
                     </th>
@@ -1133,7 +1097,7 @@ const FamilyHealthMonitoringArticle = () => {
             </div>
 
             {/* 4.1.3 Breast Cancer */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.1.3 Breast Cancer
             </h4>
             <p className="mb-2">
@@ -1150,7 +1114,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Factor
                     </th>
@@ -1217,7 +1181,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   USPSTF Breast Cancer Screening
                 </a>
@@ -1240,7 +1203,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Stage at Detection
                     </th>
@@ -1280,7 +1243,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Intervention
                     </th>
@@ -1319,7 +1282,7 @@ const FamilyHealthMonitoringArticle = () => {
             </div>
 
             {/* 4.1.4 Colorectal Cancer */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.1.4 Colorectal Cancer
             </h4>
             <p className="mb-2">
@@ -1337,7 +1300,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Factor
                     </th>
@@ -1405,7 +1368,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.moffitt.org/cancers/colon-cancer/survival-rate/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   Moffitt Cancer Center
                 </a>
@@ -1418,7 +1380,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Population
                     </th>
@@ -1465,7 +1427,7 @@ const FamilyHealthMonitoringArticle = () => {
             </div>
 
             {/* 4.1.5 Alzheimer's Disease */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.1.5 Alzheimer's Disease and Dementia
             </h4>
             <p className="mb-2">
@@ -1483,7 +1445,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Factor
                     </th>
@@ -1544,7 +1506,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3475404/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 PMC Genetics of Alzheimer Disease
               </a>
@@ -1553,7 +1514,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://www.alz.org/alzheimers-dementia/what-is-alzheimers/causes-and-risk-factors/genetics"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 Alzheimer's Association Genetics
               </a>
@@ -1586,7 +1546,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Recommendation
                     </th>
@@ -1633,12 +1593,12 @@ const FamilyHealthMonitoringArticle = () => {
             </div>
 
             {/* Section 4.2: Rare but Significant Conditions */}
-            <h3 className="mt-10 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-4 text-xl font-semibold text-midnight">
               4.2 Rare but Significant Conditions
             </h3>
 
             {/* 4.2.1 BRCA1/BRCA2 */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.2.1 BRCA1/BRCA2 Mutations (Hereditary Breast and Ovarian Cancer
               Syndrome)
             </h4>
@@ -1659,7 +1619,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Cancer Type
                     </th>
@@ -1740,7 +1700,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://www.cancer.gov/about-cancer/causes-prevention/genetics/brca-fact-sheet"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 National Cancer Institute BRCA Fact Sheet
               </a>
@@ -1763,7 +1722,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Intervention
                     </th>
@@ -1810,7 +1769,7 @@ const FamilyHealthMonitoringArticle = () => {
             </div>
 
             {/* 4.2.2 Lynch Syndrome */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.2.2 Lynch Syndrome (Hereditary Nonpolyposis Colorectal Cancer)
             </h4>
             <p className="mb-2">
@@ -1831,7 +1790,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Cancer Type
                     </th>
@@ -1898,7 +1857,6 @@ const FamilyHealthMonitoringArticle = () => {
                 href="https://www.cancer.org/cancer/types/colon-rectal-cancer/causes-risks-prevention/genetic-tests-screening-prevention.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
               >
                 American Cancer Society Lynch Syndrome
               </a>
@@ -1910,7 +1868,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Intervention
                     </th>
@@ -1953,7 +1911,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Recommendation
                     </th>
@@ -1992,7 +1950,7 @@ const FamilyHealthMonitoringArticle = () => {
             </div>
 
             {/* 4.2.3 Hereditary Hemochromatosis */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.2.3 Hereditary Hemochromatosis
             </h4>
             <p className="mb-2">
@@ -2031,7 +1989,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Intervention
                     </th>
@@ -2085,7 +2043,7 @@ const FamilyHealthMonitoringArticle = () => {
             </ul>
 
             {/* 4.2.4 Familial Hypercholesterolemia */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.2.4 Familial Hypercholesterolemia (FH)
             </h4>
             <p className="mb-2">
@@ -2108,7 +2066,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Feature
                     </th>
@@ -2174,7 +2132,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Intervention
                     </th>
@@ -2243,7 +2201,7 @@ const FamilyHealthMonitoringArticle = () => {
             </ul>
 
             {/* 4.2.5 Huntington's Disease */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.2.5 Huntington's Disease
             </h4>
             <p className="mb-2">
@@ -2262,7 +2220,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Feature
                     </th>
@@ -2333,7 +2291,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Benefit
                     </th>
@@ -2384,7 +2342,7 @@ const FamilyHealthMonitoringArticle = () => {
             </p>
 
             {/* 4.2.6 ADPKD */}
-            <h4 className="mt-8 mb-4 text-xl font-semibold text-black dark:text-white">
+            <h4 className="mt-8 mb-4 text-xl font-semibold text-midnight">
               4.2.6 Autosomal Dominant Polycystic Kidney Disease (ADPKD)
             </h4>
             <p className="mb-2">
@@ -2405,7 +2363,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Gene
                     </th>
@@ -2452,7 +2410,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-6 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Intervention
                     </th>
@@ -2516,7 +2474,7 @@ const FamilyHealthMonitoringArticle = () => {
               5. Where Kaizen Health fits
             </HeadingWithAnchor>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               5.1 Five gaps in current products
             </h3>
             <p className="mb-4">
@@ -2558,7 +2516,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.nature.com/articles/d41586-025-02971-3"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   Nature, 2025
                 </a>
@@ -2597,7 +2554,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-022-08879-2"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   BMC Health Services Research
                 </a>
@@ -2624,7 +2580,7 @@ const FamilyHealthMonitoringArticle = () => {
               </li>
             </ul>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               5.2 Kaizen Health's approach
             </h3>
             <p className="mb-4">
@@ -2633,7 +2589,7 @@ const FamilyHealthMonitoringArticle = () => {
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Capability
                     </th>
@@ -2697,13 +2653,13 @@ const FamilyHealthMonitoringArticle = () => {
               </table>
             </div>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               5.3 Relevant market data
             </h3>
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Metric
                     </th>
@@ -2786,7 +2742,7 @@ const FamilyHealthMonitoringArticle = () => {
               </table>
             </div>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               5.4 Why these tools are more practical now
             </h3>
             <p className="mb-4">
@@ -2805,7 +2761,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://eajournals.org/ijeats/wp-content/uploads/sites/55/2025/04/Interoperability.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   EAJournals FHIR Study
                 </a>
@@ -2818,7 +2773,6 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://law.stanford.edu/2025/02/26/digital-diagnosis-health-data-privacy-in-the-u-s/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline"
                 >
                   Stanford Law School
                 </a>
@@ -2843,13 +2797,13 @@ const FamilyHealthMonitoringArticle = () => {
               largely unchanged.
             </p>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               Findings across the cited research
             </h3>
             <div className="mb-8 overflow-x-auto rounded-lg border border-stroke dark:border-strokedark">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-gray-50 dark:bg-blacksection">
+                  <tr className="bg-lavender">
                     <th className="border border-stroke dark:border-strokedark px-4 py-3 text-left font-semibold">
                       Condition
                     </th>
@@ -2908,7 +2862,7 @@ const FamilyHealthMonitoringArticle = () => {
               </table>
             </div>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               Technology and access have improved
             </h3>
             <ul className="mb-6 list-disc pl-6 space-y-2">
@@ -2923,7 +2877,7 @@ const FamilyHealthMonitoringArticle = () => {
               </li>
             </ul>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               Gaps in current products
             </h3>
             <p className="mb-6">
@@ -2934,11 +2888,12 @@ const FamilyHealthMonitoringArticle = () => {
               unaddressed.
             </p>
 
-            <h3 className="mt-10 mb-5 text-2xl font-semibold text-black dark:text-white">
+            <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               What a family-centered product would need
             </h3>
             <p className="mb-4">
-              For investors and medical advisors, the opportunity is defined by:
+              Three things make this a solvable problem now rather than a
+              permanent gap:
             </p>
             <ol className="mb-6 list-decimal pl-6 space-y-2">
               <li>
@@ -2950,8 +2905,8 @@ const FamilyHealthMonitoringArticle = () => {
                 impossible predictive capabilities
               </li>
               <li>
-                <strong>Economic cost</strong> of reactive
-                rather than preventive care
+                <strong>The cost of the alternative</strong>, since reactive
+                care is consistently more expensive than preventive care
               </li>
             </ol>
             <p className="mb-8">
@@ -2974,7 +2929,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.cdc.gov/pcd/issues/2005/apr/04_0131.htm"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.cdc.gov/pcd/issues/2005/apr/04_0131.htm
                 </a>
@@ -2986,7 +2941,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6814221/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://pmc.ncbi.nlm.nih.gov/articles/PMC6814221/
                 </a>
@@ -2998,7 +2953,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.sciencedirect.com/science/article/abs/pii/S0140673619312759"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.sciencedirect.com/science/article/abs/pii/S0140673619312759
                 </a>
@@ -3011,7 +2966,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-022-08879-2"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-022-08879-2
                 </a>
@@ -3024,7 +2979,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.ahajournals.org/doi/10.1161/JAHA.121.022264"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.ahajournals.org/doi/10.1161/JAHA.121.022264
                 </a>
@@ -3036,7 +2991,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.cancer.org/cancer/types/breast-cancer/screening-tests-and-early-detection/american-cancer-society-recommendations-for-the-early-detection-of-breast-cancer.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.cancer.org/cancer/types/breast-cancer/screening-tests-and-early-detection/american-cancer-society-recommendations-for-the-early-detection-of-breast-cancer.html
                 </a>
@@ -3047,7 +3002,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening
                 </a>
@@ -3058,7 +3013,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening
                 </a>
@@ -3070,7 +3025,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.nature.com/articles/d41586-025-02971-3"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.nature.com/articles/d41586-025-02971-3
                 </a>
@@ -3082,7 +3037,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.cancer.gov/about-cancer/causes-prevention/genetics/brca-fact-sheet"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.cancer.gov/about-cancer/causes-prevention/genetics/brca-fact-sheet
                 </a>
@@ -3094,7 +3049,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.cancer.org/cancer/types/colon-rectal-cancer/causes-risks-prevention/genetic-tests-screening-prevention.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.cancer.org/cancer/types/colon-rectal-cancer/causes-risks-prevention/genetic-tests-screening-prevention.html
                 </a>
@@ -3105,7 +3060,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3746083/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://pmc.ncbi.nlm.nih.gov/articles/PMC3746083/
                 </a>
@@ -3116,7 +3071,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3475404/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://pmc.ncbi.nlm.nih.gov/articles/PMC3475404/
                 </a>
@@ -3128,7 +3083,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.alz.org/alzheimers-dementia/what-is-alzheimers/causes-and-risk-factors/genetics"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.alz.org/alzheimers-dementia/what-is-alzheimers/causes-and-risk-factors/genetics
                 </a>
@@ -3139,7 +3094,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://newsroom.heart.org/news/more-than-half-of-u-s-adults-dont-know-heart-disease-is-leading-cause-of-death-despite-100-year-reign"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://newsroom.heart.org/news/more-than-half-of-u-s-adults-dont-know-heart-disease-is-leading-cause-of-death-despite-100-year-reign
                 </a>
@@ -3150,7 +3105,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://www.singlecare.com/blog/news/diabetes-statistics/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://www.singlecare.com/blog/news/diabetes-statistics/
                 </a>
@@ -3161,7 +3116,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://dynamichealthit.com/post/2025-is-on-fhir/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://dynamichealthit.com/post/2025-is-on-fhir/
                 </a>
@@ -3173,7 +3128,7 @@ const FamilyHealthMonitoringArticle = () => {
                   href="https://law.stanford.edu/2025/02/26/digital-diagnosis-health-data-privacy-in-the-u-s/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline break-all"
+                  className="break-all"
                 >
                   https://law.stanford.edu/2025/02/26/digital-diagnosis-health-data-privacy-in-the-u-s/
                 </a>

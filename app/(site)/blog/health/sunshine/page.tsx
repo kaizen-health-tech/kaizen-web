@@ -1,6 +1,8 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import NumberedPoints from "@/components/Blog/content/NumberedPoints";
+import Link from "next/link";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -49,8 +51,6 @@ const SunshineBlogPage = () => {
       imageAlt="Older adult enjoying sunshine in a park"
       datePublished="2025-02-01"
       url="/blog/health/sunshine"
-      category="Health"
-      categoryHref="/blog/health"
       categoryKey="aging-well"
       readTime="5 min read"
       tags={["Aging well"]}
@@ -73,49 +73,47 @@ const SunshineBlogPage = () => {
         Older adults need vitamin D, but production
         decreases with age. Since the skin&apos;s ability to synthesize
         vitamin D from sunlight weakens over time, and many seniors
-        spend more time indoors, deficiencies are common. This can
-        lead to fatigue, weak bones, poor immunity, and higher risk of
-        depression. Supplements can help when sunlight and diet do not
-        provide enough vitamin D.
+        spend more time indoors, deficiencies are common. Together with
+        calcium, vitamin D helps protect against osteoporosis by
+        supporting normal bone mineralization, according to the{" "}
+        <Link
+          href="https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+          target="_blank"
+        >
+          NIH Office of Dietary Supplements
+        </Link>
+        . Deficiency can contribute to fatigue, weak bones, poor
+        immunity, and higher risk of depression. Supplements can help
+        when sunlight and diet do not provide enough vitamin D.
       </p>
 
       <HeadingWithAnchor id="sun-exposure-top-benefits">
         Top health benefits of sunshine for seniors
       </HeadingWithAnchor>
-      <ul>
-        <li>
-          <strong>Stronger bones and fracture prevention:</strong>{" "}
-          Sunlight helps convert cholesterol in the skin into vitamin
-          D3, which improves calcium absorption. This strengthens
-          bones and helps prevent osteoporosis and hip fractures, a
-          leading cause of disability in seniors.
-        </li>
-        <li>
-          <strong>Mood and mental health support:</strong> Sunlight
-          activates serotonin and dopamine production, reducing
-          mood. For older adults living alone or in care homes, time
-          outside may also ease isolation.
-        </li>
-        <li>
-          <strong>Better sleep regulation:</strong> Bright light
-          during the day helps set the body&apos;s internal clock. Regular
-          sunlight helps regulate melatonin production, making it
-          easier to fall asleep and stay asleep.
-        </li>
-        <li>
-          <strong>Immune system boost:</strong> Sunlight stimulates
-          vitamin D, which enhances immune cell function. This is
-          especially important for older adults, whose immune systems
-          naturally decline with age.
-        </li>
-        <li>
-          <strong>More movement and social interaction:</strong>{" "}
-          Spending time outside often encourages gentle exercise and
-          connection, two factors linked to healthy aging. Activities
-          like walking, gardening, or sitting at a park can offer
-          sunlight exposure while promoting social well-being.
-        </li>
-      </ul>
+      <NumberedPoints
+        points={[
+          {
+            lead: "Stronger bones and fracture prevention.",
+            text: "Sunlight helps convert cholesterol in the skin into vitamin D3, which improves calcium absorption. This strengthens bones and helps prevent osteoporosis and hip fractures, a leading cause of disability in seniors.",
+          },
+          {
+            lead: "Mood and mental health support.",
+            text: "Sunlight activates serotonin and dopamine production, reducing low mood. For older adults living alone or in care homes, time outside may also ease isolation.",
+          },
+          {
+            lead: "Better sleep regulation.",
+            text: "Bright light during the day helps set the body's internal clock. Regular sunlight helps regulate melatonin production, making it easier to fall asleep and stay asleep.",
+          },
+          {
+            lead: "Immune system boost.",
+            text: "Sunlight stimulates vitamin D, which enhances immune cell function. This is especially important for older adults, whose immune systems naturally decline with age.",
+          },
+          {
+            lead: "More movement and social interaction.",
+            text: "Spending time outside often encourages gentle exercise and connection, two factors linked to healthy aging. Activities like walking, gardening, or sitting at a park can offer sunlight exposure while promoting social well-being.",
+          },
+        ]}
+      />
 
       <HeadingWithAnchor id="sun-exposure-more-sunshine">
         How older adults can get more sunshine safely

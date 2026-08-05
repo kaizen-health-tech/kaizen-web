@@ -1,6 +1,8 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import StatTrio from "@/components/Blog/content/StatTrio";
+import Link from "next/link";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -49,8 +51,6 @@ const GeneticRiskScoreHeartDisease = () => {
       imageAlt="DNA strand illustration representing a genetic risk score for heart disease"
       datePublished="2026-07-02"
       url="/blog/heart/genetic-risk-score-heart-disease"
-      category="Heart Health"
-      categoryHref="/blog/heart"
       categoryKey="health-records"
       readTime="5 min read"
       tags={["Health records", "Aging well"]}
@@ -63,9 +63,11 @@ const GeneticRiskScoreHeartDisease = () => {
         inherited risk.
       </p>
       <p>
-        Researchers at Mass General Brigham published a
-        validation study in the{" "}
-        <em>Journal of the American College of Cardiology</em>{" "}
+        Researchers at Mass General Brigham published a{" "}
+        <Link href="https://www.jacc.org/doi/10.1016/j.jacc.2026.03.035" target="_blank">
+          validation study
+        </Link>{" "}
+        in the <em>Journal of the American College of Cardiology</em>{" "}
         introducing an integrated polygenic risk score, a single
         genetic test that estimates inherited risk for eight
         different cardiovascular and metabolic conditions at once.
@@ -127,6 +129,13 @@ const GeneticRiskScoreHeartDisease = () => {
       <HeadingWithAnchor id="numbers-show">
         What the numbers show
       </HeadingWithAnchor>
+      <StatTrio
+        stats={[
+          { figure: "3.7×", caption: "Higher coronary artery disease risk for the top 10% genetic-risk group" },
+          { figure: "3.1×", caption: "Higher type 2 diabetes risk for the top 10% genetic-risk group" },
+          { figure: "17–18%", caption: "Improvement in risk reclassification for borderline CAD cases" },
+        ]}
+      />
       <p>
         People in the top 10% of genetic risk for coronary artery
         disease were <strong>3.7 times</strong> more likely to
@@ -136,8 +145,14 @@ const GeneticRiskScoreHeartDisease = () => {
         disease.
       </p>
       <p>
-        For context, co-senior author Dr. Aniruddh Patel pointed
-        out that those effect sizes are larger than what
+        For context,{" "}
+        <Link
+          href="https://www.massgeneralbrigham.org/en/about/newsroom/press-releases/polygenic-risk-score-predicts-risk-of-cardiovascular-conditions"
+          target="_blank"
+        >
+          co-senior author Dr. Aniruddh Patel pointed out
+        </Link>{" "}
+        that those effect sizes are larger than what
         you&apos;d typically see from established risk factors
         like high blood pressure or high cholesterol, which
         usually carry around a two-fold increased risk. Genetic

@@ -60,8 +60,6 @@ const GrievingTheYearsLostToCaregiving = () => {
       imageAlt="Roses on a windowsill behind fogged glass, looking out on a bare winter garden"
       datePublished="2026-08-04"
       url="/blog/caregiving/grieving-the-years-lost-to-caregiving"
-      category="Caregiving"
-      categoryHref="/blog/caregiving"
       categoryKey="family-stories"
       readTime="9 min read"
       tags={["Family stories", "Caregiving"]}

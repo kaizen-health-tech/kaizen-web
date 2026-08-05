@@ -79,3 +79,6 @@ export const CATEGORY_LIST: CategoryDef[] = [
 ];
 
 export const getCategory = (key: CategoryKey): CategoryDef => CATEGORIES[key];
+
+// Single source of truth for where a category's hub page (1d) lives.
+export const categoryHref = (key: CategoryKey): string => `/blog/category/${key}`;

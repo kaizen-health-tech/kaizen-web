@@ -1,6 +1,7 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import NumberedPoints from "@/components/Blog/content/NumberedPoints";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -48,8 +49,6 @@ const SingleBlogPage = () => {
       imageAlt="Family health documentation and at-home testing"
       datePublished="2025-01-08"
       url="/blog/family-history/research"
-      category="Family History"
-      categoryHref="/blog/family-history"
       categoryKey="health-records"
       readTime="5 min read"
       tags={["Health records"]}
@@ -103,37 +102,34 @@ const SingleBlogPage = () => {
         high-quality patient care and offers numerous benefits for
         both patients and healthcare providers:
       </p>
-      <ul>
-        <li>
-          <strong>Improved quality of patient care:</strong> A
-          complete medical history enables doctors to make informed
-          decisions about diagnosis and treatment.
-        </li>
-        <li>
-          <strong>Communication:</strong> Electronic Health
-          Records (EHRs) improve communication between providers,
-          reducing medical errors.
-        </li>
-        <li>
-          <strong>Faster and more accurate diagnosis:</strong> Shared
-          patient data allows specialists to diagnose quickly,
-          especially in emergencies.
-        </li>
-        <li>
-          <strong>Reduced medical errors:</strong> A complete
-          medical history minimizes the risk of incorrect
-          prescriptions or treatments.
-        </li>
-        <li>
-          <strong>Increased efficiency:</strong> Avoids duplicate
-          tests and procedures, saving time and costs.
-        </li>
-        <li>
-          <strong>Higher claim approval rates:</strong> Accurate
-          documentation reduces errors and increases medical claim
-          approvals.
-        </li>
-      </ul>
+      <NumberedPoints
+        points={[
+          {
+            lead: "Improved quality of patient care.",
+            text: "A complete medical history enables doctors to make informed decisions about diagnosis and treatment.",
+          },
+          {
+            lead: "Communication.",
+            text: "Electronic Health Records (EHRs) improve communication between providers, reducing medical errors.",
+          },
+          {
+            lead: "Faster and more accurate diagnosis.",
+            text: "Shared patient data allows specialists to diagnose quickly, especially in emergencies.",
+          },
+          {
+            lead: "Reduced medical errors.",
+            text: "A complete medical history minimizes the risk of incorrect prescriptions or treatments.",
+          },
+          {
+            lead: "Increased efficiency.",
+            text: "Avoids duplicate tests and procedures, saving time and costs.",
+          },
+          {
+            lead: "Higher claim approval rates.",
+            text: "Accurate documentation reduces errors and increases medical claim approvals.",
+          },
+        ]}
+      />
 
       <HeadingWithAnchor id="at-home-testing">
         Where at-home testing fits
@@ -184,34 +180,47 @@ const SingleBlogPage = () => {
       </HeadingWithAnchor>
       <ul>
         <li>
-          <a href="https://www.inspirahealthnetwork.org/news/healthy-living/importance-family-health-history">
+          <a
+            href="https://www.inspirahealthnetwork.org/news/healthy-living/importance-family-health-history"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             The Importance of a Family Health History - Inspira Health
             Network
           </a>
         </li>
         <li>
-          <a href="https://www.healthywa.wa.gov.au/Articles/U_Z/Your-family-health-history">
+          <a
+            href="https://www.healthywa.wa.gov.au/Articles/U_Z/Your-family-health-history"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Your Family Health History - Healthy WA
           </a>
         </li>
         <li>
-          <a href="https://evidence.care/importance-of-documentation-in-healthcare/">
+          <a
+            href="https://evidence.care/importance-of-documentation-in-healthcare/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             The Importance of Documentation in Healthcare in the EHR -
             EvidenceCare
           </a>
         </li>
         <li>
-          <a href="https://medtrainer.com/blog/the-advantages-and-disadvantages-of-sharing-patient-information/">
+          <a
+            href="https://medtrainer.com/blog/the-advantages-and-disadvantages-of-sharing-patient-information/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             The Advantages and Disadvantages of Sharing Patient
             Information - MedTrainer
           </a>
         </li>
         <li>
-          <a href="https://www.testing.com/at-home-testing/">At-Home Testing</a>
-        </li>
-        <li>
-          <a href="https://www.globenewswire.com/news-release/2024/10/09/2960405/32656/en/At-home-Testing-Kits-Market-to-be-Worth-USD-12-3-billion-by-2034-Growing-a-CAGR-5-9-Exclusive-Report-by-Transparency-Market-Research-Inc.html">
-            At-Home Testing Kits Market Report - GlobeNewswire
+          <a href="https://www.testing.com/at-home-testing/" target="_blank" rel="noopener noreferrer">
+            At-Home Testing
           </a>
         </li>
       </ul>

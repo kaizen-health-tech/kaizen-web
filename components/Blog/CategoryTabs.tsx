@@ -1,26 +1,32 @@
 import Link from "next/link";
-import { CATEGORY_LIST } from "./categories";
+import { CATEGORY_LIST, categoryHref, CategoryKey } from "./categories";
 
-// Per the design, these are meant to be real links to per-category hub pages
-// (the "1d" category listing). That surface hasn't been built yet, so for now
-// only "All" is a live link; the rest render in place as a preview of the
-// full taxonomy without routing anywhere.
-const CategoryTabs = () => {
+interface CategoryTabsProps {
+  /** Omit (or leave undefined) on the all-posts index, where "All" is active. */
+  activeKey?: CategoryKey;
+}
+
+const tabClass = (active: boolean) =>
+  `whitespace-nowrap border-b-[3px] pb-4 text-lg ${
+    active
+      ? "border-violet font-bold text-midnight"
+      : "border-transparent font-medium text-graphite hover:text-midnight"
+  }`;
+
+const CategoryTabs = ({ activeKey }: CategoryTabsProps) => {
   return (
     <div className="mx-auto flex max-w-c-1280 gap-8 overflow-x-auto border-b border-cloud px-4 no-scrollbar md:px-8 xl:px-0">
-      <Link
-        href="/blog"
-        className="whitespace-nowrap border-b-[3px] border-violet pb-4 text-lg font-bold text-midnight"
-      >
+      <Link href="/blog" className={tabClass(!activeKey)}>
         All
       </Link>
       {CATEGORY_LIST.map((category) => (
-        <span
+        <Link
           key={category.key}
-          className="whitespace-nowrap border-b-[3px] border-transparent pb-4 text-lg font-medium text-graphite"
+          href={categoryHref(category.key)}
+          className={tabClass(activeKey === category.key)}
         >
           {category.label}
-        </span>
+        </Link>
       ))}
     </div>
   );

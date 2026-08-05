@@ -1,6 +1,8 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import KeyTakeaways from "@/components/Blog/content/KeyTakeaways";
+import StatTrio from "@/components/Blog/content/StatTrio";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -58,13 +60,29 @@ const CreatineAgingGuide = () => {
       imageAlt="Creatine supplementation guide for aging adults"
       datePublished="2025-01-15"
       url="/blog/health/creatine"
-      category="Health"
       categoryKey="nutrition"
       readTime="8 min read"
       tags={["Nutrition", "Aging well"]}
       sections={sections}
       keywords={["creatine", "aging", "muscle health", "supplements", "brain health"]}
     >
+      <KeyTakeaways
+        items={[
+          "3-5 g/day of creatine monohydrate is well-tolerated in adults 18-90, per hundreds of clinical trials, with no clinically significant organ damage.",
+          "Combined with resistance training, creatine produces 10-20% increases in strength — the effect is on the training, not the supplement alone.",
+          "Full muscle saturation takes about 28 days at maintenance dose, or 5-7 days with a 20 g/day loading protocol.",
+          "Anyone with chronic kidney disease, severe liver disease, or bipolar disorder should get medical clearance before starting.",
+        ]}
+      />
+
+      <StatTrio
+        stats={[
+          { figure: "3–5 g", caption: "Daily maintenance dose of micronized creatine monohydrate" },
+          { figure: "10–20%", caption: "Strength increase vs. training alone, across 30+ RCTs" },
+          { figure: "28 days", caption: "To reach full muscle saturation at maintenance dose" },
+        ]}
+      />
+
       <HeadingWithAnchor id="what-is-creatine">
         What creatine is and how it works
       </HeadingWithAnchor>

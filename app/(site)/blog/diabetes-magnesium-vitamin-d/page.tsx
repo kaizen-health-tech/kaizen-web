@@ -1,6 +1,8 @@
 import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
+import NumberedPoints from "@/components/Blog/content/NumberedPoints";
+import Link from "next/link";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -48,8 +50,6 @@ const DiabetesMagnesiumVitaminD = () => {
       imageAlt="Vitamin D and magnesium in diabetes management"
       datePublished="2025-01-12"
       url="/blog/diabetes-magnesium-vitamin-d"
-      category="Health"
-      categoryHref="/blog/health"
       categoryKey="nutrition"
       readTime="5 min read"
       tags={["Nutrition"]}
@@ -67,8 +67,11 @@ const DiabetesMagnesiumVitaminD = () => {
       </HeadingWithAnchor>
       <p>
         Vitamin D supports bone health and is involved in{" "}
-        <strong>insulin production and glucose metabolism</strong>.
-        Studies have shown that:
+        <strong>insulin production and glucose metabolism</strong>.{" "}
+        <Link href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10142687/" target="_blank">
+          Research review
+        </Link>{" "}
+        has shown that:
       </p>
       <ul>
         <li>
@@ -91,8 +94,11 @@ const DiabetesMagnesiumVitaminD = () => {
       <p>
         Magnesium is an essential mineral involved in over 300
         enzymatic processes, many of which directly impact{" "}
-        <strong>insulin function and glucose metabolism</strong>.
-        Key points:
+        <strong>insulin function and glucose metabolism</strong>, per{" "}
+        <Link href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11463151/" target="_blank">
+          research on magnesium and pancreatic β-cell function
+        </Link>
+        . Key points:
       </p>
       <ul>
         <li>
@@ -116,20 +122,22 @@ const DiabetesMagnesiumVitaminD = () => {
         <strong>Kaizen Health</strong> can keep lab results and
         nutrition plans in one place. Its tools include:
       </p>
-      <ul>
-        <li>
-          Dietary and supplement suggestions based on the health
-          information you provide.
-        </li>
-        <li>
-          Health Score analysis to track trends in insulin
-          sensitivity.
-        </li>
-        <li>
-          Secure document storage to keep lab results and nutrition
-          plans accessible.
-        </li>
-      </ul>
+      <NumberedPoints
+        points={[
+          {
+            lead: "Dietary and supplement suggestions",
+            text: "based on the health information you provide.",
+          },
+          {
+            lead: "Health Score analysis",
+            text: "to track trends in insulin sensitivity.",
+          },
+          {
+            lead: "Secure document storage",
+            text: "to keep lab results and nutrition plans accessible.",
+          },
+        ]}
+      />
 
       <HeadingWithAnchor id="food-sources">
         Best food sources for vitamin D and magnesium
