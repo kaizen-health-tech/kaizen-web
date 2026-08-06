@@ -20,7 +20,7 @@ const ProductCallout = ({ body, buttonLabel = "Try it with a document" }: Produc
           How Kaizen handles this
         </span>
       </div>
-      <p className="mb-5 text-[19px] leading-[1.6] text-[#E4E1F8] text-pretty">{body}</p>
+      <p className="mb-5 text-[19px] leading-[1.6] !text-[#E4E1F8] text-pretty">{body}</p>
       <GetAppButton size="md">{buttonLabel}</GetAppButton>
     </div>
   );

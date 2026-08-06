@@ -39,7 +39,7 @@ const GetAppButton = ({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center rounded-full bg-violet font-semibold text-white transition duration-200 ease-in-out hover:bg-violet-hover active:scale-[.97] ${sizeClasses[size]} ${fullWidth ? "w-full" : ""} ${className}`}
+      className={`inline-flex items-center justify-center rounded-full bg-violet font-semibold !text-white !no-underline transition duration-200 ease-in-out hover:bg-violet-hover active:scale-[.97] ${sizeClasses[size]} ${fullWidth ? "w-full" : ""} ${className}`}
     >
       {children}
     </Link>

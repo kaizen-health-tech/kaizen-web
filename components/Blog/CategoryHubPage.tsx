@@ -17,7 +17,7 @@ interface CategoryHubPageProps {
 // scoped to one topic and tinted with that topic's colour.
 const CategoryHubPage = ({ category, posts, mostReadPosts }: CategoryHubPageProps) => {
   return (
-    <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
+    <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-40">
       <div className="mx-auto max-w-c-1280 px-4 md:px-8 xl:px-0">
         <div className="mb-5.5 flex items-center gap-2.5 text-base text-space">
           <Link href="/blog" className="hover:text-graphite">

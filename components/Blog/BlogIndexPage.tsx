@@ -23,7 +23,7 @@ const BlogIndexPage = ({ pageNumber }: BlogIndexPageProps) => {
   const totalCount = getSortedPosts().length;
 
   return (
-    <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-50">
+    <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-40">
       <div className="mx-auto max-w-c-1280 px-4 md:px-8 xl:px-0">
         <div className="flex flex-col gap-8 pb-10 lg:flex-row lg:items-end lg:justify-between lg:gap-14">
           <div className="max-w-2xl">

@@ -9,6 +9,10 @@ import menuData from "./menuData";
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [dropdownToggler, setDropdownToggler] = useState(false);
+  // The desktop dropdown opens on CSS :hover/:focus-within, which stays
+  // active after a submenu link is clicked (the cursor hasn't moved). This
+  // forces it closed until the pointer actually leaves the menu item.
+  const [dropdownForceClosed, setDropdownForceClosed] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
   // Dynamic download link based on user‑agent
   const [downloadHref, setDownloadHref] = useState<string>("#cta");
@@ -126,7 +130,13 @@ const Header = () => {
           <nav className="mr-5">
             <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
               {menuData.map((menuItem, key) => (
-                <li key={key} className={menuItem.submenu && "group relative"}>
+                <li
+                  key={key}
+                  className={menuItem.submenu && "group relative"}
+                  onMouseLeave={() =>
+                    menuItem.submenu && setDropdownForceClosed(false)
+                  }
+                >
                   {menuItem.submenu ? (
                     <>
                       <button
@@ -152,15 +162,19 @@ const Header = () => {
                       </button>
 
                       <ul
-                        className={`dropdown ${dropdownToggler ? "flex" : ""}`}
+                        className={`dropdown ${dropdownToggler ? "flex" : ""} ${
+                          dropdownForceClosed ? "xl:!invisible xl:!opacity-0" : ""
+                        }`}
                       >
                         {menuItem.submenu.map((item, key) => (
                           <li key={key}>
                             <Link
                               href={item.path || "#"}
-                              onClick={() => {
+                              onClick={(e) => {
                                 setNavigationOpen(false);
                                 setDropdownToggler(false);
+                                setDropdownForceClosed(true);
+                                e.currentTarget.blur();
                               }}
                               className={
                                 isActive(item.path)

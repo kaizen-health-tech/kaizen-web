@@ -159,6 +159,17 @@ const BlogData: Blog[] = [
     readTime: "9 min read",
     author: editorialTeam,
   },
+  {
+    id: 14,
+    mainImage: "/images/blog/kidney-transplant.png",
+    title: "Why Nearly Half of Kidney Transplant Candidates Never Start the Evaluation",
+    metadata:
+      "A study of more than 720,000 patients found 48% referred for a kidney transplant never begin the evaluation, and only 19% reach the waitlist. Here's what determines who makes it through.",
+    url: "/blog/health/kidney-transplant-evaluation-gap",
+    categoryKey: "health-records",
+    readTime: "7 min read",
+    author: editorialTeam,
+  },
 ];
 
 export default BlogData;
