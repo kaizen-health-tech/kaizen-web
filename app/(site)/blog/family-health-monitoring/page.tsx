@@ -40,7 +40,7 @@ export const metadata: Metadata = createPageMetadata({
     "Learn how tracking family health history can guide hereditary risk assessment, earlier screening, and long-term prevention planning.",
   path: "/blog/family-health-monitoring",
   type: "article",
-  image: "/images/blog/family-generations.png",
+  image: "/images/blog/family-generation.png",
   keywords: [
     "family health history",
     "hereditary diseases",
@@ -60,7 +60,7 @@ const FamilyHealthMonitoringArticle = () => {
     <ArticleLayout
       title="How Family Health History Can Guide Disease Prevention"
       description="Learn how family health history can guide earlier screening for hereditary risks, including colorectal cancer, breast cancer, heart disease, and type 2 diabetes."
-      image="/images/blog/family-generations.png"
+      image="/images/blog/family-generation.png"
       imageAlt="Multi-generational family representing family health history"
       datePublished="2025-12-20"
       url="/blog/family-health-monitoring"

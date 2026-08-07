@@ -114,7 +114,7 @@ const BlogData: Blog[] = [
   },
   {
     id: 10,
-    mainImage: "/images/blog/family-generations.png",
+    mainImage: "/images/blog/family-generation.png",
     title:
       "How Family Health History Can Guide Disease Prevention",
     metadata:
