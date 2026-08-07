@@ -28,10 +28,10 @@ const BlogIndexPage = ({ pageNumber }: BlogIndexPageProps) => {
         <div className="flex flex-col gap-8 pb-10 lg:flex-row lg:items-end lg:justify-between lg:gap-14">
           <div className="max-w-2xl">
             <h1 className="text-[40px] font-bold leading-[1.1] tracking-[-1px] text-midnight text-pretty sm:text-[58px] sm:leading-[1.04] sm:tracking-[-2px]">
-              Practical health writing for the whole family.
+              Practical guides and information for the whole family.
             </h1>
             <p className="mt-4 text-lg leading-[1.5] text-text-body text-pretty sm:text-[21px]">
-              {totalCount} articles on family health, prevention, medical
+              Articles on family health, prevention, medical
               records and caregiving — written to be read in one sitting.
             </p>
           </div>
