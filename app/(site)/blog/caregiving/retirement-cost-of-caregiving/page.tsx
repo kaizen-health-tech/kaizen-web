@@ -76,7 +76,7 @@ const sections = [
 ];
 
 export const metadata: Metadata = createPageMetadata({
-  primaryKeyword: "Retirement Cost of Caregiving",
+  primaryKeyword: "Retirement Cost of Family Caregiving",
   description:
     "Caring for an aging parent costs more than the receipts show. What the research says about lost wages, skipped retirement contributions, and Social Security.",
   path: "/blog/caregiving/retirement-cost-of-caregiving",
@@ -94,6 +94,7 @@ const RetirementCostOfCaregiving = () => {
       datePublished="2026-08-09"
       url="/blog/caregiving/retirement-cost-of-caregiving"
       categoryKey="aging-well"
+      authorCredentials="Reviewed by the Kaizen Health editorial team"
       readTime="9 min read"
       tags={["Aging well", "Caregiving"]}
       sections={sections}
@@ -461,7 +462,13 @@ const RetirementCostOfCaregiving = () => {
         That last question sounds unusual and rarely gets asked. It is often the
         cheapest way to make an unequal arrangement fair, because replacing a
         sibling&rsquo;s $500-a-month contribution costs far less than the
-        retirement gap it prevents.
+        retirement gap it prevents. Most of these questions get easier once the
+        day-to-day logistics are settled first — our{" "}
+        <Link href="/blog/family-history/caregiver-guide-aging-parents">
+          caregiver guide for aging parents
+        </Link>{" "}
+        walks through the home safety, medication, and legal groundwork that
+        usually comes before the money conversation.
       </p>
       <p>
         A family does not need an equal division of caregiving. It needs a
@@ -504,13 +511,29 @@ const RetirementCostOfCaregiving = () => {
         ]}
       />
 
+      <p>
+        Tracking the full cost is easier with a shared system than with a
+        shoebox of receipts. Our guide to{" "}
+        <Link href="/blog/family-history/organizing-medical-records">
+          organizing medical records for aging parents
+        </Link>{" "}
+        covers a setup that also works for the financial paper trail — bills,
+        insurance statements, and the hours logged by whoever is providing
+        care.
+      </p>
+
       <ProductCallout body="Kaizen keeps a parent's records, medications, appointment notes, and test results in one shared place the whole family can see — so care coordination doesn't depend on one person's memory, one person's inbox, or one person's time off work." />
 
       <p>
         None of this argues against caring for the people you love. It argues
         that the caregiver&rsquo;s own financial future belongs in the
         conversation from the beginning, rather than being the variable that
-        silently absorbs everything else.
+        silently absorbs everything else. Some of that burden is
+        administrative rather than financial, and that is where an{" "}
+        <Link href="/blog/ai-agents">AI agent built for family health</Link>{" "}
+        can help — cutting down the hours spent tracking records and
+        summarizing what changed, so more of a caregiver&rsquo;s remaining
+        time goes to the person, not the paperwork.
       </p>
       <p>
         Caregiving is treated as a family matter and a personal one. It is both.
@@ -518,7 +541,13 @@ const RetirementCostOfCaregiving = () => {
         people will ever face. The earlier a family names the cost, the more
         options it has to share it — and the smaller the chance that helping
         someone through their last years quietly creates a crisis in the
-        caregiver&rsquo;s own.
+        caregiver&rsquo;s own. The financial toll is only part of what
+        caregiving costs; for the part that doesn&rsquo;t show up in any
+        ledger, see{" "}
+        <Link href="/blog/caregiving/grieving-the-years-lost-to-caregiving">
+          Grieving the Years Caregiving Took From You
+        </Link>
+        .
       </p>
 
       <BlogFAQ faqs={faqs} />

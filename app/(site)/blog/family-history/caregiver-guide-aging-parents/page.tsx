@@ -555,6 +555,15 @@ const SupportingAgingParents = () => {
         </Link>
         .
       </p>
+      <p>
+        AI tools are also becoming part of this support landscape, and it is
+        worth knowing what you are actually using. Our guide to{" "}
+        <Link href="/blog/ai-agents">AI agents in family health</Link> covers
+        what these tools are, how to check whether one is safe to use with a
+        parent&rsquo;s records, and where they genuinely reduce a
+        caregiver&rsquo;s load versus where a human is still the better
+        option.
+      </p>
 
       <BlogFAQ faqs={faqs} />
     </ArticleLayout>

@@ -1,0 +1,81 @@
+{
+  "auditDate": "2026-08-09",
+  "scope": "single-post",
+  "requestedTarget": "Retirement cost of caregiving",
+  "analyzerNote": "Canonical scripts/analyze_blog.py not present in this environment; rubric applied manually against source file and supporting SEO/schema infrastructure.",
+  "posts": [
+    {
+      "file": "app/(site)/blog/caregiving/retirement-cost-of-caregiving/page.tsx",
+      "url": "/blog/caregiving/retirement-cost-of-caregiving",
+      "title": "The Hidden Retirement Cost of Caregiving",
+      "categoryKey": "aging-well",
+      "datePublished": "2026-08-09",
+      "dateModified": null,
+      "score": 86,
+      "categories": {
+        "content": { "score": 27, "max": 30 },
+        "seo": { "score": 20, "max": 25 },
+        "eeat": { "score": 12, "max": 15 },
+        "technical": { "score": 15, "max": 15 },
+        "aiCitation": { "score": 12, "max": 15 }
+      },
+      "metadata": {
+        "titleTag": "Retirement Cost of Caregiving | Kaizen Health",
+        "titleLength": 45,
+        "metaDescriptionLength": 157,
+        "h1Count": 1,
+        "h2Count": 8,
+        "externalLinkCount": 10,
+        "internalLinkCount": 0,
+        "imagesWithAlt": 2,
+        "imagesTotal": 2,
+        "faqCount": 5,
+        "schemaTypes": ["Article", "BreadcrumbList", "FAQPage"],
+        "inSitemap": true,
+        "inRobotsAllow": true,
+        "inLlmsTxt": false
+      },
+      "issues": [
+        {
+          "priority": 1,
+          "category": "link-health",
+          "issue": "Zero in-body internal links",
+          "detail": "30-paragraph body has 10 outbound external links but no contextual internal links; dead-end page for outbound link equity.",
+          "recommendedAction": "Add 2-3 contextual links to /blog/family-history/caregiver-guide-aging-parents, /blog/caregiving/grieving-the-years-lost-to-caregiving, and /blog/family-history/organizing-medical-records."
+        },
+        {
+          "priority": 2,
+          "category": "ai-readiness",
+          "issue": "Missing from public/llms.txt",
+          "detail": "llms.txt is stale; this post and 4 other recent posts are absent from the directory AI assistants consult.",
+          "recommendedAction": "Add entry under 'Family Health & Caregiving Guides' section of public/llms.txt."
+        },
+        {
+          "priority": 3,
+          "category": "eeat",
+          "issue": "Generic health-focused author credential on a finance-adjacent post",
+          "detail": "Default byline 'Reviewed by healthcare professionals' does not match the Social Security / 401(k) / retirement-planning subject matter.",
+          "recommendedAction": "If genuine review occurred, set authorCredentials to a relevant financial-planning credential via ArticleLayout props; do not fabricate."
+        },
+        {
+          "priority": 4,
+          "category": "seo",
+          "issue": "Title tag below ideal length band",
+          "detail": "45 characters; acceptable (40-60) but under the 50-60 ideal band.",
+          "recommendedAction": "Optional; non-blocking."
+        }
+      ],
+      "cannibalization": {
+        "checked_against": [
+          "/blog/caregiving/grieving-the-years-lost-to-caregiving",
+          "/blog/family-history/caregiver-guide-aging-parents"
+        ],
+        "conflict": false,
+        "notes": "Distinct intents: grief/emotional vs. practical checklist vs. financial/retirement. No merge/redirect/differentiate needed."
+      },
+      "skippedChecks": [
+        "SKIPPED: credentials unavailable - GSC/GA4/CrUX/PageSpeed field data (Step 2.5)"
+      ]
+    }
+  ]
+}

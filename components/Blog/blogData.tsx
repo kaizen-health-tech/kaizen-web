@@ -177,6 +177,18 @@ const BlogData: Blog[] = [
     readTime: "9 min read",
     author: editorialTeam,
   },
+  {
+    id: 16,
+    mainImage: "/images/blog/ai-agents-family-health.png",
+    title: "AI Agents in Family Health: The Complete Guide",
+    metadata:
+      "Five companies launched consumer AI health products in the first three months of 2026. What an AI agent actually is, how it differs from a chatbot, and what to check before using one with your family's records.",
+    url: "/blog/ai-agents",
+    categoryKey: "kai-ai",
+    featured: true,
+    readTime: "13 min read",
+    author: editorialTeam,
+  },
 ];
 
 export default BlogData;

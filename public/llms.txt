@@ -10,12 +10,14 @@
 - [Product Updates](https://kaizenhealth.io/updates): Changelog of new Kaizen Health features and releases.
 
 ## Family Health & Caregiving Guides
+- [AI Agents in Family Health: The Complete Guide](https://kaizenhealth.io/blog/ai-agents): What an AI agent actually is, how it differs from a chatbot, and what to check before using one with family medical records — including a look at the five consumer AI health products launched in early 2026.
 - [Family Health Monitoring for Hereditary Risk](https://kaizenhealth.io/blog/family-health-monitoring): How tracking family health history helps prevent hereditary disease and supports early screening.
 - [The Importance of Family Health Documentation](https://kaizenhealth.io/blog/family-history): A doctor's perspective on why documenting family health history improves diagnosis and care coordination.
 - [Documenting Family Health History](https://kaizenhealth.io/blog/family-history/documenting-family-health): How to collect and use family health history for risk assessment and prevention.
 - [Why Family Health Documentation & At-Home Testing Matter](https://kaizenhealth.io/blog/family-history/research): The benefits of documenting health records and using at-home testing for preventative care.
 - [Organizing Medical Records for Aging Parents](https://kaizenhealth.io/blog/family-history/organizing-medical-records): A practical system for organizing a parent's medical records, insurance, and legal documents.
 - [Caregiver Guide for Aging Parents](https://kaizenhealth.io/blog/family-history/caregiver-guide-aging-parents): Home safety, medication management, legal planning, and caregiver stress guidance.
+- [The Hidden Retirement Cost of Caregiving](https://kaizenhealth.io/blog/caregiving/retirement-cost-of-caregiving): What lost wages, paused 401(k) contributions, and Social Security gaps actually cost family caregivers.
 
 ## Health Topics
 - [Genetic Conditions During Pregnancy](https://kaizenhealth.io/blog/pregnancy-genetic): Common genetic conditions in pregnancy and how AI can support informed prenatal decisions.
