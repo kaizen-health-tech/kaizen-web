@@ -37,7 +37,7 @@ export const metadata: Metadata = createPageMetadata({
     "Learn common genetic conditions in pregnancy, screening considerations, and how AI-supported analysis can help families prepare for informed prenatal decisions.",
   path: "/blog/pregnancy-genetic",
   type: "article",
-  image: "/images/blog/pregnancy-genetic.jpeg",
+  image: "/images/blog/pregnancy-genetic.png",
 });
 
 const PregnancyGenetic = () => {
@@ -45,7 +45,7 @@ const PregnancyGenetic = () => {
     <ArticleLayout
       title="Genetic Conditions During Pregnancy"
       description="Common prenatal genetic conditions, screening options, and the role AI can play in making complex results easier to understand."
-      image="/images/blog/pregnancy-genetic.jpeg"
+      image="/images/blog/pregnancy-genetic.png"
       imageAlt="Genetic conditions during pregnancy"
       datePublished="2025-01-06"
       url="/blog/pregnancy-genetic"

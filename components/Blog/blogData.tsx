@@ -21,7 +21,7 @@ const BlogData: Blog[] = [
   },
   {
     id: 2,
-    mainImage: "/images/blog/pregnancy-genetic.jpeg",
+    mainImage: "/images/blog/pregnancy-genetic.png",
     title: "Genetic conditions during pregnancy",
     metadata:
       "Common prenatal genetic conditions, screening options, and the role AI can play in making complex results easier to understand.",
