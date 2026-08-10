@@ -10,8 +10,7 @@ const BlogData: Blog[] = [
   {
     id: 1,
     mainImage: "/images/blog/family-history.png",
-    title:
-      "Why Your Family Health History Matters",
+    title: "Why Your Family Health History Matters",
     metadata:
       "A clear family health history helps doctors spot inherited risks, recommend earlier screenings, and make better-informed care decisions.",
     url: "/blog/family-history",
@@ -45,8 +44,7 @@ const BlogData: Blog[] = [
   {
     id: 4,
     mainImage: "/images/blog/yogurt.jpeg",
-    title:
-      "What Research Says About Yogurt and Colorectal Cancer Risk",
+    title: "What Research Says About Yogurt and Colorectal Cancer Risk",
     metadata:
       "A long-running study found an association between regular yogurt intake and a lower risk of one type of colorectal cancer.",
     url: "/blog/cancer/colorectal-cancer-risk",
@@ -81,7 +79,8 @@ const BlogData: Blog[] = [
     id: 7,
     mainImage: "/images/blog/creatine.png",
     title: "Creatine for Older Adults: Benefits, Safety, and Dosage",
-    metadata: "What older adults should know about creatine, from muscle and brain health to dosing and safety.",
+    metadata:
+      "What older adults should know about creatine, from muscle and brain health to dosing and safety.",
     url: "/blog/health/creatine",
     categoryKey: "nutrition",
     featured: true,
@@ -103,8 +102,7 @@ const BlogData: Blog[] = [
   {
     id: 9,
     mainImage: "/images/blog/organizing-medical-records.jpg",
-    title:
-      "How to Organize Medical Records for an Aging Parent",
+    title: "How to Organize Medical Records for an Aging Parent",
     metadata:
       "A practical system for gathering, organizing, and sharing the records a caregiver needs, on paper, online, or both.",
     url: "/blog/family-history/organizing-medical-records",
@@ -115,8 +113,7 @@ const BlogData: Blog[] = [
   {
     id: 10,
     mainImage: "/images/blog/family-generation.png",
-    title:
-      "How Family Health History Can Guide Disease Prevention",
+    title: "How Family Health History Can Guide Disease Prevention",
     metadata:
       "Most Americans know family health history matters, but few have collected it. Here is how those records can guide screening and prevention.",
     url: "/blog/family-health-monitoring",
@@ -127,8 +124,7 @@ const BlogData: Blog[] = [
   {
     id: 11,
     mainImage: "/images/blog/heart-disease.png",
-    title:
-      "A DNA Test Can Estimate Risk for 8 Heart Conditions",
+    title: "A DNA Test Can Estimate Risk for 8 Heart Conditions",
     metadata:
       "A polygenic risk score estimates inherited risk for eight cardiovascular and metabolic conditions. Here is what the research means for families with a history of heart disease.",
     url: "/blog/heart/genetic-risk-score-heart-disease",
@@ -139,8 +135,7 @@ const BlogData: Blog[] = [
   {
     id: 12,
     mainImage: "/images/blog/glp-1.png",
-    title:
-      "Who Qualifies for Medicare's $50 Weight-Loss Drug Copay?",
+    title: "Who Qualifies for Medicare's $50 Weight-Loss Drug Copay?",
     metadata:
       "Medicare's GLP-1 Bridge program covers Wegovy, Zepbound, and Foundayo for some patients. Check the eligibility rules and common coverage gaps.",
     url: "/blog/health/medicare-glp1-weight-loss-coverage",
@@ -162,7 +157,8 @@ const BlogData: Blog[] = [
   {
     id: 14,
     mainImage: "/images/blog/kidney-transplant.png",
-    title: "Why Nearly Half of Kidney Transplant Candidates Never Start the Evaluation",
+    title:
+      "Why Nearly Half of Kidney Transplant Candidates Never Start the Evaluation",
     metadata:
       "A study of more than 720,000 patients found 48% referred for a kidney transplant never begin the evaluation, and only 19% reach the waitlist. Here's what determines who makes it through.",
     url: "/blog/health/kidney-transplant-evaluation-gap",
@@ -172,7 +168,7 @@ const BlogData: Blog[] = [
   },
   {
     id: 15,
-    mainImage: "/images/blog/caregiver-self-care.png",
+    mainImage: "/images/blog/cost-of-retirement.png",
     title: "The Hidden Retirement Cost of Caregiving",
     metadata:
       "Caregivers spend about $7,242 a year out of pocket, but the bigger cost is the income never earned and the retirement contributions never made.",
