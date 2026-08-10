@@ -50,6 +50,7 @@ const blogRoutes = [
   "/blog/health/medicare-glp1-weight-loss-coverage",
   "/blog/caregiving/grieving-the-years-lost-to-caregiving",
   "/blog/health/kidney-transplant-evaluation-gap",
+  "/blog/caregiving/retirement-cost-of-caregiving",
 ];
 
 // Paginated blog index pages, derived from the post count. Page 1 is /blog,

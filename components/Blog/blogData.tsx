@@ -170,6 +170,17 @@ const BlogData: Blog[] = [
     readTime: "7 min read",
     author: editorialTeam,
   },
+  {
+    id: 15,
+    mainImage: "/images/blog/caregiver-self-care.png",
+    title: "The Hidden Retirement Cost of Caregiving",
+    metadata:
+      "Caregivers spend about $7,242 a year out of pocket, but the bigger cost is the income never earned and the retirement contributions never made.",
+    url: "/blog/caregiving/retirement-cost-of-caregiving",
+    categoryKey: "aging-well",
+    readTime: "9 min read",
+    author: editorialTeam,
+  },
 ];
 
 export default BlogData;
