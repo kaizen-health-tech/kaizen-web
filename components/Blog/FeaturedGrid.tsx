@@ -85,7 +85,7 @@ const FeaturedGrid = ({ posts }: FeaturedGridProps) => {
             <Link
               href={post.url}
               key={post.id}
-              className="group flex gap-6 rounded-3xl p-7.5"
+              className="group flex flex-col gap-5 rounded-3xl p-7.5 sm:flex-row sm:gap-6"
               style={{ background: category?.tint ?? "#F5F7FC" }}
             >
               <div className="flex flex-1 flex-col gap-3">
@@ -115,12 +115,12 @@ const FeaturedGrid = ({ posts }: FeaturedGridProps) => {
                 )}
               </div>
               {post.mainImage && (
-                <div className="relative w-37.5 flex-none overflow-hidden rounded-2xl">
+                <div className="relative order-first h-45 w-full flex-none overflow-hidden rounded-2xl sm:order-none sm:h-auto sm:w-37.5">
                   <Image
                     src={post.mainImage}
                     alt={post.title}
                     fill
-                    sizes="150px"
+                    sizes="(min-width: 640px) 150px, 100vw"
                     className="object-cover object-center transition duration-300 group-hover:scale-105"
                   />
                 </div>
