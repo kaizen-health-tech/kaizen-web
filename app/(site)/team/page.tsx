@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Breadcrumbs from "@/components/Common/Breadcrumbs";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -34,6 +35,13 @@ export default function TeamPage() {
   return (
     <main className="mx-auto max-w-5xl space-y-16 px-4 py-24 sm:px-6 lg:px-8">
       <header className="space-y-6 text-center">
+        <Breadcrumbs
+          center
+          items={[
+            { name: "Home", url: "/" },
+            { name: "Our Team", url: "/team" },
+          ]}
+        />
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Our Team
         </p>

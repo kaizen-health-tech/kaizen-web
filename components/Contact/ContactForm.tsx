@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 type ContactFormProps = {
   heading: string;
@@ -9,6 +10,7 @@ type ContactFormProps = {
 };
 
 const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
+  const router = useRouter();
   const [fullName, setFullName] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [selectedOption, setSelectedOption] = React.useState(defaultTopic);
@@ -46,8 +48,8 @@ const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
       const result = await res.json();
 
       if (result.success) {
-        toast("Successfully submitted the form. Thank you!");
         initForm();
+        router.push("/thank-you");
       } else {
         toast("Error while submitting form. Please try again later.");
       }

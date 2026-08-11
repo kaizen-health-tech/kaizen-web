@@ -4,6 +4,13 @@ const nextConfig = {
   reactStrictMode: true,
   compress: true,
 
+  // Needed for app/global-not-found.tsx: the site has no app/layout.tsx —
+  // only app/(site)/layout.tsx — so there's no single root layout to
+  // compose a global 404 from otherwise.
+  experimental: {
+    globalNotFound: true,
+  },
+
   // Image optimization
   images: {
     qualities: [50, 75, 100],

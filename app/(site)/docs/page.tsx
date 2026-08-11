@@ -1,5 +1,6 @@
 import SidebarLink from "@/components/Docs/SidebarLink";
 import { Metadata } from "next";
+import Breadcrumbs from "@/components/Common/Breadcrumbs";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -25,6 +26,12 @@ export default function DocsPage() {
 
             <div className="w-full px-4 lg:w-3/4">
               <div className="blog-details blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
+                <Breadcrumbs
+                  items={[
+                    { name: "Home", url: "/" },
+                    { name: "Policies & Docs", url: "/docs" },
+                  ]}
+                />
                 <h1>Privacy Policy, Terms and Conditions</h1>
 
                 <p className="text-body-color dark:text-body-color-dark text-base">

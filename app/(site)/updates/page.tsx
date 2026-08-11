@@ -3,6 +3,7 @@ import { ReleaseCard, ReleaseExplorer } from "@/components/Updates";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import Breadcrumbs from "@/components/Common/Breadcrumbs";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -42,6 +43,13 @@ const UpdatesPage = () => {
         />
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(102,126,234,0.18),_rgba(255,255,255,0))]" />
         <div className="mx-auto mt-12 max-w-3xl px-4 text-center">
+          <Breadcrumbs
+            center
+            items={[
+              { name: "Home", url: "/" },
+              { name: "Product Updates", url: "/updates" },
+            ]}
+          />
           <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-white md:text-5xl">
             Product updates that keep your care teams ready
           </h1>

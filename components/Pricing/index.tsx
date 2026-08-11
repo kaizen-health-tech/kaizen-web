@@ -36,7 +36,7 @@ const Pricing = () => {
             <Image
               fill
               src="./images/shape/shape-dotted-light.svg"
-              alt="Dotted"
+              alt=""
               className="dark:hidden"
             />
           </div>

@@ -33,6 +33,7 @@ const NAV_LINKS = [
   { name: "Contact Us", url: absoluteUrl("/contact") },
   { name: "Careers", url: absoluteUrl("/careers") },
   { name: "Privacy Policy", url: absoluteUrl("/docs/privacy") },
+  { name: "Terms & Conditions", url: absoluteUrl("/docs/terms") },
 ];
 
 const organizationSchema = {

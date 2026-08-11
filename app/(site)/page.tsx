@@ -7,6 +7,7 @@ import BuiltWithStories from "@/components/BuiltWithStories";
 import WhyKai from "@/components/WhyKai";
 import SecurityHighlights from "@/components/SecurityHighlights";
 import Feature from "@/components/Features";
+import Testimonial from "@/components/Testimonial";
 import CTA from "@/components/CTA";
 import { MobileApplicationSchema } from "@/components/Schema";
 import { createPageMetadata } from "@/lib/seo";
@@ -45,6 +46,9 @@ export default function Home() {
       </div>
       <div className="content-visibility-auto">
         <SecurityHighlights />
+      </div>
+      <div className="content-visibility-auto">
+        <Testimonial />
       </div>
       <div className="content-visibility-auto">
         <Pricing />

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "@/components/Contact/ContactForm";
 import ContactDetails from "@/components/Contact/ContactDetails";
+import Breadcrumbs from "@/components/Common/Breadcrumbs";
 import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -126,6 +127,14 @@ const SupportPage = () => {
         />
 
         <div className="relative mx-auto mt-20 max-w-4xl px-4 text-center">
+          <Breadcrumbs
+            center
+            className="text-gray-700"
+            items={[
+              { name: "Home", url: "/" },
+              { name: "Support Center", url: "/support" },
+            ]}
+          />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Support Center
           </p>

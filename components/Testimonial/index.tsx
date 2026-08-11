@@ -1,69 +1,26 @@
-"use client";
 import SectionHeader from "../Common/SectionHeader";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-import { motion } from "framer-motion";
 import SingleTestimonial from "./SingleTestimonial";
 import { testimonialData } from "./testimonialData";
 
 const Testimonial = () => {
   return (
-    <>
-      <section className="max-w-6xl mx-auto">
-        <div className="mx-auto px-4 md:px-8 xl:px-4">
-          {/* <!-- Section Title Start --> */}
-          <div className="animate_top mx-auto text-center">
-            <SectionHeader
-              headerInfo={{
-                title: `TESTIMONIALS`,
-                subtitle: `Client’s Testimonials`,
-                description: `Here is what some of our current users are saying about us.`,
-              }}
-            />
-          </div>
-          {/* <!-- Section Title End --> */}
-        </div>
+    <section className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+      <div className="animate_top mx-auto text-center">
+        <SectionHeader
+          headerInfo={{
+            title: `TESTIMONIALS`,
+            subtitle: `What families are saying`,
+            description: `Real stories from people using Kaizen Health to coordinate care for themselves and the people they love.`,
+          }}
+        />
+      </div>
 
-        {/* <!-- Slider main container --> */}
-        <div className="swiper testimonial-01 mb-20 pb-22.5">
-          {/* <!-- Additional required wrapper --> */}
-          <Swiper
-            spaceBetween={50}
-            slidesPerView={2}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Autoplay, Pagination]}
-            breakpoints={{
-              // when window width is >= 640px
-              0: {
-                slidesPerView: 1,
-              },
-              // when window width is >= 768px
-              768: {
-                slidesPerView: 2,
-              },
-            }}
-          >
-            {testimonialData.map((review) => (
-              <SwiperSlide key={review?.id}>
-                <SingleTestimonial review={review} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
-    </>
+      <div className="mx-auto mt-15 grid max-w-4xl gap-8 pb-20 sm:grid-cols-2 xl:mt-20">
+        {testimonialData.map((review) => (
+          <SingleTestimonial key={review.id} review={review} />
+        ))}
+      </div>
+    </section>
   );
 };
 

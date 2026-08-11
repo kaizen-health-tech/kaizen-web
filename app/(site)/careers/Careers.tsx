@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Breadcrumbs from "@/components/Common/Breadcrumbs";
 
 export default function CareersClient() {
   return (
@@ -16,6 +17,14 @@ export default function CareersClient() {
         />
 
         <div className="mx-auto max-w-4xl px-4 text-center mt-20">
+          <Breadcrumbs
+            center
+            className="text-gray-700"
+            items={[
+              { name: "Home", url: "/" },
+              { name: "Careers", url: "/careers" },
+            ]}
+          />
           <h1 className="text-3xl font-semibold leading-tight text-black md:text-5xl">
             Help Redefine Family Health
           </h1>

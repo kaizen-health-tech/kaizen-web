@@ -109,6 +109,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/docs/terms" className="hover:text-primary">
+                  Terms &amp; conditions
+                </Link>
+              </li>
+              <li>
                 <Link href="/support" className="hover:text-primary">
                   Support center
                 </Link>

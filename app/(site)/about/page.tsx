@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import Breadcrumbs from "@/components/Common/Breadcrumbs";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -40,6 +41,14 @@ export default function AboutPage() {
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
         <header className="mx-auto mt-20 max-w-5xl space-y-6 px-4 text-center sm:px-6 lg:px-8">
+          <Breadcrumbs
+            center
+            className="text-slate-700"
+            items={[
+              { name: "Home", url: "/" },
+              { name: "About Kaizen Health", url: "/about" },
+            ]}
+          />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             About Kaizen Health
           </p>
