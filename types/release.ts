@@ -43,6 +43,8 @@ export type Release = {
   resources?: ReleaseResource[];
   heroImage?: string;
   heroImageAlt?: string;
+  heroImageWidth?: number;
+  heroImageHeight?: number;
   estimatedRollout?: string;
 };
 

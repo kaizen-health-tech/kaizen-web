@@ -62,8 +62,8 @@ const ReleaseDetailHero = ({ release }: ReleaseDetailHeroProps) => {
           <Image
             src={release.heroImage}
             alt={release.heroImageAlt ?? release.title}
-            width={1920}
-            height={1080}
+            width={release.heroImageWidth ?? 1920}
+            height={release.heroImageHeight ?? 1080}
             sizes="(min-width: 1280px) 1152px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 48px)"
             className="h-auto w-full"
             priority
