@@ -6,7 +6,7 @@ import { WhyWeBuiltKaizen } from "@/components/WhyWeBuiltKaizen";
 import BuiltWithStories from "@/components/BuiltWithStories";
 import WhyKai from "@/components/WhyKai";
 import SecurityHighlights from "@/components/SecurityHighlights";
-import Feature from "@/components/Features";
+import Journey from "@/components/Journey";
 import Testimonial from "@/components/Testimonial";
 import CTA from "@/components/CTA";
 import { MobileApplicationSchema } from "@/components/Schema";
@@ -41,9 +41,7 @@ export default function Home() {
       <div className="content-visibility-auto">
         <WhyKai />
       </div>
-      <div className="content-visibility-auto">
-        <Feature />
-      </div>
+      <Journey />
       <div className="content-visibility-auto">
         <SecurityHighlights />
       </div>
