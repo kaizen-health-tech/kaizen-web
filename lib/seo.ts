@@ -87,6 +87,9 @@ type PageMetadataOptions = {
   image?: string;
   keywords?: string[];
   noIndex?: boolean;
+  // Bypasses buildTitle()'s "<keyword> | Kaizen Health" pattern for pages that
+  // need a specific full title (e.g. leading with the brand name).
+  title?: string;
 };
 
 const resolveImageUrl = (image?: string) => {
@@ -105,8 +108,9 @@ export const createPageMetadata = ({
   image,
   keywords,
   noIndex = false,
+  title: titleOverride,
 }: PageMetadataOptions): Metadata => {
-  const title = buildTitle(primaryKeyword);
+  const title = titleOverride ?? buildTitle(primaryKeyword);
   const normalizedDescription = normalizeDescription(description, primaryKeyword);
   const canonical = absoluteUrl(path);
   const imageUrl = resolveImageUrl(image);

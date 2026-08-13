@@ -50,7 +50,7 @@ export default function DocsPage() {
                     </p>
                     <p className="text-body-color dark:text-body-color-dark text-base">
                       <strong>Effective Date: March 1st 2024</strong> <br />
-                      <strong>Last updated: Dec 12th, 2024</strong>
+                      <strong>Last updated: Aug 13th, 2026</strong>
                     </p>
 
                     <p className="text-body-color dark:text-body-color-dark text-base">
@@ -182,12 +182,12 @@ export default function DocsPage() {
                         services for us or on our behalf, including payment
                         processing, data analysis, email delivery, hosting
                         services, customer service, and marketing assistance. We
-                        currently do not have a Business Associate Agreement
-                        (BAA) with OpenAI or Anthropic. To ensure HIPAA
-                        compliance, we do not send any personally identifiable
-                        or protected health information (PHI) to these providers
-                        unless the user has provided explicit consent, and most
-                        sensitive data is redacted prior to processing.
+                        have signed Business Associate Agreements (BAAs) with
+                        OpenAI and Anthropic. We do not send any personally
+                        identifiable or protected health information (PHI) to
+                        these providers unless the user has provided explicit
+                        consent, and most sensitive data is redacted prior to
+                        processing.
                       </li>
                     </ul>
 
@@ -217,7 +217,8 @@ export default function DocsPage() {
                       Firebase (Google Inc), ensuring HIPAA compliance and
                       secure storage of health information. We also use AI
                       models (such as OpenAI and Anthropic) in specific app
-                      features. These systems are not under BAA, and we take
+                      features, and we have signed Business Associate
+                      Agreements (BAAs) with both providers. We take
                       precautions to ensure PHI is not shared unless authorized
                       by the user.
                     </p>

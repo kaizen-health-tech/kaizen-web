@@ -13,6 +13,7 @@ import { MobileApplicationSchema } from "@/components/Schema";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
+  title: "Kaizen Health: Building AI Agents for Family Health",
   primaryKeyword: "Family Health Management App",
   description:
     "Kaizen Health helps families organize records, share secure updates, and use AI guidance to stay prepared for appointments and care decisions together.",

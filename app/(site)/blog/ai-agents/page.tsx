@@ -200,7 +200,14 @@ const AIAgentsInFamilyHealth = () => {
         it&rsquo;s embedded in a clinical, purpose-built system. A public,
         general-purpose chatbot doesn&rsquo;t earn the same trust, even when
         it&rsquo;s the same underlying technology. Institutional context and
-        accountability are what people are responding to.
+        accountability are what people are responding to. For the deeper
+        breakdown of what this distinction means specifically for your
+        family&rsquo;s data (memory, model training, HIPAA coverage, and
+        retention), see{" "}
+        <Link href="/blog/ai-agents/agent-vs-chatbot">
+          AI agent vs. chatbot: what&rsquo;s the difference for health data
+        </Link>
+        .
       </p>
 
       <HeadingWithAnchor id="the-2026-landscape">

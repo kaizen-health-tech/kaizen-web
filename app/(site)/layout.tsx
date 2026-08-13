@@ -39,7 +39,9 @@ const NAV_LINKS = [
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": absoluteUrl("/#organization"),
   name: COMPANY_NAME,
+  alternateName: "Kaizen Health App",
   url: SITE_URL,
   logo: absoluteUrl("/images/logo/kaizen-logo.png"),
   email: CONTACT_EMAIL,
@@ -54,19 +56,31 @@ const organizationSchema = {
     url: absoluteUrl("/contact"),
     availableLanguage: "English",
   },
+  // Every profile a person could land on while trying to verify "is this the
+  // real Kaizen Health" should be listed here — this @id is what Google's
+  // entity graph resolves to when it sees these same URLs cited elsewhere
+  // (App Store, social bios, press). Keep in sync as new profiles go live
+  // (Crunchbase, G2, Product Hunt, etc. — see docs/brand-serp-seo-strategy.md).
   sameAs: [
     "https://twitter.com/kaizenhealthio",
     "https://linkedin.com/company/kaizen-health-io",
     "https://instagram.com/kaizenhealthio",
     "https://www.facebook.com/profile.php?id=61562247803536",
+    "https://apps.apple.com/us/app/kaizen-health-family/id6472772538",
+    "https://play.google.com/store/apps/details?id=io.kaizenhealth.app",
   ],
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": absoluteUrl("/#website"),
   name: COMPANY_NAME,
+  alternateName: "Kaizen Health App",
   url: SITE_URL,
+  publisher: {
+    "@id": absoluteUrl("/#organization"),
+  },
 };
 
 const navigationSchema = {

@@ -83,3 +83,4 @@ Because this August plan now covers the AI Agents in Family Health pillar page p
 2. Run `/blog brief` (or `/blog outline`) for the Aug 13, 18, and 20 pieces before their scheduled dates
 3. Run `/blog factcheck` on the Aug 18 comparison piece before publish — it makes direct claims about named competitor AI products
 4. Check the September calendar for the resequenced plan once this August plan ships
+5. GSC - what product details should a family caregiver record before reordering for an older parent?

@@ -189,6 +189,17 @@ const BlogData: Blog[] = [
     readTime: "13 min read",
     author: editorialTeam,
   },
+  {
+    id: 17,
+    mainImage: "/images/blog/ai-agent-vs-chatbot.png",
+    title: "AI Agent vs. Chatbot: What's the Difference for Health Data?",
+    metadata:
+      "Both can answer a health question. Only one can be given standing access to your family's full record. What actually changes once a health tool can act on data instead of just responding to it.",
+    url: "/blog/ai-agents/agent-vs-chatbot",
+    categoryKey: "kai-ai",
+    readTime: "8 min read",
+    author: editorialTeam,
+  },
 ];
 
 export default BlogData;
