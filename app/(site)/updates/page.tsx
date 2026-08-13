@@ -36,7 +36,7 @@ const UpdatesPage = () => {
       <section className="relative overflow-hidden py-24 pt-32 md:py-28 md:pt-36">
         <Image
           src="/images/hero/hero_blog.svg"
-          alt=""
+          alt="Decorative background gradient"
           fill
           priority
           className="absolute inset-0 -z-20 h-full w-full object-cover"

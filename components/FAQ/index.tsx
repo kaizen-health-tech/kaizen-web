@@ -28,13 +28,13 @@ const FAQ = () => {
             <Image
               fill
               src="/images/shape/shape-dotted-light.svg"
-              alt=""
+              alt="Decorative dotted pattern"
               className="dark:hidden"
             />
             <Image
               fill
               src="/images/shape/shape-dotted-light.svg"
-              alt=""
+              alt="Decorative dotted pattern"
               className="hidden dark:block"
             />
           </div>

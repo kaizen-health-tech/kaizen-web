@@ -85,7 +85,7 @@ export default function HowItWorksClient() {
         {/* Background squiggle */}
         <Image
           src="/images/whykaizen/why_we_built_bg.svg"
-          alt=""
+          alt="Decorative background pattern"
           width={1600}
           height={800}
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20"
@@ -157,7 +157,7 @@ export default function HowItWorksClient() {
                     {step.icon && (
                       <Image
                         src={step.icon as string}
-                        alt=""
+                        alt={`${step.title} icon`}
                         width={24}
                         height={24}
                         className="h-6 w-6"

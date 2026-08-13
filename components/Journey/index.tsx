@@ -75,7 +75,7 @@ const Journey = () => {
               ? "/images/shape/shape-dotted-dark.svg"
               : "/images/shape/shape-dotted-light.svg"
           }
-          alt=""
+          alt="Decorative dotted pattern"
           fill
           className="pointer-events-none select-none object-cover opacity-40 transition-opacity duration-700"
         />

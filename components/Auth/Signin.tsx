@@ -19,13 +19,13 @@ const Signin = () => {
           <div className="absolute bottom-17.5 left-0 -z-1 h-1/3 w-full">
             <Image
               src="/images/shape/shape-dotted-light.svg"
-              alt=""
+              alt="Decorative dotted pattern"
               className="dark:hidden"
               fill
             />
             <Image
               src="/images/shape/shape-dotted-dark.svg"
-              alt=""
+              alt="Decorative dotted pattern"
               className="hidden dark:block"
               fill
             />

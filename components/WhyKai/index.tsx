@@ -51,7 +51,7 @@ export default function WhyKai() {
 
         <div className="mx-auto mt-8 flex max-w-4xl items-center gap-3 rounded-full bg-white px-5 py-3 shadow-[0_12px_30px_rgba(61,39,108,0.14)] ring-1 ring-[#E7DFFB]">
           <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F1ECFF]">
-            <Image src="/images/icon/ai.svg" alt="" width={20} height={20} />
+            <Image src="/images/icon/ai.svg" alt="AI icon" width={20} height={20} />
           </div>
           <span className="text-sm font-medium text-[#6E6A7A]">
             Ask anything to Kai
@@ -109,7 +109,7 @@ export default function WhyKai() {
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl">
                 <Image
                   src={feature.image}
-                  alt=""
+                  alt={`${feature.title} icon`}
                   width={44}
                   height={44}
                   className="h-auto w-full"

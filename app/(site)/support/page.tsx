@@ -120,7 +120,7 @@ const SupportPage = () => {
       <section className="relative py-24">
         <Image
           src="/images/hero/contact-us-hero-bg.png"
-          alt=""
+          alt="Decorative background gradient"
           fill
           priority
           className="absolute inset-0 -z-10 h-full w-full object-cover"

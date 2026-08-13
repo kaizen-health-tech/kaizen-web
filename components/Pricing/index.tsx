@@ -11,7 +11,7 @@ const Pricing = () => {
           {/* Background squiggle SVG */}
           <Image
             src="/images/whykaizen/why_we_built_bg.svg" /* <- place the supplied SVG here */
-            alt=""
+            alt="Decorative background pattern"
             width={1600}
             height={1200}
             loading={"lazy"}
@@ -36,7 +36,7 @@ const Pricing = () => {
             <Image
               fill
               src="./images/shape/shape-dotted-light.svg"
-              alt=""
+              alt="Decorative dotted pattern"
               className="dark:hidden"
             />
           </div>

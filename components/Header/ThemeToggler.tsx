@@ -12,7 +12,7 @@ const ThemeToggler = () => {
     >
       <Image
         src="/images/icon/icon-moon.svg"
-        alt=""
+        alt="Dark mode icon"
         width={21}
         height={21}
         className="dark:hidden"
@@ -20,7 +20,7 @@ const ThemeToggler = () => {
 
       <Image
         src="/images/icon/icon-sun.svg"
-        alt=""
+        alt="Light mode icon"
         width={22}
         height={22}
         className="hidden dark:block"

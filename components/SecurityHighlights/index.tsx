@@ -44,7 +44,7 @@ export default function SecurityHighlights() {
         {/* Background squiggle SVG */}
         <Image
           src="/images/security-highlights/security-highlight-bg.svg" /* <- place the supplied SVG here */
-          alt=""
+          alt="Decorative background pattern"
           width={1200}
           height={600}
           loading="lazy"
@@ -64,7 +64,7 @@ export default function SecurityHighlights() {
                 {/* Icon */}
                 <Image
                   src={icon}
-                  alt=""
+                  alt={`${title} icon`}
                   width={96}
                   height={96}
                   className="mb-6 h-16 w-16 object-contain text-primary"

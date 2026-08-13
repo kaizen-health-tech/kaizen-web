@@ -9,7 +9,7 @@ export const WhyWeBuiltKaizen = () => (
     {/* Background squiggle SVG */}
     <Image
       src="/images/whykaizen/why_we_built_bg.svg" /* <- place the supplied SVG here */
-      alt=""
+      alt="Decorative background pattern"
       width={600}
       height={200}
       className="pointer-events-none absolute left-0 top-4 w-[100%] max-w-none select-none"
