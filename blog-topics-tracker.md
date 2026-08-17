@@ -16,7 +16,10 @@ Tracks trending/viral health news candidates for the Kaizen Health blog. Updated
 | 10 | Medicare begins covering GLP-1 weight-loss drugs for the first time via the GLP-1 Bridge program ($50/month copay for Wegovy, Zepbound, Foundayo), effective July 1, 2026 | 2026-07-01 | [CMS.gov](https://www.cms.gov/newsroom/press-releases/coming-soon-cms-provide-50-monthly-access-glp-1-medications-medicare-beneficiaries) / [CBS News](https://www.cbsnews.com/news/medicare-glp1-weight-loss-drug-coverage-july-1/) | Yes — [/blog/health/medicare-glp1-weight-loss-coverage](https://kaizenhealth.io/blog/health/medicare-glp1-weight-loss-coverage) |
 | 11 | Melatonin eased chronic musculoskeletal pain (low back pain, osteoarthritis, fibromyalgia) about as well as common OTC/prescription painkillers, per a review of 23 trials and 2,028 adults | 2026-07-10 | [University of Sydney](https://www.sydney.edu.au/news-opinion/news/2026/07/01/study-finds-melatonin-may-ease-chronic-pain.html) / [Healthline](https://www.healthline.com/health-news/melatonin-may-help-relieve-chronic-pain) | No |
 | 12 | Poison control calls involving semaglutide (Ozempic/Wegovy) have surged, largely tied to accidental at-home dosing mistakes as GLP-1 use has grown | 2026-07-08 | ScienceDaily / CNN Health | No |
+| 13 | Managing Diabetes as a Family: What to Track Between Doctor Visits — paid co-authored partnership with Dr. Prabhleen Kaur (physician review + original content, not a trend pickup) | 2026-08-14 | Manually added — physician partnership, not from the `daily-health-blog` scan | No — see `calendars/2026-08-editorial-calendar.md` (Physician Partnership Content section, targeting Aug 31) for the full plan |
 
 **Legend:** Complete = Yes means a full blog post has been written, humanized, and shipped as a page in `kaizen-web`.
 
-*Last refreshed: 2026-07-10 by the `daily-health-blog` scheduled task.*
+**Note on row 13:** manually added, not sourced by the automated `daily-health-blog` task — do not let a future automated refresh of this file overwrite or remove it since it won't be re-discovered by the trend scan.
+
+*Last refreshed: 2026-07-10 by the `daily-health-blog` scheduled task. Row 13 added manually 2026-08-14.*

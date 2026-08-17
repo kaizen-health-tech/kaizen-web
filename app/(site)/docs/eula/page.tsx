@@ -30,7 +30,7 @@ export default function Eula() {
                     <h1>END USER LICENSE AGREEMENT (EULA)</h1>
                     <p className="text-body-color dark:text-body-color-dark text-base">
                       <strong>Effective Date: March 1st 2024</strong> <br />
-                      <strong>Last updated: Dec 12th, 2024</strong>
+                      <strong>Last updated: August 17, 2026</strong>
                     </p>
 
                     <h3>1. ACCEPTANCE OF TERMS</h3>
@@ -90,8 +90,15 @@ export default function Eula() {
                     <h3>5. HEALTH INFORMATION AND HIPAA COMPLIANCE</h3>
                     <ul className="text-body-color dark:text-body-color-dark text-base">
                       <li>
-                        The App complies with the Health Insurance Portability
-                        and Accountability Act (HIPAA)
+                        We apply safeguards aligned with the Health Insurance
+                        Portability and Accountability Act (HIPAA) to health
+                        information. Section 14 of our{" "}
+                        <a href={"https://kaizenhealth.io/docs/privacy"}>
+                          Privacy Policy
+                        </a>{" "}
+                        explains when HIPAA does and does not apply to a
+                        direct-to-consumer service like ours, and which consumer
+                        health privacy laws protect your data instead.
                       </li>
                       <li>
                         You acknowledge that any health information you provide
@@ -186,8 +193,15 @@ export default function Eula() {
                     <h3>9. THIRD-PARTY SERVICES</h3>
                     <ul className="text-body-color dark:text-body-color-dark text-base">
                       <li>
-                        The App integrates with Google Cloud and AWS backend
-                        services
+                        The App runs on Amazon Web Services, Google Cloud, and
+                        Firebase backend services, and integrates with
+                        third-party AI providers, email delivery, analytics,
+                        error monitoring, app store billing, and Apple Health
+                        and Google Health Connect. Each is named in our{" "}
+                        <a href={"https://kaizenhealth.io/docs/privacy"}>
+                          Privacy Policy
+                        </a>
+                        .
                       </li>
                       <li>
                         Your use of third-party services is subject to their

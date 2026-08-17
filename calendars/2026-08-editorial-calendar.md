@@ -17,8 +17,8 @@ Three posts in nine days is well above the strategy's 2/week target — the forw
 ### Week 2: Aug 10-16
 | Day | Type | Title | Template | Cluster | Target Keyword | Status |
 |-----|------|-------|----------|---------|---------------|--------|
-| Tue Aug 11 | New | AI Agents in Family Health: The Complete Guide | pillar-page | AI Agents in Family Health | ai agents in healthcare | Brief needed — highest priority, gates cluster internal linking |
-| Thu Aug 13 | New | AI Agent vs. Chatbot: What's the Difference for Health Data? | faq-knowledge | AI Agents in Family Health | ai agent vs chatbot healthcare | Brief needed |
+| Tue Aug 11 | New | AI Agents in Family Health: The Complete Guide | pillar-page | AI Agents in Family Health | ai agents in healthcare | Live — shipped Aug 9, ahead of schedule (`/blog/ai-agents`) |
+| Thu Aug 13 | New | AI Agent vs. Chatbot: What's the Difference for Health Data? | faq-knowledge | AI Agents in Family Health | ai agent vs chatbot healthcare | Live (`/blog/ai-agents/agent-vs-chatbot`) |
 
 ### Week 3: Aug 17-23
 | Day | Type | Title | Template | Cluster | Target Keyword | Status |
@@ -37,20 +37,21 @@ National Senior Citizens Day is Fri Aug 21 — the Aug 20 post lands the day bef
 ### Week 5: Aug 31
 | Day | Type | Title | Template | Cluster | Target Keyword | Status |
 |-----|------|-------|----------|---------|---------------|--------|
-| Mon Aug 31 | — | No post scheduled | - | - | - | Buffer day / spillover if any brief above slips |
+| Mon Aug 31 | New — Physician Partnership | Managing Diabetes as a Family: What to Track Between Doctor Visits | how-to-guide (checklist-style, see partnership plan below) | Family Medical Record Organization (bonus spoke, cross-links Sep 15 pillar) | what to track diabetes between doctor visits | Brief needed — added 2026-08-14, see Physician Partnership Content section below. Repurposes the buffer day; if the brief/draft/review cycle slips, this is the piece most likely to move, not the buffer itself |
 
 ## Content Mix This Month (Aug 1-31, published + planned)
-- New posts: 4 planned (plus 3 already published Aug 1-9) = 7 total for the month
+- New posts: 5 planned (plus 3 already published Aug 1-9) = 8 total for the month — the +1 vs. the original 4-post plan is the Aug 31 physician-partnership piece, added 2026-08-14
 - Freshness updates: 1
 - Repurposed content: 1
-- Content types: 1 pillar-page, 1 faq-knowledge, 1 comparison, 1 data-research (plus whatever templates the 3 already-published pieces used)
+- Content types: 1 pillar-page, 1 faq-knowledge, 1 comparison, 1 data-research, 1 how-to-guide (partnership piece) (plus whatever templates the 3 already-published pieces used)
+- This keeps Tue/Thu cadence intact for Weeks 2-4; the partnership piece uses the previously-unscheduled Aug 31 buffer day rather than adding a third weekly post, so it does not raise the quality-gate risk the Aug 1-9 pace note above was guarding against
 
 ## Topic Cluster Progress (as of Aug 31 target state)
 | Cluster | Pillar | Spokes Published | Spokes Planned | Coverage |
 |---------|--------|-------------------|-----------------|----------|
 | AI Agents in Family Health | Publishing Aug 11 | 0/8 → 3/8 by Aug 20 | 5 remaining, rolls to September | 0% → ~44% by month end |
 | Caregiving Financial & Emotional Reality | Not started | 2/6 (`grieving-the-years-lost-to-caregiving`, `retirement-cost-of-caregiving`, both published this month) | 4 remaining | 33% |
-| Family Medical Record Organization | Not started | 5/7 (no change this month) | Pillar planned for September | 71% |
+| Family Medical Record Organization | Not started | 5/7 (no change from cluster spokes; +1 bonus piece Aug 31, not counted against the original 7-spoke plan) | Pillar planned for September | 71% (78% incl. bonus piece) |
 | Genetic & Hereditary Risk Awareness | Not started | 4/4 (no change this month) | Pillar planned for September | 100% spokes, pillar pending |
 | Health Topics (uncategorized) | N/A | +1 this month (kidney-transplant, Aug 6); Medicare GLP-1 refreshed Aug 25 | Not yet mapped to a pillar | Decision deferred to Q4 planning |
 
@@ -70,9 +71,39 @@ National Senior Citizens Day is Fri Aug 21 — the Aug 20 post lands the day bef
 | Is It Safe to Share Family Medical Records with AI? | Aug 20 | Same day, reference National Senior Citizens Day (Aug 21) | +2-3 days | Next weekly batch | — |
 | Medicare GLP-1 refresh | Aug 25 | Same day | — | Next weekly batch | — |
 | Retirement-cost-of-caregiving repurpose | Aug 27 | Carousel post | — | Include in batch | — |
+| Managing Diabetes as a Family (Dr. Kaur partnership) | Aug 31 | Same day, tag Dr. Kaur, ask her to reshare to her own network (part of getting partnership value) | Skip — avoid unmoderated medical-advice threads under a named physician's byline | Next weekly batch | Optional: short clip of Dr. Kaur answering one tracking question, if she's willing during the review call |
 
 ## Seasonal Hooks
 - **National Senior Citizens Day — Fri Aug 21, 2026**: the Aug 20 AI-safety post is timed to land the day before; reference the observance directly in distribution copy rather than in the post itself.
+- No confirmed August/September diabetes-specific observance day was identified for this piece — do not time distribution copy to one without verifying a source first. American Diabetes Month (November) is a plausible future repurposing hook for this same piece once it's live; revisit in Q4 planning rather than delaying this publish.
+
+## Physician Partnership Content: Dr. Prabhleen Kaur — "Managing Diabetes as a Family"
+
+Added to this calendar 2026-08-14. This is the first paid-partnership piece on the calendar, so it's tracked separately from the standard editorial pipeline above — it has different inputs (a named co-author with credentials, review turnaround outside editorial's control, a paid relationship requiring disclosure) and different value criteria (did the partnership actually deliver visible physician participation, not just a byline).
+
+**Audience scope, confirmed 2026-08-14**: this piece targets readers in India (India-domestic), not the diaspora and not a shift for the rest of the calendar — the rest of this month's and September's plan stays US-centric as written above. Research, statistics (ICMR-INDIAB, RSSDI), diet references, and currency (INR) are India-specific for this post only. Full detail in `briefs/managing-diabetes-as-a-family-dr-kaur-brief.md`, which also flags an added compliance item: India's National Medical Commission professional-conduct rules constrain how a registered physician can be named in paid commercial content — confirm the format is permissible with Dr. Kaur and legal before drafting, on top of the standard disclosure requirement below.
+
+### Why this cluster placement
+The topic doesn't fit an existing content pillar as a genetic-risk or AI-agent piece — it's practical, ongoing chronic-disease tracking for a caregiving family. The closest strategic fit is **Family Medical Record Organization** (organizing/tracking what matters between appointments) rather than **Genetic & Hereditary Risk Awareness**, where the existing `diabetes-magnesium-vitamin-d` post already lives. Cross-link both: the existing post for readers curious about risk factors, and the Sep 15 Family Medical Record Organization pillar once it ships (add the cross-link retroactively to that pillar's launch, or forward-reference it here if this piece publishes first).
+
+### Making sure the partnership is worth the spend
+A paid collaboration that reduces to one pull-quote from Dr. Kaur under an editorial byline under-delivers on what's being paid for. The brief for this piece (run `/blog brief` next) should build in, not bolt on:
+
+| Element | Placement | Purpose |
+|---------|-----------|---------|
+| Co-author byline | Title block: "By Kaizen Health Editorial Team, reviewed and co-authored by Dr. Prabhleen Kaur" + her credentials/specialty | E-E-A-T trust signal; makes the paid relationship visible in the credit, not just a footer disclosure |
+| Physician bio block | After intro, before first H2 | Full bio, headshot, practice/credentials — this is deliverable content she should approve, not editorial-written filler |
+| 3-4 "Dr. Kaur's Take" pull-quote callouts | One per major tracking category (e.g., glucose logs, medication timing, symptom/red-flag tracking, diet notes) | Reserved space, left as a placeholder in the draft editorial sends her — not pre-written and rubber-stamped |
+| Closing physician perspective section (200-300 words) | Before the conclusion, own H2 ("A Physician's Perspective on Family Diabetes Tracking" or her preferred framing) | Meaningfully hers — written by her or from an interview, not paraphrased by editorial |
+| 2-3 FAQ answers in her voice | Within the FAQ section | Direct attribution ("Dr. Kaur says...") on the questions families most often ask at appointments |
+| Paid-partnership disclosure | Top of post, above the fold | Required — this is a compensated relationship; disclose plainly (e.g., "This article is a paid partnership with Dr. Prabhleen Kaur") rather than only in a byline credential line |
+
+### Process and open items
+1. Editorial drafts the structural skeleton and all non-physician content now (research, tracking-category sections, general guidance) — do not wait on her for the parts that don't need her clinical voice
+2. Send the draft to Dr. Kaur with the reserved callouts/sections clearly marked as blank/TODO, not filled in with placeholder text she has to overwrite
+3. Confirm with her (or Kaizen's legal/partnerships contact) the disclosure language and whether her employer/practice requires its own review before she can be quoted publicly
+4. Get her final bio, headshot, and credentials in writing for the byline and Person schema
+5. Track deliverable status here until publish — update the Aug 31 row's Status column as the brief, draft, and her review move through each stage
 
 ## Reconciliation Note: September Calendar Revised
 
@@ -84,3 +115,6 @@ Because this August plan now covers the AI Agents in Family Health pillar page p
 3. Run `/blog factcheck` on the Aug 18 comparison piece before publish — it makes direct claims about named competitor AI products
 4. Check the September calendar for the resequenced plan once this August plan ships
 5. GSC - what product details should a family caregiver record before reordering for an older parent?
+6. Run `/blog brief` for the Aug 31 Dr. Kaur partnership piece — build the reserved-space structure from the Physician Partnership Content section above directly into the brief
+7. Confirm paid-partnership disclosure language and any practice/employer review requirement with Dr. Kaur before sending her the draft
+8. Collect Dr. Kaur's bio, headshot, and credentials for the byline and Person schema
