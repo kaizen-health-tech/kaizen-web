@@ -2,8 +2,7 @@ import { Metadata } from "next";
 import Hero from "@/components/Hero";
 import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
-import { WhyWeBuiltKaizen } from "@/components/WhyWeBuiltKaizen";
-import BuiltWithStories from "@/components/BuiltWithStories";
+import RecordsValue from "@/components/RecordsValue";
 import WhyKai from "@/components/WhyKai";
 import SecurityHighlights from "@/components/SecurityHighlights";
 import Journey from "@/components/Journey";
@@ -13,10 +12,10 @@ import { MobileApplicationSchema } from "@/components/Schema";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Kaizen Health: Building AI Agents for Family Health",
+  title: "Organize Your Family's Medical Records | Kaizen Health",
   primaryKeyword: "Family Health Management App",
   description:
-    "Kaizen Health helps families organize records, share secure updates, and use AI guidance to stay prepared for appointments and care decisions together.",
+    "Keep family medical records organized, share selected information, and ask Kai questions before appointments with Kaizen Health.",
   path: "/",
   image: "/images/open-graph/home.png",
   keywords: [
@@ -34,10 +33,7 @@ export default function Home() {
       <MobileApplicationSchema />
       <Hero />
       <div className="content-visibility-auto">
-        <WhyWeBuiltKaizen />
-      </div>
-      <div className="content-visibility-auto">
-        <BuiltWithStories />
+        <RecordsValue />
       </div>
       <div className="content-visibility-auto">
         <WhyKai />

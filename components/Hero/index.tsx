@@ -9,10 +9,22 @@ const androidStoreUrl = "https://bit.ly/kz-android-store";
 const appleStoreUrl = "https://bit.ly/kz-app-store";
 
 const heroVideos = [
-  { src: "/videos/hero-background-5.mp4", poster: "/videos/hero-background-5-poster.jpg" },
-  { src: "/videos/hero-background-2.mp4", poster: "/videos/hero-background-2-poster.jpg" },
-  { src: "/videos/hero-background-6.mp4", poster: "/videos/hero-background-6-poster.jpg" },
-  { src: "/videos/hero-background-4.mp4", poster: "/videos/hero-background-4-poster.jpg" },
+  {
+    src: "/videos/hero-background-5.mp4",
+    poster: "/videos/hero-background-5-poster.jpg",
+  },
+  {
+    src: "/videos/hero-background-2.mp4",
+    poster: "/videos/hero-background-2-poster.jpg",
+  },
+  {
+    src: "/videos/hero-background-6.mp4",
+    poster: "/videos/hero-background-6-poster.jpg",
+  },
+  {
+    src: "/videos/hero-background-4.mp4",
+    poster: "/videos/hero-background-4-poster.jpg",
+  },
 ];
 
 /**
@@ -111,7 +123,9 @@ const Hero = () => {
           </h1>
 
           <p className="mx-auto mt-8 max-w-2xl text-xl leading-8 text-white md:text-2xl md:leading-9 lg:mx-0 lg:max-w-[560px] lg:text-xl lg:leading-8">
-            Building AI agents that monitor and maintain your family health
+            Upload medical records once. Kai organizes them by person,
+            summarizes the details, and helps your family find what they need
+            before the next appointment.
           </p>
 
           {/*
