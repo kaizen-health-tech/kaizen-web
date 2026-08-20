@@ -136,10 +136,12 @@ export const metadata: Metadata = {
     site: "@kaizenhealthio",
     creator: "@kaizenhealthio",
   },
-  icons: {
-    icon: "/images/favicon.ico",
-    apple: "/apple-icon.png",
-  },
+  // No `icons` here on purpose: app/favicon.ico and app/apple-icon.png are
+  // Next.js file conventions that already emit exactly one <link> each.
+  // Declaring them again here added a second, competing rel="icon" pointing at
+  // /images/favicon.ico. Google Search honors only one favicon per hostname and
+  // falls back to heuristics when a page declares several, so keep this to a
+  // single unambiguous declaration per rel.
 };
 
 export const viewport: Viewport = {
@@ -156,7 +158,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
