@@ -79,9 +79,9 @@ const SupportingAgingParents = () => {
 
       <KeyTakeaways
         items={[
-          "Falls are the leading cause of serious injury in older adults — a home safety walkthrough (lighting, grab bars, loose rugs) is one of the highest-leverage changes you can make.",
+          "Falls are the leading cause of serious injury in older adults. A home safety walkthrough (lighting, grab bars, loose rugs) is one of the highest-leverage changes you can make.",
           "Arrange legal documents (advance directive, financial POA, HIPAA release) while your parent can still participate in the planning, not after a crisis forces it.",
-          "Caregiver burnout is common and not a sign of failing — regular respite breaks and your own health checkups are part of sustainable caregiving, not optional extras.",
+          "Caregiver burnout is common and not a sign of failing. Regular respite breaks and your own health checkups are part of sustainable caregiving, not optional extras.",
           "You don't have to provide everything yourself: in-home care, adult day programs, transportation services, and caregiver support groups exist specifically to share the load.",
         ]}
       />
@@ -114,9 +114,9 @@ const SupportingAgingParents = () => {
         care preferences, legal documents, and safety, before a crisis
         forces the decision. It isn&apos;t a clinical guideline or a fixed
         deadline, and the right age to start is whenever a parent shows
-        early signs of needing support. The value is in the mindset: raise
-        these topics while your parent can still weigh in, not after a fall
-        or diagnosis makes the choice for you.
+        early signs of needing support. Raise these topics while your parent
+        can still weigh in, not after a fall or diagnosis makes the choice
+        for you.
       </p>
       <p>
         AARP&apos;s guidance on{" "}
@@ -155,8 +155,8 @@ const SupportingAgingParents = () => {
         Mobility devices like canes and walkers provide balance support,
         while rollators offer rest breaks during walks. Wheelchairs and
         motorized scooters help with longer distances. Bed assist rails and
-        lift chairs aid in getting in and out of bed safely, protecting both
-        caregiver and parent from injury during transfers.
+        lift chairs help your parent get in and out of bed safely,
+        protecting both of you from injury during transfers.
       </p>
       <h3>Medication management</h3>
       <p>
@@ -261,16 +261,10 @@ const SupportingAgingParents = () => {
               home safer for those using walkers or wheelchairs.
             </li>
             <li>
-              <span className="font-semibold">
-                Home security and emergency systems:
-              </span>{" "}
-              Check that doors and windows have reliable locks. For added
-              peace of mind, you might install a basic security system or
-              medical alert system. Personal emergency response systems are
-              wearable devices (pendants or wristbands) that let your parent
-              call for help at the push of a button, and many can
-              automatically detect falls. These systems are especially
-              important if your parent lives alone or spends time alone.
+              Check that doors and windows lock reliably, and if your
+              parent lives alone, look into a wearable medical alert
+              system. Many can detect a fall automatically and call for
+              help even if your parent can&apos;t press the button.
             </li>
           </ul>
         </div>
@@ -319,16 +313,11 @@ const SupportingAgingParents = () => {
               <span className="font-semibold">
                 Take regular breaks (respite care):
               </span>{" "}
-              Taking time off is crucial for recharging. Seek out respite
-              care options so you can have a break from caregiving duties.
-              This might mean asking a relative to stay with your parent for
-              an afternoon, hiring a qualified caregiver occasionally, or
-              using adult day care programs where your parent can socialize
-              safely while you get time for yourself. Taking a break can be
-              one of the best things you do for both yourself and your loved
-              one, preventing exhaustion and resentment. Even a few hours a
-              week to run errands, enjoy a hobby, or just rest can make a
-              big difference.
+              Ask a relative to cover an afternoon, hire a caregiver
+              occasionally, or use an adult day program so your parent can
+              socialize while you get time for yourself. Even a few hours a
+              week to run errands or just rest can prevent the exhaustion
+              and resentment that build up when you never get a break.
             </li>
             <li>
               <span className="font-semibold">
@@ -495,17 +484,11 @@ const SupportingAgingParents = () => {
           these periodically.
         </li>
         <li>
-          <span className="font-semibold">Other Documents:</span> Depending
-          on your parent&apos;s situation, there may be additional paperwork to
-          prepare. For example, if they have specific end-of-life treatment
-          preferences, a Do Not Resuscitate (DNR) order or Physician Orders
-          for Life-Sustaining Treatment (POLST) form (signed by a doctor)
-          might be appropriate. If your parent has a very complex medical
-          situation, a geriatric care plan or case management notes might be
-          useful to have compiled. Additionally, ensure you know the
-          location of other vital records (birth certificate, marriage
-          certificate, military discharge papers if a veteran, property
-          titles) as these might be needed for benefits or services.
+          A few documents apply only in specific situations: a DNR or POLST
+          form if your parent has end-of-life treatment preferences, a
+          geriatric care plan for complex medical needs, and vital records
+          like a birth certificate, marriage certificate, or military
+          discharge papers, which some benefits and services require.
         </li>
       </ul>
 
@@ -652,18 +635,11 @@ const SupportingAgingParents = () => {
           illness, not just end-of-life.
         </li>
         <li>
-          <span className="font-semibold">
-            Community Social and Wellness Programs:
-          </span>{" "}
-          Combat isolation and keep your parent active by tapping into
-          community-based programs. Senior centers often offer exercise
-          classes, hobby groups, holiday celebrations, and educational
-          workshops for older adults. There may be friendly visitor programs
-          or telephone reassurance programs where volunteers regularly check
-          in on homebound seniors. Libraries, faith communities, and local
-          nonprofits might offer free classes or social gatherings for
-          seniors. These outlets give your parent something to look forward
-          to and lighten your load as they engage with others.
+          Senior centers, libraries, and faith communities often run
+          exercise classes, hobby groups, and social gatherings that keep
+          your parent active and give them something to look forward to.
+          Volunteer-run friendly visitor or telephone reassurance programs
+          are worth looking into if your parent is mostly homebound.
         </li>
         <li>
           <span className="font-semibold">
@@ -689,8 +665,8 @@ const SupportingAgingParents = () => {
         .
       </p>
       <p>
-        AI tools are also becoming part of this support landscape, and it is
-        worth knowing what you are actually using. Our guide to{" "}
+        AI tools are becoming part of this support landscape too. Know what
+        you&apos;re actually using. Our guide to{" "}
         <Link href="/blog/ai-agents">AI agents in family health</Link> covers
         what these tools are, how to check whether one is safe to use with a
         parent&rsquo;s records, and where they genuinely reduce a
