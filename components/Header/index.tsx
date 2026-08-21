@@ -6,14 +6,92 @@ import { useEffect, useState } from "react";
 
 import menuData from "./menuData";
 
+const MobileNavigation = () => (
+  <details className="group relative xl:hidden">
+    <summary
+      aria-label="Open navigation"
+      className="flex h-11 w-11 list-none items-center justify-center rounded-md text-black transition-colors hover:bg-black/5 [&::-webkit-details-marker]:hidden dark:text-white dark:hover:bg-white/10"
+    >
+      <svg
+        aria-hidden="true"
+        className="h-7 w-7 group-open:hidden"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.25"
+      >
+        <path d="M4 6h16" />
+        <path d="M4 12h16" />
+        <path d="M4 18h16" />
+      </svg>
+      <svg
+        aria-hidden="true"
+        className="hidden h-7 w-7 group-open:block"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.25"
+      >
+        <path d="M6 6l12 12" />
+        <path d="M18 6 6 18" />
+      </svg>
+    </summary>
+
+    <div className="absolute right-0 top-full z-50 mt-3 max-h-[calc(100svh-var(--site-header-height,4.5rem)-1rem)] w-[calc(100vw-2rem)] overflow-y-auto rounded-md bg-white p-6 shadow-solid-5 dark:bg-blacksection">
+      <nav aria-label="Mobile navigation">
+        <ul className="flex flex-col gap-5">
+          {menuData.map((menuItem) =>
+            menuItem.submenu ? (
+              <li key={menuItem.id}>
+                <details className="group/more">
+                  <summary className="flex list-none items-center justify-between gap-3 [&::-webkit-details-marker]:hidden">
+                    <span>{menuItem.title}</span>
+                    <svg
+                      aria-hidden="true"
+                      className="h-3 w-3 fill-waterloo transition-transform group-open/more:rotate-180"
+                      viewBox="0 0 512 512"
+                    >
+                      <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                    </svg>
+                  </summary>
+                  <ul className="mt-4 flex flex-col gap-4 border-l border-cloud pl-4">
+                    {menuItem.submenu.map((item) => (
+                      <li key={item.id}>
+                        <Link href={item.path || "#"}>{item.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            ) : (
+              <li key={menuItem.id}>
+                <Link href={menuItem.path || "#"}>{menuItem.title}</Link>
+              </li>
+            ),
+          )}
+        </ul>
+      </nav>
+
+      <Link
+        href="/chat"
+        className="mt-6 flex w-full items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+      >
+        Try Kai for free
+      </Link>
+    </div>
+  </details>
+);
+
 const Header = () => {
-  const [navigationOpen, setNavigationOpen] = useState(false);
   const [dropdownToggler, setDropdownToggler] = useState(false);
   // The desktop dropdown opens on CSS :hover/:focus-within, which stays
   // active after a submenu link is clicked (the cursor hasn't moved). This
   // forces it closed until the pointer actually leaves the menu item.
   const [dropdownForceClosed, setDropdownForceClosed] = useState(false);
-  const [stickyMenu, setStickyMenu] = useState(false);
   // Dynamic download link based on user‑agent
   const [downloadHref, setDownloadHref] = useState<string>("#cta");
 
@@ -23,30 +101,6 @@ const Header = () => {
     if (!path) return false;
     return path === "/" ? pathUrl === "/" : pathUrl.startsWith(path);
   };
-
-  // Sticky menu with throttled scroll handler
-  useEffect(() => {
-    let ticking = false;
-
-    const handleStickyMenu = () => {
-      if (window.scrollY >= 80) {
-        setStickyMenu(true);
-      } else {
-        setStickyMenu(false);
-      }
-      ticking = false;
-    };
-
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(handleStickyMenu);
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -61,14 +115,34 @@ const Header = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const header = document.querySelector<HTMLElement>("[data-site-header]");
+    if (!header || typeof ResizeObserver === "undefined") return;
+
+    const updateHeaderHeight = () => {
+      document.documentElement.style.setProperty(
+        "--site-header-height",
+        `${header.getBoundingClientRect().height}px`,
+      );
+    };
+
+    updateHeaderHeight();
+    const observer = new ResizeObserver(updateHeaderHeight);
+    observer.observe(header);
+
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty("--site-header-height");
+    };
+  }, []);
+
   return (
     <header
-      className={`fixed left-0 top-0 z-99999 w-full py-2 ${
-        stickyMenu ? "transition duration-100 dark:bg-black" : ""
-      }`}
+      data-site-header
+      className="absolute left-0 top-0 z-99999 w-full bg-white py-2 shadow-lg dark:bg-black"
     >
-      <div className="bg-white relative mx-auto max-w-c-1390 items-center justify-between p-2 rounded-lg px-4 md:px-8 xl:flex shadow-lg">
-        <div className="flex w-full items-center justify-between xl:w-1/4">
+      <div className="relative mx-auto flex w-full max-w-c-1390 flex-wrap items-center justify-between px-4 md:px-8 xl:flex-nowrap xl:px-0">
+        <div className="flex w-full shrink-0 items-center justify-between xl:w-1/4">
           <Link href="/" aria-label="Kaizen Health home">
             <Image
               src="/images/logo/kaizen-logo.svg"
@@ -79,55 +153,12 @@ const Header = () => {
             />
           </Link>
 
-          {/* <!-- Hamburger Toggle BTN --> */}
-          <button
-            aria-label="hamburger Toggler"
-            className="block xl:hidden"
-            onClick={() => setNavigationOpen(!navigationOpen)}
-          >
-            <span className="relative block h-5.5 w-5.5 cursor-pointer">
-              <span className="absolute right-0 block h-full w-full">
-                <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!w-full delay-300" : "w-0"
-                  }`}
-                ></span>
-                <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "delay-400 !w-full" : "w-0"
-                  }`}
-                ></span>
-                <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!w-full delay-500" : "w-0"
-                  }`}
-                ></span>
-              </span>
-              <span className="du-block absolute right-0 h-full w-full rotate-45">
-                <span
-                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!h-0 delay-[0]" : "h-full"
-                  }`}
-                ></span>
-                <span
-                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!h-0 delay-200" : "h-0.5"
-                  }`}
-                ></span>
-              </span>
-            </span>
-          </button>
-          {/* <!-- Hamburger Toggle BTN --> */}
+          <MobileNavigation />
         </div>
 
         {/* Nav Menu Start   */}
-        <div
-          className={`invisible h-0 w-full items-center justify-end xl:visible xl:flex xl:h-auto xl:w-full ${
-            navigationOpen &&
-            "navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
-          }`}
-        >
-          <nav className="mr-5">
+        <div className="invisible hidden h-0 w-full items-center justify-end xl:visible xl:flex xl:h-auto xl:w-full">
+          <nav className="mr-0 xl:mr-5">
             <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
               {menuData.map((menuItem, key) => (
                 <li
@@ -163,7 +194,9 @@ const Header = () => {
 
                       <ul
                         className={`dropdown ${dropdownToggler ? "flex" : ""} ${
-                          dropdownForceClosed ? "xl:!invisible xl:!opacity-0" : ""
+                          dropdownForceClosed
+                            ? "xl:!invisible xl:!opacity-0"
+                            : ""
                         }`}
                       >
                         {menuItem.submenu.map((item, key) => (
@@ -171,7 +204,6 @@ const Header = () => {
                             <Link
                               href={item.path || "#"}
                               onClick={(e) => {
-                                setNavigationOpen(false);
                                 setDropdownToggler(false);
                                 setDropdownForceClosed(true);
                                 e.currentTarget.blur();
@@ -191,7 +223,6 @@ const Header = () => {
                   ) : (
                     <Link
                       href={`${menuItem.path}`}
-                      onClick={() => setNavigationOpen(false)}
                       className={
                         isActive(menuItem.path)
                           ? "text-primary hover:text-primary"
@@ -209,7 +240,6 @@ const Header = () => {
           <div className="flex items-center justify-end">
             <Link
               href={"/chat"}
-              onClick={() => setNavigationOpen(false)}
               className="w-full xl:w-auto mt-4 xl:mt-0 flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
             >
               Try Kai for free

@@ -1,12 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValueEvent,
-  useScroll,
-} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ReactElement, useEffect, useRef, useState } from "react";
 import journeyData from "./journeyData";
 import {
@@ -32,18 +27,50 @@ const total = journeyData.length;
 
 const Journey = () => {
   const containerRef = useRef<HTMLElement>(null);
+  const frameRef = useRef<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [storeHref, setStoreHref] = useState(appleStoreUrl);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+  useEffect(() => {
+    const updateProgress = () => {
+      if (frameRef.current !== null) return;
 
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const next = Math.min(total - 1, Math.max(0, Math.floor(v * total)));
-    setActiveIndex((prev) => (prev === next ? prev : next));
-  });
+      frameRef.current = window.requestAnimationFrame(() => {
+        frameRef.current = null;
+
+        const section = containerRef.current;
+        if (!section) return;
+
+        const viewportHeight = window.innerHeight;
+        const scrollDistance = Math.max(
+          section.offsetHeight - viewportHeight,
+          1,
+        );
+        const progress = Math.min(
+          1,
+          Math.max(0, -section.getBoundingClientRect().top / scrollDistance),
+        );
+        const next = Math.min(total - 1, Math.floor(progress * total));
+
+        setScrollProgress(progress);
+        setActiveIndex((prev) => (prev === next ? prev : next));
+      });
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    window.visualViewport?.addEventListener("resize", updateProgress);
+
+    return () => {
+      window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
+      window.visualViewport?.removeEventListener("resize", updateProgress);
+      if (frameRef.current !== null)
+        window.cancelAnimationFrame(frameRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     const ua = navigator.userAgent || navigator.vendor;
@@ -59,13 +86,13 @@ const Journey = () => {
       ref={containerRef}
       id="features"
       className="relative"
-      style={{ height: `${total * 100}vh` }}
+      style={{ height: `${total * 100}svh` }}
     >
       <div
-        className={`sticky top-0 flex h-screen items-center overflow-hidden transition-colors duration-700 ${
+        className={`sticky top-0 flex h-[100svh] items-center overflow-hidden transition-colors duration-700 ${
           isDark
             ? "bg-gradient-to-br from-[#281B55] via-[#3B2470] to-[#5338A0]"
-            : "bg-gradient-to-br from-[#F5F7FC] via-[#F5F7FC] to-[#EDEBFB]"
+            : "bg-[radial-gradient(circle_at_8%_18%,rgba(199,214,236,0.58),transparent_27%),radial-gradient(circle_at_92%_82%,rgba(238,207,202,0.48),transparent_29%)] bg-[#EEEAF4]"
         }`}
       >
         {/* dotted backdrop */}
@@ -77,7 +104,7 @@ const Journey = () => {
           }
           alt="Decorative dotted pattern"
           fill
-          className="pointer-events-none select-none object-cover opacity-40 transition-opacity duration-700"
+          className={`pointer-events-none select-none object-cover transition-opacity duration-700 ${isDark ? "opacity-30" : "opacity-10"}`}
         />
         {/* glow orbs */}
         <div
@@ -90,9 +117,9 @@ const Journey = () => {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-c-1315 px-4 md:px-8 xl:px-0">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="grid items-center gap-4 sm:gap-8 lg:grid-cols-2 lg:gap-12">
             <div className="max-w-xl">
-              <AnimatePresence mode="wait">
+              <AnimatePresence initial={false} mode="wait">
                 <motion.div
                   key={active.id}
                   initial={{ opacity: 0, y: 16 }}
@@ -109,14 +136,14 @@ const Journey = () => {
                   </span>
 
                   <h2
-                    className={`mt-3 text-3xl font-bold leading-[1.15] sm:text-4xl md:text-5xl ${
+                    className={`mt-3 text-2xl font-bold leading-[1.12] sm:text-4xl md:text-5xl ${
                       isDark ? "text-white" : "text-[#17161D]"
                     }`}
                   >
                     {active.title}
                   </h2>
                   <p
-                    className={`mt-4 text-base sm:text-lg ${
+                    className={`mt-3 text-sm leading-6 sm:mt-4 sm:text-lg sm:leading-normal ${
                       isDark ? "text-white/70" : "text-[#5C5567]"
                     }`}
                   >
@@ -142,9 +169,9 @@ const Journey = () => {
               </AnimatePresence>
 
               {/* progress */}
-              <div className="mt-10 flex items-center gap-4 md:mt-14">
+              <div className="mt-4 flex items-center gap-3 sm:mt-10 sm:gap-4 md:mt-14">
                 <div
-                  className={`relative h-1.5 w-40 overflow-hidden rounded-full ${
+                  className={`relative h-1.5 w-28 overflow-hidden rounded-full sm:w-40 ${
                     isDark ? "bg-white/20" : "bg-[#E3E3FB]"
                   }`}
                 >
@@ -152,7 +179,7 @@ const Journey = () => {
                     className={`absolute inset-y-0 left-0 origin-left rounded-full ${
                       isDark ? "bg-aquamarine" : "bg-violet"
                     }`}
-                    style={{ scaleX: scrollYProgress, width: "100%" }}
+                    style={{ scaleX: scrollProgress, width: "100%" }}
                   />
                 </div>
                 <span
@@ -165,8 +192,8 @@ const Journey = () => {
               </div>
             </div>
 
-            <div className="relative min-h-[320px]">
-              <AnimatePresence mode="wait">
+            <div className="relative min-h-[230px] sm:min-h-[280px] lg:min-h-[320px]">
+              <AnimatePresence initial={false} mode="wait">
                 <motion.div
                   key={active.id}
                   initial={{ opacity: 0, scale: 0.96 }}

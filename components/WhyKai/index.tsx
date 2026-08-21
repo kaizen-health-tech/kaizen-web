@@ -2,27 +2,27 @@ import Image from "next/image";
 
 const FEATURES = [
   {
-    title: "Summarize in seconds",
+    title: "Summarize a record",
     description:
-      "Upload a lab result or record. Kai breaks it down into clear, actionable healthcare insight.",
+      "Upload a lab result or medical record. Kai pulls out the details and explains them in plain language.",
     image: "/images/why-kai/summarize.png",
   },
   {
-    title: "Ask anything",
+    title: "Ask about your records",
     description:
-      "Got a health question? Upload a file or just ask. Kai responds based on what you have shared.",
+      "Ask about a file you uploaded. Kai answers from the information you chose to share.",
     image: "/images/why-kai/ask-anything.png",
   },
   {
     title: "Kai remembers what you share",
     description:
-      "No repeating yourself. Kai keeps your context so every answer gets smarter over time.",
+      "Kai keeps the context you share, so you do not have to explain the same record again.",
     image: "/images/why-kai/memory.png",
   },
   {
     title: "Privacy under your control",
     description:
-      "You decide what to share and with whom. HIPAA compliant and end-to-end encrypted.",
+      "You choose what to share and who can see it. Kaizen is HIPAA compliant and encrypts your data.",
     image: "/images/why-kai/privacy.png",
   },
 ];
@@ -30,31 +30,36 @@ const FEATURES = [
 export default function WhyKai() {
   return (
     <section
-      className="relative overflow-hidden py-16 md:py-24"
+      className="relative overflow-hidden py-20 md:py-28"
       style={{
-        backgroundColor: "#F7F7FB",
+        backgroundColor: "#E8EEF5",
         backgroundImage:
-          "linear-gradient(111.88deg, #B5B3FF 0%, rgba(247, 247, 251, 0) 40.48%, rgba(247, 247, 251, 0) 60.72%, #8FD3D1 101.2%)",
+          "radial-gradient(circle at 0% 20%, rgba(201, 194, 232, 0.52), transparent 30%), radial-gradient(circle at 100% 78%, rgba(244, 212, 193, 0.5), transparent 29%)",
       }}
     >
       <div className="relative mx-auto w-full max-w-5xl px-4 md:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-semibold leading-tight text-[#1C1824] md:text-5xl">
-            Meet Your Personal AI Assistant,{" "}
-            <span className="text-[#7B4DFF]">Kai</span>
+            Meet <span className="text-[#7B4DFF]">Kai</span>, your guide to the
+            records you upload.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-[#5C5567] md:text-lg">
-            Ask health questions, upload documents, and get personalized advice.
-            All based on what you choose to share.
+            Ask about a lab result, medication list, or visit note. Kai answers
+            from the information you choose to share.
           </p>
         </div>
 
         <div className="mx-auto mt-8 flex max-w-4xl items-center gap-3 rounded-full bg-white px-5 py-3 shadow-[0_12px_30px_rgba(61,39,108,0.14)] ring-1 ring-[#E7DFFB]">
           <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F1ECFF]">
-            <Image src="/images/icon/ai.svg" alt="AI icon" width={20} height={20} />
+            <Image
+              src="/images/icon/ai.svg"
+              alt="AI icon"
+              width={20}
+              height={20}
+            />
           </div>
           <span className="text-sm font-medium text-[#6E6A7A]">
-            Ask anything to Kai
+            Ask Kai about your records
           </span>
           <button
             className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#7B4DFF] to-[#6B4BFF] text-white shadow-[0_10px_20px_rgba(123,77,255,0.35)]"

@@ -77,7 +77,7 @@ const Hero = () => {
   }, [currentVideoIndex]);
 
   return (
-    <section className="relative flex min-h-[820px] w-full items-end overflow-hidden bg-[#101918] px-4 pb-10 pt-28 text-white md:min-h-[860px] md:px-8 md:pb-12 lg:min-h-[900px] lg:items-center lg:pb-0 lg:pt-24">
+    <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-[#101918] px-4 pb-20 pt-[calc(var(--site-header-height,4.5rem)+2rem)] text-white md:px-8 md:pb-12 md:pt-[calc(var(--site-header-height,4.5rem)+2.5rem)] lg:items-start lg:pb-0 lg:pt-[calc(var(--site-header-height,4.5rem)+clamp(5rem,12vh,10rem))]">
       {heroVideos.map((video, index) => {
         const isActive = index === currentVideoIndex;
         const isPreloading = index === nextVideoIndex;
@@ -116,16 +116,15 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/75 lg:to-black/35" />
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/35 to-transparent lg:hidden" />
 
-      <div className="relative z-20 mx-auto w-full max-w-c-1390">
-        <div className="max-w-[760px] text-center lg:max-w-[480px] lg:text-left xl:max-w-[550px]">
-          <h1 className="text-5xl font-normal leading-[0.98] text-white sm:text-6xl md:text-5xl lg:text-[66px] xl:text-[74px]">
-            When family health gets complicated, Kai keeps it clear.
+      <div className="relative z-20 mx-auto w-full max-w-[1600px]">
+        <div className="max-w-[700px] text-center lg:max-w-[540px] lg:text-left xl:max-w-[640px]">
+          <h1 className="text-4xl font-normal leading-[1.02] text-white sm:text-5xl md:text-5xl lg:text-[clamp(3.25rem,4.2vw,4.5rem)] xl:text-[clamp(3.5rem,4vw,5rem)]">
+            Care for your family without carrying every detail.
           </h1>
 
-          <p className="mx-auto mt-8 max-w-2xl text-xl leading-8 text-white md:text-2xl md:leading-9 lg:mx-0 lg:max-w-[560px] lg:text-xl lg:leading-8">
-            Upload medical records once. Kai organizes them by person,
-            summarizes the details, and helps your family find what they need
-            before the next appointment.
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-7 text-white md:text-xl md:leading-8 lg:mx-0 lg:max-w-[520px] lg:text-[19px] lg:leading-7 xl:text-xl xl:leading-8">
+            Keep records in one place. Kai helps you find the right detail when
+            care gets complicated.
           </p>
 
           {/*
@@ -134,7 +133,7 @@ const Hero = () => {
             signal that Kaizen is even an app — see the SEO audit's
             "buried CTA" finding.
           */}
-          <div className="mt-5 flex flex-wrap justify-center gap-3 lg:justify-start">
+          <div className="mt-5 hidden flex-wrap justify-center gap-3 md:flex lg:justify-start">
             <a
               href={appleStoreUrl}
               target="_blank"

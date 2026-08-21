@@ -4,7 +4,7 @@ import Avatar from "@/components/Blog/Avatar";
 const SingleTestimonial = ({ review }: { review: Testimonial }) => {
   const { name, content } = review;
   return (
-    <div className="flex h-full flex-col rounded-lg bg-white p-9 pt-7.5 shadow-solid-9 dark:border dark:border-strokedark dark:bg-blacksection dark:shadow-none">
+    <div className="flex h-full flex-col rounded-3xl border border-white bg-white/85 p-9 pt-7.5 shadow-[0_18px_50px_rgba(40,27,85,0.08)] backdrop-blur-sm dark:border-strokedark dark:bg-blacksection dark:shadow-none">
       <p className="flex-1 text-base text-gray-700 dark:text-gray-300">
         &ldquo;{content}&rdquo;
       </p>

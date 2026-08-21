@@ -1,20 +1,38 @@
 import Image from "next/image";
 
-const CTA = () => {
+type CTAProps = {
+  variant?: "default" | "home";
+};
+
+const CTA = ({ variant = "default" }: CTAProps) => {
+  const isHome = variant === "home";
+
   return (
     <>
       {/* <!-- ===== CTA Start ===== --> */}
-      <section id="cta" className="overflow-hidden">
-        {/* Multicolor diagonal gradient */}
-        <div className="mx-auto bg-gradient-to-r from-[#B2FDD3] via-[#D8E9FF] to-[#A881FF] px-8 py-16 md:py-20 lg:flex lg:items-center lg:justify-between">
+      <section
+        id="cta"
+        className={`overflow-hidden ${isHome ? "bg-[#E7E1EF] px-4 pb-16 md:px-8 md:pb-24" : ""}`}
+      >
+        <div
+          className={`mx-auto px-8 py-16 md:py-20 lg:flex lg:items-center lg:justify-between ${
+            isHome
+              ? "max-w-c-1280 rounded-[36px] bg-midnight text-white shadow-[0_28px_80px_rgba(40,27,85,0.2)]"
+              : "bg-gradient-to-r from-[#B2FDD3] via-[#D8E9FF] to-[#A881FF]"
+          }`}
+        >
           {/* Text block */}
           <div className="max-w-xl">
-            <h2 className="mb-5 text-3xl font-extrabold leading-tight text-black md:text-5xl">
-              Ready&nbsp;To&nbsp;Care&nbsp;Smarter?
+            <h2
+              className={`mb-5 text-3xl font-semibold leading-tight md:text-5xl ${isHome ? "text-white" : "text-black"}`}
+            >
+              Bring your family&apos;s health records together.
             </h2>
-            <p className="text-lg text-black/80">
-              Join thousands already managing their family’s health with
-              clarity, confidence, and care.
+            <p
+              className={`text-lg ${isHome ? "text-white/70" : "text-black/80"}`}
+            >
+              Download Kaizen to organize records, share updates, and ask Kai
+              about the information you upload.
             </p>
           </div>
 

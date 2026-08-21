@@ -1,30 +1,21 @@
 "use client";
-import Image from "next/image";
 import SectionHeader from "../Common/SectionHeader";
 
 const Pricing = () => {
   return (
     <>
       {/* <!-- ===== Pricing Table Start ===== --> */}
-      <section className="overflow-hidden pb-20 pt-15 lg:pb-25 xl:pb-30">
+      <section className="relative overflow-hidden bg-[#F1EAD9] py-20 md:py-28">
+        <div className="pointer-events-none absolute -right-28 top-20 h-80 w-80 rounded-full bg-[#EECBA7]/55 blur-3xl" />
+        <div className="pointer-events-none absolute -left-24 bottom-10 h-72 w-72 rounded-full bg-[#C9DDC7]/60 blur-3xl" />
         <div className="relative mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          {/* Background squiggle SVG */}
-          <Image
-            src="/images/whykaizen/why_we_built_bg.svg" /* <- place the supplied SVG here */
-            alt="Decorative background pattern"
-            width={1600}
-            height={1200}
-            loading={"lazy"}
-            className="pointer-events-none absolute md:w-[60%] w-full max-w-none select-none
-                 lg:left-10 lg:top-10"
-          />
           {/* <!-- Section Title Start --> */}
           <div className="animate_top mx-auto text-center">
             <SectionHeader
               headerInfo={{
-                title: `Flexible plans for every stage of care`,
+                title: `Choose the plan that fits your family`,
                 subtitle: ``,
-                description: `Start for free, grow as your needs do. Kaizen supports you every step of the way.`,
+                description: `Start free. Move to a family plan when you need more care groups, storage, or memory.`,
               }}
             />
           </div>
@@ -32,14 +23,6 @@ const Pricing = () => {
         </div>
 
         <div className="relative mx-auto mt-15 max-w-[1207px] px-4 md:px-8 xl:mt-20 xl:px-0">
-          <div className="absolute -bottom-15 -z-1 h-full w-full">
-            <Image
-              fill
-              src="./images/shape/shape-dotted-light.svg"
-              alt="Decorative dotted pattern"
-              className="dark:hidden"
-            />
-          </div>
           <div className="flex flex-wrap justify-center gap-7.5 lg:flex-nowrap xl:gap-10">
             {/*FREE PLAN*/}
             <div className="animate_top group relative w-full rounded-3xl border-2 border-[#E6E6EE] bg-white px-8 py-10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] md:w-[95%] lg:w-1/3 xl:px-10 xl:py-12">
@@ -47,10 +30,12 @@ const Pricing = () => {
                 Free - Starter
               </h3>
               <p className="mb-6 text-sm text-[#5D6270]">
-                Who it's for: First-time users, small families, skeptics
+                For individuals and families trying Kaizen
               </p>
               <div className="mb-6 flex items-baseline">
-                <span className="text-3xl font-semibold text-[#6B6F7A]">$0</span>
+                <span className="text-3xl font-semibold text-[#6B6F7A]">
+                  $0
+                </span>
               </div>
 
               <a href="#cta">
@@ -70,7 +55,7 @@ const Pricing = () => {
 
               <div className="mt-7">
                 <p className="mb-4 text-sm font-semibold text-[#2B2F3A]">
-                  Limits that make sense:
+                  Included:
                 </p>
                 <ul className="space-y-4 text-left text-sm text-[#2B2F3A]">
                   <li className="flex items-start gap-2">
@@ -84,7 +69,8 @@ const Pricing = () => {
                     score visibility
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-emerald-400">✓</span> Limited summaries
+                    <span className="text-emerald-400">✓</span> Limited
+                    summaries
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-emerald-400">✓</span> No long-term
@@ -107,15 +93,13 @@ const Pricing = () => {
                 </span>
               </div>
               <p className="mb-4 text-sm text-[#5D6270]">
-                Who it's for: Couples, parents + aging parents, caretakers
+                For couples, parents, and caregivers helping aging relatives
               </p>
               <div className="mb-1 flex items-baseline text-[#5D6270]">
                 <span className="text-3xl font-semibold text-[#6B6F7A]">
                   $9.99
                 </span>
-                <span className="ml-2 text-sm">
-                  / month
-                </span>
+                <span className="ml-2 text-sm">/ month</span>
               </div>
               <p className="text-sm text-[#5D6270]">or $100 / year</p>
 
@@ -136,7 +120,7 @@ const Pricing = () => {
 
               <div className="mt-7">
                 <p className="mb-4 text-sm font-semibold text-[#2B2F3A]">
-                  Limits:
+                  Included:
                 </p>
                 <ul className="space-y-4 text-left text-sm text-[#2B2F3A]">
                   <li className="flex items-start gap-2">
@@ -177,8 +161,7 @@ const Pricing = () => {
                 Family - Pro
               </h3>
               <p className="mb-4 text-sm text-[#5D6270]">
-                Who it's for: Large families, caregivers, chronic care
-                households
+                For large families and households managing ongoing care
               </p>
               <div className="mb-1 flex items-baseline text-[#5D6270]">
                 <span className="text-3xl font-semibold text-[#6B6F7A]">
@@ -205,7 +188,7 @@ const Pricing = () => {
 
               <div className="mt-7">
                 <p className="mb-4 text-sm font-semibold text-[#2B2F3A]">
-                  Limits:
+                  Included:
                 </p>
                 <ul className="space-y-4 text-left text-sm text-[#2B2F3A]">
                   <li className="flex items-start gap-2">

@@ -15,7 +15,7 @@ const journeyData: JourneyStep[] = [
     id: "organized",
     eyebrow: CALMER_TAGLINE,
     title: "Put every record in one secure place.",
-    description: "Kaizen organizes the health story around each person.",
+    description: "Kaizen sorts every record under the right person.",
     progressLabel: "Organized",
     theme: "light",
   },
@@ -31,7 +31,8 @@ const journeyData: JourneyStep[] = [
     id: "connected",
     eyebrow: CALMER_TAGLINE,
     title: "Keep the right people in the loop.",
-    description: "Invite family, choose what to share, and coordinate care together.",
+    description:
+      "Invite family, choose what to share, and coordinate care together.",
     progressLabel: "Connected",
     theme: "light",
   },

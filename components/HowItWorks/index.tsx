@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import CTA from "@/components/CTA";
+import SharedDriveComparison from "./SharedDriveComparison";
 
 export default function HowItWorksClient() {
   const stepsData = [
@@ -189,6 +190,7 @@ export default function HowItWorksClient() {
           </div>
         </div>
       </section>
+      <SharedDriveComparison />
       <CTA />
     </>
   );

@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
 import FAQItem from "./FAQItem";
 import faqData from "./faqData";
@@ -22,31 +21,21 @@ const FAQ = () => {
     <>
       <FAQPageSchema faqs={schemaFaqs} />
       {/* <!-- ===== FAQ Start ===== --> */}
-      <section className="overflow-hidden pb-20 lg:pb-25 xl:pb-30">
+      <section className="relative overflow-hidden bg-[#E8EDF3] py-20 md:py-28">
+        <div className="pointer-events-none absolute -right-20 top-0 h-72 w-72 rounded-full bg-[#CAC5E3]/62 blur-3xl" />
+        <div className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-[#C5DBDB]/55 blur-3xl" />
         <div className="relative mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
-          <div className="absolute -bottom-16 -z-1 h-full w-full">
-            <Image
-              fill
-              src="/images/shape/shape-dotted-light.svg"
-              alt="Decorative dotted pattern"
-              className="dark:hidden"
-            />
-            <Image
-              fill
-              src="/images/shape/shape-dotted-light.svg"
-              alt="Decorative dotted pattern"
-              className="hidden dark:block"
-            />
-          </div>
           <div className="flex flex-wrap gap-8 md:flex-nowrap md:items-center xl:gap-32.5">
-            <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-              Frequently Asked <br />
-              <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg2 dark:before:bg-titlebgdark">
-                Questions
-              </span>
-            </h2>
+            <div className="relative mb-6 max-w-md md:w-2/5">
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-violet">
+                Common questions
+              </p>
+              <h2 className="mt-5 text-3xl font-semibold leading-tight text-black dark:text-white xl:text-hero">
+                A few things families ask us.
+              </h2>
+            </div>
 
-            <div className="rounded-lg bg-white shadow-solid-8 dark:border dark:border-strokedark dark:bg-blacksection">
+            <div className="overflow-hidden rounded-3xl border border-white bg-white/85 shadow-[0_18px_50px_rgba(40,27,85,0.08)] backdrop-blur-sm dark:border-strokedark dark:bg-blacksection md:w-3/5">
               {faqData.map((faq, key) => (
                 <FAQItem
                   key={key}

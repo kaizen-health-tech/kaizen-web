@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Hero from "@/components/Hero";
+import Caregivers from "@/components/Caregivers";
 import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
 import RecordsValue from "@/components/RecordsValue";
@@ -32,6 +33,7 @@ export default function Home() {
     <main>
       <MobileApplicationSchema />
       <Hero />
+      <Caregivers />
       <div className="content-visibility-auto">
         <RecordsValue />
       </div>
@@ -52,7 +54,7 @@ export default function Home() {
         <FAQ />
       </div>
       <div className="content-visibility-auto">
-        <CTA />
+        <CTA variant="home" />
       </div>
     </main>
   );
