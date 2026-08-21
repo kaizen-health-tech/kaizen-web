@@ -22,6 +22,16 @@ const faqs = [
     answer:
       "Top vitamin D sources include fatty fish like salmon and mackerel, fortified dairy or plant-based milk, egg yolks, and sunlight exposure. Top magnesium sources include dark leafy greens, nuts and seeds, whole grains, legumes, and dark chocolate. Combining both nutrients has been shown to improve outcomes more than vitamin D alone.",
   },
+  {
+    question: "Do diabetics need vitamin K2 in addition to vitamin D3 and magnesium?",
+    answer:
+      "Vitamin D3, magnesium, and vitamin K2 are often combined in one supplement because they work together: magnesium is a required cofactor for converting vitamin D to its active form, and vitamin K2 helps direct calcium to bones rather than soft tissue once vitamin D increases calcium absorption. For diabetes specifically, the strongest evidence is for vitamin D and magnesium's role in insulin sensitivity and glucose metabolism; vitamin K2's role in diabetes management is less studied, though it's commonly included in combination formulas for bone health. Talk with your care team before starting a combined D3/K2/magnesium supplement, especially if you take blood thinners, since vitamin K2 can interact with anticoagulant medications.",
+  },
+  {
+    question: "What is \"triple magnesium\" and does the form matter for diabetes management?",
+    answer:
+      "\"Triple magnesium\" products combine multiple forms of magnesium — commonly glycinate, citrate, and malate — in one supplement. The forms mainly differ in absorption rate and GI tolerance rather than in their effect on insulin sensitivity or glucose metabolism; magnesium's role in over 300 enzymatic processes, including insulin secretion and glucose uptake, applies regardless of which salt form is used. People who experience digestive upset with one form sometimes tolerate a blend better. Review the total elemental magnesium dose with your care team, especially if you have kidney disease, since impaired kidneys have a harder time clearing excess magnesium.",
+  },
 ];
 
 const sections = [
@@ -112,6 +122,12 @@ const DiabetesMagnesiumVitaminD = () => {
         <li>
           Combining vitamin D with magnesium supplementation
           improves outcomes more than vitamin D alone.
+        </li>
+        <li>
+          Magnesium is also a required cofactor for converting vitamin D
+          into its active form, which is why combination D3/magnesium
+          products (sometimes with vitamin K2 added for bone health) are
+          common.
         </li>
       </ul>
 

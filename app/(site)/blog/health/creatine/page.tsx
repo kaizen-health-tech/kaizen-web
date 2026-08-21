@@ -22,6 +22,16 @@ const faqs = [
     answer:
       "The standard maintenance dose is 3-5 grams of micronized creatine monohydrate per day, reaching full muscle saturation in about 28 days. Some people use a faster loading protocol of 20 grams per day (split into four 5-gram doses) for 5-7 days before dropping to the 3-5 gram maintenance dose. Extra water should be taken with each dose.",
   },
+  {
+    question: "Is creatine monohydrate safe for someone with joint pain, including men over 60?",
+    answer:
+      "Creatine itself isn't a joint-pain treatment, but there's no evidence it worsens joint pain, and the standard 3-5 gram daily maintenance dose is well-tolerated in adults 18-90, including men over 60, per ISSN and EFSA safety reviews. Any joint-comfort benefit is indirect — creatine supports muscle strength and stability around joints during resistance training, and some research shows it may reduce exercise-related inflammation markers. If joint pain is new, worsening, or comes with swelling, see a doctor before starting any supplement, since creatine won't address an underlying joint condition.",
+  },
+  {
+    question: "How much creatine does a 72-year-old, healthy, active woman need?",
+    answer:
+      "Dosing isn't different by sex — a 72-year-old active woman follows the same evidence-based guidance as any older adult: 3-5 grams of micronized creatine monohydrate per day for maintenance, reaching full muscle saturation in about 28 days. Women, particularly vegetarians or those eating less meat, often see some of the largest relative strength and cognitive gains because their baseline creatine stores tend to be lower. Pair the dose with resistance training and extra water for best results.",
+  },
 ];
 
 const sections = [
@@ -145,6 +155,12 @@ const CreatineAgingGuide = () => {
         <li>
           ISSN and EFSA classify creatine as “generally safe” when used at
           recommended doses [5][6].
+        </li>
+        <li>
+          Dosing recommendations are the same regardless of sex, and there is
+          no evidence that creatine monohydrate worsens joint pain — any
+          joint-comfort benefit comes indirectly, through better muscle
+          support around joints during training.
         </li>
       </ul>
 
