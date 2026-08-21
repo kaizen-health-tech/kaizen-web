@@ -77,7 +77,7 @@ const Hero = () => {
   }, [currentVideoIndex]);
 
   return (
-    <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-[#101918] px-4 pb-20 pt-[calc(var(--site-header-height,4.5rem)+2rem)] text-white md:px-8 md:pb-12 md:pt-[calc(var(--site-header-height,4.5rem)+2.5rem)] lg:items-start lg:pb-0 lg:pt-[calc(var(--site-header-height,4.5rem)+clamp(5rem,12vh,10rem))]">
+    <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-[#101918] px-4 pb-20 pt-[calc(var(--site-header-height,4.5rem)+2rem)] text-white md:px-8 md:pb-12 md:pt-[calc(var(--site-header-height,4.5rem)+2.5rem)] lg:pb-16 lg:pt-[calc(var(--site-header-height,4.5rem)+clamp(5rem,12vh,10rem))]">
       {heroVideos.map((video, index) => {
         const isActive = index === currentVideoIndex;
         const isPreloading = index === nextVideoIndex;
