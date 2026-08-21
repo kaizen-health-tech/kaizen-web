@@ -52,6 +52,8 @@ const blogRoutes = [
   "/blog/health/kidney-transplant-evaluation-gap",
   "/blog/caregiving/retirement-cost-of-caregiving",
   "/blog/ai-agents",
+  "/blog/ai-agents/agent-vs-chatbot",
+  "/blog/ai-agents/ai-health-assistant-comparison",
 ];
 
 // Paginated blog index pages, derived from the post count. Page 1 is /blog,

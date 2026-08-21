@@ -497,11 +497,15 @@ const AIAgentVsChatbot = () => {
       <ProductCallout body="Upload a lab result, a discharge summary, or a medication list, and ask Kai what changed. Sharing controls are set by your family and can be changed at any time — nothing is granted by default that you didn't choose to share." />
 
       <p>
-        The comparison of exactly which 2026 products (ChatGPT Health,
-        Copilot Health, Claude for Healthcare, Amazon&rsquo;s Health AI, and
-        Perplexity Health) handle these questions differently is its own
-        piece, coming next in this series. For now, one takeaway holds
-        regardless of which product you&rsquo;re looking at.
+        The comparison of exactly which 2026 products handle these
+        questions differently is its own piece:{" "}
+        <Link href="/blog/ai-agents/ai-health-assistant-comparison">
+          Copilot Health, ChatGPT Health &amp; Amazon Health AI, Compared
+        </Link>
+        . (Claude for Healthcare and Perplexity Health, the other two
+        products from the same early-2026 wave, aren&rsquo;t covered
+        there.) For now, one takeaway holds regardless of which product
+        you&rsquo;re looking at.
         &ldquo;Agent&rdquo; describes what a tool is allowed to do, not how
         trustworthy it is. You answer the trustworthiness question yourself,
         by checking access, memory, training, HIPAA status, and retention,

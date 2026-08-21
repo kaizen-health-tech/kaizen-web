@@ -11,6 +11,8 @@
 
 ## Family Health & Caregiving Guides
 - [AI Agents in Family Health: The Complete Guide](https://kaizenhealth.io/blog/ai-agents): What an AI agent actually is, how it differs from a chatbot, and what to check before using one with family medical records — including a look at the five consumer AI health products launched in early 2026.
+- [AI Agent vs. Chatbot: What's the Difference for Health Data?](https://kaizenhealth.io/blog/ai-agents/agent-vs-chatbot): What changes for your family's data once a health AI tool can act on records instead of just answering questions — memory, model training, HIPAA coverage, and retention.
+- [Copilot Health, ChatGPT Health & Amazon Health AI, Compared](https://kaizenhealth.io/blog/ai-agents/ai-health-assistant-comparison): A side-by-side comparison of HIPAA status, data training, retention, pricing, and family access across Microsoft, OpenAI, and Amazon's 2026 consumer AI health assistants.
 - [Family Health Monitoring for Hereditary Risk](https://kaizenhealth.io/blog/family-health-monitoring): How tracking family health history helps prevent hereditary disease and supports early screening.
 - [The Importance of Family Health Documentation](https://kaizenhealth.io/blog/family-history): A doctor's perspective on why documenting family health history improves diagnosis and care coordination.
 - [Documenting Family Health History](https://kaizenhealth.io/blog/family-history/documenting-family-health): How to collect and use family health history for risk assessment and prevention.

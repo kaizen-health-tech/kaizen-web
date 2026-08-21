@@ -8,6 +8,18 @@ const editorialTeam = {
 
 const BlogData: Blog[] = [
   {
+    id: 18,
+    mainImage: "/images/blog/ai-health-assistant-comparison.jpg",
+    title: "Copilot Health, ChatGPT Health & Amazon Health AI, Compared",
+    metadata:
+      "A side-by-side look at HIPAA status, data training, retention, pricing, and family access across the three biggest 2026 AI health assistants.",
+    url: "/blog/ai-agents/ai-health-assistant-comparison",
+    categoryKey: "kai-ai",
+    featured: true,
+    readTime: "10 min read",
+    author: editorialTeam,
+  },
+  {
     id: 1,
     mainImage: "/images/blog/family-history.png",
     title: "Why Your Family Health History Matters",
@@ -15,7 +27,6 @@ const BlogData: Blog[] = [
       "A clear family health history helps doctors spot inherited risks, recommend earlier screenings, and make better-informed care decisions.",
     url: "/blog/family-history",
     categoryKey: "health-records",
-    featured: true,
     readTime: "6 min read",
     author: editorialTeam,
   },

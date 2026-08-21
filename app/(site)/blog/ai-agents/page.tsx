@@ -232,9 +232,14 @@ const AIAgentsInFamilyHealth = () => {
         over time.
       </p>
       <p>
-        Spoke 2 of this series covers the direct, feature-by-feature
-        comparison; the distinction that matters here is the category each
-        product belongs to, not which one answers a given question best.
+        Our{" "}
+        <Link href="/blog/ai-agents/ai-health-assistant-comparison">
+          direct, feature-by-feature comparison of Copilot Health, ChatGPT
+          Health, and Amazon Health AI
+        </Link>{" "}
+        covers that next; the distinction that matters here is the category
+        each product belongs to, not which one answers a given question
+        best.
       </p>
 
       <HeadingWithAnchor id="is-it-safe">
