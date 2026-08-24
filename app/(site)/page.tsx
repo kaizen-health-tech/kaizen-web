@@ -1,14 +1,14 @@
 import { Metadata } from "next";
-import Hero from "@/components/Hero";
-import Caregivers from "@/components/Caregivers";
-import FAQ from "@/components/FAQ";
-import Pricing from "@/components/Pricing";
-import RecordsValue from "@/components/RecordsValue";
-import WhyKai from "@/components/WhyKai";
-import SecurityHighlights from "@/components/SecurityHighlights";
-import Journey from "@/components/Journey";
-import Testimonial from "@/components/Testimonial";
-import CTA from "@/components/CTA";
+import AudienceCarousel from "@/components/Home/AudienceCarousel";
+import ClosingCTA from "@/components/Home/ClosingCTA";
+import FamilyStory from "@/components/Home/FamilyStory";
+import HomeFAQ from "@/components/Home/HomeFAQ";
+import HomeHero from "@/components/Home/HomeHero";
+import HowItWorksSteps from "@/components/Home/HowItWorksSteps";
+import QuestionMarquee from "@/components/Home/QuestionMarquee";
+import StatementBand from "@/components/Home/StatementBand";
+import TrustStrip from "@/components/Home/TrustStrip";
+import VoicesCarousel from "@/components/Home/VoicesCarousel";
 import { MobileApplicationSchema } from "@/components/Schema";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -30,32 +30,18 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-lavender">
       <MobileApplicationSchema />
-      <Hero />
-      <Caregivers />
-      <div className="content-visibility-auto">
-        <RecordsValue />
-      </div>
-      <div className="content-visibility-auto">
-        <WhyKai />
-      </div>
-      <Journey />
-      <div className="content-visibility-auto">
-        <SecurityHighlights />
-      </div>
-      <div className="content-visibility-auto">
-        <Testimonial />
-      </div>
-      <div className="content-visibility-auto">
-        <Pricing />
-      </div>
-      <div className="content-visibility-auto">
-        <FAQ />
-      </div>
-      <div className="content-visibility-auto">
-        <CTA variant="home" />
-      </div>
+      <HomeHero />
+      <TrustStrip />
+      <AudienceCarousel />
+      <StatementBand />
+      <HowItWorksSteps />
+      <QuestionMarquee />
+      <FamilyStory />
+      <VoicesCarousel />
+      <HomeFAQ />
+      <ClosingCTA />
     </main>
   );
 }

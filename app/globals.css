@@ -157,6 +157,21 @@
     0%, 100% { transform: translateY(100%); }
     50% { transform: translateY(0); }
   }
+
+  /* Home-page quote/question marquees. The track holds two identical copies
+     of the list, so shifting by exactly -50% loops seamlessly. */
+  --animate-marquee-left: marquee-left var(--marquee-duration, 60s) linear infinite;
+  --animate-marquee-right: marquee-right var(--marquee-duration, 60s) linear infinite;
+
+  @keyframes marquee-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
 }
 
 /* third-party libraries CSS */

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import HomePillHeader from "./HomePillHeader";
 import menuData from "./menuData";
 
 const MobileNavigation = () => (
@@ -135,6 +136,13 @@ const Header = () => {
       document.documentElement.style.removeProperty("--site-header-height");
     };
   }, []);
+
+  // The home page runs the Hera-style layout, whose navigation is a floating
+  // pill over the hero video rather than a full-width bar. Every other route
+  // keeps the standard header below.
+  if (pathUrl === "/") {
+    return <HomePillHeader />;
+  }
 
   return (
     <header
