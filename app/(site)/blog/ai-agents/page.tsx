@@ -306,7 +306,13 @@ const AIAgentsInFamilyHealth = () => {
         in general. Physician adoption alone shows how mainstream AI has
         become inside healthcare itself. It means the safety question is
         specific to the product and the data, not a yes-or-no answer that
-        applies to &ldquo;AI&rdquo; as a category.
+        applies to &ldquo;AI&rdquo; as a category. Our{" "}
+        <Link href="/blog/ai-agents/is-ai-safe-for-medical-records">
+          deeper look at what the data actually shows
+        </Link>{" "}
+        goes further: it covers the one confirmed 2026 healthcare AI vendor
+        breach on record, two active regulatory actions, and the
+        family-specific questions no major pollster has asked yet.
       </p>
 
       <HeadingWithAnchor id="wont-replace-the-coordinator">

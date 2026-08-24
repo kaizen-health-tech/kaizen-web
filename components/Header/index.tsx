@@ -6,114 +6,84 @@ import { useEffect, useState } from "react";
 
 import menuData from "./menuData";
 
-const MobileNavigation = () => (
-  <details className="group relative xl:hidden">
-    <summary
-      aria-label="Open navigation"
-      className="flex h-11 w-11 list-none items-center justify-center rounded-md text-black transition-colors hover:bg-black/5 [&::-webkit-details-marker]:hidden dark:text-white dark:hover:bg-white/10"
-    >
-      <svg
-        aria-hidden="true"
-        className="h-7 w-7 group-open:hidden"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2.25"
-      >
-        <path d="M4 6h16" />
-        <path d="M4 12h16" />
-        <path d="M4 18h16" />
-      </svg>
-      <svg
-        aria-hidden="true"
-        className="hidden h-7 w-7 group-open:block"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2.25"
-      >
-        <path d="M6 6l12 12" />
-        <path d="M18 6 6 18" />
-      </svg>
-    </summary>
-
-    <div className="absolute right-0 top-full z-50 mt-3 max-h-[calc(100svh-var(--site-header-height,4.5rem)-1rem)] w-[calc(100vw-2rem)] overflow-y-auto rounded-md bg-white p-6 shadow-solid-5 dark:bg-blacksection">
-      <nav aria-label="Mobile navigation">
-        <ul className="flex flex-col gap-5">
-          {menuData.map((menuItem) =>
-            menuItem.submenu ? (
-              <li key={menuItem.id}>
-                <details className="group/more">
-                  <summary className="flex list-none items-center justify-between gap-3 [&::-webkit-details-marker]:hidden">
-                    <span>{menuItem.title}</span>
-                    <svg
-                      aria-hidden="true"
-                      className="h-3 w-3 fill-waterloo transition-transform group-open/more:rotate-180"
-                      viewBox="0 0 512 512"
-                    >
-                      <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                    </svg>
-                  </summary>
-                  <ul className="mt-4 flex flex-col gap-4 border-l border-cloud pl-4">
-                    {menuItem.submenu.map((item) => (
-                      <li key={item.id}>
-                        <Link href={item.path || "#"}>{item.title}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              </li>
-            ) : (
-              <li key={menuItem.id}>
-                <Link href={menuItem.path || "#"}>{menuItem.title}</Link>
-              </li>
-            ),
-          )}
-        </ul>
-      </nav>
-
-      <Link
-        href="/chat"
-        className="mt-6 flex w-full items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
-      >
-        Try Kai for free
-      </Link>
-    </div>
-  </details>
+const Chevron = ({ className = "" }: { className?: string }) => (
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={`h-3.5 w-3.5 ${className}`}
+  >
+    <path d="m6 9 6 6 6-6" />
+  </svg>
 );
 
+/**
+ * Site navigation: a floating pill that rides over the page rather than a
+ * full-width bar. One component for every route, so the nav is identical
+ * everywhere.
+ *
+ * The header stays `fixed`, and its own box (16px of top inset plus the 56px
+ * pill) is what gets measured into `--site-header-height` — the variable pages
+ * pad against so their first section clears the nav.
+ */
 const Header = () => {
-  const [dropdownToggler, setDropdownToggler] = useState(false);
-  // The desktop dropdown opens on CSS :hover/:focus-within, which stays
-  // active after a submenu link is clicked (the cursor hasn't moved). This
-  // forces it closed until the pointer actually leaves the menu item.
-  const [dropdownForceClosed, setDropdownForceClosed] = useState(false);
-  // Dynamic download link based on user‑agent
-  const [downloadHref, setDownloadHref] = useState<string>("#cta");
-
   const pathUrl = usePathname();
+
+  // id of the top-level item whose submenu is showing, or null
+  const [openSubmenu, setOpenSubmenu] = useState<number | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const isActive = (path?: string) => {
     if (!path) return false;
     return path === "/" ? pathUrl === "/" : pathUrl.startsWith(path);
   };
 
+  // Both menus are open state, not route state — a navigation should always
+  // leave them closed rather than hanging around over the new page.
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const ua = navigator.userAgent || navigator.vendor;
+    setOpenSubmenu(null);
+    setMobileOpen(false);
+  }, [pathUrl]);
 
-    if (/android/i.test(ua)) {
-      setDownloadHref("https://bit.ly/kz-android-store");
-    } else if (/iPad|iPhone|iPod/i.test(ua)) {
-      setDownloadHref("https://bit.ly/kz-app-store");
-    } else {
-      setDownloadHref("#cta"); // fallback – scroll to CTA section
-    }
-  }, []);
+  // Dismiss whichever menu is open on a press outside the header or on Escape.
+  // Pointer devices also get hover open/close on the submenu itself; this is
+  // what closes it for touch and keyboard, where there is no pointer to leave.
+  useEffect(() => {
+    if (openSubmenu === null && !mobileOpen) return;
+
+    const closeAll = () => {
+      setOpenSubmenu(null);
+      setMobileOpen(false);
+    };
+
+    const handlePointerDown = (event: PointerEvent) => {
+      const header = document.querySelector("[data-site-header]");
+      if (
+        header &&
+        event.target instanceof Node &&
+        header.contains(event.target)
+      ) {
+        return;
+      }
+      closeAll();
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeAll();
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [openSubmenu, mobileOpen]);
 
   useEffect(() => {
     const header = document.querySelector<HTMLElement>("[data-site-header]");
@@ -136,139 +106,166 @@ const Header = () => {
     };
   }, []);
 
+  const linkClass = (active: boolean) =>
+    `text-[17px] font-medium leading-5 transition-colors ${
+      active ? "text-aquamarine" : "text-white/85 hover:text-white"
+    }`;
+
   return (
+    // The wrapper spans the viewport so the pills can centre, but only the
+    // pills themselves take pointer events — everything else stays clickable.
     <header
       data-site-header
-      className="absolute left-0 top-0 z-99999 w-full bg-white py-2 shadow-lg dark:bg-black"
+      className="pointer-events-none fixed inset-x-0 top-0 z-99999 flex justify-center gap-2 px-4 pt-4 md:px-8"
     >
-      <div className="relative mx-auto flex w-full max-w-c-1390 flex-wrap items-center justify-between px-4 md:px-8 xl:flex-nowrap xl:px-0">
-        <div className="flex w-full shrink-0 items-center justify-between xl:w-1/4">
-          <Link href="/" aria-label="Kaizen Health home">
-            <Image
-              src="/images/logo/kaizen-logo.svg"
-              alt="Kaizen Health logo"
-              width={240}
-              height={120}
-              className="w-full dark:block"
-            />
-          </Link>
+      <div className="pointer-events-auto relative flex min-w-0 flex-1 items-center gap-4 rounded-2xl bg-dark-plum py-2 pl-3 pr-2 shadow-[0_10px_40px_rgba(32,24,57,0.28)] md:pl-4 xl:flex-none xl:gap-12">
+        <Link href="/" aria-label="Kaizen Health home" className="shrink-0">
+          <Image
+            src="/images/logo/kaizen-logo-light.svg"
+            alt="Kaizen Health logo"
+            width={128}
+            height={40}
+            className="h-6 w-auto md:h-7"
+            priority
+          />
+        </Link>
 
-          <MobileNavigation />
-        </div>
+        {/* Desktop: links and the call to action share the pill. */}
+        <div className="hidden items-center gap-6 xl:flex">
+          <nav aria-label="Primary">
+            <ul className="flex items-center gap-6">
+              {menuData.map((menuItem) =>
+                menuItem.submenu ? (
+                  <li
+                    key={menuItem.id}
+                    className="relative"
+                    onMouseEnter={() => setOpenSubmenu(menuItem.id)}
+                    onMouseLeave={() => setOpenSubmenu(null)}
+                  >
+                    <button
+                      type="button"
+                      aria-expanded={openSubmenu === menuItem.id}
+                      aria-haspopup="true"
+                      // Open-only: a pointer has usually already opened this
+                      // on hover, so toggling here would close it on click.
+                      // Leaving the item, Escape, or a press outside closes it.
+                      onClick={() => setOpenSubmenu(menuItem.id)}
+                      className={`flex cursor-pointer items-center gap-1.5 ${linkClass(
+                        menuItem.submenu.some((item) => isActive(item.path)),
+                      )}`}
+                    >
+                      {menuItem.title}
+                      <Chevron
+                        className={
+                          openSubmenu === menuItem.id ? "rotate-180" : ""
+                        }
+                      />
+                    </button>
 
-        {/* Nav Menu Start   */}
-        <div className="invisible hidden h-0 w-full items-center justify-end xl:visible xl:flex xl:h-auto xl:w-full">
-          <nav className="mr-0 xl:mr-5">
-            <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
-              {menuData.map((menuItem, key) => (
-                <li
-                  key={key}
-                  className={menuItem.submenu && "group relative"}
-                  onMouseLeave={() =>
-                    menuItem.submenu && setDropdownForceClosed(false)
-                  }
-                >
-                  {menuItem.submenu ? (
-                    <>
-                      <button
-                        onClick={() => setDropdownToggler(!dropdownToggler)}
-                        aria-expanded={dropdownToggler}
-                        aria-haspopup="true"
-                        className={`flex cursor-pointer items-center justify-between gap-3 hover:text-primary ${
-                          menuItem.submenu.some((item) => isActive(item.path))
-                            ? "text-primary"
-                            : ""
-                        }`}
-                      >
-                        {menuItem.title}
-                        <span>
-                          <svg
-                            className="h-3 w-3 cursor-pointer fill-waterloo group-hover:fill-primary"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                          >
-                            <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                          </svg>
-                        </span>
-                      </button>
-
+                    {/* The panel is offset below the trigger, so the padding
+                        on this wrapper bridges that gap. Without it the pointer
+                        crosses dead space on its way down, `onMouseLeave` fires
+                        on the <li>, and the panel closes before it can be
+                        reached. The wrapper stops taking pointer events while
+                        closed so it never blocks the page underneath. */}
+                    <div
+                      className={`absolute left-1/2 top-full z-50 w-[230px] -translate-x-1/2 pt-6 ${
+                        openSubmenu === menuItem.id ? "" : "pointer-events-none"
+                      }`}
+                    >
                       <ul
-                        className={`dropdown ${dropdownToggler ? "flex" : ""} ${
-                          dropdownForceClosed
-                            ? "xl:!invisible xl:!opacity-0"
-                            : ""
+                        className={`rounded-2xl bg-white p-3 shadow-solid-5 transition duration-200 ease-out ${
+                          openSubmenu === menuItem.id
+                            ? "visible translate-y-0 opacity-100"
+                            : "invisible translate-y-2 opacity-0"
                         }`}
                       >
-                        {menuItem.submenu.map((item, key) => (
-                          <li key={key}>
+                        {menuItem.submenu.map((item) => (
+                          <li key={item.id}>
                             <Link
                               href={item.path || "#"}
-                              onClick={(e) => {
-                                setDropdownToggler(false);
-                                setDropdownForceClosed(true);
-                                e.currentTarget.blur();
-                              }}
-                              className={
+                              className={`block rounded-lg px-3 py-2 text-regular transition-colors hover:bg-lavender ${
                                 isActive(item.path)
-                                  ? "text-primary hover:text-primary"
-                                  : "hover:text-primary"
-                              }
+                                  ? "text-primary"
+                                  : "text-text-body"
+                              }`}
                             >
                               {item.title}
                             </Link>
                           </li>
                         ))}
                       </ul>
-                    </>
-                  ) : (
+                    </div>
+                  </li>
+                ) : (
+                  <li key={menuItem.id}>
                     <Link
-                      href={`${menuItem.path}`}
-                      className={
-                        isActive(menuItem.path)
-                          ? "text-primary hover:text-primary"
-                          : "hover:text-primary"
-                      }
+                      href={menuItem.path || "#"}
+                      className={linkClass(isActive(menuItem.path))}
                     >
                       {menuItem.title}
                     </Link>
-                  )}
-                </li>
-              ))}
+                  </li>
+                ),
+              )}
             </ul>
           </nav>
 
-          <div className="flex items-center justify-end">
-            <Link
-              href={"/chat"}
-              className="w-full xl:w-auto mt-4 xl:mt-0 flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
-            >
-              Try Kai for free
-            </Link>
-          </div>
-
-          {/*<div className="mt-7 flex items-center gap-6 xl:mt-0">*/}
-          {/*  <ThemeToggler />*/}
-
-          {/*  <Link*/}
-          {/*    href="https://github.com/NextJSTemplates/solid-nextjs"*/}
-          {/*    className="text-regular font-medium text-waterloo hover:text-primary"*/}
-          {/*  >*/}
-          {/*    GitHub Repo 🌟*/}
-          {/*  </Link>*/}
-
-          {/*  <Link*/}
-          {/*    href="https://nextjstemplates.com/templates/solid"*/}
-          {/*    className="flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"*/}
-          {/*  >*/}
-          {/*    Get Pro 🔥*/}
-          {/*  </Link>*/}
-          {/*</div>*/}
+          <Link
+            href="/chat"
+            className="inline-flex shrink-0 items-center justify-center rounded-xl bg-aquamarine px-4 py-2.5 text-[17px] font-medium leading-5 text-dark-plum transition duration-200 hover:brightness-95"
+          >
+            Try Kai for free
+          </Link>
         </div>
+
+        {/* Narrow screens: everything behind a Menu disclosure. */}
+        <button
+          type="button"
+          aria-expanded={mobileOpen}
+          aria-controls="site-navigation-mobile"
+          onClick={() => setMobileOpen((open) => !open)}
+          className="ml-auto flex shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-2 py-2 text-[15px] font-medium leading-5 text-white md:text-[17px] xl:hidden"
+        >
+          Menu
+          <Chevron className={mobileOpen ? "rotate-180" : ""} />
+        </button>
       </div>
+
+      <Link
+        href="/chat"
+        className="pointer-events-auto inline-flex shrink-0 items-center justify-center rounded-2xl bg-aquamarine px-3 text-[15px] font-medium leading-5 text-dark-plum shadow-[0_10px_40px_rgba(32,24,57,0.28)] transition duration-200 hover:brightness-95 md:px-4 md:text-[17px] xl:hidden"
+      >
+        Try Kai free
+      </Link>
+
+      <nav
+        id="site-navigation-mobile"
+        aria-label="Primary"
+        hidden={!mobileOpen}
+        className="pointer-events-auto absolute inset-x-4 top-full mt-2 md:inset-x-8 max-h-[calc(100svh-var(--site-header-height,4.5rem)-1rem)] overflow-y-auto rounded-2xl bg-dark-plum p-4 shadow-[0_10px_40px_rgba(32,24,57,0.28)] xl:hidden"
+      >
+        <ul className="flex flex-col gap-1">
+          {menuData
+            .flatMap((menuItem) => menuItem.submenu ?? [menuItem])
+            .map((item) => (
+              <li key={item.id}>
+                <Link
+                  href={item.path || "#"}
+                  className={`block rounded-lg px-2 py-2.5 text-base font-medium leading-5 transition-colors ${
+                    isActive(item.path)
+                      ? "text-aquamarine"
+                      : "text-white/85 hover:text-white"
+                  }`}
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </nav>
     </header>
   );
 };
-
-// w-full delay-300
 
 export default Header;

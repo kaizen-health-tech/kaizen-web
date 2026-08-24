@@ -39,7 +39,7 @@ export const metadata: Metadata = createPageMetadata({
     "A polygenic risk score can estimate inherited risk for 8 cardiovascular and metabolic conditions. Learn what the research found and where the test falls short.",
   path: "/blog/heart/genetic-risk-score-heart-disease",
   type: "article",
-  image: "/images/blog/blog.png",
+  image: "/images/blog/heart-disease.png",
 });
 
 const GeneticRiskScoreHeartDisease = () => {

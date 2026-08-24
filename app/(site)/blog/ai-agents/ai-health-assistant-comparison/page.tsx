@@ -603,7 +603,14 @@ const AIHealthAssistantComparison = () => {
         at least some of what it does and doesn&rsquo;t do, which is more
         than can be said for plenty of consumer software. It means the
         comparison changes once a parent&rsquo;s full record, or a shared
-        family view of it, is what you actually need. If you haven&rsquo;t
+        family view of it, is what you actually need. For the broader
+        evidence on whether sharing family records with AI is safe,
+        including the one confirmed 2026 healthcare AI vendor breach and
+        two active regulatory actions, see{" "}
+        <Link href="/blog/ai-agents/is-ai-safe-for-medical-records">
+          is it safe to share family medical records with AI
+        </Link>
+        . If you haven&rsquo;t
         organized what records exist yet, our guide to{" "}
         <Link href="/blog/family-history/organizing-medical-records">
           organizing medical records for aging parents

@@ -32,6 +32,7 @@ export const generateMetadata = async ({
     description: `Read our ${category.label.toLowerCase()} articles — practical, doctor-reviewed guidance on family health, prevention, and care.`,
     path: categoryHref(key),
     keywords: [category.label],
+    image: "/images/open-graph/blog.png",
   });
 };
 

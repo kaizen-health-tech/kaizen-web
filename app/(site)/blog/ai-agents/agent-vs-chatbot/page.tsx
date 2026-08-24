@@ -504,7 +504,13 @@ const AIAgentVsChatbot = () => {
         </Link>
         . (Claude for Healthcare and Perplexity Health, the other two
         products from the same early-2026 wave, aren&rsquo;t covered
-        there.) For now, one takeaway holds regardless of which product
+        there.) And for what the data itself actually shows, incidents,
+        regulatory activity, and the family-specific questions still
+        unanswered, see{" "}
+        <Link href="/blog/ai-agents/is-ai-safe-for-medical-records">
+          is it safe to share family medical records with AI
+        </Link>
+        . For now, one takeaway holds regardless of which product
         you&rsquo;re looking at.
         &ldquo;Agent&rdquo; describes what a tool is allowed to do, not how
         trustworthy it is. You answer the trustworthiness question yourself,

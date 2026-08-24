@@ -8,6 +8,18 @@ const editorialTeam = {
 
 const BlogData: Blog[] = [
   {
+    id: 19,
+    mainImage: "/images/blog/is-ai-safe-for-medical-records.png",
+    title: "Is It Safe to Share Family Medical Records with AI?",
+    metadata:
+      "Pollsters have asked whether people use AI for health questions. Almost nobody has asked the family-specific version yet. Here's what the data on record actually shows.",
+    url: "/blog/ai-agents/is-ai-safe-for-medical-records",
+    categoryKey: "kai-ai",
+    featured: true,
+    readTime: "11 min read",
+    author: editorialTeam,
+  },
+  {
     id: 18,
     mainImage: "/images/blog/ai-health-assistant-comparison.jpg",
     title: "Copilot Health, ChatGPT Health & Amazon Health AI, Compared",
