@@ -65,8 +65,8 @@ export default function Eula() {
                       4.1. The App offers the following subscription options:
                     </p>
                     <ul className="text-body-color dark:text-body-color-dark text-base">
-                      <li>Kaizen Duo: $4.99 per month</li>
-                      <li>Kaizen Family: $9.99 per month</li>
+                      <li>Kaizen Duo: $9.99 per month</li>
+                      <li>Kaizen Family: $14.99 per month</li>
                     </ul>
 
                     <p className="text-body-color dark:text-body-color-dark text-base">

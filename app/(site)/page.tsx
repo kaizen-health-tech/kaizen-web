@@ -5,7 +5,7 @@ import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
 import RecordsValue from "@/components/RecordsValue";
 import WhyKai from "@/components/WhyKai";
-import SecurityHighlights from "@/components/SecurityHighlights";
+import Inspiration from "@/components/Inspiration";
 import Journey from "@/components/Journey";
 import Testimonial from "@/components/Testimonial";
 import CTA from "@/components/CTA";
@@ -42,7 +42,7 @@ export default function Home() {
       </div>
       <Journey />
       <div className="content-visibility-auto">
-        <SecurityHighlights />
+        <Inspiration />
       </div>
       <div className="content-visibility-auto">
         <Testimonial />

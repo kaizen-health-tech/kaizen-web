@@ -5,9 +5,7 @@ const Pricing = () => {
   return (
     <>
       {/* <!-- ===== Pricing Table Start ===== --> */}
-      <section className="relative overflow-hidden bg-[#F1EAD9] py-20 md:py-28">
-        <div className="pointer-events-none absolute -right-28 top-20 h-80 w-80 rounded-full bg-[#EECBA7]/55 blur-3xl" />
-        <div className="pointer-events-none absolute -left-24 bottom-10 h-72 w-72 rounded-full bg-[#C9DDC7]/60 blur-3xl" />
+      <section className="relative overflow-hidden bg-[#FAF9F6] py-20 md:py-28">
         <div className="relative mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
           {/* <!-- Section Title Start --> */}
           <div className="animate_top mx-auto text-center">

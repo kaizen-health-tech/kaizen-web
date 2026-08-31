@@ -12,17 +12,17 @@ const CTA = ({ variant = "default" }: CTAProps) => {
       {/* <!-- ===== CTA Start ===== --> */}
       <section
         id="cta"
-        className={`overflow-hidden ${isHome ? "bg-[#E7E1EF] px-4 pb-16 md:px-8 md:pb-24" : ""}`}
+        className={`overflow-hidden ${isHome ? "bg-white px-4 pb-16 md:px-8 md:pb-24" : ""}`}
       >
         <div
-          className={`mx-auto px-8 py-16 md:py-20 lg:flex lg:items-center lg:justify-between ${
+          className={`mx-auto px-8 py-16 md:py-20 ${
             isHome
-              ? "max-w-c-1280 rounded-[36px] bg-midnight text-white shadow-[0_28px_80px_rgba(40,27,85,0.2)]"
-              : "bg-gradient-to-r from-[#B2FDD3] via-[#D8E9FF] to-[#A881FF]"
+              ? "flex max-w-c-1280 flex-col items-center rounded-[36px] bg-midnight text-center text-white shadow-[0_28px_80px_rgba(40,27,85,0.2)]"
+              : "bg-gradient-to-r from-[#B2FDD3] via-[#D8E9FF] to-[#A881FF] lg:flex lg:items-center lg:justify-between"
           }`}
         >
           {/* Text block */}
-          <div className="max-w-xl">
+          <div className={isHome ? "max-w-2xl" : "max-w-xl"}>
             <h2
               className={`mb-5 text-3xl font-semibold leading-tight md:text-5xl ${isHome ? "text-white" : "text-black"}`}
             >
@@ -37,7 +37,13 @@ const CTA = ({ variant = "default" }: CTAProps) => {
           </div>
 
           {/* Store badges */}
-          <div className="mt-10 flex flex-row items-start gap-4 lg:mt-0 lg:items-center">
+          <div
+            className={`mt-10 flex flex-row gap-4 ${
+              isHome
+                ? "items-center justify-center"
+                : "items-start lg:mt-0 lg:items-center"
+            }`}
+          >
             <a
               href="https://bit.ly/kz-android-store"
               target="_blank"

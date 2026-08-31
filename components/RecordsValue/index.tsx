@@ -25,13 +25,7 @@ const benefits = [
 
 export default function RecordsValue() {
   return (
-    <section
-      className="relative overflow-hidden bg-[#E7EFE8] py-20 text-midnight lg:py-28"
-      style={{
-        backgroundImage:
-          "radial-gradient(circle at 8% 18%, rgba(190, 220, 197, 0.72), transparent 27%), radial-gradient(circle at 92% 82%, rgba(210, 221, 239, 0.68), transparent 30%)",
-      }}
-    >
+    <section className="relative overflow-hidden bg-white py-20 text-midnight lg:py-28">
       <div className="mx-auto max-w-c-1280 px-4 md:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
           <div className="lg:sticky lg:top-28">
@@ -59,7 +53,7 @@ export default function RecordsValue() {
             {benefits.map(({ icon, title, description }) => (
               <li
                 key={title}
-                className="group rounded-3xl border border-white bg-white p-6 shadow-[0_18px_55px_rgba(40,27,85,0.07)] transition duration-300 hover:-translate-y-1 sm:p-8"
+                className="group rounded-3xl border border-cloud bg-white p-6 shadow-[0_18px_55px_rgba(40,27,85,0.07)] transition duration-300 hover:-translate-y-1 sm:p-8"
               >
                 <div className="flex items-start gap-5">
                   <Image
