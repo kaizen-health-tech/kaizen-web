@@ -23,6 +23,12 @@ const faqs = [
     answer:
       "It's not guaranteed. The Medicare GLP-1 Bridge is an 18-month pilot running through December 31, 2027. CMS has not announced what, if anything, will replace it, and continuing coverage would require either a CMS extension or a change in the law by Congress.",
   },
+  {
+    question:
+      "What if my doctor's office won't help with the prior authorization?",
+    answer:
+      "It happens, especially at smaller primary care practices, because the paperwork is heavy: verifying BMI, documenting qualifying conditions and past weight-management efforts, filing insurer-specific forms, and resubmitting when a request stalls. If your prescriber won't take it on, ask whether an obesity-medicine or endocrinology clinic in your area handles GLP-1 Bridge requests, and get written confirmation of when the prior authorization is submitted and approved so a lapsed authorization or a pharmacy substitution doesn't turn a $50 fill into a $500 one.",
+  },
 ];
 
 const sections = [
@@ -52,6 +58,7 @@ const MedicareGlp1WeightLossCoverage = () => {
       image="/images/blog/glp-1.png"
       imageAlt="Pills, family, weight loss, Medicare's new GLP-1 weight-loss drug coverage online"
       datePublished="2026-07-10"
+      dateModified="2026-08-25"
       url="/blog/health/medicare-glp1-weight-loss-coverage"
       categoryKey="aging-well"
       readTime="6 min read"
@@ -196,8 +203,27 @@ const MedicareGlp1WeightLossCoverage = () => {
         for another Medicare drug program. Once that&apos;s approved,
         the pharmacy fills the prescription at the flat $50 rate.
         Doctors don&apos;t need to be enrolled as Medicare providers
-        to submit the request, which should, in theory, keep the
-        process from bottlenecking at the physician level.
+        to submit the request, which was meant to keep the process
+        from bottlenecking at the physician level.
+      </p>
+      <p>
+        In practice, the paperwork has become the sticking point. An{" "}
+        <Link
+          href="https://www.statnews.com/2026/08/11/medicare-weight-loss-drugs-glp-1s-bridge-program-primary-care/"
+          target="_blank"
+        >
+          August 2026 analysis in STAT
+        </Link>{" "}
+        described the administrative load on primary care as rivaling
+        the clinical work itself: verifying BMI criteria, documenting
+        obesity-related conditions and prior weight-management
+        attempts, filing insurer-specific forms, and resubmitting when
+        a request is denied or delayed. Some smaller practices, it
+        noted, may decide that helping patients enroll isn&apos;t
+        sustainable and stop assisting altogether. A benefit that
+        exists on paper isn&apos;t the same as one a family can
+        actually get, especially without the time or support to chase
+        the paperwork.
       </p>
 
       <HeadingWithAnchor id="why-temporary">
