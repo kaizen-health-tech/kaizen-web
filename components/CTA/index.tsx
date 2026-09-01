@@ -12,10 +12,10 @@ const CTA = ({ variant = "default" }: CTAProps) => {
       {/* <!-- ===== CTA Start ===== --> */}
       <section
         id="cta"
-        className={`overflow-hidden ${isHome ? "bg-white px-4 pb-16 md:px-8 md:pb-24" : ""}`}
+        className={`overflow-hidden ${isHome ? "bg-white px-4 py-16 md:px-8 md:py-24" : ""}`}
       >
         <div
-          className={`mx-auto px-8 py-16 md:py-20 ${
+          className={`mx-auto px-6 py-16 sm:px-8 md:py-20 ${
             isHome
               ? "flex max-w-c-1280 flex-col items-center rounded-[36px] bg-midnight text-center text-white shadow-[0_28px_80px_rgba(40,27,85,0.2)]"
               : "bg-gradient-to-r from-[#B2FDD3] via-[#D8E9FF] to-[#A881FF] lg:flex lg:items-center lg:justify-between"
@@ -38,7 +38,7 @@ const CTA = ({ variant = "default" }: CTAProps) => {
 
           {/* Store badges */}
           <div
-            className={`mt-10 flex flex-row gap-4 ${
+            className={`mt-10 flex flex-row flex-wrap gap-4 ${
               isHome
                 ? "items-center justify-center"
                 : "items-start lg:mt-0 lg:items-center"
@@ -52,9 +52,9 @@ const CTA = ({ variant = "default" }: CTAProps) => {
               <Image
                 src="/images/hero/android-store-dark.svg"
                 alt="Get it on Google Play"
-                width={180}
-                height={54}
-                className="h-16 w-auto"
+                width={119}
+                height={45}
+                className="h-12 w-auto shrink-0 md:h-16"
               />
             </a>
             <a
@@ -65,9 +65,9 @@ const CTA = ({ variant = "default" }: CTAProps) => {
               <Image
                 src="/images/hero/app-store-dark.svg"
                 alt="Download on the App Store"
-                width={180}
-                height={54}
-                className="h-16 w-auto"
+                width={119}
+                height={45}
+                className="h-12 w-auto shrink-0 md:h-16"
               />
             </a>
           </div>
