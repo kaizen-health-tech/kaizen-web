@@ -31,6 +31,12 @@ const menuData: Menu[] = [
         path: "/blog",
       },
       {
+        id: 37,
+        title: "Caregiver Cost Calculator",
+        newTab: false,
+        path: "/tools/caregiver-cost-calculator",
+      },
+      {
         id: 33,
         title: "About",
         newTab: false,

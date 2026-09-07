@@ -23,6 +23,10 @@ const coreLinks = [
   { href: "/careers/open-roles", label: "Current open roles and job details" },
   { href: "/updates", label: "Product updates and release timeline" },
   { href: "/blog", label: "Family health blog index" },
+  {
+    href: "/tools/caregiver-cost-calculator",
+    label: "Free caregiver cost and retirement calculator",
+  },
 ];
 
 const legalLinks = [

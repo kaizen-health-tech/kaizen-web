@@ -264,6 +264,15 @@ const RetirementCostOfCaregiving = () => {
         years of growth.
       </p>
       <p>
+        You can run the same math with your own salary, reduced hours, timeline,
+        contribution rate, and employer match in our free{" "}
+        <Link href="/tools/caregiver-cost-calculator">
+          caregiver cost calculator
+        </Link>
+        . It also shows what keeping five paid work hours a week could protect
+        over time.
+      </p>
+      <p>
         Returns are not guaranteed and 7% is an assumption, not a promise. But
         the direction is not in question: the cost of a contribution gap is set
         by how much time the money had left to grow, which is exactly why gaps

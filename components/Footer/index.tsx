@@ -94,6 +94,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link
+                  href="/tools/caregiver-cost-calculator"
+                  className="hover:text-primary"
+                >
+                  Caregiver cost calculator
+                </Link>
+              </li>
+              <li>
                 <Link href="/updates" className="hover:text-primary">
                   Product updates
                 </Link>

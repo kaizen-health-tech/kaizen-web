@@ -13,6 +13,7 @@ const coreRoutes = [
 
 // Secondary pages
 const secondaryRoutes = [
+  "/tools/caregiver-cost-calculator",
   "/team",
   "/updates",
   "/careers",
