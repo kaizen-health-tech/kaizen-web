@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   calculateCaregiverCost,
   type CaregiverCostInputs,
+  type CaregiverCostResults,
 } from "@/lib/caregiverCost";
 
 const DEFAULT_INPUTS: CaregiverCostInputs = {
@@ -28,6 +29,137 @@ const compactMoney = new Intl.NumberFormat("en-US", {
   notation: "compact",
   maximumFractionDigits: 1,
 });
+
+const SHARE_CARD_WIDTH = 1080;
+const SHARE_CARD_HEIGHT = 1350;
+
+const roundedRectangle = (
+  context: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  radius: number,
+) => {
+  context.beginPath();
+  context.roundRect(x, y, width, height, radius);
+};
+
+const loadImage = (source: string) =>
+  new Promise<HTMLImageElement>((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = reject;
+    image.src = source;
+  });
+
+const createShareCard = async (
+  inputs: CaregiverCostInputs,
+  results: CaregiverCostResults,
+) => {
+  await document.fonts.ready;
+
+  const canvas = document.createElement("canvas");
+  canvas.width = SHARE_CARD_WIDTH;
+  canvas.height = SHARE_CARD_HEIGHT;
+  const context = canvas.getContext("2d");
+
+  if (!context) {
+    throw new Error("Your browser could not create the share card.");
+  }
+
+  const background = context.createLinearGradient(0, 0, 1080, 1350);
+  background.addColorStop(0, "#835AF5");
+  background.addColorStop(0.52, "#6E40F3");
+  background.addColorStop(1, "#66E6B5");
+  context.fillStyle = background;
+  context.fillRect(0, 0, SHARE_CARD_WIDTH, SHARE_CARD_HEIGHT);
+
+  context.globalAlpha = 0.14;
+  context.fillStyle = "#FFFFFF";
+  context.beginPath();
+  context.arc(910, 120, 250, 0, Math.PI * 2);
+  context.fill();
+  context.beginPath();
+  context.arc(130, 1240, 300, 0, Math.PI * 2);
+  context.fill();
+  context.globalAlpha = 1;
+
+  roundedRectangle(context, 90, 90, 900, 1110, 52);
+  context.fillStyle = "#281B55";
+  context.fill();
+
+  try {
+    const logo = await loadImage("/images/logo/kaizen-logo-light.svg");
+    context.drawImage(logo, 150, 150, 256, 80);
+  } catch {
+    context.fillStyle = "#FFFFFF";
+    context.font = "700 38px 'Source Sans 3', Arial, sans-serif";
+    context.fillText("Kaizen Health", 150, 202);
+  }
+
+  context.fillStyle = "#66E6B5";
+  context.font = "700 24px 'Source Sans 3', Arial, sans-serif";
+  context.letterSpacing = "5px";
+  context.fillText("MY CAREGIVER COST", 150, 310);
+  context.letterSpacing = "0px";
+
+  context.fillStyle = "#FFFFFF";
+  context.font = "700 148px 'Source Sans 3', Arial, sans-serif";
+  context.fillText(compactMoney.format(results.totalFinancialImpact), 142, 490);
+
+  context.fillStyle = "rgba(255,255,255,0.72)";
+  context.font = "500 34px 'Source Sans 3', Arial, sans-serif";
+  context.fillText("in lost pay, employer match, and growth", 150, 552);
+
+  context.fillStyle = "rgba(255,255,255,0.14)";
+  context.fillRect(150, 625, 780, 2);
+
+  const fact = (label: string, value: string, x: number, y: number) => {
+    context.fillStyle = "#66E6B5";
+    context.font = "700 26px 'Source Sans 3', Arial, sans-serif";
+    context.fillText(label.toUpperCase(), x, y);
+    context.fillStyle = "#FFFFFF";
+    context.font = "700 58px 'Source Sans 3', Arial, sans-serif";
+    context.fillText(value, x, y + 72);
+  };
+
+  fact("Lost wages", money.format(results.lifetimeLostWages), 150, 710);
+  fact(
+    "Retirement shortfall",
+    money.format(results.retirementSavingsLost),
+    150,
+    865,
+  );
+
+  roundedRectangle(context, 150, 1015, 780, 112, 24);
+  context.fillStyle = "rgba(255,255,255,0.08)";
+  context.fill();
+  context.fillStyle = "#FFFFFF";
+  context.font = "600 31px 'Source Sans 3', Arial, sans-serif";
+  context.fillText(
+    `${inputs.reducedHoursPerWeek} work hours a week for ${results.workingCaregivingYears} years`,
+    188,
+    1084,
+  );
+
+  context.fillStyle = "#281B55";
+  context.font = "700 30px 'Source Sans 3', Arial, sans-serif";
+  context.fillText("Caregiver cost calculator", 90, 1270);
+  context.textAlign = "right";
+  context.font = "600 27px 'Source Sans 3', Arial, sans-serif";
+  context.fillText("kaizenhealth.io", 990, 1270);
+  context.textAlign = "left";
+
+  const blob = await new Promise<Blob>((resolve, reject) => {
+    canvas.toBlob((output) => {
+      if (output) resolve(output);
+      else reject(new Error("Your browser could not export the share card."));
+    }, "image/png");
+  });
+
+  return blob;
+};
 
 type FieldProps = {
   label: string;
@@ -116,7 +248,29 @@ export default function CaregiverCostCalculator() {
   const [inputs, setInputs] = useState(DEFAULT_INPUTS);
   const [copied, setCopied] = useState(false);
   const [showAssumptions, setShowAssumptions] = useState(false);
+  const [shareCardUrl, setShareCardUrl] = useState<string | null>(null);
+  const [shareCardBlob, setShareCardBlob] = useState<Blob | null>(null);
+  const [shareCardOpen, setShareCardOpen] = useState(false);
+  const [shareCardLoading, setShareCardLoading] = useState(false);
+  const [shareCardError, setShareCardError] = useState<string | null>(null);
   const results = useMemo(() => calculateCaregiverCost(inputs), [inputs]);
+
+  useEffect(() => {
+    return () => {
+      if (shareCardUrl) URL.revokeObjectURL(shareCardUrl);
+    };
+  }, [shareCardUrl]);
+
+  useEffect(() => {
+    if (!shareCardOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setShareCardOpen(false);
+    };
+
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [shareCardOpen]);
 
   const update = (field: keyof CaregiverCostInputs, value: number) => {
     setInputs((current) => ({ ...current, [field]: value }));
@@ -127,6 +281,60 @@ export default function CaregiverCostCalculator() {
     await navigator.clipboard.writeText(summary);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 2000);
+  };
+
+  const openShareCard = async () => {
+    setShareCardOpen(true);
+    setShareCardLoading(true);
+    setShareCardError(null);
+
+    try {
+      const blob = await createShareCard(inputs, results);
+      setShareCardBlob(blob);
+      setShareCardUrl(URL.createObjectURL(blob));
+    } catch (error) {
+      setShareCardError(
+        error instanceof Error
+          ? error.message
+          : "The share card could not be created.",
+      );
+    } finally {
+      setShareCardLoading(false);
+    }
+  };
+
+  const downloadShareCard = () => {
+    if (!shareCardUrl) return;
+    const link = document.createElement("a");
+    link.href = shareCardUrl;
+    link.download = "kaizen-caregiver-cost.png";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
+  const shareImage = async () => {
+    if (!shareCardBlob) return;
+
+    const file = new File([shareCardBlob], "kaizen-caregiver-cost.png", {
+      type: "image/png",
+    });
+
+    if (navigator.share && navigator.canShare?.({ files: [file] })) {
+      try {
+        await navigator.share({
+          title: "My caregiver cost estimate",
+          text: "I calculated the career cost of caregiving with Kaizen Health.",
+          files: [file],
+        });
+        return;
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError")
+          return;
+      }
+    }
+
+    downloadShareCard();
   };
 
   const wageShare = results.totalFinancialImpact
@@ -341,6 +549,26 @@ export default function CaregiverCostCalculator() {
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               type="button"
+              onClick={openShareCard}
+              className="inline-flex items-center gap-2 rounded-full bg-aquamarine px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-aquamarine/30"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                className="h-4 w-4"
+                aria-hidden="true"
+              >
+                <circle cx="18" cy="5" r="3" />
+                <circle cx="6" cy="12" r="3" />
+                <circle cx="18" cy="19" r="3" />
+                <path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4" />
+              </svg>
+              Make a share card
+            </button>
+            <button
+              type="button"
               onClick={copySummary}
               className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-lavender focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
             >
@@ -356,6 +584,89 @@ export default function CaregiverCostCalculator() {
           </div>
         </div>
       </section>
+
+      {shareCardOpen ? (
+        <div
+          className="fixed inset-0 z-[99999] flex items-center justify-center bg-midnight/85 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="share-card-title"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setShareCardOpen(false);
+          }}
+        >
+          <div className="max-h-[94vh] w-full max-w-md overflow-y-auto rounded-[28px] bg-white p-5 shadow-2xl dark:bg-dark-plum sm:p-6">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-violet">
+                  Ready to post
+                </p>
+                <h2
+                  id="share-card-title"
+                  className="mt-1 text-2xl font-semibold text-midnight dark:text-white"
+                >
+                  Share your estimate
+                </h2>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShareCardOpen(false)}
+                className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-lavender text-xl text-midnight transition hover:bg-light-lilac focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet/20 dark:bg-white/10 dark:text-white"
+                aria-label="Close share card"
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="mt-5 flex aspect-[4/5] items-center justify-center overflow-hidden rounded-2xl bg-lavender dark:bg-white/5">
+              {shareCardLoading ? (
+                <p className="text-sm font-semibold text-graphite dark:text-space">
+                  Making your card…
+                </p>
+              ) : shareCardError ? (
+                <p className="max-w-xs px-6 text-center text-sm text-red-600">
+                  {shareCardError}
+                </p>
+              ) : shareCardUrl ? (
+                // The preview is generated locally from the calculator results.
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={shareCardUrl}
+                  alt={`Share card showing an estimated caregiver career cost of ${money.format(results.totalFinancialImpact)}`}
+                  className="h-full w-full object-cover"
+                />
+              ) : null}
+            </div>
+
+            <p className="mt-4 text-sm leading-5 text-graphite dark:text-space">
+              The card includes your estimate, hours, and timeline. It leaves
+              out your salary.
+            </p>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <button
+                type="button"
+                onClick={shareImage}
+                disabled={!shareCardBlob || shareCardLoading}
+                className="rounded-full bg-violet px-5 py-3 font-semibold text-white transition hover:bg-violet-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet/20 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                Share image
+              </button>
+              <a
+                href={shareCardUrl ?? undefined}
+                download="kaizen-caregiver-cost.png"
+                aria-disabled={!shareCardUrl || shareCardLoading}
+                onClick={(event) => {
+                  if (!shareCardUrl || shareCardLoading) event.preventDefault();
+                }}
+                className="rounded-full border border-cloud px-5 py-3 text-center font-semibold text-midnight transition hover:border-violet hover:text-violet focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet/20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 dark:border-white/15 dark:text-white"
+              >
+                Download PNG
+              </a>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
