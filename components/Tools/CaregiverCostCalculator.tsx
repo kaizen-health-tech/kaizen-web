@@ -3,19 +3,17 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   calculateCaregiverCost,
+  parseCaregiverCostInputs,
+  serializeCaregiverCostInputs,
+  DEFAULT_CAREGIVER_COST_INPUTS,
   type CaregiverCostInputs,
   type CaregiverCostResults,
 } from "@/lib/caregiverCost";
+import { absoluteUrl } from "@/lib/seo";
 
-const DEFAULT_INPUTS: CaregiverCostInputs = {
-  annualSalary: 75_000,
-  reducedHoursPerWeek: 10,
-  caregivingYears: 3,
-  yearsUntilRetirement: 20,
-  employeeContributionRate: 6,
-  employerMatchRate: 3,
-  annualReturnRate: 7,
-};
+const DEFAULT_INPUTS = DEFAULT_CAREGIVER_COST_INPUTS;
+const TOOL_PATH = "/tools/caregiver-cost-calculator";
+const TOOL_URL = absoluteUrl(TOOL_PATH);
 
 const money = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -244,9 +242,16 @@ function ResultRow({
   );
 }
 
-export default function CaregiverCostCalculator() {
+export default function CaregiverCostCalculator({
+  variant = "full",
+}: {
+  variant?: "full" | "embed";
+}) {
+  const isEmbed = variant === "embed";
   const [inputs, setInputs] = useState(DEFAULT_INPUTS);
+  const [restored, setRestored] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
   const [showAssumptions, setShowAssumptions] = useState(false);
   const [shareCardUrl, setShareCardUrl] = useState<string | null>(null);
   const [shareCardBlob, setShareCardBlob] = useState<Blob | null>(null);
@@ -254,6 +259,47 @@ export default function CaregiverCostCalculator() {
   const [shareCardLoading, setShareCardLoading] = useState(false);
   const [shareCardError, setShareCardError] = useState<string | null>(null);
   const results = useMemo(() => calculateCaregiverCost(inputs), [inputs]);
+
+  const shareQuery = useMemo(
+    () => serializeCaregiverCostInputs(inputs),
+    [inputs],
+  );
+  const shareUrl = shareQuery ? `${TOOL_URL}?${shareQuery}` : TOOL_URL;
+  // Carries the visitor's current numbers out of a host page's iframe and onto
+  // kaizenhealth.io, tagged so embed referrals are measurable.
+  const breakoutUrl = `${shareUrl}${shareQuery ? "&" : "?"}utm_source=embed&utm_medium=referral`;
+
+  // Restore a shared estimate from the URL after mount. Reading location here
+  // rather than with useSearchParams keeps the host page statically rendered —
+  // useSearchParams would opt the whole route into dynamic rendering.
+  useEffect(() => {
+    const query = window.location.search;
+
+    if (query.length > 1) {
+      setInputs(parseCaregiverCostInputs(query));
+    }
+
+    setRestored(true);
+  }, []);
+
+  // Mirror the inputs back into the address bar so any estimate on screen is
+  // already a shareable link. replaceState keeps it out of session history, so
+  // Back still leaves the page instead of stepping through every keystroke.
+  useEffect(() => {
+    if (!restored || isEmbed) return;
+
+    const timer = window.setTimeout(() => {
+      window.history.replaceState(
+        null,
+        "",
+        shareQuery
+          ? `${window.location.pathname}?${shareQuery}`
+          : window.location.pathname,
+      );
+    }, 300);
+
+    return () => window.clearTimeout(timer);
+  }, [shareQuery, restored, isEmbed]);
 
   useEffect(() => {
     return () => {
@@ -277,10 +323,16 @@ export default function CaregiverCostCalculator() {
   };
 
   const copySummary = async () => {
-    const summary = `My estimated caregiver career cost: ${money.format(results.totalFinancialImpact)} in gross wages, employer match, and investment growth. The projected retirement account shortfall is ${money.format(results.retirementSavingsLost)}. Calculated at kaizenhealth.io/tools/caregiver-cost-calculator`;
+    const summary = `My estimated caregiver career cost: ${money.format(results.totalFinancialImpact)} in gross wages, employer match, and investment growth. The projected retirement account shortfall is ${money.format(results.retirementSavingsLost)}. See the same estimate: ${shareUrl}`;
     await navigator.clipboard.writeText(summary);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 2000);
+  };
+
+  const copyLink = async () => {
+    await navigator.clipboard.writeText(shareUrl);
+    setLinkCopied(true);
+    window.setTimeout(() => setLinkCopied(false), 2000);
   };
 
   const openShareCard = async () => {
@@ -547,41 +599,78 @@ export default function CaregiverCostCalculator() {
           ) : null}
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <button
-              type="button"
-              onClick={openShareCard}
-              className="inline-flex items-center gap-2 rounded-full bg-aquamarine px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-aquamarine/30"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                className="h-4 w-4"
-                aria-hidden="true"
-              >
-                <circle cx="18" cy="5" r="3" />
-                <circle cx="6" cy="12" r="3" />
-                <circle cx="18" cy="19" r="3" />
-                <path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4" />
-              </svg>
-              Make a share card
-            </button>
-            <button
-              type="button"
-              onClick={copySummary}
-              className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-lavender focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
-            >
-              {copied ? "Copied" : "Copy my estimate"}
-            </button>
-            <button
-              type="button"
-              onClick={() => window.print()}
-              className="rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/20"
-            >
-              Print results
-            </button>
+            {isEmbed ? (
+              <>
+                <a
+                  href={breakoutUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-2 rounded-full bg-aquamarine px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-aquamarine/30"
+                >
+                  Open the full calculator
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={copySummary}
+                  className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-lavender focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+                >
+                  {copied ? "Copied" : "Copy my estimate"}
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={openShareCard}
+                  className="inline-flex items-center gap-2 rounded-full bg-aquamarine px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-aquamarine/30"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    className="h-4 w-4"
+                    aria-hidden="true"
+                  >
+                    <circle cx="18" cy="5" r="3" />
+                    <circle cx="6" cy="12" r="3" />
+                    <circle cx="18" cy="19" r="3" />
+                    <path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4" />
+                  </svg>
+                  Make a share card
+                </button>
+                <button
+                  type="button"
+                  onClick={copyLink}
+                  className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-lavender focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+                >
+                  {linkCopied ? "Link copied" : "Copy link to this estimate"}
+                </button>
+                <button
+                  type="button"
+                  onClick={copySummary}
+                  className="rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/20"
+                >
+                  {copied ? "Copied" : "Copy my estimate"}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => window.print()}
+                  className="rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/20"
+                >
+                  Print results
+                </button>
+              </>
+            )}
           </div>
+
+          {isEmbed ? null : (
+            <p className="mt-4 text-xs leading-5 text-white/45">
+              Your numbers stay in the link, not on our servers. Anyone who
+              opens it sees this same estimate.
+            </p>
+          )}
         </div>
       </section>
 

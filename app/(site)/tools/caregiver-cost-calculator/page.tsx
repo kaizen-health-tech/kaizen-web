@@ -3,6 +3,8 @@ import Link from "next/link";
 import Breadcrumbs from "@/components/Common/Breadcrumbs";
 import CTA from "@/components/CTA";
 import CaregiverCostCalculator from "@/components/Tools/CaregiverCostCalculator";
+import CaregiverCostEmbedSnippet from "@/components/Tools/CaregiverCostEmbedSnippet";
+import { buildCaregiverCalculatorEmbed } from "@/lib/embeds";
 import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -10,6 +12,9 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Estimate how reduced work hours for family caregiving may affect your lifetime wages, employer match, and retirement savings with this free calculator.",
   path: "/tools/caregiver-cost-calculator",
+  // A tool needs a preview that shows the tool. The site-wide default is the
+  // Kaizen logo, which tells nobody scrolling LinkedIn what this link is.
+  image: "/api/og/caregiver-cost-calculator",
   keywords: [
     "caregiver cost calculator",
     "caregiving lost wages calculator",
@@ -17,6 +22,8 @@ export const metadata: Metadata = createPageMetadata({
     "cost of leaving work to care for parent",
   ],
 });
+
+const embedSnippet = buildCaregiverCalculatorEmbed();
 
 const calculatorSchema = {
   "@context": "https://schema.org",
@@ -219,6 +226,39 @@ export default function CaregiverCostCalculatorPage() {
           >
             Read the full caregiving cost guide
           </Link>
+        </div>
+      </section>
+
+      <section
+        className="px-4 py-16 sm:px-6 lg:px-8"
+        aria-labelledby="embed-calculator"
+      >
+        <div className="mx-auto max-w-c-1154">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet">
+              For publishers and advisors
+            </p>
+            <h2
+              id="embed-calculator"
+              className="mt-3 text-3xl font-semibold tracking-tight text-midnight dark:text-white sm:text-5xl"
+            >
+              Put this calculator on your own site.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-text-body dark:text-space">
+              Free to embed, no account and no attribution fee. If you write for
+              caregivers, advise families on retirement, or run a caregiver
+              support program, your readers can run their numbers without
+              leaving your page.
+            </p>
+          </div>
+
+          <CaregiverCostEmbedSnippet snippet={embedSnippet} />
+
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-graphite dark:text-space">
+            Paste the whole block. The stylesheet sizes the frame on its own, so
+            the calculator still displays in full if your CMS strips the
+            script — the script only trims the leftover space to an exact fit.
+          </p>
         </div>
       </section>
 
