@@ -8,6 +8,23 @@ const editorialTeam = {
 
 const BlogData: Blog[] = [
   {
+    id: 20,
+    mainImage: "/images/blog/dr-benur-ai-assistant-breathing-problem.png",
+    title:
+      "What an AI Health Assistant Can and Can't Tell You About a Breathing Problem",
+    metadata:
+      "An AI assistant can organize your symptoms and estimate urgency. It can't measure your oxygen saturation or listen to your chest. A pulmonologist's guide to where the assistant helps, and where it quietly misleads.",
+    url: "/blog/ai-agents/ai-health-assistant-breathing-problem",
+    categoryKey: "kai-ai",
+    featured: true,
+    readTime: "10 min read",
+    author: {
+      name: "Dr. Abhishek J. Benur, MD",
+      image: "/images/blog/authors/dr-abhishek-benur.jpg",
+      role: "Pulmonologist, Respiratory Medicine — guest contributor via SwayHouse",
+    },
+  },
+  {
     id: 19,
     mainImage: "/images/blog/is-ai-safe-for-medical-records.png",
     title: "Is It Safe to Share Family Medical Records with AI?",
@@ -118,7 +135,7 @@ const BlogData: Blog[] = [
       "How regular sunlight exposure can support bone health, mood, immunity, and sleep in older adults.",
     url: "/blog/health/sunshine",
     categoryKey: "aging-well",
-    featured: true,
+    featured: false,
     readTime: "5 min read",
     author: editorialTeam,
   },
@@ -208,7 +225,7 @@ const BlogData: Blog[] = [
       "Five companies launched consumer AI health products in the first three months of 2026. What an AI agent actually is, how it differs from a chatbot, and what to check before using one with your family's records.",
     url: "/blog/ai-agents",
     categoryKey: "kai-ai",
-    featured: true,
+    featured: false,
     readTime: "13 min read",
     author: editorialTeam,
   },

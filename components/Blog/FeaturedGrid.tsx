@@ -52,7 +52,10 @@ const FeaturedGrid = ({ posts }: FeaturedGridProps) => {
           </p>
         )}
         {big.mainImage && (
-          <div className="relative h-55 w-full overflow-hidden rounded-2xl">
+          // flex-1 lets the image grow to fill whatever height the grid's
+          // row-stretch adds beyond this card's natural content height,
+          // instead of leaving that space blank above the author row.
+          <div className="relative min-h-55 w-full flex-1 overflow-hidden rounded-2xl">
             <Image
               src={big.mainImage}
               alt={big.title}

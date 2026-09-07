@@ -2,7 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
-import { categoryHref as getCategoryHref, CategoryKey, getCategory } from "./categories";
+import {
+  categoryHref as getCategoryHref,
+  CategoryKey,
+  getCategory,
+} from "./categories";
 import Avatar from "./Avatar";
 import ContentsRail, { ArticleSection } from "./ContentsRail";
 import ReadingProgressBar from "./ReadingProgressBar";
@@ -23,6 +27,11 @@ export interface ArticleLayoutProps {
   authorName?: string;
   authorCredentials?: string;
   authorImage?: string;
+  authorUrl?: string;
+  authorAffiliation?: {
+    name: string;
+    url: string;
+  };
   readTime: string;
   tags?: string[];
   sections?: ArticleSection[];
@@ -43,6 +52,8 @@ const ArticleLayout = ({
   authorName = "Kaizen Health Editorial Team",
   authorCredentials = "Reviewed by healthcare professionals",
   authorImage,
+  authorUrl,
+  authorAffiliation,
   readTime,
   tags = [],
   sections = [],
@@ -69,6 +80,7 @@ const ArticleLayout = ({
         dateModified={dateModified}
         authorName={authorName}
         authorCredentials={authorCredentials}
+        authorUrl={authorUrl}
         url={url}
         section={category.label}
         keywords={keywords}
@@ -84,7 +96,10 @@ const ArticleLayout = ({
               Blog
             </Link>
             <span>/</span>
-            <Link href={resolvedCategoryHref} className="font-semibold text-violet">
+            <Link
+              href={resolvedCategoryHref}
+              className="font-semibold text-violet"
+            >
               {category.label}
             </Link>
           </div>
@@ -97,14 +112,44 @@ const ArticleLayout = ({
           <div className="flex flex-wrap items-center gap-4">
             <Avatar name={authorName} image={authorImage} size={52} />
             <div className="flex flex-col gap-1">
-              <span className="text-lg font-bold text-midnight">{authorName}</span>
+              {authorUrl ? (
+                <a
+                  href={authorUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-bold text-midnight underline-offset-4 hover:text-violet hover:underline"
+                >
+                  {authorName}
+                </a>
+              ) : (
+                <span className="text-lg font-bold text-midnight">
+                  {authorName}
+                </span>
+              )}
               {authorCredentials && (
-                <span className="text-base text-graphite">{authorCredentials}</span>
+                <span className="text-base text-graphite">
+                  {authorCredentials}
+                  {authorAffiliation && (
+                    <>
+                      {" · Guest contributor via "}
+                      <a
+                        href={authorAffiliation.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium underline underline-offset-3 hover:text-violet"
+                      >
+                        {authorAffiliation.name}
+                      </a>
+                    </>
+                  )}
+                </span>
               )}
             </div>
             <span className="mx-1 hidden h-9 w-px bg-ash sm:block" />
             <div className="flex flex-col gap-1">
-              <span className="text-base font-semibold text-arsenic">{readTime}</span>
+              <span className="text-base font-semibold text-arsenic">
+                {readTime}
+              </span>
               {dateModified && (
                 <span className="text-base text-graphite">
                   Updated{" "}
@@ -148,8 +193,23 @@ const ArticleLayout = ({
             <div className="mb-14 flex items-center gap-4.5 border-t border-cloud pt-7">
               <Avatar name={authorName} image={authorImage} size={64} />
               <div>
-                <div className="mb-1 text-[19px] font-bold text-midnight">{authorName}</div>
-                <div className="text-pretty text-lg leading-[1.5] text-graphite">{authorBio}</div>
+                <div className="mb-1 text-[19px] font-bold text-midnight">
+                  {authorUrl ? (
+                    <a
+                      href={authorUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline-offset-4 hover:text-violet hover:underline"
+                    >
+                      {authorName}
+                    </a>
+                  ) : (
+                    authorName
+                  )}
+                </div>
+                <div className="text-pretty text-lg leading-[1.5] text-graphite">
+                  {authorBio}
+                </div>
               </div>
             </div>
           )}

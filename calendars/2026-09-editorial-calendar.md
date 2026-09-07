@@ -3,9 +3,19 @@
 Kaizen Health — built on `reports/blog-strategy-family-health-ai-agents-2026-08-09.md`. **Revised** from the original version of this file: the AI Agents flagship pillar and Spokes 1-3 moved up into `calendars/2026-08-editorial-calendar.md` (Aug 11-20) rather than waiting for September, so this file now picks up where August leaves off instead of duplicating that work.
 
 ## Publishing Cadence: 2 posts/week (Tue/Thu)
-## Content Mix: 7 new / 1 refresh / 1 repurposed (9 actions) + 1 physician-partnership piece carried over from August (off-cadence, tracked separately — see "Physician Partnership Piece" below)
+## Content Mix: 7 new / 1 refresh / 1 repurposed (9 actions) + 2 off-cadence physician-contributed pieces (Dr. Kaur carried over from August; Dr. Benur guest post shipped Sep 5) — see "Physician Partnership Piece" and "Unplanned Addition" below
 
 This mix is new-content-heavy versus the strategy's default 60/30/10 formula. That's a deliberate call: three clusters are within striking distance of full coverage this month (AI Agents to 9/9, Family Medical Record Organization gets its missing pillar, Genetic & Hereditary Risk gets its missing pillar), and finishing them now is worth more than pacing evenly.
+
+## Unplanned Addition: Physician Guest Contribution (Sat Sep 5)
+
+Not part of the original plan or brief pipeline — Dr. Abhishek J. Benur, MD (pulmonologist, contributed via SwayHouse) supplied a finished draft that was fact-checked, adapted to house format, and shipped the same week rather than waiting for a briefed Tue/Thu slot.
+
+| Day | Title | Cluster | Target Keyword | Status |
+|-----|-------|---------|----------------|--------|
+| Sat Sep 5 | What an AI Health Assistant Can and Can't Tell You About a Breathing Problem | AI Agents in Family Health (bonus spoke — guest physician) | ai health assistant for a breathing problem | Live (`/blog/ai-agents/ai-health-assistant-breathing-problem`) |
+
+Critical facts (WHO TB stats, AI-triage-accuracy citation, DPDP Act dates) were verified against primary sources during drafting; medium-priority terminology/readability issues and two unsourced stats were fixed; a comparison table was added; the piece was passed through the no-ai-slop editing pass. This is additive to the 9 scheduled Tue/Thu actions and doesn't displace Spokes 4-8, the same way the Dr. Kaur diabetes piece is additive to the Family Medical Record Organization cluster below.
 
 ### Week 1: Sep 1-6
 | Day | Type | Title | Template | Cluster | Target Keyword | Status |
@@ -48,7 +58,7 @@ National Grandparents Day falls Sun Sep 13 — no dedicated post scheduled, but 
 ## Topic Cluster Progress
 | Cluster | Pillar | Spokes Published | Spokes Planned (this month) | Coverage |
 |---------|--------|-------------------|-------------------------------|----------|
-| AI Agents in Family Health | Published Aug 11 | 3/8 (Spokes 1-3, published in August) → 8/8 by Sep 24 | Spokes 4-8 (5 remaining) | ~44% → 100% by month end |
+| AI Agents in Family Health | Published Aug 11 | 3/8 (Spokes 1-3, published in August) → 8/8 by Sep 24, + 1 bonus spoke (Dr. Benur guest post, live Sep 5, `/blog/ai-agents/ai-health-assistant-breathing-problem`) | Spokes 4-8 (5 remaining) | ~44% → 100% by month end; bonus spoke is additive, not counted against the 8-spoke plan |
 | Family Medical Record Organization | Publishing Sep 15 | 5/7 (`family-health-monitoring`, `family-history/documenting-family-health`, `/organizing-medical-records`, `/caregiver-guide-aging-parents`, `/research`) + 1 bonus spoke carried from August (Dr. Kaur diabetes piece, target Sep 8 / mid-Sept) | +1 pillar this month, +1 bonus spoke, 2 gap-fillers next quarter | 71% → effectively complete once pillar ships; bonus spoke is additive, not counted against the 7-spoke plan |
 | Genetic & Hereditary Risk Awareness | Publishing Sep 22 | 4/4 (`pregnancy-genetic`, `heart/genetic-risk-score-heart-disease`, `diabetes-magnesium-vitamin-d`, `cancer/colorectal-cancer-risk`) | +1 pillar this month | 100% spokes, pillar in progress |
 | Caregiving Financial & Emotional Reality | Not started (pillar) | 2/6, +1 cross-linked via Spoke 7 (Sep 17) | 0 dedicated new pieces this month | 33-50% depending on how Spoke 7 is counted |
@@ -75,6 +85,7 @@ No GSC/analytics export was available for this pass, so performance-trend eviden
 ## Distribution Schedule
 | Post | Publish Date | LinkedIn | Reddit | Email | YouTube |
 |------|--------------|----------|--------|-------|---------|
+| What an AI Health Assistant Can and Can't Tell You About a Breathing Problem (Dr. Benur guest post) | Sep 5 | Same day, tag Dr. Benur / SwayHouse | +2-3 days (r/AsktheDoctor-type subs, if appropriate) | Next weekly batch | — |
 | AI Agents Won't Replace the Family Care Coordinator | Sep 1 | Same day | — | Next weekly batch | — |
 | Should You Let an AI Chatbot Answer Your Kid's Health Questions? | Sep 3 | Same day | — | Next weekly batch | — |
 | AI Agents and Genetic Risk | Sep 8 | Same day | +2-3 days | Next weekly batch | — |

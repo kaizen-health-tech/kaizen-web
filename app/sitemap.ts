@@ -54,6 +54,8 @@ const blogRoutes = [
   "/blog/ai-agents",
   "/blog/ai-agents/agent-vs-chatbot",
   "/blog/ai-agents/ai-health-assistant-comparison",
+  "/blog/ai-agents/is-ai-safe-for-medical-records",
+  "/blog/ai-agents/ai-health-assistant-breathing-problem",
 ];
 
 // Paginated blog index pages, derived from the post count. Page 1 is /blog,
