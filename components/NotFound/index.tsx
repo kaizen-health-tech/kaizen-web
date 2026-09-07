@@ -8,6 +8,7 @@ import Image from "next/image";
  * A <Link> click there updates the URL via pushState with no router mounted
  * to handle the transition, so the page silently stops navigating.
  */
+/* eslint-disable @next/next/no-html-link-for-pages -- deliberate, see above */
 const NotFoundContent = () => {
   return (
     <section className="overflow-hidden pb-25 pt-45 lg:pb-32.5 lg:pt-50 xl:pb-37.5 xl:pt-55">

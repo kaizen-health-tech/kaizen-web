@@ -12,10 +12,10 @@ export type Author = {
 export type Blog = {
   id: number;
   title: string;
-  slug?: any;
+  slug?: string;
   metadata?: string;
   body?: string;
-  mainImage?: any;
+  mainImage?: string;
   author?: Author;
   tags?: string[];
   publishedAt?: string;

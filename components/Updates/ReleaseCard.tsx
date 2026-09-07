@@ -108,7 +108,7 @@ const ReleaseCard = ({ release }: ReleaseCardProps) => {
             Highlights
           </p>
           <ul className="space-y-3">
-            {release.highlights.slice(0, 3).map((highlight, index) => {
+            {release.highlights.slice(0, 3).map((highlight) => {
               const impact = highlight.impact
                 ? impactCopy[highlight.impact]
                 : undefined;

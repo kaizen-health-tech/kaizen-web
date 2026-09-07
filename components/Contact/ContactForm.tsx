@@ -53,7 +53,7 @@ const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
       } else {
         toast("Error while submitting form. Please try again later.");
       }
-    } catch (error) {
+    } catch {
       toast("Error while submitting form. Please try again later.");
     } finally {
       setIsSubmitting(false);

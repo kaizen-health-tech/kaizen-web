@@ -1,5 +1,5 @@
 import { getAllTags, getSortedReleases } from "@/data/releases";
-import { ReleaseCard, ReleaseExplorer } from "@/components/Updates";
+import { ReleaseExplorer } from "@/components/Updates";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";

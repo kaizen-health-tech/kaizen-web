@@ -6,7 +6,6 @@ import StatTrio from "@/components/Blog/content/StatTrio";
 import PullQuote from "@/components/Blog/content/PullQuote";
 import NumberedPoints from "@/components/Blog/content/NumberedPoints";
 import ProductCallout from "@/components/Blog/content/ProductCallout";
-import ImagePlaceholder from "@/components/Blog/content/ImagePlaceholder";
 import InlineImage from "@/components/Blog/content/InlineImage";
 import Link from "next/link";
 import { Metadata } from "next";

@@ -33,6 +33,7 @@ export const metadata: Metadata = {
  * doesn't). This uses a minimal, static header/footer with plain <a> tags
  * instead, which always trigger a real navigation.
  */
+/* eslint-disable @next/next/no-html-link-for-pages -- deliberate, see above */
 export default function GlobalNotFound() {
   return (
     <html lang="en" suppressHydrationWarning>

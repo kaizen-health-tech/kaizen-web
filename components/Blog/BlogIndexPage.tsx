@@ -2,7 +2,6 @@ import {
   getFeaturedPosts,
   getMostReadPosts,
   getPostsForPage,
-  getSortedPosts,
   getTotalPages,
 } from "@/lib/blog";
 import AskKaiPanel from "./AskKaiPanel";
@@ -20,7 +19,6 @@ interface BlogIndexPageProps {
 const BlogIndexPage = ({ pageNumber }: BlogIndexPageProps) => {
   const totalPages = getTotalPages();
   const posts = getPostsForPage(pageNumber);
-  const totalCount = getSortedPosts().length;
 
   return (
     <section className="pb-20 pt-35 lg:pb-25 lg:pt-45 xl:pb-30 xl:pt-40">

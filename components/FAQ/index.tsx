@@ -8,7 +8,7 @@ const FAQ = () => {
   const [activeFaq, setActiveFaq] = useState(1);
 
   const handleFaqToggle = (id: number) => {
-    activeFaq === id ? setActiveFaq(0) : setActiveFaq(id);
+    setActiveFaq(activeFaq === id ? 0 : id);
   };
 
   // Transform FAQ data for schema
