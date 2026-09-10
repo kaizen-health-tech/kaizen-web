@@ -62,12 +62,12 @@ const BlogData: Blog[] = [
   {
     id: 2,
     mainImage: "/images/blog/pregnancy-genetic.png",
-    title: "Genetic conditions during pregnancy",
+    title: "Genetic Testing During Pregnancy: Screening, Diagnosis, and What the Results Mean",
     metadata:
-      "Common prenatal genetic conditions, screening options, and the role AI can play in making complex results easier to understand.",
+      "How prenatal screening and diagnostic tests differ, what conditions they check for, when each happens, and what a positive result actually means before you decide.",
     url: "/blog/pregnancy-genetic",
     categoryKey: "pregnancy",
-    readTime: "6 min read",
+    readTime: "12 min read",
     author: editorialTeam,
   },
   {
