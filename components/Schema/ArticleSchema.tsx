@@ -29,7 +29,7 @@ export default function ArticleSchema({
 }: ArticleSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: title,
     description: description,
     image: image ? absoluteUrl(image) : absoluteUrl("/images/logo/kaizen-logo.png"),

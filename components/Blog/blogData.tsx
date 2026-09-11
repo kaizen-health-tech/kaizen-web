@@ -9,7 +9,7 @@ const editorialTeam = {
 const BlogData: Blog[] = [
   {
     id: 21,
-    mainImage: "/images/blog/shared-family-medical-record.png",
+    mainImage: "/images/blog/shared-family-record-hero.png",
     title:
       "The Shared Family Medical Record: Who Needs Access to What, and How to Set It Up",
     metadata:

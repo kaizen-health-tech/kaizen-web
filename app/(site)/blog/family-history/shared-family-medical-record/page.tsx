@@ -10,7 +10,7 @@ import BlogFAQ from "@/components/Blog/BlogFAQ";
 import KeyTakeaways from "@/components/Blog/content/KeyTakeaways";
 import NumberedPoints from "@/components/Blog/content/NumberedPoints";
 import PullQuote from "@/components/Blog/content/PullQuote";
-import ImagePlaceholder from "@/components/Blog/content/ImagePlaceholder";
+import InlineImage from "@/components/Blog/content/InlineImage";
 import ProductCallout from "@/components/Blog/content/ProductCallout";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -79,7 +79,7 @@ export const metadata: Metadata = createPageMetadata({
     "When several people share one person's care, the hard part is who's allowed to see what. A guide to shared family medical records, access, and setup.",
   path: "/blog/family-history/shared-family-medical-record",
   type: "article",
-  image: "/images/blog/shared-family-medical-record.png",
+  image: "/images/blog/shared-family-record-hero.png",
   keywords: [
     "shared family medical records",
     "family member access to medical records",
@@ -96,7 +96,7 @@ const SharedFamilyMedicalRecord = () => {
     <ArticleLayout
       title="The Shared Family Medical Record: Who Needs Access to What, and How to Set It Up"
       description="A spouse, an adult child, and a sibling each need a different slice of the same record. Here's what HIPAA actually requires, how it changes for aging parents and teenagers, and how to set shared access up before you need it."
-      image="/images/blog/shared-family-medical-record.png"
+      image="/images/blog/shared-family-record-hero.png"
       imageAlt="An adult daughter and her older mother sitting together at a table, looking over paperwork and a tablet"
       datePublished="2026-09-15"
       dateModified="2026-09-15"
@@ -195,9 +195,9 @@ const SharedFamilyMedicalRecord = () => {
           },
         ]}
       />
-      <ImagePlaceholder
-        suggestion="Editorial-style photo of an adult child helping an older parent look at a smartphone together at a kitchen table, warm natural light, genuine expressions, no text overlay. Generation prompt: 'A candid, warm photo of an adult daughter sitting beside her older mother, both looking at a smartphone screen together at a kitchen table, soft natural daylight, diverse casting, realistic and unposed, editorial healthcare blog style, no text or logos.'"
-        altText="An adult daughter and her older mother looking at a smartphone screen together at a kitchen table"
+      <InlineImage
+        src="/images/blog/shared-family-record-intro-photo.png"
+        alt="An adult daughter and her older mother looking at a smartphone screen together at a kitchen table"
       />
       <p>
         Once you know who should see what, the practical work of{" "}
@@ -277,9 +277,9 @@ const SharedFamilyMedicalRecord = () => {
         , but only once the underlying information is complete and reachable
         by the people who need it.
       </p>
-      <ImagePlaceholder
-        suggestion="Original infographic: a role map showing one central medical record icon with four family roles arranged around it (spouse, adult child, sibling, decision-maker), each connected by a line to a scoped 'view' of the record (meds & monitoring / appointments & provider contact / insurance & paperwork / full decision authority). Clean, modern healthcare-editorial style, soft violet and mint color palette, no photographic elements, legible at small size. Generation prompt: 'A clean vector-style infographic showing a central medical record icon connected to four surrounding family-role icons (spouse, adult child, sibling, decision-maker), each with a small scoped-access label, healthcare editorial color palette of violet, mint, and off-white, minimal, no text paragraphs, icon-first design.'"
-        altText="Infographic showing one shared medical record at the center with four family roles around it, each with a different scoped level of access"
+      <InlineImage
+        src="/images/blog/shared-family-record-role-map.png"
+        alt="Infographic showing one shared medical record at the center with four family roles around it, each with a different scoped level of access"
       />
 
       <HeadingWithAnchor id="three-access-routes">
@@ -426,9 +426,9 @@ const SharedFamilyMedicalRecord = () => {
         </table>
       </div>
       <PullQuote quote="Personal representative means durable, chart-level access. An authorization means exactly what the patient wrote down, and nothing more. Involved-in-care sharing means a hallway conversation, not the chart." />
-      <ImagePlaceholder
-        suggestion="Original infographic: a three-column comparison card contrasting Involved-in-care sharing, HIPAA authorization, and Personal representative, each column with a simple icon (speech bubble, signed document, ID badge) and one short phrase summarizing the level of access. Clean healthcare-editorial style matching the role-map graphic above. Generation prompt: 'A clean three-column comparison infographic card titled with three headers: Involved-in-care sharing, HIPAA authorization, Personal representative, each with a simple line icon (speech bubble, signed document, ID badge) and one short descriptive phrase beneath, healthcare editorial palette of violet, mint, and off-white, no dense text blocks.'"
-        altText="Three-column comparison card showing involved-in-care sharing, HIPAA authorization, and personal representative as three distinct levels of family access to medical records"
+      <InlineImage
+        src="/images/blog/shared-family-record-access-routes.png"
+        alt="Three-column comparison card showing involved-in-care sharing, HIPAA authorization, and personal representative as three distinct levels of family access to medical records"
       />
 
       <HeadingWithAnchor id="spouses-adult-children">
@@ -485,9 +485,9 @@ const SharedFamilyMedicalRecord = () => {
         an elder-law attorney, before you count on it.
       </p>
 
-      <ImagePlaceholder
-        suggestion="Photo. Two adult siblings helping their mother, who is seated at a kitchen table, sort her medication into a weekly pill organizer. Warm, natural indoor light, everyday domestic setting, no text overlay. Illustrates two adult children sharing one parent's care and needing different scoped access to the same record."
-        altText="Two adult siblings helping their mother organize her weekly medications at the kitchen table"
+      <InlineImage
+        src="/images/blog/shared-family-record-siblings-meds.png"
+        alt="Two adult siblings helping their mother organize her weekly medications at the kitchen table"
       />
 
       <HeadingWithAnchor id="aging-parents">
@@ -666,9 +666,9 @@ const SharedFamilyMedicalRecord = () => {
         . Treat &ldquo;around age 12 to 13&rdquo; as a general pattern, not a
         guarantee for your own child&apos;s portal.
       </p>
-      <ImagePlaceholder
-        suggestion="Original infographic: a horizontal timeline showing a child's patient-portal access across four stages: full parent proxy access (birth to ~11), step-down to limited view (~12-13), teen-controlled access to sensitive services (13-17), and access ending at 18. Simple age markers, healthcare editorial color palette matching the rest of the piece. Generation prompt: 'A clean horizontal timeline infographic showing four labeled stages of a child's patient portal access by age: full parent access from birth, a step-down to limited parent access around age 12-13, teen-controlled access to sensitive services through the teen years, and access ending at 18, minimal healthcare-editorial style, violet and mint palette, small age markers, no dense paragraphs.'"
-        altText="Timeline infographic showing how a parent's access to a child's patient portal steps down around age 12 to 13 and ends at 18"
+      <InlineImage
+        src="/images/blog/shared-family-record-teen-portal-timeline.png"
+        alt="Timeline infographic showing how a parent's access to a child's patient portal steps down around age 12 to 13 and ends at 18"
       />
       <p>
         State law also decides which categories of care a minor can consent
@@ -726,9 +726,9 @@ const SharedFamilyMedicalRecord = () => {
         anything you read on this topic, and verify it against your own
         state before you rely on it.
       </p>
-      <ImagePlaceholder
-        suggestion="A clean choropleth-style US map infographic, keyed to Guttmacher's minor-contraception-consent categories: states shaded in three muted colors for all minors may consent, conditional consent, and parental consent required. Include a simple three-item color-key legend and a visible caption below the map reading: As of Aug. 2026, see Guttmacher Institute for current state-by-state rules. Editorial healthcare data-visualization style, muted violet, mint, and gray palette, not a bright political-campaign look."
-        altText="US map showing which states allow minors to consent to contraceptive services on their own, which allow it conditionally, and which require parental consent, captioned as of August 2026"
+      <InlineImage
+        src="/images/blog/shared-family-record-minor-consent-map.png"
+        alt="US map showing which states allow minors to consent to contraceptive services on their own, which allow it conditionally, and which require parental consent, captioned as of August 2026"
       />
       <p>
         Access questions start even earlier than adolescence. If your family
@@ -786,9 +786,9 @@ const SharedFamilyMedicalRecord = () => {
         say providers can be fined $1 million for information blocking; that
         figure applies to a different set of actors entirely.
       </p>
-      <ImagePlaceholder
-        suggestion="Original infographic: a simple two-column 'Does / Doesn't' card summarizing what the Cures Act information-blocking rule does and doesn't do for families, e.g. 'Secures your own timely access to your records' vs. 'Give a spouse or adult child access to your records.' Clean editorial card layout, checkmark and X icons, matching the site's violet/mint palette. Generation prompt: 'A clean two-column comparison infographic card with a checkmark column titled DOES and an X-mark column titled DOESN'T, summarizing what a health information access rule secures versus what it does not grant to family members, healthcare editorial style, violet and mint color palette, minimal text, icon-forward design.'"
-        altText="Two-column card summarizing what the Cures Act information-blocking rule does and doesn't do for family access to medical records"
+      <InlineImage
+        src="/images/blog/shared-family-record-cures-act-card.png"
+        alt="Two-column card summarizing what the Cures Act information-blocking rule does and doesn't do for family access to medical records"
       />
       <p>
         For deeper background on the rule generally,{" "}
@@ -860,9 +860,9 @@ const SharedFamilyMedicalRecord = () => {
           },
         ]}
       />
-      <ImagePlaceholder
-        suggestion="UI mock, numbered: a stylized, generic patient-portal 'Sharing Hub' screen showing 'Manage friends and family access' and 'Invite friends or family,' with the six proxy-setup steps numbered on the interface. This must be an invented, generic interface, not a screenshot or recreation of any real vendor's portal (not MyChart, not Epic, not any specific health system's actual UI). Generation prompt: 'A clean, generic mobile app UI mockup of an invented patient portal screen titled Sharing Hub, showing a Manage Friends and Family Access section with an Invite Friends or Family button, six small numbered callouts pointing to the relevant UI elements, neutral fictional branding only, soft violet and white color scheme, flat modern UI design, explicitly NOT a recreation of any real health system's actual portal interface.'"
-        altText="Stylized generic mock of a patient portal Sharing Hub screen showing the six steps to invite a family member as a proxy"
+      <InlineImage
+        src="/images/blog/shared-family-record-sharing-hub-mock.png"
+        alt="Stylized generic mock of a patient portal Sharing Hub screen showing the six steps to invite a family member as a proxy"
       />
       <p>
         Aggregation solves a different problem: seeing several providers&apos;
@@ -898,9 +898,9 @@ const SharedFamilyMedicalRecord = () => {
         , covers insurance and claims data rather than clinical records, and
         is worth knowing about separately.
       </p>
-      <ImagePlaceholder
-        suggestion="Original infographic: 'one parent, three health systems' diagram showing a single caregiver figure connecting separately to three distinct hospital/clinic icons (each requiring its own proxy setup), plus a fourth element showing a consolidating app pulling data from all three via a labeled FHIR API connection. Healthcare editorial style matching the rest of the piece. Generation prompt: 'A clean editorial infographic showing one caregiver figure with three separate lines connecting to three distinct clinic/hospital building icons, each line labeled with a small padlock representing a separate proxy setup, plus one additional line showing a mobile app icon pulling data from all three via a labeled FHIR API connector, violet and mint healthcare-editorial palette, minimal text, no dense paragraphs.'"
-        altText="Diagram showing one family caregiver setting up separate proxy access at three different health systems, plus an aggregation app connecting to all three through the FHIR patient-access API"
+      <InlineImage
+        src="/images/blog/shared-family-record-three-systems.png"
+        alt="Diagram showing one family caregiver setting up separate proxy access at three different health systems, plus an aggregation app connecting to all three through the FHIR patient-access API"
       />
       <p>
         If your family is also comparing{" "}
@@ -948,9 +948,9 @@ const SharedFamilyMedicalRecord = () => {
         that moment genuinely helps a clinician move faster, even without a
         formal instrument in hand.
       </p>
-      <ImagePlaceholder
-        suggestion="Checklist-card infographic: a clean emergency-access checklist card listing four items with checkbox icons: phone Medical ID / lock-screen info set up, shared secure document with meds/allergies/providers/insurance IDs, POA and HIPAA authorization PDFs saved in that document, and portal proxy invitations accepted (not just sent). Editorial card style matching the piece's palette. Generation prompt: 'A clean checklist-card infographic with a header reading Emergency-Ready Checklist, four rows each with a checkbox icon and a short label: Phone Medical ID set up, Shared secure document with meds and providers, POA and authorization PDFs saved, Portal proxy invitations accepted, healthcare editorial style, violet and mint palette, card-based flat design, minimal text per row.'"
-        altText="Checklist card showing the four steps to make a family member's medical information reachable in an emergency before it happens"
+      <InlineImage
+        src="/images/blog/shared-family-record-emergency-checklist.png"
+        alt="Checklist card showing the four steps to make a family member's medical information reachable in an emergency before it happens"
       />
 
       <HeadingWithAnchor id="pre-event-checklist">
@@ -986,9 +986,9 @@ const SharedFamilyMedicalRecord = () => {
           and a date to review it again.
         </li>
       </ul>
-      <ImagePlaceholder
-        suggestion="Checklist-card infographic: a five-item pre-event checklist card (healthcare POA signed / HIPAA authorization on file / portal proxy invitations accepted / emergency-access plan in place / written access map completed), styled as a graphic checklist a reader could screenshot and follow. Same editorial palette as the other checklist card. Generation prompt: 'A clean checklist-card infographic titled Pre-Event Access Checklist with five rows, each with a checkbox icon and short label: Healthcare POA signed, HIPAA authorization on file, Portal proxy invitations accepted, Emergency-access plan in place, Written access map completed, healthcare editorial style, violet and mint palette, flat card design, screenshot-friendly layout.'"
-        altText="Five-item pre-event checklist covering healthcare POA, HIPAA authorization, portal proxy access, emergency planning, and a written family access map"
+      <InlineImage
+        src="/images/blog/shared-family-record-pre-event-checklist.png"
+        alt="Five-item pre-event checklist covering healthcare POA, HIPAA authorization, portal proxy access, emergency planning, and a written family access map"
       />
       <p>
         This is also a natural time to work on{" "}
@@ -998,9 +998,9 @@ const SharedFamilyMedicalRecord = () => {
         , since that context often shapes what a new provider needs to know,
         and it tends to get gathered alongside the access paperwork anyway.
       </p>
-      <ImagePlaceholder
-        suggestion="Editorial-style photo of a multi-generational family (an adult sibling pair and an older parent) having a conversation around a kitchen table with a folder of papers and a laptop open, warm and calm mood, representing the 'have the talk, sign the forms' moment. Generation prompt: 'A candid, warm editorial photo of two adult siblings and their older parent sitting together at a kitchen table, a folder of papers and an open laptop nearby, calm and genuine expressions mid-conversation, soft natural daylight, diverse casting, realistic and unposed, healthcare blog editorial style, no text or logos.'"
-        altText="Two adult siblings and their older parent having a calm conversation at a kitchen table with paperwork and a laptop, setting up shared access together"
+      <InlineImage
+        src="/images/blog/shared-family-record-kitchen-conversation.png"
+        alt="Two adult siblings and their older parent having a calm conversation at a kitchen table with paperwork and a laptop, setting up shared access together"
       />
       <p>
         A shared platform can hold this alongside the records themselves,
@@ -1058,9 +1058,9 @@ const SharedFamilyMedicalRecord = () => {
       {/* Editor: [1] and [3] were cross-verified against the Cornell LII mirror
           of 45 CFR 164.502(g) since HHS.gov returned 403 to automated
           fetching, and [21], [22], [23] were corrected to match URLs
-          verified during research. [17] (Federal Register document number),
-          the AAP parental-access reference, the TCK Law elder-law post, and
-          the SAHM/adolescenthealth.org confidentiality page were not
+          verified during research. [19] (Federal Register document number),
+          the AAP parental-access reference, the TCK Law elder-law post ([10]),
+          and [17] (SAHM/adolescenthealth.org confidentiality page) were not
           independently re-verified in this pass; link-check all four before
           publish. */}
       <p className="text-sm text-graphite italic">
