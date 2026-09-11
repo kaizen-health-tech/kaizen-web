@@ -185,22 +185,31 @@ export default function CaregiverCostCalculatorPage() {
               </strong>{" "}
               use your salary divided across a 40-hour, 52-week work year,
               multiplied by the paid work hours reduced and the caregiving
-              duration.
+              duration. Your own retirement contributions would have come out
+              of this pay, so they are counted here, once.
             </p>
             <p>
               <strong className="text-midnight dark:text-white">
-                Missed retirement contributions
+                Missed employer match
               </strong>{" "}
-              apply your contribution rate and employer match to that reduced
-              pay.
+              applies the employer match rate to that lost pay.
             </p>
             <p>
               <strong className="text-midnight dark:text-white">
-                Retirement value
+                Lost investment growth
               </strong>{" "}
-              compounds each missed monthly contribution until retirement. If
-              caregiving extends past retirement, only pre-retirement months are
-              counted.
+              compounds each missed monthly contribution, yours and your
+              employer&rsquo;s, until retirement and counts only the earnings,
+              not the deposits. If caregiving extends past retirement, only
+              pre-retirement months are counted.
+            </p>
+            <p>
+              <strong className="text-midnight dark:text-white">
+                The estimated total
+              </strong>{" "}
+              adds those three amounts. The retirement account shortfall shown
+              with it combines your contributions, the match, and growth, so it
+              is already part of the total rather than added on top.
             </p>
           </div>
         </div>

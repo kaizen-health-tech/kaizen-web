@@ -78,7 +78,7 @@ export function GET(request: Request) {
                 color: "#FFFFFF",
               }}
             >
-              {compactMoney.format(results.totalFinancialImpact)}
+              {compactMoney.format(results.breakdown.total)}
             </div>
             <div
               style={{

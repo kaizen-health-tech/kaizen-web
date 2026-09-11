@@ -8,6 +8,19 @@ const editorialTeam = {
 
 const BlogData: Blog[] = [
   {
+    id: 21,
+    mainImage: "/images/blog/shared-family-medical-record.png",
+    title:
+      "The Shared Family Medical Record: Who Needs Access to What, and How to Set It Up",
+    metadata:
+      "A spouse, an adult child, and a sibling each need a different slice of one medical record. What HIPAA actually requires, and how to set up shared family access before a crisis.",
+    url: "/blog/family-history/shared-family-medical-record",
+    categoryKey: "health-records",
+    featured: true,
+    readTime: "23 min read",
+    author: editorialTeam,
+  },
+  {
     id: 20,
     mainImage: "/images/blog/dr-benur-ai-assistant-breathing-problem.png",
     title:

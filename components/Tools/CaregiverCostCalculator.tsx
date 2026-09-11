@@ -104,7 +104,7 @@ const createShareCard = async (
 
   context.fillStyle = "#FFFFFF";
   context.font = "700 148px 'Source Sans 3', Arial, sans-serif";
-  context.fillText(compactMoney.format(results.totalFinancialImpact), 142, 490);
+  context.fillText(compactMoney.format(results.breakdown.total), 142, 490);
 
   context.fillStyle = "rgba(255,255,255,0.72)";
   context.font = "500 34px 'Source Sans 3', Arial, sans-serif";
@@ -122,10 +122,15 @@ const createShareCard = async (
     context.fillText(value, x, y + 72);
   };
 
-  fact("Lost wages", money.format(results.lifetimeLostWages), 150, 710);
+  // The two facts must add up to the headline, so the overlapping retirement
+  // shortfall stays off the card.
+  fact("Lost wages", money.format(results.breakdown.lostWages), 150, 710);
   fact(
-    "Retirement shortfall",
-    money.format(results.retirementSavingsLost),
+    "Employer match + growth",
+    money.format(
+      results.breakdown.missedEmployerMatch +
+        results.breakdown.lostInvestmentGrowth,
+    ),
     150,
     865,
   );
@@ -259,6 +264,7 @@ export default function CaregiverCostCalculator({
   const [shareCardLoading, setShareCardLoading] = useState(false);
   const [shareCardError, setShareCardError] = useState<string | null>(null);
   const results = useMemo(() => calculateCaregiverCost(inputs), [inputs]);
+  const { breakdown } = results;
 
   const shareQuery = useMemo(
     () => serializeCaregiverCostInputs(inputs),
@@ -323,7 +329,7 @@ export default function CaregiverCostCalculator({
   };
 
   const copySummary = async () => {
-    const summary = `My estimated caregiver career cost: ${money.format(results.totalFinancialImpact)} in gross wages, employer match, and investment growth. The projected retirement account shortfall is ${money.format(results.retirementSavingsLost)}. See the same estimate: ${shareUrl}`;
+    const summary = `My estimated caregiver career cost is ${money.format(breakdown.total)}: ${money.format(breakdown.lostWages)} in lost wages, ${money.format(breakdown.missedEmployerMatch)} in missed employer match, and ${money.format(breakdown.lostInvestmentGrowth)} in lost investment growth. That includes a retirement account about ${money.format(breakdown.retirementShortfall)} smaller at retirement. See the same estimate: ${shareUrl}`;
     await navigator.clipboard.writeText(summary);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 2000);
@@ -388,10 +394,6 @@ export default function CaregiverCostCalculator({
 
     downloadShareCard();
   };
-
-  const wageShare = results.totalFinancialImpact
-    ? (results.lifetimeLostWages / results.totalFinancialImpact) * 100
-    : 0;
 
   return (
     <div className="grid overflow-hidden rounded-[32px] border border-cloud bg-white shadow-[0_28px_80px_rgba(40,27,85,0.12)] dark:border-white/10 dark:bg-dark-plum lg:grid-cols-[1.02fr_0.98fr]">
@@ -535,47 +537,71 @@ export default function CaregiverCostCalculator({
             id="calculator-result"
             className="mt-3 text-5xl font-semibold tracking-tight text-white sm:text-6xl"
           >
-            {compactMoney.format(results.totalFinancialImpact)}
+            {compactMoney.format(breakdown.total)}
           </h2>
           <p className="mt-3 max-w-md text-base leading-6 text-white/65">
-            This adds your lost gross pay to the employer match and investment
-            growth you may miss. It does not count your own contributions twice.
+            {money.format(breakdown.total)} in lost gross pay, missed employer
+            match, and investment growth. Your own contributions are already
+            part of lost wages, so they are not counted twice.
           </p>
 
           <div
             className="mt-8 overflow-hidden rounded-full bg-white/10"
-            aria-label={`${Math.round(wageShare)}% lost wages and ${Math.round(100 - wageShare)}% additional retirement impact`}
+            role="img"
+            aria-label={`${breakdown.wageSharePct}% lost wages and ${breakdown.retirementSharePct}% employer match and investment growth`}
           >
             <div className="flex h-3 w-full">
-              <span className="bg-violet" style={{ width: `${wageShare}%` }} />
-              <span className="flex-1 bg-aquamarine" />
+              <span
+                className="bg-violet"
+                style={{ width: `${breakdown.wageSharePct}%` }}
+              />
+              <span
+                className="bg-aquamarine"
+                style={{ width: `${breakdown.retirementSharePct}%` }}
+              />
             </div>
           </div>
           <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/60">
             <span className="flex items-center gap-2">
-              <i className="h-2 w-2 rounded-full bg-violet" /> Lost wages
+              <i className="h-2 w-2 rounded-full bg-violet" /> Lost wages{" "}
+              {breakdown.wageSharePct}%
             </span>
             <span className="flex items-center gap-2">
               <i className="h-2 w-2 rounded-full bg-aquamarine" /> Employer
-              match + growth
+              match + growth {breakdown.retirementSharePct}%
             </span>
           </div>
 
           <div className="mt-7 rounded-2xl border border-white/10 bg-white/[0.06] px-5">
             <ResultRow
               label="Lost wages"
-              value={money.format(results.lifetimeLostWages)}
-              detail={`${money.format(results.annualLostWages)} a year for ${results.workingCaregivingYears} pre-retirement years`}
+              value={money.format(breakdown.lostWages)}
+              detail={`${money.format(results.annualLostWages)} a year for ${results.workingCaregivingYears} pre-retirement years. Includes the ${money.format(breakdown.missedEmployeeContributions)} you would have contributed.`}
             />
             <ResultRow
-              label="Contributions not made"
-              value={money.format(results.missedRetirementContributions)}
-              detail={`${money.format(results.missedEmployeeContributions)} from you + ${money.format(results.missedEmployerMatch)} employer match`}
+              label="Missed employer match"
+              value={money.format(breakdown.missedEmployerMatch)}
+              detail={`A ${inputs.employerMatchRate}% match on the lost pay`}
             />
             <ResultRow
-              label="Retirement savings lost"
-              value={money.format(results.retirementSavingsLost)}
-              detail={`Projected value at retirement using a ${inputs.annualReturnRate}% annual return`}
+              label="Lost investment growth"
+              value={money.format(breakdown.lostInvestmentGrowth)}
+              detail={`What the missed contributions would have earned by retirement at a ${inputs.annualReturnRate}% annual return`}
+            />
+            <ResultRow
+              label="Estimated total"
+              value={money.format(breakdown.total)}
+              detail="Lost wages + employer match + growth"
+            />
+          </div>
+
+          {/* Deliberately outside the breakdown: this overlaps the rows above,
+              so it must never read as another amount to add. */}
+          <div className="mt-4 rounded-2xl border border-dashed border-white/20 px-5">
+            <ResultRow
+              label="Retirement account shortfall"
+              value={money.format(breakdown.retirementShortfall)}
+              detail={`How much smaller your account could be in ${inputs.yearsUntilRetirement} years: ${money.format(breakdown.missedEmployeeContributions)} you would have contributed, ${money.format(breakdown.missedEmployerMatch)} match, and ${money.format(breakdown.lostInvestmentGrowth)} growth. Already part of the total, not added again.`}
             />
           </div>
 
@@ -721,7 +747,7 @@ export default function CaregiverCostCalculator({
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={shareCardUrl}
-                  alt={`Share card showing an estimated caregiver career cost of ${money.format(results.totalFinancialImpact)}`}
+                  alt={`Share card showing an estimated caregiver career cost of ${money.format(breakdown.total)}`}
                   className="h-full w-full object-cover"
                 />
               ) : null}
