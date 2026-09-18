@@ -1,5 +1,19 @@
 # Repository Guidelines
 
+## Session Start
+
+- In local sessions, always start in caveman mode: invoke the `caveman` skill (`/caveman`) before the first response.
+- Keep caveman mode for the whole session until the user says "stop caveman" or "normal mode". The skill's auto-clarity rules still apply to security warnings and irreversible-action confirmations.
+- `caveman` is a local-only skill. Cloud and remote agents, such as cloud code reviewers, do not have it and skip this step.
+
+## Workspace Architecture
+
+This repository is the Website (`kaizen-web`), an independent Next.js site. The sibling `kaizenhealth` repository owns the FrontEnd mobile app, and `kaizen-node-backend` owns the Backend API. The Website shares only the email verification flow with those repositories. Work here for website behavior and inspect sibling repositories only when tracing or changing that flow.
+
+## Delegation
+
+Delegate repetitive, mechanical, clearly scoped low-risk tasks to a lower-cost model when the runtime makes one available. Check the configured model catalog first; model names are examples and must not be assumed to exist. If available, examples include `gpt-6-astra` light delegating to `gpt-6.5-luna` high or max, or `opus-5` medium delegating to `sonnet-5` high. The main agent defines scope and acceptance criteria, supplies context, monitors the task, reviews the diff and validation, and remains responsible for the result. Keep security-sensitive, architectural, ambiguous, destructive, and production-impacting work under direct main-agent control.
+
 ## Working Relationship
 
 These instructions apply to **any AI coding agent** working in this repository —
@@ -47,6 +61,15 @@ same concern in later turns.
 - `yarn dev` starts the Turbopack development server, `yarn build` creates the production build, and `yarn start` serves it.
 - `yarn lint` is the declared lint command. Run the relevant validation command after edits, and use `yarn build` for changes that affect routing, rendering, configuration, or server code.
 - No automated test script is currently declared; document focused manual verification for behavior changes.
+
+## Code Style
+
+- Write TypeScript with explicit, accurate type definitions.
+- Write React components as functional components using arrow functions. Name hooks `useX`.
+- Organize components by feature under `components/`, and define component prop types in `types/`.
+- Group imports in this order: React and hooks, Next.js, third-party packages, internal modules.
+- Prefer named exports over default exports, except in Next.js files that require a default export (`page`, `layout`, `loading`, `error`, `not-found`, `template`).
+- Use `async`/`await` for asynchronous code, and handle errors with `try`/`catch`.
 
 ## Next.js and React Conventions
 

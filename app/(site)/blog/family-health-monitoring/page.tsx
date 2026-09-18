@@ -3,6 +3,7 @@ import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
 import KeyTakeaways from "@/components/Blog/content/KeyTakeaways";
 import StatTrio from "@/components/Blog/content/StatTrio";
+import Link from "next/link";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -2861,6 +2862,17 @@ const FamilyHealthMonitoringArticle = () => {
                 </tbody>
               </table>
             </div>
+
+            <p className="mb-6">
+              This same logic extends beyond physical disease. A 2026 study
+              found that family history of depression also shapes how
+              children&apos;s brains process emotional cues — see{" "}
+              <Link href="/blog/family-history/family-history-depression-children">
+                what the new research on depression and family history means
+                for your child
+              </Link>
+              .
+            </p>
 
             <h3 className="mt-10 mb-5 text-2xl font-semibold text-midnight">
               Technology and access have improved

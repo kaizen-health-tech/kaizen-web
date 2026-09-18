@@ -8,6 +8,19 @@ const editorialTeam = {
 
 const BlogData: Blog[] = [
   {
+    id: 22,
+    mainImage: "/images/blog/family-history-depression-hero.png",
+    title:
+      "Family History of Depression: What It Means for Your Child's Brain — and What to Track",
+    metadata:
+      "A 2026 study found children of mothers with depression pay more attention to sad faces as their own symptoms grow. What the family-history risk numbers mean, and what to track.",
+    url: "/blog/family-history/family-history-depression-children",
+    categoryKey: "sleep-mind",
+    featured: true,
+    readTime: "8 min read",
+    author: editorialTeam,
+  },
+  {
     id: 21,
     mainImage: "/images/blog/shared-family-record-hero.png",
     title:

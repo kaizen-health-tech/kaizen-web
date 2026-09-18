@@ -2,6 +2,7 @@ import HeadingWithAnchor from "@/components/HeadingWithAnchor";
 import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
 import NumberedPoints from "@/components/Blog/content/NumberedPoints";
+import Link from "next/link";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -82,6 +83,15 @@ const DocumentingFamilyHealth = () => {
         history information enables healthcare providers to stratify
         risk levels and tailor preventive or diagnostic strategies
         accordingly.
+      </p>
+      <p>
+        Depression history deserves the same structured treatment as
+        any other condition on this list. See{" "}
+        <Link href="/blog/family-history/family-history-depression-children">
+          what to track for mental-health history
+        </Link>{" "}
+        for the specific fields worth recording for each affected
+        relative.
       </p>
 
       <HeadingWithAnchor id="collection-tools">

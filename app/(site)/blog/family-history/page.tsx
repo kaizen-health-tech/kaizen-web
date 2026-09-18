@@ -3,6 +3,7 @@ import ArticleLayout from "@/components/Blog/ArticleLayout";
 import BlogFAQ from "@/components/Blog/BlogFAQ";
 import NumberedPoints from "@/components/Blog/content/NumberedPoints";
 import PullQuote from "@/components/Blog/content/PullQuote";
+import Link from "next/link";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -152,6 +153,18 @@ const FamilyHistory = () => {
         diabetes across generations, they can suggest lifestyle
         modifications or early medical interventions to offset
         future health problems.
+      </p>
+
+      <p>
+        <strong>Mental health, too:</strong> Family history isn&apos;t
+        only a physical-health signal. A parent or sibling with
+        major depression roughly doubles or triples a person&apos;s
+        own risk, and new research links that same history to{" "}
+        <Link href="/blog/family-history/family-history-depression-children">
+          how children&apos;s brains process emotional cues
+        </Link>
+        . Recording mental-health history is worth doing with the
+        same structure used for physical conditions.
       </p>
 
       <HeadingWithAnchor id="kaizen-features">
