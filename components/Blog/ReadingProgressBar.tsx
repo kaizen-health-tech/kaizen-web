@@ -7,18 +7,13 @@ interface ReadingProgressBarProps {
 }
 
 // Width bound to scroll progress through the article element only, not the
-// whole document. Positioned just under the (fixed) site header, measured at
-// runtime so it never has to assume the header's height.
+// whole document. Pinned to the true top of the viewport (above the fixed
+// site header) rather than measured relative to header height, so it never
+// depends on the header's runtime layout.
 const ReadingProgressBar = ({ targetId }: ReadingProgressBarProps) => {
   const [progress, setProgress] = useState(0);
-  const [top, setTop] = useState(0);
 
   useEffect(() => {
-    const header = document.querySelector("header");
-
-    const measure = () => setTop(header?.getBoundingClientRect().height ?? 0);
-    measure();
-
     const handleScroll = () => {
       const article = document.getElementById(targetId);
       if (!article) return;
@@ -36,17 +31,16 @@ const ReadingProgressBar = ({ targetId }: ReadingProgressBarProps) => {
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", measure);
+    window.addEventListener("resize", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", measure);
+      window.removeEventListener("resize", handleScroll);
     };
   }, [targetId]);
 
   return (
     <div
-      className="fixed left-0 z-[9998] h-1 w-full"
-      style={{ top }}
+      className="fixed left-0 top-0 z-[100000] h-1 w-full"
       aria-hidden="true"
     >
       <div className="h-full bg-violet transition-[width]" style={{ width: `${progress}%` }} />
