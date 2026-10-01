@@ -16,7 +16,7 @@ const Inspiration = () => {
         <p className="text-sm text-white/55">The story behind Kaizen Health</p>
         <h2
           id="inspiration-heading"
-          className="mt-4 text-5xl font-bold tracking-tight text-white md:text-7xl"
+          className="mt-4 text-5xl font-semibold tracking-tight text-white md:text-7xl"
         >
           Inspiration
         </h2>

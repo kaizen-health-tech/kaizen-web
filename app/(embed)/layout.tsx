@@ -8,6 +8,9 @@ const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  // Exposed as a CSS variable so Tailwind's font-sans token (globals.css)
+  // points at the real loaded font, not a family name that does not exist.
+  variable: "--font-source-sans",
 });
 
 // A second root layout, alongside app/(site)/layout.tsx. Embeddable widgets
@@ -37,7 +40,7 @@ export default function EmbedLayout({
     // No `dark` class is ever applied here: dark mode is class-based
     // (see globals.css) and the host page controls the surrounding design, so
     // the embed commits to the light palette rather than guessing.
-    <html lang="en">
+    <html lang="en" className={sourceSans.variable}>
       <body className={`${sourceSans.className} bg-transparent`}>
         {children}
       </body>

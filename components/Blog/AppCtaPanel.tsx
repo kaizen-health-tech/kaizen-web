@@ -18,7 +18,7 @@ const AppCtaPanel = ({
 }: AppCtaPanelProps) => {
   return (
     <div className="rounded-[20px] p-7" style={{ background: gradients[gradient] }}>
-      <h4 className="mb-2.5 text-2xl font-bold leading-[1.15] tracking-[-.5px] text-white text-pretty">
+      <h4 className="mb-2.5 text-2xl font-semibold leading-[1.15] tracking-[-.5px] text-white text-pretty">
         {title}
       </h4>
       <p className="mb-5 text-[17px] leading-[1.5] text-light-heather">{description}</p>

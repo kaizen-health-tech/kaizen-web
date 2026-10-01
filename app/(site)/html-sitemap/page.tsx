@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHero } from "@/components/Common/PageHero";
 import BlogData from "@/components/Blog/blogData";
 import { getSortedReleases } from "@/data/releases";
 import { createPageMetadata } from "@/lib/seo";
@@ -64,43 +65,46 @@ const LinkList = ({ links }: { links: { href: string; label: string }[] }) => (
 
 export default function HtmlSitemapPage() {
   return (
-    <main className="mx-auto max-w-5xl space-y-12 px-4 py-28 sm:px-6 lg:px-8">
-      <header className="space-y-4">
-        <h1 className="text-4xl font-semibold text-slate-900 dark:text-white">
-          HTML Sitemap
-        </h1>
-        <p className="text-lg text-slate-600 dark:text-slate-200">
-          Browse every important Kaizen Health page from one location.
-        </p>
-      </header>
+    <main>
+      <PageHero
+        eyebrow="Sitemap"
+        title="HTML Sitemap"
+        description="Browse every important Kaizen Health page from one location."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "HTML Sitemap", url: "/html-sitemap" },
+        ]}
+      />
 
-      <section className="space-y-3">
-        <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
-          Core Pages
-        </h2>
-        <LinkList links={coreLinks} />
-      </section>
+      <div className="mx-auto max-w-5xl space-y-12 px-4 pb-24 sm:px-6 lg:px-8">
+        <section className="space-y-3">
+          <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+            Core Pages
+          </h2>
+          <LinkList links={coreLinks} />
+        </section>
 
-      <section className="space-y-3">
-        <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
-          Legal and Policy Pages
-        </h2>
-        <LinkList links={legalLinks} />
-      </section>
+        <section className="space-y-3">
+          <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+            Legal and Policy Pages
+          </h2>
+          <LinkList links={legalLinks} />
+        </section>
 
-      <section className="space-y-3">
-        <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
-          Blog Articles
-        </h2>
-        <LinkList links={blogLinks} />
-      </section>
+        <section className="space-y-3">
+          <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+            Blog Articles
+          </h2>
+          <LinkList links={blogLinks} />
+        </section>
 
-      <section className="space-y-3">
-        <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
-          Release Notes
-        </h2>
-        <LinkList links={releaseLinks} />
-      </section>
+        <section className="space-y-3">
+          <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+            Release Notes
+          </h2>
+          <LinkList links={releaseLinks} />
+        </section>
+      </div>
     </main>
   );
 }

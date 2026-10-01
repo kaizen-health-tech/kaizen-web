@@ -59,7 +59,7 @@ const ContentsRail = ({ sections, tags = [] }: ContentsRailProps) => {
           onClick={(event) => handleClick(event, section.id)}
           className={`text-[17px] leading-[1.35] transition-colors ${
             activeId === section.id
-              ? "font-bold text-violet"
+              ? "font-semibold text-violet"
               : "font-normal text-graphite hover:text-arsenic"
           }`}
         >

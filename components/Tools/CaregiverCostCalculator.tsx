@@ -10,6 +10,9 @@ import {
   type CaregiverCostResults,
 } from "@/lib/caregiverCost";
 import { absoluteUrl } from "@/lib/seo";
+import { PillLink } from "@/components/Common/PillLink";
+import { pillClassName } from "@/components/Common/pillStyles";
+import { PillButton } from "@/components/Common/PillButton";
 
 const DEFAULT_INPUTS = DEFAULT_CAREGIVER_COST_INPUTS;
 const TOOL_PATH = "/tools/caregiver-cost-calculator";
@@ -403,7 +406,7 @@ export default function CaregiverCostCalculator({
       >
         <div className="flex items-center justify-between gap-4">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet">
               Your work
             </p>
             <h2
@@ -413,13 +416,13 @@ export default function CaregiverCostCalculator({
               Start with the work hours you have cut
             </h2>
           </div>
-          <button
-            type="button"
+          <PillButton
+            variant="outline"
+            size="sm"
             onClick={() => setInputs(DEFAULT_INPUTS)}
-            className="rounded-full border border-cloud px-4 py-2 text-sm font-semibold text-graphite transition hover:border-violet hover:text-violet focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet/20 dark:border-white/15 dark:text-space"
           >
             Reset
-          </button>
+          </PillButton>
         </div>
 
         <p className="mt-3 max-w-xl text-sm leading-6 text-graphite dark:text-space">
@@ -530,7 +533,7 @@ export default function CaregiverCostCalculator({
           aria-hidden="true"
         />
         <div className="relative">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-aquamarine">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-aquamarine">
             Estimated impact
           </p>
           <h2
@@ -627,66 +630,36 @@ export default function CaregiverCostCalculator({
           <div className="mt-6 flex flex-wrap gap-3">
             {isEmbed ? (
               <>
-                <a
+                <PillLink
                   href={breakoutUrl}
+                  native
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex items-center gap-2 rounded-full bg-aquamarine px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-aquamarine/30"
+                  variant="aquamarine"
                 >
                   Open the full calculator
-                  <span aria-hidden="true">↗</span>
-                </a>
-                <button
-                  type="button"
-                  onClick={copySummary}
-                  className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-lavender focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
-                >
+                </PillLink>
+                <PillButton variant="soft" onClick={copySummary}>
                   {copied ? "Copied" : "Copy my estimate"}
-                </button>
+                </PillButton>
               </>
             ) : (
               <>
-                <button
-                  type="button"
-                  onClick={openShareCard}
-                  className="inline-flex items-center gap-2 rounded-full bg-aquamarine px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-aquamarine/30"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="h-4 w-4"
-                    aria-hidden="true"
-                  >
-                    <circle cx="18" cy="5" r="3" />
-                    <circle cx="6" cy="12" r="3" />
-                    <circle cx="18" cy="19" r="3" />
-                    <path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4" />
-                  </svg>
+                <PillButton variant="aquamarine" onClick={openShareCard}>
                   Make a share card
-                </button>
-                <button
-                  type="button"
-                  onClick={copyLink}
-                  className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-midnight transition hover:-translate-y-0.5 hover:bg-lavender focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
-                >
+                </PillButton>
+                <PillButton variant="soft" onClick={copyLink}>
                   {linkCopied ? "Link copied" : "Copy link to this estimate"}
-                </button>
-                <button
-                  type="button"
-                  onClick={copySummary}
-                  className="rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/20"
-                >
+                </PillButton>
+                <PillButton variant="outlineInverse" onClick={copySummary}>
                   {copied ? "Copied" : "Copy my estimate"}
-                </button>
-                <button
-                  type="button"
+                </PillButton>
+                <PillButton
+                  variant="outlineInverse"
                   onClick={() => window.print()}
-                  className="rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/20"
                 >
                   Print results
-                </button>
+                </PillButton>
               </>
             )}
           </div>
@@ -713,7 +686,7 @@ export default function CaregiverCostCalculator({
           <div className="max-h-[94vh] w-full max-w-md overflow-y-auto rounded-[28px] bg-white p-5 shadow-2xl dark:bg-dark-plum sm:p-6">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-violet">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-violet">
                   Ready to post
                 </p>
                 <h2
@@ -759,14 +732,13 @@ export default function CaregiverCostCalculator({
             </p>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <button
-                type="button"
+              <PillButton
                 onClick={shareImage}
                 disabled={!shareCardBlob || shareCardLoading}
-                className="rounded-full bg-violet px-5 py-3 font-semibold text-white transition hover:bg-violet-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet/20 disabled:cursor-not-allowed disabled:opacity-50"
+                fullWidth
               >
                 Share image
-              </button>
+              </PillButton>
               <a
                 href={shareCardUrl ?? undefined}
                 download="kaizen-caregiver-cost.png"
@@ -774,7 +746,11 @@ export default function CaregiverCostCalculator({
                 onClick={(event) => {
                   if (!shareCardUrl || shareCardLoading) event.preventDefault();
                 }}
-                className="rounded-full border border-cloud px-5 py-3 text-center font-semibold text-midnight transition hover:border-violet hover:text-violet focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet/20 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 dark:border-white/15 dark:text-white"
+                className={pillClassName({
+                  variant: "outline",
+                  arrow: "none",
+                  fullWidth: true,
+                })}
               >
                 Download PNG
               </a>

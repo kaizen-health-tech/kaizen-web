@@ -1,97 +1,131 @@
-import { Release } from "@/types/release";
 import Image from "next/image";
-import Link from "next/link";
 
-const dateFormatter = new Intl.DateTimeFormat("en", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
+import Breadcrumbs from "@/components/Common/Breadcrumbs";
+import { PillLink } from "@/components/Common/PillLink";
+import { Reveal } from "@/components/Common/Reveal";
+import {
+  IMPACT_ORDER,
+  IMPACT_STYLES,
+  countImpacts,
+  formatReleaseDate,
+} from "@/components/Updates/releaseImpact";
 
-type ReleaseDetailHeroProps = {
-  release: Release;
-};
+import type { ReleaseCardProps } from "@/types/release";
 
-const ReleaseDetailHero = ({ release }: ReleaseDetailHeroProps) => {
-  const formattedDate = dateFormatter.format(new Date(release.publishedAt));
+/**
+ * Release title and summary, then an "at a glance" row that counts what is
+ * new, improved and fixed before the visitor reads any detail.
+ */
+const ReleaseDetailHero = ({ release }: ReleaseCardProps) => {
+  const counts = countImpacts(release);
+  const present = IMPACT_ORDER.filter((impact) => counts[impact] > 0);
 
   return (
-    <header className="rounded-3xl bg-gradient-to-br from-primary/10 via-white to-primary/5 p-8 shadow-lg shadow-primary/10 dark:from-primary/10 dark:via-[#0E1015] dark:to-[#10121a] lg:p-12">
-      <div className="flex flex-wrap items-center gap-3 text-sm text-primary">
-        <span className="rounded-full bg-white/80 px-3 py-1 font-semibold uppercase tracking-wide text-primary shadow-sm dark:bg-black/50">
-          Version {release.version}
-        </span>
-        <span aria-hidden className="text-primary/70">
-          •
-        </span>
-        <span className="text-primary/80">Published {formattedDate}</span>
-        {release.estimatedRollout && (
-          <>
-            <span aria-hidden className="text-primary/70">
-              •
-            </span>
-            <span className="text-primary/80">
-              Rollout window: {release.estimatedRollout}
-            </span>
-          </>
-        )}
-      </div>
-
-      <div className="mt-6 space-y-4">
-        <h1 className="text-3xl font-extrabold leading-tight text-slate-900 dark:text-white md:text-4xl">
-          {release.title}
-        </h1>
-        <p className="max-w-4xl text-lg text-slate-700 dark:text-slate-200">
-          {release.summary}
-        </p>
-      </div>
-
-      <div className="mt-6 flex flex-wrap items-center gap-3">
-        {release.tags.map((tag) => (
-          <span
-            key={tag}
-            className="rounded-full bg-primary/20 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-primary"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      {release.heroImage && (
-        <div className="mt-8 overflow-hidden rounded-2xl border border-black/5 bg-slate-950 shadow-xl shadow-primary/10 dark:border-white/10">
-          <Image
-            src={release.heroImage}
-            alt={release.heroImageAlt ?? release.title}
-            width={release.heroImageWidth ?? 1920}
-            height={release.heroImageHeight ?? 1080}
-            sizes="(min-width: 1280px) 1152px, (min-width: 768px) calc(100vw - 96px), calc(100vw - 48px)"
-            className="h-auto w-full"
-            priority
+    <header>
+      <div
+        className={
+          release.heroImage
+            ? "grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end lg:gap-16"
+            : ""
+        }
+      >
+        <Reveal className="max-w-3xl">
+          <Breadcrumbs
+            items={[
+              { name: "Home", url: "/" },
+              { name: "Product Updates", url: "/updates" },
+              {
+                name: `Version ${release.version}`,
+                url: `/updates/${release.slug}`,
+              },
+            ]}
           />
-        </div>
-      )}
+          <p className="inline-flex rounded-full bg-white/70 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-violet ring-1 ring-midnight/5">
+            Version {release.version}
+          </p>
+          <h1 className="mt-6 text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-midnight text-balance md:text-6xl">
+            {release.title}
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-text-body">
+            {release.summary}
+          </p>
+          <p className="mt-6 text-sm text-graphite">
+            Released{" "}
+            <time dateTime={release.publishedAt}>
+              {formatReleaseDate(release.publishedAt)}
+            </time>
+            {release.estimatedRollout &&
+              ` · Rolling out ${release.estimatedRollout}`}
+          </p>
+        </Reveal>
 
-      <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-primary">
-        <Link
-          href="/updates"
-          className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-white px-5 py-2 font-semibold text-primary transition hover:border-primary hover:bg-primary/10 dark:bg-transparent dark:hover:bg-primary/10"
-        >
-          ← All updates
-        </Link>
-        {release.resources && release.resources.length > 0 && (
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-primary/70">Helpful links:</span>
-            {release.resources.slice(0, 2).map((resource) => (
-              <Link
-                key={resource.label}
-                href={resource.url}
-                className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/60 px-4 py-1.5 font-semibold text-primary transition hover:border-primary/40 hover:bg-primary/10 dark:bg-transparent dark:hover:bg-primary/10"
-              >
-                {resource.label}
-              </Link>
-            ))}
-          </div>
+        {release.heroImage && (
+          <Reveal
+            delay={120}
+            className="rounded-[2rem] bg-lavender/60 p-1.5 ring-1 ring-midnight/5"
+          >
+            <div className="overflow-hidden rounded-[calc(2rem-0.375rem)] bg-midnight">
+              <Image
+                src={release.heroImage}
+                alt={release.heroImageAlt ?? release.title}
+                width={release.heroImageWidth ?? 1920}
+                height={release.heroImageHeight ?? 1080}
+                sizes="(min-width: 1024px) 352px, calc(100vw - 44px)"
+                className="h-auto w-full"
+                priority
+              />
+            </div>
+          </Reveal>
         )}
+      </div>
+
+      <Reveal
+        delay={80}
+        className="mt-12 rounded-[2rem] bg-lavender/60 p-1.5 ring-1 ring-midnight/5"
+      >
+        <div className="grid gap-8 rounded-[calc(2rem-0.375rem)] bg-white p-7 shadow-card-soft md:grid-cols-[auto_minmax(0,1fr)] md:items-center md:gap-12 md:p-9">
+          {present.length > 0 && (
+            <dl className="flex flex-wrap gap-x-10 gap-y-6">
+              {present.map((impact) => (
+                <div key={impact}>
+                  <dt className="flex items-center gap-2 text-sm font-semibold text-graphite">
+                    <span
+                      aria-hidden="true"
+                      className={`h-1.5 w-1.5 rounded-full ${IMPACT_STYLES[impact].dot}`}
+                    />
+                    {IMPACT_STYLES[impact].groupLabel}
+                  </dt>
+                  <dd className="mt-1 text-4xl font-semibold tracking-[-0.03em] text-midnight">
+                    {counts[impact]}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          )}
+          <div
+            className={
+              present.length > 0 ? "md:border-l md:border-cloud md:pl-12" : ""
+            }
+          >
+            <p className="text-sm font-semibold text-graphite">Topics</p>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {release.tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="rounded-full bg-lavender px-3 py-1 text-sm font-medium text-midnight"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Reveal>
+
+      <div className="mt-8">
+        <PillLink href="/updates" variant="soft" size="sm" arrow="back">
+          All updates
+        </PillLink>
       </div>
     </header>
   );

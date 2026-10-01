@@ -1,6 +1,10 @@
 import Link from "next/link";
 
 import Breadcrumbs from "@/components/Common/Breadcrumbs";
+import {
+  PAGE_HERO_PADDING,
+  PageHeroBackground,
+} from "@/components/Common/PageHero";
 import { Reveal } from "@/components/Common/Reveal";
 import { DocsNav } from "@/components/Docs/DocsNav";
 import { getLegalDoc } from "@/data/legalDocs";
@@ -16,8 +20,15 @@ export const DocsLayout = ({ href, toc, children }: DocsLayoutProps) => {
   const doc = getLegalDoc(href);
 
   return (
-    <section className="px-4 pb-24 pt-[calc(var(--site-header-height,4.5rem)+2.5rem)] md:px-8 md:pb-32 lg:pt-[calc(var(--site-header-height,4.5rem)+5rem)]">
-      <div className="mx-auto grid max-w-c-1235 gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16 xl:gap-24">
+    <section className={`relative overflow-hidden ${PAGE_HERO_PADDING}`}>
+      {/* Full-width wash behind the title band only; fades out before the legal text. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
+      >
+        <PageHeroBackground />
+      </div>
+      <div className="mx-auto grid max-w-c-1235 gap-10 pb-8 md:pb-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16 xl:gap-24">
         <aside className="min-w-0 lg:sticky lg:top-[calc(var(--site-header-height,4.5rem)+1.5rem)] lg:max-h-[calc(100dvh-var(--site-header-height,4.5rem)-3rem)] lg:self-start lg:overflow-y-auto lg:pb-6">
           <DocsNav />
 
@@ -64,7 +75,10 @@ export const DocsLayout = ({ href, toc, children }: DocsLayoutProps) => {
                 { name: doc.title, url: doc.href },
               ]}
             />
-            <h1 className="max-w-[20ch] text-4xl font-semibold leading-[1.08] tracking-[-0.025em] text-midnight text-balance md:text-5xl">
+            <p className="inline-flex rounded-full bg-white/70 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-violet ring-1 ring-midnight/5">
+              Policies &amp; Docs
+            </p>
+            <h1 className="mt-6 text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-midnight text-balance md:text-6xl">
               {doc.title}
             </h1>
             <dl className="mt-7 flex flex-wrap gap-2 text-sm">

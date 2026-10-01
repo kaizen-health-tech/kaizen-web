@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { PillLink } from "@/components/Common/PillLink";
 
 type VerificationStatus = "verifying" | "success" | "expired" | "error";
 
@@ -134,7 +134,7 @@ export default function VerificationClient() {
           <p className="mt-8 text-sm font-bold uppercase tracking-[0.18em] text-violet">
             {copy.eyebrow}
           </p>
-          <h1 className="mt-3 text-4xl font-extrabold leading-tight text-midnight sm:text-5xl dark:text-white">
+          <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-[-0.03em] text-midnight sm:text-5xl dark:text-white">
             {copy.title}
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-lg leading-8 text-text-body dark:text-gray-300">
@@ -143,18 +143,12 @@ export default function VerificationClient() {
 
           {status !== "verifying" && (
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href="kaizenhealth://"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-violet px-7 py-3 font-semibold text-white transition hover:bg-violet-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet"
-              >
+              <PillLink href="kaizenhealth://" native>
                 Open Kaizen Health
-              </a>
-              <Link
-                href="/support"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-steel px-7 py-3 font-semibold text-midnight transition hover:border-violet hover:text-violet dark:text-white"
-              >
+              </PillLink>
+              <PillLink href="/support" variant="outline" arrow="none">
                 Contact support
-              </Link>
+              </PillLink>
             </div>
           )}
         </div>

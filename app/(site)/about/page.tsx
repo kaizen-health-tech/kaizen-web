@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import Breadcrumbs from "@/components/Common/Breadcrumbs";
+import { PageHero } from "@/components/Common/PageHero";
+import { PillLink } from "@/components/Common/PillLink";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -31,37 +30,16 @@ const milestones = [
 
 export default function AboutPage() {
   return (
-    <main className="space-y-16 pb-24">
-      <section className="relative overflow-hidden py-24">
-        <Image
-          src="/images/hero/contact-us-hero-bg.png"
-          alt="Decorative background gradient"
-          fill
-          priority
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-        />
-        <header className="mx-auto mt-20 max-w-5xl space-y-6 px-4 text-center sm:px-6 lg:px-8">
-          <Breadcrumbs
-            center
-            className="text-slate-700"
-            items={[
-              { name: "Home", url: "/" },
-              { name: "About Kaizen Health", url: "/about" },
-            ]}
-          />
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            About Kaizen Health
-          </p>
-          <h1 className="text-4xl font-semibold text-slate-900 sm:text-5xl">
-            We exist to simplify care collaboration for every family.
-          </h1>
-          <p className="mx-auto max-w-3xl text-lg text-slate-700">
-            From pediatric specialists to aging parents, healthcare is a team
-            sport. Kaizen Health brings everyone together with a single source
-            of truth for records, care plans, and ongoing communication.
-          </p>
-        </header>
-      </section>
+    <main className="pb-24">
+      <PageHero
+        eyebrow="About Kaizen Health"
+        title="We exist to simplify care collaboration for every family."
+        description="From pediatric specialists to aging parents, healthcare is a team sport. Kaizen Health brings everyone together with a single source of truth for records, care plans, and ongoing communication."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "About Kaizen Health", url: "/about" },
+        ]}
+      />
 
       <div className="mx-auto max-w-5xl space-y-16 px-4 sm:px-6 lg:px-8">
         <section className="grid gap-8 rounded-3xl border border-slate-200 bg-white/80 p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900/60 sm:grid-cols-3">
@@ -88,18 +66,10 @@ export default function AboutPage() {
             lens.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link
-              href="/team"
-              className="inline-flex items-center rounded-full bg-primary px-6 py-3 font-semibold text-white transition hover:bg-primaryho"
-            >
-              Meet the team
-            </Link>
-            <Link
-              href="/how-it-works"
-              className="inline-flex items-center rounded-full border border-primary px-6 py-3 font-semibold text-primary transition hover:bg-primary/10"
-            >
+            <PillLink href="/team">Meet the team</PillLink>
+            <PillLink href="/how-it-works" variant="soft">
               See how it works
-            </Link>
+            </PillLink>
           </div>
         </section>
       </div>

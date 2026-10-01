@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import Breadcrumbs from "@/components/Common/Breadcrumbs";
+import { PageHero } from "@/components/Common/PageHero";
 import { PillLink } from "@/components/Common/PillLink";
-import { Reveal } from "@/components/Common/Reveal";
 import { SupportCenter } from "@/components/Support/SupportCenter";
 import { absoluteUrl, createPageMetadata } from "@/lib/seo";
 import type { SupportFaq, SupportTopic } from "@/types/support";
@@ -133,32 +131,11 @@ const SupportPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(supportPageSchema) }}
       />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden px-4 pb-12 pt-[calc(var(--site-header-height,4.5rem)+4rem)] md:px-8 md:pb-16 lg:pt-[calc(var(--site-header-height,4.5rem)+7rem)]">
-        <Image
-          src="/images/hero/contact-us-hero-bg.png"
-          alt=""
-          fill
-          priority
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-        />
-
-        <Reveal className="relative mx-auto max-w-3xl text-center">
-          <Breadcrumbs
-            center
-            className="text-gray-700"
-            items={[
-              { name: "Home", url: "/" },
-              { name: "Support Center", url: "/support" },
-            ]}
-          />
-          <p className="inline-flex rounded-full bg-white/70 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-violet ring-1 ring-midnight/5">
-            Support Center
-          </p>
-          <h1 className="mt-6 text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-midnight text-balance md:text-6xl">
-            We&apos;re here to help.
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-text-body">
+      <PageHero
+        eyebrow="Support Center"
+        title="We&apos;re here to help."
+        description={
+          <>
             Find answers to the questions families ask us most, or send our
             support team a message and we will get back to you as soon as
             possible. For press, partnership, and general inquiries, use the{" "}
@@ -169,15 +146,21 @@ const SupportPage = () => {
               contact page
             </Link>{" "}
             instead.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          </>
+        }
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Support Center", url: "/support" },
+        ]}
+        actions={
+          <>
             <PillLink href="#contact-support">Contact support</PillLink>
             <PillLink href="/docs" variant="soft">
               Policies &amp; docs
             </PillLink>
-          </div>
-        </Reveal>
-      </section>
+          </>
+        }
+      />
 
       <SupportCenter
         topics={supportTopics}

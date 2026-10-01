@@ -213,7 +213,7 @@ const Header = () => {
 
           <Link
             href="/chat"
-            className="inline-flex shrink-0 items-center justify-center rounded-xl bg-aquamarine px-4 py-2.5 text-[17px] font-medium leading-5 text-dark-plum transition duration-200 hover:brightness-95"
+            className="inline-flex shrink-0 items-center justify-center rounded-full bg-aquamarine px-5 py-2.5 text-[17px] font-bold leading-5 text-dark-plum transition duration-500 ease-out-soft hover:brightness-95 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-aquamarine"
           >
             Try Kai for free
           </Link>
@@ -234,7 +234,7 @@ const Header = () => {
 
       <Link
         href="/chat"
-        className="pointer-events-auto inline-flex shrink-0 items-center justify-center rounded-2xl bg-aquamarine px-3 text-[15px] font-medium leading-5 text-dark-plum shadow-[0_10px_40px_rgba(32,24,57,0.28)] transition duration-200 hover:brightness-95 md:px-4 md:text-[17px] xl:hidden"
+        className="pointer-events-auto inline-flex shrink-0 items-center justify-center rounded-full bg-aquamarine px-4 text-[15px] font-bold leading-5 text-dark-plum shadow-[0_10px_40px_rgba(32,24,57,0.28)] transition duration-500 ease-out-soft hover:brightness-95 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-aquamarine md:px-5 md:text-[17px] xl:hidden"
       >
         Try Kai free
       </Link>

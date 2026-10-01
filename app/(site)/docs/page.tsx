@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "@/components/Common/Breadcrumbs";
+import { PageHero } from "@/components/Common/PageHero";
 import { PillLink } from "@/components/Common/PillLink";
 import { Reveal } from "@/components/Common/Reveal";
 import { legalDocs } from "@/data/legalDocs";
@@ -100,56 +100,49 @@ const SPANS = [
 
 export default function DocsPage() {
   return (
-    <section className="px-4 pb-24 pt-[calc(var(--site-header-height,4.5rem)+2.5rem)] md:px-8 md:pb-32 lg:pt-[calc(var(--site-header-height,4.5rem)+5rem)]">
-      <div className="mx-auto max-w-c-1235">
-        <Reveal className="max-w-3xl">
-          <Breadcrumbs
-            items={[
-              { name: "Home", url: "/" },
-              { name: "Policies & Docs", url: "/docs" },
-            ]}
-          />
-          <p className="inline-flex rounded-full bg-lavender px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-violet">
-            Policies &amp; Docs
-          </p>
-          <h1 className="mt-6 text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-midnight text-balance md:text-6xl">
-            Privacy policy, terms, and the rest of the fine print.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-text-body">
-            Every policy that covers your family&apos;s account and health
-            records, in full. Each document shows when it took effect and when
-            it last changed.
-          </p>
-        </Reveal>
+    <>
+      <PageHero
+        eyebrow="Policies & Docs"
+        align="left"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Policies & Docs", url: "/docs" },
+        ]}
+        title="Privacy policy, terms, and the rest of the fine print."
+        description="Every policy that covers your family's account and health records, in full. Each document shows when it took effect and when it last changed."
+      />
 
-        <ul className="mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-6">
-          {legalDocs.map((doc, index) => (
-            <Reveal
-              key={doc.href}
-              as="li"
-              delay={index * 80}
-              className={SPANS[index] ?? "md:col-span-2"}
-            >
-              <DocCard doc={doc} featured={index === 0} />
-            </Reveal>
-          ))}
-        </ul>
+      <section className="px-4 pb-24 md:px-8 md:pb-32">
+        <div className="mx-auto max-w-c-1235">
+          <ul className="grid grid-cols-1 gap-6 md:grid-cols-6">
+            {legalDocs.map((doc, index) => (
+              <Reveal
+                key={doc.href}
+                as="li"
+                delay={index * 80}
+                className={SPANS[index] ?? "md:col-span-2"}
+              >
+                <DocCard doc={doc} featured={index === 0} />
+              </Reveal>
+            ))}
+          </ul>
 
-        <Reveal className="mt-24 flex flex-col items-start justify-between gap-6 rounded-[2rem] bg-lavender p-8 md:flex-row md:items-center md:p-12">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-[-0.02em] text-midnight">
-              Questions about a policy?
-            </h2>
-            <p className="mt-2 max-w-xl text-base leading-7 text-text-body">
-              Ask us about your data, request an export, or delete your account
-              from the support center.
-            </p>
-          </div>
-          <PillLink href="/support" variant="midnight">
-            Visit support
-          </PillLink>
-        </Reveal>
-      </div>
-    </section>
+          <Reveal className="mt-24 flex flex-col items-start justify-between gap-6 rounded-[2rem] bg-lavender p-8 md:flex-row md:items-center md:p-12">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-[-0.02em] text-midnight">
+                Questions about a policy?
+              </h2>
+              <p className="mt-2 max-w-xl text-base leading-7 text-text-body">
+                Ask us about your data, request an export, or delete your account
+                from the support center.
+              </p>
+            </div>
+            <PillLink href="/support" variant="midnight">
+              Visit support
+            </PillLink>
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,59 +1,86 @@
-import { Release } from "@/types/release";
+import { Reveal } from "@/components/Common/Reveal";
+import {
+  IMPACT_STYLES,
+  groupHighlights,
+} from "@/components/Updates/releaseImpact";
 
-const impactCopy: Record<
-  NonNullable<Release["highlights"][number]["impact"]>,
-  { label: string; className: string }
-> = {
-  new: { label: "New", className: "bg-emerald-100 text-emerald-700" },
-  improved: { label: "Improved", className: "bg-blue-100 text-blue-700" },
-  fixed: { label: "Fixed", className: "bg-purple-100 text-purple-700" },
-};
+import type { ReleaseCardProps } from "@/types/release";
 
-type ReleaseHighlightsProps = {
-  release: Release;
-};
-
-const ReleaseHighlights = ({ release }: ReleaseHighlightsProps) => {
-  if (!release.highlights.length) {
-    return null;
-  }
+/**
+ * "What changed": the release's highlights grouped into new features,
+ * improvements and fixes, so a visitor can skip straight to the kind of
+ * change they care about.
+ */
+const ReleaseHighlights = ({ release }: ReleaseCardProps) => {
+  const groups = groupHighlights(release);
+  if (groups.length === 0) return null;
 
   return (
-    <section className="rounded-3xl border border-black/5 bg-white p-8 shadow-lg shadow-black/5 dark:border-white/10 dark:bg-blacksection dark:shadow-none lg:p-10">
-      <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
-        What&apos;s in this release
-      </h2>
-      <p className="mt-2 text-base text-slate-600 dark:text-slate-200">
-        The key moments, improvements, and fixes you can expect after updating.
-      </p>
+    <section aria-labelledby="what-changed">
+      <Reveal>
+        <h2
+          id="what-changed"
+          className="text-3xl font-semibold tracking-[-0.02em] text-midnight md:text-4xl"
+        >
+          What changed
+        </h2>
+      </Reveal>
 
-      <dl className="mt-6 grid gap-6 md:grid-cols-2">
-        {release.highlights.map((highlight) => {
-          const impact = highlight.impact
-            ? impactCopy[highlight.impact]
-            : undefined;
+      <div className="mt-10 space-y-14">
+        {groups.map((group) => {
+          const style =
+            group.impact === "other" ? undefined : IMPACT_STYLES[group.impact];
+          const headingId = `changes-${group.impact}`;
+
           return (
-            <div
-              key={highlight.title}
-              className="rounded-2xl border border-slate-100 bg-slate-50/70 p-6 dark:border-white/10 dark:bg-[#12151f]"
-            >
-              <dt className="flex items-center gap-3 text-lg font-semibold text-slate-900 dark:text-white">
-                <span>{highlight.title}</span>
-                {impact && (
-                  <span
-                    className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ${impact.className}`}
+            <div key={group.impact} aria-labelledby={headingId} role="group">
+              <Reveal className="flex items-center gap-3">
+                <h3
+                  id={headingId}
+                  className="text-lg font-semibold text-midnight"
+                >
+                  {style ? style.groupLabel : "Other changes"}
+                </h3>
+                <span
+                  className={`rounded-full px-2.5 py-0.5 text-sm font-semibold ${
+                    style ? style.chip : "bg-cloud text-arsenic"
+                  }`}
+                >
+                  {group.items.length}
+                </span>
+              </Reveal>
+
+              <ul className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
+                {group.items.map((highlight, index) => (
+                  <Reveal
+                    key={highlight.title}
+                    as="li"
+                    delay={Math.min(index, 3) * 60}
+                    className="rounded-[1.75rem] bg-lavender/60 p-1.5 ring-1 ring-midnight/5"
                   >
-                    {impact.label}
-                  </span>
-                )}
-              </dt>
-              <dd className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-200">
-                {highlight.description}
-              </dd>
+                    <div className="flex h-full gap-4 rounded-[calc(1.75rem-0.375rem)] bg-white p-6 shadow-card-soft">
+                      <span
+                        aria-hidden="true"
+                        className={`mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full ${
+                          style ? style.dot : "bg-steel"
+                        }`}
+                      />
+                      <div>
+                        <p className="text-lg font-semibold leading-snug text-midnight">
+                          {highlight.title}
+                        </p>
+                        <p className="mt-2 text-base leading-7 text-text-body">
+                          {highlight.description}
+                        </p>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </ul>
             </div>
           );
         })}
-      </dl>
+      </div>
     </section>
   );
 };

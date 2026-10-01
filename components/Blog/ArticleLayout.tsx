@@ -103,7 +103,7 @@ const ArticleLayout = ({
               {category.label}
             </Link>
           </div>
-          <h1 className="mb-5 text-pretty text-[36px] font-bold leading-[1.1] tracking-[-1px] text-midnight sm:text-[54px] sm:leading-[1.06] sm:tracking-[-1.8px]">
+          <h1 className="mb-5 text-pretty text-[36px] font-semibold leading-[1.1] tracking-[-1px] text-midnight sm:text-[54px] sm:leading-[1.06] sm:tracking-[-1.8px]">
             {title}
           </h1>
           <p className="mb-7.5 max-w-195 text-pretty text-lg leading-[1.5] text-text-body sm:text-[23px]">
@@ -117,12 +117,12 @@ const ArticleLayout = ({
                   href={authorUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lg font-bold text-midnight underline-offset-4 hover:text-violet hover:underline"
+                  className="text-lg font-semibold text-midnight underline-offset-4 hover:text-violet hover:underline"
                 >
                   {authorName}
                 </a>
               ) : (
-                <span className="text-lg font-bold text-midnight">
+                <span className="text-lg font-semibold text-midnight">
                   {authorName}
                 </span>
               )}
@@ -193,7 +193,7 @@ const ArticleLayout = ({
             <div className="mb-14 flex items-center gap-4.5 border-t border-cloud pt-7">
               <Avatar name={authorName} image={authorImage} size={64} />
               <div>
-                <div className="mb-1 text-[19px] font-bold text-midnight">
+                <div className="mb-1 text-[19px] font-semibold text-midnight">
                   {authorUrl ? (
                     <a
                       href={authorUrl}

@@ -3,6 +3,8 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { PillLink } from "@/components/Common/PillLink";
+
 const androidStoreUrl = "https://bit.ly/kz-android-store";
 const appleStoreUrl = "https://bit.ly/kz-app-store";
 
@@ -31,14 +33,15 @@ export default function StickyMobileCTA() {
       <p className="text-sm font-medium text-black dark:text-white">
         Get Kaizen Health free
       </p>
-      <a
+      <PillLink
         href={storeHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-primaryho"
+        size="sm"
+        className="shrink-0"
       >
         Download the App
-      </a>
+      </PillLink>
     </div>
   );
 }

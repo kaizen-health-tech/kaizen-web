@@ -243,7 +243,7 @@ export default function Footer() {
                 <path d="m8.8 12.1 2.2 2.2 4.2-4.4" />
               </svg>
               <span className="flex flex-col leading-tight">
-                <span className="text-xs font-semibold uppercase tracking-wider text-white">
+                <span className="text-xs font-bold uppercase tracking-wider text-white">
                   SOC 2 Type II
                 </span>
                 <span className="text-[11px] text-gray-300">

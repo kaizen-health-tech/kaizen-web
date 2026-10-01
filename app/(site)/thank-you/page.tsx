@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "@/components/Common/Breadcrumbs";
+import { PageHero } from "@/components/Common/PageHero";
+import { PillLink } from "@/components/Common/PillLink";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -38,34 +39,16 @@ const nextSteps = [
 const ThankYouPage = () => {
   return (
     <main id="thank-you">
-      <section className="relative py-24">
-        <div className="relative mx-auto mt-20 max-w-3xl px-4 text-center">
-          <Breadcrumbs
-            center
-            items={[
-              { name: "Home", url: "/" },
-              { name: "Thank You", url: "/thank-you" },
-            ]}
-          />
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Message sent
-          </p>
-          <h1 className="mt-4 text-4xl font-extrabold leading-tight text-black dark:text-white md:text-6xl">
-            Thanks — we&apos;ve got your message
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
-            A member of the Kaizen Health team will reply to the email address
-            you provided. In the meantime, here are a few places to look
-            around.
-          </p>
-          <Link
-            href="/"
-            className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark"
-          >
-            Return to Home
-          </Link>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Message sent"
+        title="Thanks — we&apos;ve got your message"
+        description="A member of the Kaizen Health team will reply to the email address you provided. In the meantime, here are a few places to look around."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Thank You", url: "/thank-you" },
+        ]}
+        actions={<PillLink href="/">Return to Home</PillLink>}
+      />
 
       <section className="mx-auto max-w-c-1390 px-4 pb-24 md:px-8 xl:px-20">
         <div className="grid gap-8 sm:grid-cols-3">

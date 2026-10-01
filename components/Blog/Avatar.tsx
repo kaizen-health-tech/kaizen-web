@@ -29,7 +29,7 @@ const Avatar = ({ name, image, size }: AvatarProps) => {
 
   return (
     <div
-      className="flex flex-none items-center justify-center rounded-full bg-light-lilac font-bold text-violet"
+      className="flex flex-none items-center justify-center rounded-full bg-light-lilac font-semibold text-violet"
       style={{
         width: size,
         height: size,

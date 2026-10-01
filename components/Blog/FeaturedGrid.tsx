@@ -38,7 +38,7 @@ const FeaturedGrid = ({ posts }: FeaturedGridProps) => {
           </span>
         </div>
         <h3
-          className="text-[38px] font-bold leading-[1.1] tracking-[-1.1px] text-pretty"
+          className="text-[38px] font-semibold leading-[1.1] tracking-[-1.1px] text-pretty"
           style={{ color: bigCategory?.deep ?? bigCategory?.dark }}
         >
           {big.title}
@@ -101,7 +101,7 @@ const FeaturedGrid = ({ posts }: FeaturedGridProps) => {
                   </span>
                 )}
                 <h3
-                  className="text-[26px] font-bold leading-[1.18] tracking-[-.5px] text-pretty"
+                  className="text-[26px] font-semibold leading-[1.18] tracking-[-.5px] text-pretty"
                   style={{ color: category?.deep ?? category?.dark }}
                 >
                   {post.title}

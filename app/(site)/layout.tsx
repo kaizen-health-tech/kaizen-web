@@ -21,6 +21,9 @@ const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  // Exposed as a CSS variable so Tailwind's font-sans token (globals.css)
+  // points at the real loaded font, not a family name that does not exist.
+  variable: "--font-source-sans",
 });
 
 const NAV_LINKS = [
@@ -156,7 +159,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={sourceSans.variable} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

@@ -19,7 +19,7 @@ const HeadingWithAnchor = ({ id, children }: HeadingWithAnchorProps) => {
   return (
     <h2
       id={id}
-      className="group flex scroll-mt-32 items-center gap-2 text-pretty text-[34px] font-bold leading-[1.15] tracking-[-.9px] text-midnight [margin:48px_0_18px]"
+      className="group flex scroll-mt-32 items-center gap-2 text-pretty text-[34px] font-semibold leading-[1.15] tracking-[-.9px] text-midnight [margin:48px_0_18px]"
       aria-label={typeof children === "string" ? children : undefined}
     >
       <span>{children}</span>

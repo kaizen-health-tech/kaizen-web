@@ -136,7 +136,7 @@ const Journey = () => {
                   </span>
 
                   <h2
-                    className={`mt-3 text-2xl font-bold leading-[1.12] sm:text-4xl md:text-5xl ${
+                    className={`mt-3 text-2xl font-semibold leading-[1.12] sm:text-4xl md:text-5xl ${
                       isDark ? "text-white" : "text-[#17161D]"
                     }`}
                   >

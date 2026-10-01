@@ -21,7 +21,7 @@ const FAQItem = ({ faqData }: { faqData: FaqData }) => {
           aria-expanded={isOpen}
           aria-controls={panelId}
           onClick={() => handleFaqToggle(id)}
-          className="group flex w-full cursor-pointer items-center justify-between gap-6 px-6 py-5 text-left text-metatitle3 font-medium text-midnight transition-colors duration-500 ease-out-soft hover:text-violet focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-violet dark:text-white lg:px-9 lg:py-7"
+          className="group flex w-full cursor-pointer items-center justify-between gap-6 px-6 py-5 text-left text-metatitle3 font-semibold text-midnight transition-colors duration-500 ease-out-soft hover:text-violet focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-violet dark:text-white lg:px-9 lg:py-7"
         >
           {quest}
 

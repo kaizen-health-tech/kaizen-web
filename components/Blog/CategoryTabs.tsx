@@ -9,7 +9,7 @@ interface CategoryTabsProps {
 const tabClass = (active: boolean) =>
   `whitespace-nowrap border-b-[3px] pb-4 text-lg ${
     active
-      ? "border-violet font-bold text-midnight"
+      ? "border-violet font-semibold text-midnight"
       : "border-transparent font-medium text-graphite hover:text-midnight"
   }`;
 

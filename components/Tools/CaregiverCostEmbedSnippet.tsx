@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PillButton } from "@/components/Common/PillButton";
 
 export default function CaregiverCostEmbedSnippet({
   snippet,
@@ -21,13 +22,9 @@ export default function CaregiverCostEmbedSnippet({
         <p className="text-sm font-semibold text-midnight dark:text-white">
           Paste this where you want the calculator to appear
         </p>
-        <button
-          type="button"
-          onClick={copySnippet}
-          className="rounded-full bg-violet px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet/20"
-        >
+        <PillButton size="sm" onClick={copySnippet}>
           {copied ? "Copied" : "Copy embed code"}
-        </button>
+        </PillButton>
       </div>
       <pre className="max-h-80 overflow-auto bg-midnight px-6 py-5 text-left text-xs leading-5 text-white/85">
         <code>{snippet}</code>

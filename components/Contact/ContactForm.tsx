@@ -2,6 +2,7 @@
 import React from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { PillButton } from "@/components/Common/PillButton";
 
 type ContactFormProps = {
   heading: string;
@@ -176,30 +177,13 @@ const ContactForm = ({
           </label>
         </div>
 
-        <button
-          type="button"
+        <PillButton
           onClick={submitEmail}
           disabled={!checked || isSubmitting}
-          className="group inline-flex min-h-12 items-center gap-3 rounded-full bg-violet py-1.5 pl-6 pr-1.5 font-bold text-white transition duration-500 ease-out-soft hover:bg-violet-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100"
+          arrow="forward"
         >
           {isSubmitting ? "Sending..." : "Send message"}
-          <span
-            aria-hidden="true"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 transition-transform duration-500 ease-out-soft group-enabled:group-hover:-translate-y-px group-enabled:group-hover:translate-x-0.5 group-enabled:group-hover:scale-105"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4"
-            >
-              <path d="M7 17 17 7M8 7h9v9" />
-            </svg>
-          </span>
-        </button>
+        </PillButton>
       </div>
     </div>
   );

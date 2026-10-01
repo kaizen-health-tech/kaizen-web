@@ -160,7 +160,7 @@ const Hero = () => {
 
       <div className="relative z-20 mx-auto w-full max-w-[1600px]">
         <div className="max-w-[700px] text-center lg:max-w-[540px] lg:text-left xl:max-w-[640px]">
-          <h1 className="text-4xl font-normal leading-[1.02] text-white sm:text-5xl md:text-5xl lg:text-[clamp(3.25rem,4.2vw,4.5rem)] xl:text-[clamp(3.5rem,4vw,5rem)]">
+          <h1 className="text-4xl font-semibold leading-[1.02] tracking-[-0.03em] text-white sm:text-5xl md:text-5xl lg:text-[clamp(3.25rem,4.2vw,4.5rem)] xl:text-[clamp(3.5rem,4vw,5rem)]">
             Care for your family without carrying every detail.
           </h1>
 

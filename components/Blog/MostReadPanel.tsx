@@ -16,7 +16,7 @@ const MostReadPanel = ({ posts }: MostReadPanelProps) => {
       <div className="flex flex-col gap-4.5">
         {posts.map((post, index) => (
           <Link href={post.url} key={post.id} className="group flex gap-3.5">
-            <span className="text-[22px] font-bold leading-none text-steel">{index + 1}</span>
+            <span className="text-[22px] font-semibold leading-none text-steel">{index + 1}</span>
             <span className="text-lg font-semibold leading-[1.3] text-midnight text-pretty group-hover:text-violet">
               {post.title}
             </span>

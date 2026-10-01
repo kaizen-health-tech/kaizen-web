@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Breadcrumbs from "@/components/Common/Breadcrumbs";
+import { PageHero } from "@/components/Common/PageHero";
+import { PillLink } from "@/components/Common/PillLink";
 import CTA from "@/components/CTA";
 import CaregiverCostCalculator from "@/components/Tools/CaregiverCostCalculator";
 import CaregiverCostEmbedSnippet from "@/components/Tools/CaregiverCostEmbedSnippet";
@@ -65,48 +66,40 @@ export default function CaregiverCostCalculatorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorSchema) }}
       />
 
-      <section className="relative px-4 pb-16 pt-32 sm:px-6 sm:pt-40 lg:px-8">
-        <div className="absolute inset-x-0 top-0 -z-0 h-[620px] bg-[radial-gradient(circle_at_15%_20%,rgba(102,230,181,0.28),transparent_28%),radial-gradient(circle_at_82%_24%,rgba(110,64,243,0.20),transparent_30%),linear-gradient(180deg,#F7F4FF_0%,#FBFBFD_78%)] dark:bg-[radial-gradient(circle_at_15%_20%,rgba(102,230,181,0.10),transparent_28%),radial-gradient(circle_at_82%_24%,rgba(110,64,243,0.20),transparent_30%),linear-gradient(180deg,#201839_0%,#000_78%)]" />
-        <div className="relative mx-auto max-w-c-1235">
-          <div className="mx-auto max-w-4xl text-center">
-            <Breadcrumbs
-              center
-              items={[
-                { name: "Home", url: "/" },
-                {
-                  name: "Caregiver cost calculator",
-                  url: "/tools/caregiver-cost-calculator",
-                },
-              ]}
-            />
-            <p className="mt-7 text-sm font-semibold uppercase tracking-[0.2em] text-violet">
-              Free caregiver planning tool
-            </p>
-            <h1 className="mt-5 text-4xl font-semibold tracking-[-0.035em] text-midnight dark:text-white sm:text-6xl lg:text-7xl">
-              See the career cost of care before it compounds.
-            </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-text-body dark:text-space sm:text-xl">
+      <PageHero
+        eyebrow="Free tool"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          {
+            name: "Caregiver cost calculator",
+            url: "/tools/caregiver-cost-calculator",
+          },
+        ]}
+        title="See the career cost of care before it compounds."
+        description={
+          <>
+            <p>
               A few reduced work hours can add up to years of lost pay and
               retirement growth. Estimate the cost, then bring the number to
               your family.
             </p>
-            <p className="mt-4 text-sm font-medium text-graphite dark:text-space">
+            <p className="mt-4 text-sm font-medium text-graphite">
               Free to use. Your inputs stay in your browser.
             </p>
-          </div>
-
-          <div className="mt-12">
-            <CaregiverCostCalculator />
-          </div>
-
-          <p className="mx-auto mt-5 max-w-4xl text-center text-xs leading-5 text-graphite dark:text-space">
-            This is an educational estimate, not financial advice. It does not
-            model taxes, raises, Social Security benefits, pensions, health
-            insurance, or career re-entry costs. Investment returns are not
-            guaranteed.
-          </p>
+          </>
+        }
+      >
+        <div className="mt-12">
+          <CaregiverCostCalculator />
         </div>
-      </section>
+
+        <p className="mx-auto mt-5 max-w-4xl text-center text-xs leading-5 text-graphite">
+          This is an educational estimate, not financial advice. It does not
+          model taxes, raises, Social Security benefits, pensions, health
+          insurance, or career re-entry costs. Investment returns are not
+          guaranteed.
+        </p>
+      </PageHero>
 
       <section
         className="px-4 py-16 sm:px-6 lg:px-8"
@@ -114,7 +107,7 @@ export default function CaregiverCostCalculatorPage() {
       >
         <div className="mx-auto max-w-c-1154">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet">
               The cost behind the care
             </p>
             <h2
@@ -171,7 +164,7 @@ export default function CaregiverCostCalculatorPage() {
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-c-1154 gap-10 rounded-[32px] bg-lavender p-7 dark:bg-dark-plum sm:p-10 lg:grid-cols-2 lg:p-14">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet">
               How the estimate works
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-midnight dark:text-white">
@@ -217,7 +210,7 @@ export default function CaregiverCostCalculatorPage() {
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet">
             Use the estimate
           </p>
           <h2 className="mt-3 text-3xl font-semibold text-midnight dark:text-white sm:text-4xl">
@@ -229,12 +222,13 @@ export default function CaregiverCostCalculatorPage() {
             It gives your family a concrete way to see how much one caregiver
             would otherwise absorb.
           </p>
-          <Link
+          <PillLink
             href="/blog/caregiving/retirement-cost-of-caregiving"
-            className="mt-7 inline-flex items-center rounded-full border border-violet px-6 py-3 font-semibold text-violet transition hover:bg-violet hover:text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet/20"
+            variant="soft"
+            className="mt-7"
           >
             Read the full caregiving cost guide
-          </Link>
+          </PillLink>
         </div>
       </section>
 
@@ -244,7 +238,7 @@ export default function CaregiverCostCalculatorPage() {
       >
         <div className="mx-auto max-w-c-1154">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet">
               For publishers and advisors
             </p>
             <h2

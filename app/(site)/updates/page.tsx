@@ -1,9 +1,17 @@
-import { getAllTags, getSortedReleases } from "@/data/releases";
-import { ReleaseExplorer } from "@/components/Updates";
 import { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
-import Breadcrumbs from "@/components/Common/Breadcrumbs";
+
+import { PageHero } from "@/components/Common/PageHero";
+import { PillLink } from "@/components/Common/PillLink";
+import { Reveal } from "@/components/Common/Reveal";
+import { ReleaseExplorer } from "@/components/Updates";
+import { ReleaseImpactSummary } from "@/components/Updates/ReleaseImpactSummary";
+import {
+  IMPACT_STYLES,
+  countImpacts,
+  formatReleaseDate,
+} from "@/components/Updates/releaseImpact";
+import { getAllTags, getSortedReleases } from "@/data/releases";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -20,91 +28,117 @@ export const metadata: Metadata = createPageMetadata({
   ],
 });
 
-const dateFormatter = new Intl.DateTimeFormat("en", {
-  month: "long",
-  day: "numeric",
-  year: "numeric",
-});
-
 const UpdatesPage = () => {
   const releases = getSortedReleases();
-  const latestRelease = releases[0];
+  const latest = releases[0];
   const tags = getAllTags();
+  const latestCounts = countImpacts(latest);
 
   return (
     <>
-      <section className="relative overflow-hidden py-24 pt-32 md:py-28 md:pt-36">
-        <Image
-          src="/images/hero/hero_blog.svg"
-          alt="Decorative background gradient"
-          fill
-          priority
-          className="absolute inset-0 -z-20 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(102,126,234,0.18),_rgba(255,255,255,0))]" />
-        <div className="mx-auto mt-12 max-w-3xl px-4 text-center">
-          <Breadcrumbs
-            center
-            items={[
-              { name: "Home", url: "/" },
-              { name: "Product Updates", url: "/updates" },
-            ]}
-          />
-          <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-white md:text-5xl">
-            Product updates that keep your care teams ready
-          </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg text-slate-600 dark:text-slate-200">
-            Explore new releases, rollout guidance, and upcoming improvements
-            across Kaizen Health. Use the filters below to find the changes that
-            matter to your organization.
+      <PageHero
+        align="left"
+        eyebrow="Release notes"
+        title="What's new in Kaizen Health."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Product Updates", url: "/updates" },
+        ]}
+        description={
+          <p>
+            Every app update, in plain words. Each release lists what is new,
+            what got better, and what we fixed, so you can see what changed for
+            your family before you open the app.
           </p>
-
-          <div className="mt-10 flex flex-col items-center gap-5 text-sm text-slate-600 dark:text-slate-200">
-            <div className="flex max-w-sm items-center gap-3 rounded-2xl bg-white/80 p-4 text-left shadow-sm shadow-primary/10 backdrop-blur dark:bg-white/10">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-semibold text-white">
-                {latestRelease.version}
-              </span>
-              <div>
-                <p className="text-xs uppercase tracking-wide text-primary">
-                  Latest release
-                </p>
-                <p className="font-semibold text-slate-900 dark:text-white">
-                  {latestRelease.title}
-                </p>
-                <p className="text-xs text-slate-500 dark:text-slate-300">
-                  Published{" "}
-                  {dateFormatter.format(new Date(latestRelease.publishedAt))}
-                </p>
-              </div>
-            </div>
-
-            <Link
-              href={`/updates/${latestRelease.slug}`}
-              className="inline-flex items-center gap-3 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white transition hover:bg-primaryho"
+        }
+      >
+        {/* Latest release, featured in the dark card used for the lead item
+            on /docs. */}
+        <Reveal delay={80} className="mt-14 md:mt-16">
+          <article className="rounded-[2rem] bg-violet/15 p-1.5 ring-1 ring-violet/25">
+            <div
+              className={`grid gap-10 rounded-[calc(2rem-0.375rem)] bg-midnight p-7 text-white shadow-[0_24px_60px_rgba(40,27,85,0.28),inset_0_1px_1px_rgba(255,255,255,0.12)] md:p-12 ${
+                latest.heroImage ? "lg:grid-cols-[minmax(0,1fr)_22rem]" : ""
+              }`}
             >
-              Read the latest release
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="h-4 w-4"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
+              <div className="flex flex-col">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-aquamarine">
+                  Latest · Version {latest.version} ·{" "}
+                  <time dateTime={latest.publishedAt}>
+                    {formatReleaseDate(latest.publishedAt)}
+                  </time>
+                </p>
+                <h2 className="mt-5 text-3xl font-semibold leading-[1.1] tracking-[-0.02em] text-balance md:text-[44px]">
+                  {latest.title}
+                </h2>
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-white/70">
+                  {latest.summary}
+                </p>
 
-      <section className="relative z-10 -mt-16 pb-32">
-        <div className="container mx-auto px-4">
-          <div className="space-y-10">
-            <ReleaseExplorer releases={releases} tags={tags} />
-          </div>
+                <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                  {latest.highlights.slice(0, 4).map((highlight) => (
+                    <li
+                      key={highlight.title}
+                      className="flex items-start gap-3 rounded-2xl bg-white/[0.06] p-4 ring-1 ring-white/10"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${
+                          highlight.impact
+                            ? IMPACT_STYLES[highlight.impact].dot
+                            : "bg-white/40"
+                        }`}
+                      />
+                      <span className="text-[15px] font-semibold leading-6">
+                        {highlight.impact && (
+                          <span className="sr-only">
+                            {IMPACT_STYLES[highlight.impact].label}:{" "}
+                          </span>
+                        )}
+                        {highlight.title}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+                  <PillLink
+                    href={`/updates/${latest.slug}`}
+                    variant="aquamarine"
+                  >
+                    See everything that changed
+                  </PillLink>
+                  <ReleaseImpactSummary
+                    counts={latestCounts}
+                    className="[&>li]:bg-white/10 [&>li]:text-white"
+                  />
+                </div>
+              </div>
+
+              {latest.heroImage && (
+                <div className="self-center overflow-hidden rounded-[1.5rem] ring-1 ring-white/10">
+                  <Image
+                    src={latest.heroImage}
+                    alt={latest.heroImageAlt ?? latest.title}
+                    width={latest.heroImageWidth ?? 1080}
+                    height={latest.heroImageHeight ?? 1080}
+                    sizes="(min-width: 1024px) 352px, calc(100vw - 88px)"
+                    className="h-auto w-full"
+                    priority
+                  />
+                </div>
+              )}
+            </div>
+          </article>
+        </Reveal>
+      </PageHero>
+
+      <section
+        className="px-4 pb-24 pt-8 md:px-8 md:pb-32 md:pt-12"
+        aria-label="All releases"
+      >
+        <div className="mx-auto max-w-c-1235">
+          <ReleaseExplorer releases={releases} tags={tags} />
         </div>
       </section>
     </>

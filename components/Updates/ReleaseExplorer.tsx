@@ -1,37 +1,44 @@
 "use client";
 
 import { useId, useMemo, useState } from "react";
-import ReleaseCard from "@/components/Updates/ReleaseCard";
-import { Release } from "@/types/release";
 
-type ReleaseExplorerProps = {
-  releases: Release[];
-  tags: string[];
-};
+import ReleaseCard from "@/components/Updates/ReleaseCard";
+
+import type { ReleaseExplorerProps } from "@/types/release";
+
+const ALL_TOPICS = "all";
 
 const normalize = (value: string) =>
-  value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+  value.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+const chipClassName = (isActive: boolean) =>
+  `flex whitespace-nowrap rounded-full px-4 py-2 text-[15px] ring-1 transition duration-500 ease-out-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet active:scale-[0.98] ${
+    isActive
+      ? "bg-midnight font-semibold text-white ring-midnight"
+      : "bg-white text-text-body ring-midnight/[0.08] hover:bg-lavender hover:text-midnight"
+  }`;
 
 const ReleaseExplorer = ({ releases, tags }: ReleaseExplorerProps) => {
-  const [activeTag, setActiveTag] = useState<string>("all");
+  const [activeTag, setActiveTag] = useState<string>(ALL_TOPICS);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const searchInputId = useId();
+  const resultsId = useId();
 
   const filteredReleases = useMemo(() => {
     const normalizedTerm = normalize(searchTerm.trim());
     return releases.filter((release) => {
       const matchesTag =
-        activeTag === "all" || release.tags.includes(activeTag);
+        activeTag === ALL_TOPICS || release.tags.includes(activeTag);
       const matchesSearch =
         normalizedTerm.length === 0 ||
         normalize(
           [
+            release.version,
             release.title,
             release.summary,
-            release.highlights.map((highlight) => highlight.title).join(" "),
+            release.highlights
+              .map((highlight) => `${highlight.title} ${highlight.description}`)
+              .join(" "),
             release.tags.join(" "),
           ].join(" "),
         ).includes(normalizedTerm);
@@ -40,90 +47,100 @@ const ReleaseExplorer = ({ releases, tags }: ReleaseExplorerProps) => {
     });
   }, [activeTag, releases, searchTerm]);
 
+  const clearFilters = () => {
+    setActiveTag(ALL_TOPICS);
+    setSearchTerm("");
+  };
+
   return (
-    <div className="space-y-8">
-      <div className="flex flex-col gap-6 rounded-2xl border border-black/5 bg-white p-6 shadow-lg shadow-black/5 dark:border-white/10 dark:bg-blacksection dark:shadow-none lg:flex-row lg:items-center lg:justify-between">
-        <div className="w-full lg:max-w-lg">
-          <label
-            htmlFor={searchInputId}
-            className="mb-2 block text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-300"
+    <div>
+      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 className="text-3xl font-semibold tracking-[-0.02em] text-midnight md:text-4xl">
+            Every release
+          </h2>
+          <p
+            id={resultsId}
+            aria-live="polite"
+            className="mt-2 text-base text-graphite"
           >
+            {filteredReleases.length === releases.length
+              ? `${releases.length} releases, newest first.`
+              : `Showing ${filteredReleases.length} of ${releases.length} releases.`}
+          </p>
+        </div>
+
+        <div className="w-full rounded-full bg-lavender/60 p-1.5 ring-1 ring-midnight/5 md:max-w-sm">
+          <label htmlFor={searchInputId} className="sr-only">
             Search updates
           </label>
           <div className="relative">
-            <input
-              type="search"
-              id={searchInputId}
-              placeholder="Search by feature, tag, or version…"
-              value={searchTerm}
-              onChange={(event) => setSearchTerm(event.target.value)}
-              className="w-full rounded-full border border-slate-200 bg-white px-5 py-3 text-base text-slate-800 shadow-inner focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 dark:border-white/10 dark:bg-[#0E1015] dark:text-white"
-            />
             <svg
-              className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
-              xmlns="http://www.w3.org/2000/svg"
+              className="pointer-events-none absolute left-4 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-graphite"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              aria-hidden
+              aria-hidden="true"
             >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.3-4.3" />
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
             </svg>
-          </div>
-        </div>
-
-        <div className="w-full space-y-6 lg:max-w-xl">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-300">
-              Filter by tag
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={() => setActiveTag("all")}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-                  activeTag === "all"
-                    ? "bg-primary text-white shadow"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
-                }`}
-              >
-                All
-              </button>
-              {tags.map((tag) => (
-                <button
-                  key={tag}
-                  type="button"
-                  onClick={() => setActiveTag(tag)}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-                    activeTag === tag
-                      ? "bg-primary text-white shadow"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
-                  }`}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
+            <input
+              type="search"
+              id={searchInputId}
+              placeholder="Search a feature or version"
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
+              aria-controls={resultsId}
+              className="min-h-11 w-full rounded-full bg-white py-2.5 pl-11 pr-5 text-base text-midnight shadow-card-soft placeholder:text-space focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet"
+            />
           </div>
         </div>
       </div>
 
-      <ul className="grid grid-cols-1 gap-6">
-        {filteredReleases.length === 0 ? (
-          <li className="rounded-2xl border border-dashed border-slate-200 bg-white p-10 text-center text-slate-500 dark:border-white/10 dark:bg-blacksection dark:text-slate-300">
-            No updates match those filters yet. Try clearing your filters or
-            check back soon—new releases ship every month.
-          </li>
-        ) : (
-          filteredReleases.map((release) => (
+      <div className="mt-8" role="group" aria-label="Filter by topic">
+        <ul className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
+          {[ALL_TOPICS, ...tags].map((tag) => (
+            <li key={tag} className="shrink-0">
+              <button
+                type="button"
+                aria-pressed={activeTag === tag}
+                onClick={() => setActiveTag(tag)}
+                className={chipClassName(activeTag === tag)}
+              >
+                {tag === ALL_TOPICS ? "All topics" : tag}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {filteredReleases.length === 0 ? (
+        <div className="mt-14 rounded-[2rem] bg-lavender p-10 text-center md:p-14">
+          <p className="text-lg font-semibold text-midnight">
+            No releases match that search.
+          </p>
+          <p className="mt-2 text-base text-text-body">
+            Try a different word, or clear the filters to see every release.
+          </p>
+          <button
+            type="button"
+            onClick={clearFilters}
+            className="mt-6 text-base font-semibold text-violet underline decoration-violet/30 underline-offset-4 transition-colors duration-500 ease-out-soft hover:text-violet-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet"
+          >
+            Clear filters
+          </button>
+        </div>
+      ) : (
+        <ul className="mt-14 space-y-12 md:space-y-16">
+          {filteredReleases.map((release) => (
             <ReleaseCard key={release.slug} release={release} />
-          ))
-        )}
-      </ul>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

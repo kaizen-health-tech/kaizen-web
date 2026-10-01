@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import ContactForm from "@/components/Contact/ContactForm";
 import ContactDetails, {
   CONTACT_ADDRESS,
   CONTACT_EMAIL,
 } from "@/components/Contact/ContactDetails";
-import Breadcrumbs from "@/components/Common/Breadcrumbs";
+import { PageHero } from "@/components/Common/PageHero";
 import { COMPANY_NAME, absoluteUrl, createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -132,39 +131,15 @@ const ContactPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
 
-      {/* Hero */}
-      <section className="relative py-24">
-        <Image
-          src="/images/hero/contact-us-hero-bg.png"
-          alt="Decorative background gradient"
-          fill
-          priority
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-        />
-
-        <div className="relative mx-auto mt-20 max-w-4xl px-4 text-center">
-          <Breadcrumbs
-            center
-            className="text-gray-700"
-            items={[
-              { name: "Home", url: "/" },
-              { name: "Contact Us", url: "/contact" },
-            ]}
-          />
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Contact Us
-          </p>
-          <h1 className="mt-4 text-4xl font-extrabold leading-tight text-black md:text-6xl">
-            Contact Kaizen Health
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-800">
-            We are a small team in San Francisco building tools that help
-            families keep health information organized and share it safely.
-            Whether you have a question about the product, a story to write, or
-            a partnership to propose, we would like to hear from you.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact Us"
+        title="Contact Kaizen Health"
+        description="We are a small team in San Francisco building tools that help families keep health information organized and share it safely. Whether you have a question about the product, a story to write, or a partnership to propose, we would like to hear from you."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Contact Us", url: "/contact" },
+        ]}
+      />
 
       {/* Where to reach us */}
       <section className="mx-auto max-w-c-1390 px-4 md:px-8 xl:px-20">

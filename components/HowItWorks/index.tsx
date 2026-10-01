@@ -1,4 +1,8 @@
 import CTA from "@/components/CTA";
+import {
+  PAGE_HERO_PADDING,
+  PageHeroBackground,
+} from "@/components/Common/PageHero";
 import { PillLink } from "@/components/Common/PillLink";
 import { Reveal } from "@/components/Common/Reveal";
 import SharedDriveComparison from "@/components/HowItWorks/SharedDriveComparison";
@@ -6,11 +10,8 @@ import { HowItWorksSteps } from "@/components/HowItWorks/Steps";
 import { howItWorksSteps } from "@/components/HowItWorks/stepsData";
 
 const HowItWorksHero = () => (
-  <section className="relative overflow-hidden px-4 pb-16 pt-[calc(var(--site-header-height,4.5rem)+4rem)] md:px-8 md:pb-20 lg:pt-[calc(var(--site-header-height,4.5rem)+7rem)]">
-    <div
-      aria-hidden="true"
-      className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(214,213,249,0.9),transparent_60%),radial-gradient(circle_at_90%_70%,rgba(102,230,181,0.14),transparent_40%),radial-gradient(circle_at_8%_80%,rgba(227,227,251,0.8),transparent_40%)]"
-    />
+  <section className={`relative overflow-hidden ${PAGE_HERO_PADDING}`}>
+    <PageHeroBackground />
 
     <div className="mx-auto max-w-c-1235">
       <Reveal className="mx-auto max-w-4xl text-center">

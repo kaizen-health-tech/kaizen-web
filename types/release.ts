@@ -1,7 +1,9 @@
+export type ReleaseImpact = "new" | "improved" | "fixed";
+
 export type ReleaseHighlight = {
   title: string;
   description: string;
-  impact?: "new" | "improved" | "fixed";
+  impact?: ReleaseImpact;
 };
 
 export type ReleaseLinkBullet = {
@@ -51,4 +53,34 @@ export type Release = {
 export type ReleaseGrouping = {
   version: string;
   releaseDate: Date;
+};
+
+export type ReleaseImpactCounts = Record<ReleaseImpact, number>;
+
+export type ReleaseImpactStyle = {
+  /** Short label for chips, such as "New". */
+  label: string;
+  /** Heading for a group of changes, such as "New features". */
+  groupLabel: string;
+  chip: string;
+  dot: string;
+};
+
+export type ReleaseCardProps = {
+  release: Release;
+};
+
+export type ReleaseExplorerProps = {
+  releases: Release[];
+  tags: string[];
+};
+
+export type ReleaseImpactSummaryProps = {
+  counts: ReleaseImpactCounts;
+  className?: string;
+};
+
+export type ReleasePagerProps = {
+  newer?: Release;
+  older?: Release;
 };

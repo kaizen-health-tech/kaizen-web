@@ -22,7 +22,7 @@ const ImagePlaceholder = ({ suggestion, altText }: ImagePlaceholderProps) => {
         <path d="M21 16L15.5 10.5C15.1 10.1 14.5 10.1 14.1 10.5L5 19.5" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
       <p className="max-w-125 text-pretty text-base leading-[1.5] text-graphite">
-        <span className="font-bold text-arsenic">Image placeholder — </span>
+        <span className="font-semibold text-arsenic">Image placeholder — </span>
         {suggestion}
       </p>
       <p className="text-sm italic text-graphite">Suggested alt text: &ldquo;{altText}&rdquo;</p>

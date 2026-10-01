@@ -33,7 +33,7 @@ const ArticleCard = ({ post }: ArticleCardProps) => {
           {category.label}
         </span>
       )}
-      <h4 className="text-2xl font-bold leading-[1.2] tracking-[-.4px] text-midnight text-pretty transition duration-150 group-hover:text-violet">
+      <h4 className="text-2xl font-semibold leading-[1.2] tracking-[-.4px] text-midnight text-pretty transition duration-150 group-hover:text-violet">
         {post.title}
       </h4>
       {post.metadata && (

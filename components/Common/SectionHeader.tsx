@@ -21,7 +21,7 @@ const SectionHeader = ({ headerInfo }: { headerInfo: HeaderInfo }) => {
         {title}
       </h2>
       {subtitle && (
-        <p className="mx-auto mt-4 text-3xl font-bold text-midnight md:w-4/5 xl:w-1/2 xl:text-sectiontitle3">
+        <p className="mx-auto mt-4 text-3xl font-semibold text-midnight md:w-4/5 xl:w-1/2 xl:text-sectiontitle3">
           {subtitle}
         </p>
       )}

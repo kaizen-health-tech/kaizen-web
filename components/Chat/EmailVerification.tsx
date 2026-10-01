@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import Image from "next/image";
+import { PillButton } from "@/components/Common/PillButton";
 
 type EmailVerificationProps = {
   onVerified: (email: string) => void;
@@ -140,13 +141,14 @@ export default function EmailVerification({
                   disabled={isLoading}
                 />
               </div>
-              <button
+              <PillButton
                 onClick={handleSendOTP}
                 disabled={isLoading || !email.trim()}
-                className="w-full rounded-lg bg-gradient-to-br from-[#7B4DFF] to-[#6B4BFF] py-3 font-medium text-white shadow-[0_10px_20px_rgba(123,77,255,0.35)] transition-opacity disabled:opacity-50"
+                arrow="forward"
+                fullWidth
               >
                 {isLoading ? "Sending..." : "Continue"}
-              </button>
+              </PillButton>
             </div>
           ) : (
             <div className="space-y-4">
@@ -173,13 +175,14 @@ export default function EmailVerification({
                   disabled={isLoading}
                 />
               </div>
-              <button
+              <PillButton
                 onClick={handleVerifyOTP}
                 disabled={isLoading || otp.length !== 6}
-                className="w-full rounded-lg bg-gradient-to-br from-[#7B4DFF] to-[#6B4BFF] py-3 font-medium text-white shadow-[0_10px_20px_rgba(123,77,255,0.35)] transition-opacity disabled:opacity-50"
+                arrow="forward"
+                fullWidth
               >
                 {isLoading ? "Verifying..." : "Verify"}
-              </button>
+              </PillButton>
               <div className="flex items-center justify-between text-sm">
                 <button
                   onClick={() => {

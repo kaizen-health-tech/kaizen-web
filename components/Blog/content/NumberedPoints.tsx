@@ -16,7 +16,7 @@ const NumberedPoints = ({ points }: NumberedPointsProps) => {
             {index + 1}
           </span>
           <div className="text-[20px] leading-[1.6] text-text-longform">
-            <span className="font-bold leading-[1.5] text-midnight">{point.lead} </span>
+            <span className="font-semibold leading-[1.5] text-midnight">{point.lead} </span>
             {point.text}
           </div>
         </div>

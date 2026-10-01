@@ -14,7 +14,7 @@ const KeepReading = ({ currentUrl, categoryKey }: KeepReadingProps) => {
   return (
     <div className="border-t border-cloud bg-lavender px-6 py-13 md:px-12">
       <div className="mx-auto max-w-c-1016">
-        <h3 className="mb-6.5 text-[28px] font-bold leading-[1.15] tracking-[-.6px] text-midnight">
+        <h3 className="mb-6.5 text-[28px] font-semibold leading-[1.15] tracking-[-.6px] text-midnight">
           Keep reading
         </h3>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -34,7 +34,7 @@ const KeepReading = ({ currentUrl, categoryKey }: KeepReadingProps) => {
                     {category.label}
                   </span>
                 )}
-                <h4 className="text-[22px] font-bold leading-[1.22] tracking-[-.4px] text-midnight text-pretty group-hover:text-violet">
+                <h4 className="text-[22px] font-semibold leading-[1.22] tracking-[-.4px] text-midnight text-pretty group-hover:text-violet">
                   {post.title}
                 </h4>
                 {post.readTime && <span className="text-sm text-space">{post.readTime}</span>}

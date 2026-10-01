@@ -1,47 +1,27 @@
-import Link from "next/link";
-import Image from "next/image";
-import Breadcrumbs from "@/components/Common/Breadcrumbs";
+import { PageHero } from "@/components/Common/PageHero";
+import { PillLink } from "@/components/Common/PillLink";
 
 export default function CareersClient() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-24">
-        {/* Background image */}
-        <Image
-          src={"/images/hero/contact-us-hero-bg.png"}
-          alt="Decorative background gradient"
-          fill
-          priority
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-        />
-
-        <div className="mx-auto max-w-4xl px-4 text-center mt-20">
-          <Breadcrumbs
-            center
-            className="text-gray-700"
-            items={[
-              { name: "Home", url: "/" },
-              { name: "Careers", url: "/careers" },
-            ]}
-          />
-          <h1 className="text-3xl font-semibold leading-tight text-black md:text-5xl">
-            Help Redefine Family Health
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-800">
-            We&apos;re building more than just a health app.
+      <PageHero
+        eyebrow="Careers"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Careers", url: "/careers" },
+        ]}
+        title="Help Redefine Family Health"
+        description={
+          <>
+            We&apos;re building more than just a health app.{" "}
             <br className="hidden sm:block" />
             We&apos;re building peace of mind for millions of families.
-          </p>
-
-          <Link
-            href="/careers/open-roles"
-            className="mt-10 inline-block rounded-md bg-primary px-8 py-3 font-semibold text-white shadow-md transition hover:bg-primary/90"
-          >
-            View Open Positions
-          </Link>
-        </div>
-      </section>
+          </>
+        }
+        actions={
+          <PillLink href="/careers/open-roles">View Open Positions</PillLink>
+        }
+      />
       <section className="py-20 px-4 md:px-10 lg:px-20 bg-white dark:bg-blacksection">
         <div className="max-w-4xl mx-auto text-center">
           <div className="text-left space-y-6 text-gray-700 dark:text-gray-300 mb-10">
@@ -72,10 +52,10 @@ export default function CareersClient() {
                   65 Million
                 </a>{" "}
                 Americans struggle to coordinate their loved ones' healthcare
-                while managing their own lives. We're changing that
-                narrative, one family at a time. Our AI-powered platform
-                transforms scattered health information into actionable
-                insights, turning overwhelming into empowering.
+                while managing their own lives. We're changing that narrative,
+                one family at a time. Our AI-powered platform transforms
+                scattered health information into actionable insights, turning
+                overwhelming into empowering.
               </p>
             </div>
 
@@ -170,12 +150,9 @@ export default function CareersClient() {
               building peace of mind.
             </p>
             <div className="mt-6">
-              <Link
-                href="/careers/open-roles"
-                className="inline-block px-6 py-3 bg-primary text-white font-semibold rounded hover:bg-primary/90 transition"
-              >
+              <PillLink href="/careers/open-roles">
                 View Open Positions
-              </Link>
+              </PillLink>
             </div>
           </div>
         </div>

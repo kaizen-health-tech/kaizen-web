@@ -1,7 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
+
+import Link from "next/link";
+
+import { PillArrow } from "@/components/Common/PillArrow";
+import { pillClassName } from "@/components/Common/pillStyles";
 
 interface GetAppButtonProps {
   children: React.ReactNode;
@@ -9,11 +13,6 @@ interface GetAppButtonProps {
   fullWidth?: boolean;
   className?: string;
 }
-
-const sizeClasses = {
-  sm: "h-10.5 px-5 text-sm",
-  md: "h-12 px-6 text-base",
-};
 
 // Mirrors the header's device-aware store link so every "Get the app" CTA
 // on the blog (masthead, sidebar, product callout) resolves the same way.
@@ -39,9 +38,15 @@ const GetAppButton = ({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center rounded-full bg-violet font-semibold !text-white !no-underline transition duration-200 ease-in-out hover:bg-violet-hover active:scale-[.97] ${sizeClasses[size]} ${fullWidth ? "w-full" : ""} ${className}`}
+      className={pillClassName({
+        size,
+        fullWidth,
+        // Article prose styles links; keep the pill's own colour and no underline.
+        className: `!text-white !no-underline ${className}`,
+      })}
     >
-      {children}
+      <span>{children}</span>
+      <PillArrow direction="forward" variant="violet" size={size} />
     </Link>
   );
 };
