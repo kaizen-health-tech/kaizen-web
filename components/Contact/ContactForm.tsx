@@ -7,13 +7,27 @@ type ContactFormProps = {
   heading: string;
   topics: string[];
   defaultTopic: string;
+  /** Controls the topic from outside, e.g. support cards that preselect it. */
+  topic?: string;
+  onTopicChange?: (topic: string) => void;
 };
 
-const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
+const ContactForm = ({
+  heading,
+  topics,
+  defaultTopic,
+  topic,
+  onTopicChange,
+}: ContactFormProps) => {
   const router = useRouter();
   const [fullName, setFullName] = React.useState("");
   const [message, setMessage] = React.useState("");
-  const [selectedOption, setSelectedOption] = React.useState(defaultTopic);
+  const [internalTopic, setInternalTopic] = React.useState(defaultTopic);
+  const selectedOption = topic ?? internalTopic;
+  const setSelectedOption = (value: string) => {
+    setInternalTopic(value);
+    onTopicChange?.(value);
+  };
   const [email, setEmail] = React.useState("");
   const [checked, setChecked] = React.useState(false);
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -61,8 +75,8 @@ const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
   };
 
   return (
-    <div className="animate_top w-full rounded-lg bg-white p-7.5 shadow-solid-8 dark:border dark:border-strokedark dark:bg-black md:w-3/5 lg:w-3/4 xl:p-15">
-      <h2 className="mb-15 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
+    <div className="w-full rounded-[2rem] bg-white p-7.5 shadow-card-soft ring-1 ring-midnight/5 dark:bg-black dark:ring-strokedark md:w-3/5 lg:w-3/4 xl:p-15">
+      <h2 className="mb-12 text-3xl font-semibold tracking-[-0.02em] text-midnight dark:text-white xl:text-sectiontitle2">
         {heading}
       </h2>
 
@@ -75,7 +89,7 @@ const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
           type="text"
           placeholder="Full name"
           value={fullName}
-          className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+          className="w-full border-b border-ash bg-transparent pb-3.5 text-midnight transition-colors duration-500 ease-out-soft placeholder:text-graphite focus:border-violet focus:placeholder:text-midnight focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
           onChange={(e) => setFullName(e.target.value)}
         />
 
@@ -88,7 +102,7 @@ const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
           placeholder="Email address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+          className="w-full border-b border-ash bg-transparent pb-3.5 text-midnight transition-colors duration-500 ease-out-soft placeholder:text-graphite focus:border-violet focus:placeholder:text-midnight focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
         />
       </div>
 
@@ -101,7 +115,7 @@ const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
           placeholder="Message"
           value={message}
           rows={4}
-          className="w-full border-b border-stroke bg-transparent focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white"
+          className="w-full border-b border-ash bg-transparent pb-3.5 text-midnight transition-colors duration-500 ease-out-soft placeholder:text-graphite focus:border-violet focus:placeholder:text-midnight focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white"
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
       </div>
@@ -114,7 +128,7 @@ const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
           id="contact-topic"
           value={selectedOption}
           onChange={(e) => setSelectedOption(e.target.value)}
-          className="w-full border-b border-stroke bg-transparent focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white"
+          className="w-full border-b border-ash bg-transparent pb-3.5 text-midnight transition-colors duration-500 ease-out-soft placeholder:text-graphite focus:border-violet focus:placeholder:text-midnight focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white"
         >
           <option value="" disabled>
             Select an option
@@ -136,7 +150,7 @@ const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
             checked={checked}
             onChange={() => setChecked(!checked)}
           />
-          <span className="border-gray-300 bg-gray-100 text-blue-600 dark:border-gray-600 dark:bg-gray-700 group mt-2 flex h-5 min-w-[20px] items-center justify-center rounded peer-checked:bg-primary">
+          <span className="border-gray-300 bg-gray-100 text-blue-600 dark:border-gray-600 dark:bg-gray-700 group mt-2 flex h-5 min-w-[20px] items-center justify-center rounded peer-checked:bg-violet">
             <svg
               className="opacity-0 peer-checked:group-[]:opacity-100"
               width="10"
@@ -163,25 +177,28 @@ const ContactForm = ({ heading, topics, defaultTopic }: ContactFormProps) => {
         </div>
 
         <button
+          type="button"
           onClick={submitEmail}
           disabled={!checked || isSubmitting}
-          aria-label="send message"
-          className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho disabled:cursor-not-allowed disabled:opacity-60 dark:bg-btndark"
+          className="group inline-flex min-h-12 items-center gap-3 rounded-full bg-violet py-1.5 pl-6 pr-1.5 font-bold text-white transition duration-500 ease-out-soft hover:bg-violet-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100"
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
-          <svg
-            className="fill-white"
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          {isSubmitting ? "Sending..." : "Send message"}
+          <span
+            aria-hidden="true"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 transition-transform duration-500 ease-out-soft group-enabled:group-hover:-translate-y-px group-enabled:group-hover:translate-x-0.5 group-enabled:group-hover:scale-105"
           >
-            <path
-              d="M10.4767 6.16664L6.00668 1.69664L7.18501 0.518311L13.6667 6.99998L7.18501 13.4816L6.00668 12.3033L10.4767 7.83331H0.333344V6.16664H10.4767Z"
-              fill=""
-            />
-          </svg>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+            >
+              <path d="M7 17 17 7M8 7h9v9" />
+            </svg>
+          </span>
         </button>
       </div>
     </div>

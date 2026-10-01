@@ -11,13 +11,13 @@ export const CONTACT_ADDRESS = {
 
 const ContactDetails = () => {
   return (
-    <div className="animate_top w-full md:w-2/5 md:p-7.5 lg:w-[26%] xl:pt-15">
-      <h2 className="mb-12.5 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
+    <div className="w-full md:w-2/5 md:p-7.5 lg:w-[26%] xl:pt-15">
+      <h2 className="mb-12.5 text-3xl font-semibold tracking-[-0.02em] text-midnight dark:text-white xl:text-sectiontitle2">
         Find us
       </h2>
 
       <div className="mb-7">
-        <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
+        <h3 className="mb-4 text-metatitle3 font-semibold text-midnight dark:text-white">
           Our Location
         </h3>
         <address className="not-italic">
@@ -29,33 +29,45 @@ const ContactDetails = () => {
       </div>
 
       <div className="mb-7">
-        <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
+        <h3 className="mb-4 text-metatitle3 font-semibold text-midnight dark:text-white">
           Email Address
         </h3>
         <p>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-primary">
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="transition-colors duration-500 ease-out-soft hover:text-violet"
+          >
             {CONTACT_EMAIL}
           </a>
         </p>
       </div>
 
       <div className="mb-7">
-        <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
+        <h3 className="mb-4 text-metatitle3 font-semibold text-midnight dark:text-white">
           Helpful Links
         </h3>
         <ul className="space-y-2">
           <li>
-            <Link href="/how-it-works" className="hover:text-primary">
+            <Link
+              href="/how-it-works"
+              className="transition-colors duration-500 ease-out-soft hover:text-violet"
+            >
               How Kaizen works
             </Link>
           </li>
           <li>
-            <Link href="/docs/privacy" className="hover:text-primary">
+            <Link
+              href="/docs/privacy"
+              className="transition-colors duration-500 ease-out-soft hover:text-violet"
+            >
               Privacy policy
             </Link>
           </li>
           <li>
-            <Link href="/docs" className="hover:text-primary">
+            <Link
+              href="/docs"
+              className="transition-colors duration-500 ease-out-soft hover:text-violet"
+            >
               Policies &amp; docs
             </Link>
           </li>

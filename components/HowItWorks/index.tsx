@@ -1,197 +1,95 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import CTA from "@/components/CTA";
-import SharedDriveComparison from "./SharedDriveComparison";
+import { PillLink } from "@/components/Common/PillLink";
+import { Reveal } from "@/components/Common/Reveal";
+import SharedDriveComparison from "@/components/HowItWorks/SharedDriveComparison";
+import { HowItWorksSteps } from "@/components/HowItWorks/Steps";
+import { howItWorksSteps } from "@/components/HowItWorks/stepsData";
 
-export default function HowItWorksClient() {
-  const stepsData = [
-    {
-      title: "Create Your Account",
-      body: "Start by signing up and setting up your personal profile. This is your home base for organizing and managing family health‑care.\n\nKaizen Health is available on both App Store and Google Play Store.",
-      image: "/images/how-it-works/how_it_works_1.png",
-      icon: "/images/icon/pencil.svg",
-      cta: (
-        <>
-          <Image
-            src="/images/hero/app-store-light.svg"
-            alt="App Store"
-            width={140}
-            height={44}
-          />
-          <Image
-            src="/images/hero/android-store-dark.svg"
-            alt="Google Play"
-            width={140}
-            height={44}
-          />
-        </>
-      ),
-    },
-    {
-      title: "Invite Your Loved Ones in your care circle",
-      body:
-        "- Tap the “+” button, choose Invite Family Member, and send a secure email invite.\n" +
-        "- They’ll download the app and join your care circle..",
-      image: "/images/how-it-works/how_it_works_2.png",
-      icon: "/images/icon/invite.svg",
-    },
-    {
-      title: "Add a favorite member to your Home Screen",
-      body:
-        "- Once they join, both of you can add them to your family bubble on the home screen.\n" +
-        "- See shared updates in real-time.",
-      image: "/images/how-it-works/how_it_works_3.png",
-      icon: "/images/icon/home.svg",
-    },
-    {
-      title: "Upload Health Records & Share",
-      body:
-        "Securely upload health record in any format like scanning documents, upload photos and file, even recordings.\n" +
-        "Choose whether to share and adjust anytime.",
-      image: "/images/how-it-works/how_it_works_4.png",
-      icon: "/images/icon/share.svg",
-    },
-    {
-      title: "Get AI‑powered insights",
-      body: "Kaizen’s AI summarizes documents and answers questions, so you can be self aware and make clearer, informed decisions.",
-      image: "/images/how-it-works/how_it_works_5.png",
-      icon: "/images/icon/ai.svg",
-    },
-  ];
+const HowItWorksHero = () => (
+  <section className="relative overflow-hidden px-4 pb-16 pt-[calc(var(--site-header-height,4.5rem)+4rem)] md:px-8 md:pb-20 lg:pt-[calc(var(--site-header-height,4.5rem)+7rem)]">
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(214,213,249,0.9),transparent_60%),radial-gradient(circle_at_90%_70%,rgba(102,230,181,0.14),transparent_40%),radial-gradient(circle_at_8%_80%,rgba(227,227,251,0.8),transparent_40%)]"
+    />
 
-  const stepRefs = useRef<(HTMLElement | null)[]>([]);
-  const [activeStep, setActiveStep] = useState(0);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = stepRefs.current.findIndex((el) => el === entry.target);
-            if (idx !== -1) setActiveStep(idx);
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -50% 0px", threshold: 0 },
-    );
-    stepRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#E7E8FF] via-[#F0EFFF] to-white py-24">
-        {/* Background squiggle */}
-        <Image
-          src="/images/whykaizen/why_we_built_bg.svg"
-          alt="Decorative background pattern"
-          width={1600}
-          height={800}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20"
-          priority
-        />
-        <div className="relative mx-auto max-w-4xl px-4 text-center mt-25">
-          <h1 className="text-3xl font-extrabold leading-tight text-black md:text-5xl">
-            How <span className="text-primary">Kaizen</span> Works
-          </h1>
-          <h2 className="mt-6 text-xl font-semibold text-primary md:text-2xl">
-            Upload once. Share easily. Support better care together.
-          </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-700">
-            Kaizen helps you store, organize, and understand your family’s
-            health information in one secure place.
-          </p>
-
-          <a
-            href="/contact"
-            className="mt-10 inline-flex rounded-md bg-primary px-8 py-3 font-semibold text-white shadow-md hover:bg-primary/90"
-          >
-            Contact Us
-          </a>
+    <div className="mx-auto max-w-c-1235">
+      <Reveal className="mx-auto max-w-4xl text-center">
+        <h1 className="text-balance">
+          <span className="inline-flex rounded-full bg-white/70 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-violet ring-1 ring-midnight/5">
+            How Kaizen works
+          </span>
+          <span className="mt-6 block text-4xl font-semibold leading-[1.04] tracking-[-0.035em] text-midnight md:text-6xl lg:text-7xl">
+            Upload once. Share easily. Care better together.
+          </span>
+        </h1>
+        <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-text-body">
+          Kaizen helps you store, organize, and understand your family&apos;s
+          health information in one secure place. Setup takes five steps.
+        </p>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <PillLink href="#steps">See the five steps</PillLink>
+          <PillLink href="#cta" variant="soft">
+            Get the app
+          </PillLink>
         </div>
-      </section>
+      </Reveal>
 
-      {/* Steps Section */}
-      <section className="bg-gray-50 px-4 py-20 md:px-12 lg:px-24">
-        <div className="mx-auto max-w-6xl lg:flex lg:gap-16">
-          {/* Sidebar */}
-          <ol className="sticky top-32 hidden lg:block lg:w-1/4 self-start">
-            {[
-              "Create your account",
-              "Invite your loved ones in your care circle",
-              "Add Member to Home Screen",
-              "Upload Health Record & Share",
-              "Get AI‑powered insights",
-            ].map((text, idx) => (
+      {/* Step track: jump straight to any step. */}
+      <Reveal delay={150} className="mt-16 md:mt-20">
+        <nav aria-label="Steps">
+          <ol className="no-scrollbar -mx-4 flex snap-x gap-3 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-5 md:overflow-visible md:px-0">
+            {howItWorksSteps.map((step, index) => (
               <li
-                key={idx}
-                className={`mb-8 flex items-center gap-3 text-lg font-medium
-                ${activeStep === idx ? "text-primary" : "text-gray-500"}`}
+                key={step.id}
+                className="w-[13.5rem] shrink-0 snap-start md:w-auto"
               >
-                <span
-                  className={`flex h-9 w-9 items-center justify-center rounded-full border
-                ${activeStep === idx ? "bg-primary text-white border-primary" : "border-gray-300"}`}
+                <a
+                  href={`#step-${step.id}`}
+                  className="group block h-full rounded-[1.5rem] bg-white/50 p-1 ring-1 ring-midnight/5 transition duration-500 ease-out-soft hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet active:scale-[0.98]"
                 >
-                  {idx + 1}
-                </span>
-                {text}
+                  <span className="flex h-full flex-col rounded-[calc(1.5rem-0.25rem)] bg-white p-4 shadow-card-soft transition-shadow duration-500 ease-out-soft group-hover:shadow-card-hover">
+                    <span className="flex items-center justify-between">
+                      <span className="text-xs font-bold tracking-[0.16em] text-violet">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="flex h-7 w-7 items-center justify-center rounded-full bg-lavender text-midnight transition-transform duration-500 ease-out-soft group-hover:translate-y-0.5 group-hover:scale-105"
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-3.5 w-3.5"
+                        >
+                          <path d="M12 5v14M6 13l6 6 6-6" />
+                        </svg>
+                      </span>
+                    </span>
+                    <span className="mt-6 block text-[15px] font-semibold leading-5 text-midnight">
+                      {step.shortTitle}
+                    </span>
+                  </span>
+                </a>
               </li>
             ))}
           </ol>
+        </nav>
+      </Reveal>
+    </div>
+  </section>
+);
 
-          {/* Steps content */}
-          <div className="lg:w-3/4 lg:pl-16">
-            {stepsData.map((step, idx) => (
-              <section
-                key={idx}
-                id={`step-${idx}`}
-                ref={(el) => {
-                  stepRefs.current[idx] = el;
-                }}
-                className="mb-24 flex flex-col gap-8 lg:flex-row lg:items-start"
-              >
-                {/* Text block */}
-                <div className="lg:w-1/2">
-                  <h3 className="mb-4 flex items-center gap-2 text-2xl font-semibold text-primary">
-                    {step.icon && (
-                      <Image
-                        src={step.icon as string}
-                        alt={`${step.title} icon`}
-                        width={24}
-                        height={24}
-                        className="h-6 w-6"
-                      />
-                    )}{" "}
-                    {step.title}
-                  </h3>
-                  <p className="text-lg text-gray-700 whitespace-pre-line">
-                    {step.body}
-                  </p>
-                  {step.cta && (
-                    <div className="mt-6 flex gap-4">{step.cta}</div>
-                  )}
-                </div>
-                {/* Image */}
-                <div className="lg:w-1/2">
-                  <Image
-                    src={step.image}
-                    alt={step.title}
-                    width={500}
-                    height={420}
-                    quality={75}
-                    sizes="(min-width: 1024px) 400px, 100vw"
-                    className="w-full rounded-xl object-contain"
-                  />
-                </div>
-              </section>
-            ))}
-          </div>
-        </div>
-      </section>
-      <SharedDriveComparison />
-      <CTA />
-    </>
-  );
-}
+const HowItWorks = () => (
+  <>
+    <HowItWorksHero />
+    <HowItWorksSteps />
+    <SharedDriveComparison />
+    <CTA variant="home" />
+  </>
+);
+
+export default HowItWorks;

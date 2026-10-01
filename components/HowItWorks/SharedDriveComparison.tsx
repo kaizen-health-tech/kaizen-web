@@ -1,5 +1,7 @@
 import { CheckCircleIcon, FolderIcon } from "@heroicons/react/24/outline";
 
+import { Reveal } from "@/components/Common/Reveal";
+
 const comparison = [
   {
     label: "Built for",
@@ -32,9 +34,9 @@ export default function SharedDriveComparison() {
   return (
     <section
       aria-labelledby="shared-drive-heading"
-      className="overflow-hidden bg-gradient-to-b from-gray-50 to-lavender px-4 pb-20 md:px-8 md:pb-28"
+      className="overflow-hidden bg-gradient-to-b from-white to-lavender px-4 pb-24 md:px-8 md:pb-32"
     >
-      <div className="mx-auto max-w-c-1280 overflow-hidden rounded-[32px] bg-midnight text-white shadow-[0_28px_80px_rgba(40,27,85,0.2)]">
+      <Reveal className="mx-auto max-w-c-1280 overflow-hidden rounded-[32px] bg-midnight text-white shadow-[0_28px_80px_rgba(40,27,85,0.2)]">
         <div className="grid gap-8 border-b border-white/10 p-7 sm:p-10 lg:grid-cols-[1fr_0.8fr] lg:items-end lg:p-14">
           <div>
             <span className="text-sm font-bold uppercase tracking-[0.14em] text-aquamarine">
@@ -69,9 +71,10 @@ export default function SharedDriveComparison() {
           </div>
 
           <dl className="space-y-3">
-            {comparison.map(({ label, drive, kaizen }) => (
-              <div
+            {comparison.map(({ label, drive, kaizen }, index) => (
+              <Reveal
                 key={label}
+                delay={index * 70}
                 className="grid gap-4 rounded-2xl bg-white/[0.06] p-5 md:grid-cols-[0.55fr_1fr_1fr] md:items-center"
               >
                 <dt className="font-semibold text-white">{label}</dt>
@@ -89,7 +92,7 @@ export default function SharedDriveComparison() {
                   />
                   <span>{kaizen}</span>
                 </dd>
-              </div>
+              </Reveal>
             ))}
           </dl>
 
@@ -99,7 +102,7 @@ export default function SharedDriveComparison() {
             records and use them to coordinate care.
           </p>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

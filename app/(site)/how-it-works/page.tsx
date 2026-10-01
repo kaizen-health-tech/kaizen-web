@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HowItWorksClient from "@/components/HowItWorks";
+import HowItWorks from "@/components/HowItWorks";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -10,6 +10,6 @@ export const metadata: Metadata = createPageMetadata({
   image: "/images/open-graph/howitworks.png",
 });
 
-export default function HowItWorks() {
-  return <HowItWorksClient />;
+export default function HowItWorksPage() {
+  return <HowItWorks />;
 }

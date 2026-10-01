@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import ContactForm from "@/components/Contact/ContactForm";
-import ContactDetails from "@/components/Contact/ContactDetails";
 import Breadcrumbs from "@/components/Common/Breadcrumbs";
+import { PillLink } from "@/components/Common/PillLink";
+import { Reveal } from "@/components/Common/Reveal";
+import { SupportCenter } from "@/components/Support/SupportCenter";
 import { absoluteUrl, createPageMetadata } from "@/lib/seo";
+import type { SupportFaq, SupportTopic } from "@/types/support";
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Support Center",
@@ -21,40 +23,55 @@ export const metadata: Metadata = createPageMetadata({
   ],
 });
 
-const supportTopics = [
+const formTopics = [
+  "General",
+  "Account Maintenance",
+  "Account & Data Deletion",
+  "Data Request",
+  "Billing",
+  "Technical Issue",
+];
+
+const supportTopics: SupportTopic[] = [
   {
     title: "Account and sign-in",
+    formTopic: "Account Maintenance",
     description:
       "Reset a password, update the email address on your account, or recover access when a verification code does not arrive. If you signed up on a phone and now want to use a tablet, the same login works across every device.",
   },
   {
     title: "Documents and records",
+    formTopic: "Technical Issue",
     description:
       "Upload lab results, visit summaries, and imaging reports, then tag them so they surface in the right place on the timeline. We can help if a scanned file fails to process or a document appears under the wrong family member.",
   },
   {
     title: "Family groups and sharing",
+    formTopic: "General",
     description:
       "Invite a partner, sibling, or caregiver to a family group and set what each person is allowed to see. Permissions are per person and per record, so you control exactly how much a new member can access.",
   },
   {
     title: "Kai, the AI assistant",
+    formTopic: "Technical Issue",
     description:
       "Kai answers questions about documents you have uploaded and helps you prepare for appointments. If a Kai answer looks wrong or is missing a record you know you added, tell us which document and we will investigate.",
   },
   {
     title: "Billing and subscriptions",
+    formTopic: "Billing",
     description:
       "Subscriptions are billed through the App Store or Google Play. We can help you confirm what plan you are on, but cancellations and refunds are processed by Apple or Google under their own policies.",
   },
   {
     title: "Privacy and data requests",
+    formTopic: "Data Request",
     description:
       "Request an export of your data or ask us to delete your account and everything stored with it. Choose Data Request or Account & Data Deletion in the form below so it reaches the right person.",
   },
 ];
 
-const faqs = [
+const faqs: SupportFaq[] = [
   {
     question: "How do I delete my Kaizen Health account and data?",
     answer:
@@ -117,16 +134,16 @@ const SupportPage = () => {
       />
 
       {/* Hero */}
-      <section className="relative py-24">
+      <section className="relative overflow-hidden px-4 pb-12 pt-[calc(var(--site-header-height,4.5rem)+4rem)] md:px-8 md:pb-16 lg:pt-[calc(var(--site-header-height,4.5rem)+7rem)]">
         <Image
           src="/images/hero/contact-us-hero-bg.png"
-          alt="Decorative background gradient"
+          alt=""
           fill
           priority
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
 
-        <div className="relative mx-auto mt-20 max-w-4xl px-4 text-center">
+        <Reveal className="relative mx-auto max-w-3xl text-center">
           <Breadcrumbs
             center
             className="text-gray-700"
@@ -135,108 +152,38 @@ const SupportPage = () => {
               { name: "Support Center", url: "/support" },
             ]}
           />
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+          <p className="inline-flex rounded-full bg-white/70 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-violet ring-1 ring-midnight/5">
             Support Center
           </p>
-          <h1 className="mt-4 text-4xl font-extrabold leading-tight text-black md:text-6xl">
-            We&apos;re Here to Help
+          <h1 className="mt-6 text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-midnight text-balance md:text-6xl">
+            We&apos;re here to help.
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-800">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-text-body">
             Find answers to the questions families ask us most, or send our
             support team a message and we will get back to you as soon as
             possible. For press, partnership, and general inquiries, use the{" "}
-            <Link href="/contact" className="font-semibold text-primary">
+            <Link
+              href="/contact"
+              className="font-semibold text-violet underline decoration-violet/30 underline-offset-4 transition-colors duration-500 ease-out-soft hover:decoration-violet"
+            >
               contact page
             </Link>{" "}
             instead.
           </p>
-        </div>
-      </section>
-
-      {/* What we can help with */}
-      <section className="mx-auto max-w-c-1390 px-4 md:px-8 xl:px-20">
-        <h2 className="text-3xl font-semibold text-black dark:text-white">
-          What we can help with
-        </h2>
-        <p className="mt-4 max-w-3xl text-lg text-gray-700 dark:text-gray-300">
-          Most questions fall into one of the areas below. Including the family
-          member, document, or date involved helps us resolve things on the
-          first reply.
-        </p>
-
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {supportTopics.map((topic) => (
-            <article
-              key={topic.title}
-              className="rounded-lg border border-stroke bg-white p-7.5 shadow-solid-8 dark:border-strokedark dark:bg-blacksection"
-            >
-              <h3 className="text-xl font-semibold text-black dark:text-white">
-                {topic.title}
-              </h3>
-              <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
-                {topic.description}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mx-auto mt-20 max-w-c-1390 px-4 md:px-8 xl:px-20">
-        <h2 className="text-3xl font-semibold text-black dark:text-white">
-          Frequently asked questions
-        </h2>
-
-        <div className="mt-10 space-y-8">
-          {faqs.map((faq) => (
-            <article
-              key={faq.question}
-              className="border-b border-stroke pb-8 dark:border-strokedark"
-            >
-              <h3 className="text-xl font-semibold text-black dark:text-white">
-                {faq.question}
-              </h3>
-              <p className="mt-3 max-w-4xl text-base text-gray-700 dark:text-gray-300">
-                {faq.answer}
-              </p>
-            </article>
-          ))}
-        </div>
-
-        <p className="mt-10 max-w-3xl text-base text-gray-700 dark:text-gray-300">
-          Still deciding whether Kaizen Health fits your family? Read{" "}
-          <Link href="/how-it-works" className="font-semibold text-primary">
-            how Kaizen works
-          </Link>{" "}
-          for a walkthrough of records, family groups, and appointment prep, or
-          review our{" "}
-          <Link href="/docs/privacy" className="font-semibold text-primary">
-            privacy policy
-          </Link>{" "}
-          to see how health data is handled.
-        </p>
-      </section>
-
-      {/* Contact form */}
-      <section className="px-4 md:px-8 2xl:px-0 mb-20">
-        <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
-          <div className="flex flex-col-reverse flex-wrap gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-20">
-            <ContactForm
-              heading="Contact support"
-              defaultTopic="General"
-              topics={[
-                "General",
-                "Account Maintenance",
-                "Data Deletion",
-                "Data Request",
-                "Billing",
-                "Technical Issue",
-              ]}
-            />
-            <ContactDetails />
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <PillLink href="#contact-support">Contact support</PillLink>
+            <PillLink href="/docs" variant="soft">
+              Policies &amp; docs
+            </PillLink>
           </div>
-        </div>
+        </Reveal>
       </section>
+
+      <SupportCenter
+        topics={supportTopics}
+        faqs={faqs}
+        formTopics={formTopics}
+      />
     </main>
   );
 };
