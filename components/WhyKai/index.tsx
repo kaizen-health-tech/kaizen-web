@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import { Reveal } from "@/components/Common/Reveal";
 
 const FEATURES = [
   {
@@ -38,47 +41,50 @@ export default function WhyKai() {
       }}
     >
       <div className="relative mx-auto w-full max-w-5xl px-4 md:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold leading-tight text-[#1C1824] md:text-5xl">
-            Meet <span className="text-[#7B4DFF]">Kai</span>, your guide to the
+        <Reveal className="text-center">
+          <h2 className="text-3xl font-semibold leading-tight text-midnight md:text-5xl">
+            Meet <span className="text-violet">Kai</span>, your guide to the
             records you upload.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-[#5C5567] md:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-text-body md:text-lg">
             Ask about a lab result, medication list, or visit note. Kai answers
             from the information you choose to share.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mx-auto mt-8 flex max-w-4xl items-center gap-3 rounded-full bg-white px-5 py-3 shadow-[0_12px_30px_rgba(61,39,108,0.14)] ring-1 ring-[#E7DFFB]">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F1ECFF]">
-            <Image
-              src="/images/icon/ai.svg"
-              alt="AI icon"
-              width={20}
-              height={20}
-            />
-          </div>
-          <span className="text-sm font-medium text-[#6E6A7A]">
-            Ask Kai about your records
-          </span>
-          <button
-            className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#7B4DFF] to-[#6B4BFF] text-white shadow-[0_10px_20px_rgba(123,77,255,0.35)]"
-            type="button"
-            aria-label="Send message"
+        {/* Looks like a chat box but is a link: it opens the real chat
+            rather than pretending to send from here. */}
+        <Reveal delay={100}>
+          <Link
+            href="/chat"
+            className="group mx-auto mt-8 flex max-w-4xl items-center gap-3 rounded-full bg-white px-5 py-3 shadow-[0_12px_30px_rgba(61,39,108,0.14)] ring-1 ring-light-heather transition duration-500 ease-out-soft hover:ring-violet/40 active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet"
           >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-light-lilac">
+              <Image src="/images/icon/ai.svg" alt="" width={20} height={20} />
+            </span>
+            <span className="text-sm font-medium text-graphite group-hover:text-midnight">
+              Ask Kai about your records
+            </span>
+            <span
+              aria-hidden="true"
+              className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-violet text-white shadow-[0_10px_20px_rgba(110,64,243,0.3)] transition-transform duration-500 ease-out-soft group-hover:translate-x-0.5 group-hover:scale-105"
             >
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </button>
-        </div>
+              <svg
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+          </Link>
+        </Reveal>
 
-        <div className="mt-10">
+        <Reveal delay={150} className="mt-10">
           <div className="mx-auto flex w-full max-w-6xl items-center gap-5 md:flex-row md:items-center">
             <div className="hidden w-[180px] shrink-0 md:flex lg:w-[210px]">
               <Image
@@ -103,32 +109,34 @@ export default function WhyKai() {
               />
             </div>
           </div>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {FEATURES.map((feature) => (
-            <article
+          {FEATURES.map((feature, index) => (
+            <Reveal
+              as="article"
               key={feature.title}
-              className="flex gap-4 rounded-2xl border border-white/70 bg-white/90 p-5 shadow-[0_16px_30px_rgba(46,32,90,0.12)]"
+              delay={(index % 2) * 100}
+              className="flex gap-4 rounded-3xl border border-white/70 bg-white/90 p-6 shadow-[0_16px_40px_rgba(46,32,90,0.08)]"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl">
                 <Image
                   src={feature.image}
-                  alt={`${feature.title} icon`}
+                  alt=""
                   width={44}
                   height={44}
                   className="h-auto w-full"
                 />
               </div>
               <div>
-                <h3 className="text-base font-semibold text-[#2B2436]">
+                <h3 className="text-lg font-semibold text-midnight">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-sm text-[#5C5567]">
+                <p className="mt-2 text-base leading-7 text-text-body">
                   {feature.description}
                 </p>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

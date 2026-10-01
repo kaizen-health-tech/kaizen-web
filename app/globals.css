@@ -148,6 +148,12 @@
   --shadow-card-soft: 0 10px 28px rgba(40, 27, 85, 0.07);
   --shadow-card-hover: 0 22px 60px rgba(40, 27, 85, 0.09);
 
+  /* Motion. One curve for the whole site: a fast start that settles slowly,
+     so things feel like they have weight instead of sliding at a constant
+     rate. Use as `ease-out-soft` with `duration-500` (hover, press) or
+     `duration-700`+ (entrances). */
+  --ease-out-soft: cubic-bezier(0.32, 0.72, 0, 1);
+
   /* Animations */
   --animate-line1: line 3s linear infinite;
   --animate-line2: line 6s linear infinite;
@@ -195,6 +201,45 @@
     xl:before:absolute xl:before:-top-1.5 xl:before:left-10 xl:before:h-3 xl:before:w-3 xl:before:rotate-45 xl:before:border-l xl:before:border-t xl:before:border-stroke xl:before:bg-white xl:group-hover:visible xl:group-hover:translate-y-6.5
     xl:group-hover:opacity-100 xl:group-focus-within:visible xl:group-focus-within:translate-y-6.5 xl:group-focus-within:opacity-100
     xl:dark:before:border-strokedark xl:dark:before:bg-black;
+  }
+}
+
+/* Scroll entrance used by components/Common/Reveal. The hidden starting state
+   only applies when scripts run, so content is never stuck invisible if the
+   observer never loads. */
+@media (scripting: enabled) {
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0);
+    transition:
+      opacity 900ms var(--ease-out-soft),
+      transform 900ms var(--ease-out-soft);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal[data-revealed] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect the OS "reduce motion" setting everywhere: entrances show in place,
+   looping and decorative animations stop, and transitions resolve instantly.
+   Framer Motion is covered separately by MotionConfig in the site shell. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 

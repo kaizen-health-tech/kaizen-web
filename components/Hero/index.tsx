@@ -4,6 +4,8 @@ import Image from "next/image";
 import type { MouseEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
+
 const androidStoreUrl = "https://bit.ly/kz-android-store";
 const appleStoreUrl = "https://bit.ly/kz-app-store";
 
@@ -38,6 +40,13 @@ const Hero = () => {
   const nextVideoIndex = (currentVideoIndex + 1) % heroVideos.length;
   const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
 
+  // Moving background video must be pausable (WCAG 2.2.2). It starts paused
+  // for anyone whose OS asks for reduced motion; the button overrides either
+  // way. `null` means the visitor has not touched the button yet.
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const [userPaused, setUserPaused] = useState<boolean | null>(null);
+  const isPaused = userPaused ?? prefersReducedMotion;
+
   const handleTryKaiClick = (event: MouseEvent<HTMLAnchorElement>) => {
     const userAgent = navigator.userAgent || navigator.vendor;
 
@@ -54,12 +63,14 @@ const Hero = () => {
   };
 
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = window.setInterval(() => {
       setCurrentVideoIndex((current) => (current + 1) % heroVideos.length);
     }, 5000);
 
     return () => window.clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   useEffect(() => {
     // Toggling the `autoPlay` prop on an already-mounted <video> doesn't
@@ -69,11 +80,17 @@ const Hero = () => {
     // ourselves whenever a clip becomes active.
     const activeSrc = heroVideos[currentVideoIndex].src;
     const activeVideo = videoRefs.current[activeSrc];
+
+    if (isPaused) {
+      activeVideo?.pause();
+      return;
+    }
+
     activeVideo?.play().catch(() => {
       // Autoplay can be rejected before the tab has been interacted with;
       // the video will still show its poster frame until it can play.
     });
-  }, [currentVideoIndex]);
+  }, [currentVideoIndex, isPaused]);
 
   return (
     <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-[#101918] px-4 pb-20 pt-[calc(var(--site-header-height,4.5rem)+2rem)] text-white md:px-8 md:pb-12 md:pt-[calc(var(--site-header-height,4.5rem)+2.5rem)] lg:pb-16 lg:pt-[calc(var(--site-header-height,4.5rem)+clamp(5rem,12vh,10rem))]">
@@ -92,7 +109,7 @@ const Hero = () => {
               videoRefs.current[video.src] = el;
               // The very first render mounts the active clip directly (no
               // prop change to react to), so kick it off here too.
-              if (el && isActive && el.paused) {
+              if (el && isActive && el.paused && !isPaused) {
                 el.play().catch(() => {});
               }
             }}
@@ -114,6 +131,32 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/75 lg:to-black/35" />
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/35 to-transparent lg:hidden" />
+
+      <button
+        type="button"
+        onClick={() => setUserPaused(!isPaused)}
+        aria-label={
+          isPaused ? "Play background video" : "Pause background video"
+        }
+        className="absolute right-4 top-[calc(var(--site-header-height,4.5rem)+0.75rem)] z-30 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-black/30 text-white ring-1 ring-white/25 transition duration-500 ease-out-soft hover:bg-black/45 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:right-8 lg:top-auto lg:bottom-8"
+      >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-4 w-4"
+        >
+          {isPaused ? (
+            <path d="M8 5.5v13l10-6.5-10-6.5Z" />
+          ) : (
+            <path d="M9 5v14M15 5v14" />
+          )}
+        </svg>
+      </button>
 
       <div className="relative z-20 mx-auto w-full max-w-[1600px]">
         <div className="max-w-[700px] text-center lg:max-w-[540px] lg:text-left xl:max-w-[640px]">

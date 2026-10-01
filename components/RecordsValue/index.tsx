@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+
+import { PillLink } from "@/components/Common/PillLink";
+import { Reveal } from "@/components/Common/Reveal";
 
 const benefits = [
   {
@@ -28,7 +29,7 @@ export default function RecordsValue() {
     <section className="relative overflow-hidden bg-white py-20 text-midnight lg:py-28">
       <div className="mx-auto max-w-c-1280 px-4 md:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
-          <div className="lg:sticky lg:top-28">
+          <Reveal className="lg:sticky lg:top-28">
             <span className="inline-flex rounded-full bg-light-lilac px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-violet">
               Why upload medical records?
             </span>
@@ -40,20 +41,18 @@ export default function RecordsValue() {
               information is easier to find before an appointment or during a
               health scare.
             </p>
-            <Link
-              href="/how-it-works"
-              className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-violet px-6 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-violet-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet"
-            >
+            <PillLink href="/how-it-works" className="mt-8">
               See how Kaizen works
-              <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
-            </Link>
-          </div>
+            </PillLink>
+          </Reveal>
 
           <ol className="space-y-4">
-            {benefits.map(({ icon, title, description }) => (
-              <li
+            {benefits.map(({ icon, title, description }, index) => (
+              <Reveal
+                as="li"
                 key={title}
-                className="group rounded-3xl border border-cloud bg-white p-6 shadow-[0_18px_55px_rgba(40,27,85,0.07)] transition duration-300 hover:-translate-y-1 sm:p-8"
+                delay={index * 100}
+                className="rounded-3xl border border-cloud bg-white p-6 shadow-[0_18px_55px_rgba(40,27,85,0.07)] sm:p-8"
               >
                 <div className="flex items-start gap-5">
                   <Image
@@ -73,7 +72,7 @@ export default function RecordsValue() {
                     </p>
                   </div>
                 </div>
-              </li>
+              </Reveal>
             ))}
           </ol>
         </div>

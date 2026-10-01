@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/Common/Reveal";
 import SectionHeader from "../Common/SectionHeader";
 import SingleTestimonial from "./SingleTestimonial";
 import { testimonialData } from "./testimonialData";
@@ -8,9 +9,10 @@ const Testimonial = () => {
       <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-[#E8C9C5]/70 blur-3xl" />
       <div className="pointer-events-none absolute -right-20 top-8 h-64 w-64 rounded-full bg-[#E4DFEF]/60 blur-3xl" />
       <div className="relative mx-auto max-w-c-1390">
-        <div className="animate_top mx-auto text-center">
+        <div className="mx-auto text-center">
           <SectionHeader
             headerInfo={{
+              eyebrow: `From families`,
               title: `What families are saying`,
               subtitle: ``,
               description: `How families use Kaizen to manage care across households and time zones.`,
@@ -19,8 +21,10 @@ const Testimonial = () => {
         </div>
 
         <div className="mx-auto mt-15 grid max-w-4xl gap-8 sm:grid-cols-2 xl:mt-20">
-          {testimonialData.map((review) => (
-            <SingleTestimonial key={review.id} review={review} />
+          {testimonialData.map((review, index) => (
+            <Reveal key={review.id} delay={index * 100} className="h-full">
+              <SingleTestimonial review={review} />
+            </Reveal>
           ))}
         </div>
       </div>

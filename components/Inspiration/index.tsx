@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { Reveal } from "@/components/Common/Reveal";
+
 const Inspiration = () => {
   return (
     <section
@@ -10,7 +12,7 @@ const Inspiration = () => {
       <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#6E40F3]/25 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#66E6B5]/12 blur-3xl" />
 
-      <div className="relative mx-auto max-w-5xl px-4 text-center md:px-8">
+      <Reveal className="relative mx-auto max-w-5xl px-4 text-center md:px-8">
         <p className="text-sm text-white/55">The story behind Kaizen Health</p>
         <h2
           id="inspiration-heading"
@@ -55,7 +57,7 @@ const Inspiration = () => {
             className="h-auto w-full object-cover"
           />
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

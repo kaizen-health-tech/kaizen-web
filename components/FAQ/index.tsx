@@ -2,6 +2,7 @@
 import { useState } from "react";
 import FAQItem from "./FAQItem";
 import faqData from "./faqData";
+import { Reveal } from "@/components/Common/Reveal";
 import { FAQPageSchema } from "@/components/Schema";
 
 const FAQ = () => {
@@ -26,23 +27,26 @@ const FAQ = () => {
         <div className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-[#C5DBDB]/55 blur-3xl" />
         <div className="relative mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
           <div className="flex flex-wrap gap-8 md:flex-nowrap md:items-center xl:gap-32.5">
-            <div className="relative mb-6 max-w-md md:w-2/5">
+            <Reveal className="relative mb-6 max-w-md md:w-2/5">
               <p className="text-sm font-bold uppercase tracking-[0.16em] text-violet">
                 Common questions
               </p>
-              <h2 className="mt-5 text-3xl font-semibold leading-tight text-black dark:text-white xl:text-hero">
+              <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.02em] text-midnight dark:text-white xl:text-hero">
                 A few things families ask us.
               </h2>
-            </div>
+            </Reveal>
 
-            <div className="overflow-hidden rounded-3xl border border-white bg-white/85 shadow-[0_18px_50px_rgba(40,27,85,0.08)] backdrop-blur-sm dark:border-strokedark dark:bg-blacksection md:w-3/5">
+            <Reveal
+              delay={100}
+              className="overflow-hidden rounded-3xl border border-white bg-white/90 shadow-[0_18px_50px_rgba(40,27,85,0.08)] dark:border-strokedark dark:bg-blacksection md:w-3/5"
+            >
               {faqData.map((faq, key) => (
                 <FAQItem
                   key={key}
                   faqData={{ ...faq, activeFaq, handleFaqToggle }}
                 />
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
