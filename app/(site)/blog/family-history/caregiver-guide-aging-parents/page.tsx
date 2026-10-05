@@ -164,12 +164,7 @@ const SupportingAgingParents = () => {
         reminders such as phone alarms or specialized clocks. Automatic pill
         dispensers can unlock doses at set times. Keep an updated medication
         list and regularly review it with healthcare providers to prevent
-        interactions and make sure the schedule is still appropriate. If your
-        parent manages a chronic condition, our guide to{" "}
-        <Link href="/blog/family-history/managing-diabetes-as-a-family">
-          managing diabetes as a family
-        </Link>{" "}
-        walks through coordinating medication schedules with a care team. For
+        interactions and make sure the schedule is still appropriate. For
         keeping the medication list itself organized alongside the rest of
         their medical records, see our guide to{" "}
         <Link href="/blog/family-history/organizing-medical-records">

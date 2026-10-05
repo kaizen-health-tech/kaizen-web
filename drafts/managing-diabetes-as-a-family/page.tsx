@@ -1,4 +1,8 @@
 // DRAFT — NOT PUBLISH-READY. Paid physician-partnership piece with Dr. Prabhleen Kaur.
+// Dr. Kaur has not started her contribution yet (as of 2026-10-05). This file lives in
+// drafts/ so Next.js does not route it. To publish, move it back to
+// app/(site)/blog/family-history/managing-diabetes-as-a-family/page.tsx and add the
+// route to app/sitemap.ts and components/Blog/blogData.tsx.
 // Before this ships, resolve everything in the on-page "Publication status" banner below:
 // disclosure wording + NMC compliance sign-off, Dr. Kaur's bio/credentials, her direct
 // contribution for the 4 PhysicianQuotePlaceholder blocks + the physician's-perspective

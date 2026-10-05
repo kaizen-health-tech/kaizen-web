@@ -32,6 +32,121 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
+    slug: "1-17-0-kai-voice-and-health-record-context",
+    version: "1.17.0",
+    title: "Kai Gets a Voice, and Your Answers Get More Context",
+    summary:
+      "Talk with Kai in a live voice conversation, follow the records behind memory-based answers, and use web search on every plan. Refreshed onboarding and clearer health charts round out the update.",
+    publishedAt: "2026-10-05",
+    status: "general-availability",
+    audience: "everyone",
+    tags: [
+      "AI insights",
+      "Documents",
+      "Health data",
+      "Memory",
+      "User experience",
+      "Voice",
+    ],
+    highlights: [
+      {
+        title: "Talk with Kai",
+        description:
+          "Start a live voice conversation from your Journey chat, follow the transcript as you talk, and return to the saved conversation afterward.",
+        impact: "new",
+      },
+      {
+        title: "Choose Kai's voice",
+        description:
+          "Preview 12 voices and choose your conversation language in Voice settings.",
+        impact: "new",
+      },
+      {
+        title: "See the memories behind an answer",
+        description:
+          "New source cards in chat show the saved memories Kai cites. Tap a card to open the original record or your memory controls.",
+        impact: "new",
+      },
+      {
+        title: "More useful health-record context",
+        description:
+          "Improved text extraction from scans and PDFs helps Kai use details from eligible records you've chosen to add to memory.",
+        impact: "improved",
+      },
+      {
+        title: "Web search on every plan",
+        description:
+          "Kai can now look up information on the web in both text and voice conversations for free and premium accounts.",
+        impact: "improved",
+      },
+      {
+        title: "An easier start and clearer charts",
+        description:
+          "Refreshed welcome, sign-in, and email verification screens make getting started clearer. Health Score charts show trends in chronological order.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "A conversation you can speak",
+        body: "Kai now supports live voice conversations alongside text chat. Open a Journey conversation and tap the microphone when the message box is empty. Ask a health question, follow up aloud, and see your words and Kai's replies in a live transcript. When you finish, the conversation is saved in the same Journey chat so you can revisit it or continue by typing.",
+        bullets: [
+          "Mute your microphone or end the conversation from the voice screen.",
+          "See when Kai is listening, speaking, or checking information, with a responsive voice waveform.",
+          "Voice is available to free and premium accounts, with a daily time allowance based on your plan. The voice screen shows your remaining time.",
+          "Allow microphone access when prompted to start talking with Kai.",
+        ],
+      },
+      {
+        heading: "Make Kai's voice your own",
+        body: "Voice settings let you preview 12 voices before choosing one, and select your conversation language. The language preference is shared with text chat. Applying new settings during a call saves the conversation so far and starts a new call with your choices.",
+        bullets: [
+          "On supported iPhones, a Live Activity shows the call's status on the Lock Screen and Dynamic Island.",
+          "On Android, an ongoing call notification supports conversations while Kaizen is in the background.",
+        ],
+      },
+      {
+        heading: "Understand what Kai used from your records",
+        body: "When Kai cites a saved memory in a text answer, a source card now appears below the reply. Memories from a document link back to that record; memories from a conversation open your memory controls. This makes it easier to review the context behind an answer and correct a detail when needed.",
+        bullets: [
+          "Memory sources appear alongside web sources when an answer uses both.",
+          "Premium voice conversations can also draw on relevant saved memories when memory referencing is enabled.",
+          "Your existing memory settings continue to control whether Kai can reference saved information.",
+        ],
+      },
+      {
+        heading: "More useful context from scans and PDFs",
+        body: "Document reading now combines text extraction and OCR for scans, images, and PDFs, helping Kai retain relevant details from records added to memory. The updated extraction keeps context such as dates, medication details, and measurement units together, and distinguishes your own history from references to other people.",
+        bullets: [
+          "Adding document information to Kai memory remains a premium feature and requires a record verified as your own.",
+          "Automatic additions follow your document-to-memory setting; uploading a record does not turn that setting on.",
+          "Records tagged to a shared member are not added to your personal Kai memory through this flow.",
+        ],
+      },
+      {
+        heading: "Web search for free and premium accounts",
+        body: "Web search is now available on every plan in both text chat and voice conversations. Kai can look up information when a question needs it, and text answers can include links to the web sources used. Premium memory features remain separate from web-search access.",
+      },
+      {
+        heading: "A clearer start, and everyday polish",
+        body: "New welcome, sign-in, and sign-up screens introduce Kaizen with a refreshed design. A dedicated email verification screen helps you resend the verification email, check your status, and return to the app from a verification link. Updated Health Score charts arrange daily, weekly, and monthly trends chronologically and make chart navigation easier.",
+        bullets: [
+          "Refreshed launch artwork and an animated logo make opening Kaizen feel more consistent.",
+          "Saved voice conversations handle message breaks more consistently, making longer replies easier to follow in chat history.",
+          "The Zocdoc shortcut is now shown only when the app identifies a U.S. App Store storefront.",
+        ],
+      },
+      {
+        heading: "Availability",
+        body: "This update pairs Kaizen Health app v1.17.0 with backend v1.17.4. Update Kaizen on your supported iPhone or Android device to try voice conversations and the new chat source cards. Voice time allowances depend on your plan; saved-memory referencing and document-to-memory features require premium access.",
+      },
+      stayConnectedSection(
+        "Tell us how talking with Kai fits into your day, whether the new source cards help you review an answer, and what you would like us to improve next.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
     slug: "1-16-0-oura-integration-and-kai-memory",
     version: "1.16.0",
     title: "Your Health Context, More Connected and More in Your Control",

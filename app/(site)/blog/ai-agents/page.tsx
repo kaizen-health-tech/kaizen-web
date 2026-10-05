@@ -174,6 +174,15 @@ const AIAgentsInFamilyHealth = () => {
         is exactly why it&rsquo;s worth understanding what you&rsquo;re
         opting into before you use one.
       </p>
+      <p>
+        More of these assistants now listen as well as read. For what the
+        research says about speaking versus typing, and why it may matter
+        most for people growing up with AI, see{" "}
+        <Link href="/blog/ai-agents/voice-ai-next-generation">
+          the real case for voice AI
+        </Link>
+        .
+      </p>
 
       <HeadingWithAnchor id="agent-vs-chatbot">
         AI agent vs. chatbot: why it matters for your data

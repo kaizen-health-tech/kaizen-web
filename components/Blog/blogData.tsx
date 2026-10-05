@@ -8,15 +8,27 @@ const editorialTeam = {
 
 const BlogData: Blog[] = [
   {
+    id: 23,
+    mainImage: "/images/blog/voice-ai-next-generation-hero.png",
+    title: "The Real Case for Voice AI Isn't That Kids Stopped Typing",
+    metadata:
+      "Young people still prefer text for most messages. School studies show something more useful: when children can speak instead of type, many of them say more.",
+    url: "/blog/ai-agents/voice-ai-next-generation",
+    categoryKey: "kai-ai",
+    featured: true,
+    readTime: "10 min read",
+    author: editorialTeam,
+  },
+  {
     id: 22,
     mainImage: "/images/blog/family-history-depression-hero.png",
     title:
-      "Family History of Depression: What It Means for Your Child's Brain — and What to Track",
+      "Family History of Depression: What It Means for Your Child's Brain and What to Track",
     metadata:
       "A 2026 study found children of mothers with depression pay more attention to sad faces as their own symptoms grow. What the family-history risk numbers mean, and what to track.",
     url: "/blog/family-history/family-history-depression-children",
     categoryKey: "sleep-mind",
-    featured: true,
+    featured: false,
     readTime: "8 min read",
     author: editorialTeam,
   },
@@ -58,7 +70,7 @@ const BlogData: Blog[] = [
       "Pollsters have asked whether people use AI for health questions. Almost nobody has asked the family-specific version yet. Here's what the data on record actually shows.",
     url: "/blog/ai-agents/is-ai-safe-for-medical-records",
     categoryKey: "kai-ai",
-    featured: true,
+    featured: false,
     readTime: "11 min read",
     author: editorialTeam,
   },
@@ -149,7 +161,7 @@ const BlogData: Blog[] = [
       "What older adults should know about creatine, from muscle and brain health to dosing and safety.",
     url: "/blog/health/creatine",
     categoryKey: "nutrition",
-    featured: true,
+    featured: false,
     readTime: "8 min read",
     author: editorialTeam,
   },

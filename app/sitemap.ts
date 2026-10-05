@@ -41,6 +41,8 @@ const blogRoutes = [
   "/blog/family-history/documenting-family-health",
   "/blog/family-history/organizing-medical-records",
   "/blog/family-history/research",
+  "/blog/family-history/shared-family-medical-record",
+  "/blog/family-history/family-history-depression-children",
   "/blog/family-health-monitoring",
   "/blog/health/creatine",
   "/blog/health/sunshine",
@@ -57,6 +59,7 @@ const blogRoutes = [
   "/blog/ai-agents/ai-health-assistant-comparison",
   "/blog/ai-agents/is-ai-safe-for-medical-records",
   "/blog/ai-agents/ai-health-assistant-breathing-problem",
+  "/blog/ai-agents/voice-ai-next-generation",
 ];
 
 // Paginated blog index pages, derived from the post count. Page 1 is /blog,

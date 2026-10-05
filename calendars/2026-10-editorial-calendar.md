@@ -9,6 +9,70 @@ October has five Thursdays, so the Tue/Thu grid yields 9 slots (Thu Oct 1, then 
 
 Active clusters in build-out this month: **Caregiving Financial & Emotional Reality** (completing) and, as a stretch item, **Healthy Aging** (new). That is within the max-3-active guideline, and the Caregiving work is a 4-piece completion of a cluster that already has 2 spokes — not a cold start.
 
+> **Revised 2026-10-05.** Read "Status Review and Re-baseline" below first. The week-by-week tables further down are the original 2026-09-10 plan, kept for reference; the re-baselined schedule supersedes them.
+
+---
+
+## Status Review and Re-baseline (2026-10-05)
+
+Checked against `components/Blog/blogData.tsx`, `app/(site)/blog/`, `app/sitemap.ts`, and `git log` in `kaizen-web` on 2026-10-05.
+
+### What actually shipped since the September calendar
+
+| Item | Planned | Actual |
+|------|---------|--------|
+| AI Agents Spokes 4–8 | Sep 1, 3, 8, 17, 24 | **None live.** Cluster is pillar + 3 spokes + Dr. Benur bonus (5 of 9). |
+| Family Medical Record Organization pillar | Sep 15 | Not live. |
+| Genetic & Hereditary Risk pillar | Sep 22 | Not live. |
+| Sep 29 records-checklist repurpose | Sep 29 | Not live. |
+| Dr. Kaur "Managing Diabetes as a Family" | mid-Sep | Not started on her side. Draft moved to `drafts/` on 2026-10-05 (see Housekeeping). Blockers unchanged. |
+| `pregnancy-genetic` freshness review | Sep 10 | **Done** (commit `92f3632`, Sep 10). Oct 22 therefore falls back to `family-history/research`. |
+| Oct 1 Caregiving pillar | Oct 1 | **Missed.** Not drafted. |
+| _Unplanned_ — "The Shared Family Medical Record" (id 21) | Nov gap-filler | Shipped Sep 11, early. Counts toward Family Records (multi-generational sharing gap is now filled). |
+| _Unplanned_ — "Family History of Depression" (id 22, `sleep-mind`) | — | Shipped Sep 18. `sleep-mind` is no longer empty; drop the Oct 8 "first post in this category" note. |
+| _Unplanned_ — Cost of caregiving calculator (`/tools`) | — | Shipped Sep 7. Use it as the Caregiving pillar's primary internal link and data source. |
+
+**Throughput reality:** ids 16–22 (7 posts) shipped between Aug 11 and Sep 18 — about **1 post per week**, against a planned 2. Nothing has shipped since Sep 18 (Oct 1 commits were a site redesign). The backlog is now 5 AI spokes + 2 pillars + 1 repurpose + Dr. Kaur + 9 October actions. A 2/week grid cannot clear that; planning against it keeps every calendar permanently "behind."
+
+### Re-baselined October (1 new post/week + small refreshes)
+
+| Week of | Slot | Action | Why this slot |
+|---------|------|--------|---------------|
+| Oct 5 | Thu Oct 8 | **Caregiving pillar** — "The Real Cost of Family Caregiving" | Still the month's priority; 4+ weeks of indexing lead before National Family Caregivers Month needs it live this week or next. |
+| Oct 12 | Tue Oct 13 | Medicare GLP-1 refresh (small) | Hard trigger: Open Enrollment opens Oct 15. Update date only if CMS terms changed. |
+| Oct 12 | Thu Oct 15 | **Getting Paid to Care for a Family Member** (caregiving spoke) | Highest commercial-intent caregiving spoke; also an Open Enrollment distribution angle. |
+| Oct 19 | Tue Oct 20 | **NEW: Voice AI post** (see below) — _gated on app v1.17.0 being live_. **Drafted 2026-10-05, scored 93/100** (`drafts/voice-ai-next-generation-analysis-2026-10-05.md`). | Launch-adjacent content works best in the release window. If 1.17.0 is not live by Oct 20, swap with the Oct 27 slot. |
+| Oct 26 | Tue Oct 27 | **Caregiver Tax Breaks and Benefits** (caregiving spoke) | Year-end tax planning still applies; needs `/blog factcheck` against IRS TY2026 figures. |
+
+**Moved to November** (Caregivers Month makes these stronger, not weaker): Caregiver Depression and Anxiety spoke (re-hook from World Mental Health Day to Caregivers Month), and the Caregiving pillar repurpose (needs the pillar live first).
+
+**Dropped from October:** Healthy Aging pillar (was already first to cut), Hereditary Breast & Ovarian Cancer spoke (Breast Cancer Awareness Month hook expires; the Hereditary pillar it cross-links does not exist yet — revisit after that pillar ships), and the `family-history/research` freshness review (no confirmed material change).
+
+**AI Agents Spokes 4–8:** re-plan in the November calendar. Do not try to backfill them in October.
+
+### New idea: Voice AI and the next generation
+
+Source: `content-ideas/voice-ai-young-generation-research-2026-10-05.md` (research complete, 11 primary sources, claim boundaries written; no draft yet).
+
+| Field | Recommendation |
+|-------|----------------|
+| Destination | **Kaizen site** (recommended), with a separate founder/engineering companion on snehal.ninja built from the build-log voice entries. Snehal to confirm. |
+| Working title | "Talking Instead of Typing: What Research on Kids and Speech Means for Voice AI" (research file's "Why Voice AI Could Matter More to the Next Generation" also works) |
+| Template | thought-leadership, research-grounded — fills October's thought-leadership gap |
+| Cluster / category | AI Agents in Family Health (bonus spoke) / `kai-ai` |
+| Suggested URL | `/blog/ai-agents/voice-ai-next-generation` |
+| Target keyword | Unmeasured. Candidates: "speech to text vs typing for kids", "voice ai for kids", "voice agent vs voice assistant". Pull volumes before the brief. |
+| Internal links | `/blog/ai-agents` (pillar), `/blog/ai-agents/agent-vs-chatbot`, `/blog/ai-agents/is-ai-safe-for-medical-records`, `/updates/1-17-0-kai-voice-and-health-record-context` (only once that release page is committed and live — `data/releases.ts` is currently uncommitted) |
+| Gates | (1) app v1.17.0 live; (2) `/blog factcheck` on S1–S11 figures; (3) no claim that Kai is tested for, or intended for, children; (4) frame the voice-agent forecast as inference, per the research file's "Claims to reject or qualify" list. |
+
+**Overlap check:** planned AI Spoke 5 ("Should You Let an AI Chatbot Answer Your Kid's Health Questions?") would reuse the same Pew and Common Sense Media data. Keep intents separate — the voice post is about *how children express themselves to AI*; Spoke 5 is about *whether a chatbot's health answers are safe for kids*. Cross-link them, and run `/blog cannibalization` when Spoke 5 is briefed.
+
+### Housekeeping found during the review
+
+- **Fixed 2026-10-05 — sitemap was missing the two newest posts.** Added `/blog/family-history/shared-family-medical-record` (id 21) and `/blog/family-history/family-history-depression-children` (id 22) to `app/sitemap.ts`. All blog routes are now listed.
+- **Fixed 2026-10-05 — the Dr. Kaur draft was publicly reachable.** Moved the page to `drafts/managing-diabetes-as-a-family/page.tsx`, so Next.js no longer routes it, and removed the inbound link from `caregiver-guide-aging-parents`. When it ships, move the file back under `app/(site)/blog/family-history/`, restore that link, and add it to the sitemap and `blogData.tsx`.
+- **Dr. Kaur status (2026-10-05):** she has not started her contribution. Treat the piece as not scheduled; it does not hold an October or November slot, and the American Diabetes Month repurpose is off until her work is in.
+
 ---
 
 ## Carryover Risk From September (read first)
