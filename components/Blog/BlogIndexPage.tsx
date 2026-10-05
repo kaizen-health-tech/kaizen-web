@@ -41,7 +41,7 @@ const BlogIndexPage = ({ pageNumber }: BlogIndexPageProps) => {
           <div className="grid grid-cols-1 gap-10 pt-12 lg:grid-cols-[1fr_320px] lg:items-start">
             <div>
               <h3 className="mb-6 text-[28px] font-semibold leading-[1.15] tracking-[-.6px] text-midnight">
-                cles
+                Recent articles
               </h3>
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                 {posts.map((post) => (
