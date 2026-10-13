@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/Common/PageHero";
 import { PillLink } from "@/components/Common/PillLink";
+import Inspiration from "@/components/Inspiration";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -42,6 +43,8 @@ export default function AboutPage() {
       />
 
       <div className="mx-auto max-w-5xl space-y-16 px-4 sm:px-6 lg:px-8">
+        <Inspiration />
+
         <section className="grid gap-8 rounded-3xl border border-slate-200 bg-white/80 p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900/60 sm:grid-cols-3">
           {milestones.map((milestone) => (
             <article key={milestone.title} className="space-y-3">

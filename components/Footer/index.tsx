@@ -251,6 +251,32 @@ export default function Footer() {
                 </span>
               </span>
             </li>
+            <li className="flex flex-col items-center leading-none">
+              <a
+                href="https://tools.launchllama.co/products/kaizen-health?utm_source=badge&utm_medium=referral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block leading-[0]"
+              >
+                {/* External badge image; next/image optimization not needed. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://tools.launchllama.co/featured-badge.png?v=2"
+                  alt="Featured on Launch"
+                  width={200}
+                  height={52}
+                  className="block h-[52px] w-[200px] border-0"
+                />
+              </a>
+              <a
+                href="https://launchmcp.co/?utm_source=badge&utm_medium=referral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="-mt-0.5 block text-[7px] font-semibold leading-none tracking-[0.02em] text-[#888] no-underline"
+              >
+                Launch MCP
+              </a>
+            </li>
           </ul>
 
           <p className="text-sm text-gray-400">

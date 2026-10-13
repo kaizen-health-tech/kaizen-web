@@ -5,9 +5,7 @@ import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
 import RecordsValue from "@/components/RecordsValue";
 import WhyKai from "@/components/WhyKai";
-import Inspiration from "@/components/Inspiration";
 import Journey from "@/components/Journey";
-import Testimonial from "@/components/Testimonial";
 import CTA from "@/components/CTA";
 import { MobileApplicationSchema } from "@/components/Schema";
 import { createPageMetadata } from "@/lib/seo";
@@ -41,12 +39,6 @@ export default function Home() {
         <WhyKai />
       </div>
       <Journey />
-      <div className="content-visibility-auto">
-        <Inspiration />
-      </div>
-      <div className="content-visibility-auto">
-        <Testimonial />
-      </div>
       <div className="content-visibility-auto">
         <Pricing />
       </div>
