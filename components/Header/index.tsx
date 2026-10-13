@@ -73,7 +73,15 @@ const Header = () => {
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeAll();
+      if (event.key === "Escape") {
+        closeAll();
+        const trigger = mobileOpen
+          ? document.querySelector<HTMLButtonElement>(
+              'button[aria-controls="site-navigation-mobile"]',
+            )
+          : document.getElementById(`site-navigation-trigger-${openSubmenu}`);
+        trigger?.focus();
+      }
     };
 
     document.addEventListener("pointerdown", handlePointerDown);
@@ -107,7 +115,7 @@ const Header = () => {
   }, []);
 
   const linkClass = (active: boolean) =>
-    `text-[17px] font-medium leading-5 transition-colors ${
+    `rounded-sm text-[17px] font-medium leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-aquamarine ${
       active ? "text-aquamarine" : "text-white/85 hover:text-white"
     }`;
 
@@ -143,9 +151,10 @@ const Header = () => {
                     onMouseLeave={() => setOpenSubmenu(null)}
                   >
                     <button
+                      id={`site-navigation-trigger-${menuItem.id}`}
                       type="button"
                       aria-expanded={openSubmenu === menuItem.id}
-                      aria-haspopup="true"
+                      aria-controls={`site-navigation-group-${menuItem.id}`}
                       // Open-only: a pointer has usually already opened this
                       // on hover, so toggling here would close it on click.
                       // Leaving the item, Escape, or a press outside closes it.
@@ -174,6 +183,8 @@ const Header = () => {
                       }`}
                     >
                       <ul
+                        id={`site-navigation-group-${menuItem.id}`}
+                        aria-label={menuItem.title}
                         className={`rounded-2xl bg-white p-3 shadow-solid-5 transition duration-200 ease-out ${
                           openSubmenu === menuItem.id
                             ? "visible translate-y-0 opacity-100"
@@ -184,7 +195,11 @@ const Header = () => {
                           <li key={item.id}>
                             <Link
                               href={item.path || "#"}
-                              className={`block rounded-lg px-3 py-2 text-regular transition-colors hover:bg-lavender ${
+                              aria-current={
+                                pathUrl === item.path ? "page" : undefined
+                              }
+                              onClick={() => setOpenSubmenu(null)}
+                              className={`block rounded-lg px-3 py-2 text-regular transition-colors hover:bg-lavender focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet ${
                                 isActive(item.path)
                                   ? "text-primary"
                                   : "text-text-body"
@@ -201,6 +216,9 @@ const Header = () => {
                   <li key={menuItem.id}>
                     <Link
                       href={menuItem.path || "#"}
+                      aria-current={
+                        pathUrl === menuItem.path ? "page" : undefined
+                      }
                       className={linkClass(isActive(menuItem.path))}
                     >
                       {menuItem.title}
@@ -245,21 +263,51 @@ const Header = () => {
         hidden={!mobileOpen}
         className="pointer-events-auto absolute inset-x-4 top-full mt-2 md:inset-x-8 max-h-[calc(100svh-var(--site-header-height,4.5rem)-1rem)] overflow-y-auto rounded-2xl bg-dark-plum p-4 shadow-[0_10px_40px_rgba(32,24,57,0.28)] xl:hidden"
       >
-        <ul className="flex flex-col gap-1">
+        <ul className="space-y-4">
           {menuData
-            .flatMap((menuItem) => menuItem.submenu ?? [menuItem])
-            .map((item) => (
-              <li key={item.id}>
-                <Link
-                  href={item.path || "#"}
-                  className={`block rounded-lg px-2 py-2.5 text-base font-medium leading-5 transition-colors ${
-                    isActive(item.path)
-                      ? "text-aquamarine"
-                      : "text-white/85 hover:text-white"
-                  }`}
-                >
-                  {item.title}
-                </Link>
+            .filter((menuItem) => menuItem.title !== "Legal")
+            .map((menuItem) => (
+              <li key={menuItem.id}>
+                {menuItem.submenu ? (
+                  <section
+                    aria-labelledby={`mobile-navigation-group-${menuItem.id}`}
+                    className="border-t border-white/15 pt-4"
+                  >
+                    <h2
+                      id={`mobile-navigation-group-${menuItem.id}`}
+                      className="mb-2 px-2 text-xs font-semibold uppercase tracking-widest text-white/60"
+                    >
+                      {menuItem.title}
+                    </h2>
+                    <ul className="space-y-1">
+                      {menuItem.submenu.map((item) => (
+                        <li key={item.id}>
+                          <Link
+                            href={item.path || "#"}
+                            aria-current={
+                              pathUrl === item.path ? "page" : undefined
+                            }
+                            onClick={() => setMobileOpen(false)}
+                            className={`block min-h-11 rounded-lg px-2 py-3 text-base font-medium leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aquamarine ${isActive(item.path) ? "text-aquamarine" : "text-white/85 hover:text-white"}`}
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                ) : (
+                  <Link
+                    href={menuItem.path || "#"}
+                    aria-current={
+                      pathUrl === menuItem.path ? "page" : undefined
+                    }
+                    onClick={() => setMobileOpen(false)}
+                    className={`block min-h-11 rounded-lg px-2 py-3 text-base font-medium leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aquamarine ${isActive(menuItem.path) ? "text-aquamarine" : "text-white/85 hover:text-white"}`}
+                  >
+                    {menuItem.title}
+                  </Link>
+                )}
               </li>
             ))}
         </ul>

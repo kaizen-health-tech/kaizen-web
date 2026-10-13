@@ -70,6 +70,7 @@ export default function CaregiverCostCalculatorPage() {
         eyebrow="Free tool"
         breadcrumbs={[
           { name: "Home", url: "/" },
+          { name: "Free caregiver tools", url: "/tools" },
           {
             name: "Caregiver cost calculator",
             url: "/tools/caregiver-cost-calculator",

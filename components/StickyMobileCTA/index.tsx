@@ -10,6 +10,10 @@ const appleStoreUrl = "https://bit.ly/kz-app-store";
 
 // Pages where a "download the app" push doesn't make sense.
 const HIDDEN_ON_PREFIXES = ["/chat", "/auth", "/thank-you"];
+const HIDDEN_ON_PATHS = [
+  "/tools/doctor-visit-summary",
+  "/tools/medical-records-request-tracker",
+];
 
 export default function StickyMobileCTA() {
   const pathname = usePathname();
@@ -24,7 +28,10 @@ export default function StickyMobileCTA() {
     }
   }, []);
 
-  if (HIDDEN_ON_PREFIXES.some((prefix) => pathname?.startsWith(prefix))) {
+  if (
+    HIDDEN_ON_PREFIXES.some((prefix) => pathname?.startsWith(prefix)) ||
+    HIDDEN_ON_PATHS.includes(pathname ?? "")
+  ) {
     return null;
   }
 

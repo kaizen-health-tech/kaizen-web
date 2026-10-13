@@ -31,6 +31,7 @@ const NAV_LINKS = [
   { name: "Our Team", url: absoluteUrl("/team") },
   { name: "How Kaizen Works", url: absoluteUrl("/how-it-works") },
   { name: "Family Health Blog", url: absoluteUrl("/blog") },
+  { name: "Free caregiver tools", url: absoluteUrl("/tools") },
   { name: "Product Updates", url: absoluteUrl("/updates") },
   { name: "Support Center", url: absoluteUrl("/support") },
   { name: "Contact Us", url: absoluteUrl("/contact") },

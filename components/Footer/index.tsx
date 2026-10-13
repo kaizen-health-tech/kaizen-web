@@ -6,13 +6,13 @@ export default function Footer() {
     <footer className="bg-[#1E1A34] py-16 text-gray-300">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         {/* Top row */}
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_2fr]">
           {/* Logo + tagline */}
           <div>
             <Link
               href="/"
               aria-label="Kaizen Health home"
-              className="inline-block"
+              className="inline-block rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               <Image
                 src="/images/logo/kaizen-logo-light.svg"
@@ -30,7 +30,7 @@ export default function Footer() {
                 href="https://bit.ly/kz-android-store"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-transform hover:-translate-y-0.5"
+                className="rounded-sm transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 <Image
                   src="/images/hero/android-store-dark.svg"
@@ -43,7 +43,7 @@ export default function Footer() {
                 href="https://bit.ly/kz-app-store"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-transform hover:-translate-y-0.5"
+                className="rounded-sm transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 <Image
                   src="/images/hero/app-store-dark.svg"
@@ -55,9 +55,124 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Find Us */}
+          <nav aria-label="Footer" className="min-w-0">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+              <section>
+                <h2 className="mb-4 text-base font-semibold text-white">
+                  Product
+                </h2>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/how-it-works"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      How Kaizen works
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/updates"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      Product updates
+                    </Link>
+                  </li>
+                </ul>
+              </section>
+              <section>
+                <h2 className="mb-4 text-base font-semibold text-white">
+                  Resources
+                </h2>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/blog"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      Family health blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/tools"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      Free caregiver tools
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/support"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      Support center
+                    </Link>
+                  </li>
+                </ul>
+              </section>
+              <section>
+                <h2 className="mb-4 text-base font-semibold text-white">
+                  Company
+                </h2>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/about"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      About Kaizen Health
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/careers"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      Careers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      Contact us
+                    </Link>
+                  </li>
+                </ul>
+              </section>
+              <section>
+                <h2 className="mb-4 text-base font-semibold text-white">
+                  Legal
+                </h2>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/docs/privacy"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      Privacy policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/docs/terms"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      Terms &amp; conditions
+                    </Link>
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </nav>
+        </div>
+
+        {/* Contact and social row */}
+        <div className="mt-12 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-2">
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">Find Us</h4>
+            <h2 className="mb-4 text-lg font-semibold text-white">Find Us</h2>
             <address className="not-italic leading-relaxed">
               1875 Mission St, Ste 103
               <br />
@@ -65,86 +180,23 @@ export default function Footer() {
               <br />
               <a
                 href="mailto:info@kaizenhealth.io"
-                className="hover:text-primary"
+                className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 info@kaizenhealth.io
               </a>
             </address>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">
-              Site Links
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="hover:text-primary">
-                  About Kaizen Health
-                </Link>
-              </li>
-              <li>
-                <Link href="/how-it-works" className="hover:text-primary">
-                  How Kaizen works
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-primary">
-                  Family health blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools/caregiver-cost-calculator"
-                  className="hover:text-primary"
-                >
-                  Caregiver cost calculator
-                </Link>
-              </li>
-              <li>
-                <Link href="/updates" className="hover:text-primary">
-                  Product updates
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="hover:text-primary">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/docs/privacy" className="hover:text-primary">
-                  Privacy policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/docs/terms" className="hover:text-primary">
-                  Terms &amp; conditions
-                </Link>
-              </li>
-              <li>
-                <Link href="/support" className="hover:text-primary">
-                  Support center
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-primary">
-                  Contact us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social */}
-          <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">
+            <h2 className="mb-4 text-lg font-semibold text-white">
               Social media
-            </h4>
+            </h2>
             <ul className="flex gap-4">
               <li>
                 <a
                   href="https://twitter.com/kaizenhealthio"
                   aria-label="Twitter"
-                  className="hover:text-primary"
+                  className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -163,7 +215,7 @@ export default function Footer() {
                   href="https://www.facebook.com/profile.php?id=61562247803536&mibextid=wwXIfr&mibextid=wwXIfr"
                   target="_blank"
                   aria-label="Facebook"
-                  className="hover:text-primary"
+                  className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
                   <svg
                     width="24"
@@ -180,7 +232,7 @@ export default function Footer() {
                   href="https://instagram.com/kaizenhealthio"
                   target="_blank"
                   aria-label="Instagram"
-                  className="hover:text-primary"
+                  className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                   rel="noopener noreferrer"
                 >
                   <svg
@@ -197,7 +249,7 @@ export default function Footer() {
                 <a
                   href="https://linkedin.com/company/kaizen-health-io"
                   aria-label="LinkedIn"
-                  className="hover:text-primary"
+                  className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -280,8 +332,7 @@ export default function Footer() {
           </ul>
 
           <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Kaizen Health. All rights
-            reserved
+            &copy; {new Date().getFullYear()} Kaizen Health. All rights reserved
           </p>
         </div>
       </div>

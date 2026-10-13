@@ -9,54 +9,43 @@ const menuData: Menu[] = [
   },
   {
     id: 2,
-    title: "How It Works",
+    title: "Product",
     newTab: false,
-    path: "/how-it-works",
+    submenu: [
+      {
+        id: 21,
+        title: "How Kaizen works",
+        newTab: false,
+        path: "/how-it-works",
+      },
+      {
+        id: 22,
+        title: "Product updates",
+        newTab: false,
+        path: "/updates",
+      },
+    ],
   },
   {
     id: 3,
-    title: "More",
+    title: "Resources",
     newTab: false,
     submenu: [
       {
         id: 31,
-        title: "Updates",
-        newTab: false,
-        path: "/updates",
-      },
-      {
-        id: 32,
-        title: "Family Health Blog",
+        title: "Family health blog",
         newTab: false,
         path: "/blog",
       },
       {
-        id: 37,
-        title: "Caregiver Cost Calculator",
+        id: 32,
+        title: "Free caregiver tools",
         newTab: false,
-        path: "/tools/caregiver-cost-calculator",
+        path: "/tools",
       },
       {
         id: 33,
-        title: "About",
-        newTab: false,
-        path: "/about",
-      },
-      {
-        id: 34,
-        title: "Careers",
-        newTab: false,
-        path: "/careers",
-      },
-      {
-        id: 35,
-        title: "Policies & Docs",
-        newTab: false,
-        path: "/docs",
-      },
-      {
-        id: 36,
-        title: "Support",
+        title: "Support center",
         newTab: false,
         path: "/support",
       },
@@ -64,9 +53,53 @@ const menuData: Menu[] = [
   },
   {
     id: 4,
-    title: "Contact",
+    title: "Company",
     newTab: false,
-    path: "/contact",
+    submenu: [
+      {
+        id: 41,
+        title: "About Kaizen Health",
+        newTab: false,
+        path: "/about",
+      },
+      {
+        id: 42,
+        title: "Careers",
+        newTab: false,
+        path: "/careers",
+      },
+      {
+        id: 43,
+        title: "Contact us",
+        newTab: false,
+        path: "/contact",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Legal",
+    newTab: false,
+    submenu: [
+      {
+        id: 51,
+        title: "Policies & docs",
+        newTab: false,
+        path: "/docs",
+      },
+      {
+        id: 52,
+        title: "Privacy policy",
+        newTab: false,
+        path: "/docs/privacy",
+      },
+      {
+        id: 53,
+        title: "Terms & conditions",
+        newTab: false,
+        path: "/docs/terms",
+      },
+    ],
   },
 ];
 

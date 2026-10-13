@@ -1,0 +1,31 @@
+@media print {
+  body:has(.care-tool-page) {
+    background: white !important;
+    color: black !important;
+  }
+  body:has(.care-tool-page) header,
+  body:has(.care-tool-page) footer,
+  body:has(.care-tool-page) [class*="fixed"],
+  .care-tool-page .tool-page-intro,
+  .care-tool-page .tool-inputs,
+  .care-tool-page .tool-support,
+  .care-tool-page .tool-result-actions,
+  .care-tool-page .tool-product-cta {
+    display: none !important;
+  }
+  .care-tool-page {
+    padding: 0 !important;
+    background: white !important;
+  }
+  .care-tool-page .tool-layout {
+    display: block !important;
+  }
+  .care-tool-page .tool-result {
+    border: 0;
+    padding: 0;
+    background: white !important;
+  }
+  .care-tool-page .tool-result * {
+    color: black !important;
+  }
+}

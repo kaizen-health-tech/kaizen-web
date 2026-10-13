@@ -24,9 +24,15 @@ const coreLinks = [
   { href: "/careers/open-roles", label: "Current open roles and job details" },
   { href: "/updates", label: "Product updates and release timeline" },
   { href: "/blog", label: "Family health blog index" },
+  { href: "/tools", label: "Free caregiver tools" },
   {
     href: "/tools/caregiver-cost-calculator",
     label: "Free caregiver cost and retirement calculator",
+  },
+  { href: "/tools/doctor-visit-summary", label: "Doctor visit summary" },
+  {
+    href: "/tools/medical-records-request-tracker",
+    label: "Medical records request tracker",
   },
 ];
 
