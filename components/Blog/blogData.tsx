@@ -8,6 +8,22 @@ const editorialTeam = {
 
 const BlogData: Blog[] = [
   {
+    id: 24,
+    mainImage: "/images/blog/managing-diabetes.png",
+    title: "Managing Diabetes as a Family: What to Track Between Doctor Visits",
+    metadata:
+      "Blood sugar readings, medicines, symptoms, and diet: what families in India should log between diabetes check-ups, co-authored with Dr. Prabhleen Kaur.",
+    url: "/blog/family-history/managing-diabetes-as-a-family",
+    categoryKey: "health-records",
+    featured: false,
+    readTime: "11 min read",
+    author: {
+      name: "Dr. Prabhleen Kaur, MD (Medicine)",
+      image: "/images/blog/authors/dr-prabhleen-kaur.jpg",
+      role: "Consultant Physician, co-author with the Kaizen Health Editorial Team",
+    },
+  },
+  {
     id: 23,
     mainImage: "/images/blog/voice-ai-next-generation-hero.png",
     title: "The Real Case for Voice AI Isn't That Kids Stopped Typing",

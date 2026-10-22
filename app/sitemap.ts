@@ -63,6 +63,7 @@ const blogRoutes = [
   "/blog/ai-agents/is-ai-safe-for-medical-records",
   "/blog/ai-agents/ai-health-assistant-breathing-problem",
   "/blog/ai-agents/voice-ai-next-generation",
+  "/blog/family-history/managing-diabetes-as-a-family",
 ];
 
 // Paginated blog index pages, derived from the post count. Page 1 is /blog,

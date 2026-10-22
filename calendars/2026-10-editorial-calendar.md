@@ -25,7 +25,7 @@ Checked against `components/Blog/blogData.tsx`, `app/(site)/blog/`, `app/sitemap
 | Family Medical Record Organization pillar | Sep 15 | Not live. |
 | Genetic & Hereditary Risk pillar | Sep 22 | Not live. |
 | Sep 29 records-checklist repurpose | Sep 29 | Not live. |
-| Dr. Kaur "Managing Diabetes as a Family" | mid-Sep | Not started on her side. Draft moved to `drafts/` on 2026-10-05 (see Housekeeping). Blockers unchanged. |
+| Dr. Kaur "Managing Diabetes as a Family" | mid-Sep | **Updated 2026-10-21:** Dr. Kaur returned her text and headshot. Page built at `app/(site)/blog/family-history/managing-diabetes-as-a-family/page.tsx` (id 24, sitemap entry added), not yet committed or deployed. Analysis: `drafts/managing-diabetes-as-a-family-analysis-2026-10-21.md` (66/100 on the raw doc, projected 84 to 88 on the built page). See "Physician Partnership Follow-Up" for what is still open. |
 | `pregnancy-genetic` freshness review | Sep 10 | **Done** (commit `92f3632`, Sep 10). Oct 22 therefore falls back to `family-history/research`. |
 | Oct 1 Caregiving pillar | Oct 1 | **Missed.** Not drafted. |
 | _Unplanned_ — "The Shared Family Medical Record" (id 21) | Nov gap-filler | Shipped Sep 11, early. Counts toward Family Records (multi-generational sharing gap is now filled). |
@@ -71,7 +71,8 @@ Source: `content-ideas/voice-ai-young-generation-research-2026-10-05.md` (resear
 
 - **Fixed 2026-10-05 — sitemap was missing the two newest posts.** Added `/blog/family-history/shared-family-medical-record` (id 21) and `/blog/family-history/family-history-depression-children` (id 22) to `app/sitemap.ts`. All blog routes are now listed.
 - **Fixed 2026-10-05 — the Dr. Kaur draft was publicly reachable.** Moved the page to `drafts/managing-diabetes-as-a-family/page.tsx`, so Next.js no longer routes it, and removed the inbound link from `caregiver-guide-aging-parents`. When it ships, move the file back under `app/(site)/blog/family-history/`, restore that link, and add it to the sitemap and `blogData.tsx`.
-- **Dr. Kaur status (2026-10-05):** she has not started her contribution. Treat the piece as not scheduled; it does not hold an October or November slot, and the American Diabetes Month repurpose is off until her work is in.
+- **Dr. Kaur status (2026-10-05, superseded 2026-10-21):** she had not started. She has since returned her text and headshot, so the piece is built and waiting to ship. See "Physician Partnership Follow-Up".
+- **2026-10-21 — the Dr. Kaur page is routed again.** The page now lives under `app/(site)/blog/family-history/managing-diabetes-as-a-family/`, so it is reachable once deployed. The old placeholder draft in `drafts/managing-diabetes-as-a-family/page.tsx` is superseded and can be deleted. Do not deploy before the open items in the Physician Partnership section are closed.
 
 ---
 
@@ -225,9 +226,17 @@ Use traffic only as context once a GSC/GA4 export is available; do not update a 
 
 Carried over from September (originally Aug 31). Full deliverable spec unchanged — see the "Physician Partnership Content" section of `calendars/2026-08-editorial-calendar.md` and the publish-gate checklist in `calendars/2026-09-editorial-calendar.md`.
 
-- If **not live by Oct 1**, it stays at the top of the queue. Do not open any new physician-partnership outreach until this one ships — one incomplete paid partnership at a time.
+- **Status 2026-10-21: built, not deployed.** Dr. Kaur returned her text and headshot. The page is in the repo (blogData id 24, sitemap entry added), uncommitted. It stays at the top of the queue. Do not open any new physician-partnership outreach until this one ships — one incomplete paid partnership at a time.
 - Once live: **American Diabetes Month (November)** is the repurpose hook flagged in the August calendar. Brief that repurpose in late October so it's ready for early November. Do not schedule the repurpose until the source post is actually published.
-- Blockers still outstanding as of 2026-09-10: Dr. Kaur's 4 quote callouts + physician's-perspective section + 2 attributed FAQ answers, NMC professional-conduct sign-off, paid-partnership disclosure wording, her bio/headshot/credentials, a real hero image, `/blog factcheck` on the ICMR-INDIAB and diet-timing stats.
+- **Closed 2026-10-21:** her 4 take callouts and the physician's-perspective section (her wording kept; only em dashes became periods, colons or commas); bio, credentials and headshot; NMC and disclosure sign-off (confirmed with Snehal as cleared by text with Dr. Kaur; the document itself carries no answer, so keep that text thread as the record); the draft disclosure line is on the page as written.
+- **Still open before deploy:**
+  - **Fact-check.** Three claims could not be verified against primary sources and were removed or softened on the page: the "73%" post-meal glucose figure, the "15 minutes before carbohydrate" timing, and RSSDI's "every 2-3 months" interval. Read the full Shukla letter and the RSSDI consensus (both blocked automated fetch), then restore only what they support. The CGM sensor price now reads about ₹3,500 to ₹5,000, per Mordor Intelligence's report.
+  - **Hero image (done 2026-10-21).** `public/images/blog/managing-diabetes.png` is wired as the page hero, blog card and social image. No in-article images yet. Review note: the people and kitchen in the hero do not read as an Indian household, and the post targets readers in India.
+  - **2 FAQ answers she was asked for were not returned.** Her doc has no FAQ section, so the page FAQ uses only statements from her text, attributed to her. Send the two original questions again if direct answers are wanted.
+  - **Author schema (done 2026-10-21).** Her Instagram profile is set as `authorUrl`, so the schema author is a Person. Caveat: the layout uses one `authorName` for both byline and schema, so the Person is named "Kaizen Health Editorial Team & Dr. Prabhleen Kaur" and the whole combined byline links to her profile. Splitting the byline into a co-author pair needs a layout change; not done.
+  - **Disclosure wording** is the original draft line ("This article is a paid partnership between Kaizen Health and Dr. Prabhleen Kaur."). Confirm that is the wording she agreed to in the text thread.
+  - **Inbound links.** The 2026-10-05 housekeeping removed the link to this page from `caregiver-guide-aging-parents`. Restore it and link from the Family Medical Record Organization pillar when that ships.
+  - **Spelling.** Her sections keep her British spellings ("personalised", "judgement", "hypoglycaemic"); the rest of the page uses US spelling. Standardize if she agrees.
 
 ## Seasonal Hooks
 
@@ -237,7 +246,7 @@ Carried over from September (originally Aug 31). Full deliverable spec unchanged
 - **Medicare Open Enrollment — Oct 15 to Dec 7** → Oct 13 refresh; also a distribution angle for the two caregiver-financial spokes (Oct 6, Oct 15).
 - **Looking ahead to November (brief these in October):**
   - **National Family Caregivers Month** — the entire Caregiving cluster is the payload. Oct 29 repurpose + a sustained November social push.
-  - **American Diabetes Month** — repurpose the Dr. Kaur piece *if it has shipped*.
+  - **American Diabetes Month** — repurpose the Dr. Kaur piece *if it has shipped*. As of 2026-10-21 it is built but not deployed; the repurpose depends on the open items in the Physician Partnership section clearing before November.
   - **Surgeon General's Family Health History Day = Thanksgiving, Thu Nov 26** — produce a "collect your family health history at the holidays" piece for the Family Medical Record Organization / Hereditary Risk clusters. Brief it in mid-October; publish mid-November for indexing lead time.
 
 ## Housekeeping Notes
