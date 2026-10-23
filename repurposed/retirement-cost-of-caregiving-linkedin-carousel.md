@@ -44,7 +44,7 @@ What have you seen work when a family divides the cost of care?
 **Body copy:**
 AARP: family caregivers spend about **$7,242 a year** out of pocket — roughly **26% of their income**.
 
-Only ~17% report medical costs. Half report general household expenses. 30% help with a parent's rent or mortgage. 21% pay for home modifications.
+Medical costs are only ~17% of that spending. About half of caregivers use their own money for household expenses. 30% help with a parent's rent or mortgage. 21% pay for home modifications.
 
 **Visual:** Single big stat ($7,242 / yr) with a four-item breakdown list beneath.
 **Source line:** AARP out-of-pocket costs study

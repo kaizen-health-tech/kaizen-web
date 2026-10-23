@@ -24,5 +24,7 @@ export type Blog = {
   categoryKey?: CategoryKey;
   /** Editorially chosen for the 1b featured block, not "most recent". */
   featured?: boolean;
+  /** Committed but not public: hidden from listings, sitemaps and related posts, and the article page returns 404. Remove the flag to publish. */
+  draft?: boolean;
   readTime?: string;
 };

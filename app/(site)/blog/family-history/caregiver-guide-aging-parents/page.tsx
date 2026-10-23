@@ -4,6 +4,7 @@ import BlogFAQ from "@/components/Blog/BlogFAQ";
 import KeyTakeaways from "@/components/Blog/content/KeyTakeaways";
 import Image from "next/image";
 import Link from "next/link";
+import WhenPublished from "@/components/Blog/WhenPublished";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -424,6 +425,11 @@ const SupportingAgingParents = () => {
           </Link>{" "}
           covers what unpaid caregiving can cost your own retirement, not
           just your parent&apos;s finances.
+          <WhenPublished url="/blog/caregiving/real-cost-of-family-caregiving">
+            {" "}
+            For all three costs together, see{" "}
+            <Link href="/blog/caregiving/real-cost-of-family-caregiving">the real cost of family caregiving</Link>.
+          </WhenPublished>
         </li>
         <li>
           <span className="font-semibold">

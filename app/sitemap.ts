@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo";
 import { releases } from "@/data/releases";
-import { getTotalPages } from "@/lib/blog";
+import { getTotalPages, isDraftUrl } from "@/lib/blog";
 
 // Core pages with highest priority
 const coreRoutes = [
@@ -57,6 +57,7 @@ const blogRoutes = [
   "/blog/caregiving/grieving-the-years-lost-to-caregiving",
   "/blog/health/kidney-transplant-evaluation-gap",
   "/blog/caregiving/retirement-cost-of-caregiving",
+  "/blog/caregiving/real-cost-of-family-caregiving",
   "/blog/ai-agents",
   "/blog/ai-agents/agent-vs-chatbot",
   "/blog/ai-agents/ai-health-assistant-comparison",
@@ -99,12 +100,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.3,
   }));
 
-  const blogPages: MetadataRoute.Sitemap = blogRoutes.map((route) => ({
-    url: absoluteUrl(route),
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  const blogPages: MetadataRoute.Sitemap = blogRoutes
+    .filter((route) => !isDraftUrl(route))
+    .map((route) => ({
+      url: absoluteUrl(route),
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    }));
 
   const blogPaginationPages: MetadataRoute.Sitemap = blogPaginationRoutes.map(
     (route) => ({

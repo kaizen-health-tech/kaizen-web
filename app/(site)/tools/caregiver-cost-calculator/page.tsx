@@ -7,6 +7,7 @@ import CaregiverCostCalculator from "@/components/Tools/CaregiverCostCalculator"
 import CaregiverCostEmbedSnippet from "@/components/Tools/CaregiverCostEmbedSnippet";
 import { buildCaregiverCalculatorEmbed } from "@/lib/embeds";
 import { absoluteUrl, createPageMetadata } from "@/lib/seo";
+import { isDraftUrl } from "@/lib/blog";
 
 export const metadata: Metadata = createPageMetadata({
   primaryKeyword: "Caregiver Cost Calculator",
@@ -224,7 +225,11 @@ export default function CaregiverCostCalculatorPage() {
             would otherwise absorb.
           </p>
           <PillLink
-            href="/blog/caregiving/retirement-cost-of-caregiving"
+            href={
+              isDraftUrl("/blog/caregiving/real-cost-of-family-caregiving")
+                ? "/blog/caregiving/retirement-cost-of-caregiving"
+                : "/blog/caregiving/real-cost-of-family-caregiving"
+            }
             variant="soft"
             className="mt-7"
           >

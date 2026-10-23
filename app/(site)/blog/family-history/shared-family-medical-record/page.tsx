@@ -13,6 +13,7 @@ import PullQuote from "@/components/Blog/content/PullQuote";
 import InlineImage from "@/components/Blog/content/InlineImage";
 import ProductCallout from "@/components/Blog/content/ProductCallout";
 import Link from "next/link";
+import WhenPublished from "@/components/Blog/WhenPublished";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -229,7 +230,13 @@ const SharedFamilyMedicalRecord = () => {
         <Link href="/blog/caregiving/retirement-cost-of-caregiving">
           the time and financial cost of caregiving
         </Link>
-        . Fighting for basic access to information on top of that shouldn&apos;t
+        .
+        <WhenPublished url="/blog/caregiving/real-cost-of-family-caregiving">
+          {" "}
+          Our guide to{" "}
+          <Link href="/blog/caregiving/real-cost-of-family-caregiving">the real cost of family caregiving</Link> covers
+          the money, income, and health sides together.
+        </WhenPublished> Fighting for basic access to information on top of that shouldn&apos;t
         be part of the job, but it often is.
       </p>
       <p>

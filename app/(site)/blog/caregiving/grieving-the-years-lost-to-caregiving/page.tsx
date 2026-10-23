@@ -4,6 +4,7 @@ import BlogFAQ from "@/components/Blog/BlogFAQ";
 import KeyTakeaways from "@/components/Blog/content/KeyTakeaways";
 import PullQuote from "@/components/Blog/content/PullQuote";
 import Link from "next/link";
+import WhenPublished from "@/components/Blog/WhenPublished";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -430,6 +431,11 @@ const GrievingTheYearsLostToCaregiving = () => {
           supporting aging parents
         </Link>{" "}
         cover the mechanics.
+        <WhenPublished url="/blog/caregiving/real-cost-of-family-caregiving">
+          {" "}
+          <Link href="/blog/caregiving/real-cost-of-family-caregiving">The real cost of family caregiving</Link> puts
+          the money, income, and health costs of the same years in one place.
+        </WhenPublished>
       </p>
 
       <HeadingWithAnchor id="where-to-call">Where to call</HeadingWithAnchor>

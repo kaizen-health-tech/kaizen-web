@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/Common/PageHero";
-import BlogData from "@/components/Blog/blogData";
+import { getPublishedPosts } from "@/lib/blog";
 import { getSortedReleases } from "@/data/releases";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -45,7 +45,7 @@ const legalLinks = [
   { href: "/docs/healthscore", label: "Health score methodology references" },
 ];
 
-const blogLinks = [...BlogData]
+const blogLinks = getPublishedPosts()
   .sort((a, b) => b.id - a.id)
   .map((post) => ({
     href: post.url,

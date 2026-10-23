@@ -8,6 +8,7 @@ import NumberedPoints from "@/components/Blog/content/NumberedPoints";
 import ProductCallout from "@/components/Blog/content/ProductCallout";
 import InlineImage from "@/components/Blog/content/InlineImage";
 import Link from "next/link";
+import WhenPublished from "@/components/Blog/WhenPublished";
 import { Metadata } from "next";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -15,7 +16,7 @@ const faqs = [
   {
     question: "How much does family caregiving cost per year?",
     answer:
-      "AARP's out-of-pocket costs study put the typical figure at $7,242 a year, which worked out to about 26% of a caregiver's income. Roughly half of that spending was not medical at all: household expenses, rent or mortgage help for the person receiving care, and home modifications made up the largest categories. Those numbers exclude the larger and less visible cost, which is lost wages and lost retirement contributions.",
+      "AARP's 2021 out-of-pocket costs study put the typical figure at $7,242 a year, which worked out to about 26% of a caregiver's income. Medical costs were only about 17% of that spending. About half of caregivers said they used their own money for household expenses, 30% covered rent or mortgage payments for the person they care for, and 21% paid for home modifications. Those numbers exclude the larger and less visible cost, which is lost wages and lost retirement contributions.",
   },
   {
     question: "How much retirement income can caregiving cost over a lifetime?",
@@ -101,7 +102,7 @@ const RetirementCostOfCaregiving = () => {
     >
       <KeyTakeaways
         items={[
-          "AARP found family caregivers spend about $7,242 a year out of pocket, roughly 26% of their income — and about half of that spending is household costs, not medical bills.",
+          "AARP's 2021 study found family caregivers spend about $7,242 a year out of pocket, roughly 26% of their income — and medical costs were only about 17% of that spending.",
           "The larger cost is usually invisible: reduced hours, unpaid leave, and paused retirement contributions during peak earning years.",
           "Three years of skipped $500-a-month contributions is $18,000 not saved, but closer to $77,000 not held in retirement 20 years later at a 7% return.",
           "Social Security averages your 35 highest-earning years, so caregiving gaps can lower the benefit itself if you have fewer than 35 strong years on record.",
@@ -155,14 +156,15 @@ const RetirementCostOfCaregiving = () => {
           href="https://www.aarp.org/pri/topics/ltss/family-caregiving/family-caregivers-cost-survey/"
           target="_blank"
         >
-          out-of-pocket costs study
+          2021 out-of-pocket costs study
         </Link>{" "}
         put average annual caregiving spending at $7,242, or about 26% of a
-        caregiver&rsquo;s income. The composition is the surprising part. Only
-        about 17% of caregivers reported medical costs as a spending category.
-        Half reported general household expenses, 30% helped with rent or
-        mortgage payments, and 21% paid for home modifications. Only 5% reported
-        no caregiving expenses at all.
+        caregiver&rsquo;s income. The composition is the surprising part. Medical
+        costs accounted for only about 17% of caregiver spending. About half of
+        caregivers said they used their own money for household expenses, 30%
+        covered rent or mortgage payments for the person they care for, and 21%
+        paid for home modifications. Only 5% reported no caregiving expenses at
+        all.
       </p>
 
       <StatTrio
@@ -175,7 +177,7 @@ const RetirementCostOfCaregiving = () => {
           {
             figure: "$7,242",
             caption:
-              "Average annual out-of-pocket spending per family caregiver, about 26% of income",
+              "Average annual out-of-pocket spending per family caregiver, about 26% of income (AARP, 2021)",
           },
           {
             figure: "$303,880",
@@ -550,9 +552,14 @@ const RetirementCostOfCaregiving = () => {
         people will ever face. The earlier a family names the cost, the more
         options it has to share it — and the smaller the chance that helping
         someone through their last years quietly creates a crisis in the
-        caregiver&rsquo;s own. The financial toll is only part of what
-        caregiving costs; for the part that doesn&rsquo;t show up in any
-        ledger, see{" "}
+        caregiver&rsquo;s own.
+        <WhenPublished url="/blog/caregiving/real-cost-of-family-caregiving">
+          {" "}
+          For the whole picture across money, health, and time, see{" "}
+          <Link href="/blog/caregiving/real-cost-of-family-caregiving">the real cost of family caregiving</Link>.
+        </WhenPublished>{" "}
+        The financial toll is only part of what caregiving costs; for the
+        part that doesn&rsquo;t show up in any ledger, see{" "}
         <Link href="/blog/caregiving/grieving-the-years-lost-to-caregiving">
           Grieving the Years Caregiving Took From You
         </Link>

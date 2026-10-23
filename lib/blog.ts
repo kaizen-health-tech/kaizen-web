@@ -4,12 +4,21 @@ import type { CategoryKey } from "@/components/Blog/categories";
 
 export const POSTS_PER_PAGE = 6;
 
+// Posts flagged `draft: true` in blogData are committed but not public. Every
+// list below is built from published posts only, so a draft never appears in
+// the index, category hubs, related posts, or the sitemaps.
+export const getPublishedPosts = (): Blog[] =>
+  BlogData.filter((post) => !post.draft);
+
+export const isDraftUrl = (url: string): boolean =>
+  BlogData.some((post) => post.draft && post.url === url);
+
 // Posts are listed newest first. `id` is assigned in publication order in
 // blogData, so sorting by id descending puts the most recent post at the top of
 // page 1. When a post carries publishedAt, that wins, so backdating or
 // reordering a post does not require renumbering every id after it.
 export const getSortedPosts = (): Blog[] =>
-  [...BlogData].sort((a, b) => {
+  getPublishedPosts().sort((a, b) => {
     if (a.publishedAt && b.publishedAt) {
       return Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
     }
@@ -21,7 +30,7 @@ export const getSortedPosts = (): Blog[] =>
 // so the same post doesn't appear twice on the index. Order follows blogData
 // authoring order (first = the big card) rather than recency.
 export const getFeaturedPosts = (): Blog[] =>
-  BlogData.filter((post) => post.featured);
+  getPublishedPosts().filter((post) => post.featured);
 
 export const getRecentPosts = (): Blog[] =>
   getSortedPosts().filter((post) => !post.featured);

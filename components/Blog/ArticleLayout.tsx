@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
+import { notFound } from "next/navigation";
+import { isDraftUrl } from "@/lib/blog";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
 import {
   categoryHref as getCategoryHref,
@@ -60,6 +62,9 @@ const ArticleLayout = ({
   keywords = [],
   authorBio = "The Kaizen Health editorial team researches and writes family health content, with review from licensed clinicians before publication.",
 }: ArticleLayoutProps) => {
+  // A post flagged `draft: true` in blogData is committed but not public.
+  if (isDraftUrl(url)) notFound();
+
   const category = getCategory(categoryKey);
   const resolvedCategoryHref = getCategoryHref(categoryKey);
 

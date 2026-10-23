@@ -8,6 +8,20 @@ const editorialTeam = {
 
 const BlogData: Blog[] = [
   {
+    id: 25,
+    draft: true,
+    mainImage: "/images/blog/real-cost-of-family-caregiving-hero.png",
+    title:
+      "The Real Cost of Family Caregiving: Money, Health, and the Self You Put on Hold",
+    metadata:
+      "Caring for a parent costs money, income and health, and most families count only the first. What each cost looks like, what the same care costs to buy, and what helps.",
+    url: "/blog/caregiving/real-cost-of-family-caregiving",
+    categoryKey: "aging-well",
+    featured: false,
+    readTime: "14 min read",
+    author: editorialTeam,
+  },
+  {
     id: 24,
     mainImage: "/images/blog/managing-diabetes.png",
     title: "Managing Diabetes as a Family: What to Track Between Doctor Visits",
@@ -265,7 +279,7 @@ const BlogData: Blog[] = [
     mainImage: "/images/blog/cost-of-retirement.png",
     title: "The Hidden Retirement Cost of Caregiving",
     metadata:
-      "Caregivers spend about $7,242 a year out of pocket, but the bigger cost is the income never earned and the retirement contributions never made.",
+      "A 2021 AARP study found caregivers spend about $7,242 a year out of pocket, but the bigger cost is the income never earned and the retirement contributions never made.",
     url: "/blog/caregiving/retirement-cost-of-caregiving",
     categoryKey: "aging-well",
     readTime: "9 min read",
