@@ -8,6 +8,46 @@ const editorialTeam = {
 
 const BlogData: Blog[] = [
   {
+    id: 28,
+    draft: true,
+    mainImage: "/images/blog/family-health-history-thanksgiving-hero.png",
+    title: "Collect Your Family Health History This Thanksgiving",
+    metadata:
+      "Thanksgiving is National Family History Day. What to ask relatives, how to start the conversation, and how to write down family health history for your doctor.",
+    url: "/blog/family-history/family-health-history-thanksgiving",
+    categoryKey: "health-records",
+    featured: false,
+    readTime: "5 min read",
+    author: editorialTeam,
+  },
+  {
+    id: 27,
+    draft: true,
+    mainImage: "/images/blog/when-your-parent-refuses-help-hero.png",
+    title: "When Your Parent Refuses Help: What You Can and Cannot Do",
+    metadata:
+      "When an elderly parent refuses help, you cannot force it, but you can change how you ask. What works, what to avoid, and when to call a doctor or attorney.",
+    url: "/blog/caregiving/when-your-parent-refuses-help",
+    categoryKey: "aging-well",
+    featured: false,
+    readTime: "7 min read",
+    author: editorialTeam,
+  },
+  {
+    id: 26,
+    draft: true,
+    mainImage: "/images/blog/getting-paid-to-care-for-a-family-member-hero.png",
+    title:
+      "Getting Paid to Care for a Family Member: Medicaid, VA, and State Programs in 2026",
+    metadata:
+      "Medicaid, VA and state programs can pay a family caregiver, but states set the rules and the person you care for must qualify. How to find out what applies.",
+    url: "/blog/caregiving/getting-paid-to-care-for-a-family-member",
+    categoryKey: "aging-well",
+    featured: false,
+    readTime: "9 min read",
+    author: editorialTeam,
+  },
+  {
     id: 25,
     draft: true,
     mainImage: "/images/blog/real-cost-of-family-caregiving-hero.png",
