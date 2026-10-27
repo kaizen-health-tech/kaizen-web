@@ -157,6 +157,14 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
+                      href="/docs/consumer-health"
+                      className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      Consumer health data privacy policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/docs/terms"
                       className="rounded-sm hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                     >

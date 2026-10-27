@@ -12,7 +12,15 @@ export const legalDocs: LegalDoc[] = [
     summary:
       "What we collect, why we collect it, who we share it with, and how to export or delete your family's data.",
     effectiveDate: "March 1, 2024",
-    lastUpdated: "August 17, 2026",
+    lastUpdated: "October 26, 2026",
+  },
+  {
+    href: "/docs/consumer-health",
+    title: "Consumer Health Data Privacy Policy",
+    navLabel: "Consumer Health Data",
+    summary:
+      "The health information we collect, its sources and recipients, and your rights to access, withdraw consent, and delete it.",
+    effectiveDate: "October 26, 2026",
   },
   {
     href: "/docs/terms",
@@ -21,7 +29,7 @@ export const legalDocs: LegalDoc[] = [
     summary:
       "The agreement that covers your account, subscriptions, acceptable use, and how disputes are resolved.",
     effectiveDate: "March 1, 2024",
-    lastUpdated: "August 17, 2026",
+    lastUpdated: "October 26, 2026",
   },
   {
     href: "/docs/disclaimer",

@@ -31,6 +31,7 @@ const utilityRoutes = [
   "/html-sitemap",
   "/docs",
   "/docs/privacy",
+  "/docs/consumer-health",
   "/docs/terms",
   "/docs/eula",
   "/docs/disclaimer",

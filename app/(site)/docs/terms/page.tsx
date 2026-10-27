@@ -42,6 +42,7 @@ const termsToc: DocsTocItem[] = [
     label: "9. Our Content and Intellectual Property",
   },
   { id: "third-party-services", label: "10. Third-Party Services" },
+  { id: "whatsapp", label: "WhatsApp and voice notes" },
   { id: "suspension-and-termination", label: "11. Suspension and Termination" },
   { id: "disclaimer-of-warranties", label: "12. Disclaimer of Warranties" },
   { id: "limitation-of-liability", label: "13. Limitation of Liability" },
@@ -78,9 +79,10 @@ export default function DocsPage() {
         communication tools, health record management, AI-assisted health
         information, family and care group sharing, and personalized content,
         through the Kaizen Health mobile application, the kaizenhealth.io
-        website, and any medium or device now known or later developed (the
-        "Services"). Unless we state otherwise, any new feature that augments or
-        enhances the Services is subject to these Terms.
+        website, our WhatsApp number where available, and any medium or device
+        now known or later developed (the "Services"). Unless we state
+        otherwise, any new feature that augments or enhances the Services is
+        subject to these Terms.
       </p>
       <p>
         The Services are an informational and organizational tool. They are not
@@ -104,6 +106,14 @@ export default function DocsPage() {
         effect. Continuing to use the Services after a change takes effect means
         you accept the updated Terms. If you do not accept them, stop using the
         Services and delete your account.
+      </p>
+      <p>
+        Acceptance of these Terms, including through continued use, does not
+        replace any separate consent required for health data, AI processing, or
+        WhatsApp voice transcription. Before introducing voice transcription, we
+        require existing WhatsApp users to accept an updated WhatsApp consent
+        notice. That processing starts only after acceptance. You can choose to
+        type instead of sending voice notes.
       </p>
 
       <h2 id="eligibility-and-your-account">3. Eligibility and Your Account</h2>
@@ -288,14 +298,58 @@ export default function DocsPage() {
       <h2 id="third-party-services">10. Third-Party Services</h2>
       <p>
         The Services integrate with third parties, including cloud hosting, AI
-        providers, email delivery, analytics, error monitoring, app stores, and
-        Apple Health and Google Health Connect. These are listed in our{" "}
+        providers, WhatsApp (Meta), Google Cloud Speech-to-Text, email delivery,
+        analytics, error monitoring, app stores, and Apple Health and Google
+        Health Connect. These are listed in our{" "}
         <a href="/docs/privacy" className="underline">
           Privacy Policy
         </a>
         . Your use of a third-party service is governed by that party's own
         terms and privacy policy, and we are not responsible for third-party
         services or content.
+      </p>
+
+      <h3 id="whatsapp">10.1 WhatsApp messages and voice notes</h3>
+      <p>
+        WhatsApp is an optional channel for adults aged 18 or over. Availability
+        and supported languages may be limited. When voice notes are enabled, we
+        transcribe the audio using Google Cloud Speech-to-Text and use AI
+        processing to provide a text reply. The{" "}
+        <a href="/docs/privacy#whatsapp" className="underline">
+          WhatsApp privacy notice
+        </a>{" "}
+        explains audio handling, temporary files, providers, international
+        processing, transcript retention, and deletion. Typed messages still use
+        AI processing.
+      </p>
+      <p>
+        Speech recognition can mishear medicine names, doses, units, numbers,
+        and other details. A reply may start with "I heard:" to show all or part
+        of the transcript. Check it and type a correction if necessary. A short
+        clarifying question checks what was heard; it is not a clinical
+        assessment, diagnosis, or confirmation that a medicine or dose is safe.
+        Do not start, stop, or change a medicine or its dose based on a
+        transcript, confirmation question, or AI reply. Ask a qualified
+        healthcare professional about those decisions.
+      </p>
+      <p>
+        WhatsApp replies are automated. The channel is not an emergency service
+        and is not monitored by a clinician. Do not wait for a reply or a
+        clarification if you need urgent help; contact local emergency services.
+        If an important detail remains unclear, type it again and verify it with
+        a healthcare professional before acting.
+      </p>
+      <p>
+        Send voice notes only when you have permission or legal authority to
+        share the voices and health information they contain. Protect access to
+        WhatsApp and linked devices: replies and notification previews can
+        repeat sensitive information. Send STOP to pause WhatsApp interactions;
+        it does not delete data. Send DELETE MY DATA and complete the account
+        deletion flow, or unlink WhatsApp in the App, using the controls
+        explained in our Privacy Policy. Unlinking may preserve health records
+        you choose to keep. It does not remove copies held in WhatsApp or on
+        your devices. These Terms do not reduce our duties or your rights under
+        applicable privacy, health, or consumer protection law.
       </p>
 
       <h2 id="suspension-and-termination">11. Suspension and Termination</h2>

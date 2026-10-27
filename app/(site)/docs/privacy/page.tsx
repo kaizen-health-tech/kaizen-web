@@ -45,8 +45,9 @@ const categoryRows: CategoryRow[] = [
   },
   {
     category: "E. Biometric information",
-    examples: "Fingerprints and voiceprints",
-    collected: "No",
+    examples:
+      "Voice recordings where applicable law treats them as biometric information; we do not create voiceprints or collect fingerprints",
+    collected: "Voice audio only; no voiceprints or fingerprints",
   },
   {
     category: "F. Internet or other similar network activity",
@@ -62,7 +63,7 @@ const categoryRows: CategoryRow[] = [
   {
     category: "H. Audio, electronic, sensory, or similar information",
     examples:
-      "Documents and images you upload or scan, and voice recordings you create in the App",
+      "Documents and images you upload or scan, and voice recordings you create in the App or send through WhatsApp",
     collected: "Yes",
   },
   {
@@ -90,6 +91,7 @@ const categoryRows: CategoryRow[] = [
 
 const privacyToc: DocsTocItem[] = [
   { id: "infocollect", label: "1. Information we collect" },
+  { id: "whatsapp", label: "WhatsApp messages and voice notes" },
   { id: "infouse", label: "2. How we process it" },
   { id: "legalbases", label: "3. Legal bases" },
   { id: "whoshare", label: "4. Who we share it with" },
@@ -156,6 +158,10 @@ export default function DocsPage() {
           links to this Notice.
         </li>
         <li>
+          Use Kaizen Health through our WhatsApp number, including typed
+          messages, files, and voice notes where those features are available.
+        </li>
+        <li>
           Engage with us in other related ways, including support, marketing, or
           events.
         </li>
@@ -194,8 +200,9 @@ export default function DocsPage() {
         <li>
           <strong>Sensitive information.</strong> We process health data,
           account login credentials, and precise geolocation, with your consent
-          or as permitted by law. We do not collect genetic data or biometric
-          identifiers.
+          or as permitted by law. We do not collect genetic data or create
+          voiceprints to identify you. Voice recordings can be personal or
+          sensitive information even when we do not use them for identification.
         </li>
         <li>
           <strong>Third parties.</strong> We receive limited data from Apple and
@@ -206,9 +213,10 @@ export default function DocsPage() {
           .
         </li>
         <li>
-          <strong>AI features.</strong> We have Business Associate Agreements
-          with OpenAI, Anthropic, and Google Cloud, and zero data retention
-          terms with OpenAI and Anthropic. No provider may train on your data.
+          <strong>AI features.</strong> We use AI and transcription providers to
+          deliver the features you request. We do not permit them to train
+          models on your content. HIPAA agreements apply only to covered
+          services and processing; they are not a certification of the Services.
           See{" "}
           <a href="#ai" className="underline">
             AI products
@@ -225,12 +233,27 @@ export default function DocsPage() {
           .
         </li>
         <li>
-          <strong>How long we keep it.</strong> Your account is the retention
-          period. Delete your account and we delete your data. See{" "}
+          <strong>How long we keep it.</strong> Account records generally stay
+          while your account exists. WhatsApp chat history, including voice
+          transcripts, is scheduled to expire after 30 days without activity;
+          new activity restarts that period. See{" "}
           <a href="#inforetain" className="underline">
             how long we keep your information
           </a>
           .
+        </li>
+        <li>
+          <strong>WhatsApp voice notes.</strong> Audio passes through WhatsApp
+          (Meta) and Google Cloud Speech-to-Text. The transcript goes through AI
+          processing to produce a text reply. See{" "}
+          <a href="#whatsapp" className="underline">
+            WhatsApp messages and voice notes
+          </a>
+          . Our separate{" "}
+          <a href="/docs/consumer-health" className="underline">
+            Consumer Health Data Privacy Policy
+          </a>{" "}
+          explains consumer health data rights.
         </li>
         <li>
           <strong>Your rights.</strong> You can access, export, correct, or
@@ -369,9 +392,11 @@ export default function DocsPage() {
           these documents so we can summarize and search them.
         </li>
         <li>
-          <strong>Voice recordings</strong>: audio you record in the App, which
-          is transcribed to text so the feature can work. We do not create
-          voiceprints and do not use audio to identify you.
+          <strong>Voice recordings</strong>: audio you record in the App or send
+          to our WhatsApp number, which is transcribed to text so the feature
+          can work. We do not create voiceprints or use audio to identify or
+          authenticate you. WhatsApp audio and transcripts have the separate
+          handling described below.
         </li>
         <li>
           <strong>Family and group data</strong>: information about family
@@ -390,12 +415,15 @@ export default function DocsPage() {
         otherwise permitted by applicable law, we process health data, account
         login credentials, and precise geolocation.{" "}
         <strong>
-          We do not collect genetic data, and we do not collect biometric
-          identifiers such as fingerprints or voiceprints
+          We do not collect genetic data or fingerprints, and we do not create
+          voiceprints
         </strong>
-        . If you enable Face ID, Touch ID, or Android biometric unlock, that
-        check happens on your device through the operating system and we never
-        receive or store the underlying data.
+        . Laws differ in how they classify voice recordings. We treat voice
+        audio and transcripts as sensitive when they contain health information,
+        regardless of whether they qualify as biometric information. If you
+        enable Face ID, Touch ID, or Android biometric unlock, that check
+        happens on your device through the operating system and we never receive
+        or store the underlying data.
       </p>
       <p>
         All personal information that you provide to us must be true, complete,
@@ -543,6 +571,71 @@ export default function DocsPage() {
         .
       </p>
 
+      <h3 id="whatsapp">1.8 WhatsApp messages and voice notes</h3>
+      <p>
+        WhatsApp is optional and is for adults aged 18 or over. When you agree
+        to the WhatsApp consent notice, we create or connect a Kaizen account
+        linked to your WhatsApp number. We receive your number, messages, files
+        you send, and delivery information from WhatsApp (Meta). Your messages
+        may contain health information about you or someone you are authorized
+        to help. Send another person's voice or health information only with
+        their permission or other valid legal authority.
+      </p>
+      <ul>
+        <li>
+          <strong>Audio processing.</strong> If you choose to send a voice note
+          when the feature is enabled, our server downloads and converts the
+          audio, then sends it to Google Cloud Speech-to-Text, our transcription
+          processor. Conversion uses temporary files on our servers that are
+          designed to be removed after processing. We do not keep an audio
+          archive or save the voice note as a health record.
+        </li>
+        <li>
+          <strong>Transcript and AI reply.</strong> We process the transcript
+          like a typed message. Where configured, TypeSafe receives message text
+          and clarification context for safety screening. When generating an AI
+          reply, OpenAI receives the transcript and relevant recent chat
+          context. WhatsApp processing requires the WhatsApp consent notice.
+          Audio and transcripts may include names, medicine names, doses, and
+          other health information; they are not necessarily de-identified.
+        </li>
+        <li>
+          <strong>What we understood.</strong> A reply may show all or part of
+          the transcript after "I heard:" and may ask a short question to check
+          an uncertain detail. This can repeat sensitive health information into
+          your WhatsApp chat and notification previews. Check the text and type
+          a correction if it is wrong. Confirmation checks what was heard; it
+          does not establish that medical information is correct or safe.
+        </li>
+        <li>
+          <strong>Your choice.</strong> Voice transcription currently uses
+          English speech recognition. You can type instead of sending audio.
+          Typing avoids audio transcription; typed messages still use AI
+          processing. Send STOP to pause WhatsApp interactions. STOP does not
+          erase existing data. Unlink WhatsApp in the App or contact us to
+          withdraw WhatsApp processing consent and request deletion. Sending
+          DELETE MY DATA starts the account deletion flow; complete its
+          verification and confirmation steps. See sections 8 and 19 for what
+          deletion removes and what may remain.
+        </li>
+      </ul>
+      <p>
+        Our servers and providers process data outside some users' countries,
+        including in the United States. Google Speech-to-Text's default service
+        can process audio globally. We do not promise that WhatsApp audio stays
+        in your country. See section 14. WhatsApp also handles information under
+        its own{" "}
+        <a
+          href="https://www.whatsapp.com/legal/privacy-policy"
+          className="underline"
+          target="_blank"
+          rel="noreferrer"
+        >
+          privacy policy
+        </a>
+        .
+      </p>
+
       <h2 id="infouse">2. How do we process your information?</h2>
       <p className={inShort}>
         In Short: We process your information to provide, improve, and
@@ -668,6 +761,26 @@ export default function DocsPage() {
         information is publicly available and specified by the regulations.
       </p>
 
+      <h3>If you are located in India</h3>
+      <p>
+        We explain the information we process and its purposes before seeking
+        your consent, including for WhatsApp voice transcription and health
+        information. You can request access, correction, deletion, or withdrawal
+        of consent using the contact details in section 18. Rights and
+        obligations under Indian privacy laws apply as their relevant provisions
+        take effect. Withdrawing WhatsApp consent does not require you to stop
+        using the separate Kaizen App.
+      </p>
+      <p>
+        For privacy grievances in India, contact our Grievance Officer, Snehal
+        Shah, at{" "}
+        <a href="mailto:snehal@kaizenhealth.io" className="underline">
+          snehal@kaizenhealth.io
+        </a>
+        . We address these grievances within one month of receipt. You can also
+        write to the company address in section 18.
+      </p>
+
       <h2 id="whoshare">
         4. When and with whom do we share your personal information?
       </h2>
@@ -707,11 +820,12 @@ export default function DocsPage() {
         <li>
           <strong>Google (Firebase and Google Cloud)</strong>: authentication,
           database, file storage, push notifications, analytics, and remote
-          configuration.
+          configuration. Google Cloud Speech-to-Text receives voice audio for
+          transcription, including audio sent through WhatsApp.
         </li>
         <li>
-          <strong>OpenAI, Anthropic, and Google</strong>: AI processing, as
-          described in{" "}
+          <strong>OpenAI, Anthropic, Google, and TypeSafe</strong>: AI
+          processing, as described in{" "}
           <a href="#ai" className="underline">
             section 6
           </a>
@@ -752,6 +866,15 @@ export default function DocsPage() {
         to a materially different privacy policy, and we will require the
         recipient to honor the commitments in this Notice. Your health data is
         not an asset we will market or sell separately from the Services.
+      </p>
+
+      <h3>4.5 WhatsApp (Meta)</h3>
+      <p>
+        If you use our WhatsApp number, WhatsApp (Meta) carries your messages,
+        audio, and our replies. Meta also processes information to operate
+        WhatsApp under its own terms and privacy policy. Our transcription and
+        AI providers process content on our behalf; that does not make all of
+        Meta's processing subject to our instructions or retention periods.
       </p>
 
       <h2 id="cookies">
@@ -858,6 +981,11 @@ export default function DocsPage() {
           <strong>Anthropic</strong>: chat responses and document analysis.
         </li>
         <li>
+          <strong>TypeSafe</strong>: automated message safety screening and
+          classification, including WhatsApp message text and voice transcripts
+          where configured.
+        </li>
+        <li>
           <strong>Google Cloud</strong>: transcription of voice recordings
           through Speech-to-Text, and redaction of identifying details through
           Data Loss Prevention.
@@ -871,8 +999,12 @@ export default function DocsPage() {
       <p>How we handle this processing:</p>
       <ul>
         <li>
-          We have Business Associate Agreements with OpenAI, Anthropic, and
-          Google Cloud covering the health information processed under them.
+          We require written data processing terms for providers acting on our
+          behalf. We have a signed Business Associate Agreement with Google.
+          Where HIPAA applies, a Business Associate Agreement must cover the
+          provider and the particular service before we send protected health
+          information. A provider's other products or a new feature are not
+          automatically covered.
         </li>
         <li>
           <strong>Your data is not used for training.</strong> Under our
@@ -900,12 +1032,32 @@ export default function DocsPage() {
           uses it for training.
         </li>
         <li>
-          AI features are optional. You consent to this processing when you
-          accept the in-app AI Use Disclaimer, and you can stop using AI
-          features at any time. You must not use the AI features in any way that
-          violates the terms or policies of these providers.
+          AI features are optional. In the App, consent is obtained through the
+          in-app AI Use Disclaimer. On WhatsApp, we obtain consent through the
+          WhatsApp consent notice, including before voice transcription. You can
+          stop using AI features at any time. You must not use them in any way
+          that violates the terms or policies of these providers.
         </li>
       </ul>
+      <p>
+        <strong>Google Speech-to-Text for WhatsApp.</strong> We enable voice
+        transcription only with Google's optional data logging and model
+        improvement program disabled. Google's{" "}
+        <a
+          href="https://docs.cloud.google.com/speech-to-text/docs/v1/data-usage-faq"
+          className="underline"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Speech-to-Text data usage documentation
+        </a>{" "}
+        says that synchronous recognition, which this feature uses, processes
+        audio in memory without storing audio or transcripts when that program
+        is disabled. Google may temporarily log service metadata, such as
+        request time and size. This is separate from the transcript we retain as
+        chat history. We do not authorize Google to retain these notes for
+        training.
+      </p>
       <p>
         To give you continuity across conversations, we store extracted health
         facts ("memories") and their vector embeddings in a database hosted on{" "}
@@ -942,25 +1094,51 @@ export default function DocsPage() {
 
       <h2 id="inforetain">8. How long do we keep your information?</h2>
       <p className={inShort}>
-        In Short: We keep your information for as long as you have an account
-        with us. When you delete your account, we delete your data.
+        Account records generally stay while your account exists. WhatsApp chat
+        history has a separate inactivity period, and audio processing is
+        temporary. Deletion and limited exceptions are described below.
       </p>
       <p>
         <strong>
-          Your account is the retention period. Your profile, health records,
-          documents and media, voice recordings, health-fact memories, and group
-          memberships are kept while your account exists, and are deleted when
-          you delete your account.
+          Your profile, health records, documents and media, voice recordings
+          saved in the App, health-fact memories, and group memberships are kept
+          while your account exists, and are deleted when you delete your
+          account.
         </strong>{" "}
-        We do not keep your health data on some separate clock, and we do not
-        retain it after you leave. You can also delete individual records,
-        documents, and memories at any time without closing your account.
+        WhatsApp chat history and voice notes follow the separate periods below.
+        You can also delete individual records, documents, and memories at any
+        time without closing your account.
       </p>
       <p>
-        Four narrow things cannot disappear at the same instant, and we would
-        rather say so than imply otherwise:
+        Some records have different retention periods or cannot disappear at the
+        same instant:
       </p>
       <ul>
+        <li>
+          <strong>WhatsApp chat history</strong>: we keep a limited recent
+          thread, including voice transcripts and AI replies. It is scheduled to
+          expire after 30 days without activity. New activity restarts the
+          30-day period, so a retained message can remain longer than 30 days
+          from when it was sent. Expiry uses background deletion and is not an
+          exact physical-deletion deadline. Replies, which may contain the "I
+          heard:" text, are also kept in delivery-retry records scheduled to
+          expire after seven days. Unlinking or account deletion removes these
+          chat and reply records through the deletion flow.
+        </li>
+        <li>
+          <strong>WhatsApp voice audio</strong>: audio is used transiently for
+          conversion and transcription, including temporary conversion files; it
+          is not retained as a chat attachment or an audio archive. This does
+          not delete the original note from WhatsApp or copies on your devices.
+        </li>
+        <li>
+          <strong>WhatsApp consent and deletion receipts</strong>: limited
+          receipts are scheduled to expire after three years. They contain a
+          pseudonymous phone-number reference, policy version, channel, and
+          timestamps, rather than audio, transcripts, or chat text. They support
+          consent records and handling of deletion requests; they are not
+          anonymous merely because your account has been deleted.
+        </li>
         <li>
           <strong>Encrypted backups</strong>: deletion removes your data from
           our live systems immediately, but residual copies persist in encrypted
@@ -987,6 +1165,12 @@ export default function DocsPage() {
           only what is necessary and only for as long as necessary.
         </li>
       </ul>
+      <p>
+        The WhatsApp periods above are subject to applicable legal retention
+        requirements. If the law requires us to retain information for longer,
+        we limit retention to the information and purposes that requirement
+        covers, rather than keeping it for continued chat use.
+      </p>
       <p>
         Two further notes. Content you shared into a care group may already have
         been saved or exported by other members, and we cannot reach those
@@ -1017,6 +1201,14 @@ export default function DocsPage() {
         never defeat our security. Transmission of personal information to and
         from the Services is at your own risk, and you should only use the
         Services in a secure environment.
+      </p>
+      <p>
+        WhatsApp voice transcripts and the "I heard:" text require the same care
+        as typed health messages. WhatsApp messages are readable by our service
+        after delivery for processing and are sent to the providers described
+        above. WhatsApp's encryption does not mean that Kaizen and its
+        processors cannot read them. Protect access to your phone and linked
+        devices, and hide notification previews if others can see your screen.
       </p>
       <p>
         If a breach affects your personal or health information, we will notify
@@ -1258,8 +1450,8 @@ export default function DocsPage() {
         </table>
       </div>
       <p>
-        We retain each category for as long as you have an account with us,
-        subject to the exceptions in{" "}
+        Retention depends on the feature and category, including the separate
+        WhatsApp periods in{" "}
         <a href="#inforetain" className="underline">
           section 8
         </a>
@@ -1351,18 +1543,15 @@ export default function DocsPage() {
       <h3>Washington, Nevada, and consumer health data</h3>
       <p>
         Under the Washington My Health My Data Act and Nevada SB 370, consumer
-        health data receives specific protections. We collect the consumer
-        health data described in section 1 for the purposes in section 2, we
-        share it only with the service providers and processors named in section
-        4.2, and we{" "}
-        <strong>
-          do not sell consumer health data and will not do so without your
-          separate written authorization
-        </strong>
-        . You may withdraw consent to the collection or sharing of your consumer
-        health data, and request its deletion, using the contact details below.
-        This Notice, together with the deletion terms in section 19, serves as
-        our consumer health data privacy notice.
+        health data receives specific protections. Our separate{" "}
+        <a href="/docs/consumer-health" className="underline">
+          Consumer Health Data Privacy Policy
+        </a>{" "}
+        describes the categories, sources, purposes, recipients, and ways to
+        exercise your rights, including for WhatsApp audio, transcripts, and
+        replies. We do not sell consumer health data. Where separate consent to
+        collection or sharing is required, acceptance of general Terms does not
+        replace that consent.
       </p>
 
       <h3>California Confidentiality of Medical Information Act</h3>
@@ -1446,6 +1635,16 @@ export default function DocsPage() {
         primarily in the United States.
       </p>
       <p>
+        WhatsApp audio, transcripts, and replies can also pass through Meta and
+        Google infrastructure outside your country. Google Speech-to-Text's
+        default processing is global, even if other Kaizen data is stored in the
+        United States. A provider's regional endpoint, where supported, limits
+        only the processing covered by that endpoint; it does not localize the
+        entire WhatsApp and AI service. We apply applicable transfer
+        restrictions and contractual safeguards. Consent to use a feature does
+        not waive mandatory transfer protections.
+      </p>
+      <p>
         If you use the Services from outside the United States, your information
         will be transferred to and processed in the United States, which may
         have different data protection laws than your country. For transfers of
@@ -1477,16 +1676,23 @@ export default function DocsPage() {
       <h2 id="hipaa">16. Health privacy laws and our status</h2>
       <p>
         We apply HIPAA-aligned administrative, technical, and physical
-        safeguards to health information, and we have Business Associate
-        Agreements in place with OpenAI, Anthropic, and Google Cloud. Kaizen
-        Health is a direct-to-consumer service, so when you use it on your own
-        behalf we are generally not acting as a HIPAA covered entity or business
-        associate, and the health information you give us is not protected
-        health information under HIPAA. Instead, it is protected by this Notice,
-        by the consumer health privacy laws described in section 13, and by the
-        FTC Health Breach Notification Rule. Where we provide services on behalf
-        of a HIPAA covered entity, we act as a business associate under a
-        written agreement and HIPAA applies to that processing.
+        safeguards to health information. Kaizen Health is a direct-to-consumer
+        service, so when you use it on your own behalf we are generally not
+        acting as a HIPAA covered entity or business associate, and the health
+        information you give us is not protected health information under HIPAA.
+        Instead, it is protected by this Notice, by the consumer health privacy
+        laws described in section 13, and by the FTC Health Breach Notification
+        Rule. Where we provide services on behalf of a HIPAA covered entity, we
+        act as a business associate under a written agreement and HIPAA applies
+        to that processing.
+      </p>
+      <p>
+        Being in the United States or sending health information does not by
+        itself make your use subject to HIPAA. A Google Cloud BAA does not cover
+        WhatsApp (Meta) or every AI service. The WhatsApp channel is not offered
+        as a channel for HIPAA-regulated care on behalf of a provider or health
+        plan. A BAA with one vendor is not a guarantee of compliance for the
+        whole channel.
       </p>
 
       <h2 id="policyupdates">17. Do we make updates to this Notice?</h2>
@@ -1494,9 +1700,13 @@ export default function DocsPage() {
         Yes. We update this Notice as necessary to stay compliant with relevant
         laws and to reflect changes to the Services. When we do, we will change
         the "Last updated" date above. If a change materially affects how we
-        handle your personal or health data, we will notify you in the App or by
-        email before it takes effect, and where the law requires it we will ask
-        for your consent. Previous versions are available on request.
+        handle your personal or health data, we will notify you in the App, on
+        WhatsApp, or by email before it takes effect, and where the law requires
+        it we will ask for your consent. For the introduction of WhatsApp voice
+        transcription, existing WhatsApp users must accept an updated WhatsApp
+        consent notice before we process voice audio. Posting this Notice or
+        continuing to send messages does not replace that agreement. Voice notes
+        remain optional. Previous versions are available on request.
       </p>
 
       <h2 id="contact">18. How can you contact us about this Notice?</h2>
@@ -1519,6 +1729,13 @@ export default function DocsPage() {
       <p>
         For privacy questions, put "Privacy Question" in the subject line. For
         rights requests, see section 13.
+      </p>
+      <p>
+        India Grievance Officer: Snehal Shah,{" "}
+        <a href="mailto:snehal@kaizenhealth.io" className="underline">
+          snehal@kaizenhealth.io
+        </a>
+        . Privacy grievances are addressed within one month of receipt.
       </p>
 
       <h2 id="request">
@@ -1555,6 +1772,19 @@ export default function DocsPage() {
         </li>
       </ul>
       <p>
+        <strong>WhatsApp controls.</strong> Send DELETE MY DATA to start the
+        account deletion flow and complete its verification and confirmation
+        steps. Unlinking WhatsApp removes the WhatsApp chat thread, saved voice
+        transcripts, and delivery-retry replies. Unlinking can let you keep
+        health records and documents already saved to your Kaizen account; use
+        the deletion option if you also want those removed. Account deletion
+        removes account records through the deletion flow. STOP pauses WhatsApp
+        interactions and does not delete data. Neither unlinking nor account
+        deletion removes copies in your own WhatsApp history, device backups, or
+        Meta's independently controlled systems; use WhatsApp's own controls for
+        those copies. Contact us if you need help exercising deletion rights.
+      </p>
+      <p>
         <strong>What deletion removes:</strong> your profile and account record,
         your health records and entries, uploaded documents and media, your
         health-fact memories and their embeddings, your group memberships and
@@ -1572,7 +1802,9 @@ export default function DocsPage() {
         content you shared into a care group that other members have already
         saved or exported; and short-lived diagnostic logs held by our analytics
         and error-monitoring providers, which age out on the schedules in
-        section 8.
+        section 8. Limited WhatsApp consent and deletion receipts follow the
+        separate retention period in section 8. Where applicable law requires,
+        we also notify processors and other recipients of your deletion request.
       </p>
       <p>
         Deleting your Kaizen Health account does not cancel your Apple or Google

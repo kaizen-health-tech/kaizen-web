@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 export type LegalDocHref =
   | "/docs/privacy"
+  | "/docs/consumer-health"
   | "/docs/terms"
   | "/docs/disclaimer"
   | "/docs/eula"
