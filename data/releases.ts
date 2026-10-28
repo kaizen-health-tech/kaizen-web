@@ -32,6 +32,180 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
+    slug: "1-18-0-relationships-whatsapp-and-kai-records",
+    version: "1.18.0",
+    title: "Kaizen Now Knows How Your Family Fits Together",
+    summary:
+      "Say how you're related to the people you share with, and settle it together in a new People screen. Kai can now save notes and events from a chat or a call, Kai arrives on WhatsApp, and Protected Chat keeps shared files out of your memory.",
+    publishedAt: "2026-10-28",
+    status: "general-availability",
+    audience: "everyone",
+    tags: [
+      "AI insights",
+      "Documents",
+      "Family sharing",
+      "Memory",
+      "Premium",
+      "Privacy",
+      "Relationships",
+      "User experience",
+      "WhatsApp",
+    ],
+    highlights: [
+      {
+        title: "Say how you're related, and agree on it",
+        description:
+          "Choose how someone is related to you when you invite them or join a group. The other person confirms, so both of you agree on the answer.",
+        impact: "new",
+      },
+      {
+        title: "A People screen for every relationship",
+        description:
+          "See everyone you share with, who still needs to answer, and where two answers disagree. Set or change a relationship at any time.",
+        impact: "new",
+      },
+      {
+        title: "Kai saves notes and events for you",
+        description:
+          "Ask Kai in chat or on a voice call to save a note or add an event. A chip confirms it, and a source card opens the record.",
+        impact: "new",
+      },
+      {
+        title: "Kai on WhatsApp",
+        description:
+          "Connect your WhatsApp number to chat with Kai, send photos and PDFs to save as records, and send voice notes.",
+        impact: "new",
+      },
+      {
+        title: "Protected Chat for shared files",
+        description:
+          "Discuss a file from another app with Kai without adding anything from the conversation to your memory.",
+        impact: "new",
+      },
+      {
+        title: "Only the right groups when you share",
+        description:
+          "Group pickers now list only groups you have joined and agreed to share with.",
+        impact: "fixed",
+      },
+      {
+        title: "More dependable subscriptions",
+        description:
+          "Cancellations made with Apple are recognized more quickly, and Manage Subscription no longer shows stale details.",
+        impact: "improved",
+      },
+      {
+        title: "A livelier welcome screen",
+        description:
+          "A redesigned landing screen with motion introduces Kaizen the first time you open the app.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "Why relationships matter",
+        body: 'Families rarely share one tidy list of names. Your mother is also your child\'s grandmother. Two people can share a first name. A nickname can mean different people in different homes. When you ask for "my sister\'s latest results" or keep a record about "Dad," the first question is always the same: who do you mean? Version 1.18.0 gives Kaizen a clear, shared answer to that question, so it does not have to guess when the details are health details.',
+        bullets: [
+          "Names alone are not enough. A confirmed relationship tells Kaizen who someone is to you, even when two people in your groups share a name.",
+          "Health information needs care. A wrong guess about whose record is whose can mix up one person's medications, results, or history with another's. Agreed relationships reduce that risk.",
+          "Both people have a say. A relationship is a statement about two people, so one person cannot assign it alone. It counts only when the other person agrees.",
+          "Kaizen does not infer. If you and your cousin are both someone's children, Kaizen does not decide how you are related to each other. Each relationship is stated by one person and confirmed by the other.",
+          "It never changes who can see your health information. Choosing or confirming a relationship does not change group membership or health-sharing consent. Those stay separate decisions.",
+        ],
+      },
+      {
+        heading: "Say how you're related when you invite or join",
+        body: 'Inviting someone to a group now includes a How you\'re related field. Pick a relationship, and the person you invite is asked to confirm it. When they open the invitation, they see your answer in plain words, such as "Karla says she is your parent. Is that right?" They can say Yes, change it, or answer later.',
+        bullets: [
+          "The invitation tells you what happens next: your relationship is confirmed when the other person agrees, and Kai relies on it only after you both agree.",
+          "If the person who invited you changes their answer while you are looking at the invitation, the app tells you before you join, so you can check the new answer first.",
+          "Answering is optional when you join. If you skip it, you can answer later from People.",
+          "To confirm a relationship, your email must be verified. If it is not, the app asks you to verify it first.",
+          "Pending invitees cannot be assigned a relationship until they have joined.",
+        ],
+      },
+      {
+        heading: "People: see everyone, settle anything unresolved",
+        body: "A new People screen in the Groups tab shows how you are related to everyone you share with. It appears once you share with someone. Each person shows a clear status, so you always know whether you need to do something.",
+        bullets: [
+          "Statuses: Confirmed, Needs your answer, Waiting for the other person, or Not set.",
+          "Use the Everyone and Needs action filters to jump straight to what is waiting for you. The Needs action count shows how many.",
+          "If you and someone else chose different answers, People says so neutrally and lets you choose again. Neither answer is treated as the correct one.",
+          "When everything is settled, People tells you everyone is set. Large families load in pages with a Show more people button.",
+          "If someone has not added their name yet, People explains that you can set the relationship once they do.",
+        ],
+      },
+      {
+        heading: "Set or change a relationship at any time",
+        body: 'You do not have to finish everything during setup. Open a member\'s menu in a group and choose Set relationship to say "This person is my..." and pick from relationships such as parent, sibling, child, partner, grandparent, cousin, and in-laws. If you are setting several, the sheet moves through the people one at a time and lets you skip any of them without saving anything.',
+        bullets: [
+          "Changing an existing answer asks the other person to confirm again. Until they agree, Kai does not use the new relationship.",
+          "Saving the same answer twice, such as after a poor connection, does not create duplicates or send extra requests.",
+          "You can only manage relationships that involve you. You cannot set how two other people are related.",
+          "The person who invited you, and people you invited, are handled directly in your group member list, so those changes apply right away without a separate confirmation.",
+          "Relationship names are written from your point of view, with pronoun-aware wording in requests, so each person sees the relationship described the right way round.",
+        ],
+      },
+      {
+        heading: "Ask Kai to save a note or an event",
+        body: 'Kai can now save for you what you ask it to save, in text chat and on voice calls. Say "save a note that Mom\'s cardiology appointment moved" or "add an event for Friday at 3 PM," and Kai creates the record. A Note saved or Event saved chip appears, and a source card opens the record so you can check it.',
+        bullets: [
+          "Kai saves only when you clearly ask. If a detail is missing, such as the date or time of an event, Kai asks a short question instead of guessing.",
+          "If you give a start time but no end time, Kai uses one hour and tells you it did.",
+          "Records saved by Kai belong to you. Kai does not share them with groups or tag other members for you.",
+          "During a voice call, a brief toast confirms each saved record without interrupting the conversation.",
+          "Saving is turned off in Temporary chat and Protected Chat, which promise to leave no trace.",
+        ],
+      },
+      {
+        heading: "Kai on WhatsApp",
+        body: "You can now reach Kai from WhatsApp. Open Profile, choose WhatsApp, and tap Connect WhatsApp. Send the one-time code to Kaizen from your WhatsApp number, and the number is linked to your account. The code works once and expires in 10 minutes. You can also start from WhatsApp and add an email to your Kaizen account later.",
+        bullets: [
+          "Chat with Kai about general health questions, and send photos or PDFs to save as records marked as yours.",
+          "Send a voice note, and Kai transcribes it and replies.",
+          "To keep your stored health information off WhatsApp, Kai there does not read your saved records or memories. Ask in the app for answers that depend on them.",
+          "Files saved from WhatsApp open through a link that asks for a PIN you set on a secure Kaizen page. You never type your PIN into the chat.",
+          "Reply STOP to pause messages and START to resume. You can also ask for an export of your data or delete your data from WhatsApp.",
+          "Profile shows your linked number and how many records were saved through WhatsApp.",
+          "Unlinking asks what to do with those records: keep them, or delete them with the link. Your WhatsApp chat history and PIN are always removed.",
+          "If your WhatsApp account and email account are the same person, you can sign in to combine them. Kaizen asks for your password first and tells you that combining cannot be undone.",
+        ],
+      },
+      {
+        heading: "Protected Chat for shared files",
+        body: "When you share a file from another app to Kaizen, you can now choose whether to talk to Kai about it privately or add it to your Health Records. Talking about it starts a Protected Chat. A banner says whose record it appears to be, or that Kai is not assuming it is yours, and Kai does not add details from the conversation to your memory.",
+        bullets: [
+          "Turn Protected Chat off at any time. Messages already sent stay protected. New messages in that thread may then be saved to memory.",
+          "Choosing Add to Health Records saves the file with your health records instead.",
+        ],
+      },
+      {
+        heading: "Clearer sharing, and stronger protection for groups",
+        body: "When you save a note, file, medication, or event, the group picker now lists only groups you have joined and agreed to share with, instead of groups you have not accepted. Server-side checks for group membership and consent are also stricter, so invitations, joining, and sharing follow the same rules wherever they start.",
+      },
+      {
+        heading:
+          "A livelier welcome, steadier subscriptions, and everyday polish",
+        body: "The landing screen has a new design with motion and family portraits, giving first-time visitors a clearer picture of what Kaizen is for. Subscriptions are also steadier. Kaizen now hears about cancellations from Apple sooner, and Manage Subscription no longer shows outdated state or an account you are not signed in to.",
+        bullets: [
+          "Kai finds saved memories more reliably when they involve dates.",
+          "A first-time chat now refreshes correctly instead of showing a stale screen.",
+          "The Android navigation bar sizes itself correctly on more devices.",
+          "Deleting your account now also covers voice-conversation data and WhatsApp data.",
+          "Sign-in and other core libraries were upgraded under the hood.",
+        ],
+      },
+      {
+        heading: "Availability",
+        body: "Kaizen Health v1.18.0 is available for supported iPhone and Android devices from the App Store and Google Play. Relationships appear in the Groups tab once you share with someone, and each person you invite must confirm theirs from their own account. WhatsApp access is rolling out gradually, so it may not be open for every account yet.",
+      },
+      stayConnectedSection(
+        "Tell us how setting relationships works for your family, what Kai should be able to save next, and how WhatsApp fits into your day.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
     slug: "1-17-0-kai-voice-and-health-record-context",
     version: "1.17.0",
     title: "Kai Gets a Voice, and Your Answers Get More Context",
