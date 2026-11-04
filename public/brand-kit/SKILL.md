@@ -16,5 +16,6 @@ If the user invokes this skill without any other guidance, ask them what they wa
 - **Type:** Source Sans 3 only. Sentence case. Use the `.kz-*` classes (`.kz-headline-md`, `.kz-body-lg`, …).
 - **Icons:** load `assets/kaizen-icons.js`, then use the `Icon` component (`window.KaizenIcons` has 122 glyphs). Never hand-draw SVG icons or use emoji.
 - **Components:** load `_ds_bundle.js`, then `const { Button, Card, ... } = window.KaizenHealthDesignSystem_869e5e`. See `components/*/*.prompt.md` for usage.
+- **Tagline:** "Kaizen Health: The healthcare home for your family" (use verbatim). Product name in text: "Kaizen Health App".
 - **Voice:** reassuring, clear, capable, human. Speak as "you"; the assistant is "Kai".
 - **UI reference:** `ui_kits/mobile-app/` shows the real app composed from these components.

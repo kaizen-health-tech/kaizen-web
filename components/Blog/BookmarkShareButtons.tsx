@@ -16,7 +16,7 @@ const iconButtonClasses =
 // requires auth — show the app install prompt when signed out").
 const BookmarkShareButtons = ({ title, url }: BookmarkShareButtonsProps) => {
   const handleBookmark = () => {
-    toast("Get the Kaizen Health app to save articles to your account.");
+    toast("Get the Kaizen Health App to save articles to your account.");
   };
 
   const handleShare = async () => {

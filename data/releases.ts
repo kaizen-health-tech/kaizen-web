@@ -312,7 +312,7 @@ export const releases: Release[] = [
       },
       {
         heading: "Availability",
-        body: "This update pairs Kaizen Health app v1.17.0 with backend v1.17.4. Update Kaizen on your supported iPhone or Android device to try voice conversations and the new chat source cards. Voice time allowances depend on your plan; saved-memory referencing and document-to-memory features require premium access.",
+        body: "This update pairs Kaizen Health App v1.17.0 with backend v1.17.4. Update Kaizen on your supported iPhone or Android device to try voice conversations and the new chat source cards. Voice time allowances depend on your plan; saved-memory referencing and document-to-memory features require premium access.",
       },
       stayConnectedSection(
         "Tell us how talking with Kai fits into your day, whether the new source cards help you review an answer, and what you would like us to improve next.",

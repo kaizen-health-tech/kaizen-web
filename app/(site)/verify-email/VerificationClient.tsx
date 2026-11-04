@@ -26,7 +26,7 @@ const copyByStatus: Record<
     eyebrow: "Link unavailable",
     title: "This verification link has expired",
     description:
-      "The link may have expired or already been used. Return to the Kaizen Health app to request a fresh email.",
+      "The link may have expired or already been used. Return to the Kaizen Health App to request a fresh email.",
   },
   error: {
     eyebrow: "Couldn’t verify email",

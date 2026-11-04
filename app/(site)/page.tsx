@@ -11,10 +11,10 @@ import { MobileApplicationSchema } from "@/components/Schema";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Organize Your Family's Medical Records | Kaizen Health",
+  title: "Kaizen Health: The healthcare home for your family",
   primaryKeyword: "Family Health Management App",
   description:
-    "Keep family medical records organized, share selected information, and ask Kai questions before appointments with Kaizen Health.",
+    "Kaizen Health is a family health app that keeps medical records in one place, shares selected information securely, and lets you ask Kai before appointments.",
   path: "/",
   image: "/images/open-graph/home.png",
   keywords: [

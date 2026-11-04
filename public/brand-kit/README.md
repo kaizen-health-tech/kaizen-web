@@ -37,6 +37,7 @@ Then open `http://localhost:3000/brand-kit`.
 
 Kaizen's voice is a calm, competent care partner — think a good nurse, not a chatbot or a hospital form.
 
+- **Tagline:** "Kaizen Health: The healthcare home for your family". Use it verbatim, with the colon and sentence case. It is the homepage title and the email signature line. The product is called "Kaizen Health App" in running text (capital A).
 - **Four principles (from the brand kit):** Reassuring, not dismissive · Clear, not reductive · Capable, not clinical · Human, not cute.
 - **Person & address:** Speak to the user as **"you"**; the assistant refers to itself as **"Kai"** in the first person ("I pulled your March labs"). Family framing throughout ("your family's health").
 - **Casing:** Sentence case everywhere — headings, buttons, list titles. Reserve UPPERCASE only for tiny overline labels and badges (letter-spaced). Never Title Case UI.

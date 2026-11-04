@@ -5,7 +5,7 @@ import Inspiration from "@/components/Inspiration";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  primaryKeyword: "About Kaizen Health",
+  primaryKeyword: "About Us",
   description:
     "Learn how Kaizen Health was built for caregivers and families to simplify health collaboration with secure records, shared timelines, and practical AI support.",
   path: "/about",

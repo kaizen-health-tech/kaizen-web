@@ -43,9 +43,9 @@ const sections = [
 ];
 
 export const metadata: Metadata = createPageMetadata({
-  primaryKeyword: "Organizing Medical Records for Aging Parents",
+  primaryKeyword: "Organize Medical Records for Aging Parents",
   description:
-    "Follow this practical guide to organize medical records for aging parents with clear systems, emergency readiness, and easier collaboration across family caregivers.",
+    "Learn how to organize an aging parent's medical records: which to gather first, how to choose a paper or digital system, and how to keep it up to date.",
   path: "/blog/family-history/organizing-medical-records",
   type: "article",
   image: "/images/blog/organizing-medical-records.jpg",

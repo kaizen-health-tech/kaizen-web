@@ -68,6 +68,7 @@ const BlogData: Blog[] = [
     metadata:
       "Blood sugar readings, medicines, symptoms, and diet: what families in India should log between diabetes check-ups, co-authored with Dr. Prabhleen Kaur.",
     url: "/blog/family-history/managing-diabetes-as-a-family",
+    lastModified: "2026-10-21",
     categoryKey: "health-records",
     featured: false,
     readTime: "11 min read",
@@ -84,6 +85,7 @@ const BlogData: Blog[] = [
     metadata:
       "Young people still prefer text for most messages. School studies show something more useful: when children can speak instead of type, many of them say more.",
     url: "/blog/ai-agents/voice-ai-next-generation",
+    lastModified: "2026-10-20",
     categoryKey: "kai-ai",
     featured: true,
     readTime: "10 min read",
@@ -97,6 +99,7 @@ const BlogData: Blog[] = [
     metadata:
       "A 2026 study found children of mothers with depression pay more attention to sad faces as their own symptoms grow. What the family-history risk numbers mean, and what to track.",
     url: "/blog/family-history/family-history-depression-children",
+    lastModified: "2026-09-18",
     categoryKey: "sleep-mind",
     featured: false,
     readTime: "8 min read",
@@ -110,6 +113,7 @@ const BlogData: Blog[] = [
     metadata:
       "A spouse, an adult child, and a sibling each need a different slice of one medical record. What HIPAA actually requires, and how to set up shared family access before a crisis.",
     url: "/blog/family-history/shared-family-medical-record",
+    lastModified: "2026-09-15",
     categoryKey: "health-records",
     featured: true,
     readTime: "23 min read",
@@ -123,6 +127,7 @@ const BlogData: Blog[] = [
     metadata:
       "An AI assistant can organize your symptoms and estimate urgency. It can't measure your oxygen saturation or listen to your chest. A pulmonologist's guide to where the assistant helps, and where it quietly misleads.",
     url: "/blog/ai-agents/ai-health-assistant-breathing-problem",
+    lastModified: "2026-09-05",
     categoryKey: "kai-ai",
     featured: true,
     readTime: "10 min read",
@@ -139,6 +144,7 @@ const BlogData: Blog[] = [
     metadata:
       "Pollsters have asked whether people use AI for health questions. Almost nobody has asked the family-specific version yet. Here's what the data on record actually shows.",
     url: "/blog/ai-agents/is-ai-safe-for-medical-records",
+    lastModified: "2026-08-20",
     categoryKey: "kai-ai",
     featured: false,
     readTime: "11 min read",
@@ -151,6 +157,7 @@ const BlogData: Blog[] = [
     metadata:
       "A side-by-side look at HIPAA status, data training, retention, pricing, and family access across the three biggest 2026 AI health assistants.",
     url: "/blog/ai-agents/ai-health-assistant-comparison",
+    lastModified: "2026-08-21",
     categoryKey: "kai-ai",
     featured: true,
     readTime: "10 min read",
@@ -163,6 +170,7 @@ const BlogData: Blog[] = [
     metadata:
       "A clear family health history helps doctors spot inherited risks, recommend earlier screenings, and make better-informed care decisions.",
     url: "/blog/family-history",
+    lastModified: "2025-01-05",
     categoryKey: "health-records",
     readTime: "6 min read",
     author: editorialTeam,
@@ -174,6 +182,7 @@ const BlogData: Blog[] = [
     metadata:
       "How prenatal screening and diagnostic tests differ, what conditions they check for, when each happens, and what a positive result actually means before you decide.",
     url: "/blog/pregnancy-genetic",
+    lastModified: "2026-09-10",
     categoryKey: "pregnancy",
     readTime: "12 min read",
     author: editorialTeam,
@@ -185,6 +194,7 @@ const BlogData: Blog[] = [
     metadata:
       "What research says about vitamin D, magnesium, insulin sensitivity, and blood sugar control.",
     url: "/blog/diabetes-magnesium-vitamin-d",
+    lastModified: "2025-01-12",
     categoryKey: "nutrition",
     readTime: "5 min read",
     author: editorialTeam,
@@ -196,6 +206,7 @@ const BlogData: Blog[] = [
     metadata:
       "A long-running study found an association between regular yogurt intake and a lower risk of one type of colorectal cancer.",
     url: "/blog/cancer/colorectal-cancer-risk",
+    lastModified: "2025-01-25",
     categoryKey: "nutrition",
     readTime: "4 min read",
     author: editorialTeam,
@@ -208,6 +219,7 @@ const BlogData: Blog[] = [
     metadata:
       "How to document family health history so clinicians can assess inherited risks and plan appropriate screening.",
     url: "/blog/family-history/documenting-family-health",
+    lastModified: "2025-01-10",
     categoryKey: "health-records",
     readTime: "5 min read",
     author: editorialTeam,
@@ -219,6 +231,7 @@ const BlogData: Blog[] = [
     metadata:
       "Practical guidance on home safety, caregiver stress, legal planning, and services that can help aging parents.",
     url: "/blog/family-history/caregiver-guide-aging-parents",
+    lastModified: "2026-08-20",
     categoryKey: "aging-well",
     readTime: "9 min read",
     author: editorialTeam,
@@ -230,6 +243,7 @@ const BlogData: Blog[] = [
     metadata:
       "What older adults should know about creatine, from muscle and brain health to dosing and safety.",
     url: "/blog/health/creatine",
+    lastModified: "2025-01-15",
     categoryKey: "nutrition",
     featured: false,
     readTime: "8 min read",
@@ -242,6 +256,7 @@ const BlogData: Blog[] = [
     metadata:
       "How regular sunlight exposure can support bone health, mood, immunity, and sleep in older adults.",
     url: "/blog/health/sunshine",
+    lastModified: "2025-02-01",
     categoryKey: "aging-well",
     featured: false,
     readTime: "5 min read",
@@ -254,6 +269,7 @@ const BlogData: Blog[] = [
     metadata:
       "A practical system for gathering, organizing, and sharing the records a caregiver needs, on paper, online, or both.",
     url: "/blog/family-history/organizing-medical-records",
+    lastModified: "2025-01-20",
     categoryKey: "health-records",
     readTime: "12 min read",
     author: editorialTeam,
@@ -265,6 +281,7 @@ const BlogData: Blog[] = [
     metadata:
       "Most Americans know family health history matters, but few have collected it. Here is how those records can guide screening and prevention.",
     url: "/blog/family-health-monitoring",
+    lastModified: "2025-12-20",
     categoryKey: "health-records",
     readTime: "14 min read",
     author: editorialTeam,
@@ -276,6 +293,7 @@ const BlogData: Blog[] = [
     metadata:
       "A polygenic risk score estimates inherited risk for eight cardiovascular and metabolic conditions. Here is what the research means for families with a history of heart disease.",
     url: "/blog/heart/genetic-risk-score-heart-disease",
+    lastModified: "2026-07-02",
     categoryKey: "health-records",
     readTime: "5 min read",
     author: editorialTeam,
@@ -287,6 +305,7 @@ const BlogData: Blog[] = [
     metadata:
       "Medicare's GLP-1 Bridge program covers Wegovy, Zepbound, and Foundayo for some patients. Check the eligibility rules and common coverage gaps.",
     url: "/blog/health/medicare-glp1-weight-loss-coverage",
+    lastModified: "2026-08-25",
     categoryKey: "aging-well",
     readTime: "6 min read",
     author: editorialTeam,
@@ -298,6 +317,7 @@ const BlogData: Blog[] = [
     metadata:
       "The life you lost to years of caregiving is a real grief with clinical names. What the research says about loss of self, timelines, and what helps.",
     url: "/blog/caregiving/grieving-the-years-lost-to-caregiving",
+    lastModified: "2026-08-04",
     categoryKey: "family-stories",
     readTime: "9 min read",
     author: editorialTeam,
@@ -310,6 +330,7 @@ const BlogData: Blog[] = [
     metadata:
       "A study of more than 720,000 patients found 48% referred for a kidney transplant never begin the evaluation, and only 19% reach the waitlist. Here's what determines who makes it through.",
     url: "/blog/health/kidney-transplant-evaluation-gap",
+    lastModified: "2026-08-06",
     categoryKey: "health-records",
     readTime: "7 min read",
     author: editorialTeam,
@@ -321,6 +342,7 @@ const BlogData: Blog[] = [
     metadata:
       "A 2021 AARP study found caregivers spend about $7,242 a year out of pocket, but the bigger cost is the income never earned and the retirement contributions never made.",
     url: "/blog/caregiving/retirement-cost-of-caregiving",
+    lastModified: "2026-08-09",
     categoryKey: "aging-well",
     readTime: "9 min read",
     author: editorialTeam,
@@ -332,6 +354,7 @@ const BlogData: Blog[] = [
     metadata:
       "Five companies launched consumer AI health products in the first three months of 2026. What an AI agent actually is, how it differs from a chatbot, and what to check before using one with your family's records.",
     url: "/blog/ai-agents",
+    lastModified: "2026-08-11",
     categoryKey: "kai-ai",
     featured: false,
     readTime: "13 min read",
@@ -344,6 +367,7 @@ const BlogData: Blog[] = [
     metadata:
       "Both can answer a health question. Only one can be given standing access to your family's full record. What actually changes once a health tool can act on data instead of just responding to it.",
     url: "/blog/ai-agents/agent-vs-chatbot",
+    lastModified: "2026-08-13",
     categoryKey: "kai-ai",
     readTime: "8 min read",
     author: editorialTeam,

@@ -19,6 +19,12 @@ export type Blog = {
   author?: Author;
   tags?: string[];
   publishedAt?: string;
+  /**
+   * Last meaningful edit, as YYYY-MM-DD. Feeds the sitemap `lastmod` only; it
+   * does not affect sort order (unlike publishedAt). Keep it in step with the
+   * dateModified (or datePublished) passed to the article's JSON-LD.
+   */
+  lastModified?: string;
   url: string;
   /** One of the 7 canonical blog categories, used for card tinting. */
   categoryKey?: CategoryKey;

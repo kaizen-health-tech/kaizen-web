@@ -51,7 +51,7 @@ export default function AppStoreModal({ onClose }: AppStoreModalProps) {
         </h2>
 
         <p className="mb-6 text-gray-600 dark:text-gray-400">
-          Download the Kaizen Health app for unlimited access to Kai and all
+          Download the Kaizen Health App for unlimited access to Kai and all
           premium features.
         </p>
 

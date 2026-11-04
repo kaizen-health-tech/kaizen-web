@@ -224,7 +224,7 @@ function checkAndConsumeRateLimits(
     return {
       allowed: false,
       message: isDailyLimit
-        ? "You've reached today's chat limit. Please come back tomorrow or download the Kaizen Health app for more access."
+        ? "You've reached today's chat limit. Please come back tomorrow or download the Kaizen Health App for more access."
         : "You're sending messages too quickly. Please wait a moment and try again.",
       state: blockedState,
     };

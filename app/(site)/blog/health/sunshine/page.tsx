@@ -34,9 +34,9 @@ const sections = [
 ];
 
 export const metadata: Metadata = createPageMetadata({
-  primaryKeyword: "Sunlight Benefits for Older Adults",
+  primaryKeyword: "Benefits of Sunlight for Older Adults",
   description:
-    "Learn how daily sunshine supports bone strength, mood, sleep, and immunity in older adults, with practical guidance for safe and consistent exposure.",
+    "The top health benefits of sunlight for older adults, from stronger bones to better mood, sleep, and immunity, plus how to get more sun safely every day.",
   path: "/blog/health/sunshine",
   type: "article",
   image: "/images/blog/sunshine.png",
