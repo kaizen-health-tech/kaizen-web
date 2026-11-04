@@ -43,6 +43,7 @@ const termsToc: DocsTocItem[] = [
   },
   { id: "third-party-services", label: "10. Third-Party Services" },
   { id: "whatsapp", label: "WhatsApp and voice notes" },
+  { id: "connected-health-records", label: "Connected records and FinchNode" },
   { id: "suspension-and-termination", label: "11. Suspension and Termination" },
   { id: "disclaimer-of-warranties", label: "12. Disclaimer of Warranties" },
   { id: "limitation-of-liability", label: "13. Limitation of Liability" },
@@ -109,11 +110,12 @@ export default function DocsPage() {
       </p>
       <p>
         Acceptance of these Terms, including through continued use, does not
-        replace any separate consent required for health data, AI processing, or
-        WhatsApp voice transcription. Before introducing voice transcription, we
-        require existing WhatsApp users to accept an updated WhatsApp consent
-        notice. That processing starts only after acceptance. You can choose to
-        type instead of sending voice notes.
+        replace any separate consent required for health data, connected-record
+        collection or sharing through FinchNode, AI processing, or WhatsApp
+        voice transcription. Before introducing voice transcription, we require
+        existing WhatsApp users to accept an updated WhatsApp consent notice.
+        That processing starts only after acceptance. You can choose to type
+        instead of sending voice notes.
       </p>
 
       <h2 id="eligibility-and-your-account">3. Eligibility and Your Account</h2>
@@ -137,7 +139,12 @@ export default function DocsPage() {
         , which explains what we collect, the third-party analytics and error
         monitoring tools we use, how AI features process your data, how we share
         information, how long we keep it, and how you can access, export, or
-        delete it. The Privacy Policy is incorporated into these Terms.
+        delete it. The Privacy Policy is incorporated into these Terms. Our{" "}
+        <a href="/docs/consumer-health" className="underline">
+          Consumer Health Data Privacy Policy
+        </a>{" "}
+        provides the separate health-data disclosures and rights process,
+        including for connected records retrieved through FinchNode.
       </p>
 
       <h2 id="subscriptions-billing-and-cancellation">
@@ -299,14 +306,17 @@ export default function DocsPage() {
       <p>
         The Services integrate with third parties, including cloud hosting, AI
         providers, WhatsApp (Meta), Google Cloud Speech-to-Text, email delivery,
-        analytics, error monitoring, app stores, and Apple Health and Google
-        Health Connect. These are listed in our{" "}
+        analytics, error monitoring, app stores, Apple Health and Google Health
+        Connect, and FinchNode for connected healthcare records. These are
+        listed in our{" "}
         <a href="/docs/privacy" className="underline">
           Privacy Policy
         </a>
         . Your use of a third-party service is governed by that party's own
-        terms and privacy policy, and we are not responsible for third-party
-        services or content.
+        terms and privacy policy. We do not control third-party services or
+        content. This does not reduce our responsibilities for our own handling
+        of your information or any duties we have under applicable privacy,
+        health, or consumer protection law.
       </p>
 
       <h3 id="whatsapp">10.1 WhatsApp messages and voice notes</h3>
@@ -349,6 +359,77 @@ export default function DocsPage() {
         explained in our Privacy Policy. Unlinking may preserve health records
         you choose to keep. It does not remove copies held in WhatsApp or on
         your devices. These Terms do not reduce our duties or your rights under
+        applicable privacy, health, or consumer protection law.
+      </p>
+
+      <h3 id="connected-health-records">
+        10.2 Connected health records through FinchNode
+      </h3>
+      <p>
+        Kaizen Health offers optional, read-only access to records from
+        participating healthcare systems through FinchNode. This feature
+        currently supports eligible users in the United States connecting their
+        own records to their own Kaizen profile. Do not use it to connect
+        another person's records, including through a dependent or caregiver
+        profile. Availability depends on the healthcare system, your
+        authorization, supported record categories, and the operation of
+        FinchNode and the source system.
+      </p>
+      <p>
+        You choose whether to connect and what sharing to approve through
+        FinchNode's hosted flow. You may need a separate FinchNode account. Sign
+        in only through the healthcare system's authorization page and do not
+        send us your portal password. FinchNode's applicable terms govern your
+        use of its service; these Terms govern your use of Kaizen Health.
+        Accepting these Terms does not replace the separate permissions needed
+        to collect or share health records.
+      </p>
+      <p>
+        The connection allows Kaizen Health to retrieve and display the records
+        covered by your authorization. Continuing synchronization requires your
+        approval and source support and may operate while the App is closed. We
+        do not guarantee any particular update frequency, uninterrupted access,
+        a complete medical history, or availability of an underlying document or
+        attachment. Records may be missing, duplicated, delayed, outdated, or
+        incorrectly classified. A missing record does not establish that a
+        condition, medication, allergy, test, or treatment does not exist.
+        Verify important information with your healthcare provider.
+      </p>
+      <p>
+        Imported records are for information and organization. This feature does
+        not provide medical advice, clinical monitoring, emergency alerts, or a
+        complete record for treatment decisions. Do not start, stop, or change
+        treatment based solely on an imported record or its absence. For urgent
+        medical needs, contact emergency services or a qualified healthcare
+        professional.
+      </p>
+      <p>
+        Edits to an imported record's display name or description affect only
+        its presentation in Kaizen Health and do not amend the source medical
+        record. Ask the healthcare system that holds the record about
+        corrections. Imported records currently do not support AI summaries, Kai
+        processing, or care group sharing through this feature.
+      </p>
+      <p>
+        The individual-record “Delete” action hides a record from your list
+        while the imported content remains stored. Removing a connected provider
+        stops further imports through that connection and starts deletion of its
+        imported records, hidden records, and display edits from Kaizen's active
+        systems. Reconnecting may import the records again. Removing a provider
+        does not itself revoke FinchNode's sharing permission; revoke that
+        separately in your{" "}
+        <a href="https://finchnode.com/me" className="underline">
+          FinchNode account
+        </a>
+        . Kaizen account deletion does not close your FinchNode account or
+        delete records held by your healthcare system. Our{" "}
+        <a href="/docs/privacy" className="underline">
+          Privacy Policy
+        </a>{" "}
+        explains retention, background cleanup, and privacy requests.
+      </p>
+      <p>
+        Nothing in this section waives your rights or reduces our duties under
         applicable privacy, health, or consumer protection law.
       </p>
 

@@ -59,6 +59,21 @@ const ConsumerHealthDataPage = () => (
       </li>
     </ul>
 
+    <p>
+      When you choose to connect your own healthcare records through FinchNode,
+      we receive the categories you approve and the source makes available:
+      medications, conditions, allergies, laboratory results, vital signs,
+      immunizations, clinical document information, and encounters or visits.
+      These records can include sensitive clinical details and identifying
+      information. We also process source, record, connection, consent, and
+      synchronization information. We use this information to retrieve, store,
+      organize, and display your records, apply your display edits, manage
+      authorized updates, and protect access. In this version, imported records
+      are not used for Kai, AI summaries, health-fact memories, or care group
+      sharing. We do not request the separate demographics or insurance claims
+      categories.
+    </p>
+
     <h2 id="sources">Sources of consumer health data</h2>
     <p>
       We receive health data from you; family members or caregivers you
@@ -66,6 +81,13 @@ const ConsumerHealthDataPage = () => (
       when you use that channel; and Apple Health or Google Health Connect when
       you grant access. Our automated features also derive health facts and
       summaries from that information.
+    </p>
+
+    <p>
+      For connected records, our sources include the healthcare systems you
+      authorize, through FinchNode. FinchNode also provides connection, consent,
+      source, and synchronization information. Display names and descriptions
+      you edit come from you.
     </p>
 
     <h2 id="data-shared">Categories of consumer health data we disclose</h2>
@@ -80,12 +102,31 @@ const ConsumerHealthDataPage = () => (
       advertising.
     </p>
 
+    <p>
+      To operate a connection, we exchange an opaque connection reference,
+      requested categories, synchronization preferences, and connection and
+      consent information with FinchNode. Our hosting and storage providers
+      process imported clinical records and associated information to store and
+      display them for you. This integration does not send your existing Kaizen
+      documents or chats to FinchNode, and it does not send imported records to
+      AI providers or care group members. We do not sell consumer health data or
+      use it for targeted advertising.
+    </p>
+
     <h2 id="recipients">Categories of recipients and affiliates</h2>
     <ul>
       <li>
         Hosting and storage processors: Amazon Web Services, Google Cloud and
         Firebase, and Supabase, for the information held in the features they
         support.
+      </li>
+      <li>
+        Health record integration platforms, currently FinchNode, for the
+        connection and consent information exchanged to retrieve the records you
+        authorize. The hosting and storage processors listed above process
+        imported records to provide storage and display. FinchNode also operates
+        a separate patient account and consent service under the notices
+        presented in its flow.
       </li>
       <li>
         AI and transcription processors: OpenAI, Anthropic, and Google, for the
@@ -125,6 +166,21 @@ const ConsumerHealthDataPage = () => (
       request or discriminate against you for exercising these rights.
       Withdrawing consent may prevent a feature that needs that information from
       working.
+    </p>
+    <p>
+      For connected records, removing a provider in Kaizen stops further imports
+      through that connection and starts deletion of its imported records,
+      including hidden records and display edits, from our active systems. The
+      individual-record “Delete” action only hides the record. Revoke FinchNode
+      sharing separately in your{" "}
+      <a href="https://finchnode.com/me" className="underline">
+        FinchNode account
+      </a>
+      . Kaizen account deletion does not close that account or delete your
+      healthcare system's records. You can use the request and appeal methods
+      below to access data, withdraw consent, or request deletion, including for
+      hidden records. We notify processors and other recipients of deletion
+      requests where applicable law requires.
     </p>
     <p>
       Email{" "}

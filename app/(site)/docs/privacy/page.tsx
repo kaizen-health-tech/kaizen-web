@@ -92,6 +92,7 @@ const categoryRows: CategoryRow[] = [
 const privacyToc: DocsTocItem[] = [
   { id: "infocollect", label: "1. Information we collect" },
   { id: "whatsapp", label: "WhatsApp messages and voice notes" },
+  { id: "connected-health-records", label: "Connected records and FinchNode" },
   { id: "infouse", label: "2. How we process it" },
   { id: "legalbases", label: "3. Legal bases" },
   { id: "whoshare", label: "4. Who we share it with" },
@@ -191,7 +192,8 @@ export default function DocsPage() {
           <strong>What we process.</strong> Account details, health information
           you record, documents and voice notes you add, device and usage data,
           and, with your permission, health metrics from Apple Health or Health
-          Connect, contacts, and location. See{" "}
+          Connect, contacts, and location. We also receive healthcare records
+          through FinchNode when you choose to connect a provider. See{" "}
           <a href="#infocollect" className="underline">
             what information we collect
           </a>
@@ -200,13 +202,16 @@ export default function DocsPage() {
         <li>
           <strong>Sensitive information.</strong> We process health data,
           account login credentials, and precise geolocation, with your consent
-          or as permitted by law. We do not collect genetic data or create
-          voiceprints to identify you. Voice recordings can be personal or
-          sensitive information even when we do not use them for identification.
+          or as permitted by law. Imported clinical records can include
+          sensitive details, including genetic information contained in those
+          records. We do not create voiceprints to identify you. Voice
+          recordings can be personal or sensitive information even when we do
+          not use them for identification.
         </li>
         <li>
           <strong>Third parties.</strong> We receive limited data from Apple and
-          Google when you sign in with them or buy a subscription. See{" "}
+          Google when you sign in with them or buy a subscription, and approved
+          records from healthcare systems through FinchNode. See{" "}
           <a href="#thirdparties" className="underline">
             information we receive from third parties
           </a>
@@ -272,6 +277,13 @@ export default function DocsPage() {
           <a href="#infocollect" className="underline">
             What information do we collect?
           </a>
+          <ul>
+            <li>
+              <a href="#connected-health-records" className="underline">
+                Connected health records through FinchNode
+              </a>
+            </li>
+          </ul>
         </li>
         <li>
           <a href="#infouse" className="underline">
@@ -414,16 +426,15 @@ export default function DocsPage() {
         <strong>Sensitive information.</strong> With your consent or as
         otherwise permitted by applicable law, we process health data, account
         login credentials, and precise geolocation.{" "}
-        <strong>
-          We do not collect genetic data or fingerprints, and we do not create
-          voiceprints
-        </strong>
-        . Laws differ in how they classify voice recordings. We treat voice
-        audio and transcripts as sensitive when they contain health information,
-        regardless of whether they qualify as biometric information. If you
-        enable Face ID, Touch ID, or Android biometric unlock, that check
-        happens on your device through the operating system and we never receive
-        or store the underlying data.
+        <strong>We do not collect fingerprints or create voiceprints</strong>.
+        Laws differ in how they classify voice recordings. We treat voice audio
+        and transcripts as sensitive when they contain health information,
+        regardless of whether they qualify as biometric information. Clinical
+        records imported through FinchNode may contain genetic information or
+        other sensitive clinical details within the categories you approve; see
+        section 1.9. If you enable Face ID, Touch ID, or Android biometric
+        unlock, that check happens on your device through the operating system
+        and we never receive or store the underlying data.
       </p>
       <p>
         All personal information that you provide to us must be true, complete,
@@ -521,6 +532,15 @@ export default function DocsPage() {
           <strong>Apple and Google billing</strong>: we receive your transaction
           identifier, product identifier, purchase and renewal dates, and
           entitlement status so we can unlock paid features.
+        </li>
+        <li>
+          <strong>Connected healthcare systems through FinchNode</strong>: with
+          your approval, we receive the records and connection information
+          described in{" "}
+          <a href="#connected-health-records" className="underline">
+            section 1.9
+          </a>
+          .
         </li>
       </ul>
       <p>
@@ -636,6 +656,142 @@ export default function DocsPage() {
         .
       </p>
 
+      <h3 id="connected-health-records">
+        1.9 Connected health records through FinchNode
+      </h3>
+      <p>
+        <strong>Your choice to connect.</strong> Kaizen Health offers an
+        optional connection to participating healthcare systems through
+        FinchNode, a health record integration platform. The feature currently
+        supports your own records through your own profile and is offered to
+        eligible users in the United States. Connecting records for a child,
+        dependent, or another person through a managed or caregiver profile is
+        not currently supported. You can use Kaizen Health without connecting a
+        provider.
+      </p>
+      <p>
+        <strong>How the connection works.</strong> When you choose to connect,
+        we open FinchNode's hosted connection flow. You choose a healthcare
+        system and sign in on that system's authorization page. Kaizen Health
+        does not collect or store your healthcare portal username or password.
+        FinchNode requests permission to collect records and separately asks you
+        to approve sharing records with Kaizen Health. Creating a Kaizen account
+        or accepting our Terms does not, by itself, authorize this connection.
+        FinchNode may require you to create and verify a separate FinchNode
+        account.
+      </p>
+      <p>
+        <strong>Information we receive.</strong> Subject to your approval and
+        the source's availability, we receive medications, conditions,
+        allergies, laboratory results, vital signs, immunizations, clinical
+        document information, and encounters or visit information. Records may
+        include clinical notes, codes, dates, provider information, and other
+        sensitive details within those categories. We also receive source
+        information, record identifiers, synchronization times, and connection
+        and consent information needed to associate the records with your
+        account and manage access. We do not request the separate demographics
+        or insurance claims categories in this version. This does not mean that
+        names or other identifying information cannot appear within a clinical
+        record.
+      </p>
+      <p>
+        <strong>Information exchanged to operate the connection.</strong> We
+        send FinchNode an opaque connection reference, requested record
+        categories, synchronization preferences, and other settings needed to
+        establish the connection. We exchange connection, consent, and
+        synchronization information to operate it. FinchNode retrieves records
+        from the healthcare systems you authorize and makes the approved records
+        available to Kaizen Health. This connection does not upload your
+        existing Kaizen documents or chat history to FinchNode. FinchNode
+        operates its own account and consent controls; review the notices and
+        terms shown in its connection flow.
+      </p>
+      <p>
+        <strong>How we use imported records.</strong> We store and organize
+        imported records for you to view in Kaizen Health, identify their source
+        and synchronization status, apply display edits you make, and manage the
+        connection. Our hosting and storage providers process the imported
+        information as needed to provide these functions. Imported records may
+        appear alongside records you added yourself, but remain associated with
+        their connected source. This version does not send the imported records
+        to Kai or other AI model providers, generate AI summaries or health-fact
+        memories from them, or make them available through care group sharing.
+        Connecting records does not authorize those uses. We do not sell
+        imported records or use them for advertising or AI model training.
+      </p>
+      <p>
+        <strong>Documents and updates.</strong> A clinical document entry may
+        contain information about a document without the underlying PDF, image,
+        or attachment. Connecting does not guarantee that every document or
+        record will be available. If you approve continuing synchronization and
+        the source supports it, updates can continue while the authorization
+        remains active, including when the App is closed. Other connections may
+        support only a one-time import. Updates are not real time and can be
+        delayed, partial, or unavailable. The source and synchronization
+        information help you assess how current a record is.
+      </p>
+      <p>
+        <strong>Editing and hiding a record.</strong> Changes to an imported
+        record's display name or description apply within Kaizen Health. They do
+        not change the healthcare system's medical record. The current
+        individual-record “Delete” action hides the imported record from your
+        list; the imported content remains stored while the connection is
+        active. This action does not revoke access, stop synchronization, or
+        erase the record at its source. To request deletion of stored imported
+        information, use the provider removal or account deletion controls, or
+        contact us using the privacy request details below.
+      </p>
+      <p>
+        <strong>Removing a provider and revoking sharing.</strong> Removing a
+        provider in Kaizen Health stops use of that connection for further
+        imports and starts deletion of that provider's imported records from our
+        active systems, including hidden records and your display edits.
+        Deletion completes through a background cleanup process. Removing one
+        provider does not remove your other connected providers or documents you
+        uploaded separately. Reconnecting can import records again and does not
+        preserve the previous hidden status or display edits.
+      </p>
+      <p>
+        Removing a provider in Kaizen Health does not itself revoke the sharing
+        permission held by FinchNode. To end that permission, sign in to your{" "}
+        <a href="https://finchnode.com/me" className="underline">
+          FinchNode account
+        </a>{" "}
+        and revoke sharing with Kaizen Health. When FinchNode notifies us that
+        sharing has been revoked or has expired, we stop further imports for
+        that connection and start deletion of the affected imported records. You
+        may also contact us for help withdrawing consent or requesting deletion.
+        We handle those requests under the rights process in this Notice and our{" "}
+        <a href="/docs/consumer-health" className="underline">
+          Consumer Health Data Privacy Policy
+        </a>
+        .
+      </p>
+      <p>
+        <strong>Retention and separate copies.</strong> We keep imported
+        clinical records while the associated connection is active, unless you
+        exercise an applicable deletion right sooner. Provider removal,
+        revocation, authorization expiry, and Kaizen account deletion trigger
+        removal of the affected imported records from our active systems.
+        Limited connection or consent information may remain where needed to
+        honor your choices or meet legal duties. Backup copies and legally
+        required retention are subject to section 8 and applicable law; retained
+        copies are not used to continue the disconnected feature.
+      </p>
+      <p>
+        Deleting your Kaizen account does not close your FinchNode account or
+        erase medical records held by a healthcare system. Use FinchNode's
+        controls for its separately held information and contact your healthcare
+        system about its records. Where applicable law requires us to notify
+        processors or other recipients of a deletion request, we do so. These
+        separate controls do not replace your right to make a privacy request to
+        Kaizen Health at{" "}
+        <a href="mailto:info@kaizenhealth.io" className="underline">
+          info@kaizenhealth.io
+        </a>
+        .
+      </p>
+
       <h2 id="infouse">2. How do we process your information?</h2>
       <p className={inShort}>
         In Short: We process your information to provide, improve, and
@@ -648,6 +804,17 @@ export default function DocsPage() {
           <strong>To provide the Services</strong>: create and manage your
           account, store your records, generate summaries and your health score,
           run reminders, and deliver the features you request.
+        </li>
+        <li>
+          <strong>To connect healthcare records</strong>: retrieve, store,
+          organize, and display the records you authorize through FinchNode,
+          apply your display edits, and manage authorized synchronization.
+          Imported records follow the uses and limits in{" "}
+          <a href="#connected-health-records" className="underline">
+            section 1.9
+          </a>
+          , including the current exclusions from AI processing and care group
+          sharing.
         </li>
         <li>
           <strong>To operate AI features</strong>: answer your questions,
@@ -877,6 +1044,21 @@ export default function DocsPage() {
         Meta's processing subject to our instructions or retention periods.
       </p>
 
+      <h3>4.6 FinchNode and connected healthcare systems</h3>
+      <p>
+        When you connect a healthcare system through FinchNode, we exchange the
+        connection and consent information described in{" "}
+        <a href="#connected-health-records" className="underline">
+          section 1.9
+        </a>
+        . FinchNode retrieves the records you authorize and makes the approved
+        records available to us. FinchNode also operates its own patient account
+        and consent controls under the notices presented in its connection flow.
+        Our hosting and storage providers process imported information to store
+        and display it for you. This connection does not send your existing
+        Kaizen documents or chat history to FinchNode.
+      </p>
+
       <h2 id="cookies">
         5. Do we use cookies and other tracking technologies?
       </h2>
@@ -996,6 +1178,19 @@ export default function DocsPage() {
           Associate Agreement described below.
         </li>
       </ul>
+      <p>
+        <strong>Connected-record exception.</strong> Records imported through
+        FinchNode are currently for viewing and organization. We do not send
+        them to Kai or other AI model providers, generate AI summaries or
+        health-fact memories from them, or use them for AI model training.
+        Connecting records does not authorize those uses. These limits apply
+        even when other documents you add use the AI features described here.
+        See{" "}
+        <a href="#connected-health-records" className="underline">
+          section 1.9
+        </a>
+        .
+      </p>
       <p>How we handle this processing:</p>
       <ul>
         <li>
@@ -1105,15 +1300,34 @@ export default function DocsPage() {
           while your account exists, and are deleted when you delete your
           account.
         </strong>{" "}
-        WhatsApp chat history and voice notes follow the separate periods below.
-        You can also delete individual records, documents, and memories at any
-        time without closing your account.
+        WhatsApp content and connected records imported through FinchNode follow
+        the separate rules below. You can delete individual uploaded records,
+        documents, and memories without closing your account. The current
+        individual-record "Delete" action for imported FinchNode records only
+        hides them, as explained in{" "}
+        <a href="#connected-health-records" className="underline">
+          section 1.9
+        </a>
+        .
       </p>
       <p>
         Some records have different retention periods or cannot disappear at the
         same instant:
       </p>
       <ul>
+        <li>
+          <strong>Connected records through FinchNode</strong>: we keep imported
+          clinical records while the associated connection is active, unless you
+          exercise an applicable deletion right sooner. Removing a provider,
+          revoking sharing, authorization expiry, or account deletion triggers
+          deletion of the affected imported records, hidden records, and display
+          edits from our active systems through background cleanup. Limited
+          connection or consent information may remain where needed to honor
+          your choices or meet legal duties. Retained copies are not used to
+          continue the disconnected feature. Removing a provider in Kaizen does
+          not itself revoke FinchNode sharing; revoke that separately in your
+          FinchNode account. See section 1.9.
+        </li>
         <li>
           <strong>WhatsApp chat history</strong>: we keep a limited recent
           thread, including voice transcripts and AI replies. It is scheduled to
@@ -1140,11 +1354,11 @@ export default function DocsPage() {
           anonymous merely because your account has been deleted.
         </li>
         <li>
-          <strong>Encrypted backups</strong>: deletion removes your data from
-          our live systems immediately, but residual copies persist in encrypted
-          backups until they rotate out, which happens within 90 days. These
-          backups are isolated from further processing and are only ever used to
-          recover from a disaster.
+          <strong>Encrypted backups</strong>: after deletion from our active
+          systems, residual copies can persist in encrypted backups until they
+          rotate out, which happens within 90 days. These backups are isolated
+          from further processing and are only ever used to recover from a
+          disaster.
         </li>
         <li>
           <strong>Analytics and crash diagnostics</strong>: usage and error
@@ -1687,6 +1901,13 @@ export default function DocsPage() {
         to that processing.
       </p>
       <p>
+        A patient-directed import from a healthcare system through FinchNode
+        does not, by itself, make Kaizen Health a HIPAA covered entity or
+        business associate. The source of an imported record does not determine
+        whether HIPAA applies to our handling of it. Our privacy commitments and
+        applicable consumer health privacy laws still apply.
+      </p>
+      <p>
         Being in the United States or sending health information does not by
         itself make your use subject to HIPAA. A Google Cloud BAA does not cover
         WhatsApp (Meta) or every AI service. The WhatsApp channel is not offered
@@ -1789,9 +2010,15 @@ export default function DocsPage() {
         your health records and entries, uploaded documents and media, your
         health-fact memories and their embeddings, your group memberships and
         invitations, your stored device push tokens, and your sign-in
-        credentials. Deletion is permanent and cannot be undone. We complete
-        deletion immediately for in-app requests, and within 30 days for
-        requests sent by email or through support.
+        credentials. Deletion is permanent and cannot be undone. In-app requests
+        start the deletion flow; imported FinchNode records are removed through
+        the background cleanup described in sections 1.9 and 8. We complete
+        requests sent by email or through support within 30 days. The
+        individual-record "Delete" action for imported records hides them rather
+        than erasing the stored content. Removing a provider starts deletion of
+        that provider's imported records. Deleting your Kaizen account does not
+        close your FinchNode account or erase records held by your healthcare
+        system; use their separate controls for those copies.
       </p>
       <p>
         <strong>What may remain, and why:</strong> encrypted backups until the
