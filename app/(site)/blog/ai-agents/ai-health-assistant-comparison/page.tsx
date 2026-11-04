@@ -64,7 +64,6 @@ const AIHealthAssistantComparison = () => {
       description="Three of the biggest tech companies in the world now offer an AI health assistant. Here's how Microsoft, OpenAI, and Amazon actually differ on HIPAA status, data training, retention, and whether any of them are built for a family, not just one person."
       image="/images/blog/ai-health-assistant-comparison.jpg"
       imageAlt="An adult daughter and her senior mother sitting on a park bench together, looking closely at a smartphone screen"
-      datePublished="2026-08-21"
       url="/blog/ai-agents/ai-health-assistant-comparison"
       categoryKey="kai-ai"
       authorCredentials="Reviewed by the Kaizen Health editorial team"

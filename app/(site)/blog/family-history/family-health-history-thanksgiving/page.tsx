@@ -77,7 +77,6 @@ const FamilyHealthHistoryThanksgiving = () => {
       description="Thanksgiving is National Family History Day. What to ask relatives, how to start the conversation, and how to write down family health history for your doctor."
       image="/images/blog/family-health-history-thanksgiving-hero.png"
       imageAlt="A young woman writing in a notebook as her grandmother tells a story on a sofa, with a box of old family photographs on the coffee table and a holiday dinner table blurred in the background"
-      datePublished="2026-11-12"
       url="/blog/family-history/family-health-history-thanksgiving"
       categoryKey="health-records"
       authorCredentials="Reviewed by the Kaizen Health editorial team"

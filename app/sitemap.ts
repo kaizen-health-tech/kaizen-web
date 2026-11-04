@@ -92,7 +92,7 @@ const withDate = (date?: string) => (date ? { lastModified: date } : {});
 export default function sitemap(): MetadataRoute.Sitemap {
   const publishedPosts = getSortedPosts();
   const postDates = new Map(
-    publishedPosts.map((post) => [post.url, toIsoDate(post.lastModified)]),
+    publishedPosts.map((post) => [post.url, toIsoDate(post.dateModified ?? post.datePublished)]),
   );
   const legalDates = new Map(
     legalDocs.map((doc) => [
@@ -134,7 +134,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPages: MetadataRoute.Sitemap = [
     ...publishedPosts.map((post) => ({
       url: post.url,
-      lastModified: toIsoDate(post.lastModified),
+      lastModified: toIsoDate(post.dateModified ?? post.datePublished),
     })),
     ...unlistedBlogPages,
   ].map((page) => ({
@@ -150,7 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...withDate(
         latestDate(
           getPostsForPage(Number(route.split("/").pop())).map((post) =>
-            toIsoDate(post.lastModified),
+            toIsoDate(post.dateModified ?? post.datePublished),
           ),
         ),
       ),

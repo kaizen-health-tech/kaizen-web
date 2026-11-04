@@ -4,7 +4,7 @@ import { PageHero } from "@/components/Common/PageHero";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  primaryKeyword: "Healthcare Leadership Team",
+  primaryKeyword: "Our Team",
   description:
     "Meet the Kaizen Health founders, clinicians, and builders creating secure tools that help families coordinate care, share records, and make confident decisions.",
   path: "/team",

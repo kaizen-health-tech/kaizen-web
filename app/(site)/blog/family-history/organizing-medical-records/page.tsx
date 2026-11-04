@@ -58,7 +58,6 @@ const OrganizingMedicalRecords = () => {
       description="A practical system for gathering, organizing, and sharing the records a caregiver needs, on paper, online, or both."
       image="/images/blog/organizing-medical-records.jpg"
       imageAlt="Organizing medical records for aging parents"
-      datePublished="2025-01-20"
       url="/blog/family-history/organizing-medical-records"
       categoryKey="health-records"
       readTime="12 min read"

@@ -57,8 +57,6 @@ const SupportingAgingParents = () => {
       description="Practical guidance on home safety, caregiver stress, legal planning, and services that can help aging parents."
       image="/images/blog/caregiver-guide.png"
       imageAlt="Supporting aging parents"
-      datePublished="2025-01-15"
-      dateModified="2026-08-20"
       url="/blog/family-history/caregiver-guide-aging-parents"
       categoryKey="aging-well"
       readTime="10 min read"

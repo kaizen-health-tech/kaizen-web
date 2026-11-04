@@ -20,11 +20,13 @@ export type Blog = {
   tags?: string[];
   publishedAt?: string;
   /**
-   * Last meaningful edit, as YYYY-MM-DD. Feeds the sitemap `lastmod` only; it
-   * does not affect sort order (unlike publishedAt). Keep it in step with the
-   * dateModified (or datePublished) passed to the article's JSON-LD.
+   * Single source for the article's dates (YYYY-MM-DD). ArticleLayout reads
+   * them for the JSON-LD and the "Updated" line, and the sitemap reads them for
+   * `lastmod`. They do not affect sort order (unlike publishedAt).
    */
-  lastModified?: string;
+  datePublished?: string;
+  /** Only set when the article was materially edited after publishing. */
+  dateModified?: string;
   url: string;
   /** One of the 7 canonical blog categories, used for card tinting. */
   categoryKey?: CategoryKey;

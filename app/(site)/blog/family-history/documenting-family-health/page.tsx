@@ -51,7 +51,6 @@ const DocumentingFamilyHealth = () => {
       description="How to document family health history so clinicians can assess inherited risks and plan appropriate screening."
       image="/images/blog/family-health.png"
       imageAlt="Family reviewing health documents"
-      datePublished="2025-01-10"
       url="/blog/family-history/documenting-family-health"
       categoryKey="health-records"
       readTime="5 min read"

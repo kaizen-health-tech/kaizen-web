@@ -86,7 +86,6 @@ const RealCostOfFamilyCaregiving = () => {
       description="Caring for a parent costs money, income and health, and most families count only the first. Here is what each cost looks like, what the same care costs to buy, and what helps."
       image="/images/blog/real-cost-of-family-caregiving-hero.png"
       imageAlt="A woman at a kitchen table looking out the window, with household bills and a calculator, a laptop and work lanyard, and a pill organizer and blood pressure monitor spread in front of her"
-      datePublished="2026-10-29"
       url="/blog/caregiving/real-cost-of-family-caregiving"
       categoryKey="aging-well"
       authorCredentials="Reviewed by the Kaizen Health editorial team"

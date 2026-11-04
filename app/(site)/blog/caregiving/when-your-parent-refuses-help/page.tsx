@@ -76,7 +76,6 @@ const WhenYourParentRefusesHelp = () => {
       description="When an elderly parent refuses help, you cannot force it, but you can change how you ask. What works, what to avoid, and when to call a doctor or attorney."
       image="/images/blog/when-your-parent-refuses-help-hero.png"
       imageAlt="An elderly woman standing in her kitchen with a hand on a chair and a pill organizer on the counter, looking out the window, while her adult daughter waits quietly at the table behind her"
-      datePublished="2026-11-10"
       url="/blog/caregiving/when-your-parent-refuses-help"
       categoryKey="aging-well"
       authorCredentials="Reviewed by the Kaizen Health editorial team"

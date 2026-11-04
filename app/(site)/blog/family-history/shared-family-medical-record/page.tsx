@@ -99,8 +99,6 @@ const SharedFamilyMedicalRecord = () => {
       description="A spouse, an adult child, and a sibling each need a different slice of the same record. Here's what HIPAA actually requires, how it changes for aging parents and teenagers, and how to set shared access up before you need it."
       image="/images/blog/shared-family-record-hero.png"
       imageAlt="An adult daughter and her older mother sitting together at a table, looking over paperwork and a tablet"
-      datePublished="2026-09-15"
-      dateModified="2026-09-15"
       url="/blog/family-history/shared-family-medical-record"
       categoryKey="health-records"
       authorName="Kaizen Health Editorial Team"

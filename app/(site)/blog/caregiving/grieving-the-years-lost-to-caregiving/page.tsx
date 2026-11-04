@@ -59,7 +59,6 @@ const GrievingTheYearsLostToCaregiving = () => {
       description="The life you lost to years of caregiving is a real grief with clinical names. What the research says about loss of self, timelines, and what helps."
       image="/images/blog/caregiver-grief.png"
       imageAlt="Roses on a windowsill behind fogged glass, looking out on a bare winter garden"
-      datePublished="2026-08-04"
       url="/blog/caregiving/grieving-the-years-lost-to-caregiving"
       categoryKey="family-stories"
       readTime="9 min read"

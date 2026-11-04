@@ -63,7 +63,6 @@ const FamilyHealthMonitoringArticle = () => {
       description="Learn how family health history can guide earlier screening for hereditary risks, including colorectal cancer, breast cancer, heart disease, and type 2 diabetes."
       image="/images/blog/family-generation.png"
       imageAlt="Multi-generational family representing family health history"
-      datePublished="2025-12-20"
       url="/blog/family-health-monitoring"
       categoryKey="health-records"
       authorName="Kaizen Health Research Team"

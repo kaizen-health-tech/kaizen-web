@@ -49,7 +49,6 @@ const FamilyHistory = () => {
       description="Understand why documenting family health records improves prevention, diagnosis, and coordination, and learn practical ways to keep critical information accessible."
       image="/images/blog/family-history.png"
       imageAlt="Family reviewing health documents"
-      datePublished="2025-01-05"
       url="/blog/family-history"
       categoryKey="health-records"
       readTime="6 min read"

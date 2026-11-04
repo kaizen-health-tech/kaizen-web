@@ -65,7 +65,6 @@ const ManagingDiabetesAsAFamily = () => {
       description="Blood sugar readings, medicines, symptoms, and diet: a practical tracking system for families managing diabetes together between check-ups, co-authored with Dr. Prabhleen Kaur."
       image="/images/blog/managing-diabetes.png"
       imageAlt="A woman, an older man and a younger man at a kitchen table with a glucometer, a weekly pill organizer and a handwritten logbook, reviewing a phone together"
-      datePublished="2026-10-21"
       url="/blog/family-history/managing-diabetes-as-a-family"
       categoryKey="health-records"
       authorName="Kaizen Health Editorial Team & Dr. Prabhleen Kaur"

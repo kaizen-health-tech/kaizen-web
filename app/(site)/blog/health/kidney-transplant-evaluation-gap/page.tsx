@@ -63,7 +63,6 @@ const KidneyTransplantEvaluationGap = () => {
       description="A study of more than 720,000 patients found 48% referred for a kidney transplant never begin the evaluation, and only 19% reach the waitlist. Here's what determines who makes it through."
       image="/images/blog/kidney-transplant.png"
       imageAlt="A patient reviewing paperwork with a clipboard during a kidney transplant evaluation appointment"
-      datePublished="2026-08-06"
       url="/blog/health/kidney-transplant-evaluation-gap"
       categoryKey="health-records"
       readTime="7 min read"

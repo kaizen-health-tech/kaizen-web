@@ -262,8 +262,6 @@ const VoiceAINextGeneration = () => {
       description="Young people still prefer text for most messages. The stronger evidence is different: when children can speak instead of type, many of them say more. Here's what the research supports, what it doesn't, and where voice agents fit."
       image="/images/blog/voice-ai-next-generation-hero.png"
       imageAlt="Illustration of a microphone emitting a sound waveform that resolves into lines of written text with a blinking cursor, on a deep purple background"
-      datePublished="2026-10-20"
-      dateModified="2026-10-20"
       url="/blog/ai-agents/voice-ai-next-generation"
       categoryKey="kai-ai"
       authorCredentials="Reviewed by the Kaizen Health editorial team"

@@ -58,7 +58,6 @@ const DiabetesMagnesiumVitaminD = () => {
       description="What research says about vitamin D, magnesium, insulin sensitivity, and blood sugar control."
       image="/images/blog/diabetes-magnesium-vitamin-d.png"
       imageAlt="Vitamin D and magnesium in diabetes management"
-      datePublished="2025-01-12"
       url="/blog/diabetes-magnesium-vitamin-d"
       categoryKey="nutrition"
       readTime="5 min read"

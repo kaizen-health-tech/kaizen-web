@@ -48,7 +48,6 @@ const ColorectalCancerRisk = () => {
       description="Research published in Gut Microbes found an association between regular yogurt intake and a lower risk of one type of colon cancer."
       image="/images/blog/yogurt.jpeg"
       imageAlt="Bowl of yogurt with berries"
-      datePublished="2025-01-25"
       url="/blog/cancer/colorectal-cancer-risk"
       categoryKey="nutrition"
       readTime="4 min read"

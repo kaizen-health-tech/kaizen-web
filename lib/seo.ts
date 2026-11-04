@@ -4,8 +4,14 @@ export const COMPANY_NAME = "Kaizen Health";
 export const SITE_URL = "https://kaizenhealth.io";
 export const DEFAULT_SOCIAL_IMAGE = "/images/logo/kaizen-logo.png";
 
-const MIN_META_DESCRIPTION_LENGTH = 150;
+// Google shows roughly 160 characters of a meta description. There is no
+// minimum, so a short description is left alone: padding it with a generic
+// sentence and then cutting at the limit produced fragments such as
+// "...organize records, and." on dozens of pages.
 const MAX_META_DESCRIPTION_LENGTH = 160;
+// A sentence boundary earlier than this would leave too little of the
+// description, so a word-boundary cut with an ellipsis is used instead.
+const MIN_SENTENCE_CUT_LENGTH = 100;
 
 const sanitizeText = (value: string) => value.replace(/\s+/g, " ").trim();
 
@@ -20,7 +26,7 @@ const trimToLength = (value: string, maxLength: number) => {
 };
 
 const ensureEndingPunctuation = (value: string) =>
-  /[.!?]$/.test(value) ? value : `${value}.`;
+  /[.!?…]$/.test(value) ? value : `${value}.`;
 
 export const buildTitle = (primaryKeyword: string) =>
   `${sanitizeText(primaryKeyword)} | ${COMPANY_NAME}`;
@@ -33,6 +39,7 @@ export const absoluteUrl = (path: string) => {
   return url.endsWith("/") ? url.slice(0, -1) : url;
 };
 
+// Only used when a page passes an empty description.
 const fallbackDescription = (primaryKeyword: string) =>
   `${primaryKeyword} with ${COMPANY_NAME} helps families organize medical records, share secure updates, and coordinate care with AI guidance before every appointment.`;
 
@@ -40,43 +47,32 @@ export const normalizeDescription = (
   description: string,
   primaryKeyword: string,
 ) => {
-  let normalized = sanitizeText(description);
+  const normalized = sanitizeText(description) || fallbackDescription(primaryKeyword);
 
-  if (normalized.length < MIN_META_DESCRIPTION_LENGTH) {
-    normalized = sanitizeText(
-      `${normalized} ${COMPANY_NAME} helps families share secure updates, organize records, and stay aligned on care decisions.`,
-    );
+  if (normalized.length <= MAX_META_DESCRIPTION_LENGTH) {
+    // A description already at the limit has no room for a closing period.
+    return normalized.length < MAX_META_DESCRIPTION_LENGTH
+      ? ensureEndingPunctuation(normalized)
+      : normalized;
   }
 
-  if (normalized.length < MIN_META_DESCRIPTION_LENGTH) {
-    normalized = sanitizeText(fallbackDescription(primaryKeyword));
+  // Too long: keep whole sentences when one fits, so it never ends mid-thought.
+  const window = normalized.slice(0, MAX_META_DESCRIPTION_LENGTH + 1);
+  let sentenceEnd = -1;
+  for (const match of window.matchAll(/[.!?](?=\s|$)/g)) {
+    sentenceEnd = match.index ?? sentenceEnd;
   }
 
-  if (normalized.length > MAX_META_DESCRIPTION_LENGTH) {
-    normalized = trimToLength(normalized, MAX_META_DESCRIPTION_LENGTH);
+  if (sentenceEnd + 1 >= MIN_SENTENCE_CUT_LENGTH) {
+    return window.slice(0, sentenceEnd + 1);
   }
 
-  normalized = ensureEndingPunctuation(normalized);
-
-  if (normalized.length > MAX_META_DESCRIPTION_LENGTH) {
-    normalized = ensureEndingPunctuation(
-      trimToLength(
-        normalized.replace(/[.!?]+$/, ""),
-        MAX_META_DESCRIPTION_LENGTH - 1,
-      ),
-    );
-  }
-
-  if (normalized.length < MIN_META_DESCRIPTION_LENGTH) {
-    const expandedFallback = sanitizeText(
-      `${primaryKeyword} from ${COMPANY_NAME} keeps families connected with secure records, shared timelines, and actionable AI insights for better daily care coordination.`,
-    );
-    normalized = ensureEndingPunctuation(
-      trimToLength(expandedFallback, MAX_META_DESCRIPTION_LENGTH),
-    );
-  }
-
-  return normalized;
+  // Otherwise cut at a word boundary and mark the cut.
+  const cut = trimToLength(normalized, MAX_META_DESCRIPTION_LENGTH - 1).replace(
+    /[\s,;:\-–—]+$/,
+    "",
+  );
+  return `${cut}…`;
 };
 
 type PageMetadataOptions = {

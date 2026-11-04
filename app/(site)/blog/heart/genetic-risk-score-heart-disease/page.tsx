@@ -49,7 +49,6 @@ const GeneticRiskScoreHeartDisease = () => {
       description="A polygenic risk score can estimate inherited risk for 8 cardiovascular and metabolic conditions. Learn what the research found and where the test falls short."
       image="/images/blog/heart-disease.png"
       imageAlt="DNA strand illustration representing a genetic risk score for heart disease"
-      datePublished="2026-07-02"
       url="/blog/heart/genetic-risk-score-heart-disease"
       categoryKey="health-records"
       readTime="5 min read"

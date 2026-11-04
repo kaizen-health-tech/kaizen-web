@@ -63,7 +63,6 @@ const IsAiSafeForMedicalRecords = () => {
       description="Pollsters have measured whether people use AI for health questions and how worried they are about privacy in general. Almost nobody has asked the family-specific version of that question yet. Here's what the data on record actually shows, and what it doesn't."
       image="/images/blog/is-ai-safe-for-medical-records.png"
       imageAlt="An adult daughter and her senior mother looking together at a smartphone screen, smiling, in natural outdoor light"
-      datePublished="2026-08-20"
       url="/blog/ai-agents/is-ai-safe-for-medical-records"
       categoryKey="kai-ai"
       authorCredentials="Reviewed by the Kaizen Health editorial team"

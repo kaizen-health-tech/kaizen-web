@@ -49,7 +49,6 @@ const SunshineBlogPage = () => {
       description="How regular sunlight exposure can support bone health, mood, immunity, and sleep in older adults."
       image="/images/blog/sunshine.png"
       imageAlt="Older adult enjoying sunshine in a park"
-      datePublished="2025-02-01"
       url="/blog/health/sunshine"
       categoryKey="aging-well"
       readTime="5 min read"

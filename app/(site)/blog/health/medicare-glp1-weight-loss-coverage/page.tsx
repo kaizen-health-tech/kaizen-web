@@ -57,8 +57,6 @@ const MedicareGlp1WeightLossCoverage = () => {
       description="Medicare's GLP-1 Bridge program covers Wegovy, Zepbound, and Foundayo for some patients at a $50 monthly copay. Review the eligibility rules and coverage gaps."
       image="/images/blog/glp-1.png"
       imageAlt="Pills, family, weight loss, Medicare's new GLP-1 weight-loss drug coverage online"
-      datePublished="2026-07-10"
-      dateModified="2026-08-25"
       url="/blog/health/medicare-glp1-weight-loss-coverage"
       categoryKey="aging-well"
       readTime="6 min read"

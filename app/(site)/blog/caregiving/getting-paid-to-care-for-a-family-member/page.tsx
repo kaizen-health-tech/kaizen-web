@@ -75,7 +75,6 @@ const GettingPaidToCareForAFamilyMember = () => {
       description="Medicaid, VA and state programs can pay a family caregiver, but the rules are set by state and the person you care for must qualify. Here is how to find out what applies to you."
       image="/images/blog/getting-paid-to-care-for-a-family-member-hero.png"
       imageAlt="A woman at a table in the evening light writing on a paper form, with a laptop, a folder and a mug beside her, while her elderly father reads in an armchair behind her"
-      datePublished="2026-11-03"
       url="/blog/caregiving/getting-paid-to-care-for-a-family-member"
       categoryKey="aging-well"
       authorCredentials="Reviewed by the Kaizen Health editorial team"

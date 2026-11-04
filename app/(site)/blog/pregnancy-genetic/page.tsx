@@ -92,8 +92,6 @@ const PregnancyGenetic = () => {
       description="Screening estimates the chance of a genetic condition; diagnostic tests confirm it. Here is what prenatal tests look for, when they happen, what they cost, and what a positive result actually means before you decide anything."
       image="/images/blog/pregnancy-genetic.png"
       imageAlt="A pregnant person reviewing prenatal genetic screening options with a clinician across a table"
-      datePublished="2025-01-06"
-      dateModified="2026-09-10"
       url="/blog/pregnancy-genetic"
       categoryKey="pregnancy"
       authorName="Kaizen Health Editorial Team"

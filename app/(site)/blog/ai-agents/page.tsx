@@ -59,7 +59,6 @@ const AIAgentsInFamilyHealth = () => {
       description="Five companies launched consumer AI health products in the first three months of 2026. Here's what an AI agent actually is, how it differs from a chatbot, and what to check before using one with your family's records."
       image="/images/blog/ai-agents-family-health.png"
       imageAlt="An adult daughter and her senior mother sitting together at a kitchen table, looking at a smartphone screen in natural daylight"
-      datePublished="2026-08-11"
       url="/blog/ai-agents"
       categoryKey="kai-ai"
       authorCredentials="Reviewed by the Kaizen Health editorial team"

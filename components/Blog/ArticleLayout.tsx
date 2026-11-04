@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { notFound } from "next/navigation";
-import { isDraftUrl } from "@/lib/blog";
+import { getPostByUrl, isDraftUrl } from "@/lib/blog";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
 import {
   categoryHref as getCategoryHref,
@@ -21,7 +21,8 @@ export interface ArticleLayoutProps {
   description: string;
   image?: string;
   imageAlt?: string;
-  datePublished: string;
+  /** Only for pages that are not in blogData; otherwise dates come from there. */
+  datePublished?: string;
   dateModified?: string;
   url: string;
   /** One of the 7 canonical categories — drives the breadcrumb, its hub link, and "Keep reading" tag colour/matching. */
@@ -47,8 +48,8 @@ const ArticleLayout = ({
   description,
   image,
   imageAlt,
-  datePublished,
-  dateModified,
+  datePublished: datePublishedProp,
+  dateModified: dateModifiedProp,
   url,
   categoryKey,
   authorName = "Kaizen Health Editorial Team",
@@ -64,6 +65,17 @@ const ArticleLayout = ({
 }: ArticleLayoutProps) => {
   // A post flagged `draft: true` in blogData is committed but not public.
   if (isDraftUrl(url)) notFound();
+
+  // blogData is the single source for article dates (JSON-LD, the "Updated"
+  // line and the sitemap lastmod). Props remain only for pages not listed there.
+  const post = getPostByUrl(url);
+  const datePublished = post?.datePublished ?? datePublishedProp;
+  const dateModified = post?.dateModified ?? dateModifiedProp;
+  if (!datePublished) {
+    throw new Error(
+      `ArticleLayout: no datePublished for ${url}. Add it to blogData.`,
+    );
+  }
 
   const category = getCategory(categoryKey);
   const resolvedCategoryHref = getCategoryHref(categoryKey);

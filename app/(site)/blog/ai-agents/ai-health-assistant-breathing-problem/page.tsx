@@ -74,7 +74,6 @@ const AiHealthAssistantBreathingProblem = () => {
       description="An AI assistant can organize your symptoms and give you a rough sense of urgency. It cannot watch you breathe, listen to your chest, or measure your oxygen saturation, and those are the findings that matter most in a respiratory complaint. A pulmonologist's guide to where the assistant genuinely helps, and where it can quietly mislead."
       image="/images/blog/dr-benur-ai-assistant-breathing-problem.png"
       imageAlt="Placeholder hero image — swap for final art of a person checking a fingertip pulse oximeter reading at home"
-      datePublished="2026-09-05"
       url="/blog/ai-agents/ai-health-assistant-breathing-problem"
       categoryKey="kai-ai"
       authorName="Dr. Abhishek J. Benur, MD"

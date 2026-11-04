@@ -92,7 +92,6 @@ const RetirementCostOfCaregiving = () => {
       description="Caring for a parent is usually counted in receipts. The larger number is the income never earned and the retirement contributions never made — and that one keeps growing after the caregiving ends."
       image="/images/blog/cost-of-retirement.png"
       imageAlt="An adult child sitting with an aging parent, reviewing paperwork and bills at a kitchen table"
-      datePublished="2026-08-09"
       url="/blog/caregiving/retirement-cost-of-caregiving"
       categoryKey="aging-well"
       authorCredentials="Reviewed by the Kaizen Health editorial team"

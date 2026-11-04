@@ -60,11 +60,10 @@ const organizationSchema = {
     url: absoluteUrl("/contact"),
     availableLanguage: "English",
   },
-  // Every profile a person could land on while trying to verify "is this the
-  // real Kaizen Health" should be listed here — this @id is what Google's
-  // entity graph resolves to when it sees these same URLs cited elsewhere
-  // (App Store, social bios, press). Keep in sync as new profiles go live
-  // (Crunchbase, G2, Product Hunt, etc. — see docs/brand-serp-seo-strategy.md).
+  // List every public profile that is verifiably the real Kaizen Health. Google
+  // resolves this @id through these URLs, and another company shares the name,
+  // so each profile should use the same name, logo and kaizenhealth.io link.
+  // Add new profiles (G2, Product Hunt, etc.) here once they are live.
   sameAs: [
     "https://twitter.com/kaizenhealthio",
     "https://linkedin.com/company/kaizen-health-io",
@@ -72,6 +71,7 @@ const organizationSchema = {
     "https://www.facebook.com/profile.php?id=61562247803536",
     "https://apps.apple.com/us/app/kaizen-health-family/id6472772538",
     "https://play.google.com/store/apps/details?id=io.kaizenhealth.app",
+    "https://www.crunchbase.com/organization/kaizen-health-family-ai",
   ],
 };
 

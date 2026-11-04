@@ -10,6 +10,9 @@ export const POSTS_PER_PAGE = 6;
 export const getPublishedPosts = (): Blog[] =>
   BlogData.filter((post) => !post.draft);
 
+export const getPostByUrl = (url: string): Blog | undefined =>
+  BlogData.find((post) => post.url === url);
+
 export const isDraftUrl = (url: string): boolean =>
   BlogData.some((post) => post.draft && post.url === url);
 

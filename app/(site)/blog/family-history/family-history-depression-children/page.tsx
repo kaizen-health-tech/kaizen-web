@@ -68,8 +68,6 @@ const FamilyHistoryDepressionChildren = () => {
       description="A 2026 Binghamton University study found children of mothers with depression show a distinct attention pattern to sad faces as their own symptoms grow. What the family-history risk numbers mean, and how to track it."
       image="/images/blog/family-history-depression-hero.png"
       imageAlt="A mother and young daughter reading a picture book together at a sunlit kitchen table"
-      datePublished="2026-09-18"
-      dateModified="2026-09-18"
       url="/blog/family-history/family-history-depression-children"
       categoryKey="sleep-mind"
       readTime="8 min read"

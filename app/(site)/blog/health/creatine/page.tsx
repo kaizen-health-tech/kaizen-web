@@ -68,7 +68,6 @@ const CreatineAgingGuide = () => {
       description="Review creatine research for older adults, including safety, muscle and brain health, dosage, and when to speak with a doctor."
       image="/images/blog/creatine.png"
       imageAlt="Creatine supplementation guide for aging adults"
-      datePublished="2025-01-15"
       url="/blog/health/creatine"
       categoryKey="nutrition"
       readTime="8 min read"

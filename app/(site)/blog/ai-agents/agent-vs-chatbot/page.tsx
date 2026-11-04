@@ -65,7 +65,6 @@ const AIAgentVsChatbot = () => {
       description="Both can answer a health question. Only one of them can be given standing access to your family's full record. Here's what that distinction actually means before you connect either one to a parent's or child's health data."
       image="/images/blog/ai-agent-vs-chatbot.png"
       imageAlt="An adult daughter sitting beside her senior mother at a kitchen table, both looking at a smartphone screen together in natural daylight"
-      datePublished="2026-08-13"
       url="/blog/ai-agents/agent-vs-chatbot"
       categoryKey="kai-ai"
       authorCredentials="Reviewed by the Kaizen Health editorial team"
