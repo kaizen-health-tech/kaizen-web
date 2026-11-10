@@ -23,7 +23,7 @@ const BlogData: Blog[] = [
   },
   {
     id: 27,
-    draft: true,
+    draft: false,
     mainImage: "/images/blog/when-your-parent-refuses-help-hero.png",
     title: "When Your Parent Refuses Help: What You Can and Cannot Do",
     metadata:
@@ -37,7 +37,7 @@ const BlogData: Blog[] = [
   },
   {
     id: 26,
-    draft: true,
+    draft: false,
     mainImage: "/images/blog/getting-paid-to-care-for-a-family-member-hero.png",
     title:
       "Getting Paid to Care for a Family Member: Medicaid, VA, and State Programs in 2026",
@@ -52,7 +52,7 @@ const BlogData: Blog[] = [
   },
   {
     id: 25,
-    draft: true,
+    draft: false,
     mainImage: "/images/blog/real-cost-of-family-caregiving-hero.png",
     title:
       "The Real Cost of Family Caregiving: Money, Health, and the Self You Put on Hold",
