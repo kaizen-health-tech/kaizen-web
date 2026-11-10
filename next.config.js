@@ -79,6 +79,18 @@ const nextConfig = {
           },
         ],
       },
+      {
+        // The join URL carries a credential (the invite code): never cache it,
+        // never index it, never send it as a referrer. Listed after the
+        // site-wide security headers on purpose: when two rules set the same
+        // header, the later one wins.
+        source: "/join/:path*",
+        headers: [
+          { key: "Cache-Control", value: "no-store" },
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "Referrer-Policy", value: "no-referrer" },
+        ],
+      },
     ];
   },
 };

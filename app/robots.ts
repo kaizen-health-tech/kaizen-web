@@ -7,6 +7,8 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        // Invite links carry a credential in the path.
+        disallow: ["/join/"],
       },
     ],
     sitemap: absoluteUrl("/sitemap.xml"),
