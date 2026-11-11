@@ -1,0 +1,48 @@
+FAMILY MEDICAL RECORD ACCESS WORKSHEET
+Kaizen Health
+Guide: https://kaizenhealth.io/blog/family-history/shared-family-medical-record
+
+Fill in or print this blank worksheet. Keep the completed copy private.
+It does not send information to Kaizen. Do not enter passwords or recovery codes.
+Use a separate entry for each helper and provider or service.
+
+ACCESS ENTRY
+Person whose records these are: ______________________________________
+Helper / contact: ____________________________________________________
+Task the helper handles: _____________________________________________
+Information or functions agreed for that task: ________________________
+_____________________________________________________________________
+
+Provider or service: _________________________________________________
+Permission or authority accepted by that provider or service:
+_____________________________________________________________________
+Location of supporting documents, if applicable: ______________________
+
+SETUP STATUS
+[ ] Request submitted
+[ ] Provider or service approved access
+[ ] Helper completed invitation / account setup, if applicable
+[ ] Helper tested the agreed task using their own account
+
+Date checked: ________________________________________________________
+What the helper can see or do: _______________________________________
+What remains unavailable or unconfirmed: ______________________________
+Support contact: _____________________________________________________
+How to change or stop access: ________________________________________
+Next review date or trigger: __________________________________________
+
+BACKUP AND EMERGENCY PLAN
+Backup person / contact: _____________________________________________
+What access the backup has tested: ___________________________________
+Location of current medical summary: _________________________________
+How authorized helpers can reach it without the usual phone or internet:
+_____________________________________________________________________
+
+NEXT STEP
+Task / person responsible / target date:
+_____________________________________________________________________
+
+This worksheet records a plan. It is not a HIPAA authorization, power of
+attorney, legal appointment, or provider access request. Confirm requirements
+with the provider or a qualified local adviser. Ending access may not remove
+copies someone previously downloaded or received.

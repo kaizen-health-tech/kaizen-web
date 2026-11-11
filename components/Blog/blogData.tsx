@@ -114,17 +114,20 @@ const BlogData: Blog[] = [
   {
     id: 21,
     mainImage: "/images/blog/shared-family-record-hero.png",
-    title:
-      "The Shared Family Medical Record: Who Needs Access to What, and How to Set It Up",
+    title: "Shared Family Medical Records: Access, Permissions, and Setup",
     metadata:
-      "A spouse, an adult child, and a sibling each need a different slice of one medical record. What HIPAA actually requires, and how to set up shared family access before a crisis.",
+      "Work out who needs which information, arrange caregiver access, and keep an emergency plan your family can use.",
     url: "/blog/family-history/shared-family-medical-record",
     datePublished: "2026-09-15",
-    dateModified: "2026-09-15",
+    dateModified: "2026-11-11",
     categoryKey: "health-records",
     featured: true,
-    readTime: "23 min read",
-    author: editorialTeam,
+    readTime: "10 min read",
+    author: {
+      name: "Kaizen Health Editorial Team",
+      role: "Editorial guide",
+      image: "",
+    },
   },
   {
     id: 20,
@@ -276,12 +279,17 @@ const BlogData: Blog[] = [
     mainImage: "/images/blog/organizing-medical-records.jpg",
     title: "How to Organize Medical Records for an Aging Parent",
     metadata:
-      "A practical system for gathering, organizing, and sharing the records a caregiver needs, on paper, online, or both.",
+      "A checklist, blank summary, and filing examples for gathering a parent's records and keeping the right information ready to share.",
     url: "/blog/family-history/organizing-medical-records",
     datePublished: "2025-01-20",
+    dateModified: "2026-11-11",
     categoryKey: "health-records",
-    readTime: "12 min read",
-    author: editorialTeam,
+    readTime: "9 min read",
+    author: {
+      name: "Kaizen Health Editorial Team",
+      role: "Editorial guide",
+      image: "",
+    },
   },
   {
     id: 10,
