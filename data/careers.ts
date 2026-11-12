@@ -8,6 +8,45 @@ export const applyHref = (role: Role) =>
 
 export const roles: Role[] = [
   {
+    slug: "vp-of-healthcare",
+    title: "VP of Healthcare (Satire)",
+    team: "Executive Leadership / Comic Relief",
+    location: "Remote",
+    employmentType: "Satire",
+    isFilled: false,
+    isSatire: true,
+    summary:
+      "We're hiring a VP of Healthcare. Healthcare experience required. Leather jacket optional. Please keep the drama in the group chat.",
+    sections: [
+      {
+        heading: "About this very timely opening",
+        body: "If you landed here after reading about Jensen Huang and NVIDIA's healthcare leadership, welcome. We saw the headlines too. This is a satirical job listing, not a real vacancy. Kaizen Health is not affiliated with NVIDIA or anyone mentioned in those reports.",
+      },
+      {
+        heading: "Your fictional responsibilities",
+        items: [
+          "Keep healthcare in the healthcare job title",
+          "Build relationships with patients, caregivers and clinicians. The professional kind.",
+          "Make sure the most exciting thing in the board meeting is better care for families",
+          "Help families find their health records with fewer plot twists than the tech news",
+        ],
+      },
+      {
+        heading: "Ideal qualifications",
+        items: [
+          "Healthcare experience that survives a reference check",
+          "Know the difference between a reporting line and a pickup line",
+          "Comfort saying, 'Maybe we should ask HR first'",
+          "An interest in helping families care for each other",
+        ],
+      },
+      {
+        heading: "You came for the headlines",
+        body: "While you're here, meet Kaizen Health: the app families use to keep health records in one place and care for each other. For actual vacancies, see Open roles below. Please save your résumé for those.",
+      },
+    ],
+  },
+  {
     slug: "product-design-intern",
     title: "Product Design Intern",
     team: "Design & Marketing",
@@ -162,6 +201,9 @@ export const roles: Role[] = [
   },
 ];
 
-export const getOpenRoles = () => roles.filter((role) => !role.isFilled);
+export const getOpenRoles = () =>
+  roles.filter((role) => !role.isFilled && !role.isSatire);
+
+export const getSatiricalRoles = () => roles.filter((role) => role.isSatire);
 
 export const getFilledRoles = () => roles.filter((role) => role.isFilled);

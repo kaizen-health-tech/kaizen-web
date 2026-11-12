@@ -4,7 +4,12 @@ import { FilledRoleItem, RoleCard } from "@/components/Careers/RoleCard";
 import { PageHero } from "@/components/Common/PageHero";
 import { PillLink } from "@/components/Common/PillLink";
 import { Reveal } from "@/components/Common/Reveal";
-import { CAREERS_EMAIL, getFilledRoles, getOpenRoles } from "@/data/careers";
+import {
+  CAREERS_EMAIL,
+  getFilledRoles,
+  getOpenRoles,
+  getSatiricalRoles,
+} from "@/data/careers";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -17,6 +22,7 @@ export const metadata: Metadata = createPageMetadata({
 export default function OpenRolesPage() {
   const openRoles = getOpenRoles();
   const filledRoles = getFilledRoles();
+  const satiricalRoles = getSatiricalRoles();
   const openCount = openRoles.length;
 
   return (
@@ -81,6 +87,25 @@ export default function OpenRolesPage() {
 
       <div className="px-4 pb-24 pt-8 md:px-8 md:pb-32 md:pt-12">
         <div className="mx-auto max-w-c-1235">
+          {satiricalRoles.length > 0 && (
+            <section aria-labelledby="satire-heading" className="mb-24">
+              <Reveal>
+                <h2
+                  id="satire-heading"
+                  className="text-3xl font-semibold tracking-[-0.02em] text-midnight md:text-4xl"
+                >
+                  From the headlines (satire)
+                </h2>
+              </Reveal>
+              <div className="mt-10 space-y-8">
+                {satiricalRoles.map((role) => (
+                  <Reveal key={role.slug}>
+                    <RoleCard role={role} />
+                  </Reveal>
+                ))}
+              </div>
+            </section>
+          )}
           <section
             id="roles"
             aria-labelledby="open-roles-heading"

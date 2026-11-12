@@ -13,6 +13,8 @@ export type Role = {
   location: string;
   employmentType: string;
   isFilled: boolean;
+  /** Fictional listing displayed separately from genuine vacancies. */
+  isSatire?: boolean;
   /** One or two sentences shown on the role card. */
   summary: string;
   sections: RoleSection[];

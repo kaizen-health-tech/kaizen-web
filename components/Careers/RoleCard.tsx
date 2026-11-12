@@ -72,12 +72,12 @@ export const RoleCard = ({ role }: RoleCardProps) => {
             <RoleMeta role={role} />
           </div>
           <PillLink
-            href={applyHref(role)}
-            native
+            href={role.isSatire ? "/" : applyHref(role)}
+            native={!role.isSatire}
             className="mt-8"
             aria-describedby={titleId}
           >
-            Apply for this role
+            {role.isSatire ? "Meet Kaizen Health" : "Apply for this role"}
           </PillLink>
         </div>
 
