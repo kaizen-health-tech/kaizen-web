@@ -12,7 +12,7 @@ export const legalDocs: LegalDoc[] = [
     summary:
       "What we collect, why we collect it, who we share it with, and how to export or delete your family's data.",
     effectiveDate: "March 1, 2024",
-    lastUpdated: "November 3, 2026",
+    lastUpdated: "November 16, 2026",
   },
   {
     href: "/docs/consumer-health",

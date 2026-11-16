@@ -91,6 +91,7 @@ const categoryRows: CategoryRow[] = [
 
 const privacyToc: DocsTocItem[] = [
   { id: "infocollect", label: "1. Information we collect" },
+  { id: "google-connectors", label: "Google Drive and Google Calendar" },
   { id: "whatsapp", label: "WhatsApp messages and voice notes" },
   { id: "connected-health-records", label: "Connected records and FinchNode" },
   { id: "infouse", label: "2. How we process it" },
@@ -209,6 +210,17 @@ export default function DocsPage() {
           not use them for identification.
         </li>
         <li>
+          <strong>Google Drive and Google Calendar.</strong> These are optional.
+          If you connect them, Kaizen Health reads only the files you pick and
+          the calendars you choose, saves copies in your account, and never
+          changes anything in your Google account. You can disconnect at any
+          time and choose whether to keep or delete the copies. See{" "}
+          <a href="#google-connectors" className="underline">
+            section 1.7
+          </a>
+          .
+        </li>
+        <li>
           <strong>Third parties.</strong> We receive limited data from Apple and
           Google when you sign in with them or buy a subscription, and approved
           records from healthcare systems through FinchNode. See{" "}
@@ -278,6 +290,11 @@ export default function DocsPage() {
             What information do we collect?
           </a>
           <ul>
+            <li>
+              <a href="#google-connectors" className="underline">
+                Google Drive and Google Calendar
+              </a>
+            </li>
             <li>
               <a href="#connected-health-records" className="underline">
                 Connected health records through FinchNode
@@ -542,6 +559,15 @@ export default function DocsPage() {
           </a>
           .
         </li>
+        <li>
+          <strong>Google Drive and Google Calendar</strong>: if you connect
+          them, we receive the files you pick in Google Drive and the events
+          from the calendars you choose, as described in{" "}
+          <a href="#google-connectors" className="underline">
+            section 1.7
+          </a>
+          .
+        </li>
       </ul>
       <p>
         We do not buy personal information from data brokers, and we do not
@@ -568,9 +594,152 @@ export default function DocsPage() {
         website chat that you would not want associated with your email address.
       </p>
 
-      <h3>1.7 Google API Services</h3>
+      <h3 id="google-connectors">
+        1.7 Google Drive and Google Calendar (Google API Services)
+      </h3>
       <p>
-        Our use of information received from Google APIs adheres to the{" "}
+        <strong>Your choice to connect.</strong> Google Drive and Google
+        Calendar are optional. You can use Kaizen Health without them.
+        Connecting does not happen when you create an account or accept our
+        Terms. Each connection is a separate choice with its own Google
+        permission screen, and each can be disconnected on its own. The Google
+        account you connect can be different from the account you use to sign in
+        to Kaizen Health.
+      </p>
+      <p>
+        <strong>What we ask Google for.</strong> We ask for read-only access and
+        nothing else:
+      </p>
+      <ul>
+        <li>
+          For Google Drive, the "drive.file" permission. This lets Kaizen Health
+          see only the files you pick in Google's own file picker. We cannot see
+          your other files, browse your Drive, or find new files.
+        </li>
+        <li>
+          For Google Calendar, permission to read events and the list of your
+          calendars. This lets us show you the calendars you can choose and read
+          events from the calendars you choose. These can include calendars that
+          other people have shared with you.
+        </li>
+      </ul>
+      <p>We never change, move or delete anything in your Google account.</p>
+      <p>
+        <strong>Information we receive.</strong>
+      </p>
+      <ul>
+        <li>
+          From Google Drive: the file you pick (a PDF or image up to 25 MB), its
+          name, type and size, a fingerprint we use to notice when it changes,
+          and whether Google reports it as removed. We also learn the email
+          address of the Google account you used.
+        </li>
+        <li>
+          From Google Calendar: the names and time zones of your calendars (so
+          you can choose), and for each calendar you choose, its events from the
+          past 3 months to the next 6 months: the title, description, location,
+          start and end times, and whether an event was cancelled. We do not
+          request who was invited, who organized the event, video-call links or
+          attachments. Event descriptions and locations can contain personal or
+          health details. We copy them because they are part of the event you
+          chose to bring in.
+        </li>
+      </ul>
+      <p>
+        <strong>How we use it.</strong> We use this information only to provide
+        the features you see in the App: to save your picked files as documents,
+        to show events from your chosen calendars in Kaizen Health, and to keep
+        those copies up to date. If a file you picked changes in Google Drive,
+        we may download the new version to update your copy. If you edited your
+        copy in Kaizen Health, we leave it alone. If a file is removed or
+        unavailable in Drive, we keep your copy and tell you. If an event is
+        cancelled in Google Calendar, we remove the copy. We do not use this
+        information for advertising, we do not sell it, and we do not use it to
+        build or train AI models.
+      </p>
+      <p>
+        <strong>AI features.</strong> Importing does not by itself send your
+        files or events to an AI provider. See{" "}
+        <a href="#ai" className="underline">
+          section 6
+        </a>{" "}
+        for when and how our AI features process a document, and the limits for
+        imported events.
+      </p>
+      <p>
+        <strong>Who can see it.</strong> You can. People in your care group can
+        see an imported document only if you add it to the group. If you create
+        a link to share a document, anyone with the link can open that file
+        until the link expires; see{" "}
+        <a href="#whoshare" className="underline">
+          section 4.1
+        </a>
+        . No one at Kaizen Health can read your imported files or events, with
+        one exception: our data officer can, and only when it is necessary to
+        keep the service secure (for example, to investigate a bug or abuse), to
+        comply with the law, or when you have agreed that we may look at
+        specific information (for example, when you ask us for help with a
+        particular file). Our service providers handle the data only as
+        described in{" "}
+        <a href="#service-providers" className="underline">
+          section 4.2
+        </a>
+        .
+      </p>
+      <p>
+        <strong>How we protect it.</strong> Your Google sign-in tokens, and the
+        account email we learn from Google, are encrypted in our database with a
+        key held on our servers, and are never shown in the App or written to
+        our logs. Your calendar choices are stored encrypted. Files and events
+        are stored with our cloud provider, as described in{" "}
+        <a href="#infosafe" className="underline">
+          section 9
+        </a>
+        . The App never holds a Google token.
+      </p>
+      <p>
+        <strong>Your controls.</strong>
+      </p>
+      <ul>
+        <li>
+          <strong>Choose.</strong> You pick each Drive file and each calendar.
+          Kaizen Health cannot read anything you did not choose.
+        </li>
+        <li>
+          <strong>Disconnect.</strong> In the App, open Profile, then
+          Connections, then Google Drive or Google Calendar, then Manage. You
+          can disconnect and keep the copies, or remove the copies too. When you
+          disconnect, we end our access with Google (unless you connected Drive
+          and Calendar with the same Google account, in which case we end it
+          when the second one is disconnected) and delete our stored tokens.
+        </li>
+        <li>
+          <strong>Delete.</strong> Choosing to remove copies deletes the copies,
+          their stored files, the memories made from them, and the records we
+          kept to run the connection. A minimal marker that the connection ended
+          (a status, a time and a counter) remains so the App can show you its
+          status. Your Google files and events are never touched.
+        </li>
+        <li>
+          <strong>Remove access at Google.</strong> You can revoke access in
+          your Google Account settings at any time. Copies already saved stay
+          until you delete them.
+        </li>
+        <li>
+          <strong>Delete your account.</strong> Deleting your Kaizen Health
+          account removes everything described here.
+        </li>
+      </ul>
+      <p>
+        See{" "}
+        <a href="#inforetain" className="underline">
+          section 8
+        </a>{" "}
+        for how long information is kept.
+      </p>
+      <p>
+        <strong>Limited Use.</strong> Kaizen Health's use and transfer to any
+        other app of information received from Google APIs will adhere to the{" "}
         <a
           href="https://developers.google.com/terms/api-services-user-data-policy"
           className="underline"
@@ -579,7 +748,7 @@ export default function DocsPage() {
         >
           Google API Services User Data Policy
         </a>
-        , including its{" "}
+        , including the{" "}
         <a
           href="https://developers.google.com/terms/api-services-user-data-policy#limited-use"
           className="underline"
@@ -973,6 +1142,14 @@ export default function DocsPage() {
         group is visible only to that group. It is not public, and it is not
         published outside the Services.
       </p>
+      <p>
+        You can also create a link to share a single document outside Kaizen
+        Health. Anyone who has the link can open that file until the link
+        expires, 24 hours after you create it, so share it only with people you
+        trust. This applies to files and events you imported from Google in the
+        same way as to any other document. Importing from Google does not share
+        anything.
+      </p>
 
       <h3 id="service-providers">4.2 With service providers</h3>
       <p>
@@ -1191,6 +1368,20 @@ export default function DocsPage() {
         </a>
         .
       </p>
+      <p>
+        <strong>Google Drive and Google Calendar.</strong> Imported Google Drive
+        files and Google Calendar events are not sent to an AI provider just
+        because you imported them. A Drive file or an event is processed by our
+        AI features only if you ask for it or, for Drive files, if you have
+        turned on "Auto-add documents to memory" on a paid plan. Importing
+        events does not turn on reminders or automatic processing. When
+        processing happens it follows this section, including the limits below.
+        We do not use information from Google to train AI models. See{" "}
+        <a href="#google-connectors" className="underline">
+          section 1.7
+        </a>
+        .
+      </p>
       <p>How we handle this processing:</p>
       <ul>
         <li>
@@ -1327,6 +1518,20 @@ export default function DocsPage() {
           continue the disconnected feature. Removing a provider in Kaizen does
           not itself revoke FinchNode sharing; revoke that separately in your
           FinchNode account. See section 1.9.
+        </li>
+        <li>
+          <strong>Google Drive and Google Calendar copies</strong>: we keep the
+          copies and the memories made from them while you keep them in Kaizen
+          Health. If you disconnect and keep the copies, they stay until you
+          delete them or delete your account. If you disconnect and choose to
+          delete, or if you delete your account, a background process removes
+          the copies, their stored files, the memories made from them, and the
+          records we kept to run the connection from our active systems. The
+          screen shows its progress. A minimal marker that the connection ended
+          (a status, a time and a counter, with no token, email or content)
+          remains so the App can show you the status. We do not keep your Google
+          sign-in tokens after you disconnect. Residual copies can persist in
+          encrypted backups as described below. See section 1.7.
         </li>
         <li>
           <strong>WhatsApp chat history</strong>: we keep a limited recent
@@ -1556,7 +1761,10 @@ export default function DocsPage() {
         </a>
         , or by turning off the relevant feature or device permission.
         Withdrawal does not affect the lawfulness of processing before it, nor
-        processing we carry out on another lawful basis.
+        processing we carry out on another lawful basis. For Google Drive and
+        Google Calendar, you can also remove Kaizen Health's access in the
+        security settings of your Google Account; copies already saved in Kaizen
+        Health stay until you delete them.
       </p>
 
       <h3>11.4 Opting out of marketing</h3>
