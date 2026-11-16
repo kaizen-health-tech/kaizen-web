@@ -32,6 +32,190 @@ const stayConnectedSection = (body?: string) => ({
 
 export const releases: Release[] = [
   {
+    slug: "1-18-2-new-onboarding-and-group-invite-links",
+    version: "1.18.2",
+    title: "A Warmer Welcome, and an Easier Way to Bring Family In",
+    summary:
+      "A new onboarding walks you through who you care for, starts your family group, and shows what Kaizen can do. Invite people to a group with one link or QR code, and a new public join page helps them get started.",
+    publishedAt: "2026-11-11",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["Family sharing", "Relationships", "User experience"],
+    highlights: [
+      {
+        title: "A new onboarding built around your family",
+        description:
+          "Tell Kaizen who you are caring for, add a few details about you, and see how health data, shared records, reminders, and Kai work before you finish.",
+        impact: "new",
+      },
+      {
+        title: "Create your family group while you sign up",
+        description:
+          "Name your family group during onboarding and invite people right away, or do it later from the Groups tab.",
+        impact: "new",
+      },
+      {
+        title: "Invite with a link or QR code",
+        description:
+          "Share one invite link, or show a QR code in person. You can reset the link at any time, and people who already joined stay in the group.",
+        impact: "new",
+      },
+      {
+        title: "A join page for people without the app",
+        description:
+          "Opening an invite link on the web shows who invited you and which group you are joining, then points you to the app.",
+        impact: "new",
+      },
+      {
+        title: "Joining a group works as expected",
+        description:
+          "Joining a group now records your agreement to share and your answer about how you are related together, so one cannot be saved without the other.",
+        impact: "fixed",
+      },
+      {
+        title: "More relationships to choose from",
+        description:
+          "Relationship choices now include aunt or uncle, niece or nephew, cousin, parent-in-law, child-in-law, and sibling-in-law.",
+        impact: "improved",
+      },
+    ],
+    sections: [
+      {
+        heading: "An onboarding that starts with the people you care for",
+        body: "New accounts now move through a short, guided onboarding with a progress indicator and an illustration for each step. If you leave part way, Kaizen picks up where you stopped. The steps run in this order:",
+        bullets: [
+          "Who are you caring for? Choose everyone who applies: yourself, a parent, your partner, your child, or someone else.",
+          "A little about you. Kai and your Health Score use your age and sex to read your numbers correctly.",
+          "Your family circle. Create a group, then invite the people you care for. Each person chooses what they share.",
+          "Health data, shared records, reminders, and Kai. Short previews show what each one does for your family.",
+          "A last step to read the medical disclaimer.",
+        ],
+      },
+      {
+        heading: "Start your family circle on day one",
+        body: "The family step lets you name a group and create it during onboarding. If you already have a group, Kaizen says so and points you to the Groups tab instead of creating a second one. If you arrived from an invite link, you finish setting up first and your group invitation opens next.",
+      },
+      {
+        heading: "Invite people with a link or QR code",
+        body: "Open a group you own and choose Invite. Sharing a link or QR code is now the default, and inviting by email is one tap away. The link is personal to your group. You can reset it at any time, which stops the old link and QR code from working at once.",
+        bullets: [
+          "Share the link in any app, copy it, or show the QR code to someone beside you.",
+          "Anyone who opens the link in Kaizen Health sees a confirmation that names who invited them and which group they are joining.",
+          "When someone joins, the group's members can see their name and email address. They are asked about sharing medical records after they join.",
+          "A person who joins by link has no relationship set yet. You can set how you are related from the People tab.",
+          "Joining by link needs a verified email address, so people who are new to Kaizen sign up and verify first.",
+        ],
+      },
+      {
+        heading: "A public page for people who are not in the app yet",
+        body: "An invite link also works in a web browser. The join page shows the group name and the first name of the person who invited you, and sends you to the App Store or Google Play. After you install Kaizen, sign up, and verify your email, open the same link again to join.",
+        bullets: [
+          "The page names the group and the inviter only to the person who opens the link. Link previews in chats stay generic.",
+          "If a link has been reset, or the group no longer exists, the page tells you to ask the group owner for a new link or QR code.",
+        ],
+      },
+      {
+        heading: "Fixes for joining and relationships",
+        body: "Joining a group now saves your agreement to share and your relationship answer in a single step. If the relationship you chose conflicts with an answer already given, Kaizen shows you the conflict instead of a success message. The group screen also no longer shows an empty relationship label for someone who joined by link and has no relationship set yet.",
+      },
+      {
+        heading: "Availability",
+        body: "This update pairs Kaizen Health App v1.18.2 with backend v1.18.7. Update Kaizen on your supported iPhone or Android device. New onboarding appears for accounts that have not finished it, and invite links work from any group you own.",
+      },
+      stayConnectedSection(
+        "Tell us how the new onboarding felt, whether the invite link and QR code made it easier to bring family in, and which relationships we should add next.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
+    slug: "1-18-1-widget-refresh-notification-badge-and-protected-chat",
+    version: "1.18.1",
+    title: "A Fresher Widget, a Clearer Badge, and Better Protected Chat",
+    summary:
+      "The iOS widget now refreshes on its own each morning, the app icon badge counts what you have not seen, and Protected Chat gives you clearer controls and a steadier audio player.",
+    publishedAt: "2026-11-09",
+    status: "general-availability",
+    audience: "everyone",
+    tags: ["iOS", "Notifications", "Privacy", "User experience", "Widgets"],
+    highlights: [
+      {
+        title: "A widget that refreshes without opening the app",
+        description:
+          "If you use the Kaizen widget on iPhone, it now updates itself each morning with your latest health data.",
+        impact: "improved",
+      },
+      {
+        title: "Widget buttons open the right screen",
+        description:
+          "Tapping a widget button now opens that screen, instead of landing on Home when Kaizen was closed.",
+        impact: "fixed",
+      },
+      {
+        title: "A badge that matches what you have not seen",
+        description:
+          "The app icon shows a count for new notifications and clears when you open your notifications.",
+        impact: "new",
+      },
+      {
+        title: "Clearer Protected Chat controls",
+        description:
+          "Protected Chat now tells you how to return to your Journey chat and lets you start a new chat from the thread.",
+        impact: "improved",
+      },
+      {
+        title: "A steadier audio player",
+        description:
+          "Audio attachments show their length and resume from where you paused.",
+        impact: "fixed",
+      },
+      {
+        title: "Your own records join your normal chat",
+        description:
+          "A record confirmed as yours no longer keeps a conversation in Protected Chat for good.",
+        impact: "fixed",
+      },
+    ],
+    sections: [
+      {
+        heading: "A widget that stays current",
+        body: "The Kaizen widget used to show whatever the app last saved, so it could go stale until you opened Kaizen. Now, if the widget is on your Home Screen, Kaizen refreshes it each morning at about 8:00 AM your local time. It syncs your health data first, then updates the widget.",
+        bullets: [
+          "If your last successful health sync is two or more days old, the widget says how long ago it was updated.",
+          "Kaizen tells us only whether the widget is installed and your time zone, so we send the morning refresh only to people who use it.",
+          "Widget buttons open the screen you tap, such as Chat, even when Kaizen was fully closed.",
+        ],
+      },
+      {
+        heading: "A badge that clears when you look",
+        body: "The count on the Kaizen icon now follows your notifications. It goes up when a new notification arrives and clears once you open your notifications in the app. If a notification fails to send, it does not add to the count.",
+      },
+      {
+        heading: "More control in Protected Chat",
+        body: "Protected Chat keeps a conversation about a shared record or file out of your Kai memory. This release makes it easier to use and more accurate about when it applies.",
+        bullets: [
+          "A hint explains how to go back to your Journey chat: tap the temporary chat icon at the top.",
+          "A Start a new chat action is available from the protected thread.",
+          "The banner now says Kai will not assume the record or file is about you, wording that fits both records and files.",
+          "A record confirmed as yours joins your normal conversation. Anything not confirmed as yours stays protected.",
+          "The audio player on attachments shows play and pause, the file name, and the time, and continues from where you paused.",
+        ],
+      },
+      {
+        heading: "Behind the scenes",
+        body: "Older conversations that include source cards now load reliably in chat history. A card saved in an older format is upgraded when it can be, and a card that cannot be shown is skipped without hiding the rest of the page. Kai on WhatsApp also sends at most one limit notice, such as a wait or capacity message, per hour, so a long run of messages does not trigger a long run of replies.",
+      },
+      {
+        heading: "Availability",
+        body: "This update pairs Kaizen Health App v1.18.1 with backend v1.18.5. The widget refresh applies to iPhone users with the Kaizen widget added to their Home Screen. Update from the App Store or Google Play to receive the latest improvements.",
+      },
+      stayConnectedSection(
+        "Tell us whether the widget stays current for you, and what would make Protected Chat clearer.",
+      ),
+    ],
+    resources: defaultResources,
+  },
+  {
     slug: "1-18-0-relationships-whatsapp-and-kai-records",
     version: "1.18.0",
     title: "Kaizen Now Knows How Your Family Fits Together",
