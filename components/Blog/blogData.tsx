@@ -8,8 +8,23 @@ const editorialTeam = {
 
 const BlogData: Blog[] = [
   {
-    id: 28,
+    id: 29,
     draft: true,
+    mainImage: "/images/blog/apps-to-track-a-parents-health-hero.png",
+    title:
+      "Apps to Track a Parent's Health: Which Type You Need, and What Each One Misses",
+    metadata:
+      "No one app tracks everything about a parent's health. Compare apps by job (medicines, vitals, safety, family updates, records) and what to ask first.",
+    url: "/blog/caregiving/apps-to-track-a-parents-health",
+    datePublished: "2026-12-01",
+    categoryKey: "aging-well",
+    featured: false,
+    readTime: "9 min read",
+    author: editorialTeam,
+  },
+  {
+    id: 28,
+    draft: false,
     mainImage: "/images/blog/family-health-history-thanksgiving-hero.png",
     title: "Collect Your Family Health History This Thanksgiving",
     metadata:

@@ -35,5 +35,6 @@ Added manually November 10, 2026. These are community-informed editorial candida
 | C3 | Working While Caring for Someone With Cancer: Planning Leave and Backup Help | E10–E12 | No — brief needed; January 19 provisional |
 | C4 | What Happens If the Family Caregiver Gets Sick? Make a Backup Care Plan | E4–E5, E16 | No — brief needed; January 26 provisional |
 | C5 | How to Get Updates From a Loved One's Care Team When You Live Far Away | E14–E15 | No — backlog; merge into C2 if intent overlaps |
+| C6 | Best Apps for Tracking a Parent's Health: What Each Type Does and Does Not Cover | [Community and source research](reports/apps-to-track-parent-health-research-2026-11-16.md), E1–E15; added from owner's calendar review November 16, 2026; demand volume unmeasured | No — [brief](briefs/apps-to-track-parent-health-brief.md) November 16 and [outline](outlines/apps-to-track-a-parents-health-outline.md) November 17 drafted; page written as draft (id 29) November 17; December 1 provisional |
 
 Existing R2 (sharing the workload), R8 (choosing a care setting) and R9 (discharge checklist) continue in the [December calendar](calendars/2026-12-editorial-calendar.md). November 10 publication override: ids 25–27 now have `draft: false` for the next deployment. Id 28 remains a draft. Deployment is not yet verified.
